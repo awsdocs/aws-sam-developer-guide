@@ -1,7 +1,7 @@
 # Gradual Code Deployment<a name="automating-updates-to-serverless-apps"></a>
 
-If you use AWS SAM to create your serverless application, it comes built\-in with [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) for safe Lambda deployments\. With just a few lines of configuration, AWS SAM does the following for you:
-+ Deploys new versions of your Lambda function and automatically creates aliases that point to the new version\. 
+If you use AWS SAM to create your serverless application, it comes built\-in with [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to help ensure safe Lambda deployments\. With just a few lines of configuration, AWS SAM does the following for you:
++ Deploys new versions of your Lambda function, and automatically creates aliases that point to the new version\. 
 + Gradually shifts customer traffic to the new version until you're satisfied that it's working as expected, or you roll back the update\. 
 + Defines pre\-traffic and post\-traffic test functions to verify that the newly deployed code is configured correctly and your application operates as expected\. 
 + Rolls back the deployment if CloudWatch alarms are triggered\. 
@@ -47,7 +47,7 @@ These revisions to the AWS SAM template do the following:
   + ** All\-at\-once**: All traffic is shifted from the original Lambda function to the updated Lambda function version at once\.     
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/automating-updates-to-serverless-apps.html)
 + **Alarms**: These are CloudWatch alarms that are triggered by any errors raised by the deployment\. They automatically roll back your deployment\. An example is if the updated code you're deploying is creating errors within the application\. Another example is if any [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html) or custom CloudWatch metrics that you specified have breached the alarm threshold\.
-+ **Hooks**: These are pre\-traffic and post\-traffic test functions that run sanity checks before traffic\-shifting starts to the new version, and after traffic\-shifting completes\.
++ **Hooks**: These are pre\-traffic and post\-traffic test functions that run sanity checks before traffic shifting starts to the new version, and after traffic shifting completes\.
   + **PreTraffic**: Before traffic shifting starts, CodeDeploy invokes the pre\-traffic hook Lambda function\. This Lambda function must call back to CodeDeploy and indicate success or failure\. If the function fails, it aborts and reports a failure back to AWS CloudFormation\. If the function succeeds, CodeDeploy proceeds to traffic shifting\.
   + **PostTraffic**: After traffic shifting completes, CodeDeploy invokes the post\-traffic hook Lambda function\. This is similar to the pre\-traffic hook, where the function must call back to CodeDeploy to report a success or failure\. Use post\-traffic hooks to run integration tests or other validation actions\.
 

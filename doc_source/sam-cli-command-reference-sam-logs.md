@@ -35,7 +35,7 @@ $ sam logs -n HelloWorldFunction --stack-name mystack --filter "error"
 
 | Option | Description | 
 | --- | --- | 
-| \-n, \-\-name TEXT | The name of your Lambda function\. If this function is a part of an AWS CloudFormation stack, this can be the logical ID of function resource in the AWS CloudFormation/AWS SAM template\. \[required\] | 
+| \-n, \-\-name TEXT | The name of your Lambda function\. If this function is part of an AWS CloudFormation stack, this can be the logical ID of the function resource in the AWS CloudFormation/AWS SAM template\. \[required\] | 
 | \-\-stack\-name TEXT | The name of the AWS CloudFormation stack that the function is a part of\. | 
 | \-\-filter TEXT | Lets you specify an expression to quickly find logs that match terms, phrases, or values in your log events\. This can be a simple keyword \(for example, "error"\) or a pattern that's supported by Amazon CloudWatch Logs\. For the syntax, see the [Amazon CloudWatch Logs documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html)\. | 
 | \-s, \-\-start\-time TEXT | Fetches logs starting at this time\. The time can be relative values like '5mins ago', 'yesterday', or a formatted timestamp like '2018\-01\-01 10:10:10'\. It defaults to '10mins ago'\. | 

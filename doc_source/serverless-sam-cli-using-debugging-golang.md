@@ -26,7 +26,7 @@ sam local start-api -d 5986 --debugger-path <delve folder path>
 **Note**  
 The `--debugger-path` is the path to the directory that contains the dlv binary file that's compiled from the previous code\.
 
-The following is an example launch configuration for Visual Studio Code to attach to a debug session\.
+The following is an example launch configuration for Microsoft Visual Studio Code to attach to a debug session\.
 
 ```
 {

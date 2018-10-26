@@ -1,6 +1,6 @@
 # sam local generate\-event<a name="sam-cli-command-reference-sam-local-generate-event"></a>
 
-Generates sample payloads from different event sources such as Amazon S3, Amazon API Gateway, and Amazon SNS\. These payloads contain the information that the event sources send to your Lambda functions\.
+Generates sample payloads from different event sources, such as Amazon S3, Amazon API Gateway, and Amazon SNS\. These payloads contain the information that the event sources send to your Lambda functions\.
 
 **Usage:**
 

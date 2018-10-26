@@ -1,12 +1,12 @@
 # Debugging Python Functions Locally<a name="serverless-sam-cli-using-debugging-python"></a>
 
-Python debugging requires you to enable remote debugging in your Lambda function code\. This is a two step process:
+Python debugging requires you to enable remote debugging in your Lambda function code\. This is a two\-step process:
 
 1. Install the [ptvsd library](https://pypi.org/project/ptvsd/) and enable it within your code\.
 
 1. Configure your IDE to connect to the debugger that you configured for your function\.
 
-As this might be your first time using the AWS SAM CLI, start with a boilerplate Python application, and install both the application's dependencies and ptvsd:
+Because this might be your first time using the AWS SAM CLI, start with a boilerplate Python application, and install both the application's dependencies and ptvsd:
 
 ```
 sam init --runtime python3.6 --name python-debugging
@@ -23,7 +23,7 @@ cp hello_world/app.py hello_world/build/
 
 ## Ptvsd Configuration<a name="serverless-sam-cli-using-debugging-python-ptvsd"></a>
 
-Next, you need to enable ptvsd within your code\. To do this, open up `hello_world/build/app.py` and add the following ptvsd specifics:
+Next, you need to enable ptvsd within your code\. To do this, open `hello_world/build/app.py`, and add the following ptvsd specifics:
 
 ```
 import ptvsd
@@ -35,18 +35,18 @@ ptvsd.wait_for_attach()
 
 Use `0.0.0.0` instead of `localhost` for listening across all network interfaces\. `5890` is the debugging port that you want to use\.
 
-## Visual Studio Code<a name="serverless-sam-cli-using-debugging-python-vs-code"></a>
+## Microsoft Visual Studio Code<a name="serverless-sam-cli-using-debugging-python-vs-code"></a>
 
-Now that you have the dependencies and ptvsd enabled within your code you can configure Visual Studio Code \(VS Code\) debugging\. Assuming that you're still in the application folder and have the code command in your path, open VS Code by using this command:
+Now that you have the dependencies and ptvsd enabled within your code, you can configure Microsoft Visual Studio Code debugging\. Assuming that you're still in the application folder and have the code command in your path, open Microsoft Visual Studio Code by using this command:
 
 ```
 code .
 ```
 
 **Note**  
- If you don't have code in your path, open up a new instance of VS Code from the `python-debugging/` folder that you created earlier\.
+ If you don't have code in your path, open a new instance of Microsoft Visual Studio Code from the `python-debugging/` folder that you created earlier\.
 
-To setup VS Code for debugging with the AWS SAM CLI, use the following launch configuration:
+To set up Microsoft Visual Studio Code for debugging with the AWS SAM CLI, use the following launch configuration:
 
 ```
 {
@@ -69,22 +69,22 @@ To setup VS Code for debugging with the AWS SAM CLI, use the following launch co
  }
 ```
 
-For VS Code, the property `localRoot` under the `pathMappings` key is really important\. There are two aspects that help explain why this is setup this way:
-+ **localRoot**: This path is to be mounted in the Docker container, and needs to have both the application and dependencies at the root level
-+ **workspaceFolder**: This path is the absolute path where the VS Code instance was opened\.
+For Microsoft Visual Studio Code, the property `localRoot` under the `pathMappings` key is important\. There are two aspects that help explain why this is set up this way:
++ **localRoot**: This path is to be mounted in the Docker container, and needs to have both the application and dependencies at the root level\.
++ **workspaceFolder**: This path is the absolute path where the Microsoft Visual Studio Code instance was opened\.
 
-If you opened VS Code in a different location other than `python-debugging/`, you need to replace it with the absolute path where `python-debugging/` is located\.
+If you opened Microsoft Visual Studio Code in a different location other than `python-debugging/`, you need to replace it with the absolute path where `python-debugging/` is located\.
 
-After the VS Code debugger configuration is complete, make sure to add a breakpoint anywhere you like in `hello_world/build/app.py` and then proceed as follows:
+After the Microsoft Visual Studio Code debugger configuration is complete, make sure to add a breakpoint anywhere you want to in `hello_world/build/app.py`, and then proceed as follows:
 
-1. Run AWS SAM CLI to invoke your function
+1. Run AWS SAM CLI to invoke your function\.
 
-1. Hit the URL to invoke the function and initialize ptvsd code execution
+1. Send a request to the URL to invoke the function and initialize ptvsd code execution\.
 
-1. Start the debugger within VS Code
+1. Start the debugger within Microsoft Visual Studio Code\.
 
 ```
-# Remember to hit the URL before starting the debugger in VS Code
+# Remember to hit the URL before starting the debugger in Microsoft Visual Studio Code
 sam local start-api -d 5890
 
 # OR

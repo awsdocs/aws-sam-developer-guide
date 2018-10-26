@@ -55,4 +55,4 @@ This is how the process works:
    assert response == "Hello World"
    ```
 
-   This code can run without modifications against a Lambda function that's deployed\. To do so, set the `running_locally` option to `False`\. This sets up the AWS SDK to connect to AWS Lambda in the cloud\.
+   You can use this code to test deployed Lambda functions by setting `running_locally` to `False`\. This sets up the AWS SDK to connect to AWS Lambda in the AWS Cloud\.

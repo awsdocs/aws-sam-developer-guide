@@ -123,8 +123,7 @@ In the following steps, you create a \.zip file for the contents of the `/build`
    sam-app> sam package \
        --template-file template.yaml \
        --output-template-file packaged.yaml \
-       --s3-bucket bucketname  \
-       --profile default
+       --s3-bucket bucketname
    ```
 
    The command does the following:
@@ -152,8 +151,7 @@ Now that you've created the deployment package, you use it to deploy the applica
       --template-file packaged.yaml \
       --stack-name sam-app \
       --capabilities CAPABILITY_IAM \
-      --region us-east-1 \
-      --profile default
+      --region us-east-1
   ```
 
   In the command, the `--capabilities` parameter enables AWS CloudFormation to create an IAM role\. 

@@ -1,6 +1,9 @@
 # Running API Gateway Locally<a name="serverless-sam-cli-using-start-api"></a>
 
-Use the `sam local start-api` command to start a local instance of API Gateway to test HTTP request/response functionality\. This functionality features hot reloading to enable you to quickly develop and iterate over your functions\.
+Use the `sam local start-api` command to start a local instance of API Gateway that you will use to test HTTP request/response functionality\. This functionality features hot reloading to enable you to quickly develop and iterate over your functions\.
+
+**Note**  
+"Hot reloading" is when only the files that changed are refreshed without losing the state of the application\. In contrast, "live reloading" is when the entire application is refreshed, such that the state of the application is lost\.
 
 ```
 $ sam local start-api
@@ -8,7 +11,7 @@ $ sam local start-api
 
 AWS SAM automatically finds any functions within your AWS SAM template that have `Api` event sources defined\. Then, it mounts them at the defined HTTP paths\.
 
-This animation shows running API Gateway locally using Microsoft Visual Studio:
+This animation shows running API Gateway locally using Microsoft Visual Studio Code:
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/sam-start-api.gif)
 

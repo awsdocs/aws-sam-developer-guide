@@ -1,6 +1,6 @@
 # What Is the AWS Serverless Application Model \(AWS SAM\)?<a name="what-is-sam"></a>
 
-The AWS Serverless Application Model \(AWS SAM\) is an open source framework you can use to build [serverless applications](https://aws.amazon.com/serverless/) on AWS\.
+The AWS Serverless Application Model \(AWS SAM\) is an open\-source framework you can use to build [serverless applications](https://aws.amazon.com/serverless/) on AWS\.
 
 AWS SAM consists of the following components:
 + **AWS SAM template specification**\. You use this specification to define your serverless application\. It provides you with a simple and clean syntax to describe the functions, APIs, permissions, configurations, and events that make up a serverless application\. You use an AWS SAM template file to operate on a single, deployable, versioned entity that's your serverless application\. For the full AWS SAM template specification, see [AWS Serverless Application Model Specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md)\.
