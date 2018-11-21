@@ -10,7 +10,7 @@ When your functions are a part of an AWS CloudFormation stack, you can fetch log
 sam logs [OPTIONS]
 ```
 
-**Common usage:**
+**Examples:**
 
 ```
 $ sam logs -n HelloWorldFunction --stack-name mystack

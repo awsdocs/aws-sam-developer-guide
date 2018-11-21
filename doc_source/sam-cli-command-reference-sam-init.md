@@ -8,7 +8,7 @@ Initializes a serverless application with an AWS SAM template\. The template pro
 sam init [OPTIONS]
 ```
 
-**Common usage:**
+**Examples:**
 
 ```
 Initializes a new SAM project using Python 3.6 default template runtime

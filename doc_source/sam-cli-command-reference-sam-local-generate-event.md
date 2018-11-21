@@ -8,7 +8,7 @@ Generates sample payloads from different event sources, such as Amazon S3, Amazo
 sam local generate-event [OPTIONS] COMMAND [ARGS]...
 ```
 
-**Common usage:**
+**Examples:**
 
 ```
 Generate the event that S3 sends to your Lambda function when a new object is uploaded

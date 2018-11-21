@@ -8,7 +8,7 @@ Enables you to programmatically invoke your Lambda function locally by using the
 sam local start-lambda [OPTIONS]
 ```
 
-**Common usage:**
+**Examples:**
 
 ```
 SETUP

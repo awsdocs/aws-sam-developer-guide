@@ -1,6 +1,6 @@
 # Validating AWS SAM Template Files<a name="serverless-sam-cli-using-validate"></a>
 
-Validate your templates with `$ sam validate`\. Currently, this command validates that the template provided is valid JSON / YAML\. As with most AWS SAM CLI commands, it looks for a `template.[yaml|yml]` file in your current working directory by default\. You can specify a different template file/location with the `-t` or `--template` option\.
+Validate your templates with `[sam validate](sam-cli-command-reference-sam-validate.md)`\. Currently, this command validates that the template provided is valid JSON / YAML\. As with most AWS SAM CLI commands, it looks for a `template.[yaml|yml]` file in your current working directory by default\. You can specify a different template file/location with the `-t` or `--template` option\.
 
 Example:
 
