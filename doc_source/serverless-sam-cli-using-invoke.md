@@ -44,3 +44,7 @@ For example, if you save this content in a file named `env.json`, then the follo
 ```
 $ sam local invoke --env-vars env.json
 ```
+
+## Layers<a name="serverless-sam-cli-using-invoke-layers"></a>
+
+If your application includes Layers, see [Working with Layers](serverless-sam-cli-layers.md) for more information about how to debug Layers issues on your local host\.

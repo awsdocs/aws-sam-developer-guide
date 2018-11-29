@@ -15,5 +15,6 @@ sam package [OPTIONS] [ARGS]...
 
 | Option | Description | 
 | --- | --- | 
+| \-\-template\-file PATH | The path where your AWS SAM tempalte is located\. | 
 | \-\-debug | Turns on debug logging\. | 
 | \-\-help | Shows this message and exits\. | 

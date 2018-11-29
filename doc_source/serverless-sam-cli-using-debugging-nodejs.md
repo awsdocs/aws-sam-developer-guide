@@ -1,10 +1,10 @@
-# Debugging Node\.js Functions Locally<a name="serverless-sam-cli-using-debugging-nodejs"></a>
+# Step\-through Debugging Node\.js Functions Locally<a name="serverless-sam-cli-using-debugging-nodejs"></a>
 
 The following is an example that shows how to debug a Node\.js function with Microsoft Visual Studio Code:
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/sam-debug.gif)
 
-To set up Microsoft Visual Studio Code for debugging Node\.js functions with the AWS SAM CLI, use the following launch configuration\. Before you do this, set the directory where the `template.yaml` file is located as the workspace root in Microsoft Visual Studio Code:
+To set up Microsoft Visual Studio Code for step\-through debugging Node\.js functions with the AWS SAM CLI, use the following launch configuration\. Before you do this, set the directory where the `template.yaml` file is located as the workspace root in Microsoft Visual Studio Code:
 
 ```
 {
