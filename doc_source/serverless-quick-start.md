@@ -12,7 +12,7 @@ The following steps outline how to build a serverless application using AWS SAM:
 
 1. **Package**\. When you're satisfied with your Lambda function, bundle the Lambda function, AWS SAM template, and any dependencies into an AWS CloudFormation deployment package using `sam package`\.
 
-1. **Deploy**\. Deploy the application to the AWS Cloud using `sam deploy`\. At this point, you'll be able to test your application in the AWS Cloud by invoking it using standard Lambda methods\.
+1. **Deploy**\. Deploy the application to the AWS Cloud using `sam deploy`\. At this point, you're able to test your application in the AWS Cloud by invoking it using standard Lambda methods\.
 
 The example [Hello World Application](#gs-ex1) in the next section walks you through these steps in building your first serverless application using AWS SAM\.
 
@@ -89,7 +89,7 @@ Now that you have the AWS SAM application on your local machine, follow the step
 
 **Exercise: Change the message string**
 
-After successfully testing the sample application, you can experiment with making a simple modification: Change the message string that's returned\. Note that the copy of the application code being executed is in the `/.aws-sam/build/HelloWorld` directory \(not the `/hello_world` directory\)\.
+After successfully testing the sample application, you can experiment with making a simple modification: change the message string that's returned\. Note that the copy of the application code being executed is in the `/.aws-sam/build/HelloWorld` directory \(not the `/hello_world` directory\)\.
 
 1. Kill the process running `sam-app> sam local start-api`\.
 
@@ -162,7 +162,7 @@ Now that you've created the deployment package, you use it to deploy the applica
 
 1. Choose the AWS CloudFormation stack that you created in the preceding step from the list shown\.
 
-1. Under **Resources**, copy the URL of the API Gateway endpoint URL\.
+1. Under **Outputs**, copy the URL of the API Gateway endpoint URL\.
 
 1. Open a browser, paste the endpoint URL, and choose **Enter**\.
 

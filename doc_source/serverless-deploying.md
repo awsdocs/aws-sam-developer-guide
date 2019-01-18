@@ -25,6 +25,9 @@ The following `sam deploy` command takes the packaged AWS SAM template file that
 $ sam deploy --template-file ./packaged.yaml --stack-name mystack --capabilities CAPABILITY_IAM
 ```
 
+**Note**  
+To deploy an application that contains one or more nested applications, you must include the `CAPABILITY_AUTO_EXPAND` capability in the `sam deploy` command\.
+
 ## Publishing Serverless Applications<a name="serverless-deploying-publishing"></a>
 
 The AWS Serverless Application Repository is a service that hosts serverless applications that are built using AWS SAM\. If you want to share serverless applications with others, you can publish them in the AWS Serverless Application Repository\. You can also search, browse, and deploy serverless applications that have been published by others\. For more information, see [ What Is the AWS Serverless Application Repository?](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/what-is-serverlessrepo.html)\.

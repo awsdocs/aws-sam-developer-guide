@@ -1,7 +1,7 @@
 # AWS Serverless Application Model Developer Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -20,6 +20,8 @@ Amazon's trademarks and trade dress may not be used in
    + [Declaring Serverless Resources](serverless-sam-template.md)
    + [Declaring AWS CloudFormation Resources](appendix-appendix-sam-templates-and-cf-templates.md)
    + [Nested Applications](serverless-sam-template-nested-applications.md)
+   + [Publishing Applications Using AWS SAM CLI](serverless-sam-template-publishing-applications.md)
+      + [AWS SAM Template Metadata Section Properties](serverless-sam-template-publishing-applications-metadata-properties.md)
 + [Testing and Debugging Serverless Applications](serverless-test-and-debug.md)
    + [Building Applications with Dependencies](serverless-sam-cli-using-build.md)
    + [Invoking Functions Locally](serverless-sam-cli-using-invoke.md)
@@ -41,14 +43,13 @@ Amazon's trademarks and trade dress may not be used in
    + [Process Amazon S3 Events](serverless-example-s3.md)
 + [AWS SAM Reference](serverless-sam-reference.md)
    + [Installing the AWS SAM CLI](serverless-sam-cli-install.md)
-      + [Install the AWS SAM CLI Using Pip](serverless-sam-cli-install-using-pip.md)
-         + [Adjusting Path on Linux](serverless-sam-cli-install-linux-path.md)
-         + [Adjusting Path on Windows](serverless-sam-cli-install-windows-path.md)
-         + [Adjusting Path on macOS](serverless-sam-cli-install-mac-path.md)
-      + [Installing AWS SAM CLI on Linux](serverless-sam-cli-install-linux.md)
-      + [Installing AWS SAM CLI on Windows](serverless-sam-cli-install-windows.md)
-      + [Installing AWS SAM CLI on macOS](serverless-sam-cli-install-mac.md)
-      + [Advanced Installations](serverless-sam-cli-install-advanced.md)
+      + [Installing the AWS SAM CLI on Linux](serverless-sam-cli-install-linux.md)
+      + [Installing the AWS SAM CLI on Windows](serverless-sam-cli-install-windows.md)
+      + [Installing the AWS SAM CLI on macOS](serverless-sam-cli-install-mac.md)
+      + [Additional Installation Topics](serverless-sam-cli-install-additional.md)
+         + [Adjusting Your Path on Linux](serverless-sam-cli-install-linux-path.md)
+         + [Adjusting Your Path on Windows](serverless-sam-cli-install-windows-path.md)
+         + [Adjusting Your Path on macOS](serverless-sam-cli-install-mac-path.md)
    + [AWS SAM CLI Command Reference](serverless-sam-cli-command-reference.md)
       + [sam build](sam-cli-command-reference-sam-build.md)
       + [sam deploy](sam-cli-command-reference-sam-deploy.md)
@@ -59,5 +60,6 @@ Amazon's trademarks and trade dress may not be used in
       + [sam local start-lambda](sam-cli-command-reference-sam-local-start-lambda.md)
       + [sam logs](sam-cli-command-reference-sam-logs.md)
       + [sam package](sam-cli-command-reference-sam-package.md)
+      + [sam publish](sam-cli-command-reference-sam-publish.md)
       + [sam validate](sam-cli-command-reference-sam-validate.md)
 + [Document History for AWS Serverless Application Model](doc-history.md)

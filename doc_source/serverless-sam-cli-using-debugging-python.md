@@ -77,7 +77,7 @@ If you opened Microsoft Visual Studio Code in a different location other than `p
 
 After the Microsoft Visual Studio Code debugger configuration is complete, make sure to add a breakpoint anywhere you want to in `hello_world/build/app.py`, and then proceed as follows:
 
-1. Run AWS SAM CLI to invoke your function\.
+1. Run the AWS SAM CLI to invoke your function\.
 
 1. Send a request to the URL to invoke the function and initialize ptvsd code execution\.
 

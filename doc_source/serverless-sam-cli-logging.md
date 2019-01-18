@@ -31,7 +31,7 @@ sam logs -n HelloWorldFunction --stack-name mystack --tail
 
 ## Viewing Logs for a Specific Time Range<a name="serverless-logging-time-range"></a>
 
-You can view logs for specific time range by using the `-s` and `-e` options:
+You can view logs for a specific time range by using the `-s` and `-e` options:
 
 ```
 sam logs -n HelloWorldFunction --stack-name mystack -s '10min ago' -e '2min ago'
@@ -45,7 +45,7 @@ Use the `--filter` option to quickly find logs that match terms, phrases, or val
 sam logs -n HelloWorldFunction --stack-name mystack --filter "error"
 ```
 
-In the output, AWS SAM CLI underlines all occurrences of the word "error" so you can easily locate the filter keyword within the log output\.
+In the output, the AWS SAM CLI underlines all occurrences of the word "error" so you can easily locate the filter keyword within the log output\.
 
 ## Error Highlighting<a name="serverless-logging-error-highlight"></a>
 

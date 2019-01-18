@@ -64,7 +64,7 @@ Now that you've created the deployment package, you use it to deploy the applica
   ```
   aws_sam_ocr> sam deploy \
       --template-file packaged.yaml \
-      --stack-name aws_sam_ocr \
+      --stack-name aws-sam-ocr \
       --capabilities CAPABILITY_IAM \
       --region us-east-1
   ```

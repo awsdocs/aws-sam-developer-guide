@@ -1,6 +1,6 @@
-# Adjusting Path on Windows<a name="serverless-sam-cli-install-windows-path"></a>
+# Adjusting Your Path on Windows<a name="serverless-sam-cli-install-windows-path"></a>
 
-This section describes how you can adjust your path, which is required as part of installing AWS SAM CLI using pip described in [Installing the AWS SAM CLI](serverless-sam-cli-install.md)\.
+This section describes how you can adjust your path\. You have to do this as part of installing the AWS SAM CLI by using pip, as described in [Installing Using Pip](serverless-sam-cli-install-additional.md#serverless-sam-cli-install-using-pip)\.
 
 On Windows systems, the command `py -m site --user-site` typically prints `%APPDATA%\Roaming\Python<VERSION>\site-packages`, so you need to remove the last `\site-packages` folder, and replace it with the `\Scripts` folder\.
 
