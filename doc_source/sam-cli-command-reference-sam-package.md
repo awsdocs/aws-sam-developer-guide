@@ -20,6 +20,6 @@ sam package [OPTIONS] [ARGS]...
 | --- | --- | 
 | \-\-template\-file PATH | The path where your AWS SAM template is located\. | 
 | \-\-s3\-bucket BUCKET | The name of the S3 bucket where this command uploads the artifacts that are referenced in your template\. | 
-| \-\-ouput\-template\-file PATH | The path to the file where the command writes the packaged template\. If you don't specify a path, the command writes the template to the standard output\. | 
+| \-\-output\-template\-file PATH | The path to the file where the command writes the packaged template\. If you don't specify a path, the command writes the template to the standard output\. | 
 | \-\-debug | Turns on debug logging\. | 
 | \-\-help | Shows this message and exits\. | 
