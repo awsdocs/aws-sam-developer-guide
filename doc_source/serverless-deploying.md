@@ -38,3 +38,32 @@ You can use AWS SAM with a number of other AWS services to automate the deployme
 
 **Topics**
 + [Gradual Code Deployment](automating-updates-to-serverless-apps.md)
+
+## Cleaning up the bucket
+
+In the case you are using S3 for the code, you can safely remove your objects after creating the functions because Lambda makes a copy. One way to do so is by using a Lifecycle rule.
+
+Using CloudFormation
+```yml
+Outputs:
+  BucketName:
+    Value: !Ref CodeBucket
+    Description: The name of your code bucket.
+
+Resources:
+  CodeBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      # BucketName: somebucketname # You can also provide the name explicitly.
+      LifecycleConfiguration:
+        Rules:
+          - ExpirationInDays: 1
+            Status: Enabled
+```
+
+Using the CLI
+```bash
+aws s3 mb s3://{bucketName}
+aws s3api put-bucket-lifecycle-configuration --bucket {bucketName} --lifecycle-configuration '{"Rules": [{"Expiration": {"Days": 1}, "ID": "Expire old objects", "Prefix": "", "Status": "Enabled"}]}
+'
+```
