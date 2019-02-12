@@ -16,8 +16,8 @@ Verify that Docker is working, and that you can run Docker commands from the AWS
 ## Install the AWS SAM CLI Using the MSI File<a name="serverless-sam-cli-install-windows-msi"></a>
 
 Install the MSI file from one of these locations:
-+ [ 64\-bit](https://github.com/awslabs/aws-sam-cli/releases/download/v0.7.0/AWS_SAM_CLI_64_PY3.msi)
-+ [ 32\-bit](https://github.com/awslabs/aws-sam-cli/releases/download/v0.7.0/AWS_SAM_CLI_32_PY3.msi)
++ [ 64\-bit](https://github.com/awslabs/aws-sam-cli/releases/download/v0.11.0/AWS_SAM_CLI_64_PY3.msi)
++ [ 32\-bit](https://github.com/awslabs/aws-sam-cli/releases/download/v0.11.0/AWS_SAM_CLI_32_PY3.msi)
 
 After completing the installation by using one of these links, open a new command prompt or PowerShell prompt\. You should be able to invoke sam from the command line\.
 
@@ -28,3 +28,15 @@ sam --version
 ## Install the AWS SAM CLI Using Pip<a name="serverless-sam-cli-install-windows-pip"></a>
 
 An alternate method of installing the AWS SAM CLI is using pip\. For details on how to do this, see [Installing Using Pip](serverless-sam-cli-install-additional.md#serverless-sam-cli-install-using-pip)\.
+
+## Troubleshooting<a name="serverless-sam-cli-install-troubleshooting-windows"></a>
+
+**Python Not Installed**
+
+If you get an error similar to the following, then you may not have Python installed\.
+
+```
+'""' is not recognized as an internal or external command, operable program or batch file.
+```
+
+Make sure that you install Python, and try again\. To install Python for Windows see [Python Releases for Windows](https://www.python.org/downloads/windows/)\.

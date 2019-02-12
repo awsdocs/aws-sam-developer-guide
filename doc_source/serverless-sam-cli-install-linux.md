@@ -6,7 +6,7 @@ To install the AWS SAM CLI on Linux, first make sure that you've installed the [
 
 You need to have Docker installed and running to be able to run serverless projects and functions locally with the AWS SAM CLI\. The AWS SAM CLI uses the `DOCKER_HOST` environment variable to contact the Docker daemon\.
 
-To install Docker on Linux, see [About Docker CE](https://docs.docker.com/install/)\. In the left\-hand column, choose **Linux**, choose your Linux distribution \(for example, **CentOS**, **Debian**, or **Ubunto**\), and follow the installation instructions\.
+To install Docker on Linux, see [About Docker CE](https://docs.docker.com/install/)\. In the left\-hand column, choose **Linux**, choose your Linux distribution \(for example, **CentOS**, **Debian**, or **Ubuntu**\), and follow the installation instructions\.
 
 Verify that Docker is working, and that you can run Docker commands from the AWS SAM CLI \(for example, `docker ps`\)\. You don't need to install/fetch/pull any containers because the AWS SAM CLI does it automatically, as required\.
 

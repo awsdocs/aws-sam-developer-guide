@@ -35,9 +35,9 @@ The AWS Serverless Application Repository is a service that hosts serverless app
 ## Automating Deployments<a name="serverless-deploying-automated"></a>
 
 You can use AWS SAM with a number of other AWS services to automate the deployment process of your serverless application\.
-+ **AWS CodeBuild**: You use AWS CodeBuild to build, locally test, and package your serverless application\. For more information, see [What Is AWS CodeBuild?](https://docs.aws.amazon.com/codebuild/latest/userguide/)\.
-+ **AWS CodeDeploy**: You use [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to gradually deploy updates to your serverless applications\. For more information on how to do this, see [Gradual Code Deployment](automating-updates-to-serverless-apps.md)\.
-+ **AWS CodePipeline**: You use AWS CodePipeline to model, visualize, and automate the steps that are required to release your serverless application\. For more information, see [What Is AWS CodePipeline?](https://docs.aws.amazon.com/codepipeline/latest/APIReference/)\.
++ **CodeBuild**: You use CodeBuild to build, locally test, and package your serverless application\. For more information, see [What Is CodeBuild?](https://docs.aws.amazon.com/codebuild/latest/userguide/)\.
++ **CodeDeploy**: You use [CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to gradually deploy updates to your serverless applications\. For more information on how to do this, see [Gradual Code Deployment](automating-updates-to-serverless-apps.md)\.
++ **CodePipeline**: You use CodePipeline to model, visualize, and automate the steps that are required to release your serverless application\. For more information, see [What Is CodePipeline?](https://docs.aws.amazon.com/codepipeline/latest/APIReference/)\.
 
 **Topics**
 + [Gradual Code Deployment](automating-updates-to-serverless-apps.md)

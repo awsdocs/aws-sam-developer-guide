@@ -52,4 +52,4 @@ The following sections describe the types of AWS resources that can be declared 
 + [Declaring Serverless Resources](serverless-sam-template.md)
 + [Declaring AWS CloudFormation Resources](appendix-appendix-sam-templates-and-cf-templates.md)
 + [Nested Applications](serverless-sam-template-nested-applications.md)
-+ [Publishing Applications Using AWS SAM CLI](serverless-sam-template-publishing-applications.md)
++ [Publishing Applications Using the AWS SAM CLI](serverless-sam-template-publishing-applications.md)

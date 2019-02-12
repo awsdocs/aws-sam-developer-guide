@@ -20,7 +20,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Declaring Serverless Resources](serverless-sam-template.md)
    + [Declaring AWS CloudFormation Resources](appendix-appendix-sam-templates-and-cf-templates.md)
    + [Nested Applications](serverless-sam-template-nested-applications.md)
-   + [Publishing Applications Using AWS SAM CLI](serverless-sam-template-publishing-applications.md)
+   + [Publishing Applications Using the AWS SAM CLI](serverless-sam-template-publishing-applications.md)
       + [AWS SAM Template Metadata Section Properties](serverless-sam-template-publishing-applications-metadata-properties.md)
 + [Testing and Debugging Serverless Applications](serverless-test-and-debug.md)
    + [Building Applications with Dependencies](serverless-sam-cli-using-build.md)

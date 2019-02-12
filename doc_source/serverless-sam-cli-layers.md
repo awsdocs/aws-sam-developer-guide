@@ -47,7 +47,7 @@ ServerlessFunction:
   Type: AWS::Serverless::Function
   Properties:
     CodeUri: .
-    Hanlder: my_hanlder
+    Handler: my_handler
     Runtime: Python3.7
     Layers:
         - arn:aws:lambda:us-west-2:111111111111:layer:myLayer:1

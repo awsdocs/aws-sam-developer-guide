@@ -62,7 +62,7 @@ For this exercise, the application code is written in Python, and you specify th
    1. Install the dependencies by running the following `sam` command\. The dependencies for the Hello World application code are described in the `/hello_world/requirements.txt` file\. 
 
       ```
-      sam-app> sam build --use-container
+      sam build --use-container
       ```
 
       Verify that the command created the `/.aws-sam/build/HelloWorld` directory and copied the dependencies to it\. 
@@ -78,7 +78,7 @@ Now that you have the AWS SAM application on your local machine, follow the step
 1. Start the API Gateway endpoint locally\. You must run the following command from the directory that contains the `template.yaml` file\.
 
    ```
-   sam-app> sam local start-api
+   sam local start-api
    ```
 
    The command returns an API Gateway endpoint, which you can send requests to for local testing\.
@@ -91,11 +91,13 @@ Now that you have the AWS SAM application on your local machine, follow the step
 
 After successfully testing the sample application, you can experiment with making a simple modification: change the message string that's returned\. Note that the copy of the application code being executed is in the `/.aws-sam/build/HelloWorld` directory \(not the `/hello_world` directory\)\.
 
-1. Kill the process running `sam-app> sam local start-api`\.
+1. Kill the process running `sam local start-api`\.
 
 1. Edit the `/hello_world/app.py` file to change the message string from `'hello world'` to `'Hello World!'`\.
 
-1.  Re\-build your function by running `sam-app> sam build --use-container`\.
+1. Rebuild your function by running `sam build --use-container`\.
+
+1. Restart the API Gateway endpoint locally by running `sam local start-api`\.
 
 1. Reload the test URL in your browser and observe the new string\.
 
@@ -111,13 +113,13 @@ In the following steps, you create a \.zip file for the contents of the `/build`
 1. Create an S3 bucket in the location where you want to save the packaged code\. If you want to use an existing S3 bucket, skip this step\.
 
    ```
-   sam-app> aws s3 mb s3://bucketname
+   aws s3 mb s3://bucketname
    ```
 
 1. Create the Lambda function deployment package by running the following `package` AWS SAM CLI command at the command prompt\. 
 
    ```
-   sam-app> sam package \
+   sam package \
        --output-template-file packaged.yaml \
        --s3-bucket bucketname
    ```
@@ -143,7 +145,7 @@ Now that you've created the deployment package, you use it to deploy the applica
 + In the AWS SAM CLI, use the `deploy` command to deploy all of the resources that you defined in the template\. 
 
   ```
-  sam-app> sam deploy \
+  sam deploy \
       --template-file packaged.yaml \
       --stack-name sam-app \
       --capabilities CAPABILITY_IAM \
