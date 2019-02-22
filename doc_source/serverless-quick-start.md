@@ -44,10 +44,10 @@ In this section, you download the sample application, which consists of an AWS S
    sam init --runtime python3.6 
    ```
 
-1. Review the contents of the directory that the command created \(`/sam-app`\): 
+1. Review the contents of the directory that the command created \(`sam-app/`\): 
    + `template.yaml` – Defines two AWS resources that the Hello World application needs: a Lambda function and an API Gateway endpoint that supports a GET operation\. The template also defines mapping between the two resources\.
    + Content related to the Hello World application code:
-     + `/hello_world` directory – Contains the application code, which returns `hello world` when you run it\.
+     + `hello_world/` directory – Contains the application code, which returns `hello world` when you run it\.
 **Note**  
 For this exercise, the application code is written in Python, and you specify the runtime in the `init` command\. AWS Lambda supports additional languages for creating application code\. If you specify another supported runtime, the `init` command provides the Hello World code in the specified language\. If you choose a different runtime, you need to use different instructions in the next step to set up a directory and download dependencies\. The `init` command downloads a `ReadMe` file that provides this information\. For information about supported runtimes, see [Lambda Execution Environment and Available Libraries](https://docs.aws.amazon.com/lambda/latest/dg/current-supported-versions.html)\.
 
@@ -59,15 +59,15 @@ For this exercise, the application code is written in Python, and you specify th
       cd sam-app
       ```
 
-   1. Install the dependencies by running the following `sam` command\. The dependencies for the Hello World application code are described in the `/hello_world/requirements.txt` file\. 
+   1. Install the dependencies by running the following `sam` command\. The dependencies for the Hello World application code are described in the `hello_world/requirements.txt` file\. 
 
       ```
       sam build --use-container
       ```
 
-      Verify that the command created the `/.aws-sam/build/HelloWorld` directory and copied the dependencies to it\. 
+      Verify that the command created the `.aws-sam/build/HelloWorld/` directory and copied the dependencies to it\. 
 
-   The `/.aws-sam/build/HelloWorld` directory now has the application code and dependencies that are needed to execute the Lambda function\.
+   The `.aws-sam/build/HelloWorld/` directory now has the application code and dependencies that are needed to execute the Lambda function\.
 
 ### Test the Application Locally<a name="gs-ex1-test-locally"></a>
 
@@ -89,11 +89,11 @@ Now that you have the AWS SAM application on your local machine, follow the step
 
 **Exercise: Change the message string**
 
-After successfully testing the sample application, you can experiment with making a simple modification: change the message string that's returned\. Note that the copy of the application code being executed is in the `/.aws-sam/build/HelloWorld` directory \(not the `/hello_world` directory\)\.
+After successfully testing the sample application, you can experiment with making a simple modification: change the message string that's returned\. Note that the copy of the application code being executed is in the `.aws-sam/build/HelloWorld/` directory \(not the `hello_world/` directory\)\.
 
 1. Kill the process running `sam local start-api`\.
 
-1. Edit the `/hello_world/app.py` file to change the message string from `'hello world'` to `'Hello World!'`\.
+1. Edit the `hello_world/app.py` file to change the message string from `'hello world'` to `'Hello World!'`\.
 
 1. Rebuild your function by running `sam build --use-container`\.
 
@@ -125,7 +125,7 @@ In the following steps, you create a \.zip file for the contents of the `/build`
    ```
 
    The command does the following:
-   + Zips the contents of the `/.aws-sam/build/HelloWorld/` directory\. This directory was created by `sam build` and where your dependencies were installed\.
+   + Zips the contents of the `.aws-sam/build/HelloWorld/` directory\. This directory was created by `sam build` and where your dependencies were installed\.
    + Outputs a new template file, called `packaged.yaml`, which you use in the next step to deploy the application to the AWS Cloud\. The `packaged.yaml` template file is similar to the original template file \(`template.yaml`\), but has one key difference—the `CodeUri` property points to the Amazon S3 bucket and object that contains the Lambda function code and dependencies\. The following snippet from an example `packaged.yaml` template file shows this property: 
 
      ```

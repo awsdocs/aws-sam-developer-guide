@@ -20,7 +20,7 @@ AWS::Serverless::API
     DefinitionUri: swagger.yml
 ```
 
-For a list of properties, see [AWS::Serverless::Api](https://github.com/awslabs/serverless-application-model/blob/develop/versions/2016-10-31.md#awsserverlessapi) in the AWS SAM GitHub repository\.
+For a list of properties, see [AWS::Serverless::Api](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi) in the AWS SAM GitHub repository\.
 
 ## AWS::Serverless::Application<a name="serverless-sam-template-application"></a>
 
@@ -90,7 +90,7 @@ AWS::Serverless::Function
     DepartmentNameTag: ThumbnailDepartment
 ```
 
-For a list of properties, see [AWS::Serverless::Function](https://github.com/awslabs/serverless-application-model/blob/develop/versions/2016-10-31.md#awsserverlessfunction) in the AWS SAM GitHub repository\.
+For a list of properties, see [AWS::Serverless::Function](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction) in the AWS SAM GitHub repository\.
 
 ## AWS::Serverless::LayerVersion<a name="serverless-sam-template-layerversion"></a>
 
@@ -128,6 +128,6 @@ AWS::Serverless::SimpleTable
       WriteCapacityUnits: 5
 ```
 
-For a list of properties, see [AWS::Serverless::SimpleTable](https://github.com/awslabs/serverless-application-model/blob/develop/versions/2016-10-31.md#awsserverlesssimpletable) in the AWS SAM GitHub repository\.
+For a list of properties, see [AWS::Serverless::SimpleTable](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable) in the AWS SAM GitHub repository\.
 
-For reference documentation for SAM template resources, see [AWS SAM Specification](https://github.com/awslabs/serverless-application-model/blob/develop/versions/2016-10-31.md) on GitHub\.
+For reference documentation for SAM template resources, see [AWS SAM Specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md) on GitHub\.
