@@ -1,6 +1,6 @@
 # Installing the AWS SAM CLI on macOS<a name="serverless-sam-cli-install-mac"></a>
 
-To install the AWS SAM CLI on Linux, first make sure that you've installed the [AWS Command Line Interface \(AWS CLI\)](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) and [Docker for macOS](#serverless-sam-cli-install-mac-docker)\.
+To install the AWS SAM CLI on macOS, first make sure that you've installed the [AWS Command Line Interface \(AWS CLI\)](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) and [Docker for macOS](#serverless-sam-cli-install-mac-docker)\.
 
 ## Docker for macOS<a name="serverless-sam-cli-install-mac-docker"></a>
 
