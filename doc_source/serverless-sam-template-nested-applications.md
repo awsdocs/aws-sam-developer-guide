@@ -2,7 +2,7 @@
 
 A serverless application can include one or more **nested applications**\. You can deploy a nested application as a stand\-alone artifact or as a component of a larger application\. 
 
-As serverless architectures grow, common patterns emerge in which the same components are defined in multiple application templates\. You can now separate out common patterns as dedicated applications, and then nest them as part of new or existing application templates\. With nested applications, you can stay more focused on the business logic unique to your application\.
+As serverless architectures grow, common patterns emerge in which the same components are defined in multiple application templates\. You can now separate out common patterns as dedicated applications, and then nest them as part of new or existing application templates\. With nested applications, you can stay more focused on the business logic that's unique to your application\.
 
 To define a nested application in your serverless application, use the [AWS::Serverless::Application](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template.html#serverless-sam-template-application) resource type\.
 
@@ -83,5 +83,5 @@ If there are no parameter settings, you can omit the `Parameters:` section of th
 You can deploy your nested application by using the AWS SAM CLI command `sam deploy`\. For more details, see [Deploying Serverless Applications](serverless-deploying.md)\.
 
 **Note**  
-When you deploy an application that contains nested applications, you must acknowledge that\. You do this by passing CAPABILITY\_AUTO\_EXPAND to the [CreateCloudFormationChangeSet API](https://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet) or using the [https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/create-cloud-formation-change-set.html](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/create-cloud-formation-change-set.html) AWS CLI command\.  
+When you deploy an application that contains nested applications, you must acknowledge that\. You do this by passing CAPABILITY\_AUTO\_EXPAND to the [CreateCloudFormationChangeSet API](https://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet),git status or using the [https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/create-cloud-formation-change-set.html](https://docs.aws.amazon.com/cli/latest/reference/serverlessrepo/create-cloud-formation-change-set.html) AWS CLI command\.  
 For more information about acknowledging nested applications, see [Acknowledging IAM Roles, Resource Policies, and Nested Applications when Deploying Applications](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/acknowledging-application-capabilities.html) in the *AWS Serverless Application Repository Developer Guide*\.

@@ -1,6 +1,6 @@
-# AWS SAM Template Basics<a name="serverless-sam-template-basics"></a>
+# AWS SAM Template Concepts<a name="serverless-sam-template-basics"></a>
 
-When you create a serverless application using AWS SAM, your main objective is to construct an AWS SAM template file that represents the architecture of your serverless application\.
+When you create a serverless application by using AWS SAM, your main objective is to construct an AWS SAM template file that represents the architecture of your serverless application\.
 
 The AWS SAM template file is a YAML or JSON configuration file that adheres to the open source [AWS Serverless Application Model specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md)\. You use the template to declare all of the AWS resources that comprise your serverless application\.
 
@@ -9,6 +9,14 @@ AWS SAM templates are an extension of AWS CloudFormation templates\. That is, an
 For an introduction to AWS CloudFormation templates, see [Learn Template Basics](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/gettingstarted.templatebasics.html)\.
 
 For information about the AWS SAM template specification, see [AWS Serverless Application Model Specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md)\.
+
+The following sections describe the types of AWS resources that can be declared in AWS SAM template files\.
+
+**Topics**
++ [Declaring Serverless Resources](serverless-sam-template.md)
++ [Declaring AWS CloudFormation Resources](appendix-appendix-sam-templates-and-cf-templates.md)
++ [Nested Applications](serverless-sam-template-nested-applications.md)
++ [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md)
 
 **Example**
 
@@ -45,11 +53,3 @@ Resources:
                 Path: /thumbnail
                 Method: GET
 ```
-
-The following sections describe the types of AWS resources that can be declared in AWS SAM template files\.
-
-**Topics**
-+ [Declaring Serverless Resources](serverless-sam-template.md)
-+ [Declaring AWS CloudFormation Resources](appendix-appendix-sam-templates-and-cf-templates.md)
-+ [Nested Applications](serverless-sam-template-nested-applications.md)
-+ [Publishing Applications Using the AWS SAM CLI](serverless-sam-template-publishing-applications.md)

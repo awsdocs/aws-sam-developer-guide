@@ -57,6 +57,6 @@ Here is a Python example:
 | \-\-skip\-pull\-image | Specifies whether the CLI should skip pulling down the latest Docker image for the Lambda runtime\. | 
 | \-\-force\-image\-build | Specify whether the CLI should rebuild the image used for invoking functions with layers\. | 
 | \-\-profile TEXT | The AWS credentials profile to use\. | 
-| \-\-region TEXT | The AWS Region to use\. | 
+| \-\-region TEXT | Sets the AWS Region of the service \(for example, us\-east\-1\)\. | 
 | \-\-debug | Turns on debug logging\. | 
 | \-\-help | Shows this message and exits\. | 
