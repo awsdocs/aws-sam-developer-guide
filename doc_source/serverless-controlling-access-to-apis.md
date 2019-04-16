@@ -3,7 +3,7 @@
 You can use AWS SAM to control who can access your API Gateway APIs by enabling authorization within your AWS SAM template\.
 
 AWS SAM supports a few mechanisms for controlling access to your API Gateway APIs:
-+ **Lambda authorizers**\. A Lambda authorizer \(formerly known as a *custom authorizer*\) is a Lambda function that you provide to control access to your API\. When your API is called, this Lambda function is invoked with a request context and an authorization token that are provided by the client application\. The Lambda function returns a policy document that specifies the operations that the caller is authorized to perform, if any\. For more information about Lambda authorizers, see [Use API Gateway Lambda Authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html) in the *API Gateway Developer Guide*\. For examples of Lambda authorizers, see the [Defining Lambda Token Authorizers](#serverless-controlling-access-to-apis-lambda-token-authorizer) and [Defining Lambda Token Authorizers](#serverless-controlling-access-to-apis-lambda-request-authorizer) sections in this topic\.
++ **Lambda authorizers**\. A Lambda authorizer \(formerly known as a *custom authorizer*\) is a Lambda function that you provide to control access to your API\. When your API is called, this Lambda function is invoked with a request context or an authorization token that are provided by the client application\. The Lambda function returns a policy document that specifies the operations that the caller is authorized to perform, if any\. For more information about Lambda authorizers, see [Use API Gateway Lambda Authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html) in the *API Gateway Developer Guide*\. For examples of Lambda authorizers, see the [Defining Lambda Token Authorizers](#serverless-controlling-access-to-apis-lambda-token-authorizer) and [Defining Lambda Request Authorizers](#serverless-controlling-access-to-apis-lambda-request-authorizer) sections in this topic\.
 
    
 + **Amazon Cognito user pools**\. Amazon Cognito user pools are user directories in Amazon Cognito\. A client of your API must first sign a user in to the user pool and obtain an identity or access token for the user\. Then your API is called with one of the returned tokens\. The API call succeeds only if the required token is valid\. For more information about Amazon Cognito user pools, see [Control Access to REST API Using Amazon Cognito User Pools as Authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html) in the *API Gateway Developer Guide*\. For an example of Amazon Cognito user pools, see the [Defining Cognito User Pools](#serverless-controlling-access-to-apis-cognito-user-pool) section\.
@@ -48,7 +48,7 @@ Resources:
             Path: /
             Method: get
 
-MyAuthFunction:
+  MyAuthFunction:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: ./src

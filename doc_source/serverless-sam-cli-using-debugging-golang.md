@@ -1,4 +1,4 @@
-# Step\-through Debugging Golang Functions Locally<a name="serverless-sam-cli-using-debugging-golang"></a>
+# Step\-Through Debugging Golang Functions Locally<a name="serverless-sam-cli-using-debugging-golang"></a>
 
 Golang function step\-through debugging is slightly different when compared to Node\.js, Java, and Python\. We require [delve](https://github.com/derekparker/delve) as the debugger, and wrap your function with it at runtime\. The debugger is run in headless mode, listening on the debug port\.
 

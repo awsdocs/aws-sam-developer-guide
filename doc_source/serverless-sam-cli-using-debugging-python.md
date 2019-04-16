@@ -1,4 +1,4 @@
-# Step\-through Debugging Python Functions Locally<a name="serverless-sam-cli-using-debugging-python"></a>
+# Step\-Through Debugging Python Functions Locally<a name="serverless-sam-cli-using-debugging-python"></a>
 
 Python step\-through debugging requires you to enable remote debugging in your Lambda function code\. This is a two\-step process:
 
@@ -69,7 +69,7 @@ To set up Microsoft Visual Studio Code for debugging with the AWS SAM CLI, use t
  }
 ```
 
-For Microsoft Visual Studio Code, the property `localRoot` under the `pathMappings` key is important\. There are two aspects that help explain why this is set up this way:
+For Microsoft Visual Studio Code, the property `localRoot` under the `pathMappings` key is important\. There are two reasons that help explain this setup:
 + **localRoot**: This path is to be mounted in the Docker container, and needs to have both the application and dependencies at the root level\.
 + **workspaceFolder**: This path is the absolute path where the Microsoft Visual Studio Code instance was opened\.
 
