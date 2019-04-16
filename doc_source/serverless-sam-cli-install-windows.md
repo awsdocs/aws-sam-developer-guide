@@ -16,8 +16,8 @@ Verify that Docker is working, and that you can run Docker commands from the AWS
 ## Install the AWS SAM CLI Using the MSI File<a name="serverless-sam-cli-install-windows-msi"></a>
 
 Install the MSI file from one of these locations:
-+ [ 64\-bit](https://github.com/awslabs/aws-sam-cli/releases/download/v0.14.2/AWS_SAM_CLI_64_PY3.msi)
-+ [ 32\-bit](https://github.com/awslabs/aws-sam-cli/releases/download/v0.14.2/AWS_SAM_CLI_32_PY3.msi)
++ [ 64\-bit](https://github.com/awslabs/aws-sam-cli/releases/download/v0.15.0/AWS_SAM_CLI_64_PY3.msi)
++ [ 32\-bit](https://github.com/awslabs/aws-sam-cli/releases/download/v0.15.0/AWS_SAM_CLI_32_PY3.msi)
 
 After completing the installation by using one of these links, open a new command prompt or PowerShell prompt\. You should be able to invoke sam from the command line\.
 
