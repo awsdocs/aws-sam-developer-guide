@@ -19,7 +19,6 @@ Follow these steps to install the AWS SAM CLI by using Homebrew:
 
 1. To install the Homebrew package manager, follow the instructions on the [ Homebrew website](http://brew.sh/) \.
 
-
 1. Add a brew tap from [GitHub](https://github.com/aws/homebrew-tap)\.
 
    ```
