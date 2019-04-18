@@ -13,7 +13,7 @@ Resources:
     Type: 'AWS::Serverless::Function'
     
     Properties:
-      Runtime: nodejs6.10
+      Runtime: nodejs8.10
       .... 
     
   MyBucket:
