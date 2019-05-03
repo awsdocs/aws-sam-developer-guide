@@ -28,25 +28,25 @@ Before you publish an application to the AWS Serverless Application Repository, 
 
   1. Choose the **Bucket Policy** button\.
 
-  1. Paste the example policy statement below\. Make sure to substitute your bucket name in the Resource property value\.
+  1. Paste the following policy statement into the **Bucket policy editor**\. Make sure to substitute your bucket name in the Resource property value\.
+
+     ```
+      1. {
+      2.     "Version": "2012-10-17",
+      3.     "Statement": [
+      4.         {
+      5.             "Effect": "Allow",
+      6.             "Principal": {
+      7.                 "Service":  "serverlessrepo.amazonaws.com"
+      8.             },
+      9.             "Action": "s3:GetObject",
+     10.             "Resource": "arn:aws:s3:::<your-bucket-name>/*"
+     11.         }
+     12.     ]
+     13. }
+     ```
 
   1. Choose the **Save** button\.
-
-  ```
-   1. {
-   2.     "Version": "2012-10-17",
-   3.     "Statement": [
-   4.         {
-   5.             "Effect": "Allow",
-   6.             "Principal": {
-   7.                 "Service":  "serverlessrepo.amazonaws.com"
-   8.             },
-   9.             "Action": "s3:GetObject",
-  10.             "Resource": "arn:aws:s3:::<your-bucket-name>/*"
-  11.         }
-  12.     ]
-  13. }
-  ```
 
 ## Step 1: Add a Metadata Section to the AWS SAM Template<a name="serverless-sam-template-publishing-applications-step1"></a>
 

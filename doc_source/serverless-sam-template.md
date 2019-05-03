@@ -14,7 +14,7 @@ AWS SAM defines the following resources that are specifically designed for serve
 This resource type describes an API Gateway resource\. It's useful for advanced use cases where you want full control and flexibility when you configure your APIs\. For most scenarios, we recommend that you create APIs by specifying this resource type as an event source of your `AWS::Serverless::Function` resource, as shown in the following example\.
 
 ```
-AWS::Serverless::API
+AWS::Serverless::Api
   Properties:
     StageName: prod
     DefinitionUri: swagger.yml
