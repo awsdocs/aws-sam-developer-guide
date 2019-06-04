@@ -17,7 +17,7 @@ You must have Docker installed and working to be able to run serverless projects
 1\. Install Docker\.
 
 Docker Desktop supports the most recent Windows operating system\. For legacy versions of Windows, the Docker Toolbox is available\. Choose your version of Windows for the correct Docker installation steps:
-+ To install Docker for Windows 10, see [Docker Desktop for Windows](https://www.docker.com/docker-windows)\.
++ To install Docker for Windows 10, see [Install Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/)\.
 + To install Docker for older versions of Windows, see [Install Docker Toolbox on Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)\.
 
 2\. Configure your shared drives\.
@@ -52,9 +52,9 @@ sam --version
 
 ## Install the AWS SAM CLI Using Pip<a name="serverless-sam-cli-install-windows-pip"></a>
 
-An alternate method of installing the AWS SAM CLI is to use pip\. Pip is a package installer for Python\. Python is required for this installation\. 
+### <a name="pip-install-instructions"></a>
 
-### <a name="w4aac26b7c13c11b7"></a>
+Pip is a package installer for Python\. Python is required for this installation\.
 
 Follow these steps to install the AWS SAM CLI by using pip:
 

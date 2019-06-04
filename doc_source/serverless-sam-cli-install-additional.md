@@ -5,11 +5,13 @@ The topics listed below contain additional information about installing the AWS 
 ## Installing Using Pip<a name="serverless-sam-cli-install-using-pip"></a>
 
 To install the AWS SAM CLI using pip, first make sure that you've installed the [AWS Command Line Interface \(AWS CLI\)](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) and Docker for the platform you're using:
-+ [Docker for Linux](serverless-sam-cli-install-linux.md#serverless-sam-cli-install-linux-docker)
++ [Install Docker for Linux](serverless-sam-cli-install-linux.md#serverless-sam-cli-install-linux-docker)
 + [Install Docker for Windows](serverless-sam-cli-install-windows.md#serverless-sam-cli-install-windows-docker)
-+ [Docker for macOS](serverless-sam-cli-install-mac.md#serverless-sam-cli-install-mac-docker)
++ [Install Docker for macOS](serverless-sam-cli-install-mac.md#serverless-sam-cli-install-mac-docker)
 
-## <a name="w4aac26b7c17b9"></a>
+## <a name="pip-install-instructions"></a>
+
+Pip is a package installer for Python\. Python is required for this installation\.
 
 Follow these steps to install the AWS SAM CLI by using pip:
 
