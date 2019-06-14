@@ -1,4 +1,4 @@
-# Step\-through Debugging Python Functions Locally<a name="serverless-sam-cli-using-debugging-python"></a>
+# Step\-Through Debugging Python Functions Locally<a name="serverless-sam-cli-using-debugging-python"></a>
 
 Python step\-through debugging requires you to enable remote debugging in your Lambda function code\. This is a two\-step process:
 
@@ -13,7 +13,7 @@ sam init --runtime python3.6 --name python-debugging
 cd python-debugging/
 
 # Install dependencies of our boilerplate app
-pip install -r requirements.txt -t hello_world/build/
+pip install -r hello_world/requirements.txt -t hello_world/build/
 
 # Install ptvsd library for step through debugging
 pip install ptvsd -t hello_world/build/
@@ -69,7 +69,7 @@ To set up Microsoft Visual Studio Code for debugging with the AWS SAM CLI, use t
  }
 ```
 
-For Microsoft Visual Studio Code, the property `localRoot` under the `pathMappings` key is important\. There are two aspects that help explain why this is set up this way:
+For Microsoft Visual Studio Code, the property `localRoot` under the `pathMappings` key is important\. There are two reasons that help explain this setup:
 + **localRoot**: This path is to be mounted in the Docker container, and needs to have both the application and dependencies at the root level\.
 + **workspaceFolder**: This path is the absolute path where the Microsoft Visual Studio Code instance was opened\.
 
@@ -77,7 +77,7 @@ If you opened Microsoft Visual Studio Code in a different location other than `p
 
 After the Microsoft Visual Studio Code debugger configuration is complete, make sure to add a breakpoint anywhere you want to in `hello_world/build/app.py`, and then proceed as follows:
 
-1. Run AWS SAM CLI to invoke your function\.
+1. Run the AWS SAM CLI to invoke your function\.
 
 1. Send a request to the URL to invoke the function and initialize ptvsd code execution\.
 

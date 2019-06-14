@@ -10,9 +10,9 @@ Because this example is more complicated, be sure that you're familiar with inst
 
 ## Before You Begin<a name="serverless-example-s3-prereq"></a>
 
-Make sure that you've completed the required setup in the [Quick Start](serverless-quick-start.md)\. See the **Before You Begin** section of the [Quick Start](serverless-quick-start.md)\.
+Make sure that you've completed the required setup in the [Quick Start](serverless-quick-start.md)\. See the [Before You Begin](serverless-quick-start.md#gs-ex1-prereq) section of the Quick Start\.
 
-## Initialize the Application<a name="serverless-example-s3-setup-local-app"></a>
+## Step 1: Initialize the Application<a name="serverless-example-s3-setup-local-app"></a>
 
 In this section, you download the sample application, which consists of an AWS SAM template and application code\.
 
@@ -26,12 +26,12 @@ In this section, you download the sample application, which consists of an AWS S
    --no-input
    ```
 
-1. Review the contents of the directory that the command created \(`aws_sam_ocr`\): 
+1. Review the contents of the directory that the command created \(`aws_sam_ocr/`\): 
    + `template.yaml` – Defines three AWS resources that the Amazon S3 application needs: a Lambda function, an Amazon S3 bucket, and a DynamoDB table\. The template also defines the mappings and permissions between these resources\.
-   + `/src` directory – Contains the Amazon S3 application code\.
+   + `src/` directory – Contains the Amazon S3 application code\.
    + `SampleEvent.json` – The sample event source, which is used for local testing\.
 
-## Package the Application<a name="serverless-example-s3-package-serverless-app"></a>
+## Step 2: Package the Application<a name="serverless-example-s3-package-serverless-app"></a>
 
 Before you can test this application locally, you must use the AWS SAM CLI to create a deployment package, which you use to deploy the application to the AWS Cloud\. This deployment creates the necessary AWS resources and permissions that are required to test the application locally\.
 
@@ -54,7 +54,7 @@ Before you can test this application locally, you must use the AWS SAM CLI to cr
 
    You specify the new template file, `packaged.yaml`, when you deploy the application in the next step\.
 
-## Deploy the Application<a name="serverless-example-s3-deploy-serverless-app"></a>
+## Step 3: Deploy the Application<a name="serverless-example-s3-deploy-serverless-app"></a>
 
 Now that you've created the deployment package, you use it to deploy the application to the AWS Cloud\. You then test the application by invoking it in the AWS Cloud\.
 
@@ -64,7 +64,7 @@ Now that you've created the deployment package, you use it to deploy the applica
   ```
   aws_sam_ocr> sam deploy \
       --template-file packaged.yaml \
-      --stack-name aws_sam_ocr \
+      --stack-name aws-sam-ocr \
       --capabilities CAPABILITY_IAM \
       --region us-east-1
   ```
@@ -81,7 +81,7 @@ Now that you've created the deployment package, you use it to deploy the applica
 
 1. Verify that the DynamoDB table contains new records that contain text that Amazon Rekognition found in the uploaded image\.
 
-## Test the Application Locally<a name="serverless-example-s3-test-locally"></a>
+## Step 4: Test the Application Locally<a name="serverless-example-s3-test-locally"></a>
 
 Before you can test the application locally, you must first retrieve the names of the AWS resources that were created by AWS CloudFormation\.
 + Retrieve the Amazon S3 key name and bucket name from AWS CloudFormation\. Modify the `SampleEvent.json` file by replacing the values for the object key, bucket name, and bucket ARN\.

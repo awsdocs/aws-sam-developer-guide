@@ -12,4 +12,5 @@ This section is the reference for the AWS SAM CLI commands \(version 0\.8\.0\)\.
 + [sam local start\-lambda](sam-cli-command-reference-sam-local-start-lambda.md)
 + [sam logs](sam-cli-command-reference-sam-logs.md)
 + [sam package](sam-cli-command-reference-sam-package.md)
++ [sam publish](sam-cli-command-reference-sam-publish.md)
 + [sam validate](sam-cli-command-reference-sam-validate.md)

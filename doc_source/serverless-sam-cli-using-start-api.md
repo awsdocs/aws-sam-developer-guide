@@ -73,4 +73,4 @@ $ sam local start-api --env-vars env.json
 
 ## Layers<a name="serverless-sam-cli-using-start-api-layers"></a>
 
-If your application includes Layers, see [Working with Layers](serverless-sam-cli-layers.md) for more information about how to debug Layers issues on your local host\.
+If your application includes layers, see [Working with Layers](serverless-sam-cli-layers.md) for more information about how to debug layers issues on your local host\.

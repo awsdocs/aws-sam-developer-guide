@@ -11,20 +11,20 @@ AWS SAM defines the following resources that are specifically designed for serve
 
 ## AWS::Serverless::Api<a name="serverless-sam-template-api"></a>
 
-This resource type describes an API Gateway resource\. It's useful for advanced use cases where you want full control and flexibility when you configure your APIs\. For most scenarios, we recommend that you create APIs by specifying this resource type as an event source of your `AWS::Serverless::Function` resource, as shown in the example below\.
+This resource type describes an API Gateway resource\. It's useful for advanced use cases where you want full control and flexibility when you configure your APIs\. For most scenarios, we recommend that you create APIs by specifying this resource type as an event source of your `AWS::Serverless::Function` resource, as shown in the following example\.
 
 ```
-  Type: AWS::Serverless::API
+AWS::Serverless::Api
   Properties:
     StageName: prod
     DefinitionUri: swagger.yml
 ```
 
-For a list of properties, see [AWS::Serverless::Api](https://github.com/awslabs/serverless-application-model/blob/develop/versions/2016-10-31.md#awsserverlessapi) in the AWS SAM GitHub repository\.
+For a list of properties, see [AWS::Serverless::Api](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi) in the AWS SAM GitHub repository\.
 
 ## AWS::Serverless::Application<a name="serverless-sam-template-application"></a>
 
-Embeds a serverless application from the AWS Serverless Application Repository or from an Amazon S3 bucket as a nested application\. Nested applications are deployed as nested stacks, which can contain multiple other resources\. For more information about nested applications see [Nested Applications](serverless-sam-template-nested-applications.md)\.
+This resource type embeds a serverless application from the AWS Serverless Application Repository or from an Amazon S3 bucket as a nested application\. Nested applications are deployed as nested stacks, which can contain multiple other resources\. For more information about nested applications, see [Nested Applications](serverless-sam-template-nested-applications.md)\.
 
 The following is an example of a nested application from the AWS Serverless Application Repository:
 
@@ -39,7 +39,7 @@ The following is an example of a nested application from the AWS Serverless Appl
       IntegerParameter: 2
 ```
 
-The following is an example of a nested application that is hosted in an Amazon S3 bucket\. In this example, *sam\-template\-object* is the name of a packaged SAM template:
+The following is an example of a nested application that's hosted in an Amazon S3 bucket\. In this example, *sam\-template\-object* is the name of a packaged AWS SAM template:
 
 ```
   Type: AWS::Serverless::Application
@@ -91,13 +91,13 @@ The following is an example of a serverless function:
       DepartmentNameTag: ThumbnailDepartment
 ```
 
-For a list of properties, see [AWS::Serverless::Function](https://github.com/awslabs/serverless-application-model/blob/develop/versions/2016-10-31.md#awsserverlessfunction) in the AWS SAM GitHub repository\.
+For a list of properties, see [AWS::Serverless::Function](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction) in the AWS SAM GitHub repository\.
 
 ## AWS::Serverless::LayerVersion<a name="serverless-sam-template-layerversion"></a>
 
-Creates a Lambda LayerVersion that contains library or runtime code needed by a Lambda function\. When a Serverless LayerVersion is transformed, AWS SAM also transforms the logical id of the resource so that old LayerVersions are not automatically deleted by AWS CloudFormation when the resource is updated\.
+This resource type creates a Lambda layer version \(LayerVersion\) that contains library or runtime code that's needed by a Lambda function\. When a serverless layer version is transformed, AWS SAM also transforms the logical ID of the resource so that old layer versions aren't automatically deleted by AWS CloudFormation when the resource is updated\.
 
-The following is an example of a LayerVersion:
+The following is an example of a layer version:
 
 ```
   Type: AWS::Serverless::LayerVersion
@@ -129,6 +129,6 @@ For a list of properties, see [AWS::Serverless::LayerVersion](https://github.com
       WriteCapacityUnits: 5
 ```
 
-For a list of properties, see [AWS::Serverless::SimpleTable](https://github.com/awslabs/serverless-application-model/blob/develop/versions/2016-10-31.md#awsserverlesssimpletable) in the AWS SAM GitHub repository\.
+For a list of properties, see [AWS::Serverless::SimpleTable](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable) in the AWS SAM GitHub repository\.
 
-For reference documentation for SAM template resources, see [AWS SAM Specification](https://github.com/awslabs/serverless-application-model/blob/develop/versions/2016-10-31.md) on GitHub\.
+For reference documentation for SAM template resources, see [AWS SAM Specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md) on GitHub\.

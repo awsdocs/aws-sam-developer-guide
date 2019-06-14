@@ -6,9 +6,9 @@ This exercise shows you how to mimic event source messages that are passed to La
 
 ## Before You Begin<a name="gs-ex2-prereq"></a>
 
-Make sure that you've completed the required setup in the [Quick Start](serverless-quick-start.md)\. See the **Before You Begin** section of the [Quick Start](serverless-quick-start.md)\.
+Make sure that you've completed the required setup in the [Quick Start](serverless-quick-start.md)\. See the [Before You Begin](serverless-quick-start.md#gs-ex1-prereq) section of the Quick Start\.
 
-## Initialize the Application<a name="gs-ex2-setup-local-app"></a>
+## Step 1: Initialize the Application<a name="gs-ex2-setup-local-app"></a>
 
 In this section, you download the application package, which consists of an AWS SAM template and application code\.
 
@@ -22,11 +22,11 @@ In this section, you download the application package, which consists of an AWS 
    --no-input
    ```
 
-1. Review the contents of the directory that the command created \(`/dynamodb_event_reader`\): 
+1. Review the contents of the directory that the command created \(`dynamodb_event_reader/`\): 
    + `template.yaml` – Defines two AWS resources that the Read DynamoDB application needs: a Lambda function and a DynamoDB table\. The template also defines mapping between the two resources\.
-   + `/read_dynamodb_event` directory – Contains the DynamoDB application code\.
+   + `read_dynamodb_event/` directory – Contains the DynamoDB application code\.
 
-## Test the Application Locally<a name="gs-ex2-test-locally"></a>
+## Step 2: Test the Application Locally<a name="gs-ex2-test-locally"></a>
 
 For local testing, use the AWS SAM CLI to generate a sample DynamoDB event and invoke the Lambda function:
 
@@ -38,7 +38,7 @@ The `generate-event` command creates a test event source message like the messag
 
 Verify that the expected messages are printed to the console, based on the source code in `app.py`\.
 
-## Package the Application<a name="gs-ex2-setup-pacakge-app"></a>
+## Step 3: Package the Application<a name="gs-ex2-setup-pacakge-app"></a>
 
 After testing your application locally, you use the AWS SAM CLI to create a deployment package, which you use to deploy the application to the AWS Cloud\.
 
@@ -61,7 +61,7 @@ After testing your application locally, you use the AWS SAM CLI to create a depl
 
    You specify the new template file, `packaged.yaml`, when you deploy the application in the next step\.
 
-## Deploy the Application<a name="gs-ex2-setup-deploy-app"></a>
+## Step 4: Deploy the Application<a name="gs-ex2-setup-deploy-app"></a>
 
 Now that you've created the deployment package, you use it to deploy the application to the AWS Cloud\. You then test the application\.
 

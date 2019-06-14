@@ -2,7 +2,7 @@
 
 AWS SAM is a higher\-level abstraction of AWS CloudFormation that simplifies serverless application development\. AWS SAM template files are AWS CloudFormation template files with a few additional resource types defined that are specific to serverless applications—such as API Gateway endpoints and Lambda functions\. This means that AWS SAM supports the full suite of resources, intrinsic functions, and other template features that are available in AWS CloudFormation\.
 
-For example, the following AWS SAM template creates a Lambda function by using AWS SAM resource syntax, and an Amazon S3 bucket by using AWS CloudFormation resource syntax:
+For example, the following AWS SAM template creates a Lambda function by using AWS SAM resource syntax\. It also creates an Amazon S3 bucket by using AWS CloudFormation resource syntax:
 
 ```
 Transform: 'AWS::Serverless-2016-10-31'
