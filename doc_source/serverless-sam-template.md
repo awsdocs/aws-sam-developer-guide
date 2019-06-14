@@ -29,7 +29,7 @@ This resource type embeds a serverless application from the AWS Serverless Appli
 The following is an example of a nested application from the AWS Serverless Application Repository:
 
 ```
-AWS::Serverless::Application
+  Type: AWS::Serverless::Application
   Properties:
     Location:
       ApplicationId: arn:aws:serverlessrepo:region:account-id:applications/application-name
@@ -42,7 +42,7 @@ AWS::Serverless::Application
 The following is an example of a nested application that's hosted in an Amazon S3 bucket\. In this example, *sam\-template\-object* is the name of a packaged AWS SAM template:
 
 ```
-AWS::Serverless::Application
+  Type: AWS::Serverless::Application
   Properties:
     Location: https://s3.region.amazonaws.com/bucket-name/sam-template-object
     Parameters:
@@ -61,33 +61,34 @@ This resource type describes configuration information for creating a Lambda fun
 The following is an example of a serverless function:
 
 ```
-AWS::Serverless::Function
-  Handler: index.js
-  Runtime: nodejs6.10
-  CodeUri: 's3://my-code-bucket/my-function.zip'
-  Description: Creates thumbnails of uploaded images
-  MemorySize: 1024
-  Timeout: 15
-  Policies:
-   - AWSLambdaExecute # Managed Policy
-   - Version: '2012-10-17' # Policy Document
-     Statement:
-       - Effect: Allow
-         Action:
-           - s3:GetObject
-           - s3:GetObjectACL
-         Resource: 'arn:aws:s3:::my-bucket/*'
-  Environment:
-    Variables:
-      TABLE_NAME: my-table
-  Events:
-    PhotoUpload:
-      Type: S3
-      Properties:
-        Bucket: my-photo-bucket
-  Tags:
-    AppNameTag: ThumbnailApp
-    DepartmentNameTag: ThumbnailDepartment
+  Type: AWS::Serverless::Function
+  Properties:
+    Handler: index.js
+    Runtime: nodejs6.10
+    CodeUri: 's3://my-code-bucket/my-function.zip'
+    Description: Creates thumbnails of uploaded images
+    MemorySize: 1024
+    Timeout: 15
+    Policies:
+     - AWSLambdaExecute # Managed Policy
+     - Version: '2012-10-17' # Policy Document
+       Statement:
+         - Effect: Allow
+           Action:
+             - s3:GetObject
+             - s3:GetObjectACL
+           Resource: 'arn:aws:s3:::my-bucket/*'
+    Environment:
+      Variables:
+        TABLE_NAME: my-table
+    Events:
+      PhotoUpload:
+        Type: S3
+        Properties:
+          Bucket: my-photo-bucket
+    Tags:
+      AppNameTag: ThumbnailApp
+      DepartmentNameTag: ThumbnailDepartment
 ```
 
 For a list of properties, see [AWS::Serverless::Function](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction) in the AWS SAM GitHub repository\.
@@ -99,7 +100,7 @@ This resource type creates a Lambda layer version \(LayerVersion\) that contains
 The following is an example of a layer version:
 
 ```
-AWS::Serverless::LayerVersion
+  Type: AWS::Serverless::LayerVersion
   Properties:
     LayerName: MyLayer
     Description: Layer description
@@ -118,7 +119,7 @@ For a list of properties, see [AWS::Serverless::LayerVersion](https://github.com
  This resource type provides simple syntax for describing how to create DynamoDB tables\. Here's an example:
 
 ```
-AWS::Serverless::SimpleTable
+  Type: AWS::Serverless::SimpleTable
   Properties:
     PrimaryKey:
       Name: id
