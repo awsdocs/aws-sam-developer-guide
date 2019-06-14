@@ -28,8 +28,6 @@ Verify that Docker is working, and that you can run Docker commands from the AWS
 
 ## Install the AWS SAM CLI Using Homebrew<a name="serverless-sam-cli-install-linux-homebrew"></a>
 
-### <a name="homebrew-install-instructions"></a>
-
 Homebrew is a package manager available for Linux\. Homebrew is required for this installation\.
 
 Follow these steps to install the AWS SAM CLI using Homebrew:
@@ -61,8 +59,6 @@ Follow these steps to install the AWS SAM CLI using Homebrew:
    ```
 
 ## Install the AWS SAM CLI Using Pip<a name="serverless-sam-cli-install-linux-pip"></a>
-
-### <a name="pip-install-instructions"></a>
 
 Pip is a package installer for Python\. Python is required for this installation\.
 

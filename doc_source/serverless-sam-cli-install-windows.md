@@ -52,8 +52,6 @@ sam --version
 
 ## Install the AWS SAM CLI Using Pip<a name="serverless-sam-cli-install-windows-pip"></a>
 
-### <a name="pip-install-instructions"></a>
-
 Pip is a package installer for Python\. Python is required for this installation\.
 
 Follow these steps to install the AWS SAM CLI by using pip:
