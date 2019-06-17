@@ -32,8 +32,8 @@ Resources:
     
     Properties:
       
-      # This function uses the Nodejs v6.10 runtime.
-      Runtime: nodejs6.10
+      # This function uses the Nodejs v10.15 runtime.
+      Runtime: nodejs10.15
         
       # This is the Lambda function's handler.
       Handler: index.handler
