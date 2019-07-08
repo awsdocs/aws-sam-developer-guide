@@ -1383,3 +1383,28 @@ If you are not using default key, you will also need `KMSDecryptPolicy`\.
           }
         ]
 ```
+
+## StepFunctionsExecutionPolicy<a name="stepfunctions-execution-policy"></a>
+
+Gives permission to start a Step Functions state machine execution\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "states:StartExecution"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:states:${AWS::Region}:${AWS::AccountId}:stateMachine:${stateMachineName}",
+                {
+                  "stateMachineName": {
+                    "Ref": "StateMachineName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
