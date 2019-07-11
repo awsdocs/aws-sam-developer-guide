@@ -64,7 +64,7 @@ The following is an example of a serverless function:
   Type: AWS::Serverless::Function
   Properties:
     Handler: index.js
-    Runtime: nodejs6.10
+    Runtime: nodejs8.10
     CodeUri: 's3://my-code-bucket/my-function.zip'
     Description: Creates thumbnails of uploaded images
     MemorySize: 1024
@@ -106,7 +106,7 @@ The following is an example of a layer version:
     Description: Layer description
     ContentUri: 's3://my-bucket/my-layer.zip'
     CompatibleRuntimes:
-      - nodejs6.10
+      - nodejs8.10
       - nodejs8.10
     LicenseInfo: 'Available under the MIT-0 license.'
     RetentionPolicy: Retain
