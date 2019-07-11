@@ -50,6 +50,5 @@ $ sam init --location /path/to/template/folder
 | \-n, \-\-name TEXT | The name of your project to be generated as a folder\. | 
 | \-\-no\-input | Disables prompting and accepts default values that are defined in the template configuration\. | 
 | \-\-profile TEXT | Select a specific profile from your credential file to get AWS credentials\. | 
-| \-\-region TEXT | Sets the AWS Region of the service \(for example, us\-east\-1\)\. | 
 |  \-\-debug | Turns on debug logging\. | 
 | \-h, \-\-help  | Shows this message and exits\. | 

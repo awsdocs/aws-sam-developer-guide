@@ -24,7 +24,7 @@ To define an application that's hosted in the AWS Serverless Application Reposit
 
 1. Make sure that you're signed in to the AWS Management Console\.
 
-1. Find the application that you want to nest in the AWS Serverless Application Repository by using the steps in the [Browsing, Searching, and Deploying Applications](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverless-app-consuming-applications.html#browse-and-search-applications                             ) section of the *AWS Serverless Application Repository Developer Guide*\.
+1. Find the application that you want to nest in the AWS Serverless Application Repository by using the steps in the [Browsing, Searching, and Deploying Applications](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverless-app-consuming-applications.html#browse-and-search-applications                         ) section of the *AWS Serverless Application Repository Developer Guide*\.
 
 1. Choose the **Copy as SAM Resource** button\. The SAM template section for the application that you're viewing is now in your clipboard\.
 

@@ -20,7 +20,7 @@ sam local invoke [OPTIONS] [FUNCTION_IDENTIFIER]
 | \-e, \-\-event PATH | The JSON file that contains event data that's passed to the Lambda function when it's invoked\. If you don't specify this option, the default is reading the JSON from stdin\. | 
 | \-\-no\-event | Invokes the function with an empty event\. | 
 | \-t, \-\-template PATH | The AWS SAM template file \[default: template\.\[yaml\|yml\]\]\. | 
-| \-n, \-\-env\-vars PATH | The JSON file that contains values for the Lambda function's environment variables\. | 
+| \-n, \-\-env\-vars PATH | The JSON file that contains values for the Lambda function's environment variables\. For more information about environment variables files, see [Environment Variable File](serverless-sam-cli-using-invoke.md#serverless-sam-cli-using-invoke-environment-file)\. | 
 | \-\-parameter\-overrides | Optional\. A string that contains AWS CloudFormation parameter overrides encoded as key\-value pairs\. Use the same format as the AWS CLI—for example, 'ParameterKey=KeyPairName, ParameterValue=MyKey ParameterKey=InstanceType,ParameterValue=t1\.micro'\. | 
 | \-d, \-\-debug\-port TEXT | When specified, starts the Lambda function container in debug mode and exposes this port on the local host\. | 
 | \-\-debugger\-path TEXT | The host path to a debugger that will be mounted into the Lambda container\. | 

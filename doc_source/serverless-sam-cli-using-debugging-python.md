@@ -13,7 +13,7 @@ sam init --runtime python3.6 --name python-debugging
 cd python-debugging/
 
 # Install dependencies of our boilerplate app
-pip install -r requirements.txt -t hello_world/build/
+pip install -r hello_world/requirements.txt -t hello_world/build/
 
 # Install ptvsd library for step through debugging
 pip install ptvsd -t hello_world/build/

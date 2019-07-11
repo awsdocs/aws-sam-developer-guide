@@ -7,7 +7,7 @@ If you use AWS SAM to create your serverless application, it comes built\-in wit
 + Rolls back the deployment if CloudWatch alarms are triggered\. 
 
 **Note**  
-If you enable gradual deployments through your AWS SAM template, an CodeDeploy resource is automatically created for you\. You can view the CodeDeploy resource directly through the AWS Management Console\.
+If you enable gradual deployments through your AWS SAM template, a CodeDeploy resource is automatically created for you\. You can view the CodeDeploy resource directly through the AWS Management Console\.
 
 **Example**
 

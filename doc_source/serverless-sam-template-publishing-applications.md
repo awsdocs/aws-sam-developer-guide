@@ -14,10 +14,10 @@ Before you publish an application to the AWS Serverless Application Repository, 
 + The AWS SAM CLI \(command line interface\) installed\. See [Installing the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)\.
 + A valid AWS Serverless Application Model \(AWS SAM\) template\.
 + Your application code and dependencies referenced by the AWS SAM template\.
-+ A semantic version for your application \(which is needed to share your application publicly\)\.
++ A semantic version for your application \(required to share your application publicly\)\.
 + A URL that points to your application's source code\.
 + A README\.md file\. This file should describe how customers can use your application, and how to configure it before deploying it in their own AWS accounts\. 
-+ A LICENSE\.txt file\.
++ A LICENSE\.txt file \(required to share your application publicly\)\.
 + A valid Amazon S3 bucket policy that grants the service read permissions for artifacts uploaded to Amazon S3 when you packaged your application\. To do this, follow these steps:
 
   1. Open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)\.
@@ -28,25 +28,25 @@ Before you publish an application to the AWS Serverless Application Repository, 
 
   1. Choose the **Bucket Policy** button\.
 
-  1. Paste the example policy statement below\. Make sure to substitute your bucket name in the Resource property value\.
+  1. Paste the following policy statement into the **Bucket policy editor**\. Make sure to substitute your bucket name in the Resource property value\.
+
+     ```
+      1. {
+      2.     "Version": "2012-10-17",
+      3.     "Statement": [
+      4.         {
+      5.             "Effect": "Allow",
+      6.             "Principal": {
+      7.                 "Service":  "serverlessrepo.amazonaws.com"
+      8.             },
+      9.             "Action": "s3:GetObject",
+     10.             "Resource": "arn:aws:s3:::<your-bucket-name>/*"
+     11.         }
+     12.     ]
+     13. }
+     ```
 
   1. Choose the **Save** button\.
-
-  ```
-   1. {
-   2.     "Version": "2012-10-17",
-   3.     "Statement": [
-   4.         {
-   5.             "Effect": "Allow",
-   6.             "Principal": {
-   7.                 "Service":  "serverlessrepo.amazonaws.com"
-   8.             },
-   9.             "Action": "s3:GetObject",
-  10.             "Resource": "arn:aws:s3:::<your-bucket-name>/*"
-  11.         }
-  12.     ]
-  13. }
-  ```
 
 ## Step 1: Add a Metadata Section to the AWS SAM Template<a name="serverless-sam-template-publishing-applications-step1"></a>
 
@@ -115,7 +115,7 @@ sam-app> sam publish \
 
 The output of the `sam publish` command includes a link to the AWS Serverless Application Repository directly to your application\. You can also go to the AWS Serverless Application Repository landing page directly and search for your application\.
 
-Your application is set to private by default, so it isn't visible to other AWS accounts\. In order to share your application with others, you must either make it public or grant permission to a specific list of AWS accounts\. For information on sharing your application by using the AWS CLI, see [Using Resource\-based Policies for the AWS Serverless Application Repository](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html)\. For information on sharing your application using the console, see [Sharing an Application Through the Console](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverless-app-publishing-applications.html#share-application)\.
+Your application is set to private by default, so it isn't visible to other AWS accounts\. In order to share your application with others, you must either make it public or grant permission to a specific list of AWS accounts\. For information on sharing your application by using the AWS CLI, see [Using Resource\-based Policies for the AWS Serverless Application Repository](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html)\. For information on sharing your application using the console, see [Sharing an Application Through the Console](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverlessrepo-how-to-publish.html#share-application)\.
 
 ## Additional Topics<a name="serverless-sam-template-publishing-applications-additional-topics"></a>
 + [AWS SAM Template Metadata Section Properties](serverless-sam-template-publishing-applications-metadata-properties.md)

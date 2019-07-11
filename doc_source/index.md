@@ -63,4 +63,6 @@ Amazon's trademarks and trade dress may not be used in
       + [sam package](sam-cli-command-reference-sam-package.md)
       + [sam publish](sam-cli-command-reference-sam-publish.md)
       + [sam validate](sam-cli-command-reference-sam-validate.md)
+   + [AWS SAM Policy Templates](serverless-policy-templates.md)
+      + [Policy Template List](serverless-policy-template-list.md)
 + [Document History for AWS Serverless Application Model](doc-history.md)
