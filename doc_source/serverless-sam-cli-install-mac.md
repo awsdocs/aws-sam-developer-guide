@@ -24,7 +24,7 @@ The AWS SAM CLI requires that the project directory, or any parent directory, is
 
 3\. Verify the installation\.
 
-After Docker is installed, verify that it's working\. Aso confirm that you can run Docker commands from the AWS SAM CLI \(for example, `docker ps`\)\. You don't need to install, fetch, or pull any containers––the AWS SAM CLI does this automatically as required\.
+After Docker is installed, verify that it's working\. Also confirm that you can run Docker commands from the AWS SAM CLI \(for example, `docker ps`\)\. You don't need to install, fetch, or pull any containers––the AWS SAM CLI does this automatically as required\.
 
 ## Install the AWS SAM CLI Using Homebrew<a name="serverless-sam-cli-install-mac-homebrew"></a>
 
