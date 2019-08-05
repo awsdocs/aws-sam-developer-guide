@@ -1,12 +1,8 @@
 # Installing the AWS SAM CLI<a name="serverless-sam-cli-install"></a>
 
-You can install the AWS SAM CLI on Linux, Windows, and macOS\. For detailed instructions on how to install the AWS SAM CLI on each platform, see the topics listed after the prerequisites\.
+AWS SAM provides you with a command line tool, the AWS SAM CLI, that makes it easy for you to create and manage serverless applications\. You need to install and configure a few things in order to use the AWS SAM CLI\.
 
-## Prerequisites<a name="serverless-sam-cli-install-prerequisites"></a>
-
-Before installing the AWS SAM CLI, you need the following:
-+ [AWS Command Line Interface \(AWS CLI\)](https://docs.aws.amazon.com/cli/latest/userguide/)\. For instructions on installing the AWS CLI, see [ Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/installing.html)\.
-+ [Docker](https://www.docker.com/)\. For instructions on installing Docker, see the platform\-specific topic for each platform in the following list\.
+To install the AWS SAM CLI, see the following instructions for your development host:
 
 **Topics**
 + [Installing the AWS SAM CLI on Linux](serverless-sam-cli-install-linux.md)

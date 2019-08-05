@@ -1,10 +1,11 @@
 # Document History for AWS Serverless Application Model<a name="doc-history"></a>
 
 The following table describes the important changes in each release of the *AWS Serverless Application Model Developer Guide*\. For notification about updates to this documentation, you can subscribe to an RSS feed by choosing the RSS button in the top menu panel\.
-+ **Latest documentation update:** March 21, 2019
++ **Latest documentation update:** July 25, 2019
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Getting Started Guide](#doc-history) | New Getting Started chapter with improved installation instructions for the AWS SAM CLI and Hello World tutorial\. For more information, see [Getting Started](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html)\. | July 25, 2019 | 
 | [Controlling access to API Gateway APIs](#doc-history) | Added support for controlling access to API Gateway APIs\. For more information, see [Controlling Access to API Gateway APIs](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-controlling-access-to-apis.html)\. | March 21, 2019 | 
 | [Added sam publish to AWS SAM CLI](#doc-history) | The new `sam publish` command in the AWS SAM CLI simplifies the process for publishing serverless applications in the AWS Serverless Application Repository\. For more information, see [Publishing an Applications Using AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-publishing-applications.html)\. | December 21, 2018 | 
 | [Nested applications and layers support](#doc-history) | Added support for nested applications and layers\. For more information, see [Nested Applications](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-nested-applications.html) and [Working with Layers](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-layers.html)\. | November 29, 2018 | 

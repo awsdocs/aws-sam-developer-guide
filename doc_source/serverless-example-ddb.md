@@ -6,7 +6,7 @@ This exercise shows you how to mimic event source messages that are passed to La
 
 ## Before You Begin<a name="gs-ex2-prereq"></a>
 
-Make sure that you've completed the required setup in the [Quick Start](serverless-quick-start.md)\. See the [Before You Begin](serverless-quick-start.md#gs-ex1-prereq) section of the Quick Start\.
+Make sure that you've completed the required setup in the [Installing the AWS SAM CLI](serverless-sam-cli-install.md)\.
 
 ## Step 1: Initialize the Application<a name="gs-ex2-setup-local-app"></a>
 
