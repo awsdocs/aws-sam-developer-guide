@@ -1,13 +1,12 @@
 # Telemetry in the AWS SAM CLI<a name="serverless-sam-telemetry"></a>
 
-SAM CLI includes telemetry\. In addition to existing feedback, telemetry allows us to better understand our customer’s needs, common CLI scenarios and existing issues\. The information collected will include generic usage metrics, system and environment information, and errors \(see below for types of information collected\)\. These generic metrics will inform our product decisions and help us continue to deliver features and enhancements that improve the customer experience\. This feature does not collect personal information, such as usernames or email addresses, or extract sensitive project\-level information and customers control whether telemetry is enabled and can change their settings at any point of time\. 
+At AWS, we develop and launch services based on what we learn from interactions with customers, and we use customer feedback to iterate on our product\. Telemetry is additional information that helps us to better understand our customers’ needs, diagnose issues, and deliver features that improve the customer experience\.
 
-Customers new to SAM CLI, upon first use after installation, will be provided with a message prompt informing them that telemetry collection is enabled and will provide the customer with instructions on how to opt out \(see instructions for opt out below\)\. 
+The AWS SAM CLI collects telemetry, such as generic usage metrics, system and environment information, and errors\. See [Types of Information Collected](#serverless-sam-telemtry-data-collected) for details of the types of telemetry collected\.
 
-Customers already using SAM CLI, including as a part of automated CI/CD systems, will be provided with the message prompt upon first use after update or next install\. If telemetry remains enabled, we will send telemetry data in the background without requiring any additional customer interaction\.
+The AWS SAM CLI does **not** collect personal information, such as usernames or email addresses, nor does it extract sensitive project\-level information\.
 
-**Note**  
-The message prompt will only appear upon the first update or install after the launch of the telemetry feature, and not upon every update thereafter\.
+Customers control whether telemetry is enabled, and can change their settings at any point of time\. If telemetry remains enabled, the AWS SAM CLI will send telemetry data in the background without requiring any additional customer interaction\.
 
 ## Disabling Telemetry for a Session<a name="serverless-sam-telemtry-opt-out"></a>
 
@@ -66,7 +65,7 @@ Run the following commands to disable telemetry for all sessions when you're run
 ## Types of Information Collected<a name="serverless-sam-telemtry-data-collected"></a>
 + **Usage information** – The generic commands and subcommands that are run\.
 + **Errors and diagnostic information** – The status and duration of commands that are run, including exit codes, internal exception names, and failures when connecting to Docker\.
-+ **System and environment information** – The Python version, operating system \(Windows, Linux, or macOS\), and environment in which the AWS SAM CLI is configured \(for example, AWS CodeBuild, an AWS IDE toolkit, or a terminal\)\.
++ **System and environment information** – The Python version, operating system \(Windows, Linux, or macOS\), and environment in which the AWS SAM CLI is executed \(for example, AWS CodeBuild, an AWS IDE toolkit, or a terminal\)\.
 
 ## Learn More<a name="serverless-sam-telemtry-learn-more"></a>
 
