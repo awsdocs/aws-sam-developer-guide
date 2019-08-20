@@ -54,20 +54,17 @@ The following is an example launch configuration for Microsoft Visual Studio Cod
 
 ```
 {
-  "version": "0.2.0",
-  "configurations": [
-  {
-      "name": "Connect to Lambda container",
-      "type": "go",
-      "request": "launch",
-      "mode": "remote",
-      "remotePath": "",
-      "port": <debug port>,
-      "host": "127.0.0.1",
-      "program": "${workspaceRoot}",
-      "env": {},
-      "args": [],
-    },
-  ]
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "name": "Connect to Lambda container",
+        "type": "go",
+        "request": "attach",
+        "mode": "remote",
+        "remotePath": "",
+        "port": 5986,
+        "host": "127.0.0.1"
+      },
+    ]
 }
 ```
