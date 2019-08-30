@@ -1,12 +1,12 @@
 # Telemetry in the AWS SAM CLI<a name="serverless-sam-telemetry"></a>
 
-At AWS, we develop and launch services based on what we learn from interactions with customers, and we use customer feedback to iterate on our product\. Telemetry is additional information that helps us to better understand our customers’ needs, diagnose issues, and deliver features that improve the customer experience\.
+At AWS, we develop and launch services based on what we learn from interactions with customers\. We use customer feedback to iterate on our product\. Telemetry is additional information that helps us to better understand our customers’ needs, diagnose issues, and deliver features that improve the customer experience\.
 
-The AWS SAM CLI collects telemetry, such as generic usage metrics, system and environment information, and errors\. See [Types of Information Collected](#serverless-sam-telemtry-data-collected) for details of the types of telemetry collected\.
+The AWS SAM CLI collects telemetry, such as generic usage metrics, system and environment information, and errors\. For details of the types of telemetry collected, see [Types of Information Collected](#serverless-sam-telemtry-data-collected)\.
 
-The AWS SAM CLI does **not** collect personal information, such as usernames or email addresses, nor does it extract sensitive project\-level information\.
+The AWS SAM CLI does **not** collect personal information, such as usernames or email addresses\. It also does not extract sensitive project\-level information\.
 
-Customers control whether telemetry is enabled, and can change their settings at any point of time\. If telemetry remains enabled, the AWS SAM CLI will send telemetry data in the background without requiring any additional customer interaction\.
+Customers control whether telemetry is enabled, and can change their settings at any point of time\. If telemetry remains enabled, the AWS SAM CLI sends telemetry data in the background without requiring any additional customer interaction\.
 
 ## Disabling Telemetry for a Session<a name="serverless-sam-telemtry-opt-out"></a>
 

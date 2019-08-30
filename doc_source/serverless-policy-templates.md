@@ -105,3 +105,4 @@ The following is a table of the available policy templates\.
 | [SESEmailTemplateCrudPolicy](serverless-policy-template-list.md#ses-email-template-crud-policy) | Gives permission to create, get, list, update and delete Amazon SES email templates\. | 
 | [FilterLogEventsPolicy](serverless-policy-template-list.md#filter-log-events-policy) | Gives permission to filter log events from a specified log group\. | 
 | [SSMParameterReadPolicy](serverless-policy-template-list.md#ssm-parameter-read-policy) | Gives permission to access a parameter to load secrets in this account\. | 
+| [StepFunctionsExecutionPolicy](serverless-policy-template-list.md#stepfunctions-execution-policy) | Gives permission to access a parameter to load secrets in this account\. | 

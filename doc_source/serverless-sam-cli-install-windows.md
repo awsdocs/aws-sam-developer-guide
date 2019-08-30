@@ -131,17 +131,17 @@ You must have Docker installed and working to be able to run serverless projects
 
    After Docker is installed, verify that it's working\. Also confirm that you can run Docker commands from the AWS SAM CLI \(for example, `docker ps`\)\. You don't need to install, fetch, or pull any containers—the AWS SAM CLI does this automatically as required\.
 
+If you run into issues installing Docker, see the [Docker installation guide](https://docs.docker.com/engine/installation/#installation) for troubleshooting tips\.
+
 ## Step 6: Install the AWS SAM CLI<a name="serverless-sam-cli-install-windows-sam-cli"></a>
 
 Windows Installer \(MSI\) files are the package installer files for the Windows operating system\.
 
 Follow these steps to install the AWS SAM CLI using the MSI file\. 
 
-1. Install the AWS SAM CLI\.
-
-   Choose your version of Windows for the correct MSI file:
-   + [ 64\-bit](https://github.com/awslabs/aws-sam-cli/releases/latest/download/AWS_SAM_CLI_64_PY3.msi)
-   + [ 32\-bit](https://github.com/awslabs/aws-sam-cli/releases/latest/download/AWS_SAM_CLI_32_PY3.msi)
+1. Install the AWS SAM CLI [ 64\-bit](https://github.com/awslabs/aws-sam-cli/releases/latest/download/AWS_SAM_CLI_64_PY3.msi)\.
+**Note**  
+If you operate on 32\-bit machine and require the 32\-bit installer [click here](https://github.com/awslabs/aws-sam-cli/releases/latest/download/AWS_SAM_CLI_32_PY3.msi)\.
 
 1. Verify the installation\.
 
@@ -155,7 +155,7 @@ Follow these steps to install the AWS SAM CLI using the MSI file\.
 
    ```
     
-    SAM CLI, version 0.17.0
+    SAM CLI, version 0.19.0
    ```
 
 You're now ready to start development\.

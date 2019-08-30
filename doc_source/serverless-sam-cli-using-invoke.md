@@ -5,6 +5,8 @@ You can invoke your function locally by using the `[sam local invoke](sam-cli-co
 **Note**  
 The `sam local invoke` command described in this section corresponds to the AWS CLI command [ `aws lambda invoke`](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\. You can use either version of this command to invoke a Lambda function that you've uploaded to the AWS Cloud\.
 
+You must execute `sam local invoke` in the project directory containing the function you want to invoke\.
+
 Examples:
 
 ```

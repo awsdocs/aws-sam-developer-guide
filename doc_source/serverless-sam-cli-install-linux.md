@@ -166,7 +166,7 @@ In some cases, you may need to reboot your instance to provide permissions for t
    Cannot connect to the Docker daemon. Is the docker daemon running on this host?
    ```
 
-If you run into issues installing Docker, see the [Troubleshooting](#serverless-sam-cli-install-linux-troubleshooting) section later in this guide\.
+If you run into issues installing Docker, see the [Troubleshooting](#serverless-sam-cli-install-linux-troubleshooting) section later in this guide, or the [Docker installation guide](https://docs.docker.com/engine/installation/#installation) for additional troubleshooting tips\.
 
 ## Step 6: Install Homebrew<a name="serverless-sam-cli-install-linux-homebrew"></a>
 
@@ -210,13 +210,6 @@ brew tap aws/tap
 brew install aws-sam-cli
 ```
 
-Verify that the AWS SAM CLI is installed to the following location:
-
-```
-  
- /home/homebrew/.homebrew/bin/sam
-```
-
 Verify the installation:
 
 ```
@@ -227,7 +220,7 @@ You should see output like the following after successful installation of the AW
 
 ```
  
- SAM CLI, version 0.17.0
+ SAM CLI, version 0.19.0
 ```
 
 You're now ready to start development\.
@@ -237,6 +230,17 @@ You're now ready to start development\.
 ### Docker Error: "Cannot connect to the Docker daemon\. Is the docker daemon running on this host?"<a name="serverless-sam-cli-install-linux-troubleshooting-docker-deamon"></a>
 
 In some cases, you may need to reboot your instance to provide permissions for the `ec2-user` to access the Docker daemon\. If you receive this error, try rebooting your instance\.
+
+### Shell error: "command not found"<a name="serverless-sam-cli-install-linux-troubleshooting-sam-cli-not-found"></a>
+
+Your shell is not able to locate the AWS SAM CLI executable in the path\. If you receive this error, verify the location of directory where the AWS SAM CLI executable was installed, and verify that directory is on your path\.
+
+For example, if you used the instructions in this topic to both 1\) Install Homebrew, and 2\) Use Homebrew to install the AWS SAM CLI, then the AWS SAM CLI executable will be installed to the following location:
+
+```
+  
+ /home/homebrew/.homebrew/bin/sam
+```
 
 ## Next Steps<a name="serverless-sam-cli-install-linux-next-steps"></a>
 

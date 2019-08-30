@@ -129,6 +129,8 @@ You must have Docker installed and working to be able to run serverless projects
 
    After Docker is installed, verify that it's working\. Also confirm that you can run Docker commands from the AWS SAM CLI \(for example, `docker ps`\)\. You don't need to install, fetch, or pull any containers––the AWS SAM CLI does this automatically as required\.
 
+If you run into issues installing Docker, see the [Docker installation guide](https://docs.docker.com/engine/installation/#installation) for troubleshooting tips\.
+
 ## Step 6: Install Homebrew<a name="serverless-sam-cli-install-mac-homebrew"></a>
 
 The recommended approach for installing the AWS SAM CLI on macOS is to use the Homebrew package manager\. For more information about Homebrew, see [Homebrew Documentation](https://docs.brew.sh)\.
@@ -164,11 +166,6 @@ brew install aws-sam-cli
 
 Verify that the AWS SAM CLI is installed to the following location:
 
-```
-  
- /usr/local/bin/sam
-```
-
 Verify the installation:
 
 ```
@@ -179,7 +176,7 @@ You should see output like the following after successful installation of the AW
 
 ```
  
- SAM CLI, version 0.17.0
+ SAM CLI, version 0.19.0
 ```
 
 You're now ready to start development\.

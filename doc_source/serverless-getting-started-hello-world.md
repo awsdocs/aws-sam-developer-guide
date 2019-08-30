@@ -42,7 +42,7 @@ This guide assumes that you've completed the steps in the [Installing the AWS SA
 
 1. Installed Docker\. Note: Docker is only a prerequisite for testing your application locally\.
 
-1. Installed Homebrew\. Note: Homebrew is only a prerequsite for Linux and macOS\.
+1. Installed Homebrew\. Note: Homebrew is only a prerequisite for Linux and macOS\.
 
 1. Installed the AWS SAM CLI\.
 

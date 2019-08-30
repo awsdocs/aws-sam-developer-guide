@@ -228,18 +228,19 @@ Gives SendBounce permission to an Amazon SES identity\.
 
 ## ElasticsearchHttpPostPolicy<a name="elastic-search-http-post-policy"></a>
 
-Gives POST permission to Amazon Elasticsearch Service\.
+Gives POST and PUT permission to Amazon Elasticsearch Service\.
 
 ```
         "Statement": [
           {
             "Effect": "Allow",
             "Action": [
-              "es:ESHttpPost"
+              "es:ESHttpPost",
+              "es:ESHttpPut"
             ],
             "Resource": {
               "Fn::Sub": [
-                "arn:${AWS::Partition}:es:${AWS::Region}:${AWS::AccountId}:domain/${domainName}",
+                "arn:${AWS::Partition}:es:${AWS::Region}:${AWS::AccountId}:domain/${domainName}/*",
                 {
                   "domainName": {
                     "Ref": "DomainName"
@@ -985,15 +986,7 @@ Gives permission to compare and detect faces and labels\.
             "rekognition:CompareFaces",
             "rekognition:DetectFaces"
           ],
-          "Resource": {
-            "Fn::Sub": [
-              "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
-              {
-                "collectionId": {
-                  "Ref": "CollectionId"
-                }
-              }
-            ]
+          "Resource": "*"
           }
         ]
 ```
