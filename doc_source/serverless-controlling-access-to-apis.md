@@ -214,7 +214,7 @@ For a full sample application that includes a user pool as an authorizer, see [A
 
 ## Example: Defining API Keys<a name="serverless-controlling-access-to-apis-keys"></a>
 
-You can control access to your APIs by requiring requiring API keys within your AWS SAM template\. To do this, you use the [API Auth Object](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api-auth-object) data type\.
+You can control access to your APIs by requiring API keys within your AWS SAM template\. To do this, you use the [API Auth Object](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api-auth-object) data type\.
 
 The following is an example AWS SAM template section for API keys:
 
