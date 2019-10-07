@@ -15,7 +15,7 @@ Amazon's trademarks and trade dress may not be used in
 -----
 ## Contents
 + [What Is the AWS Serverless Application Model (AWS SAM)?](what-is-sam.md)
-+ [Getting Started](serverless-getting-started.md)
++ [Getting Started with AWS SAM](serverless-getting-started.md)
    + [Installing the AWS SAM CLI](serverless-sam-cli-install.md)
       + [Installing the AWS SAM CLI on Linux](serverless-sam-cli-install-linux.md)
       + [Installing the AWS SAM CLI on Windows](serverless-sam-cli-install-windows.md)

@@ -141,7 +141,7 @@ Follow these steps to install the AWS SAM CLI using the MSI file\.
 
 1. Install the AWS SAM CLI [ 64\-bit](https://github.com/awslabs/aws-sam-cli/releases/latest/download/AWS_SAM_CLI_64_PY3.msi)\.
 **Note**  
-If you operate on 32\-bit machine and require the 32\-bit installer [click here](https://github.com/awslabs/aws-sam-cli/releases/latest/download/AWS_SAM_CLI_32_PY3.msi)\.
+If you operate on 32\-bit machine, execute the following command: `pip install aws-sam-cli`
 
 1. Verify the installation\.
 

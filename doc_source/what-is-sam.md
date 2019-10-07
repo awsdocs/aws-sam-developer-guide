@@ -31,4 +31,4 @@ Because AWS SAM integrates with other AWS services, creating serverless applicat
 
 ## Next Step<a name="building-serverless-applications-nextstep"></a>
 
- [Getting Started](serverless-getting-started.md) 
+ [Getting Started with AWS SAM](serverless-getting-started.md) 
