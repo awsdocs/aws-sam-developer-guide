@@ -106,3 +106,5 @@ The following is a table of the available policy templates\.
 | [FilterLogEventsPolicy](serverless-policy-template-list.md#filter-log-events-policy) | Gives permission to filter log events from a specified log group\. | 
 | [SSMParameterReadPolicy](serverless-policy-template-list.md#ssm-parameter-read-policy) | Gives permission to access a parameter to load secrets in this account\. | 
 | [StepFunctionsExecutionPolicy](serverless-policy-template-list.md#stepfunctions-execution-policy) | Gives permission to access a parameter to load secrets in this account\. | 
+| [CodeCommitCrudPolicy](serverless-policy-template-list.md#codecommit-crud-policy) | Gives permissions to create/read/update/delete objects within a specific codecommit repository\. | 
+| [CodeCommitReadPolicy](serverless-policy-template-list.md#codecommit-read-policy) | Gives permissions to read objects within a specific codecommit repository\. | 

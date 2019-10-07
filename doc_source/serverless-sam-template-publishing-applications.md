@@ -1,6 +1,6 @@
 # Publishing Serverless Applications Using the AWS SAM CLI<a name="serverless-sam-template-publishing-applications"></a>
 
-You can use the AWS SAM CLI to publish your application to the AWS Serverless Application Repository to make it available for others to find and deploy\.
+You can use the AWS SAM CLI to publish your application to the AWS Serverless Application Repository to make it available for others to find and deploy\. To make an AWS SAM application public, you must create it, and all of the other Amazon or AWS resources it uses, in us\-east\-1 or us\-east\-2\.
 
 The application you want to publish must be one that you've defined using AWS SAM, and that you've tested locally and/or in the AWS Cloud\. The application's deployment package and AWS SAM template are the inputs to the steps below\.
 
@@ -10,11 +10,19 @@ The following instructions either create a new application, create a new version
 
 Before you publish an application to the AWS Serverless Application Repository, you need the following:
 + A valid AWS account with an IAM user that has administrator permissions\. See [Set Up an AWS Account](https://docs.aws.amazon.com/lambda/latest/dg/setup.html)\.
-+ Version 1\.16\.77 or later of the AWS CLI installed\. See [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)\.
-+ The AWS SAM CLI \(command line interface\) installed\. See [Installing the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)\.
-+ A valid AWS Serverless Application Model \(AWS SAM\) template\.
++ Version 1\.16\.77 or later of the AWS CLI installed\. See [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)\. If you have the AWS CLI installed, you can get the version by running the following command:
+
+  ```
+  cli --v
+  ```
++ The AWS SAM CLI \(command line interface\) installed\. See [Installing the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)\. You can determine whether the AWS SAM CLI is installed by running the following command:
+
+  ```
+  sam --version
+  ```
++ A valid AWS Serverless Application Model \(AWS SAM\) template\. You can copy the example template from [AWS SAM Template Concepts](serverless-sam-template-basics.md) and save to something like `MyTemplate.yaml`\.
 + Your application code and dependencies referenced by the AWS SAM template\.
-+ A semantic version for your application \(required to share your application publicly\)\.
++ A semantic version for your application \(required to share your application publicly\)\. This value can be as simple as 1\.0\.
 + A URL that points to your application's source code\.
 + A README\.md file\. This file should describe how customers can use your application, and how to configure it before deploying it in their own AWS accounts\. 
 + A LICENSE\.txt file \(required to share your application publicly\)\.
