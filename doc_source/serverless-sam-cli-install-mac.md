@@ -164,8 +164,6 @@ brew tap aws/tap
 brew install aws-sam-cli
 ```
 
-Verify that the AWS SAM CLI is installed to the following location:
-
 Verify the installation:
 
 ```

@@ -82,7 +82,8 @@ This command creates a directory named `sam-app` with the following folder struc
  
  sam-app/
    ├── README.md
-   ├── event.json
+   ├── events/
+   │   └── event.json
    ├── hello_world/
    │   ├── __init__.py
    │   ├── app.py            #Contains your AWS Lambda handler logic.
@@ -296,7 +297,7 @@ The `start-api` command starts up a local endpoint that replicates your REST API
 **Command to run:**
 
 ```
-sam local invoke "HelloWorldFunction" -e event.json
+sam local invoke "HelloWorldFunction" -e events/event.json
 ```
 
 **Example output:**
