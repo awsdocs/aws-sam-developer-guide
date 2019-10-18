@@ -228,18 +228,19 @@ Gives SendBounce permission to an Amazon SES identity\.
 
 ## ElasticsearchHttpPostPolicy<a name="elastic-search-http-post-policy"></a>
 
-Gives POST permission to Amazon Elasticsearch Service\.
+Gives POST and PUT permission to Amazon Elasticsearch Service\.
 
 ```
         "Statement": [
           {
             "Effect": "Allow",
             "Action": [
-              "es:ESHttpPost"
+              "es:ESHttpPost",
+              "es:ESHttpPut"
             ],
             "Resource": {
               "Fn::Sub": [
-                "arn:${AWS::Partition}:es:${AWS::Region}:${AWS::AccountId}:domain/${domainName}",
+                "arn:${AWS::Partition}:es:${AWS::Region}:${AWS::AccountId}:domain/${domainName}/*",
                 {
                   "domainName": {
                     "Ref": "DomainName"
@@ -783,7 +784,13 @@ Gives full access permission to objects in an Amazon S3 bucket\.
               "s3:GetObjectVersion",
               "s3:PutObject",
               "s3:PutObjectAcl",
-              "s3:DeleteObject"
+              "s3:DeleteObject",
+              "s3:DeleteObjectTagging",
+              "s3:DeleteObjectVersionTagging",
+              "s3:GetObjectTagging",
+              "s3:GetObjectVersionTagging",
+              "s3:PutObjectTagging",
+              "s3:PutObjectVersionTagging"
             ],
             "Resource": [
               {
@@ -985,15 +992,7 @@ Gives permission to compare and detect faces and labels\.
             "rekognition:CompareFaces",
             "rekognition:DetectFaces"
           ],
-          "Resource": {
-            "Fn::Sub": [
-              "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
-              {
-                "collectionId": {
-                  "Ref": "CollectionId"
-                }
-              }
-            ]
+          "Resource": "*"
           }
         ]
 ```
@@ -1368,7 +1367,8 @@ If you are not using default key, you will also need `KMSDecryptPolicy`\.
             "Effect": "Allow",
             "Action": [
               "ssm:GetParameters",
-              "ssm:GetParameter"
+              "ssm:GetParameter",
+              "ssm:GetParametersByPath"
             ],
             "Resource": {
               "Fn::Sub": [
@@ -1376,6 +1376,174 @@ If you are not using default key, you will also need `KMSDecryptPolicy`\.
                 {
                   "parameterName": {
                     "Ref": "ParameterName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## StepFunctionsExecutionPolicy<a name="stepfunctions-execution-policy"></a>
+
+Gives permission to start a Step Functions state machine execution\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "states:StartExecution"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:states:${AWS::Region}:${AWS::AccountId}:stateMachine:${stateMachineName}",
+                {
+                  "stateMachineName": {
+                    "Ref": "StateMachineName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## CodeCommitCrudPolicy<a name="codecommit-crud-policy"></a>
+
+Gives permissions to create/read/update/delete objects within a specific codecommit repository\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "codecommit:GitPull",
+              "codecommit:GitPush",
+              "codecommit:CreateBranch",
+              "codecommit:DeleteBranch",
+              "codecommit:GetBranch",
+              "codecommit:ListBranches",
+              "codecommit:MergeBranchesByFastForward",
+              "codecommit:MergeBranchesBySquash",
+              "codecommit:MergeBranchesByThreeWay",
+              "codecommit:UpdateDefaultBranch",
+              "codecommit:BatchDescribeMergeConflicts",
+              "codecommit:CreateUnreferencedMergeCommit",
+              "codecommit:DescribeMergeConflicts",
+              "codecommit:GetMergeCommit",
+              "codecommit:GetMergeOptions",
+              "codecommit:BatchGetPullRequests",
+              "codecommit:CreatePullRequest",
+              "codecommit:DescribePullRequestEvents",
+              "codecommit:GetCommentsForPullRequest",
+              "codecommit:GetCommitsFromMergeBase",
+              "codecommit:GetMergeConflicts",
+              "codecommit:GetPullRequest",
+              "codecommit:ListPullRequests",
+              "codecommit:MergePullRequestByFastForward",
+              "codecommit:MergePullRequestBySquash",
+              "codecommit:MergePullRequestByThreeWay",
+              "codecommit:PostCommentForPullRequest",
+              "codecommit:UpdatePullRequestDescription",
+              "codecommit:UpdatePullRequestStatus",
+              "codecommit:UpdatePullRequestTitle",
+              "codecommit:DeleteFile",
+              "codecommit:GetBlob",
+              "codecommit:GetFile",
+              "codecommit:GetFolder",
+              "codecommit:PutFile",
+              "codecommit:DeleteCommentContent",
+              "codecommit:GetComment",
+              "codecommit:GetCommentsForComparedCommit",
+              "codecommit:PostCommentForComparedCommit",
+              "codecommit:PostCommentReply",
+              "codecommit:UpdateComment",
+              "codecommit:BatchGetCommits",
+              "codecommit:CreateCommit",
+              "codecommit:GetCommit",
+              "codecommit:GetCommitHistory",
+              "codecommit:GetDifferences",
+              "codecommit:GetObjectIdentifier",
+              "codecommit:GetReferences",
+              "codecommit:GetTree",
+              "codecommit:GetRepository",
+              "codecommit:UpdateRepositoryDescription",
+              "codecommit:ListTagsForResource",
+              "codecommit:TagResource",
+              "codecommit:UntagResource",
+              "codecommit:GetRepositoryTriggers",
+              "codecommit:PutRepositoryTriggers",
+              "codecommit:TestRepositoryTriggers",
+              "codecommit:GetBranch",
+              "codecommit:GetCommit",
+              "codecommit:UploadArchive",
+              "codecommit:GetUploadArchiveStatus",
+              "codecommit:CancelUploadArchive"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:codecommit:${AWS::Region}:${AWS::AccountId}:${repositoryName}",
+                {
+                  "repositoryName": {
+                    "Ref": "RepositoryName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## CodeCommitReadPolicy<a name="codecommit-read-policy"></a>
+
+Gives permissions to read objects within a specific codecommit repository\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "codecommit:GitPull",
+              "codecommit:GetBranch",
+              "codecommit:ListBranches",
+              "codecommit:BatchDescribeMergeConflicts",
+              "codecommit:DescribeMergeConflicts",
+              "codecommit:GetMergeCommit",
+              "codecommit:GetMergeOptions",
+              "codecommit:BatchGetPullRequests",
+              "codecommit:DescribePullRequestEvents",
+              "codecommit:GetCommentsForPullRequest",
+              "codecommit:GetCommitsFromMergeBase",
+              "codecommit:GetMergeConflicts",
+              "codecommit:GetPullRequest",
+              "codecommit:ListPullRequests",
+              "codecommit:GetBlob",
+              "codecommit:GetFile",
+              "codecommit:GetFolder",
+              "codecommit:GetComment",
+              "codecommit:GetCommentsForComparedCommit",
+              "codecommit:BatchGetCommits",
+              "codecommit:GetCommit",
+              "codecommit:GetCommitHistory",
+              "codecommit:GetDifferences",
+              "codecommit:GetObjectIdentifier",
+              "codecommit:GetReferences",
+              "codecommit:GetTree",
+              "codecommit:GetRepository",
+              "codecommit:ListTagsForResource",
+              "codecommit:GetRepositoryTriggers",
+              "codecommit:TestRepositoryTriggers",
+              "codecommit:GetBranch",
+              "codecommit:GetCommit",
+              "codecommit:GetUploadArchiveStatus"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:codecommit:${AWS::Region}:${AWS::AccountId}:${repositoryName}",
+                {
+                  "repositoryName": {
+                    "Ref": "RepositoryName"
                   }
                 }
               ]

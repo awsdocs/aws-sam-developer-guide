@@ -10,7 +10,7 @@ You can use AWS SAM to define your serverless applications\. AWS SAM consists of
    
 + **AWS SAM command line interface \(AWS SAM CLI\)**\. You use this tool to build serverless applications that are defined by AWS SAM templates\. The CLI provides commands that enable you to verify that AWS SAM template files are written according to the specification, invoke Lambda functions locally, step\-through debug Lambda functions, package and deploy serverless applications to the AWS Cloud, and so on\. For details about how to use the AWS SAM CLI, including the full AWS SAM CLI Command Reference, see [AWS SAM CLI](serverless-sam-reference.md#serverless-sam-cli)\.
 
-This guide shows you how to use AWS SAM to define, test, and deploy a simple serverless application\. It also provides an [example application](serverless-quick-start.md) that you can download, test locally, and deploy to the AWS Cloud\. You can use this example application as a starting point for developing your own serverless applications\.
+This guide shows you how to use AWS SAM to define, test, and deploy a simple serverless application\. It also provides an [example application](serverless-getting-started-hello-world.md) that you can download, test locally, and deploy to the AWS Cloud\. You can use this example application as a starting point for developing your own serverless applications\.
 
 ## Benefits of Using AWS SAM<a name="benefits-of-using-sam"></a>
 
@@ -31,4 +31,4 @@ Because AWS SAM integrates with other AWS services, creating serverless applicat
 
 ## Next Step<a name="building-serverless-applications-nextstep"></a>
 
- [Quick Start](serverless-quick-start.md) 
+ [Getting Started with AWS SAM](serverless-getting-started.md) 

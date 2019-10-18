@@ -45,7 +45,7 @@ $ sam init --location /path/to/template/folder
 | Option | Description | 
 | --- | --- | 
 |  \-l, \-\-location TEXT | The template location \(Git, Mercurial, HTTP/HTTPS, ZIP, path\)\. | 
-| \-r, \-\-runtime \[python3\.7\| python3\.6\| python2\.7\| python\| ruby2\.5\| nodejs6\.10\| nodejs8\.10\| nodejs\| dotnetcore2\.0\| dotnetcore2\.1\| dotnetcore1\.0\| dotnetcore\| dotnet\| go1\.x\| go\| java8\| java\] | The Lambda runtime of your application\. | 
+| \-r, \-\-runtime \[java8\|ruby2\.5\|dotnetcore\|dotnetcore1\.0\|dotnetcore2\.0\|ruby\|dotnetcore2\.1\|python\|nodejs10\.x\|dotnet\|python3\.7\|nodejs8\.10\|nodejs6\.10\|nodejs\|python2\.7\|java\|go1\.x\|go\|python3\.6\] | The Lambda runtime of your application\. | 
 | \-o, \-\-output\-dir PATH | The location where the initialized application is output\. | 
 | \-n, \-\-name TEXT | The name of your project to be generated as a folder\. | 
 | \-\-no\-input | Disables prompting and accepts default values that are defined in the template configuration\. | 

@@ -11,7 +11,7 @@ AWS SAM defines the following resources that are specifically designed for serve
 
 ## AWS::Serverless::Api<a name="serverless-sam-template-api"></a>
 
-This resource type describes an API Gateway resource\. It's useful for advanced use cases where you want full control and flexibility when you configure your APIs\. For most scenarios, we recommend that you create APIs by specifying this resource type as an event source of your `AWS::Serverless::Function` resource, as shown in the following example\.
+This resource type describes an API Gateway resource\. It's useful for advanced use cases where you want full control and flexibility when you configure your APIs\. For most scenarios, we recommend that you create APIs by specifying this resource type as an event source of your `AWS::Serverless::Function` resource\.
 
 ```
   Type: AWS::Serverless::Api
@@ -64,7 +64,7 @@ The following is an example of a serverless function:
   Type: AWS::Serverless::Function
   Properties:
     Handler: index.js
-    Runtime: nodejs6.10
+    Runtime: nodejs8.10
     CodeUri: 's3://my-code-bucket/my-function.zip'
     Description: Creates thumbnails of uploaded images
     MemorySize: 1024

@@ -10,7 +10,7 @@ Because this example is more complicated, be sure that you're familiar with inst
 
 ## Before You Begin<a name="serverless-example-s3-prereq"></a>
 
-Make sure that you've completed the required setup in the [Quick Start](serverless-quick-start.md)\. See the [Before You Begin](serverless-quick-start.md#gs-ex1-prereq) section of the Quick Start\.
+Make sure that you've completed the required setup in the [Installing the AWS SAM CLI](serverless-sam-cli-install.md)\.
 
 ## Step 1: Initialize the Application<a name="serverless-example-s3-setup-local-app"></a>
 

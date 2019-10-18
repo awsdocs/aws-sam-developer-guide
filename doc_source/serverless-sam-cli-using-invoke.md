@@ -5,6 +5,8 @@ You can invoke your function locally by using the `[sam local invoke](sam-cli-co
 **Note**  
 The `sam local invoke` command described in this section corresponds to the AWS CLI command [ `aws lambda invoke`](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\. You can use either version of this command to invoke a Lambda function that you've uploaded to the AWS Cloud\.
 
+You must execute `sam local invoke` in the project directory containing the function you want to invoke\.
+
 Examples:
 
 ```
@@ -22,7 +24,7 @@ This animation shows invoking a Lambda function locally using Microsoft Visual S
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/sam-invoke.gif)
 
-*Environment Variable File*
+## Environment Variable File<a name="serverless-sam-cli-using-invoke-environment-file"></a>
 
 You can use the `--env-vars` argument with the `invoke` or `start-api` commands\. You do this to provide a JSON file that contains values to override the environment variables that are already defined in your function template\. Structure the file as follows:
 
