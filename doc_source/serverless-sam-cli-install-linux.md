@@ -119,7 +119,7 @@ You must have Docker installed and working to be able to run serverless projects
 
 Docker is available on many different operating systems, including most modern Linux distributions, like CentOS, Debian, Ubuntu, etc\. For more information about how to install Docker on your particular operating system, go to the [Docker installation guide](https://docs.docker.com/engine/installation/#installation)\.
 
-If you are usering Amazon Linux 2, follow these steps to install Docker:
+If you are using Amazon Linux 2, follow these steps to install Docker:
 
 1. Update the installed packages and package cache on your instance\.
 
