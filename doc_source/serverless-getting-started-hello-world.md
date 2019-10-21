@@ -379,6 +379,32 @@ When trying to invoke the API Gateway endpoint, you see the following error:
 
 This means that you've attempted to send a request to an invalid domain\. This can happen if your serverless application failed to deploy successfully, or if you have a typo in your `curl` command\. Verify that the application was deployed successfully by using the AWS CloudFormation console or AWS CLI, and that your `curl` command is correct\.
 
+## Clean Up<a name="serverless-getting-started-hello-world-cleanup"></a>
+
+If you no longer need the AWS resources you created by running this tutorial, you can remove them by deleting the AWS CloudFormation stack that you deployed\.
+
+To delete the AWS CloudFormation stack created with this tutorial using the AWS Management Console, follow these steps:
+
+1. Sign in to the AWS Management Console and open the AWS CloudFormation console at [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/)\.
+
+1. In the left navigation pane, choose **Stacks**\.
+
+1. In the list of stacks, choose **aws\-sam\-getting\-started**\.
+
+1. Choose **Delete**\.
+
+When done, the status of the of the stack will change to **DELETE\_COMPLETE**\.
+
+Alternatively, you can delete the AWS CloudFormation stack by executing the following AWS CLI command:
+
+```
+aws cloudformation delete-stack --stack-name aws-sam-getting-started --region region
+```
+
+### Verify Deleted Stack<a name="serverless-getting-started-hello-world-cleanup-verify"></a>
+
+For both methods of deleting the AWS CloudFormation stack, you can verify it was deleted by going to the [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/), choosing **Stacks** in the left navigation pane, and choosing **Deleted** in the dropdown to the right of the search text box\. You should see your stack name **aws\-sam\-getting\-started** in the list of deleted stacks\.
+
 ## Conclusion<a name="serverless-getting-started-hello-world-conclusion"></a>
 
 In this tutorial, you've done the following:
@@ -386,6 +412,8 @@ In this tutorial, you've done the following:
 1. Created, built, packaged, and deployed a serverless application to AWS with AWS SAM\.
 
 1. Tested your application locally by using the AWS SAM CLI and Docker\.
+
+1. Deleted the AWS resources that you no longer need\.
 
 ## Next Steps<a name="serverless-getting-started-hello-world-next-steps"></a>
 
