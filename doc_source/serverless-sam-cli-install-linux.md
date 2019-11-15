@@ -12,6 +12,8 @@ The following steps help you to install and configure the required prerequisites
 
 1. Install Docker\. Note: Docker is only a prerequisite for testing your application locally\.
 
+1. Install Git Client (Required for next step).
+
 1. Install Homebrew\.
 
 1. Install the AWS SAM CLI\.
