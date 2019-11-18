@@ -13,7 +13,7 @@ Before you publish an application to the AWS Serverless Application Repository, 
 + Version 1\.16\.77 or later of the AWS CLI installed\. See [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)\. If you have the AWS CLI installed, you can get the version by running the following command:
 
   ```
-  cli --v
+  aws --version
   ```
 + The AWS SAM CLI \(command line interface\) installed\. See [Installing the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)\. You can determine whether the AWS SAM CLI is installed by running the following command:
 

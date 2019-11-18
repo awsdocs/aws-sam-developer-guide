@@ -15,7 +15,7 @@ The following is a preview of commands that you run to create your Hello World a
 aws s3 mb s3://bucketname --region region  # Example regions: us-east-1, ap-east-1, eu-central-1, sa-east-1
 
 #Step 1 - Download a sample application
-sam init --runtime python3.7
+sam init --runtime python3.7 --dependency-manager pip --app-template hello-world --name sam-app
 
 #Step 2 - Build your application
 cd sam-app
@@ -53,6 +53,10 @@ In addition, the sample application in this tutorial requires Python 3\.7\. If y
 **Command to run:**
 
 ```
+# With SAM CLI version 0.30.0 or later, run this command:
+sam init --runtime python3.7 --dependency-manager pip --app-template hello-world --name sam-app
+
+# With SAM CLI versions prior to 0.30.0, run this command:
 sam init --runtime python3.7
 ```
 
@@ -356,6 +360,17 @@ $ diff api-event.json event.json
 ```
 
 ## Troubleshooting<a name="serverless-getting-started-hello-world-troubleshooting"></a>
+
+### SAM CLI error: "no such option: \-\-app\-template"<a name="serverless-getting-started-hello-world-troubleshooting-app-template"></a>
+
+When executing `sam init`, you see the following error:
+
+```
+ 
+Error: no such option: --app-template
+```
+
+This means that you are using an older version of the AWS SAM CLI that does not support the `--app-template` parameter\. To fix this, you can either update your version of AWS SAM CLI to 0\.30\.0 or later, or omit the `--app-template` parameter from the `sam init` command\.
 
 ### Curl Error: "Missing Authentication Token"<a name="serverless-getting-started-hello-world-troubleshooting-curl-auth-token"></a>
 
