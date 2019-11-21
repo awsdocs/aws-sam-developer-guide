@@ -89,6 +89,8 @@ The following is a table of the available policy templates\.
 | [AWSSecretsManagerRotationPolicy](serverless-policy-template-list.md#secrets-manager-rotation-policy) | Gives permission to rotate a secret in AWS Secrets Manager\. | 
 | [AWSSecretsManagerGetSecretValuePolicy](serverless-policy-template-list.md#secrets-manager-get-secret-value-policy) | Gives permission to GetSecretValue for the specified AWS Secrets Manager secret\. | 
 | [CodePipelineReadOnlyPolicy](serverless-policy-template-list.md#code-pipeline-readonly-policy) | Gives read permission to get details about a CodePipeline pipeline\. | 
+| [CloudWatchDashboardPolicy](serverless-policy-template-list.md#cloudwatch-dashboard-policy) | Gives permissions to put metrics to operate on CloudWatch dashboards\. | 
+| [RekognitionFacesManagementPolicy](serverless-policy-template-list.md#rekognition-face-management-policy) | Gives permission to add, delete, and search faces in a collection\. | 
 | [RekognitionFacesPolicy](serverless-policy-template-list.md#rekognition-faces-policy) | Gives permission to compare and detect faces and labels\. | 
 | [RekognitionLabelsPolicy](serverless-policy-template-list.md#rekognition-labels-policy) | Gives permission to detect object and moderation labels\. | 
 | [DynamoDBBackupFullAccessPolicy](serverless-policy-template-list.md#ddb-back-full-policy) | Gives read and write permission to DynamoDB on\-demand backups for a table\. | 

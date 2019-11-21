@@ -22,7 +22,7 @@ cd sam-app
 sam build
 
 #Step 3 - Package your application
-sam package --output-template packaged.yaml --s3-bucket bucketname
+sam package --output-template-file packaged.yaml --s3-bucket bucketname
 
 #Step 4 - Deploy your application
 sam deploy --template-file packaged.yaml --region us-west-2 --capabilities CAPABILITY_IAM --stack-name aws-sam-getting-started
@@ -150,7 +150,7 @@ You can see the following top\-level tree under `.aws-sam`:
 **Command to run:**
 
 ```
-sam package --output-template packaged.yaml --s3-bucket bucketname
+sam package --output-template-file packaged.yaml --s3-bucket bucketname
 ```
 
 **Example output:**

@@ -106,7 +106,6 @@ The following is an example of a layer version:
     Description: Layer description
     ContentUri: 's3://my-bucket/my-layer.zip'
     CompatibleRuntimes:
-      - nodejs6.10
       - nodejs8.10
     LicenseInfo: 'Available under the MIT-0 license.'
     RetentionPolicy: Retain

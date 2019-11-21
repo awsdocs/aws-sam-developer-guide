@@ -971,12 +971,64 @@ Gives read permission to get details about a CodePipeline pipeline\.
           {
             "Effect": "Allow",
             "Action": [
+              "codepipeline:ListPipelineExecutions"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:codepipeline:${AWS::Region}:${AWS::AccountId}:${pipelinename}",
+                {
+                  "pipelinename": {
+                    "Ref": "PipelineName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## CloudWatchDashboardPolicy<a name="cloudwatch-dashboard-policy"></a>
+
+Gives permissions to put metrics to operate on CloudWatch dashboards\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
               "cloudwatch:GetDashboard",
               "cloudwatch:ListDashboards",
               "cloudwatch:PutDashboard",
               "cloudwatch:ListMetrics"
             ],
             "Resource": "*"
+          }
+        ]
+```
+
+## RekognitionFacesManagementPolicy<a name="rekognition-face-management-policy"></a>
+
+Gives permission to add, delete, and search faces in a collection\.
+
+```
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "rekognition:IndexFaces",
+            "rekognition:DeleteFaces",
+            "rekognition:SearchFaces",
+            "rekognition:SearchFacesByImage",
+            "rekognition:ListFaces"
+          ],
+          "Resource": {
+            "Fn::Sub": [
+              "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
+              {
+                "collectionId": {
+                  "Ref": "CollectionId"
+                }
+              }
+            ]
           }
         ]
 ```
