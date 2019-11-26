@@ -1,6 +1,6 @@
 # AWS SAM CLI Config<a name="serverless-sam-cli-config"></a>
 
-The AWS SAM CLI now supports a project\-level configuration file that stores default parameters for AWS SAM commands\. This configuration file stores the parameters to use for command executions\. If the required parameters are available in the configuration file, you can run commands without providing all parameters for each execution\.
+The AWS SAM CLI now supports a project\-level configuration file that stores default parameters for AWS SAM commands\. This configuration file stores the parameters to use for command executions\. If the required parameters are available in the configuration file, you can run commands without providing all parameters each execution\.
 
 For example, when executing the `sam deploy --guided` command, AWS SAM CLI automatically adds the required parameters into the configuration file\. You can subsequently execute `sam deploy` with no parameters, and the values will be retrieved from the configuration file\.
 

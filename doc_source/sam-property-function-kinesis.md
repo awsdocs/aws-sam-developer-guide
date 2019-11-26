@@ -12,8 +12,13 @@ To declare this entity in your AWS SAM template, use the following syntax:
 
 ```
   [BatchSize](#sam-function-kinesis-batchsize): Integer
+  [BisectBatchOnFunctionError](#sam-function-kinesis-bisectbatchonfunctionerror): Boolean
+  [DestinationConfig](#sam-function-kinesis-destinationconfig): [DestinationConfig](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-destinationconfig)
   [Enabled](#sam-function-kinesis-enabled): Boolean
   [MaximumBatchingWindowInSeconds](#sam-function-kinesis-maximumbatchingwindowinseconds): Integer
+  [MaximumRecordAgeInSeconds](#sam-function-kinesis-maximumrecordageinseconds): Integer
+  [MaximumRetryAttempts](#sam-function-kinesis-maximumretryattempts): Integer
+  [ParallelizationFactor](#sam-function-kinesis-parallelizationfactor): Integer
   [StartingPosition](#sam-function-kinesis-startingposition): String
   [Stream](#sam-function-kinesis-stream): String
 ```
@@ -29,6 +34,18 @@ The maximum number of items to retrieve in a single batch\.
 *Minimum*: `1`  
 *Maximum*: `10000`
 
+ `BisectBatchOnFunctionError`   <a name="sam-function-kinesis-bisectbatchonfunctionerror"></a>
+If the function returns an error, split the batch in two and retry\.  
+*Type*: Boolean  
+*Required*: No  
+*CloudFormation Compatibility*: This property is passed directly to the `[BisectBatchOnFunctionError](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-bisectbatchonfunctionerror)` property of an `AWS::Lambda::EventSourceMapping`\.
+
+ `DestinationConfig`   <a name="sam-function-kinesis-destinationconfig"></a>
+An Amazon SQS queue or Amazon SNS topic destination for discarded records\.  
+*Type*: [DestinationConfig](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-destinationconfig)  
+*Required*: No  
+*CloudFormation Compatibility*: This property is passed directly to the `[DestinationConfig](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-destinationconfig)` property of an `AWS::Lambda::EventSourceMapping`\.
+
  `Enabled`   <a name="sam-function-kinesis-enabled"></a>
 Disables the event source mapping to pause polling and invocation\.  
 *Type*: Boolean  
@@ -40,6 +57,24 @@ The maximum amount of time to gather records before invoking the function, in se
 *Type*: Integer  
 *Required*: No  
 *CloudFormation Compatibility*: This property is passed directly to the `[MaximumBatchingWindowInSeconds](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumbatchingwindowinseconds)` property of an `AWS::Lambda::EventSourceMapping`\.
+
+ `MaximumRecordAgeInSeconds`   <a name="sam-function-kinesis-maximumrecordageinseconds"></a>
+The maximum age of a record that Lambda sends to a function for processing\.  
+*Type*: Integer  
+*Required*: No  
+*CloudFormation Compatibility*: This property is passed directly to the `[MaximumRecordAgeInSeconds](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumrecordageinseconds)` property of an `AWS::Lambda::EventSourceMapping`\.
+
+ `MaximumRetryAttempts`   <a name="sam-function-kinesis-maximumretryattempts"></a>
+The maximum number of times to retry when the function returns an error\.  
+*Type*: Integer  
+*Required*: No  
+*CloudFormation Compatibility*: This property is passed directly to the `[MaximumRetryAttempts](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumretryattempts)` property of an `AWS::Lambda::EventSourceMapping`\.
+
+ `ParallelizationFactor`   <a name="sam-function-kinesis-parallelizationfactor"></a>
+The number of batches to process from each shard concurrently\.  
+*Type*: Integer  
+*Required*: No  
+*CloudFormation Compatibility*: This property is passed directly to the `[ParallelizationFactor](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-parallelizationfactor)` property of an `AWS::Lambda::EventSourceMapping`\.
 
  `StartingPosition`   <a name="sam-function-kinesis-startingposition"></a>
 The position in a stream from which to start reading\.  

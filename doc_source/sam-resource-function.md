@@ -212,11 +212,11 @@ The Amazon Resource Name \(ARN\) of the underlying Lambda function\.
 
 ## Examples<a name="sam-resource-function--examples"></a>
 
-### Example<a name="sam-resource-function--examples--example"></a>
+### Simple Function<a name="sam-resource-function--examples--simple-function"></a>
 
-Simple example
+Base case example of an AWS::Serverless::Function resource\.
 
-#### YAML<a name="sam-resource-function--examples--example--yaml"></a>
+#### YAML<a name="sam-resource-function--examples--simple-function--yaml"></a>
 
 ```
 Properties:
@@ -226,11 +226,11 @@ Properties:
 Type: AWS::Serverless::Function
 ```
 
-### Another Example<a name="sam-resource-function--examples--another-example"></a>
+### Function Properties Example<a name="sam-resource-function--examples--function-properties-example"></a>
 
-Example 2
+Example of an AWS::Serverless::Function that uses InlineCode, Tracing, Policies, and Layers\.
 
-#### YAML<a name="sam-resource-function--examples--another-example--yaml"></a>
+#### YAML<a name="sam-resource-function--examples--function-properties-example--yaml"></a>
 
 ```
 Properties:

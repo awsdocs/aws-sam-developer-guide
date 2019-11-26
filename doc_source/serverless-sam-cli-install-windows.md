@@ -18,91 +18,7 @@ If you don't already have an AWS account, see [aws\.amazon\.com](https://aws.ama
 
 If you don't already have an IAM user with administrator permissions, see [Creating Your First IAM Admin User and Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
 
-## Step 3: Install and Configure the AWS CLI<a name="serverless-sam-cli-install-windows-aws-cli"></a>
-
-If you don't already have the AWS CLI installed, this step shows you how to install and configure it\. You can check whether you have the AWS CLI installed by executing `aws --version` at a command line\.
-
-This section has two substeps: a\) Install the AWS CLI using an MSI installation package, and b\) Configure the AWS CLI to use your credentials, default AWS Region, and desired output format\.
-
-### Step 3a: Install the AWS CLI<a name="serverless-sam-cli-install-windows-aws-cli-install"></a>
-
-We recommend that you use one of the MSI installation packages\. These offer a familiar and convenient way to install the AWS CLI without installing any other prerequisites\.
-
-Installing the AWS CLI using an MSI installation package is supported on Microsoft Windows XP or later\. For alternative installation options, see [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)\.
-
-**To install the AWS CLI using the MSI installer**
-
-1. Download the appropriate MSI installer\.
-   + [Download the AWS CLI MSI installer for Windows \(64\-bit\)](https://s3.amazonaws.com/aws-cli/AWSCLI64PY3.msi)\.
-   + [Download the AWS CLI MSI installer for Windows \(32\-bit\)](https://s3.amazonaws.com/aws-cli/AWSCLI32PY3.msi)\.
-   + [Download the AWS CLI setup file](https://s3.amazonaws.com/aws-cli/AWSCLISetup.exe) \(includes both the 32\-bit and 64\-bit MSI installers, and automatically installs the correct version\)\.
-
-1. Run the downloaded MSI installer or the setup file\.
-
-1. Follow the onscreen instructions\.
-
-By default, the CLI installs to `C:\Program Files\Amazon\AWSCLI` \(64\-bit version\) or `C:\Program Files (x86)\Amazon\AWSCLI` \(32\-bit version\)\. To confirm the installation, use the `aws --version` command at a command line\.
-
-### Step 3b: Configure the AWS CLI<a name="serverless-sam-cli-install-windows-aws-cli-configure"></a>
-
-After you've verified installing the AWS CLI, you can configure it with your credentials, default AWS Region, and desired output format\. To do this, you first create the necessary access keys by following these steps:
-
-1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
-
-1. In the navigation pane, choose **Users**\.
-
-1. Choose the name of the user whose access keys you want to create, and then choose the **Security credentials** tab\.
-
-1. In the **Access keys** section, choose **Create access key**\.
-
-1. To view the new access key pair, choose **Show**\. You won't have access to the secret access key again after this dialog box closes\. Your credentials look something like this:
-   + Access key ID: AKIAIOSFODNN7EXAMPLE
-   + Secret access key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-
-1. To download the key pair, choose **Download \.csv file**\. Store the keys in a secure location\. You won't have access to the secret access key again after this dialog box closes\.
-
-   Keep the keys confidential in order to protect your AWS account, and never email them\. Don't share them outside your organization, even if an inquiry appears to come from AWS or Amazon\.com\. No one who legitimately represents Amazon will ever ask you for your secret key\.
-
-1. After you download the `.csv` file, choose **Close**\. When you create an access key, the key pair is active by default, and you can use the pair right away\.
-
-Configure the AWS CLI with the access keys that you just created by executing the following command:
-
-```
-aws configure
-```
-
-When you're prompted, replace the following examples with your access keys:
-
-```
- 
- AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE                         # Enter your access key
- AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY # Enter your secret key
- Default region name [None]: us-east-1                                  # Example regions: us-east-1, ap-east-1, eu-central-1, sa-east-1
- Default output format [None]: json                                     # Or 'text'
-```
-
-Additional configuration options are available in [configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)\.
-
-## Step 4: Create an Amazon S3 Bucket<a name="serverless-sam-cli-install-windows-s3-bucket"></a>
-
-AWS SAM uses an Amazon S3 bucket in your AWS account as a repository to store deployment artifacts\. To use the package and deployment functionality of AWS SAM, you must have an Amazon S3 bucket in the Region that you're working in\.
-
-If you need to create an Amazon S3 bucket, you can run the following command:
-
-```
-aws s3 mb s3://bucketname --region region # Example regions: us-east-1, ap-east-1, eu-central-1, sa-east-1
-```
-
-You should see the following output for a successfully created Amazon S3 bucket:
-
-```
- 
- make_bucket: bucketname
-```
-
-Remember to keep track of your Amazon S3 bucket name because you need it to package your serverless application\.
-
-## Step 5: Install Docker<a name="serverless-sam-cli-install-windows-docker"></a>
+## Step 3: Install Docker<a name="serverless-sam-cli-install-windows-docker"></a>
 
 **Note**  
 Docker is only a prerequisite for testing your application locally and building deployment packages using the `--use-container` flag\. You can skip this section or install Docker at a later time if you don't plan to use these features initially\.
@@ -129,7 +45,7 @@ You must have Docker installed and working to be able to run serverless projects
 
 If you run into issues installing Docker, see the [Docker installation guide](https://docs.docker.com/engine/installation/#installation) for troubleshooting tips\.
 
-## Step 6: Install the AWS SAM CLI<a name="serverless-sam-cli-install-windows-sam-cli"></a>
+## Step 4: Install the AWS SAM CLI<a name="serverless-sam-cli-install-windows-sam-cli"></a>
 
 Windows Installer \(MSI\) files are the package installer files for the Windows operating system\.
 
@@ -151,7 +67,7 @@ If you operate on 32\-bit machine, execute the following command: `pip install a
 
    ```
     
-    SAM CLI, version 0.19.0
+    SAM CLI, version 0.33.0
    ```
 
 You're now ready to start development\.
