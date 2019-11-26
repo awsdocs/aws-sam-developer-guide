@@ -1,0 +1,56 @@
+# SQS<a name="sam-property-function-sqs"></a>
+
+SQS event source type\.
+
+SAM generates [AWS::Lambda::EventSourceMapping](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html) resource when this event type is set
+
+## Syntax<a name="sam-property-function-sqs-syntax"></a>
+
+To declare this entity in your AWS SAM template, use the following syntax:
+
+### YAML<a name="sam-property-function-sqs-syntax.yaml"></a>
+
+```
+  [BatchSize](#sam-function-sqs-batchsize): Integer
+  [Enabled](#sam-function-sqs-enabled): Boolean
+  [Queue](#sam-function-sqs-queue): String
+```
+
+## Properties<a name="sam-property-function-sqs-properties"></a>
+
+ `BatchSize`   <a name="sam-function-sqs-batchsize"></a>
+The maximum number of items to retrieve in a single batch\.  
+*Type*: Integer  
+*Required*: No  
+*Default*: 10  
+*CloudFormation Compatibility*: This property is passed directly to the `[BatchSize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize)` property of an `AWS::Lambda::EventSourceMapping`\.  
+*Minimum*: `1`  
+*Maximum*: `10`
+
+ `Enabled`   <a name="sam-function-sqs-enabled"></a>
+Disables the event source mapping to pause polling and invocation\.  
+*Type*: Boolean  
+*Required*: No  
+*CloudFormation Compatibility*: This property is passed directly to the `[Enabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled)` property of an `AWS::Lambda::EventSourceMapping`\.
+
+ `Queue`   <a name="sam-function-sqs-queue"></a>
+The ARN of the queue\.  
+*Type*: String  
+*Required*: Yes  
+*CloudFormation Compatibility*: This property is passed directly to the `[EventSourceArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn)` property of an `AWS::Lambda::EventSourceMapping`\.
+
+## Examples<a name="sam-property-function-sqs--examples"></a>
+
+### SQS Event<a name="sam-property-function-sqs--examples--sqs-event"></a>
+
+SQS Event
+
+#### YAML<a name="sam-property-function-sqs--examples--sqs-event--yaml"></a>
+
+```
+Properties:
+  BatchSize: 10
+  Enabled: false
+  Queue: arn:aws:sqs:us-west-2:012345678901:my-queue
+Type: SQS
+```

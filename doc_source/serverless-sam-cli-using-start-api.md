@@ -10,7 +10,7 @@ You must execute `sam local invoke` in the project directory containing the func
 Example:
 
 ```
-$ sam local start-api
+sam local start-api
 ```
 
 AWS SAM automatically finds any functions within your AWS SAM template that have `Api` event sources defined\. Then, it mounts them at the defined HTTP paths\.
@@ -72,7 +72,7 @@ You can use the `--env-vars` argument with the `invoke` or `start-api` commands 
 For example, if you save this content in a file named `env.json`, then the following command uses this file to override the included environment variables:
 
 ```
-$ sam local start-api --env-vars env.json
+sam local start-api --env-vars env.json
 ```
 
 ## Layers<a name="serverless-sam-cli-using-start-api-layers"></a>

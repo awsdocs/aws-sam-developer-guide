@@ -7,7 +7,7 @@ For example, if you want to load a debugger like iKPdb at the runtime of your Py
 In this case, your full AWS SAM CLI command would be:
 
 ```
-$ DEBUGGER_ARGS="-m ikpdb --ikpdb-port=5858 --ikpdb-working-directory=/var/task/ --ikpdb-client-working-directory=/myApp --ikpdb-address=0.0.0.0" echo {} | sam local invoke -d 5858 myFunction
+DEBUGGER_ARGS="-m ikpdb --ikpdb-port=5858 --ikpdb-working-directory=/var/task/ --ikpdb-client-working-directory=/myApp --ikpdb-address=0.0.0.0" echo {} | sam local invoke -d 5858 myFunction
 ```
 
 You can pass debugger arguments to the functions of all runtimes\.

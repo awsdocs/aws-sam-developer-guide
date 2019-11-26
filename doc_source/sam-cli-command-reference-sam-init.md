@@ -20,28 +20,28 @@ If you provide a subset of required parameters, you will be prompted for the add
 ```
 Initializes a new SAM project with required parameters passed as parameters
 
-$ sam init --runtime python3.7 --dependency-manager pip --app-template hello-world --name sam-app
+sam init --runtime python3.7 --dependency-manager pip --app-template hello-world --name sam-app
 
 Initializes a new SAM project using custom template in a Git/Mercurial repository
 
 # gh being expanded to github url
-$ sam init --location gh:aws-samples/cookiecutter-aws-sam-python
+sam init --location gh:aws-samples/cookiecutter-aws-sam-python
 
-$ sam init --location git+ssh://git@github.com/aws-samples/cookiecutter-aws-sam-python.git
+sam init --location git+ssh://git@github.com/aws-samples/cookiecutter-aws-sam-python.git
 
-$ sam init --location hg+ssh://hg@bitbucket.org/repo/template-name
+sam init --location hg+ssh://hg@bitbucket.org/repo/template-name
 
-$ sam init --location hg+ssh://hg@bitbucket.org/repo/template-name
+sam init --location hg+ssh://hg@bitbucket.org/repo/template-name
 
-Initializes a new SAM project using custom template in a Zipfile
+# Initializes a new SAM project using custom template in a Zipfile
 
-$ sam init --location /path/to/template.zip
+sam init --location /path/to/template.zip
 
-$ sam init --location https://example.com/path/to/template.zip
+sam init --location https://example.com/path/to/template.zip
 
-Initializes a new SAM project using custom template in a local path
+# Initializes a new SAM project using custom template in a local path
 
-$ sam init --location /path/to/template/folder
+sam init --location /path/to/template/folder
 ```
 
 **Options:**

@@ -12,19 +12,19 @@ sam local generate-event [OPTIONS] COMMAND [ARGS]...
 
 ```
 Generate the event that S3 sends to your Lambda function when a new object is uploaded
-$ sam local generate-event s3 [put/delete]
+sam local generate-event s3 [put/delete]
 
-You can even customize the event by adding parameter flags. To find which flags apply to your command,
+# You can even customize the event by adding parameter flags. To find which flags apply to your command,
 run:
 
-$ sam local generate-event s3 [put/delete] --help
+sam local generate-event s3 [put/delete] --help
 
-Then you can add in those flags that you wish to customize using
+# Then you can add in those flags that you wish to customize using
 
-$ sam local generate-event s3 [put/delete] --bucket <bucket> --key <key>
+sam local generate-event s3 [put/delete] --bucket <bucket> --key <key>
 
-After you generate a sample event, you can use it to test your Lambda function locally
-$ sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam local invoke <function logical id>
+# After you generate a sample event, you can use it to test your Lambda function locally
+sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam local invoke <function logical id>
 ```
 
 **Options:**

@@ -11,21 +11,15 @@ The following diagram shows the components of this application:
 The following is a preview of commands that you run to create your Hello World application\. For more details about each of these commands, see the sections later in this page
 
 ```
-#Make sure that the Region for this bucket aligns with where you deploy
-aws s3 mb s3://bucketname --region region  # Example regions: us-east-1, ap-east-1, eu-central-1, sa-east-1
-
 #Step 1 - Download a sample application
-sam init --runtime python3.7 --dependency-manager pip --app-template hello-world --name sam-app
+sam init
 
 #Step 2 - Build your application
 cd sam-app
 sam build
 
-#Step 3 - Package your application
-sam package --output-template-file packaged.yaml --s3-bucket bucketname
-
-#Step 4 - Deploy your application
-sam deploy --template-file packaged.yaml --region us-west-2 --capabilities CAPABILITY_IAM --stack-name aws-sam-getting-started
+#Step 3 - Deploy your application
+sam deploy --guided
 ```
 
 ## Prerequisites<a name="serverless-getting-started-hello-world-prerequisites"></a>
@@ -36,51 +30,41 @@ This guide assumes that you've completed the steps in the [Installing the AWS SA
 
 1. Configured IAM permissions\.
 
-1. Installed the AWS CLI\.
-
-1. Created an Amazon S3 bucket\.
-
 1. Installed Docker\. Note: Docker is only a prerequisite for testing your application locally\.
 
 1. Installed Homebrew\. Note: Homebrew is only a prerequisite for Linux and macOS\.
 
-1. Installed the AWS SAM CLI\.
-
-In addition, the sample application in this tutorial requires Python 3\.7\. If you need to download Python 3\.7, see [Download Python](https://www.python.org/downloads/)\.
+1. Installed the AWS SAM CLI\. Note: Make sure you have version 0\.33\.0 or later\. You can check which version you have by executing the command `sam --version`\.
 
 ## Step 1: Download a Sample AWS SAM Application<a name="serverless-getting-started-hello-world-initialize"></a>
 
 **Command to run:**
 
 ```
-# With SAM CLI version 0.30.0 or later, run this command:
-sam init --runtime python3.7 --dependency-manager pip --app-template hello-world --name sam-app
-
-# With SAM CLI versions prior to 0.30.0, run this command:
-sam init --runtime python3.7
+sam init
 ```
+
+Follow the on\-screen prompts\. For this tutorial we recommend you choose AWS Quick Start Templates, the runtime of your choice, and the Hello World Example\.
 
 **Example output:**
 
 ```
    
- [+] Initializing project structure...
+ -----------------------
+ Generating application:
+ -----------------------
+ Name: sam-app
+ Runtime: python3.7
+ Dependency Manager: pip
+ Application Template: hello-world
+ Output Directory: .
 
- Project generated: ./sam-app
-
- Steps you can take next within the project folder
- ===================================================
- [*] Invoke Function: sam local invoke HelloWorldFunction --event event.json
- [*] Start API Gateway locally: sam local start-api
-
- Read sam-app/README.md for further instructions
-
-[*] Project initialization is now complete
+ Next steps can be found in the README file at ./sam-app/README.md
 ```
 
 **What AWS SAM is doing:**
 
-This command creates a directory named `sam-app` with the following folder structure, and then makes it your current directory:
+This command creates a directory with the name you provided as the project name\. The contents of the project directory are similar to the following \(these contents are created when one of the Python runtimes and the Hello World Example are chose\):
 
 ```
  
@@ -108,7 +92,7 @@ There are three especially important files:
 
 **Command to run:**
 
-From the `sam-app` directory \(that is, the directory where the `template.yaml` file for the sample application is located\), run this command:
+First change into the project directory \(that is, the directory where the `template.yaml` file for the sample application is located; by default is `sam-app`\), then run this command:
 
 ```
 sam build
@@ -126,7 +110,7 @@ sam build
  Commands you can use next
  =========================
  [*] Invoke Function: sam local invoke
- [*] Package: sam package --s3-bucket <yourbucket>
+ [*] Deploy: sam deploy --guided
 ```
 
 **What AWS SAM is doing:**
@@ -145,81 +129,99 @@ You can see the following top\-level tree under `.aws-sam`:
 
 `HelloWorldFunction` is a directory that contains your `app.py` file, as well as third\-party dependencies that your application uses\.
 
-## Step 3: Package Your Application for Deployment<a name="serverless-getting-started-hello-world-package"></a>
+## Step 3: Deploy Your Application to the AWS Cloud<a name="serverless-getting-started-hello-world-deploy"></a>
 
 **Command to run:**
 
 ```
-sam package --output-template-file packaged.yaml --s3-bucket bucketname
+sam deploy --guided
 ```
+
+Follow the on\-screen prompts\. You can just respond with `Enter` to accept the default options provided in the interactive experience\.
 
 **Example output:**
 
 ```
  
- Uploading to 8eaa458acdd2b83bd86a45d4d256ef73  558700 / 558700.0  (100.00%)
- Successfully packaged artifacts and wrote output template to file packaged.yaml.
- Execute the following command to deploy the packaged template:
+    Deploying with following values
+    ===============================
+    Stack name                 : sam-app
+    Region                     : us-east-1
+    Confirm changeset          : False
+    Deployment s3 bucket       : sam-bucket
+    Capabilities               : ["CAPABILITY_IAM"]
+    Parameter overrides        : {}
 
- aws cloudformation deploy --template-file packaged.yaml --stack-name <YOUR STACK NAME>
-```
+ Initiating deployment
+ =====================
 
-**Note**  
-For *bucketname* in this command, you need an Amazon S3 bucket that the `sam package` command can use to store the deployment package\. The deployment package is used when you deploy your application in a later step\. If you need to create a bucket for this purpose, run the following command to create an Amazon S3 bucket:  
-
-```
-aws s3 mb s3://bucketname --region region  # Example regions: us-east-1, ap-east-1, eu-central-1, sa-east-1
-```
-
-**What AWS SAM is doing:**
-
-This command takes your Lambda handler source code and any third\-party dependencies, zips everything, and uploads the zip file to your Amazon S3 bucket\. That bucket and file location are then noted in the `packaged.yaml` file\. You use the `packaged.yaml` file to deploy the application in the next step\.
-
-## Step 4: Deploy Your Application to the AWS Cloud<a name="serverless-getting-started-hello-world-deploy"></a>
-
-**Command to run:**
-
-```
-sam deploy --template-file packaged.yaml --region region --capabilities CAPABILITY_IAM --stack-name aws-sam-getting-started
-```
-
-**Example output:**
-
-```
- 
  Waiting for changeset to be created..
- Waiting for stack create/update to complete
- Successfully created/updated stack - aws-sam-getting-started
+
+ CloudFormation stack changeset
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+ Operation                                         LogicalResourceId                                 ResourceType
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+ + Add                                             HelloWorldFunctionHelloWorldPermissionProd        AWS::Lambda::Permission
+ + Add                                             ServerlessRestApiDeployment47fc2d5f9d             AWS::ApiGateway::Deployment
+ + Add                                             ServerlessRestApiProdStage                        AWS::ApiGateway::Stage
+ + Add                                             ServerlessRestApi                                 AWS::ApiGateway::RestApi
+ * Modify                                          HelloWorldFunctionRole                            AWS::IAM::Role
+ * Modify                                          HelloWorldFunction                                AWS::Lambda::Function
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 2019-11-21 14:33:24 - Waiting for stack create/update to complete
+
+ CloudFormation events from changeset
+ -------------------------------------------------------------------------------------------------------------------------------------------------
+ ResourceStatus                       ResourceType                         LogicalResourceId                    ResourceStatusReason
+ -------------------------------------------------------------------------------------------------------------------------------------------------
+ UPDATE_IN_PROGRESS                   AWS::IAM::Role                       HelloWorldFunctionRole               -
+ UPDATE_COMPLETE                      AWS::IAM::Role                       HelloWorldFunctionRole               -
+ UPDATE_IN_PROGRESS                   AWS::Lambda::Function                HelloWorldFunction                   -
+ UPDATE_COMPLETE                      AWS::Lambda::Function                HelloWorldFunction                   -
+ CREATE_IN_PROGRESS                   AWS::ApiGateway::RestApi             ServerlessRestApi                    -
+ CREATE_COMPLETE                      AWS::ApiGateway::RestApi             ServerlessRestApi                    -
+ CREATE_IN_PROGRESS                   AWS::ApiGateway::RestApi             ServerlessRestApi                    Resource creation Initiated
+ CREATE_IN_PROGRESS                   AWS::ApiGateway::Deployment          ServerlessRestApiDeployment47fc2d5   Resource creation Initiated
+                                                                          f9d
+ CREATE_IN_PROGRESS                   AWS::Lambda::Permission              HelloWorldFunctionHelloWorldPermis   Resource creation Initiated
+                                                                          sionProd
+ CREATE_IN_PROGRESS                   AWS::Lambda::Permission              HelloWorldFunctionHelloWorldPermis   -
+                                                                          sionProd
+ CREATE_IN_PROGRESS                   AWS::ApiGateway::Deployment          ServerlessRestApiDeployment47fc2d5   -
+                                                                          f9d
+CREATE_COMPLETE                      AWS::ApiGateway::Deployment          ServerlessRestApiDeployment47fc2d5   -
+                                                                          f9d
+ CREATE_IN_PROGRESS                   AWS::ApiGateway::Stage               ServerlessRestApiProdStage           -
+ CREATE_IN_PROGRESS                   AWS::ApiGateway::Stage               ServerlessRestApiProdStage           Resource creation Initiated
+ CREATE_COMPLETE                      AWS::ApiGateway::Stage               ServerlessRestApiProdStage           -
+ CREATE_COMPLETE                      AWS::Lambda::Permission              HelloWorldFunctionHelloWorldPermis   -
+                                                                          sionProd
+ UPDATE_COMPLETE_CLEANUP_IN_PROGRES   AWS::CloudFormation::Stack           sam-app                              -
+ S
+ UPDATE_COMPLETE                      AWS::CloudFormation::Stack           sam-app                              -
+ -------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Stack sam-app outputs:
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+ OutputKey-Description                                                     OutputValue
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+ HelloWorldFunctionIamRole - Implicit IAM Role created for Hello World     arn:aws:iam::123456789012:role/sam-app-
+ function                                                                  HelloWorldFunctionRole-104VTJ0TST7M0
+ HelloWorldApi - API Gateway endpoint URL for Prod stage for Hello World   https://0ks2zue0zh.execute-api.us-east-1.amazonaws.com/Prod/hello/
+ function
+ HelloWorldFunction - Hello World Lambda Function ARN                      arn:aws:lambda:us-east-1:123456789012:function:sam-app-
+                                                                          HelloWorldFunction-1TY92MJX0BXU5
+ ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Successfully created/updated stack - sam-app in us-east-1
 ```
 
 **What AWS SAM is doing:**
 
-This command deploys your application to the AWS Cloud\. It's important that this command explicitly includes both of the following:
-+ The AWS Region to deploy to\. This Region must match the Region of the Amazon S3 source bucket\.
-+ The `CAPABILITY_IAM` parameter, because creating new Lambda functions involves creating new IAM roles\.
+This command deploys your application to the AWS cloud\. It take the deployment artifacts you build with the `sam build` command, packages and uploads them to an Amazon S3 bucket created by AWS SAM CLI, and deploys the application using AWS CloudFormation\. In the output of the deploy command you can see the changes being made to your AWS CloudFormation stack\. 
 
- For more information about capabilities, see [CreateStack](https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack) in the *AWS CloudFormation API Reference*\.
-
-## Step 5: Test Your Application in the AWS Cloud<a name="serverless-getting-started-hello-world-test-in-cloud"></a>
-
-**Command to run:**
-
-```
-aws cloudformation describe-stacks --stack-name aws-sam-getting-started --region region --query "Stacks[].Outputs"
-```
-
-After running this command, you see details of the stack that you just created, including an `OutputKey` of `HelloWorldApi`, which looks something like the following:
-
-```
- 
- {
-     "OutputKey": "HelloWorldApi",
-     "OutputValue": "https://<restapiid>.execute-api.us-east-1.amazonaws.com/Prod/hello/",
-     "Description": "API Gateway endpoint URL for Prod stage for Hello World function"
- }
-```
-
-The `OutputValue` of this object is the endpoint URL of your stack\. You can use `curl` to send a request to your application using that endpoint URL\. For example:
+If your application created a HTTP endpoint, the Outputs generated by `sam deploy` also show you the endpoint URL for your test application\. You can use `curl` to send a request to your application using that endpoint URL\. For example:
 
 ```
 curl https://<restapiid>.execute-api.us-east-1.amazonaws.com/Prod/hello/
@@ -232,13 +234,9 @@ You should see output like the following after successfully deploying your appli
  {"message": "hello world"}
 ```
 
-**What AWS SAM is doing:**
-
-For this step, AWS SAM isn't actually doing anything\. Instead, you're using an AWS CloudFormation command to retrieve information about your serverless application \(that is, the *AWS CloudFormation stack*\), and then using `curl` to send a request to your application's endpoint URL\.
-
 If you see `{"message": "hello world"}` after executing the `curl` command, it means that you've successfully deployed your serverless application to AWS, and are calling your live Lambda function\. Otherwise, see the [Troubleshooting](#serverless-getting-started-hello-world-troubleshooting) section later in this tutorial\.
 
-## Step 6: Testing Your Application Locally \(Optional\)<a name="serverless-getting-started-hello-world-test-locally"></a>
+## Step 4: Testing Your Application Locally \(Optional\)<a name="serverless-getting-started-hello-world-test-locally"></a>
 
 When you're developing your application, you might also find it useful to test locally\. The AWS SAM CLI provides the `sam local` command to run your application using Docker containers that simulate the execution environment of Lambda\. There are two options to do this: 
 + Host your API locally
@@ -424,7 +422,7 @@ For both methods of deleting the AWS CloudFormation stack, you can verify it was
 
 In this tutorial, you've done the following:
 
-1. Created, built, packaged, and deployed a serverless application to AWS with AWS SAM\.
+1. Created, built, and deployed a serverless application to AWS with AWS SAM\.
 
 1. Tested your application locally by using the AWS SAM CLI and Docker\.
 

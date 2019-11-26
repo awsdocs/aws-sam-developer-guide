@@ -18,8 +18,8 @@ Examples:
 
 ```
 #Generates the event from S3 when a new object is created
-$ sam local generate-event s3 put
+sam local generate-event s3 put
 
 # Generates the event from S3 when an object is deleted
-$ sam local generate-event s3 delete
+sam local generate-event s3 delete
 ```

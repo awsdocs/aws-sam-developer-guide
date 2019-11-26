@@ -6,10 +6,6 @@ The following steps help you to install and configure the required prerequisites
 
 1. Configure IAM permissions\.
 
-1. Install the AWS CLI\.
-
-1. Create an Amazon S3 bucket\.
-
 1. Install Docker\. Note: Docker is only a prerequisite for testing your application locally\.
 
 1. Install Homebrew\.

@@ -20,7 +20,7 @@ Before you publish an application to the AWS Serverless Application Repository, 
   ```
   sam --version
   ```
-+ A valid AWS Serverless Application Model \(AWS SAM\) template\. You can copy the example template from [AWS SAM Template Concepts](serverless-sam-template-basics.md) and save to something like `MyTemplate.yaml`\.
++ A valid AWS Serverless Application Model \(AWS SAM\) template\.
 + Your application code and dependencies referenced by the AWS SAM template\.
 + A semantic version for your application \(required to share your application publicly\)\. This value can be as simple as 1\.0\.
 + A URL that points to your application's source code\.
@@ -92,7 +92,7 @@ For more information about the properties of the `Metadata` section in the AWS S
 Execute the following AWS SAM CLI command:
 
 ```
-sam-app> sam package \
+sam package \
     --template-file template.yaml \
     --output-template-file packaged.yaml \
     --s3-bucket <your-bucket-name>
@@ -116,7 +116,7 @@ MySampleFunction:
 Execute the following AWS SAM CLI command:
 
 ```
-sam-app> sam publish \
+sam publish \
     --template packaged.yaml \
     --region us-east-1
 ```

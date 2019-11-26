@@ -11,28 +11,31 @@ sam local start-lambda [OPTIONS]
 **Examples:**
 
 ```
-SETUP
-------
-Start the local Lambda endpoint by running this command in the directory that contains your AWS SAM template.
-$ sam local start-lambda
+# SETUP
+# ------
+# Start the local Lambda endpoint by running this command in the directory that contains your AWS SAM template.
 
-USING AWS CLI
--------------
-Then, you can invoke your Lambda function locally using the AWS CLI
-$ aws lambda invoke --function-name "HelloWorldFunction" --endpoint-url "http://127.0.0.1:3001" --no-verify-ssl out.txt
+sam local start-lambda
 
-USING AWS SDK
--------------
-You can also use the AWS SDK in your automated tests to invoke your functions programatically.
-Here is a Python example:
-    self.lambda_client = boto3.client('lambda',
-                                  endpoint_url="http://127.0.0.1:3001",
-                                  use_ssl=False,
-                                  verify=False,
-                                  config=Config(signature_version=UNSIGNED,
-                                                read_timeout=0,
-                                                retries={'max_attempts': 0}))
-    self.lambda_client.invoke(FunctionName="HelloWorldFunction")
+# USING AWS CLI
+# -------------
+# Then, you can invoke your Lambda function locally using the AWS CLI
+
+aws lambda invoke --function-name "HelloWorldFunction" --endpoint-url "http://127.0.0.1:3001" --no-verify-ssl out.txt
+
+# USING AWS SDK
+# -------------
+# You can also use the AWS SDK in your automated tests to invoke your functions programatically.
+# Here is a Python example:
+#
+#     self.lambda_client = boto3.client('lambda',
+#                                  endpoint_url="http://127.0.0.1:3001",
+#                                  use_ssl=False,
+#                                  verify=False,
+#                                  config=Config(signature_version=UNSIGNED,
+#                                                read_timeout=0,
+#                                                retries={'max_attempts': 0}))
+#    self.lambda_client.invoke(FunctionName="HelloWorldFunction")
 ```
 
 **Options:**

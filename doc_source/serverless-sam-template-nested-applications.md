@@ -1,4 +1,4 @@
-# Nested Applications<a name="serverless-sam-template-nested-applications"></a>
+# Using Nested Applications<a name="serverless-sam-template-nested-applications"></a>
 
 A serverless application can include one or more **nested applications**\. You can deploy a nested application as a stand\-alone artifact or as a component of a larger application\. 
 
