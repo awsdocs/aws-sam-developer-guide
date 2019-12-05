@@ -23,12 +23,13 @@ Properties:
   [CanarySetting](#sam-api-canarysetting): [CanarySetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-canarysetting)
   [Cors](#sam-api-cors): String | [CorsConfiguration](sam-property-api-corsconfiguration.md)
   [DefinitionBody](#sam-api-definitionbody): String
-  [DefinitionUri](#sam-api-definitionuri): String
+  [DefinitionUri](#sam-api-definitionuri): String | [ApiDefinition](sam-property-api-apidefinition.md)
   [EndpointConfiguration](#sam-api-endpointconfiguration): String
   [GatewayResponses](#sam-api-gatewayresponses): Map
   [MethodSettings](#sam-api-methodsettings): [MethodSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings)
   [MinimumCompressionSize](#sam-api-minimumcompressionsize): Integer
   [Models](#sam-api-models): Map
+  [Name](#sam-api-name): String
   [OpenApiVersion](#sam-api-openapiversion): String
   [StageName](#sam-api-stagename): String
   [Tags](#sam-api-tags): Map
@@ -91,8 +92,8 @@ OpenAPI specification that describes your API\. If neither `DefinitionUri` nor `
  `DefinitionUri`   <a name="sam-api-definitionuri"></a>
 AWS S3 Uri, local file path, or location object of the the OpenAPI document defining the API\. The AWS S3 object this property references must be a valid OpenAPI file\. If neither `DefinitionUri` nor `DefinitionBody` are specified, SAM will generate a `DefinitionBody` for you based on your template configuration\.  
 If a local file path is provided, the template must go through the workflow that includes the `sam deploy` or `sam package` command, in order for the definition to be transformed properly\.  
-Intrinsic functions are not supported in external OpenApi files\. Use instead the `DefinitionBody` property with the [Include Transform](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html) to define OpenApi definition\.  
-*Type*: String  
+Intrinsic functions are not supported in external OpenApi files referenced by `DefinitionUri`\. Use instead the `DefinitionBody` property with the [Include Transform](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html) to import an OpenApi definition into the template\.  
+*Type*: String \| [ApiDefinition](sam-property-api-apidefinition.md)  
 *Required*: No  
 *CloudFormation Compatibility*: This property is similar to the `[BodyS3Location](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location)` property of an `AWS::ApiGateway::RestApi`\. The nested Amazon S3 properties are named differently\.
 
@@ -126,6 +127,12 @@ The schemas to be used by your API methods\. These schemas can be described usin
 *Type*: Map  
 *Required*: No  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+
+ `Name`   <a name="sam-api-name"></a>
+A name for the API Gateway RestApi resource  
+*Type*: String  
+*Required*: No  
+*CloudFormation Compatibility*: This property is passed directly to the `[Name](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-name)` property of an `AWS::ApiGateway::RestApi`\.
 
  `OpenApiVersion`   <a name="sam-api-openapiversion"></a>
 Version of OpenApi to use\. This can either be `2.0` for the Swagger specification, or one of the OpenApi 3\.0 versions, like `3.0.1`\. For more information about OpenAPI, see the [OpenAPI Specification](https://swagger.io/specification/)\.  
@@ -163,7 +170,7 @@ A map \(string to string\) that defines the stage variables, where the variable 
 
 ### SimpleApiExample<a name="sam-resource-api--examples--simpleapiexample"></a>
 
-A simple API definition
+A Hello World SAM template that contains a Lambda Function with an API endpoint\.
 
 #### YAML<a name="sam-resource-api--examples--simpleapiexample--yaml"></a>
 

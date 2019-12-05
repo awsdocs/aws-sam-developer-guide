@@ -13,13 +13,12 @@ To declare this entity in your AWS SAM template, use the following syntax:
 ### YAML<a name="sam-property-function-api-syntax.yaml"></a>
 
 ```
-  [Auth](#sam-function-api-auth): [FunctionAuth](sam-property-function-functionauth.md)
+  [Auth](#sam-function-api-auth): [ApiFunctionAuth](sam-property-function-apifunctionauth.md)
   [Method](#sam-function-api-method): String
   [Path](#sam-function-api-path): String
   [RequestModel](#sam-function-api-requestmodel): [RequestModel](sam-property-function-requestmodel.md)
   [RequestParameters](#sam-function-api-requestparameters): String | [RequestParameter](sam-property-function-requestparameter.md)
   [RestApiId](#sam-function-api-restapiid): String
-  [Stage](#sam-function-api-stage): String
 ```
 
 ## Properties<a name="sam-property-function-api-properties"></a>
@@ -27,7 +26,7 @@ To declare this entity in your AWS SAM template, use the following syntax:
  `Auth`   <a name="sam-function-api-auth"></a>
 Auth configuration for this specific Api\+Path\+Method\.  
 Useful for overriding the API's `DefaultAuthorizer` setting auth config on an individual path when no `DefaultAuthorizer` is specified or overriding the default `ApiKeyRequired` setting\.  
-*Type*: [FunctionAuth](sam-property-function-functionauth.md)  
+*Type*: [ApiFunctionAuth](sam-property-function-apifunctionauth.md)  
 *Required*: No  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
@@ -62,13 +61,6 @@ If not defined, a default [AWS::Serverless::Api](sam-resource-api.md) resource i
 This cannot reference an [AWS::Serverless::Api](sam-resource-api.md) resource defined in another template\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
-
- `Stage`   <a name="sam-function-api-stage"></a>
-Define a Stage Name for the ResAPI that gets created  
-*Type*: String  
-*Required*: No  
-*Default*: Prod  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-api--examples"></a>

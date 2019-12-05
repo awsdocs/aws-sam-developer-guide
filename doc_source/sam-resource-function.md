@@ -26,6 +26,7 @@ Properties:
   [MemorySize](#sam-function-memorysize): Integer
   [PermissionsBoundary](#sam-function-permissionsboundary): String
   [Policies](#sam-function-policies): String | List | Map
+  [ProvisionedConcurrencyConfig](#sam-function-provisionedconcurrencyconfig): [ProvisionedConcurrencyConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-provisionedconcurrencyconfig)
   [ReservedConcurrentExecutions](#sam-function-reservedconcurrentexecutions): Integer
   [Role](#sam-function-role): String
   [Runtime](#sam-function-runtime): String
@@ -55,7 +56,7 @@ If a local file path is provided, the template must go through the workflow that
 **Note**: Either `CodeUri` or `InlineCode` is required\.  
 *Type*: String \| [FunctionCode](sam-property-function-functioncode.md)  
 *Required*: Conditional  
-*CloudFormation Compatibility*: This property is similar to the `[Code](https://alpha-docs-aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code)` property of an `AWS::Lambda::Function`\. The nested Amazon S3 properties are named differently\.
+*CloudFormation Compatibility*: This property is similar to the `[Code](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code)` property of an `AWS::Lambda::Function`\. The nested Amazon S3 properties are named differently\.
 
  `DeadLetterQueue`   <a name="sam-function-deadletterqueue"></a>
 Configures SNS topic or SQS queue where Lambda sends events that it can't process\. For more information about dead letter queue functionality, see [AWS Lambda Function Dead Letter Queues](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq)\.  
@@ -139,6 +140,13 @@ For more information about AWS managed IAM policies, see [AWS Managed Policies](
 *Type*: String \| List \| Map  
 *Required*: No  
 *CloudFormation Compatibility*: This property is similar to the `[Policies](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-policies)` property of an `AWS::IAM::Role`\. AWS SAM supports AWS Managed policy names and SAM Policy Templates in addition to JSON policy documents; CloudFormation only accepts JSON policy documents\.
+
+ `ProvisionedConcurrencyConfig`   <a name="sam-function-provisionedconcurrencyconfig"></a>
+Provisioned concurrency configuration of a function's alias\.  
+**Note**: `ProvisionedConcurrencyConfig` can only be specified if the AutoPublishAlias is set, otherwise an error will result\.  
+*Type*: [ProvisionedConcurrencyConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-provisionedconcurrencyconfig)  
+*Required*: No  
+*CloudFormation Compatibility*: This property is passed directly to the `[ProvisionedConcurrencyConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-provisionedconcurrencyconfig)` property of an `AWS::Lambda::Alias`\.
 
  `ReservedConcurrentExecutions`   <a name="sam-function-reservedconcurrentexecutions"></a>
 The maximum of concurrent executions you want to reserve for the function\.  

@@ -65,7 +65,7 @@ Configure Resource Policy for all methods and paths on an API\.
 *Type*: [ResourcePolicyStatement](sam-property-api-resourcepolicystatement.md)  
 *Required*: No  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.  
-*Additional Notes*: This setting can also be defined on individual `AWS::Serverless::Function` using the [FunctionAuth](sam-property-function-functionauth.md)\. This is required for APIs with `EndpointConfiguration: PRIVATE`\.
+*Additional Notes*: This setting can also be defined on individual `AWS::Serverless::Function` using the [ApiFunctionAuth](sam-property-function-apifunctionauth.md)\. This is required for APIs with `EndpointConfiguration: PRIVATE`\.
 
 ## Examples<a name="sam-property-api-apiauth--examples"></a>
 

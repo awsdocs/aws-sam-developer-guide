@@ -21,7 +21,7 @@ To declare this entity in your AWS SAM template, use the following syntax:
 The Amazon Resource Name \(ARN\) of an Amazon SQS queue or Amazon SNS topic\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[TargetArn](https://alpha-docs-aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html#cfn-lambda-function-deadletterconfig-targetarn)` property of the `AWS::Lambda::Function` `DeadLetterConfig` data type\.
+*CloudFormation Compatibility*: This property is passed directly to the `[TargetArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html#cfn-lambda-function-deadletterconfig-targetarn)` property of the `AWS::Lambda::Function` `DeadLetterConfig` data type\.
 
  `Type`   <a name="sam-function-deadletterqueue-type"></a>
 The type of dead letter queue\.  

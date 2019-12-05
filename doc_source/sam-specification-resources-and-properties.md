@@ -6,6 +6,7 @@ This section contains reference information for the AWS SAM resource and propert
 + [AWS::Serverless::Api](sam-resource-api.md)
 + [AWS::Serverless::Application](sam-resource-application.md)
 + [AWS::Serverless::Function](sam-resource-function.md)
++ [AWS::Serverless::HttpApi](sam-resource-httpapi.md)
 + [AWS::Serverless::LayerVersion](sam-resource-layerversion.md)
 + [AWS::Serverless::SimpleTable](sam-resource-simpletable.md)
 

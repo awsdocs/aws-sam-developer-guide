@@ -31,7 +31,7 @@ sam deploy [OPTIONS] [ARGS]...
 | \-\-force\-upload | Override existing files in the Amazon S3 bucket\. Specify this flag to upload artifacts even if they match existing artifacts in the Amazon S3 bucket\. | 
 | \-\-no\-execute\-changeset | Indicates whether to execute the change set\. Specify this flag if you want to view your stack changes before executing the change set\. This command creates an AWS CloudFormation change set and then exits without executing the change set\. If you want to execute the changeset, the stack changes can be made by running the same command without this flag\. | 
 | \-\-role\-arn TEXT | The Amazon Resource Name \(ARN\) of an AWS Identity and Access Management \(IAM\) role that AWS CloudFormation assumes when executing the change set\. | 
-| \-\-fail\-on\-empty\-changeset | Return a non\-zero exit code if there are no changes to be made to the stack\. The default behavior is to return a non\-zero exit code\. | 
+| \-\-fail\-on\-empty\-changeset \| \-\-no\-fail\-on\-empty\-changeset | Specify whether to return a non\-zero exit code if there are no changes to be made to the stack\. The default behavior is to return a non\-zero exit code\. | 
 | \-\-confirm\-changeset | Prompt to confirm before deplying the computed changeset\. | 
 | \-\-use\-json | Output JSON for the AWS CloudFormation template\. YAML is used by default\. | 
 | \-\-metadata | A map of metadata to attach to all artifacts that are referenced in your template\. Optional\. | 
