@@ -33,7 +33,7 @@ This field specifies whether a parameter is required
 
 ### Request Parameter<a name="sam-property-function-requestparameter--examples--request-parameter"></a>
 
-Example of setting Requuest Parameters
+Example of setting Request Parameters
 
 #### YAML<a name="sam-property-function-requestparameter--examples--request-parameter--yaml"></a>
 
