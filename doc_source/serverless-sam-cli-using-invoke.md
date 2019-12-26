@@ -37,7 +37,7 @@ You can use the `--env-vars` argument with the `invoke` or `start-api` commands\
   "MyFunction2": {
     "TABLE_NAME": "localtable",
     "STAGE": "dev"
-  },
+  }
 }
 ```
 
