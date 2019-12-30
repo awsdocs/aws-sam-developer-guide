@@ -258,6 +258,6 @@ Properties:
   ReservedConcurrentExecutions: 30
   Runtime: python3.6
   Timeout: 120
-  Tracing: active
+  Tracing: Active
 Type: AWS::Serverless::Function
 ```
