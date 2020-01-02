@@ -44,11 +44,11 @@ This is passed through to the `jwtConfiguration` section of a `x-amazon-apigatew
 
 ## Examples<a name="sam-property-httpapi-oauth2authorizer--examples"></a>
 
-### OpenId Auth<a name="sam-property-httpapi-oauth2authorizer--examples--openid-auth"></a>
+### OAuth2 Authorizer<a name="sam-property-httpapi-oauth2authorizer--examples--oauth2-authorizer"></a>
 
-OpenId Auth Example
+OAuth2 Authorizer Example
 
-#### YAML<a name="sam-property-httpapi-oauth2authorizer--examples--openid-auth--yaml"></a>
+#### YAML<a name="sam-property-httpapi-oauth2authorizer--examples--oauth2-authorizer--yaml"></a>
 
 ```
 Auth:

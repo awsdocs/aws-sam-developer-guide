@@ -17,7 +17,7 @@ sam local invoke [OPTIONS] [FUNCTION_IDENTIFIER]
 
 | Option | Description | 
 | --- | --- | 
-| \-e, \-\-event PATH | The JSON file that contains event data that's passed to the Lambda function when it's invoked\. If you don't specify this option, the default is reading the JSON from stdin\. | 
+| \-e, \-\-event PATH | The JSON file that contains event data that's passed to the Lambda function when it's invoked\. If you don't specify this option, no event is assumed\. To input JSON from stdin you must pass in the value '\-'\. | 
 | \-\-no\-event | Invokes the function with an empty event\. | 
 | \-t, \-\-template PATH | The AWS SAM template file \[default: template\.\[yaml\|yml\]\]\. | 
 | \-n, \-\-env\-vars PATH | The JSON file that contains values for the Lambda function's environment variables\. For more information about environment variables files, see [Environment Variable File](serverless-sam-cli-using-invoke.md#serverless-sam-cli-using-invoke-environment-file)\. | 

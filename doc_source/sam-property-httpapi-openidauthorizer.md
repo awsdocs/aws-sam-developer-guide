@@ -51,11 +51,11 @@ URL to use to find the token issuer\. If the lookup fails using this URL, the au
 
 ## Examples<a name="sam-property-httpapi-openidauthorizer--examples"></a>
 
-### OpenId Auth<a name="sam-property-httpapi-openidauthorizer--examples--openid-auth"></a>
+### OpenId Authorizer<a name="sam-property-httpapi-openidauthorizer--examples--openid-authorizer"></a>
 
-OpenId Auth Example
+OpenId Authorizer Example
 
-#### YAML<a name="sam-property-httpapi-openidauthorizer--examples--openid-auth--yaml"></a>
+#### YAML<a name="sam-property-httpapi-openidauthorizer--examples--openid-authorizer--yaml"></a>
 
 ```
 Auth:
