@@ -12,9 +12,9 @@ To declare this entity in your AWS SAM template, use the following syntax:
 
 ```
   [AllowCredentials](#sam-api-corsconfiguration-allowcredentials): String
-  [AllowHeaders](#sam-api-corsconfiguration-allowheaders): String
-  [AllowMethods](#sam-api-corsconfiguration-allowmethods): String
-  [AllowOrigin](#sam-api-corsconfiguration-alloworigin): String
+  [AllowHeaders](#sam-api-corsconfiguration-allowheaders): List
+  [AllowMethods](#sam-api-corsconfiguration-allowmethods): List
+  [AllowOrigin](#sam-api-corsconfiguration-alloworigin): List
   [MaxAge](#sam-api-corsconfiguration-maxage): String
 ```
 
@@ -27,20 +27,20 @@ Boolean indicating whether request is allowed to contain credentials\.
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
  `AllowHeaders`   <a name="sam-api-corsconfiguration-allowheaders"></a>
-String of headers to allow\.  
-*Type*: String  
+Array of headers to allow\.  
+*Type*: List  
 *Required*: No  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
  `AllowMethods`   <a name="sam-api-corsconfiguration-allowmethods"></a>
-String containing the HTTP methods to allow\.  
-*Type*: String  
+Array containing the HTTP methods to allow\.  
+*Type*: List  
 *Required*: No  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
  `AllowOrigin`   <a name="sam-api-corsconfiguration-alloworigin"></a>
-String of origin to allow\.  
-*Type*: String  
+Array of origin to allow\.  
+*Type*: List  
 *Required*: Yes  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
@@ -61,8 +61,12 @@ Cors Configuration example\.
 ```
 Cors:
   AllowCredentials: true
-  AllowHeaders: '"X-Forwarded-For"'
-  AllowMethods: '"POST, GET"'
-  AllowOrigin: '"www.example.com"'
+  AllowHeaders:
+    - 'X-Forwarded-For'
+  AllowMethods:
+    - 'POST'
+    - 'GET'
+  AllowOrigin:
+    - 'www.example.com'
   MaxAge: '"600"'
 ```
