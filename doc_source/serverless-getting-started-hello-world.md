@@ -368,7 +368,18 @@ When executing `sam init`, you see the following error:
 Error: no such option: --app-template
 ```
 
-This means that you are using an older version of the AWS SAM CLI that does not support the `--app-template` parameter\. To fix this, you can either update your version of AWS SAM CLI to 0\.30\.0 or later, or omit the `--app-template` parameter from the `sam init` command\.
+This means that you are using an older version of the AWS SAM CLI that does not support the `--app-template` parameter\. To fix this, you can either update your version of AWS SAM CLI to 0\.33\.0 or later, or omit the `--app-template` parameter from the `sam init` command\.
+
+### SAM CLI error: "no such option: \-\-guided"<a name="serverless-getting-started-hello-world-troubleshooting-guided"></a>
+
+When executing `sam deploy`, you see the following error:
+
+```
+ 
+Error: no such option: --guided
+```
+
+This means that you are using an older version of the AWS SAM CLI that does not support the `--guided` parameter\. To fix this, you can either update your version of AWS SAM CLI to 0\.33\.0 or later, or omit the `--guided` parameter from the `sam deploy` command\.
 
 ### Curl Error: "Missing Authentication Token"<a name="serverless-getting-started-hello-world-troubleshooting-curl-auth-token"></a>
 
