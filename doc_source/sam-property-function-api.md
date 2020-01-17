@@ -57,7 +57,7 @@ If a parameter is a string and not a Function Request Parameter Object, then `Re
 
  `RestApiId`   <a name="sam-function-api-restapiid"></a>
 Identifier of a RestApi resource, which must contain an operation with the given path and method\. Typically, this is set to reference an [AWS::Serverless::Api](sam-resource-api.md) resource defined in this template\.  
-If not defined, a default [AWS::Serverless::Api](sam-resource-api.md) resource is created using a generated OpenApi document contains a union of all paths and methods defined by Api events defined in this template that do not specify a `RestApiId`\.  
+If not defined, a default [AWS::Serverless::Api](sam-resource-api.md) resource is created using a generated OpenApi document containing a union of all paths and methods defined by Api events defined in this template that do not specify a `RestApiId`\.  
 This cannot reference an [AWS::Serverless::Api](sam-resource-api.md) resource defined in another template\.  
 *Type*: String  
 *Required*: No  

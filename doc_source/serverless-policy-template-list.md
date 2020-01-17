@@ -57,6 +57,22 @@ Gives permission to invoke a Lambda function, alias, or version\.
         ]
 ```
 
+## CloudWatchDescribeAlarmHistoryPolicy<a name="cloudwatch-describe-alarm-history-policy"></a>
+
+Gives permission to describe CloudWatch alarm history\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "cloudwatch:DescribeAlarmHistory"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
 ## CloudWatchPutMetricPolicy<a name="cloudwatch-put-metric-policy"></a>
 
 Gives permission to put metrics to CloudWatch\.
@@ -107,7 +123,8 @@ Gives create, read, update, and delete permissions to a DynamoDB table\.
               "dynamodb:UpdateItem",
               "dynamodb:BatchWriteItem",
               "dynamodb:BatchGetItem",
-              "dynamodb:DescribeTable"
+              "dynamodb:DescribeTable",
+              "dynamodb:ConditionCheckItem"
             ],
             "Resource": [
               {
@@ -555,12 +572,11 @@ Gives permission to describe and read DynamoDB streams and records\.
             "Action": [
               "dynamodb:DescribeStream",
               "dynamodb:GetRecords",
-              "dynamodb:GetShardIterator",
-              "dynamodb:ListStreams"
+              "dynamodb:GetShardIterator"
             ],
             "Resource": {
               "Fn::Sub": [
-                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/${streamName}",
+                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/stream/${streamName}",
                 {
                   "tableName": {
                     "Ref": "TableName"
@@ -571,7 +587,23 @@ Gives permission to describe and read DynamoDB streams and records\.
                 }
               ]
             }
-          }
+          },
+         {
+            "Effect": "Allow",
+            "Action": [
+              "dynamodb:ListStreams"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/stream/*",
+                {
+                  "tableName": {
+                    "Ref": "TableName"
+                  }
+                }
+              ]
+            }
+          }          
         ]
 ```
 
@@ -595,6 +627,7 @@ Gives permission to list and read an Amazon Kinesis stream\.
             "Effect": "Allow",
             "Action": [
               "kinesis:DescribeStream",
+              "kinesis:DescribeStreamSummary",
               "kinesis:GetRecords",
               "kinesis:GetShardIterator"
             ],
@@ -682,6 +715,7 @@ Gives permission to create, publish, and delete an Amazon Kinesis stream\.
               "kinesis:DecreaseStreamRetentionPeriod",
               "kinesis:DeleteStream",
               "kinesis:DescribeStream",
+              "kinesis:DescribeStreamSummary",
               "kinesis:GetShardIterator",
               "kinesis:IncreaseStreamRetentionPeriod",
               "kinesis:ListTagsForStream",
@@ -713,6 +747,29 @@ Gives permission to decrypt with an AWS KMS key\.
         "Statement": [
           {
             "Action": "kms:Decrypt",
+            "Effect": "Allow",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:kms:${AWS::Region}:${AWS::AccountId}:key/${keyId}",
+                {
+                  "keyId": {
+                    "Ref": "KeyId"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## KMSEncryptPolicy<a name="kms-encrypt-policy"></a>
+
+Gives permission to encrypt with an AWS KMS key\.
+
+```
+        "Statement": [
+          {
+            "Action": "kms:Encrypt",
             "Effect": "Allow",
             "Resource": {
               "Fn::Sub": [
@@ -1463,7 +1520,7 @@ Gives permission to start a Step Functions state machine execution\.
 
 ## CodeCommitCrudPolicy<a name="codecommit-crud-policy"></a>
 
-Gives permissions to create/read/update/delete objects within a specific codecommit repository\.
+Gives permissions to create/read/update/delete objects within a specific CodeCommit repository\.
 
 ```
         "Statement": [
@@ -1549,7 +1606,7 @@ Gives permissions to create/read/update/delete objects within a specific codecom
 
 ## CodeCommitReadPolicy<a name="codecommit-read-policy"></a>
 
-Gives permissions to read objects within a specific codecommit repository\.
+Gives permissions to read objects within a specific CodeCommit repository\.
 
 ```
         "Statement": [
@@ -1596,6 +1653,57 @@ Gives permissions to read objects within a specific codecommit repository\.
                 {
                   "repositoryName": {
                     "Ref": "RepositoryName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## AthenaQueryPolicy<a name="athena-query-policy"></a>
+
+Gives permissions to execute Athena queries\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "athena:ListWorkGroups",
+              "athena:GetExecutionEngine",
+              "athena:GetExecutionEngines",
+              "athena:GetNamespace",
+              "athena:GetCatalogs",
+              "athena:GetNamespaces",
+              "athena:GetTables",
+              "athena:GetTable"
+            ],
+            "Resource": "*"
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "athena:StartQueryExecution",
+              "athena:GetQueryResults",
+              "athena:DeleteNamedQuery",
+              "athena:GetNamedQuery",
+              "athena:ListQueryExecutions",
+              "athena:StopQueryExecution",
+              "athena:GetQueryResultsStream",
+              "athena:ListNamedQueries",
+              "athena:CreateNamedQuery",
+              "athena:GetQueryExecution",
+              "athena:BatchGetNamedQuery",
+              "athena:BatchGetQueryExecution",
+              "athena:GetWorkGroup"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:athena:${AWS::Region}:${AWS::AccountId}:workgroup/${workgroupName}",
+                {
+                  "workgroupName": {
+                    "Ref": "WorkGroupName"
                   }
                 }
               ]

@@ -11,12 +11,14 @@ To declare this entity in your AWS SAM template, use the following syntax:
 ```
 Type: AWS::Serverless::Function
 Properties:
+  [AssumeRolePolicyDocument](#sam-function-assumerolepolicydocument): JSON
   [AutoPublishAlias](#sam-function-autopublishalias): String
   [CodeUri](#sam-function-codeuri): String | [FunctionCode](sam-property-function-functioncode.md)
   [DeadLetterQueue](#sam-function-deadletterqueue): Map | [DeadLetterQueue](sam-property-function-deadletterqueue.md)
   [DeploymentPreference](#sam-function-deploymentpreference): [DeploymentPreference](sam-property-function-deploymentpreference.md)
   [Description](#sam-function-description): String
   [Environment](#sam-function-environment): [Environment](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html)
+  [EventInvokeConfig](#sam-function-eventinvokeconfig): [EventInvokeConfiguration](sam-property-function-eventinvokeconfiguration.md)
   [Events](#sam-function-events): [EventSource](sam-property-function-eventsource.md)
   [FunctionName](#sam-function-functionname): String
   [Handler](#sam-function-handler): String
@@ -38,6 +40,12 @@ Properties:
 ```
 
 ## Properties<a name="sam-resource-function-properties"></a>
+
+ `AssumeRolePolicyDocument`   <a name="sam-function-assumerolepolicydocument"></a>
+Adds an AssumeRolePolicyDocument for the default created `Role` for this function\. If this property is not specified SAM adds a default assume role for this function\.  
+*Type*: JSON  
+*Required*: No  
+*CloudFormation Compatibility*: This property is similar to the `[AssumeRolePolicyDocument](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument)` property of an `AWS::IAM::Role`\. SAM adds this property to the generated IAM Role for this Function\. If a Role ARN is provided for this Function, this property does nothing\.
 
  `AutoPublishAlias`   <a name="sam-function-autopublishalias"></a>
 Name of the Lambda alias\. For more information about Lambda aliases, see [AWS Lambda Function Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)\.  
@@ -83,6 +91,12 @@ Configuration for the runtime environment\.
 *Type*: [Environment](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html)  
 *Required*: No  
 *CloudFormation Compatibility*: This property is passed directly to the `[Environment](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html)` property of an `AWS::Lambda::Function`\.
+
+ `EventInvokeConfig`   <a name="sam-function-eventinvokeconfig"></a>
+The object describing event invoke config on a Lambda function\.  
+*Type*: [EventInvokeConfiguration](sam-property-function-eventinvokeconfiguration.md)  
+*Required*: No  
+*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
  `Events`   <a name="sam-function-events"></a>
 Specifies the events that trigger this function\. Events consist of a type and a set of properties that depend on the type\.  
@@ -168,10 +182,10 @@ The runtime environment\.
 *CloudFormation Compatibility*: This property is passed directly to the `[Runtime](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime)` property of an `AWS::Lambda::Function`\.
 
  `Tags`   <a name="sam-function-tags"></a>
-A map \(string to string\) that specifies the tags to be added to this function\. Keys and values are limited to alphanumeric characters\. Keys can be 1 to 127 Unicode characters in length and cannot be prefixed with aws:\. Values can be 1 to 255 Unicode characters in length\.  
+A map \(string to string\) that specifies the tags added to the Lambda function and the corresponding IAM execution role\. Keys and values are limited to alphanumeric characters\. Keys can be 1 to 127 Unicode characters in length and cannot be prefixed with aws:\. Values can be 1 to 255 Unicode characters in length\.  
 *Type*: Map  
 *Required*: No  
-*CloudFormation Compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags)` property of an `AWS::Lambda::Function`\. The Tags property in SAM consists of Key:Value pairs; in CloudFormation it consists of a list of Tag objects\. When the stack is created, SAM will automatically add a `lambda:createdBy:SAM` tag to this Lambda function\.
+*CloudFormation Compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags)` property of an `AWS::Lambda::Function`\. The Tags property in SAM consists of Key:Value pairs; in CloudFormation it consists of a list of Tag objects\. When the stack is created, SAM automatically adds a `lambda:createdBy:SAM` tag to this Lambda function and the corresponding IAM execution role\.
 
  `Timeout`   <a name="sam-function-timeout"></a>
 Maximum time that the function can run before it is killed in seconds\.  

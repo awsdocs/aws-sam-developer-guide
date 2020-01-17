@@ -11,11 +11,18 @@ To declare this entity in your AWS SAM template, use the following syntax:
 ### YAML<a name="sam-property-api-cognitoauthorizer-syntax.yaml"></a>
 
 ```
+  [AuthorizationScopes](#sam-api-cognitoauthorizer-authorizationscopes): List
   [Identity](#sam-api-cognitoauthorizer-identity): [CognitoAuthorizationIdentity](sam-property-api-cognitoauthorizationidentity.md)
   [UserPoolArn](#sam-api-cognitoauthorizer-userpoolarn): String
 ```
 
 ## Properties<a name="sam-property-api-cognitoauthorizer-properties"></a>
+
+ `AuthorizationScopes`   <a name="sam-api-cognitoauthorizer-authorizationscopes"></a>
+List of authorization scopes for this authorizer\.  
+*Type*: List  
+*Required*: No  
+*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
  `Identity`   <a name="sam-api-cognitoauthorizer-identity"></a>
 This property can be used to specify an `IdentitySource` in an incoming request for an authorizer  
@@ -41,6 +48,9 @@ Cognito Auth Example
 Auth:
   Authorizers:
     MyCognitoAuth:
+      AuthorizationScopes:
+      - scope1
+      - scope2
       Identity:
         Header: MyAuthorizationHeader
         ValidationExpression: myauthvalidationexpression

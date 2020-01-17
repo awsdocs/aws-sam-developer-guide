@@ -1,10 +1,11 @@
 # Document History for AWS Serverless Application Model<a name="doc-history"></a>
 
 The following table describes the important changes in each release of the *AWS Serverless Application Model Developer Guide*\. For notification about updates to this documentation, you can subscribe to an RSS feed by choosing the RSS button in the top menu panel\.
-+ **Latest documentation update: **November 25, 2019
++ **Latest documentation update: **January 17, 2020
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Setting up AWS credentials](#doc-history) | Added instructions for setting up AWS credentials, for readers who have not already set them to use with other tools like one of the AWS SDKs or the AWS CLI\. For more information, see [Setting Up AWS Credentials](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-set-up-credentials.html)\. | January 17, 2020 | 
 | [AWS SAM Specification and AWS SAM CLI updates](#doc-history) | Migrated the AWS SAM Specification from GitHub\. For more information see [AWS SAM Specification](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification.html)\. Also updated the deployment workflow with changes to the [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html) command\. | November 25, 2019 | 
 | [New options for controlling access to API Gateway APIs and policy template updates](#doc-history) | Added new options for controlling access to API Gateway APIs: IAM permissions, API keys, and resource policies\. For more information, see [Controlling Access to API Gateway APIs](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-controlling-access-to-apis.html)\. Also updated two policy templates: RekognitionFacesPolicy and ElasticsearchHttpPostPolicy\. For more information, see [AWS SAM Policy Templates](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html)\. | August 29, 2019 | 
 | [Getting Started updates](#doc-history) | Updated Getting Started chapter with improved installation instructions for the AWS SAM CLI and the Hello World tutorial\. For more information, see [Getting Started](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html)\. | July 25, 2019 | 

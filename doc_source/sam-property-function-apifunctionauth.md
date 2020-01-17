@@ -12,6 +12,7 @@ To declare this entity in your AWS SAM template, use the following syntax:
 
 ```
   [ApiKeyRequired](#sam-function-apifunctionauth-apikeyrequired): Boolean
+  [AuthorizationScopes](#sam-function-apifunctionauth-authorizationscopes): List
   [Authorizer](#sam-function-apifunctionauth-authorizer): String
   [InvokeRole](#sam-function-apifunctionauth-invokerole): String
   [ResourcePolicy](#sam-function-apifunctionauth-resourcepolicy): [ResourcePolicyStatement](sam-property-function-resourcepolicystatement.md)
@@ -22,6 +23,13 @@ To declare this entity in your AWS SAM template, use the following syntax:
  `ApiKeyRequired`   <a name="sam-function-apifunctionauth-apikeyrequired"></a>
 Requires an API key for this API path and method\.  
 *Type*: Boolean  
+*Required*: No  
+*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+
+ `AuthorizationScopes`   <a name="sam-function-apifunctionauth-authorizationscopes"></a>
+Authorization scopes to apply to this Api \+ Path \+ Method\.  
+Scopes listed here will override any scopes applied by the `DefaultAuthorizer` if one exists\.  
+*Type*: List  
 *Required*: No  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 

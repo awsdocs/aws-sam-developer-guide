@@ -57,6 +57,7 @@ The following is a table of the available policy templates\.
 | --- | --- | 
 | [SQSPollerPolicy](serverless-policy-template-list.md#sqs-poller-policy) | Gives permission to poll an Amazon SQS Queue\. | 
 | [LambdaInvokePolicy](serverless-policy-template-list.md#lambda-invoke-policy) | Gives permission to invoke a Lambda function, alias, or version\. | 
+| [CloudWatchDescribeAlarmHistoryPolicy](serverless-policy-template-list.md#cloudwatch-describe-alarm-history-policy) | Gives permission to describe CloudWatch alarm history\. | 
 | [CloudWatchPutMetricPolicy](serverless-policy-template-list.md#cloudwatch-put-metric-policy) | Gives permission to put metrics to CloudWatch\. | 
 | [EC2DescribePolicy](serverless-policy-template-list.md#ec2-describe-policy) | Gives permission to describe Amazon EC2 instances\. | 
 | [DynamoDBCrudPolicy](serverless-policy-template-list.md#dynamo-db-crud-policy) | Gives create, read, update, and delete permissions to a DynamoDB table\. | 
@@ -81,6 +82,7 @@ The following is a table of the available policy templates\.
 | [SNSCrudPolicy](serverless-policy-template-list.md#sns-crud-policy) | Gives permission to create, publish, and subscribe to Amazon SNS topics\. | 
 | [KinesisCrudPolicy](serverless-policy-template-list.md#kinesis-crud-policy) | Gives permission to create, publish, and delete an Amazon Kinesis stream\. | 
 | [KMSDecryptPolicy](serverless-policy-template-list.md#kms-decrypt-policy) | Gives permission to decrypt with an AWS KMS key\. | 
+| [KMSEncryptPolicy](serverless-policy-template-list.md#kms-encrypt-policy) | Gives permission to encrypt with an AWS KMS key\. | 
 | [PollyFullAccessPolicy](serverless-policy-template-list.md#polly-full-access-policy) | Gives full access permission to Amazon Polly lexicon resources\. | 
 | [S3FullAccessPolicy](serverless-policy-template-list.md#s3-full-access-policy) | Gives full access permission to objects in an Amazon S3 bucket\. | 
 | [CodePipelineLambdaExecutionPolicy](serverless-policy-template-list.md#code-pipeline-lambda-execution-policy) | Gives permission for a Lambda function invoked by CodePipeline to report the status of the job\. | 
@@ -107,6 +109,7 @@ The following is a table of the available policy templates\.
 | [SESEmailTemplateCrudPolicy](serverless-policy-template-list.md#ses-email-template-crud-policy) | Gives permission to create, get, list, update and delete Amazon SES email templates\. | 
 | [FilterLogEventsPolicy](serverless-policy-template-list.md#filter-log-events-policy) | Gives permission to filter log events from a specified log group\. | 
 | [SSMParameterReadPolicy](serverless-policy-template-list.md#ssm-parameter-read-policy) | Gives permission to access a parameter to load secrets in this account\. | 
-| [StepFunctionsExecutionPolicy](serverless-policy-template-list.md#stepfunctions-execution-policy) | Gives permission to create executions of a state machine in this account\. | 
-| [CodeCommitCrudPolicy](serverless-policy-template-list.md#codecommit-crud-policy) | Gives permissions to create/read/update/delete objects within a specific codecommit repository\. | 
-| [CodeCommitReadPolicy](serverless-policy-template-list.md#codecommit-read-policy) | Gives permissions to read objects within a specific codecommit repository\. | 
+| [StepFunctionsExecutionPolicy](serverless-policy-template-list.md#stepfunctions-execution-policy) | Gives permission to start a Step Functions state machine execution\. | 
+| [CodeCommitCrudPolicy](serverless-policy-template-list.md#codecommit-crud-policy) | Gives permissions to create/read/update/delete objects within a specific CodeCommit repository\. | 
+| [CodeCommitReadPolicy](serverless-policy-template-list.md#codecommit-read-policy) | Gives permissions to read objects within a specific CodeCommit repository\. | 
+| [AthenaQueryPolicy](serverless-policy-template-list.md#athena-query-policy) | Gives permissions to execute Athena queries\. | 

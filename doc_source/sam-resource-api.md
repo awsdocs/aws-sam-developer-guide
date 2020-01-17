@@ -24,6 +24,7 @@ Properties:
   [Cors](#sam-api-cors): String | [CorsConfiguration](sam-property-api-corsconfiguration.md)
   [DefinitionBody](#sam-api-definitionbody): String
   [DefinitionUri](#sam-api-definitionuri): String | [ApiDefinition](sam-property-api-apidefinition.md)
+  [Domain](#sam-api-domain): [DomainConfiguration](sam-property-api-domainconfiguration.md)
   [EndpointConfiguration](#sam-api-endpointconfiguration): String
   [GatewayResponses](#sam-api-gatewayresponses): Map
   [MethodSettings](#sam-api-methodsettings): [MethodSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings)
@@ -79,6 +80,7 @@ Configure a canary setting to a stage of a regular deployment\.
  `Cors`   <a name="sam-api-cors"></a>
 Manage Cross\-origin resource sharing \(CORS\) for all your API Gateway APIs\. Specify the domain to allow as a string or specify a dictionary with additional Cors configuration\. NOTE: Cors requires SAM to modify your OpenAPI definition\. So, it works only inline OpenApi defined with DefinitionBody\.  
 For more information about CORS, see [Enable CORS for an API Gateway REST API Resource](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html) in the Amazon API Gateway Developer Guide\.\.  
+**NOTE:** API Gateway requires literal values to be a quoted string, so you must include single quotes in the `Allow___` values\. For example, "'www\.example\.com'" is correct whereas "www\.example\.com" is not correct\.  
 *Type*: String \| [CorsConfiguration](sam-property-api-corsconfiguration.md)  
 *Required*: No  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
@@ -96,6 +98,12 @@ Intrinsic functions are not supported in external OpenApi files referenced by `D
 *Type*: String \| [ApiDefinition](sam-property-api-apidefinition.md)  
 *Required*: No  
 *CloudFormation Compatibility*: This property is similar to the `[BodyS3Location](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location)` property of an `AWS::ApiGateway::RestApi`\. The nested Amazon S3 properties are named differently\.
+
+ `Domain`   <a name="sam-api-domain"></a>
+Configures a custom domain for this API Gateway API\.  
+*Type*: [DomainConfiguration](sam-property-api-domainconfiguration.md)  
+*Required*: No  
+*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
  `EndpointConfiguration`   <a name="sam-api-endpointconfiguration"></a>
 Specify the type of endpoint for API endpoint\.  

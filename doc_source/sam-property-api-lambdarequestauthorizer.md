@@ -11,6 +11,7 @@ To declare this entity in your AWS SAM template, use the following syntax:
 ### YAML<a name="sam-property-api-lambdarequestauthorizer-syntax.yaml"></a>
 
 ```
+  [AuthorizationScopes](#sam-api-lambdarequestauthorizer-authorizationscopes): List
   [FunctionArn](#sam-api-lambdarequestauthorizer-functionarn): String
   [FunctionInvokeRole](#sam-api-lambdarequestauthorizer-functioninvokerole): String
   [FunctionPayloadType](#sam-api-lambdarequestauthorizer-functionpayloadtype): String
@@ -18,6 +19,12 @@ To declare this entity in your AWS SAM template, use the following syntax:
 ```
 
 ## Properties<a name="sam-property-api-lambdarequestauthorizer-properties"></a>
+
+ `AuthorizationScopes`   <a name="sam-api-lambdarequestauthorizer-authorizationscopes"></a>
+List of authorization scopes for this authorizer\.  
+*Type*: List  
+*Required*: No  
+*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
  `FunctionArn`   <a name="sam-api-lambdarequestauthorizer-functionarn"></a>
 Specify the function arn of the Lambda function which gives the authorization to Api  

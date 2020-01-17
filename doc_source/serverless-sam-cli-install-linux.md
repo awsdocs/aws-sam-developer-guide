@@ -20,6 +20,8 @@ If you don't already have an AWS account, see [aws\.amazon\.com](https://aws.ama
 
 If you don't already have an IAM user with administrator permissions, see [Creating Your First IAM Admin User and Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
 
+In addition, you must set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. For example, the AWS SAM CLI makes calls to Amazon S3 and AWS CloudFormation\. For more information about setting up AWS credentials, see [Setting Up AWS Credentials](serverless-getting-started-set-up-credentials.md)\.
+
 ## Step 3: Install Docker<a name="serverless-sam-cli-install-linux-docker"></a>
 
 **Note**  
@@ -29,7 +31,7 @@ Docker is an application that runs containers on your Linux machines\. AWS SAM p
 
 You must have Docker installed and working to be able to run serverless projects and functions locally with the AWS SAM CLI\. The AWS SAM CLI uses the `DOCKER_HOST` environment variable to contact the Docker daemon\. The following steps describe how to install, configure, and verify a Docker installation to work with the AWS SAM CLI\.
 
-Docker is available on many different operating systems, including most modern Linux distributions, like CentOS, Debian, Ubuntu, etc\. For more information about how to install Docker on your particular operating system, go to the [Docker installation guide](https://docs.docker.com/engine/installation/#installation)\.
+Docker is available on many different operating systems, including most modern Linux distributions, like CentOS, Debian, Ubuntu, etc\. For more information about how to install Docker on your particular operating system, go to the [Docker installation guide](https://docs.docker.com/install/)\.
 
 If you are using Amazon Linux 2, follow these steps to install Docker:
 
@@ -78,7 +80,7 @@ In some cases, you may need to reboot your instance to provide permissions for t
    Cannot connect to the Docker daemon. Is the docker daemon running on this host?
    ```
 
-If you run into issues installing Docker, see the [Troubleshooting](#serverless-sam-cli-install-linux-troubleshooting) section later in this guide, or the [Docker installation guide](https://docs.docker.com/engine/installation/#installation) for additional troubleshooting tips\.
+If you run into issues installing Docker, see the [Troubleshooting](#serverless-sam-cli-install-linux-troubleshooting) section later in this guide, or the [Troubleshooting](https://docs.docker.com/install/linux/linux-postinstall/#troubleshooting) section of the *Docker installation guide* for additional troubleshooting tips\.
 
 ## Step 4: Install Homebrew<a name="serverless-sam-cli-install-linux-homebrew"></a>
 
@@ -141,7 +143,7 @@ You're now ready to start development\.
 
 ### Docker Error: "Cannot connect to the Docker daemon\. Is the docker daemon running on this host?"<a name="serverless-sam-cli-install-linux-troubleshooting-docker-deamon"></a>
 
-In some cases, you may need to reboot your instance to provide permissions for the `ec2-user` to access the Docker daemon\. If you receive this error, try rebooting your instance\.
+In some cases, you may need to reboot your instance to provide permissionst for the `ec2-user` to access the Docker daemon\. If you receive this error, try rebooting your instance\.
 
 ### Shell error: "command not found"<a name="serverless-sam-cli-install-linux-troubleshooting-sam-cli-not-found"></a>
 
@@ -158,4 +160,4 @@ For example, if you used the instructions in this topic to both 1\) Install Home
 
 You're now ready to begin building your own serverless applications using AWS SAM\! If you want to start with sample serverless applications, choose one of the following links:
 + [Tutorial: Deploying a Hello World Application](serverless-getting-started-hello-world.md) – Step\-by\-step instructions to download, build, and deploy a simple serverless application\.
-+ [AWS SAM example applications in GitHub](https://github.com/awslabs/serverless-application-model/tree/master/examples/apps) – Sample applications in the AWS SAM GitHub repository that you can further experiment with\.
++ [AWS SAM example applications in GitHub](https://github.com/aws-samples/serverless-app-examples) – Sample applications in the AWS SAM GitHub repository that you can further experiment with\.

@@ -15,6 +15,7 @@ To declare this entity in your AWS SAM template, use the following syntax:
   [Enabled](#sam-function-deploymentpreference-enabled): Boolean
   [Hooks](#sam-function-deploymentpreference-hooks): [Hooks](sam-property-function-hooks.md)
   [Role](#sam-function-deploymentpreference-role): String
+  [TriggerConfigurations](#sam-function-deploymentpreference-triggerconfigurations): List
   [Type](#sam-function-deploymentpreference-type): String
 ```
 
@@ -44,6 +45,12 @@ An IAM role ARN that CodeDeploy will use for traffic shifting\. An IAM role will
 *Type*: String  
 *Required*: No  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+
+ `TriggerConfigurations`   <a name="sam-function-deploymentpreference-triggerconfigurations"></a>
+A list of trigger configurations you want to associate with the deployment group\. Used to notify an SNS topic on lifecycle events\.  
+*Type*: List  
+*Required*: No  
+*CloudFormation Compatibility*: This property is passed directly to the `[TriggerConfigurations](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations)` property of an `AWS::CodeDeploy::DeploymentGroup`\.
 
  `Type`   <a name="sam-function-deploymentpreference-type"></a>
 There are two categories of deployment types at the moment: Linear and Canary\. For more information about available deployment types see [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md)\.  

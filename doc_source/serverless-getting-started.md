@@ -6,4 +6,5 @@ To install the AWS SAM CLI, including everything that needs to be installed or c
 
 **Topics**
 + [Installing the AWS SAM CLI](serverless-sam-cli-install.md)
++ [Setting Up AWS Credentials](serverless-getting-started-set-up-credentials.md)
 + [Tutorial: Deploying a Hello World Application](serverless-getting-started-hello-world.md)

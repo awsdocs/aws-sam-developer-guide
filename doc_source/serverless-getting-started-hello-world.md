@@ -381,6 +381,30 @@ Error: no such option: --guided
 
 This means that you are using an older version of the AWS SAM CLI that does not support the `--guided` parameter\. To fix this, you can either update your version of AWS SAM CLI to 0\.33\.0 or later, or omit the `--guided` parameter from the `sam deploy` command\.
 
+### SAM CLI error: "Failed to create managed resources: Unable to locate credentials"<a name="serverless-getting-started-hello-world-troubleshooting-credentials"></a>
+
+When executing `sam deploy`, you see the following error:
+
+```
+ 
+Error: Failed to create managed resources: Unable to locate credentials
+```
+
+This means that you have not set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. To fix this, you must set up AWS credentials\. For more information, see [Setting Up AWS Credentials](serverless-getting-started-set-up-credentials.md)\.
+
+### SAM CLI error: "Running AWS SAM projects locally requires Docker\. Have you got it installed?"<a name="serverless-getting-started-hello-world-troubleshooting-docker"></a>
+
+When executing `sam local start-api`, you see the following error:
+
+```
+ 
+Error: Running AWS SAM projects locally requires Docker. Have you got it installed?
+```
+
+This means that you do not have Docker properly installed\. Docker is required to test your application locally\. To fix this, follow the instructions for installing Docker for your development host\.
+
+For instructions on installing Docker on your development host, go to [Installing the AWS SAM CLI](serverless-sam-cli-install.md), choose the appropriate platform, and follow the instructions in the section titled **Install Docker**\.
+
 ### Curl Error: "Missing Authentication Token"<a name="serverless-getting-started-hello-world-troubleshooting-curl-auth-token"></a>
 
 When trying to invoke the API Gateway endpoint, you see the following error:
@@ -443,4 +467,4 @@ In this tutorial, you've done the following:
 
 You're now ready to start building your own applications using the AWS SAM CLI\.
 
-To help you get started, you can download any of the example applications from the AWS SAM GitHub repository\. To access this repository, see [AWS SAM example applications](https://github.com/awslabs/serverless-application-model/tree/master/examples/apps)\.
+To help you get started, you can download any of the example applications from the AWS SAM GitHub repository\. To access this repository, see [AWS SAM example applications](https://github.com/aws-samples/serverless-app-examples)\.

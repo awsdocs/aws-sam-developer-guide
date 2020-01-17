@@ -13,7 +13,7 @@ To declare this entity in your AWS SAM template, use the following syntax:
 ```
   [FilterPolicy](#sam-function-sns-filterpolicy): [SnsFilterPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy)
   [Region](#sam-function-sns-region): String
-  [SqsSubscription](#sam-function-sns-sqssubscription): Boolean
+  [SqsSubscription](#sam-function-sns-sqssubscription): Boolean | [SqsSubscriptionObject](sam-property-function-sqssubscriptionobject.md)
   [Topic](#sam-function-sns-topic): String
 ```
 
@@ -33,8 +33,8 @@ If no region is specified, CloudFormation uses the region of the caller as the d
 *CloudFormation Compatibility*: This property is passed directly to the `[Region](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-region)` property of an `AWS::SNS::Subscription`\.
 
  `SqsSubscription`   <a name="sam-function-sns-sqssubscription"></a>
-Set this property to true to enable batching SNS topic notifications in an SQS queue\.  
-*Type*: Boolean  
+Set this property to true, or specify `SqsSubscriptionObject` to enable batching SNS topic notifications in an SQS queue\. Setting this property to `true` creates a new SQS queue, whereas specifying a `SqsSubscriptionObject` uses an existing SQS queue\.  
+*Type*: Boolean \| [SqsSubscriptionObject](sam-property-function-sqssubscriptionobject.md)  
 *Required*: No  
 *CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
 
@@ -61,5 +61,6 @@ Properties:
       - 100
     store:
     - example_corp
+  SqsSubscription: true
   Topic: arn:aws:sns:us-east-1:123456789012:my_topic
 ```
