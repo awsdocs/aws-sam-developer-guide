@@ -37,6 +37,6 @@ sam deploy [OPTIONS] [ARGS]...
 | \-\-metadata | A map of metadata to attach to all artifacts that are referenced in your template\. Optional\. | 
 | \-\-notification\-arns LIST | Amazon Simple Notification Service topic Amazon Resource Names \(ARNs\) that AWS CloudFormation associates with the stack\. | 
 | \-\-tags | A list of tags to associate with the stack that is created or updated\. AWS CloudFormation also propagates these tags to resources in the stack if the resource supports it\. | 
-| \-\-parameter\-overrides | A string that contains AWS CloudFormation parameter overrides encoded as key=value pairs\. Use the same format as the AWS CLI\. For example, ParameterKey=KeyPairName, ParameterValue=MyKey ParameterKey=InstanceTy pe,ParameterValue=t1\.micro\. | 
+| \-\-parameter\-overrides | A string that contains AWS CloudFormation parameter overrides encoded as key=value pairs\. Use the same format as the AWS CLI\. For example, ParameterKey=KeyPairName,ParameterValue=MyKey ParameterKey=InstanceType,ParameterValue=t1\.micro\. | 
 | \-\-debug | Turns on debug logging\. | 
 | \-\-help | Shows this message and exits\. | 
