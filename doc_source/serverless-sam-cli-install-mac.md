@@ -95,4 +95,4 @@ You're now ready to start development\.
 
 You're now ready to begin building your own serverless applications using AWS SAM\! If you want to start with sample serverless applications, choose one of the following links:
 + [Tutorial: Deploying a Hello World Application](serverless-getting-started-hello-world.md) – Step\-by\-step instructions to download, build, and deploy a simple serverless application\.
-+ [AWS SAM example applications in GitHub](https://github.com/awslabs/serverless-application-model/tree/master/examples/apps) – Sample applications in the AWS SAM GitHub repository that you can further experiment with\.
++ [AWS SAM example applications in GitHub](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/) – Sample applications in the AWS SAM GitHub repository that you can further experiment with\.
