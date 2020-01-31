@@ -35,3 +35,4 @@ The following topics provide examples of how to set up your environment to test 
 + [Step\-Through Debugging Node\.js Functions Locally](serverless-sam-cli-using-debugging-nodejs.md)
 + [Step\-Through Debugging Python Functions Locally](serverless-sam-cli-using-debugging-python.md)
 + [Step\-Through Debugging Golang Functions Locally](serverless-sam-cli-using-debugging-golang.md)
++ [Step\-Through Debugging .NET Core Functions Locally](serverless-sam-cli-using-debugging-dotnetcore.md)

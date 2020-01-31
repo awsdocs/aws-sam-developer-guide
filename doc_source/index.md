@@ -98,6 +98,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Step-Through Debugging Node.js Functions Locally](serverless-sam-cli-using-debugging-nodejs.md)
       + [Step-Through Debugging Python Functions Locally](serverless-sam-cli-using-debugging-python.md)
       + [Step-Through Debugging Golang Functions Locally](serverless-sam-cli-using-debugging-golang.md)
+      + [Step-Through Debugging .NET Core Functions Locally](serverless-sam-cli-using-debugging-dotnetcore.md)
    + [Passing Additional Runtime Debug Arguments](serverless-sam-cli-using-debugging-additional-arguments.md)
 + [Deploying Serverless Applications](serverless-deploying.md)
    + [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md)
