@@ -11,7 +11,7 @@ To declare this entity in your AWS SAM template, use the following syntax:
 ```
   [BasePath](#sam-api-domainconfiguration-basepath): List
   [CertificateArn](#sam-api-domainconfiguration-certificatearn): String
-  [DomainEndpointConfiguration](#sam-api-domainconfiguration-domainendpointconfiguration): String
+  [EndpointConfiguration](#sam-api-domainconfiguration-endpointconfiguration): String
   [DomainName](#sam-api-domainconfiguration-domainname): String
   [Route53](#sam-api-domainconfiguration-route53): [Route53Configuration](sam-property-api-route53configuration.md)
 ```
@@ -29,10 +29,10 @@ List of basepaths to be configured with the API Gateway Domain Name\.
 The reference to an AWS\-managed certificate for use by the endpoint for this domain name\. AWS Certificate Manager is the only supported source\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is similar to the `[CertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn)` property of an `AWS::ApiGateway::DomainName`\. If `DomainEndpointConfiguration` is set to `REGIONAL` \(the default value\), `CertificateArn` maps to [RegionalCertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn) in `AWS::ApiGateway::DomainName`\. If the `DomainEndpointConfiguration` is set to `EDGE`, `CertificateArn` maps to [CertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn) in `AWS::ApiGateway::DomainName`\.  
+*CloudFormation Compatibility*: This property is similar to the `[CertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn)` property of an `AWS::ApiGateway::DomainName`\. If `EndpointConfiguration` is set to `REGIONAL` \(the default value\), `CertificateArn` maps to [RegionalCertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn) in `AWS::ApiGateway::DomainName`\. If the `EndpointConfiguration` is set to `EDGE`, `CertificateArn` maps to [CertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn) in `AWS::ApiGateway::DomainName`\.  
 *Additional Notes*: For an `EDGE` endpoint, the certificate must be created in the `us-east-1` region\.
 
- `DomainEndpointConfiguration`   <a name="sam-api-domainconfiguration-domainendpointconfiguration"></a>
+ `EndpointConfiguration`   <a name="sam-api-domainconfiguration-endpointconfiguration"></a>
 Property to define the type of API Gateway endpoint to be mapped to the custom domain\. The value of this property controls how the `CertificateArn` property gets mapped in AWS CloudFormation\. See `CertificateArn` above\.  
 Valid values are `REGIONAL` or `EDGE`\.  
 *Type*: String  
