@@ -39,7 +39,7 @@ This is how the process works:
            verify=False,
            config=botocore.client.Config(
                signature_version=botocore.UNSIGNED,
-               read_timeout=0,
+               read_timeout=1,
                retries={'max_attempts': 0},
            )
        )
