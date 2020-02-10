@@ -55,11 +55,11 @@ Auth:
   Authorizers:
     OAuth2Authorizer:
       AuthorizationScopes:
-      - scope1
-      IdentitySource: $request.querystring.param
+        - scope1
       JwtConfiguration:
+        issuer: "https://www.example.com/v1/connect/oauth2"
         audience:
-        - MyApi
-        issuer: https://www.example.com/v1/connect/oauth2
+          - MyApi
+      IdentitySource: "$request.querystring.param"
   DefaultAuthorizer: OAuth2Authorizer
 ```

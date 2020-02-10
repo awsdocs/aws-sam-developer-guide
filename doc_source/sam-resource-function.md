@@ -241,11 +241,11 @@ Base case example of an AWS::Serverless::Function resource\.
 #### YAML<a name="sam-resource-function--examples--simple-function--yaml"></a>
 
 ```
+Type: AWS::Serverless::Function
 Properties:
-  CodeUri: s3://bucket/key
   Handler: index.handler
   Runtime: python3.6
-Type: AWS::Serverless::Function
+  CodeUri: s3://bucket/key
 ```
 
 ### Function Properties Example<a name="sam-resource-function--examples--function-properties-example"></a>
@@ -255,23 +255,25 @@ Example of an AWS::Serverless::Function that uses InlineCode, Tracing, Policies,
 #### YAML<a name="sam-resource-function--examples--function-properties-example--yaml"></a>
 
 ```
+Type: AWS::Serverless::Function
 Properties:
   Handler: index.handler
-  InlineCode: "def handler(event, context):\n  print(\"Hello, world!\")\n"
-  Layers:
-  - Ref: MyLayer
-  Policies:
-  - AWSLambdaExecute
-  - Statement:
-    - Action:
-      - s3:GetObject
-      - s3:GetObjectACL
-      Effect: Allow
-      Resource: arn:aws:s3:::my-bucket/*
-    Version: '2012-10-17'
-  ReservedConcurrentExecutions: 30
   Runtime: python3.6
-  Timeout: 120
+  InlineCode: |
+    def handler(event, context):
+      print("Hello, world!")
+  ReservedConcurrentExecutions: 30
+  Layers:
+    - Ref: MyLayer
   Tracing: Active
-Type: AWS::Serverless::Function
+  Timeout: 120
+  Policies:
+    - AWSLambdaExecute
+    - Version: '2012-10-17' 
+      Statement:
+        - Effect: Allow
+          Action:
+            - s3:GetObject
+            - s3:GetObjectACL
+          Resource: 'arn:aws:s3:::my-bucket/*'
 ```

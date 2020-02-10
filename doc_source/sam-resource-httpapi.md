@@ -73,15 +73,16 @@ AWSTemplateFormatVersion: '2010-09-09'
 Description: AWS SAM template with a simple API definition
 Resources:
   ApiFunction:
+    Type: AWS::Serverless::Function
     Properties:
       Events:
         ApiEvent:
           Type: HttpApi
       Handler: index.handler
-      InlineCode: "def handler(event, context):\n    return {'body': 'Hello World!',\
-        \ 'statusCode': 200}\\n\"\n"
+      InlineCode: |
+        def handler(event, context):
+            return {'body': 'Hello World!', 'statusCode': 200}
       Runtime: python3.7
-    Type: AWS::Serverless::Function
 Transform: AWS::Serverless-2016-10-31
 ```
 
@@ -94,26 +95,26 @@ Example of how to set up authorization on API endpoints\.
 ```
 Properties:
   Auth:
+    DefaultAuthorizer: OAuth2
     Authorizers:
       OAuth2:
         AuthorizationScopes:
-        - scope4
-        IdentitySource: $request.querystring.param
+          - scope4
         JwtConfiguration:
+          issuer: "https://www.example.com/v1/connect/oauth2"
           audience:
-          - MyApi
-          issuer: https://www.example.com/v1/connect/oauth2
+            - MyApi
+        IdentitySource: "$request.querystring.param"
       OpenIdAuth:
         AuthorizationScopes:
-        - scope1
-        - scope2
-        IdentitySource: $request.querystring.param
+          - scope1
+          - scope2
+        OpenIdConnectUrl: "https://www.example.com/v1/connect/oidc/.well-known/openid-configuration"
         JwtConfiguration:
+          issuer: "https://www.example.com/v1/connect/oidc"
           audience:
-          - MyApi
-          issuer: https://www.example.com/v1/connect/oidc
-        OpenIdConnectUrl: https://www.example.com/v1/connect/oidc/.well-known/openid-configuration
-    DefaultAuthorizer: OAuth2
+            - MyApi
+        IdentitySource: "$request.querystring.param"
 ```
 
 ### Http Api with OpenApi Document<a name="sam-resource-httpapi--examples--http-api-with-openapi-document"></a>
@@ -128,27 +129,27 @@ Note that SAM will fill in any missing lambda integrations for HttpApi events th
 Properties:
   DefinitionBody:
     info:
+      version: '1.0'
       title:
         Ref: AWS::StackName
-      version: '1.0'
-    openapi: 3.0.1
     paths:
-      /:
+      "/":
         get:
-          responses: {}
           security:
           - OpenIdAuth:
             - scope1
             - scope2
+          responses: {}
+    openapi: 3.0.1
     securitySchemes:
       OpenIdAuth:
         type: openIdConnect
         x-amazon-apigateway-authorizer:
-          identitySource: $request.querystring.param
+          identitySource: "$request.querystring.param"
+          type: jwt
           jwtConfiguration:
             audience:
             - MyApi
             issuer: https://www.example.com/v1/connect/oidc
           openIdConnectUrl: https://www.example.com/v1/connect/oidc/.well-known/openid-configuration
-          type: jwt
 ```

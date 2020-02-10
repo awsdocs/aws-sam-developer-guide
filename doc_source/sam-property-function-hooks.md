@@ -39,8 +39,8 @@ Example hook functions
 
 ```
 Hooks:
-  PostTraffic:
-    Ref: PostTrafficLambdaFunction
   PreTraffic:
     Ref: PreTrafficLambdaFunction
+  PostTraffic:
+    Ref: PostTrafficLambdaFunction
 ```

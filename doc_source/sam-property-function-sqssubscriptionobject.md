@@ -59,10 +59,10 @@ Example to add existing SQS queue for subscibing to an SNS topic\.
 #### YAML<a name="sam-property-function-sqssubscriptionobject--examples--existing-sqs-for-sns-event--yaml"></a>
 
 ```
-BatchSize: 5
+QueuePolicyLogicalId: CustomQueuePolicyLogicalId
 QueueArn:
   Fn::GetAtt: MyCustomQueue.Arn
-QueuePolicyLogicalId: CustomQueuePolicyLogicalId
 QueueUrl:
   Ref: MyCustomQueue
+BatchSize: 5
 ```

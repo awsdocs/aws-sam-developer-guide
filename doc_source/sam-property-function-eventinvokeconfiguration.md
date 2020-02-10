@@ -29,7 +29,7 @@ The maximum age of a request that Lambda sends to a function for processing\.
 *CloudFormation Compatibility*: This property is passed directly to the `[MaximumEventAgeInSeconds](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumeventageinseconds)` property of an `AWS::Lambda::EventInvokeConfig`\.
 
  `MaximumRetryAttempts`   <a name="sam-function-eventinvokeconfiguration-maximumretryattempts"></a>
-The maximum age of a request that Lambda sends to a function for processing\.  
+The maximum number of times to retry before the function returns an error\.  
 *Type*: Integer  
 *Required*: No  
 *CloudFormation Compatibility*: This property is passed directly to the `[MaximumRetryAttempts](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumretryattempts)` property of an `AWS::Lambda::EventInvokeConfig`\.
@@ -44,14 +44,14 @@ MaximumEventAgeInSeconds example
 
 ```
 EventInvokeConfig:
-  DestinationConfig:
-    OnFailure:
-      Destination:
-        Ref: DestinationLambda
-      Type: Lambda
-    OnSuccess:
-      Destination: arn:aws:sqs:us-west-2:012345678901:my-queue
-      Type: SQS
   MaximumEventAgeInSeconds: 60
   MaximumRetryAttempts: 2
+  DestinationConfig:
+    OnSuccess:
+      Type: SQS
+      Destination: arn:aws:sqs:us-west-2:012345678901:my-queue
+    OnFailure:
+      Type: Lambda
+      Destination:
+        Ref: DestinationLambda
 ```

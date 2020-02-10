@@ -54,11 +54,11 @@ CloudWatch Event Example
 
 ```
 CWEvent:
+  Type: CloudWatchEvent
   Properties:
     Input: '{"Key": "Value"}'
     Pattern:
       detail:
         state:
-        - terminated
-  Type: CloudWatchEvent
+          - terminated
 ```

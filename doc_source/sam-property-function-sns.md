@@ -54,13 +54,13 @@ SNS Event Source Example
 
 ```
 Properties:
-  FilterPolicy:
-    price_usd:
-    - numeric:
-      - '>='
-      - 100
-    store:
-    - example_corp
-  SqsSubscription: true
   Topic: arn:aws:sns:us-east-1:123456789012:my_topic
+  SqsSubscription: True
+  FilterPolicy:
+    store: 
+      - example_corp
+    price_usd: 
+      - numeric: 
+          - ">="
+          - 100
 ```

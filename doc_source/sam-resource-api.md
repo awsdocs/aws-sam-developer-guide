@@ -184,28 +184,29 @@ A Hello World SAM template that contains a Lambda Function with an API endpoint\
 
 ```
 AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
 Description: AWS SAM template with a simple API definition
 Resources:
-  ApiFunction:
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+  ApiFunction: # Adds a GET api endpoint at "/" to the ApiGatewayApi via an Api event
+    Type: AWS::Serverless::Function
     Properties:
       Events:
         ApiEvent:
+          Type: Api
           Properties:
-            Method: get
             Path: /
+            Method: get
             RestApiId:
               Ref: ApiGatewayApi
-          Type: Api
-      Handler: index.handler
-      InlineCode: "def handler(event, context):\n    return {'body': 'Hello World!',\
-        \ 'statusCode': 200}\n"
       Runtime: python3.7
-    Type: AWS::Serverless::Function
-  ApiGatewayApi:
-    Properties:
-      StageName: prod
-    Type: AWS::Serverless::Api
-Transform: AWS::Serverless-2016-10-31
+      Handler: index.handler
+      InlineCode: |
+        def handler(event, context):
+            return {'body': 'Hello World!', 'statusCode': 200}
 ```
 
 ### ApiCorsExample<a name="sam-resource-api--examples--apicorsexample"></a>
@@ -215,15 +216,18 @@ AWS SAM template with API defined in an external Swagger file along with Lambda 
 #### YAML<a name="sam-resource-api--examples--apicorsexample--yaml"></a>
 
 ```
+Type: AWS::Serverless::Api
 Properties:
-  Cors: '''www.example.com'''
-  DefinitionBody:
-    Fn::Transform:
-      Name: AWS::Include
+  StageName: Prod
+  # Allows www.example.com to call these APIs
+  # SAM will automatically add AllowMethods with a list of methods for this API
+  Cors: "'www.example.com'"
+  DefinitionBody: # Pull in an OpenApi definition from S3
+    'Fn::Transform':
+      Name: 'AWS::Include'
+      # Replace "bucket" with your bucket name
       Parameters:
         Location: s3://bucket/swagger.yaml
-  StageName: Prod
-Type: AWS::Serverless::Api
 ```
 
 ### ApiCognitoAuthExample<a name="sam-resource-api--examples--apicognitoauthexample"></a>
@@ -233,16 +237,14 @@ AWS SAM template with an API that uses AWS Cognito to authorize requests against
 #### YAML<a name="sam-resource-api--examples--apicognitoauthexample--yaml"></a>
 
 ```
+Type: AWS::Serverless::Api
 Properties:
+  StageName: Prod
+  Cors: "'*'"
   Auth:
+    DefaultAuthorizer: MyCognitoAuthorizer
     Authorizers:
       MyCognitoAuthorizer:
         UserPoolArn:
-          Fn::GetAtt:
-          - MyCognitoUserPool
-          - Arn
-    DefaultAuthorizer: MyCognitoAuthorizer
-  Cors: '''*'''
-  StageName: Prod
-Type: AWS::Serverless::Api
+          Fn::GetAtt: [MyCognitoUserPool, Arn]
 ```

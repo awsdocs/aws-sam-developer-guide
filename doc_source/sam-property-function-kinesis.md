@@ -99,8 +99,8 @@ Kinesis Event Source
 
 ```
 Properties:
+  Stream: arn:aws:kinesis:us-east-1:123456789012:stream/my-stream
+  StartingPosition: TRIM_HORIZON
   BatchSize: 10
   Enabled: false
-  StartingPosition: TRIM_HORIZON
-  Stream: arn:aws:kinesis:us-east-1:123456789012:stream/my-stream
 ```

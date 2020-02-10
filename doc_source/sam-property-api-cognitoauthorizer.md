@@ -49,13 +49,13 @@ Auth:
   Authorizers:
     MyCognitoAuth:
       AuthorizationScopes:
-      - scope1
-      - scope2
+        - scope1
+        - scope2
+      UserPoolArn:
+        Fn::GetAtt:
+          - MyCognitoUserPool
+          - Arn
       Identity:
         Header: MyAuthorizationHeader
         ValidationExpression: myauthvalidationexpression
-      UserPoolArn:
-        Fn::GetAtt:
-        - MyCognitoUserPool
-        - Arn
 ```

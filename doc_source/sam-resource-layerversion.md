@@ -85,12 +85,12 @@ Example of a LayerVersion
 
 ```
 Properties:
-  CompatibleRuntimes:
-  - nodejs6.10
-  - nodejs8.10
-  ContentUri: s3://my-bucket/my-layer.zip
-  Description: Layer description
   LayerName: MyLayer
-  LicenseInfo: Available under the MIT-0 license.
+  Description: Layer description
+  ContentUri: 's3://my-bucket/my-layer.zip'
+  CompatibleRuntimes:
+    - nodejs6.10
+    - nodejs8.10
+  LicenseInfo: 'Available under the MIT-0 license.'
   RetentionPolicy: Retain
 ```

@@ -37,9 +37,9 @@ Cognito Event Example
 
 ```
 CognitoUserPoolPreSignup:
+  Type: Cognito
   Properties:
-    Trigger: PreSignUp
     UserPool:
       Ref: MyCognitoUserPool
-  Type: Cognito
+    Trigger: PreSignUp
 ```

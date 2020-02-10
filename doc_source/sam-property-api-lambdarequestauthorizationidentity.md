@@ -57,13 +57,13 @@ Converts the given stage variables to comma\-separated string of mapping express
 
 ```
 Identity:
-  Context:
-  - authcontext
-  Headers:
-  - Authorization
   QueryStrings:
-  - auth
-  ReauthorizeEvery: 100
+    - auth
+  Headers:
+    - Authorization
   StageVariables:
-  - VARIABLE
+    - VARIABLE
+  Context:
+    - authcontext
+  ReauthorizeEvery: 100
 ```

@@ -37,7 +37,7 @@ IOT Rule Example
 
 ```
 IoTRule:
+  Type: IoTRule
   Properties:
     Sql: SELECT * FROM 'topic/test'
-  Type: IoTRule
 ```

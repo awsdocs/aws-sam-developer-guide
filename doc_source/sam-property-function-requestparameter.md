@@ -39,7 +39,7 @@ Example of setting Request Parameters
 
 ```
 RequestParameters:
-- method.request.header.Authorization:
-    Caching: true
-    Required: true
+  - method.request.header.Authorization:
+      Required: true
+      Caching: true
 ```

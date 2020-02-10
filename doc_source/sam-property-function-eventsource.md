@@ -38,10 +38,10 @@ Example of using an API Event
 
 ```
 ApiEvent:
+  Type: Api
   Properties:
     Method: get
     Path: /group/{user}
-    RestApiId:
+    RestApiId: 
       Ref: MyApi
-  Type: Api
 ```

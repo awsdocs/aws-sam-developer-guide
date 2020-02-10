@@ -78,10 +78,10 @@ HttpApi Event that uses a specific path and method\.
 ```
 Events:
   HttpApiEvent:
-    Properties:
-      Method: GET
-      Path: /
     Type: HttpApi
+    Properties:
+      Path: /
+      Method: GET
 ```
 
 ### HttpApi Authorization<a name="sam-property-function-httpapi--examples--httpapi-authorization"></a>
@@ -93,13 +93,13 @@ HttpApi Event that uses an Authorizer\.
 ```
 Events:
   HttpApiEvent:
-    Properties:
-      Auth:
-        AuthorizationScopes:
-        - scope1
-        - scope2
-        Authorizer: OpenIdAuth
-      Method: GET
-      Path: /authenticated
     Type: HttpApi
+    Properties:
+      Path: /authenticated
+      Method: GET
+      Auth:
+        Authorizer: OpenIdAuth
+        AuthorizationScopes:
+          - scope1
+          - scope2
 ```

@@ -46,8 +46,8 @@ Specifing Authorization at Function level
 
 ```
 Auth:
-  AuthorizationScopes:
-  - scope1
-  - scope2
   Authorizer: OpenIdAuth
+  AuthorizationScopes:
+    - scope1
+    - scope2
 ```

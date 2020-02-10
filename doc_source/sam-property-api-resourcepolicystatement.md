@@ -73,19 +73,18 @@ Blacklisting source VPC or VPC endpoint
 ```
 Auth:
   ResourcePolicy:
-    AwsAccountWhitelist:
-    - '123456789101'
-    CustomStatements:
-    - Action: execute-api:Invoke
-      Condition:
-        IpAddress:
-          aws:SourceIp: 1.2.3.4
-      Effect: Allow
-      Principal: '*'
-      Resource: execute-api:/Prod/PUT/get
-    IpRangeBlacklist:
-    - 10.20.30.40
-    - 1.2.3.4
-    SourceVpcBlacklist:
-    - vpce-1a2b3c4d
+    CustomStatements: [{
+                         "Effect": "Allow",
+                         "Principal": "*",
+                         "Action": "execute-api:Invoke",
+                         "Resource": "execute-api:/Prod/PUT/get",
+                         "Condition": {
+                           "IpAddress": {
+                             "aws:SourceIp": "1.2.3.4"
+                           }
+                         }
+                       }]
+    IpRangeBlacklist: ['10.20.30.40', '1.2.3.4']
+    SourceVpcBlacklist: ["vpce-1a2b3c4d"]
+    AwsAccountWhitelist: ['123456789101']
 ```

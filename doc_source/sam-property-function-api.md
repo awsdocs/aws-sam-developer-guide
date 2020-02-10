@@ -73,10 +73,10 @@ An example of Api Event
 
 ```
 ApiEvent:
-  Properties:
-    Method: get
-    Path: /path
-    RequestParameters:
-    - method.request.header.Authorization
   Type: Api
+  Properties:
+    Path: /path
+    Method: get
+    RequestParameters:
+      - method.request.header.Authorization
 ```

@@ -80,14 +80,14 @@ Application that uses a template from the Serverless Application Repository
 #### YAML<a name="sam-resource-application--examples--sar-application--yaml"></a>
 
 ```
+Type: AWS::Serverless::Application
 Properties:
   Location:
-    ApplicationId: arn:aws:serverlessrepo:us-east-1:012345678901:applications/my-application
+    ApplicationId: 'arn:aws:serverlessrepo:us-east-1:012345678901:applications/my-application'
     SemanticVersion: 1.0.0
   Parameters:
-    IntegerParameter: 2
     StringParameter: parameter-value
-Type: AWS::Serverless::Application
+    IntegerParameter: 2
 ```
 
 ### Normal\-Application<a name="sam-resource-application--examples--normal-application"></a>
@@ -97,7 +97,7 @@ Application from an S3 url
 #### YAML<a name="sam-resource-application--examples--normal-application--yaml"></a>
 
 ```
+Type: AWS::Serverless::Application
 Properties:
   Location: https://s3.amazonaws.com/demo-bucket/template.yaml
-Type: AWS::Serverless::Application
 ```

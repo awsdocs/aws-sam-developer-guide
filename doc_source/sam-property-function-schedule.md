@@ -61,10 +61,10 @@ CloudWatch Schedule Event Example
 
 ```
 CWSchedule:
-  Properties:
-    Description: test schedule
-    Enabled: false
-    Name: TestSchedule
-    Schedule: rate(1 minute)
   Type: Schedule
+  Properties:
+    Schedule: 'rate(1 minute)'
+    Name: TestSchedule
+    Description: test schedule
+    Enabled: False
 ```

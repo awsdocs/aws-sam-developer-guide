@@ -42,10 +42,10 @@ Since no Destination is given for the SQS OnSuccess configuration, SAM will crea
 ```
 EventInvokeConfig:
   DestinationConfig:
-    OnFailure:
-      Destination:
-        Ref: DestinationLambda
-      Type: Lambda
     OnSuccess:
       Type: SQS
+    OnFailure:
+      Type: Lambda
+      Destination:
+        Ref: DestinationLambda
 ```

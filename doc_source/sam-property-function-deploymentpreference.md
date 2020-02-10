@@ -68,14 +68,14 @@ Example deployment preference
 
 ```
 DeploymentPreference:
+  Enabled: True
+  Type: Canary10Percent10Minutes 
   Alarms:
-  - Ref: AliasErrorMetricGreaterThanZeroAlarm
-  - Ref: LatestVersionErrorMetricGreaterThanZeroAlarm
-  Enabled: true
+    - Ref: AliasErrorMetricGreaterThanZeroAlarm
+    - Ref: LatestVersionErrorMetricGreaterThanZeroAlarm
   Hooks:
-    PostTraffic:
-      Ref: PostTrafficLambdaFunction
     PreTraffic:
       Ref: PreTrafficLambdaFunction
-  Type: Canary10Percent10Minutes
+    PostTraffic:
+      Ref: PostTrafficLambdaFunction
 ```

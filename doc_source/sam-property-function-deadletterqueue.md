@@ -40,6 +40,6 @@ Dead Letter Queue example for an SNS topic\.
 
 ```
 DeadLetterQueue:
-  TargetArn: arn:aws:sns:us-east-2:123456789012:my-topic
   Type: SNS
+  TargetArn: arn:aws:sns:us-east-2:123456789012:my-topic
 ```

@@ -63,12 +63,12 @@ Authorizers:
   MyLambdaTokenAuth:
     FunctionArn:
       Fn::GetAtt:
-      - MyAuthFunction
-      - Arn
+        - MyAuthFunction
+        - Arn
     Identity:
-      Header: MyCustomAuthHeader
-      ReauthorizeEvery: 20
-      ValidationExpression: mycustomauthexpression
+      Header: MyCustomAuthHeader # OPTIONAL; Default: 'Authorization'
+      ValidationExpression: mycustomauthexpression # OPTIONAL
+      ReauthorizeEvery: 20 # OPTIONAL; Service Default: 300
 ```
 
 ### BasicLambdaTokenAuth<a name="sam-property-api-lambdatokenauthorizer--examples--basiclambdatokenauth"></a>
@@ -80,6 +80,6 @@ Authorizers:
   MyLambdaTokenAuth:
     FunctionArn:
       Fn::GetAtt:
-      - MyAuthFunction
-      - Arn
+        - MyAuthFunction
+        - Arn
 ```

@@ -46,11 +46,11 @@ EventBridgeRule Event Example
 
 ```
 EBRule:
+  Type: EventBridgeRule
   Properties:
     Input: '{"Key": "Value"}'
     Pattern:
       detail:
         state:
-        - terminated
-  Type: EventBridgeRule
+          - terminated
 ```

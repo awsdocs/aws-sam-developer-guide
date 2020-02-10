@@ -50,22 +50,22 @@ Auth:
   Authorizers:
     OAuth2Authorizer:
       AuthorizationScopes:
-      - scope1
-      - scope2
-      IdentitySource: $request.querystring.param
+        - scope1
+        - scope2
       JwtConfiguration:
+        issuer: "https://www.example.com/v1/connect/oauth2"
         audience:
-        - MyApi
-        issuer: https://www.example.com/v1/connect/oauth2
+          - MyApi
+      IdentitySource: "$request.querystring.param"
     OpenIdAuthorizer:
       AuthorizationScopes:
-      - scope1
-      - scope2
-      IdentitySource: $request.querystring.param
+        - scope1
+        - scope2
+      OpenIdConnectUrl: "https://www.example.com/v1/connect/oidc/.well-known/openid-configuration"
       JwtConfiguration:
+        issuer: "https://www.example.com/v1/connect/oidc"
         audience:
-        - MyApi
-        issuer: https://www.example.com/v1/connect/oidc
-      OpenIdConnectUrl: https://www.example.com/v1/connect/oidc/.well-known/openid-configuration
+          - MyApi
+      IdentitySource: "$request.querystring.param"
   DefaultAuthorizer: OpenIdAuthorizer
 ```

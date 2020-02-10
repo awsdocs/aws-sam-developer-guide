@@ -99,8 +99,8 @@ DynamoDB Event
 
 ```
 Properties:
+  Stream: arn:aws:dynamodb:us-east-1:123456789012:table/TestTable/stream/2016-08-11T21:21:33.291
+  StartingPosition: TRIM_HORIZON
   BatchSize: 10
   Enabled: false
-  StartingPosition: TRIM_HORIZON
-  Stream: arn:aws:dynamodb:us-east-1:123456789012:table/TestTable/stream/2016-08-11T21:21:33.291
 ```

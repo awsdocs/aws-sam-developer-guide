@@ -37,6 +37,6 @@ Example application location object
 
 ```
 Location:
-  ApplicationId: arn:aws:serverlessrepo:us-east-1:012345678901:applications/my-application
+  ApplicationId: 'arn:aws:serverlessrepo:us-east-1:012345678901:applications/my-application'
   SemanticVersion: 1.0.0
 ```

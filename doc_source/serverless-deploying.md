@@ -9,7 +9,7 @@ You can deploy your application by using AWS SAM command line interface \(CLI\) 
 After you develop and test your serverless application locally, you can deploy your application by using the `sam package` and `sam deploy` commands\.
 
 **Note**  
-Both the `sam package` and `sam deploy` commands described in this section are identical to their AWS CLI equivalent commands [ `aws cloudformation package`](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/package.html) and [ `aws cloudformation deploy`](http://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy/index.html), respectively\.
+Both the `sam package` and `sam deploy` commands described in this section are identical to their AWS CLI equivalent commands [ `aws cloudformation package`](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/package.html) and [ `aws cloudformation deploy`](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy/index.html), respectively\.
 
 The `sam package` command zips your code artifacts, uploads them to Amazon S3, and produces a packaged AWS SAM template file that's ready to be used\. The `sam deploy` command uses this file to deploy your application\. For example, the following command generates a `packaged.yaml` file:
 

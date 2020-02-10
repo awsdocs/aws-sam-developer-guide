@@ -43,9 +43,8 @@ Example of an S3 Event
 #### YAML<a name="sam-property-function-s3--examples--s3-event--yaml"></a>
 
 ```
-ImagesBucket:
-  Type: AWS::S3::Bucket
 S3Event:
+  Type: S3
   Properties:
     Bucket:
       Ref: ImagesBucket
@@ -55,5 +54,6 @@ S3Event:
         Rules:
         - Name: name
           Value: value
-  Type: S3
+ImagesBucket:
+  Type: AWS::S3::Bucket
 ```

@@ -37,9 +37,9 @@ Cloudwatchlogs Subscription filter Example
 
 ```
 CWLog:
+  Type: CloudWatchLogs
   Properties:
-    FilterPattern: My pattern
     LogGroupName:
       Ref: CloudWatchLambdaLogsGroup
-  Type: CloudWatchLogs
+    FilterPattern: My pattern
 ```

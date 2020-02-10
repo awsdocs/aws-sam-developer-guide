@@ -77,26 +77,28 @@ Cognito Auth Example
 
 ```
 Auth:
-  AddDefaultAuthorizerToCorsPreflight: false
-  ApiKeyRequired: false
   Authorizers:
     MyCognitoAuth:
-      AuthType: COGNITO_USER_POOLS
-      UserPoolArn:
-        Fn::GetAtt:
-        - MyUserPool
-        - Arn
+     UserPoolArn:
+       Fn::GetAtt:
+         - MyUserPool
+         - Arn
+     AuthType: "COGNITO_USER_POOLS"
   DefaultAuthorizer: MyCognitoAuth
   InvokeRole: CALLER_CREDENTIALS
+  AddDefaultAuthorizerToCorsPreflight: false
+  ApiKeyRequired: false
   ResourcePolicy:
-    CustomStatements:
-    - Action: execute-api:Invoke
-      Condition:
-        IpAddress:
-          aws:SourceIp: 1.2.3.4
-      Effect: Allow
-      Principal: '*'
-      Resource: execute-api:/Prod/PUT/get
-    IpRangeBlacklist:
-    - 10.20.30.40
+    CustomStatements: [{
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "execute-api:Invoke",
+      "Resource": "execute-api:/Prod/PUT/get",
+      "Condition": {
+          "IpAddress": {
+              "aws:SourceIp": "1.2.3.4"
+          }
+        }
+    }]
+    IpRangeBlacklist: ['10.20.30.40']
 ```

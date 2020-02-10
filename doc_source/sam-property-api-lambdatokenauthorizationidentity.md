@@ -37,6 +37,6 @@ Specify a validation expression for validating the incoming Identity\.
 ```
 Identity:
   Header: Auth
-  ReauthorizeEvery: 30
   ValidationExpression: Bearer.*
+  ReauthorizeEvery: 30
 ```

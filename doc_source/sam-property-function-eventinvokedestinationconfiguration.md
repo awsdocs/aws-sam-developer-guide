@@ -38,11 +38,11 @@ OnSuccess example
 ```
 EventInvokeConfig:
   DestinationConfig:
+    OnSuccess:
+      Type: SQS
+      Destination: arn:aws:sqs:us-west-2:012345678901:my-queue
     OnFailure:
+      Type: Lambda
       Destination:
         Ref: DestinationLambda
-      Type: Lambda
-    OnSuccess:
-      Destination: arn:aws:sqs:us-west-2:012345678901:my-queue
-      Type: SQS
 ```

@@ -60,9 +60,9 @@ Cors Configuration example\.
 
 ```
 Cors:
-  AllowCredentials: true
-  AllowHeaders: '"X-Forwarded-For"'
-  AllowMethods: '"POST, GET"'
-  AllowOrigin: '"www.example.com"'
-  MaxAge: '"600"'
+  AllowMethods: "'POST, GET'"
+  AllowHeaders: "'X-Forwarded-For'"
+  AllowOrigin: "'www.example.com'"
+  MaxAge: "'600'"
+  AllowCredentials: True
 ```

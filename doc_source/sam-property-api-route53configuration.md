@@ -45,11 +45,11 @@ Shows how to configure route 53
 
 ```
 Domain:
-  CertificateArn: arn-example
   DomainName: www.example.com
+  CertificateArn: arn-example
   EndpointConfiguration: EDGE
   Route53:
-    DistributionDomainName: xyz
-    EvaluateTargetHealth: true
     HostedZoneId: xyz
+    EvaluateTargetHealth: true
+    DistributionDomainName: xyz
 ```

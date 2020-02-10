@@ -61,16 +61,16 @@ This property can be used to specify an `IdentitySource` in an incoming request 
 ```
 Authorizer:
   MyLambdaRequestAuth:
+    FunctionPayloadType: REQUEST
     FunctionArn:
       Fn::GetAtt:
-      - MyAuthFunction
-      - Arn
+        - MyAuthFunction
+        - Arn
     FunctionInvokeRole:
       Fn::GetAtt:
-      - LambdaAuthInvokeRole
-      - Arn
-    FunctionPayloadType: REQUEST
+        - LambdaAuthInvokeRole
+        - Arn
     Identity:
       Headers:
-      - Authorization1
+        - Authorization1
 ```
