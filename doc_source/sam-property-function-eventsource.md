@@ -19,14 +19,14 @@ To declare this entity in your AWS SAM template, use the following syntax:
 Object describing properties of this event mapping\. The set of properties must conform to the defined Type\.  
 *Type*: [S3](sam-property-function-s3.md) \| [SNS](sam-property-function-sns.md) \| [Kinesis](sam-property-function-kinesis.md) \| [DynamoDB](sam-property-function-dynamodb.md) \| [SQS](sam-property-function-sqs.md) \| [Api](sam-property-function-api.md) \| [Schedule](sam-property-function-schedule.md) \| [CloudWatchEvent](sam-property-function-cloudwatchevent.md) \| [EventBridgeRule](sam-property-function-eventbridgerule.md) \| [CloudWatchLogs](sam-property-function-cloudwatchlogs.md) \| [IoTRule](sam-property-function-iotrule.md) \| [AlexaSkill](sam-property-function-alexaskill.md) \| [Cognito](sam-property-function-cognito.md) \| [HttpApi](sam-property-function-httpapi.md)  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Type`   <a name="sam-function-eventsource-type"></a>
 The event type\.  
 Supported values: `S3`, `SNS`, `Kinesis`, `DynamoDB`, `SQS`, `Api`, `Schedule`, `CloudWatchEvent`, `CloudWatchLogs`, `IoTRule`, `AlexaSkill`, `Cognito`\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-eventsource--examples"></a>
 

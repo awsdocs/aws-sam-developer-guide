@@ -32,28 +32,28 @@ If not defined, a default [AWS::Serverless::HttpApi](sam-resource-httpapi.md) re
 This cannot reference an [AWS::Serverless::HttpApi](sam-resource-httpapi.md) resource defined in another template\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Auth`   <a name="sam-function-httpapi-auth"></a>
 Auth configuration for this specific Api\+Path\+Method\.  
 Useful for overriding the API's `DefaultAuthorizer` or setting auth config on an individual path when no `DefaultAuthorizer` is specified\.  
 *Type*: [HttpApiFunctionAuth](sam-property-function-httpapifunctionauth.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Method`   <a name="sam-function-httpapi-method"></a>
 HTTP method for which this function is invoked\.  
 If no `Path` and `Method` are specified, SAM will create a default API path that routes any request that doesn't map to a different endpoint to this Lambda function\. Only one of these default paths can exist per API\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Path`   <a name="sam-function-httpapi-path"></a>
 Uri path for which this function is invoked\. Must start with `/`\.  
 If no `Path` and `Method` are specified, SAM will create a default API path that routes any request that doesn't map to a different endpoint to this Lambda function\. Only one of these default paths can exist per API\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-httpapi--examples"></a>
 

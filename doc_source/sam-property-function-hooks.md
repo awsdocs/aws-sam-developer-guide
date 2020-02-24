@@ -21,13 +21,13 @@ To declare this entity in your AWS SAM template, use the following syntax:
 Lambda function that is run after traffic shifting\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `PreTraffic`   <a name="sam-function-hooks-pretraffic"></a>
 Lambda function that is run before traffic shifting\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-hooks--examples"></a>
 

@@ -23,32 +23,32 @@ The maximum number of items to retrieve in a single batch for the SQS queue\.
 *Type*: String  
 *Required*: No  
 *Default*: 10  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Enabled`   <a name="sam-function-sqssubscriptionobject-enabled"></a>
 Disables the SQS event source mapping to pause polling and invocation\.  
 *Type*: Boolean  
 *Required*: No  
 *Default*: True  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `QueueArn`   <a name="sam-function-sqssubscriptionobject-queuearn"></a>
 Specify an existing SQS queue arn\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `QueuePolicyLogicalId`   <a name="sam-function-sqssubscriptionobject-queuepolicylogicalid"></a>
 Give a custom logicalId name for the [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queuepolicy.html) resource\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `QueueUrl`   <a name="sam-function-sqssubscriptionobject-queueurl"></a>
 Specify the queue URL associated with the `QueueArn` property\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-sqssubscriptionobject--examples"></a>
 

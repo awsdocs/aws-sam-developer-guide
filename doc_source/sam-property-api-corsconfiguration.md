@@ -24,31 +24,31 @@ To declare this entity in your AWS SAM template, use the following syntax:
 Boolean indicating whether request is allowed to contain credentials\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `AllowHeaders`   <a name="sam-api-corsconfiguration-allowheaders"></a>
 String of headers to allow\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `AllowMethods`   <a name="sam-api-corsconfiguration-allowmethods"></a>
 String containing the HTTP methods to allow\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `AllowOrigin`   <a name="sam-api-corsconfiguration-alloworigin"></a>
 String of origin to allow\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `MaxAge`   <a name="sam-api-corsconfiguration-maxage"></a>
 String containing the number of seconds to cache CORS Preflight request\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-api-corsconfiguration--examples"></a>
 

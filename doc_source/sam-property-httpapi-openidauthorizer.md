@@ -28,26 +28,26 @@ To declare this entity in your AWS SAM template, use the following syntax:
 List of authorization scopes for this authorizer\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `IdentitySource`   <a name="sam-httpapi-openidauthorizer-identitysource"></a>
 Identity source expression for this authorizer\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `JwtConfiguration`   <a name="sam-httpapi-openidauthorizer-jwtconfiguration"></a>
 JSON Web Token \(JWT\) configuration for this authorizer\.  
 This is passed through to the `jwtConfiguration` section of a `x-amazon-apigateway-authorizer` in the `securitySchemes` section of an OpenApi document\.  
 *Type*: Map  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `OpenIdConnectUrl`   <a name="sam-httpapi-openidauthorizer-openidconnecturl"></a>
 URL to use to find the token issuer\. If the lookup fails using this URL, the authorizer will fall back to using the issuer in `JWTConfiguration`\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-httpapi-openidauthorizer--examples"></a>
 

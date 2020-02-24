@@ -44,38 +44,38 @@ Properties:
 Configures Access Log Setting for a stage\.  
 *Type*: [AccessLogSetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[AccessLogSetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting)` property of an `AWS::ApiGateway::Stage`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[AccessLogSetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting)` property of an `AWS::ApiGateway::Stage`\.
 
  `Auth`   <a name="sam-api-auth"></a>
 Configure authorization to control access to your API Gateway API\.  
 For more information about configuring access using AWS SAM see [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.  
 *Type*: [ApiAuth](sam-property-api-apiauth.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `BinaryMediaTypes`   <a name="sam-api-binarymediatypes"></a>
 List of MIME types that your API could return\. Use this to enable binary support for APIs\. Use \~1 instead of / in the mime types\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is similar to the `[BinaryMediaTypes](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes)` property of an `AWS::ApiGateway::RestApi`\. The list of BinaryMediaTypes is added to both the AWS CloudFormation resource and the OpenAPI document\.
+*AWS CloudFormation Compatibility*: This property is similar to the `[BinaryMediaTypes](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes)` property of an `AWS::ApiGateway::RestApi`\. The list of BinaryMediaTypes is added to both the AWS CloudFormation resource and the OpenAPI document\.
 
  `CacheClusterEnabled`   <a name="sam-api-cacheclusterenabled"></a>
 Indicates whether cache clustering is enabled for the stage\.  
 *Type*: Boolean  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[CacheClusterEnabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled)` property of an `AWS::ApiGateway::Stage`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[CacheClusterEnabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled)` property of an `AWS::ApiGateway::Stage`\.
 
  `CacheClusterSize`   <a name="sam-api-cacheclustersize"></a>
 The stage's cache cluster size\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[CacheClusterSize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize)` property of an `AWS::ApiGateway::Stage`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[CacheClusterSize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize)` property of an `AWS::ApiGateway::Stage`\.
 
  `CanarySetting`   <a name="sam-api-canarysetting"></a>
 Configure a canary setting to a stage of a regular deployment\.  
 *Type*: [CanarySetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-canarysetting)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[CanarySetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-canarysetting)` property of an `AWS::ApiGateway::Stage`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[CanarySetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-canarysetting)` property of an `AWS::ApiGateway::Stage`\.
 
  `Cors`   <a name="sam-api-cors"></a>
 Manage Cross\-origin resource sharing \(CORS\) for all your API Gateway APIs\. Specify the domain to allow as a string or specify a dictionary with additional Cors configuration\. NOTE: Cors requires SAM to modify your OpenAPI definition\. So, it works only inline OpenApi defined with DefinitionBody\.  
@@ -83,13 +83,13 @@ For more information about CORS, see [Enable CORS for an API Gateway REST API Re
 **NOTE:** API Gateway requires literal values to be a quoted string, so you must include single quotes in the `Allow___` values\. For example, "'www\.example\.com'" is correct whereas "www\.example\.com" is not correct\.  
 *Type*: String \| [CorsConfiguration](sam-property-api-corsconfiguration.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `DefinitionBody`   <a name="sam-api-definitionbody"></a>
 OpenAPI specification that describes your API\. If neither `DefinitionUri` nor `DefinitionBody` are specified, SAM will generate a `DefinitionBody` for you based on your template configuration\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is similar to the `[Body](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body)` property of an `AWS::ApiGateway::RestApi`\. If certain properties are provided, content may be inserted or modified into the DefinitionBody before being passed to CloudFormation\. Properties include `Auth`, `BinaryMediaTypes`, `Cors`, `GatewayResponses`, `Models`, and an `EventSource` of type Api on for a corresponding `AWS::Serverless::Function`\.
+*AWS CloudFormation Compatibility*: This property is similar to the `[Body](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body)` property of an `AWS::ApiGateway::RestApi`\. If certain properties are provided, content may be inserted or modified into the DefinitionBody before being passed to CloudFormation\. Properties include `Auth`, `BinaryMediaTypes`, `Cors`, `GatewayResponses`, `Models`, and an `EventSource` of type Api on for a corresponding `AWS::Serverless::Function`\.
 
  `DefinitionUri`   <a name="sam-api-definitionuri"></a>
 AWS S3 Uri, local file path, or location object of the the OpenAPI document defining the API\. The AWS S3 object this property references must be a valid OpenAPI file\. If neither `DefinitionUri` nor `DefinitionBody` are specified, SAM will generate a `DefinitionBody` for you based on your template configuration\.  
@@ -97,82 +97,99 @@ If a local file path is provided, the template must go through the workflow that
 Intrinsic functions are not supported in external OpenApi files referenced by `DefinitionUri`\. Use instead the `DefinitionBody` property with the [Include Transform](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html) to import an OpenApi definition into the template\.  
 *Type*: String \| [ApiDefinition](sam-property-api-apidefinition.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is similar to the `[BodyS3Location](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location)` property of an `AWS::ApiGateway::RestApi`\. The nested Amazon S3 properties are named differently\.
+*AWS CloudFormation Compatibility*: This property is similar to the `[BodyS3Location](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location)` property of an `AWS::ApiGateway::RestApi`\. The nested Amazon S3 properties are named differently\.
 
  `Domain`   <a name="sam-api-domain"></a>
 Configures a custom domain for this API Gateway API\.  
 *Type*: [DomainConfiguration](sam-property-api-domainconfiguration.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `EndpointConfiguration`   <a name="sam-api-endpointconfiguration"></a>
 Specify the type of endpoint for API endpoint\.  
 Valid values are `REGIONAL`, `EDGE`, or `PRIVATE`\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is similar to the `[EndpointConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointconfiguration)` property of an `AWS::ApiGateway::RestApi`\. AWS SAM only accepts a single endpoint configuration string\.
+*AWS CloudFormation Compatibility*: This property is similar to the `[EndpointConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointconfiguration)` property of an `AWS::ApiGateway::RestApi`\. AWS SAM only accepts a single endpoint configuration string\.
 
  `GatewayResponses`   <a name="sam-api-gatewayresponses"></a>
 Configures Gateway Reponses for an API\. Gateway Responses are responses returned by API Gateway, either directly or through the use of Lambda Authorizers\. For more information, see the documentation for the [Api Gateway OpenApi extension for Gateway Responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.html)\.  
 *Type*: Map  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `MethodSettings`   <a name="sam-api-methodsettings"></a>
 Configures all settings for API stage including Logging, Metrics, CacheTTL, Throttling\.  
 *Type*: [MethodSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[MethodSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings)` property of an `AWS::ApiGateway::Stage`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[MethodSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings)` property of an `AWS::ApiGateway::Stage`\.
 
  `MinimumCompressionSize`   <a name="sam-api-minimumcompressionsize"></a>
 Allow compression of response bodies based on client's Accept\-Encoding header\. Compression is triggered when response body size is greater than or equal to your configured threshold\. The maximum body size threshold is 10 MB \(10,485,760 Bytes\)\. \- The following compression types are supported: gzip, deflate, and identity\.  
 *Type*: Integer  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[MinimumCompressionSize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-minimumcompressionsize)` property of an `AWS::ApiGateway::RestApi`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[MinimumCompressionSize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-minimumcompressionsize)` property of an `AWS::ApiGateway::RestApi`\.
 
  `Models`   <a name="sam-api-models"></a>
 The schemas to be used by your API methods\. These schemas can be described using JSON or YAML\. See the Examples section at the bottom of this page for example models\.  
 *Type*: Map  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Name`   <a name="sam-api-name"></a>
 A name for the API Gateway RestApi resource  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[Name](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-name)` property of an `AWS::ApiGateway::RestApi`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[Name](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-name)` property of an `AWS::ApiGateway::RestApi`\.
 
  `OpenApiVersion`   <a name="sam-api-openapiversion"></a>
 Version of OpenApi to use\. This can either be `2.0` for the Swagger specification, or one of the OpenApi 3\.0 versions, like `3.0.1`\. For more information about OpenAPI, see the [OpenAPI Specification](https://swagger.io/specification/)\.  
 **Note**: Setting this property to any valid value will also remove the stage `Stage` that SAM creates\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `StageName`   <a name="sam-api-stagename"></a>
 The name of the stage, which API Gateway uses as the first path segment in the invoke Uniform Resource Identifier \(URI\)\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is similar to the `[StageName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename)` property of an `AWS::ApiGateway::Stage`\. It is required in SAM, but not required in API Gateway  
+*AWS CloudFormation Compatibility*: This property is similar to the `[StageName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename)` property of an `AWS::ApiGateway::Stage`\. It is required in SAM, but not required in API Gateway  
 *Additional Notes*: The Implicit API has a stage name of "prod"
 
  `Tags`   <a name="sam-api-tags"></a>
 A map \(string to string\) that specifies the tags to be added to this API Gateway stage\. Keys and values are limited to alphanumeric characters\. Keys can be 1 to 127 Unicode characters in length and cannot be prefixed with aws:\. Values can be 1 to 255 Unicode characters in length\.  
 *Type*: Map  
 *Required*: No  
-*CloudFormation Compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tags)` property of an `AWS::ApiGateway::Stage`\. The Tags property in SAM consists of Key:Value pairs; in CloudFormation it consists of a list of Tag objects\. When the stack is created, SAM will automatically add a `lambda:createdBy:SAM` tag to this API Gateway stage\.
+*AWS CloudFormation Compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tags)` property of an `AWS::ApiGateway::Stage`\. The Tags property in SAM consists of Key:Value pairs; in CloudFormation it consists of a list of Tag objects\. When the stack is created, SAM will automatically add a `lambda:createdBy:SAM` tag to this API Gateway stage\.
 
  `TracingEnabled`   <a name="sam-api-tracingenabled"></a>
 Indicates whether active tracing with X\-Ray is enabled for the stage\.  
 *Type*: Boolean  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[TracingEnabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled)` property of an `AWS::ApiGateway::Stage`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[TracingEnabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled)` property of an `AWS::ApiGateway::Stage`\.
 
  `Variables`   <a name="sam-api-variables"></a>
 A map \(string to string\) that defines the stage variables, where the variable name is the key and the variable value is the value\. Variable names are limited to alphanumeric characters\. Values must match the following regular expression: `[A-Za-z0-9._~:/?#&=,-]+`\.  
 *Type*: Map  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[Variables](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-variables)` property of an `AWS::ApiGateway::Stage`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[Variables](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-variables)` property of an `AWS::ApiGateway::Stage`\.
+
+## Return Values<a name="sam-resource-api-return-values"></a>
+
+### Ref<a name="sam-resource-api-return-values-ref"></a>
+
+When the logical ID of this resource is provided to the Ref intrinsic function, it returns the ID of the underlying API Gateway API\.
+
+For more information about using the Ref function, see [Ref](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)\. 
+
+### Fn::GetAtt<a name="sam-resource-api-return-values-fn--getatt"></a>
+
+Fn::GetAtt returns a value for a specified attribute of this type\. The following are the available attributes and sample return values\. 
+
+For more information about using Fn::GetAtt, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html)\. 
+
+`RootResourceId`  <a name="RootResourceId-fn::getatt"></a>
+The root resource ID for a `RestApi` resource, such as `a0bc123d4e`\.
 
 ## Examples<a name="sam-resource-api--examples"></a>
 

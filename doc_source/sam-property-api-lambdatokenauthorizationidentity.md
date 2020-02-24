@@ -20,13 +20,13 @@ The time\-to\-live \(TTL\) period, in seconds, that specifies how long API Gatew
 *Type*: Integer  
 *Required*: No  
 *Default*: 300  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `ValidationExpression`   <a name="sam-api-lambdatokenauthorizationidentity-validationexpression"></a>
 Specify a validation expression for validating the incoming Identity\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-api-lambdatokenauthorizationidentity--examples"></a>
 

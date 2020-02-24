@@ -21,13 +21,13 @@ To declare this entity in your AWS SAM template, use the following syntax:
 Adds `cacheKeyParameters` section to the API Gateway OpenApi definition  
 *Type*: Boolean  
 *Required*: Conditional  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Required`   <a name="sam-function-requestparameter-required"></a>
 This field specifies whether a parameter is required  
 *Type*: Boolean  
 *Required*: Conditional  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-requestparameter--examples"></a>
 

@@ -27,7 +27,7 @@ The authorizer used to control access to your API Gateway API\. OAuth 2\.0 and O
 *Type*: [OpenIdAuthorizer](sam-property-httpapi-openidauthorizer.md) \| [OAuth2Authorizer](sam-property-httpapi-oauth2authorizer.md)  
 *Required*: No  
 *Default*: None  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.  
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
 *Additional Notes*: SAM adds the Authorizers to the OpenApi definition of an Api\.
 
  `DefaultAuthorizer`   <a name="sam-httpapi-httpapiauth-defaultauthorizer"></a>
@@ -35,7 +35,7 @@ Specify a default authorizer for an API Gateway API, which will be used for auth
 *Type*: String  
 *Required*: No  
 *Default*: None  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-httpapi-httpapiauth--examples"></a>
 

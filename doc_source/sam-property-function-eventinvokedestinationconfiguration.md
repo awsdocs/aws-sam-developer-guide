@@ -19,13 +19,13 @@ To declare this entity in your AWS SAM template, use the following syntax:
 A destination for events that failed processing\.  
 *Type*: [OnFailure](sam-property-function-onfailure.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is similar to the `[OnFailure](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onfailure.html)` property of an `AWS::Lambda::EventInvokeConfig`\. Requires `Type`, an additional SAM\-only property\.
+*AWS CloudFormation Compatibility*: This property is similar to the `[OnFailure](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onfailure.html)` property of an `AWS::Lambda::EventInvokeConfig`\. Requires `Type`, an additional SAM\-only property\.
 
  `OnSuccess`   <a name="sam-function-eventinvokedestinationconfiguration-onsuccess"></a>
 A destination for events that were processed successfully\.  
 *Type*: [OnSuccess](sam-property-function-onsuccess.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is similar to the `[OnSuccess](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onsuccess.html)` property of an `AWS::Lambda::EventInvokeConfig`\. Requires `Type`, an additional SAM\-only property\.
+*AWS CloudFormation Compatibility*: This property is similar to the `[OnSuccess](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onsuccess.html)` property of an `AWS::Lambda::EventInvokeConfig`\. Requires `Type`, an additional SAM\-only property\.
 
 ## Examples<a name="sam-property-function-eventinvokedestinationconfiguration--examples"></a>
 

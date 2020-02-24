@@ -1711,3 +1711,55 @@ Gives permissions to execute Athena queries\.
           }
         ]
 ```
+
+## TextractPolicy<a name="textract-policy"></a>
+
+Gives full access to Amazon Textract\.
+
+```
+        "Statement": [
+         {
+            "Effect": "Allow",
+            "Action": [
+              "textract:*"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
+## TextractDetectAnalyzePolicy<a name="textract-detect-analyze-policy"></a>
+
+Gives access to detect and analyze documents with Amazon Textract\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "textract:DetectDocumentText",
+              "textract:StartDocumentTextDetection",
+              "textract:StartDocumentAnalysis",
+              "textract:AnalyzeDocument"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
+## TextractGetResultPolicy<a name="textract-get-result-policy"></a>
+
+Gives access to get detected and analyzed documents from Amazon Textract\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "textract:GetDocumentTextDetection",
+              "textract:GetDocumentAnalysis"
+            ],
+            "Resource": "*"
+          }
+        ]
+```

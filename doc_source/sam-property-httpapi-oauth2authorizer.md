@@ -27,20 +27,20 @@ To declare this entity in your AWS SAM template, use the following syntax:
 List of authorization scopes for this authorizer\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `IdentitySource`   <a name="sam-httpapi-oauth2authorizer-identitysource"></a>
 Identity source expression for this authorizer\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `JwtConfiguration`   <a name="sam-httpapi-oauth2authorizer-jwtconfiguration"></a>
 JSON Web Token \(JWT\) configuration for this authorizer\.  
 This is passed through to the `jwtConfiguration` section of a `x-amazon-apigateway-authorizer` in the `securitySchemes` section of an OpenApi document\.  
 *Type*: Map  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-httpapi-oauth2authorizer--examples"></a>
 

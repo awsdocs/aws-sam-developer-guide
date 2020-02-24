@@ -2,7 +2,7 @@
 
 Configures authorization at the event level\.
 
-Configure Auth for a specific Api \+ Path \+ Method
+Configure Auth for a specific API \+ Path \+ Method
 
 ## Syntax<a name="sam-property-function-apifunctionauth-syntax"></a>
 
@@ -24,35 +24,35 @@ To declare this entity in your AWS SAM template, use the following syntax:
 Requires an API key for this API path and method\.  
 *Type*: Boolean  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `AuthorizationScopes`   <a name="sam-function-apifunctionauth-authorizationscopes"></a>
-Authorization scopes to apply to this Api \+ Path \+ Method\.  
+Authorization scopes to apply to this API \+ Path \+ Method\.  
 Scopes listed here will override any scopes applied by the `DefaultAuthorizer` if one exists\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Authorizer`   <a name="sam-function-apifunctionauth-authorizer"></a>
 The `Authorizer` for a specific Function  
 If you have specified a Global Authorizer on the API and want to make a specific Function public, override by setting `Authorizer` to `NONE`\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `InvokeRole`   <a name="sam-function-apifunctionauth-invokerole"></a>
 Specifies the `InvokeRole` to use for `AWS_IAM` authorization\.  
 *Type*: String  
 *Required*: No  
 *Default*: CALLER\_CREDENTIALS  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.  
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
 *Additional Notes*: `CALLER_CREDENTIALS` maps to `arn:aws:iam::*:user/*`, which uses the caller credentials to invoke the endpoint\.
 
  `ResourcePolicy`   <a name="sam-function-apifunctionauth-resourcepolicy"></a>
 Configure Resource Policy for this path on an API\.  
 *Type*: [ResourcePolicyStatement](sam-property-function-resourcepolicystatement.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-apifunctionauth--examples"></a>
 

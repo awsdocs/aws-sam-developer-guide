@@ -20,19 +20,19 @@ To declare this entity in your AWS SAM template, use the following syntax:
 S3 bucket name\. This bucket must exist in the same template\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is similar to the `[BucketName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-name)` property of an `AWS::S3::Bucket`\. This is a required field in SAM\. This field only accepts a reference to the S3 bucket created in this template
+*AWS CloudFormation Compatibility*: This property is similar to the `[BucketName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-name)` property of an `AWS::S3::Bucket`\. This is a required field in SAM\. This field only accepts a reference to the S3 bucket created in this template
 
  `Events`   <a name="sam-function-s3-events"></a>
 The Amazon S3 bucket event for which to invoke the AWS Lambda function\. See [Amazon S3 supported event types](http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#supported-notification-event-types) for valid values\.  
 *Type*: String \| List  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is passed directly to the `[Event](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig-event)` property of the `AWS::S3::Bucket` `LambdaConfiguration` data type\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[Event](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig-event)` property of the `AWS::S3::Bucket` `LambdaConfiguration` data type\.
 
  `Filter`   <a name="sam-function-s3-filter"></a>
 The filtering rules that determine which objects invoke the AWS Lambda function\.  
 *Type*: [S3NotificationFilter](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[NotificationFilter](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html)` property of the `AWS::S3::Bucket` `LambdaConfiguration` data type\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[NotificationFilter](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html)` property of the `AWS::S3::Bucket` `LambdaConfiguration` data type\.
 
 ## Examples<a name="sam-property-function-s3--examples"></a>
 

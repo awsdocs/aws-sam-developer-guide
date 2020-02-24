@@ -28,32 +28,32 @@ Auth configuration for this specific Api\+Path\+Method\.
 Useful for overriding the API's `DefaultAuthorizer` setting auth config on an individual path when no `DefaultAuthorizer` is specified or overriding the default `ApiKeyRequired` setting\.  
 *Type*: [ApiFunctionAuth](sam-property-function-apifunctionauth.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Method`   <a name="sam-function-api-method"></a>
 HTTP method for which this function is invoked\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Path`   <a name="sam-function-api-path"></a>
 Uri path for which this function is invoked\. Must start with `/`\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `RequestModel`   <a name="sam-function-api-requestmodel"></a>
 Request model to use for this specific Api\+Path\+Method\. This should reference the name of a model specified in the `Models` section of an [AWS::Serverless::Api](sam-resource-api.md) resource\.  
 *Type*: [RequestModel](sam-property-function-requestmodel.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `RequestParameters`   <a name="sam-function-api-requestparameters"></a>
 Request parameters configuration for this specific Api\+Path\+Method\. All parameter names must start with `method.request` and must be limited to `method.request.header`, `method.request.querystring`, or `method.request.path`\.  
 If a parameter is a string and not a Function Request Parameter Object, then `Required` and `Caching` will default to False\.  
 *Type*: String \| [RequestParameter](sam-property-function-requestparameter.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `RestApiId`   <a name="sam-function-api-restapiid"></a>
 Identifier of a RestApi resource, which must contain an operation with the given path and method\. Typically, this is set to reference an [AWS::Serverless::Api](sam-resource-api.md) resource defined in this template\.  
@@ -61,7 +61,7 @@ If not defined, a default [AWS::Serverless::Api](sam-resource-api.md) resource i
 This cannot reference an [AWS::Serverless::Api](sam-resource-api.md) resource defined in another template\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-api--examples"></a>
 

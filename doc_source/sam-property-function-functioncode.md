@@ -20,19 +20,19 @@ To declare this entity in your AWS SAM template, use the following syntax:
 An Amazon S3 bucket in the same AWS Region as your function\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is passed directly to the `[S3Bucket](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3bucket)` property of the `AWS::Lambda::Function` `Code` data type\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[S3Bucket](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3bucket)` property of the `AWS::Lambda::Function` `Code` data type\.
 
  `Key`   <a name="sam-function-functioncode-key"></a>
 The Amazon S3 key of the deployment package\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is passed directly to the `[S3Key](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3key)` property of the `AWS::Lambda::Function` `Code` data type\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[S3Key](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3key)` property of the `AWS::Lambda::Function` `Code` data type\.
 
  `Version`   <a name="sam-function-functioncode-version"></a>
 For versioned objects, the version of the deployment package object to use\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[S3ObjectVersion](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3objectversion)` property of the `AWS::Lambda::Function` `Code` data type\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[S3ObjectVersion](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3objectversion)` property of the `AWS::Lambda::Function` `Code` data type\.
 
 ## Examples<a name="sam-property-function-functioncode--examples"></a>
 

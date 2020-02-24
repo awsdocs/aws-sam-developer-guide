@@ -19,13 +19,13 @@ To declare this entity in your AWS SAM template, use the following syntax:
 The Lambda trigger configuration information for the new user pool\.  
 *Type*: List  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is passed directly to the `[LambdaConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html)` property of an `AWS::Cognito::UserPool`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[LambdaConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html)` property of an `AWS::Cognito::UserPool`\.
 
  `UserPool`   <a name="sam-function-cognito-userpool"></a>
 Reference to UserPool defined in the same template  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-cognito--examples"></a>
 

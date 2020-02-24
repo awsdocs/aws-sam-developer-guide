@@ -28,6 +28,7 @@ Amazon's trademarks and trade dress may not be used in
    + [AWS SAM Resource and Property Reference](sam-specification-resources-and-properties.md)
       + [AWS::Serverless::Api](sam-resource-api.md)
          + [ApiAuth](sam-property-api-apiauth.md)
+            + [ApiUsagePlan](sam-property-api-apiusageplan.md)
             + [CognitoAuthorizer](sam-property-api-cognitoauthorizer.md)
                + [CognitoAuthorizationIdentity](sam-property-api-cognitoauthorizationidentity.md)
             + [LambdaRequestAuthorizer](sam-property-api-lambdarequestauthorizer.md)

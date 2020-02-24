@@ -19,13 +19,13 @@ To declare this entity in your AWS SAM template, use the following syntax:
 The filtering expressions that restrict what gets delivered to the destination AWS resource\. For more information about the filter pattern syntax, see [Filter and Pattern Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html)\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is passed directly to the `[FilterPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-filterpattern)` property of an `AWS::Logs::SubscriptionFilter`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[FilterPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-filterpattern)` property of an `AWS::Logs::SubscriptionFilter`\.
 
  `LogGroupName`   <a name="sam-function-cloudwatchlogs-loggroupname"></a>
 The log group to associate with the subscription filter\. All log events that are uploaded to this log group are filtered and delivered to the specified AWS resource if the filter pattern matches the log events\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is passed directly to the `[LogGroupName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-loggroupname)` property of an `AWS::Logs::SubscriptionFilter`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[LogGroupName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-cwl-subscriptionfilter-loggroupname)` property of an `AWS::Logs::SubscriptionFilter`\.
 
 ## Examples<a name="sam-property-function-cloudwatchlogs--examples"></a>
 

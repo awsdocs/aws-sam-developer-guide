@@ -20,19 +20,19 @@ To declare this entity in your AWS SAM template, use the following syntax:
 The Amazon S3 bucket of the layer archive\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is passed directly to the `[S3Bucket](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3bucket)` property of the `AWS::Lambda::LayerVersion` `Content` data type\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[S3Bucket](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3bucket)` property of the `AWS::Lambda::LayerVersion` `Content` data type\.
 
  `Key`   <a name="sam-layerversion-layercontent-key"></a>
 The Amazon S3 key of the layer archive\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is passed directly to the `[S3Key](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3key)` property of the `AWS::Lambda::LayerVersion` `Content` data type\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[S3Key](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3key)` property of the `AWS::Lambda::LayerVersion` `Content` data type\.
 
  `Version`   <a name="sam-layerversion-layercontent-version"></a>
 For versioned objects, the version of the layer archive object to use\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[S3ObjectVersion](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3objectversion)` property of the `AWS::Lambda::LayerVersion` `Content` data type\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[S3ObjectVersion](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3objectversion)` property of the `AWS::Lambda::LayerVersion` `Content` data type\.
 
 ## Examples<a name="sam-property-layerversion-layercontent--examples"></a>
 

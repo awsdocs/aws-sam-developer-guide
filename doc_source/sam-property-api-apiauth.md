@@ -17,6 +17,7 @@ To declare this entity in your AWS SAM template, use the following syntax:
   [DefaultAuthorizer](#sam-api-apiauth-defaultauthorizer): String
   [InvokeRole](#sam-api-apiauth-invokerole): String
   [ResourcePolicy](#sam-api-apiauth-resourcepolicy): [ResourcePolicyStatement](sam-property-api-resourcepolicystatement.md)
+  [UsagePlan](#sam-api-apiauth-usageplan): [ApiUsagePlan](sam-property-api-apiusageplan.md)
 ```
 
 ## Properties<a name="sam-property-api-apiauth-properties"></a>
@@ -26,13 +27,13 @@ If the `DefaultAuthorizer` and `Cors` properties are set, then setting `AddDefau
 *Type*: Boolean  
 *Required*: No  
 *Default*: True  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `ApiKeyRequired`   <a name="sam-api-apiauth-apikeyrequired"></a>
 If set to true then an API key is required for all API events\. For more information about API keys see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the API Gateway Developer Guide\.  
 *Type*: Boolean  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Authorizers`   <a name="sam-api-apiauth-authorizers"></a>
 The authorizer used to control access to your API Gateway API\.  
@@ -40,16 +41,16 @@ For more information, see [Controlling Access to API Gateway APIs](serverless-co
 *Type*: [CognitoAuthorizer](sam-property-api-cognitoauthorizer.md) \| [LambdaTokenAuthorizer](sam-property-api-lambdatokenauthorizer.md) \| [LambdaRequestAuthorizer](sam-property-api-lambdarequestauthorizer.md)  
 *Required*: No  
 *Default*: None  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.  
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
 *Additional Notes*: SAM adds the Authorizers to the OpenApi definition of an Api\.
 
  `DefaultAuthorizer`   <a name="sam-api-apiauth-defaultauthorizer"></a>
 Specify a default authorizer for an API Gateway API, which will be used for authorizing API calls by default\.  
-**Note**: If the Api EventSource for the function associated with this Api is configured to use IAM Permissions, then this property must be set to `AWS_IAM`, otherwise an error will result\.  
+**Note**: If the Api EventSource for the function associated with this API is configured to use IAM Permissions, then this property must be set to `AWS_IAM`, otherwise an error will result\.  
 *Type*: String  
 *Required*: No  
 *Default*: None  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `InvokeRole`   <a name="sam-api-apiauth-invokerole"></a>
 Sets integration credentials for all resources and methods to this value\.  
@@ -58,14 +59,20 @@ Supported values: CALLER\_CREDENTIALS, NONE, IAM Role Arn\.
 *Type*: String  
 *Required*: No  
 *Default*: CALLER\_CREDENTIALS  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `ResourcePolicy`   <a name="sam-api-apiauth-resourcepolicy"></a>
 Configure Resource Policy for all methods and paths on an API\.  
 *Type*: [ResourcePolicyStatement](sam-property-api-resourcepolicystatement.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.  
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
 *Additional Notes*: This setting can also be defined on individual `AWS::Serverless::Function` using the [ApiFunctionAuth](sam-property-function-apifunctionauth.md)\. This is required for APIs with `EndpointConfiguration: PRIVATE`\.
+
+ `UsagePlan`   <a name="sam-api-apiauth-usageplan"></a>
+Configures a usage plan associated with this API\. For more information about usage plans see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the API Gateway Developer Guide\.  
+*Type*: [ApiUsagePlan](sam-property-api-apiusageplan.md)  
+*Required*: No  
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-api-apiauth--examples"></a>
 

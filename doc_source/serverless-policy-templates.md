@@ -113,3 +113,6 @@ The following is a table of the available policy templates\.
 | [CodeCommitCrudPolicy](serverless-policy-template-list.md#codecommit-crud-policy) | Gives permissions to create/read/update/delete objects within a specific CodeCommit repository\. | 
 | [CodeCommitReadPolicy](serverless-policy-template-list.md#codecommit-read-policy) | Gives permissions to read objects within a specific CodeCommit repository\. | 
 | [AthenaQueryPolicy](serverless-policy-template-list.md#athena-query-policy) | Gives permissions to execute Athena queries\. | 
+| [TextractPolicy](serverless-policy-template-list.md#textract-policy) | Gives full access to Amazon Textract\. | 
+| [TextractDetectAnalyzePolicy](serverless-policy-template-list.md#textract-detect-analyze-policy) | Gives access to detect and analyze documents with Amazon Textract\. | 
+| [TextractGetResultPolicy](serverless-policy-template-list.md#textract-get-result-policy) | Gives access to get detected and analyzed documents from Amazon Textract\. | 

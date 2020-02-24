@@ -23,7 +23,7 @@ The maximum number of items to retrieve in a single batch\.
 *Type*: Integer  
 *Required*: No  
 *Default*: 10  
-*CloudFormation Compatibility*: This property is passed directly to the `[BatchSize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize)` property of an `AWS::Lambda::EventSourceMapping`\.  
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[BatchSize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize)` property of an `AWS::Lambda::EventSourceMapping`\.  
 *Minimum*: `1`  
 *Maximum*: `10`
 
@@ -31,13 +31,13 @@ The maximum number of items to retrieve in a single batch\.
 Disables the event source mapping to pause polling and invocation\.  
 *Type*: Boolean  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[Enabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled)` property of an `AWS::Lambda::EventSourceMapping`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[Enabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled)` property of an `AWS::Lambda::EventSourceMapping`\.
 
  `Queue`   <a name="sam-function-sqs-queue"></a>
 The ARN of the queue\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is passed directly to the `[EventSourceArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn)` property of an `AWS::Lambda::EventSourceMapping`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[EventSourceArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn)` property of an `AWS::Lambda::EventSourceMapping`\.
 
 ## Examples<a name="sam-property-function-sqs--examples"></a>
 

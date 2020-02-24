@@ -1,6 +1,6 @@
 # LambdaRequestAuthorizer<a name="sam-property-api-lambdarequestauthorizer"></a>
 
-Configure a Lambda Authorizer to control access to your Api with a Lambda function\.
+Configure a Lambda Authorizer to control access to your API with a Lambda function\.
 
 For more information and examples, see [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.
 
@@ -24,33 +24,33 @@ To declare this entity in your AWS SAM template, use the following syntax:
 List of authorization scopes for this authorizer\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `FunctionArn`   <a name="sam-api-lambdarequestauthorizer-functionarn"></a>
-Specify the function arn of the Lambda function which gives the authorization to Api  
+Specify the function arn of the Lambda function which provides authorization for the API\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `FunctionInvokeRole`   <a name="sam-api-lambdarequestauthorizer-functioninvokerole"></a>
 Adds authorizer credentials to the OpenApi definition of the Lambda authorizer\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `FunctionPayloadType`   <a name="sam-api-lambdarequestauthorizer-functionpayloadtype"></a>
-This property can be used to define the type of Lambda Authorizer for an Api\.  
+This property can be used to define the type of Lambda Authorizer for an API\.  
 Supported values: TOKEN and REQUEST  
 *Type*: String  
 *Required*: No  
 *Default*: TOKEN  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Identity`   <a name="sam-api-lambdarequestauthorizer-identity"></a>
 This property can be used to specify an `IdentitySource` in an incoming request for an authorizer  
 *Type*: [LambdaRequestAuthorizationIdentity](sam-property-api-lambdarequestauthorizationidentity.md)  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-api-lambdarequestauthorizer--examples"></a>
 

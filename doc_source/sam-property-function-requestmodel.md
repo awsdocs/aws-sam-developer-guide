@@ -19,13 +19,13 @@ To declare this entity in your AWS SAM template, use the following syntax:
 Name of a model defined in the Models property of the [AWS::Serverless::Api](sam-resource-api.md)\.  
 *Type*: String  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Required`   <a name="sam-function-requestmodel-required"></a>
-adds a `required` property in the parameters section of Open Api definition for given Api endpoint  
+adds a `required` property in the parameters section of OpenApi definition for given API endpoint  
 *Type*: Boolean  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-requestmodel--examples"></a>
 

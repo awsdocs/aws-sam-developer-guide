@@ -29,7 +29,7 @@ Properties:
 List of runtimes compatible with this LayerVersion\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[CompatibleRuntimes](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-compatibleruntimes)` property of an `AWS::Lambda::LayerVersion`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[CompatibleRuntimes](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-compatibleruntimes)` property of an `AWS::Lambda::LayerVersion`\.
 
  `ContentUri`   <a name="sam-layerversion-contenturi"></a>
 AWS S3 Uri, local file path, or LayerContent object of the layer code\.  
@@ -38,33 +38,33 @@ If a local file path is provided, the template must go through the workflow that
 **Note**: Either `CodeUri` or `InlineCode` is required\.  
 *Type*: String \| [LayerContent](sam-property-layerversion-layercontent.md)  
 *Required*: Yes  
-*CloudFormation Compatibility*: This property is similar to the `[Content](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content)` property of an `AWS::Serverless::LayerVersion`\. The nested Amazon S3 properties are named differently\.
+*AWS CloudFormation Compatibility*: This property is similar to the `[Content](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content)` property of an `AWS::Serverless::LayerVersion`\. The nested Amazon S3 properties are named differently\.
 
  `Description`   <a name="sam-layerversion-description"></a>
 Description of this layer\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[Description](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-description)` property of an `AWS::Lambda::LayerVersion`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[Description](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-description)` property of an `AWS::Lambda::LayerVersion`\.
 
  `LayerName`   <a name="sam-layerversion-layername"></a>
 The name or Amazon Resource Name \(ARN\) of the layer\.  
 *Type*: String  
 *Required*: No  
 *Default*: Resource logical id  
-*CloudFormation Compatibility*: This property is similar to the `[LayerName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-layername)` property of an `AWS::Lambda::LayerVersion`\. If you don't specify a name, the logical id of the resource will be used as the name\.
+*AWS CloudFormation Compatibility*: This property is similar to the `[LayerName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-layername)` property of an `AWS::Lambda::LayerVersion`\. If you don't specify a name, the logical id of the resource will be used as the name\.
 
  `LicenseInfo`   <a name="sam-layerversion-licenseinfo"></a>
 Information about the license for this LayerVersion\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is passed directly to the `[LicenseInfo](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-licenseinfo)` property of an `AWS::Lambda::LayerVersion`\.
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[LicenseInfo](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-licenseinfo)` property of an `AWS::Lambda::LayerVersion`\.
 
  `RetentionPolicy`   <a name="sam-layerversion-retentionpolicy"></a>
 Specifies whether old versions of your LayerVersion are retained or deleted after an update\.  
 Supported values: `Retain` and `Delete`\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.  
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
 *Additional Notes*: When you specify `Retain`, AWS SAM adds a [Resource Attribute](http://mhirayam.aka.corp.amazon.com/docs-preview/sam-gh-migration/serverless-application-model/latest/developerguide/sam-specification-resource-attributes.html) of `DeletionPolicy: Retain` to the transformed `AWS::Lambda::LayerVersion` resource\.
 
 ## Return Values<a name="sam-resource-layerversion-return-values"></a>

@@ -18,7 +18,7 @@ To declare this entity in your AWS SAM template, use the following syntax:
 The Alexa Skill ID for your Alexa Skill\. For more information about Skill ID see [Configure the trigger for a Lambda function](https://developer.amazon.com/docs/custom-skills/host-a-custom-skill-as-an-aws-lambda-function.html#configuring-the-alexa-skills-kit-trigger) in the Alexa Skills Kit documentation\.  
 *Type*: String  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-alexaskill--examples"></a>
 

@@ -21,46 +21,53 @@ To declare this entity in your AWS SAM template, use the following syntax:
 ## Properties<a name="sam-property-function-resourcepolicystatement-properties"></a>
 
  `AwsAccountBlacklist`   <a name="sam-function-resourcepolicystatement-awsaccountblacklist"></a>
-Resource Policy statements will be generated and attached to the Api for blacklisting the given list of Aws accounts  
+Resource Policy statements will be generated and attached to the API for blacklisting the given list of AWS accounts\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
+*See Also*: See the [AWS](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies-examples.html#apigateway-resource-policies-cross-account-example) documentation for more information about this property\.
 
  `AwsAccountWhitelist`   <a name="sam-function-resourcepolicystatement-awsaccountwhitelist"></a>
-Resource Policy statements will be generated and attached to the Api for whitelisting the given list of Aws accounts  
+Resource Policy statements will be generated and attached to the API for whitelisting the given list of AWS accounts\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
+*See Also*: See the [AWS](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies-examples.html#apigateway-resource-policies-cross-account-example) documentation for more information about this property\.
 
  `CustomStatements`   <a name="sam-function-resourcepolicystatement-customstatements"></a>
-A list of resource policy statements can be given for an Api  
+A list of resource policy statements can be given for an API\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
+*See Also*: See the [AWS](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies-examples.html) documentation for more information about this property\.
 
  `IpRangeBlacklist`   <a name="sam-function-resourcepolicystatement-iprangeblacklist"></a>
-Resource Policy statements will be generated and attached to the Api for blacklisting the given list of Ip addresses or ranges  
+Resource Policy statements will be generated and attached to the API for blacklisting the given list of Ip addresses or ranges\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
+*See Also*: See the [AWS](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies-examples.html#apigateway-resource-policies-source-ip-address-example) documentation for more information about this property\.
 
  `IpRangeWhitelist`   <a name="sam-function-resourcepolicystatement-iprangewhitelist"></a>
-Resource Policy statements will be generated and attached to the Api for whitelisting the given list of Ip addresses or ranges  
+Resource Policy statements will be generated and attached to the API for whitelisting the given list of Ip addresses or ranges\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
+*See Also*: See the [AWS](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies-examples.html#apigateway-resource-policies-source-ip-address-example) documentation for more information about this property\.
 
  `SourceVpcBlacklist`   <a name="sam-function-resourcepolicystatement-sourcevpcblacklist"></a>
-Resource Policy statements will be generated and attached to the Api for blacklisting the given list of Source Vpcs or Vpc endpoints  
+Resource Policy statements will be generated and attached to the API for blacklisting the given list of Source Vpcs or Vpc endpoints  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
+*See Also*: See the [AWS](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies-examples.html#apigateway-resource-policies-source-vpc-example) documentation for more information about this property\.
 
  `SourceVpcWhitelist`   <a name="sam-function-resourcepolicystatement-sourcevpcwhitelist"></a>
-Resource Policy statements will be generated and attached to the Api for whitelisting the given list of Source Vpcs or Vpc endpoints  
+Resource Policy statements will be generated and attached to the API for whitelisting the given list of Source Vpcs or Vpc endpoints\.  
 *Type*: List  
 *Required*: No  
-*CloudFormation Compatibility*: This property is unique to AWS SAM and does not have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
+*See Also*: See the [AWS](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies-examples.html#apigateway-resource-policies-source-vpc-example) documentation for more information about this property\.
 
 ## Examples<a name="sam-property-function-resourcepolicystatement--examples"></a>
 
