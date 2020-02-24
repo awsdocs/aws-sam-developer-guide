@@ -33,7 +33,7 @@ List of runtimes compatible with this LayerVersion\.
 
  `ContentUri`   <a name="sam-layerversion-contenturi"></a>
 AWS S3 Uri, local file path, or LayerContent object of the layer code\.  
-If an AWS S3 Uri or LayerContent object is provided, The AWS S3 object referenced must be a valid ZIP archive that contaions the contents of an [AWS Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\.  
+If an AWS S3 Uri or LayerContent object is provided, The AWS S3 object referenced must be a valid ZIP archive that contains the contents of an [AWS Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\.  
 If a local file path is provided, the template must go through the workflow that includes the `sam deploy` or `sam package` command, in order for the content to be transformed properly\.  
 **Note**: Either `CodeUri` or `InlineCode` is required\.  
 *Type*: String \| [LayerContent](sam-property-layerversion-layercontent.md)  
