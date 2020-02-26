@@ -38,7 +38,7 @@ Directory name = myLayer-1-926eeb5ff1
 
 **Docker Images tag schema**
 
-To compute the unique layers hash, combine all unique layer names with a delimiter of '\-', take the SHA256 hash, and then take the first 25 characters\.
+To compute the unique layers hash, combine all unique layer names with a delimiter of '\-', take the SHA256 hash, and then take the first 10 characters\.
 
 Example:
 
