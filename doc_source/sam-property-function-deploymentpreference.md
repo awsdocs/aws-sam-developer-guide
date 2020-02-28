@@ -44,7 +44,8 @@ Validation Lambda functions that are run before and after traffic shifting\.
 An IAM role ARN that CodeDeploy will use for traffic shifting\. An IAM role will not be created if this is provided\.  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
+*Additional Notes*: If this property is not specified the hook function names must begin with the `CodeDeployHook_` prefix, since the role created by SAM only allows *InvokeFunction* on functions named with that prefix\.
 
  `TriggerConfigurations`   <a name="sam-function-deploymentpreference-triggerconfigurations"></a>
 A list of trigger configurations you want to associate with the deployment group\. Used to notify an SNS topic on lifecycle events\.  
