@@ -1,10 +1,5 @@
 # OAuth2Authorizer<a name="sam-property-httpapi-oauth2authorizer"></a>
 
-
-|  | 
-| --- |
-| HTTP APIs are in beta for Amazon API Gateway and are subject to change\. | 
-
 Definition for an OAuth 2\.0 authorizer\.
 
 For more information, see the [API Gateway documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html)\.

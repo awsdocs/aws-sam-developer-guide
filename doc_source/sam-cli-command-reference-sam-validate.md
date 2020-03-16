@@ -1,6 +1,6 @@
 # sam validate<a name="sam-cli-command-reference-sam-validate"></a>
 
-Validates an AWS SAM template\.
+Verifies whether an AWS SAM template file is valid\.
 
 **Usage:**
 

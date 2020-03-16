@@ -7,7 +7,7 @@ When you locally invoke a Lambda function in debug mode within the AWS SAM CLI, 
 **Topics**
 + [Invoking Functions Locally](serverless-sam-cli-using-invoke.md)
 + [Running API Gateway Locally](serverless-sam-cli-using-start-api.md)
-+ [Running Automated Tests](serverless-sam-cli-using-automated-tests.md)
++ [Integrating with Automated Tests](serverless-sam-cli-using-automated-tests.md)
 + [Generating Sample Event Payloads](serverless-sam-cli-using-generate-event.md)
 + [Step\-Through Debugging Lambda Functions Locally](serverless-sam-cli-using-debugging.md)
 + [Passing Additional Runtime Debug Arguments](serverless-sam-cli-using-debugging-additional-arguments.md)

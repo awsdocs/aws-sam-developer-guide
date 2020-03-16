@@ -1,10 +1,5 @@
 # HttpApiFunctionAuth<a name="sam-property-function-httpapifunctionauth"></a>
 
-
-|  | 
-| --- |
-| HTTP APIs are in beta for Amazon API Gateway and are subject to change\. | 
-
 Configures authorization at the event level\.
 
 Configure Auth for a specific API \+ Path \+ Method

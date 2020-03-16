@@ -193,6 +193,45 @@ Gives read\-only permission to a DynamoDB table\.
         ]
 ```
 
+## DynamoDBWritePolicy<a name="dynamo-db-write-policy"></a>
+
+Gives write\-only permission to a DynamoDB table\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:BatchWriteItem"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+                  {
+                    "tableName": {
+                      "Ref": "TableName"
+                    }
+                  }
+                ]
+              },
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
+                  {
+                    "tableName": {
+                      "Ref": "TableName"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+```
+
 ## DynamoDBReconfigurePolicy<a name="dynamo-db-reconfigure-policy"></a>
 
 Gives permission to reconfigure a DynamoDB table\.
@@ -283,6 +322,45 @@ Gives read\-only permission to objects in an Amazon S3 bucket\.
               "s3:GetBucketLocation",
               "s3:GetObjectVersion",
               "s3:GetLifecycleConfiguration"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:s3:::${bucketName}",
+                  {
+                    "bucketName": {
+                      "Ref": "BucketName"
+                    }
+                  }
+                ]
+              },
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:s3:::${bucketName}/*",
+                  {
+                    "bucketName": {
+                      "Ref": "BucketName"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+```
+
+## S3WritePolicy<a name="s3-write-policy"></a>
+
+Gives write permission to objects in an Amazon S3 bucket\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:PutObject",
+              "s3:PutObjectAcl",
+              "s3:PutLifecycleConfiguration"
             ],
             "Resource": [
               {
@@ -656,6 +734,7 @@ Gives permission to send email and verify identity\.
             "Action": [
               "ses:GetIdentityVerificationAttributes",
               "ses:SendEmail",
+              "ses:SendRawEmail",
               "ses:VerifyEmailIdentity"
             ],
             "Resource": {
@@ -1760,6 +1839,29 @@ Gives access to get detected and analyzed documents from Amazon Textract\.
               "textract:GetDocumentAnalysis"
             ],
             "Resource": "*"
+          }
+        ]
+```
+
+## EventBridgePutEventsPolicy<a name="eventbridge-put-events-policy"></a>
+
+Gives permissions to send events to EventBridge\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": "events:PutEvents",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:events:${AWS::Region}:${AWS::AccountId}:event-bus/${eventBusName}",
+                {
+                  "eventBusName": {
+                    "Ref": "EventBusName"
+                  }
+                }
+              ]
+            }
           }
         ]
 ```

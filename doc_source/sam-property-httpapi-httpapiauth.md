@@ -1,10 +1,5 @@
 # HttpApiAuth<a name="sam-property-httpapi-httpapiauth"></a>
 
-
-|  | 
-| --- |
-| HTTP APIs are in beta for Amazon API Gateway and are subject to change\. | 
-
 Configure authorization to control access to your API Gateway API\.
 
 For more information about configuring access see [JWT Authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html) in the API Gateway Developer Guide\.
@@ -16,15 +11,15 @@ To declare this entity in your AWS SAM template, use the following syntax:
 ### YAML<a name="sam-property-httpapi-httpapiauth-syntax.yaml"></a>
 
 ```
-  [Authorizers](#sam-httpapi-httpapiauth-authorizers): [OpenIdAuthorizer](sam-property-httpapi-openidauthorizer.md) | [OAuth2Authorizer](sam-property-httpapi-oauth2authorizer.md)
+  [Authorizers](#sam-httpapi-httpapiauth-authorizers): [OAuth2Authorizer](sam-property-httpapi-oauth2authorizer.md)
   [DefaultAuthorizer](#sam-httpapi-httpapiauth-defaultauthorizer): String
 ```
 
 ## Properties<a name="sam-property-httpapi-httpapiauth-properties"></a>
 
  `Authorizers`   <a name="sam-httpapi-httpapiauth-authorizers"></a>
-The authorizer used to control access to your API Gateway API\. OAuth 2\.0 and OpenIdConnect are currently supported\.  
-*Type*: [OpenIdAuthorizer](sam-property-httpapi-openidauthorizer.md) \| [OAuth2Authorizer](sam-property-httpapi-oauth2authorizer.md)  
+The authorizer used to control access to your API Gateway API\.  
+*Type*: [OAuth2Authorizer](sam-property-httpapi-oauth2authorizer.md)  
 *Required*: No  
 *Default*: None  
 *AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
@@ -39,11 +34,11 @@ Specify a default authorizer for an API Gateway API, which will be used for auth
 
 ## Examples<a name="sam-property-httpapi-httpapiauth--examples"></a>
 
-### OpenId Auth<a name="sam-property-httpapi-httpapiauth--examples--openid-auth"></a>
+### OAuth2 Authorizer<a name="sam-property-httpapi-httpapiauth--examples--oauth2-authorizer"></a>
 
-OpenId Auth Example
+OAuth2 Authorizer Example
 
-#### YAML<a name="sam-property-httpapi-httpapiauth--examples--openid-auth--yaml"></a>
+#### YAML<a name="sam-property-httpapi-httpapiauth--examples--oauth2-authorizer--yaml"></a>
 
 ```
 Auth:
@@ -57,15 +52,5 @@ Auth:
         audience:
           - MyApi
       IdentitySource: "$request.querystring.param"
-    OpenIdAuthorizer:
-      AuthorizationScopes:
-        - scope1
-        - scope2
-      OpenIdConnectUrl: "https://www.example.com/v1/connect/oidc/.well-known/openid-configuration"
-      JwtConfiguration:
-        issuer: "https://www.example.com/v1/connect/oidc"
-        audience:
-          - MyApi
-      IdentitySource: "$request.querystring.param"
-  DefaultAuthorizer: OpenIdAuthorizer
+  DefaultAuthorizer: OAuth2Authorizer
 ```

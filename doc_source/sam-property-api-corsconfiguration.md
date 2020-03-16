@@ -4,6 +4,8 @@ Manage cross\-origin resource sharing \(CORS\) for your API Gateway APIs\. Speci
 
 For more information about CORS, see [Enable CORS for an API Gateway REST API Resource](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html) in the Amazon API Gateway Developer Guide\.
 
+Note: If CorsConfiguration is set both in OpenAPI and at the property level, AWS SAM merges them, with the properties taking precedence\.
+
 ## Syntax<a name="sam-property-api-corsconfiguration-syntax"></a>
 
 To declare this entity in your AWS SAM template, use the following syntax:

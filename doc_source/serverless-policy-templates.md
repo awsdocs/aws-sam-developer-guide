@@ -62,10 +62,12 @@ The following is a table of the available policy templates\.
 | [EC2DescribePolicy](serverless-policy-template-list.md#ec2-describe-policy) | Gives permission to describe Amazon EC2 instances\. | 
 | [DynamoDBCrudPolicy](serverless-policy-template-list.md#dynamo-db-crud-policy) | Gives create, read, update, and delete permissions to a DynamoDB table\. | 
 | [DynamoDBReadPolicy](serverless-policy-template-list.md#dynamo-db-read-policy) | Gives read\-only permission to a DynamoDB table\. | 
+| [DynamoDBWritePolicy](serverless-policy-template-list.md#dynamo-db-write-policy) | Gives write\-only permission to a DynamoDB table\. | 
 | [DynamoDBReconfigurePolicy](serverless-policy-template-list.md#dynamo-db-reconfigure-policy) | Gives permission to reconfigure a DynamoDB table\. | 
 | [SESSendBouncePolicy](serverless-policy-template-list.md#ses-send-bounce-policy) | Gives SendBounce permission to an Amazon SES identity\. | 
 | [ElasticsearchHttpPostPolicy](serverless-policy-template-list.md#elastic-search-http-post-policy) | Gives POST permission to Amazon Elasticsearch Service\. | 
 | [S3ReadPolicy](serverless-policy-template-list.md#s3-read-policy) | Gives read\-only permission to objects in an Amazon S3 bucket\. | 
+| [S3WritePolicy](serverless-policy-template-list.md#s3-write-policy) | Gives write permission to objects in an Amazon S3 bucket\. | 
 | [S3CrudPolicy](serverless-policy-template-list.md#s3-crud-policy) | Gives create, read, update, and delete permission to objects in an Amazon S3 bucket\. | 
 | [AMIDescribePolicy](serverless-policy-template-list.md#ami-describe-policy) | Gives permission to describe Amazon Machine Images \(AMIs\)\. | 
 | [CloudFormationDescribeStacksPolicy](serverless-policy-template-list.md#cloud-formation-describe-stacks-policy) | Gives permission to describe AWS CloudFormation stacks\. | 
@@ -116,3 +118,4 @@ The following is a table of the available policy templates\.
 | [TextractPolicy](serverless-policy-template-list.md#textract-policy) | Gives full access to Amazon Textract\. | 
 | [TextractDetectAnalyzePolicy](serverless-policy-template-list.md#textract-detect-analyze-policy) | Gives access to detect and analyze documents with Amazon Textract\. | 
 | [TextractGetResultPolicy](serverless-policy-template-list.md#textract-get-result-policy) | Gives access to get detected and analyzed documents from Amazon Textract\. | 
+| [EventBridgePutEventsPolicy](serverless-policy-template-list.md#eventbridge-put-events-policy) | Gives permissions to send events to EventBridge\. | 

@@ -1,10 +1,5 @@
 # HttpApiDefinition<a name="sam-property-httpapi-httpapidefinition"></a>
 
-
-|  | 
-| --- |
-| HTTP APIs are in beta for Amazon API Gateway and are subject to change\. | 
-
 An OpenAPI document defining the API\.
 
 ## Syntax<a name="sam-property-httpapi-httpapidefinition-syntax"></a>

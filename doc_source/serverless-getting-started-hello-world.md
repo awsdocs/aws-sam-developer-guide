@@ -437,7 +437,7 @@ To delete the AWS CloudFormation stack created with this tutorial using the AWS 
 
 1. In the left navigation pane, choose **Stacks**\.
 
-1. In the list of stacks, choose **aws\-sam\-getting\-started**\.
+1. In the list of stacks, choose **sam\-app** \(or the name of stack you created\)\.
 
 1. Choose **Delete**\.
 
@@ -446,12 +446,12 @@ When done, the status of the of the stack will change to **DELETE\_COMPLETE**\.
 Alternatively, you can delete the AWS CloudFormation stack by executing the following AWS CLI command:
 
 ```
-aws cloudformation delete-stack --stack-name aws-sam-getting-started --region region
+aws cloudformation delete-stack --stack-name sam-app --region region
 ```
 
 ### Verify Deleted Stack<a name="serverless-getting-started-hello-world-cleanup-verify"></a>
 
-For both methods of deleting the AWS CloudFormation stack, you can verify it was deleted by going to the [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/), choosing **Stacks** in the left navigation pane, and choosing **Deleted** in the dropdown to the right of the search text box\. You should see your stack name **aws\-sam\-getting\-started** in the list of deleted stacks\.
+For both methods of deleting the AWS CloudFormation stack, you can verify it was deleted by going to the [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/), choosing **Stacks** in the left navigation pane, and choosing **Deleted** in the dropdown to the right of the search text box\. You should see your stack name **sam\-app** \(or the name of the stack you created\) in the list of deleted stacks\.
 
 ## Conclusion<a name="serverless-getting-started-hello-world-conclusion"></a>
 
