@@ -21,6 +21,8 @@ In this section, you download the application package, which consists of an AWS 
    --location gh:aws-samples/cookiecutter-aws-sam-dynamodb-python \
    --no-input
    ```
+   
+   Note that `gh` in the command above will be expanded to github url.
 
 1. Review the contents of the directory that the command created \(`dynamodb_event_reader/`\): 
    + `template.yaml` – Defines two AWS resources that the Read DynamoDB application needs: a Lambda function and a DynamoDB table\. The template also defines mapping between the two resources\.
