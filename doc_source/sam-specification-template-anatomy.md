@@ -4,11 +4,7 @@ The format of an AWS SAM template closely follows the format of an AWS CloudForm
 
 The primary differences between AWS SAM templates and AWS CloudFormation templates are the following:
 + **Transform declaration\.** The declaration `Transform: AWS::Serverless-2016-10-31` is required for AWS SAM templates\. This declaration identifies an AWS CloudFormation template as an AWS SAM template\. For more information about transforms, see [Transform](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html) in the *AWS CloudFormation User Guide*\.
-
-   
 + **Globals section\. ** The Globals section is unique to AWS SAM\. It defines properties that are common to all your serverless functions and APIs\. All the `AWS::Serverless::Function`, `AWS::Serverless::Api`, and `AWS::Serverless::SimpleTable` resources inherit the properties that are defined in the Globals section\. For more information about the Globals section, see [Globals Section of the Template](sam-specification-template-anatomy-globals.md) in the *AWS Serverless Application Model Developer Guide*\.
-
-   
 + **Resources section\. ** In AWS SAM templates the Resources section can contain a combination of AWS CloudFormation resources and AWS SAM resources\. For more information about AWS CloudFormation resources, see [AWS Resource and Property Types Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html) in the *AWS CloudFormation User Guide*\. For more information about AWS SAM resources see [AWS SAM Resource and Property Reference](sam-specification-resources-and-properties.md) in the *AWS Serverless Application Model Developer Guide*\.
 
 All other sections of an AWS SAM template correspond to the AWS CloudFormation template section of the same name\.

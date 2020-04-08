@@ -73,15 +73,7 @@ Example of a SimpleTable
 ```
 Properties:
   TableName: my-table
-  PrimaryKey:
-    Name: id
-    Type: String
-  ProvisionedThroughput:
-    ReadCapacityUnits: 5
-    WriteCapacityUnits: 5
   Tags:
     Department: Engineering
     AppType: Serverless
-  SSESpecification:
-    SSEEnabled: true
 ```

@@ -32,11 +32,11 @@ sam deploy [OPTIONS] [ARGS]...
 | \-\-no\-execute\-changeset | Indicates whether to execute the change set\. Specify this flag if you want to view your stack changes before executing the change set\. This command creates an AWS CloudFormation change set and then exits without executing the change set\. If you want to execute the changeset, the stack changes can be made by running the same command without this flag\. | 
 | \-\-role\-arn TEXT | The Amazon Resource Name \(ARN\) of an AWS Identity and Access Management \(IAM\) role that AWS CloudFormation assumes when executing the change set\. | 
 | \-\-fail\-on\-empty\-changeset \| \-\-no\-fail\-on\-empty\-changeset | Specify whether to return a non\-zero exit code if there are no changes to be made to the stack\. The default behavior is to return a non\-zero exit code\. | 
-| \-\-confirm\-changeset | Prompt to confirm before deplying the computed changeset\. | 
+| \-\-confirm\-changeset | Prompt to confirm if the computed changeset is to be deployed by SAM CLI\. | 
 | \-\-use\-json | Output JSON for the AWS CloudFormation template\. YAML is used by default\. | 
 | \-\-metadata | A map of metadata to attach to all artifacts that are referenced in your template\. Optional\. | 
 | \-\-notification\-arns LIST | Amazon Simple Notification Service topic Amazon Resource Names \(ARNs\) that AWS CloudFormation associates with the stack\. | 
 | \-\-tags | A list of tags to associate with the stack that is created or updated\. AWS CloudFormation also propagates these tags to resources in the stack if the resource supports it\. | 
-| \-\-parameter\-overrides | A string that contains AWS CloudFormation parameter overrides encoded as key=value pairs\. Use the same format as the AWS CLI\. For example, ParameterKey=KeyPairName,ParameterValue=MyKey ParameterKey=InstanceType,ParameterValue=t1\.micro\. | 
+| \-\-parameter\-overrides | A string that contains AWS CloudFormation parameter overrides encoded as key=value pairs\. Use the same format as the AWS CLI\. For example, ParameterKey=KeyPairName ParameterValue=MyKey ParameterKey=InstanceType ParameterValue=t1\.micro\. | 
 | \-\-debug | Turns on debug logging\. | 
 | \-\-help | Shows this message and exits\. | 

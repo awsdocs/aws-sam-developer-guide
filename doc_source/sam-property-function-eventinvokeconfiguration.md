@@ -52,6 +52,5 @@ EventInvokeConfig:
       Destination: arn:aws:sqs:us-west-2:012345678901:my-queue
     OnFailure:
       Type: Lambda
-      Destination:
-        Ref: DestinationLambda
+      Destination: !GetAtt DestinationLambda.Arn
 ```

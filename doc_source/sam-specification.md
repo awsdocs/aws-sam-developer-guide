@@ -9,4 +9,5 @@ AWS SAM templates are an extension of AWS CloudFormation templates, with some ad
 + [AWS SAM Resource and Property Reference](sam-specification-resources-and-properties.md)
 + [Resource Attributes](sam-specification-resource-attributes.md)
 + [Intrinsic Functions](sam-specification-intrinsic-functions.md)
++ [Generated AWS CloudFormation Resources](sam-specification-generated-resources.md)
 + [API Gateway Extensions](sam-specification-api-gateway-extensions.md)

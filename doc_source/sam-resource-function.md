@@ -50,10 +50,8 @@ Adds an AssumeRolePolicyDocument for the default created `Role` for this functio
 
  `AutoPublishAlias`   <a name="sam-function-autopublishalias"></a>
 Name of the Lambda alias\. For more information about Lambda aliases, see [AWS Lambda Function Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)\.  
-This AWS SAM property generates two additional resources: an [AWS::Lambda::Version](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) resource and an [AWS::Lambda::Alias](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html) resource\.  
-The [AWS::Lambda::Version](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) resource has a logical ID of `<function-logical-id>Version<sha>`, where the *<sha>* is 10 digits of the SHA256 of CodeUri\. This resource can be referenced in intrinsic functions by using the logical ID or `<function-logical-id>.Version`\.  
-The [AWS::Lambda::Alias](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html) resource has a logical ID of `<function-logical-id>Alias<alias-name>`, where `<alias-name>` is the alias name specified in this property\. This resource can be referenced in intrinsic functions by using the logical ID or `<function-logical-id>.Alias`\.  
 For examples that use this property, see [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md)\.  
+This AWS SAM property generates two additional AWS CloudFormation resources: an [AWS::Lambda::Version](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) and an [AWS::Lambda::Alias](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html)\. These resources can be referenced with intrinsic functions using the referenceable properties `<function-LogicalId>.Version` and `<function-LogicalId>.Alias` respectively\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

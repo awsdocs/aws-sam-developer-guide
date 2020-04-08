@@ -154,7 +154,7 @@ The name of the stage, which API Gateway uses as the first path segment in the i
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation Compatibility*: This property is similar to the `[StageName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename)` property of an `AWS::ApiGateway::Stage`\. It is required in SAM, but not required in API Gateway  
-*Additional Notes*: The Implicit API has a stage name of "prod"
+*Additional Notes*: The Implicit API has a stage name of "Prod"\.
 
  `Tags`   <a name="sam-api-tags"></a>
 A map \(string to string\) that specifies the tags to be added to this API Gateway stage\. Keys and values are limited to alphanumeric characters\. Keys can be 1 to 127 Unicode characters in length and cannot be prefixed with aws:\. Values can be 1 to 255 Unicode characters in length\.  

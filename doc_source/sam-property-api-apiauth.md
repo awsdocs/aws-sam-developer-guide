@@ -70,6 +70,7 @@ Configure Resource Policy for all methods and paths on an API\.
 
  `UsagePlan`   <a name="sam-api-apiauth-usageplan"></a>
 Configures a usage plan associated with this API\. For more information about usage plans see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the API Gateway Developer Guide\.  
+This AWS SAM property generates three additional AWS CloudFormation resources: an [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html), an [AWS::ApiGateway::UsagePlanKey](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html), and an [AWS::ApiGateway::ApiKey](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html)\. These resources can be referenced with intrinsic functions using the referenceable properties `<restapi-LogicalId>.UsagePlan`, `<restapi-LogicalId>.UsagePlanKey`, and `<restapi-LogicalId>.ApiKey` respectively\.  
 *Type*: [ApiUsagePlan](sam-property-api-apiusageplan.md)  
 *Required*: No  
 *AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

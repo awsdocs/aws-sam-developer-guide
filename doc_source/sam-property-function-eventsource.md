@@ -23,7 +23,7 @@ Object describing properties of this event mapping\. The set of properties must 
 
  `Type`   <a name="sam-function-eventsource-type"></a>
 The event type\.  
-Supported values: `S3`, `SNS`, `Kinesis`, `DynamoDB`, `SQS`, `Api`, `Schedule`, `CloudWatchEvent`, `CloudWatchLogs`, `IoTRule`, `AlexaSkill`, `Cognito`\.  
+Supported values: `S3`, `SNS`, `Kinesis`, `DynamoDB`, `SQS`, `Api`, `Schedule`, `CloudWatchEvent`, `CloudWatchLogs`, `IoTRule`, `AlexaSkill`, `Cognito`, `HttpApi`\.  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

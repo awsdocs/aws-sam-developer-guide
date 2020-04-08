@@ -46,6 +46,5 @@ EventInvokeConfig:
       Type: SQS
     OnFailure:
       Type: Lambda
-      Destination:
-        Ref: DestinationLambda
+      Destination: !GetAtt DestinationLambda.Arn
 ```

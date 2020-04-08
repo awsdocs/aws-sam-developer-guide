@@ -49,7 +49,9 @@ If you run into issues installing Docker, see the [Logs and troubleshooting](htt
 
 The recommended approach for installing the AWS SAM CLI on macOS is to use the Homebrew package manager\. For more information about Homebrew, see [Homebrew Documentation](https://docs.brew.sh)\.
 
-To install Homebrew, run the following and follow the prompts:
+To install Homebrew, you must first install Git\. For more information about Git, see [Git Documentation](https://git-scm.com)\. Git is available on many different operating systems, including macOS\. For instructions about installing Git on your particular operating system, see [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)\.
+
+Once you have successfully installed Git, run the following to install Homebrew, making sure to follow the prompts:
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -92,6 +94,14 @@ You should see output like the following after successful installation of the AW
 ```
 
 You're now ready to start development\.
+
+## Upgrading<a name="serverless-sam-cli-install-mac-upgrading"></a>
+
+To upgrade the AWS SAM CLI, you still use Homebrew, but replace `install` with `upgrade` as follows:
+
+```
+brew upgrade aws-sam-cli
+```
 
 ## Next Steps<a name="serverless-sam-cli-install-mac-next-steps"></a>
 
