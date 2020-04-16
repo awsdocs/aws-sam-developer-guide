@@ -62,6 +62,7 @@ Globals:
     DeploymentPreference:
     PermissionsBoundary:
     ReservedConcurrentExecutions:
+    EventInvokeConfig:
 
   Api:
     # Properties of AWS::Serverless::Api
@@ -82,6 +83,18 @@ Globals:
     CanarySetting:
     TracingEnabled:
     OpenApiVersion:
+    Domain:
+
+  HttpApi:
+    # Properties of AWS::Serverless::HttpApi
+    # Also works with Implicit APIs
+    Auth:
+    CorsConfiguration:
+    AccessLogSettings:
+    Tags:
+    DefaultRouteSettings:
+    RouteSettings:
+    Domain:
 
   SimpleTable:
     # Properties of AWS::Serverless::SimpleTable
@@ -94,7 +107,7 @@ Globals:
 
 ## Unsupported Properties<a name="sam-specification-template-anatomy-globals-unsupported-properties"></a>
 
-The following properties are **not** supported in the `Globals` section\. We made the explicit call to not support them because it either made the template hard to understand, or opened a scope for potential security issues\.
+The following properties are not supported in the `Globals` section\. We made the explicit call to not support them because they either made the template hard to understand, or they might open a potential security issue\.
 
 ```
   Function:
@@ -106,6 +119,11 @@ The following properties are **not** supported in the `Globals` section\. We mad
   Api:
     StageName:
     DefinitionBody:
+
+  HttpApi:
+    StageName:
+    DefinitionBody:
+    DefinitionUri:
 ```
 
 ## Overridable Properties<a name="sam-specification-template-anatomy-globals-overrideable"></a>

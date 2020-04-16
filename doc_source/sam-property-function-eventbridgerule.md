@@ -11,12 +11,19 @@ To declare this entity in your AWS SAM template, use the following syntax:
 ### YAML<a name="sam-property-function-eventbridgerule-syntax.yaml"></a>
 
 ```
+  [EventBusName](#sam-function-eventbridgerule-eventbusname): String
   [Input](#sam-function-eventbridgerule-input): String
   [InputPath](#sam-function-eventbridgerule-inputpath): String
   [Pattern](#sam-function-eventbridgerule-pattern): [EventPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern)
 ```
 
 ## Properties<a name="sam-property-function-eventbridgerule-properties"></a>
+
+ `EventBusName`   <a name="sam-function-eventbridgerule-eventbusname"></a>
+The event bus to associate with this rule\. If you omit this, the default event bus is used\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation Compatibility*: This property is passed directly to the `[EventBusName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventbusname)` property of an `AWS::Events::Rule`\.
 
  `Input`   <a name="sam-function-eventbridgerule-input"></a>
 Valid JSON text passed to the target\. If you use this property, nothing from the event text itself is passed to the target\.  

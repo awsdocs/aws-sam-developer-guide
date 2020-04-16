@@ -115,7 +115,7 @@ sam build
 
 **What AWS SAM is doing:**
 
-The AWS SAM CLI comes with abstractions for a number of Lambda runtimes to build your dependencies, and copies the source code into staging folders so that everything is ready to be packaged and deployed\. The `sam build` command builds any dependencies that your application has, and copies your application source code to folders under `aws-sam/build` to be zipped and uploaded to Lambda\.
+The AWS SAM CLI comes with abstractions for a number of Lambda runtimes to build your dependencies, and copies the source code into staging folders so that everything is ready to be packaged and deployed\. The `sam build` command builds any dependencies that your application has, and copies your application source code to folders under `.aws-sam/build` to be zipped and uploaded to Lambda\.
 
 You can see the following top\-level tree under `.aws-sam`:
 

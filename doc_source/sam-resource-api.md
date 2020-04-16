@@ -195,7 +195,7 @@ The root resource ID for a `RestApi` resource, such as `a0bc123d4e`\.
 
 ### SimpleApiExample<a name="sam-resource-api--examples--simpleapiexample"></a>
 
-A Hello World SAM template that contains a Lambda Function with an API endpoint\.
+A Hello World AWS SAM template file that contains a Lambda Function with an API endpoint\. This is a full AWS SAM template file for a working serverless application\.
 
 #### YAML<a name="sam-resource-api--examples--simpleapiexample--yaml"></a>
 
@@ -228,40 +228,80 @@ Resources:
 
 ### ApiCorsExample<a name="sam-resource-api--examples--apicorsexample"></a>
 
-AWS SAM template with API defined in an external Swagger file along with Lambda integrations and CORS configurations\. See [GitHub](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_swagger_cors) for the full example\.
+An AWS SAM template snippet with an API defined in an external Swagger file along with Lambda integrations and CORS configurations\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition\. See [GitHub](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_swagger_cors) for the full example\.
 
 #### YAML<a name="sam-resource-api--examples--apicorsexample--yaml"></a>
 
 ```
-Type: AWS::Serverless::Api
-Properties:
-  StageName: Prod
-  # Allows www.example.com to call these APIs
-  # SAM will automatically add AllowMethods with a list of methods for this API
-  Cors: "'www.example.com'"
-  DefinitionBody: # Pull in an OpenApi definition from S3
-    'Fn::Transform':
-      Name: 'AWS::Include'
-      # Replace "bucket" with your bucket name
-      Parameters:
-        Location: s3://bucket/swagger.yaml
+Resources:
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      # Allows www.example.com to call these APIs
+      # SAM will automatically add AllowMethods with a list of methods for this API
+      Cors: "'www.example.com'"
+      DefinitionBody: # Pull in an OpenApi definition from S3
+        'Fn::Transform':
+          Name: 'AWS::Include'
+          # Replace "bucket" with your bucket name
+          Parameters:
+            Location: s3://bucket/swagger.yaml
 ```
 
 ### ApiCognitoAuthExample<a name="sam-resource-api--examples--apicognitoauthexample"></a>
 
-AWS SAM template with an API that uses AWS Cognito to authorize requests against the API\. See [GitHub](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_cognito_auth) for the full example\.
+An AWS SAM template snippet with an API that uses AWS Cognito to authorize requests against the API\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition\. See [GitHub](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_cognito_auth) for the full example\.
 
 #### YAML<a name="sam-resource-api--examples--apicognitoauthexample--yaml"></a>
 
 ```
-Type: AWS::Serverless::Api
-Properties:
-  StageName: Prod
-  Cors: "'*'"
-  Auth:
-    DefaultAuthorizer: MyCognitoAuthorizer
-    Authorizers:
-      MyCognitoAuthorizer:
-        UserPoolArn:
-          Fn::GetAtt: [MyCognitoUserPool, Arn]
+Resources:
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      Cors: "'*'"
+      Auth:
+        DefaultAuthorizer: MyCognitoAuthorizer
+        Authorizers:
+          MyCognitoAuthorizer:
+            UserPoolArn:
+              Fn::GetAtt: [MyCognitoUserPool, Arn]
+```
+
+### ApiModelsExample<a name="sam-resource-api--examples--apimodelsexample"></a>
+
+An AWS SAM template snippet with an API that includes a Models schema\. This is just a portion of an AWS SAM template file, showing an AWS::Serverless::Api definition with two model schemas\.
+
+#### YAML<a name="sam-resource-api--examples--apimodelsexample--yaml"></a>
+
+```
+Resources:
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      Models:
+        User:
+          type: object
+          required:
+            - username
+            - employee_id
+          properties:
+            username:
+              type: string
+            employee_id:
+              type: integer
+            department:
+              type: string
+        Item:
+          type: object
+          properties:
+            count:
+              type: integer
+            category:
+              type: string
+            price:
+              type: integer
 ```

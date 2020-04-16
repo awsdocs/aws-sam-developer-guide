@@ -8,11 +8,12 @@ The following steps help you to install and configure the required prerequisites
 
 1. Install Docker\. Note: Docker is only a prerequisite for testing your application locally\.
 
-1. Install Git Client (Required for next step).
-
 1. Install Homebrew\.
 
 1. Install the AWS SAM CLI\.
+
+**Note**  
+These instructions cause your environment's default Python version to be the one installed by Homebrew\. The change in default Python version occurs in [Step 4: Install Homebrew](#serverless-sam-cli-install-linux-homebrew)\.
 
 ## Step 1: Create an AWS Account<a name="serverless-sam-cli-install-linux-aws-account"></a>
 
@@ -86,6 +87,9 @@ If you run into issues installing Docker, see the [Troubleshooting](#serverless-
 
 ## Step 4: Install Homebrew<a name="serverless-sam-cli-install-linux-homebrew"></a>
 
+**Note**  
+This step causes your environment's default Python version to be the one installed by Homebrew\.
+
 The recommended approach for installing the AWS SAM CLI on Linux is to use the Homebrew package manager\. For more information about Homebrew, see [Homebrew Documentation](https://docs.brew.sh/Homebrew-on-Linux)\.
 
 To install Homebrew, you must first install Git\. For more information about Git, see [Git Documentation](https://git-scm.com)\. Git is available on many different operating systems, including most modern Linux distributions\. For instructions about installing Git on your particular operating system, see [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)\.
@@ -124,7 +128,7 @@ You should see output like the following on successful installation of Homebrew:
 Follow these steps to install the AWS SAM CLI using Homebrew:
 
 ```
-brew tap "aws/tap"
+brew tap aws/tap
 brew install aws-sam-cli
 ```
 

@@ -56,15 +56,20 @@ String containing the number of seconds to cache CORS Preflight request\.
 
 ### CorsConfiguration<a name="sam-property-api-corsconfiguration--examples--corsconfiguration"></a>
 
-Cors Configuration example\.
+Cors Configuration example\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition with Cors configured\.
 
 #### YAML<a name="sam-property-api-corsconfiguration--examples--corsconfiguration--yaml"></a>
 
 ```
-Cors:
-  AllowMethods: "'POST, GET'"
-  AllowHeaders: "'X-Forwarded-For'"
-  AllowOrigin: "'www.example.com'"
-  MaxAge: "'600'"
-  AllowCredentials: True
+Resources:
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      Cors:
+        AllowMethods: "'POST, GET'"
+        AllowHeaders: "'X-Forwarded-For'"
+        AllowOrigin: "'www.example.com'"
+        MaxAge: "'600'"
+        AllowCredentials: True
 ```
