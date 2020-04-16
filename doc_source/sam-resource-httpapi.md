@@ -260,12 +260,10 @@ Resources:
         DestinationArn: !GetAtt AccessLogs.Arn
         Format: $context.requestId
       DefaultRouteSettings:
-        DataTraceEnabled: True
         ThrottlingBurstLimit: 200
       RouteSettings:
         "GET /path":
           ThrottlingBurstLimit: 500 # overridden in HttpApi Event
-          LoggingLevel: ERROR
       StageVariables:
         StageVar: Value
       FailOnWarnings: True
