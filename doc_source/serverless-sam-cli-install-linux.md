@@ -122,7 +122,7 @@ You should see output like the following on successful installation of Homebrew:
 Follow these steps to install the AWS SAM CLI using Homebrew:
 
 ```
-brew tap aws/tap
+brew tap "aws/tap"
 brew install aws-sam-cli
 ```
 
