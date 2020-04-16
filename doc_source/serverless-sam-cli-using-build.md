@@ -10,17 +10,17 @@ Examples:
 
 ```
 # Build a deployment package
-$ sam build
+sam build
 
 # Run the build process inside an AWS Lambda-like Docker container
-$ sam build --use-container
+sam build --use-container
 
 # Build and run your functions locally
-$ sam build && sam local invoke
+sam build && sam local invoke
   
 # Build and package for deployment
-$ sam build && sam package --s3-bucket <bucketname>
+sam build && sam package --s3-bucket <bucketname>
 
 # For more options
-$ sam build --help
+sam build --help
 ```

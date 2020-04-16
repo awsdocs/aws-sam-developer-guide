@@ -20,10 +20,10 @@ The commands `sam local invoke` and `sam local start-api` both support local ste
 
 ```
 # Invoke a function locally in debug mode on port 5858
-$ sam local invoke -d 5858 <function logical id>
+sam local invoke -d 5858 <function logical id>
 
 # Start local API Gateway in debug mode on port 5858
-$ sam local start-api -d 5858
+sam local start-api -d 5858
 ```
 
 **Note**  

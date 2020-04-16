@@ -5,7 +5,7 @@ Validate your templates with `[sam validate](sam-cli-command-reference-sam-valid
 Example:
 
 ```
-$ sam validate
+sam validate
 <path-to-file>/template.yml is a valid SAM Template
 ```
 

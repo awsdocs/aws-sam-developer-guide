@@ -31,7 +31,7 @@ In this section, you download the application package, which consists of an AWS 
 For local testing, use the AWS SAM CLI to generate a sample DynamoDB event and invoke the Lambda function:
 
 ```
-$ sam local generate-event dynamodb update | sam local invoke ReadDynamoDBEvent
+sam local generate-event dynamodb update | sam local invoke ReadDynamoDBEvent
 ```
 
 The `generate-event` command creates a test event source message like the messages that are created when all components are deployed to the AWS Cloud\. This event source message is piped to the Lambda function ReadDynamoDBEvent\.
@@ -47,13 +47,13 @@ After testing your application locally, you use the AWS SAM CLI to create a depl
 1. Create an S3 bucket in the location where you want to save the packaged code\. If you want to use an existing S3 bucket, skip this step\.
 
    ```
-   sam-app> aws s3 mb s3://bucketname
+   aws s3 mb s3://bucketname
    ```
 
 1. Create the deployment package by running the following `package` CLI command at the command prompt\. 
 
    ```
-   sam-app> sam package \
+   sam package \
        --template-file template.yaml \
        --output-template-file packaged.yaml \
        --s3-bucket bucketname
@@ -69,7 +69,7 @@ Now that you've created the deployment package, you use it to deploy the applica
 + In the AWS SAM CLI, use the `deploy` CLI command to deploy all of the resources that you defined in the template\. 
 
   ```
-  sam-app> sam deploy \
+  sam deploy \
       --template-file packaged.yaml \
       --stack-name sam-app \
       --capabilities CAPABILITY_IAM \

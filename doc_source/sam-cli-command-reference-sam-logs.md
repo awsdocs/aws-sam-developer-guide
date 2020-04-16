@@ -13,19 +13,19 @@ sam logs [OPTIONS]
 **Examples:**
 
 ```
-$ sam logs -n HelloWorldFunction --stack-name mystack
+sam logs -n HelloWorldFunction --stack-name mystack
 
-Or, you can fetch logs using the function's name.
-$ sam logs -n mystack-HelloWorldFunction-1FJ8PD36GML2Q
+# Or, you can fetch logs using the function's name.
+sam logs -n mystack-HelloWorldFunction-1FJ8PD36GML2Q
 
-You can view logs for a specific time range using the -s (--start-time) and -e (--end-time) options
-$ sam logs -n HelloWorldFunction --stack-name mystack -s '10min ago' -e '2min ago'
+# You can view logs for a specific time range using the -s (--start-time) and -e (--end-time) options
+sam logs -n HelloWorldFunction --stack-name mystack -s '10min ago' -e '2min ago'
 
-You can also add the --tail option to wait for new logs and see them as they arrive.
-$ sam logs -n HelloWorldFunction --stack-name mystack --tail
+# You can also add the --tail option to wait for new logs and see them as they arrive.
+sam logs -n HelloWorldFunction --stack-name mystack --tail
 
-Use the --filter option to quickly find logs that match terms, phrases or values in your log events.
-$ sam logs -n HelloWorldFunction --stack-name mystack --filter "error"
+# Use the --filter option to quickly find logs that match terms, phrases or values in your log events.
+sam logs -n HelloWorldFunction --stack-name mystack --filter "error"
 ```
 
 **Options:**

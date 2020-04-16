@@ -15,8 +15,8 @@ sam publish [OPTIONS]
 **Examples:**
 
 ```
-To publish an application
-$ sam publish --template packaged.yaml --region us-east-1
+# To publish an application
+sam publish --template packaged.yaml --region us-east-1
 ```
 
 **Options:**

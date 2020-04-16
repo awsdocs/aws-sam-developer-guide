@@ -57,6 +57,22 @@ Gives permission to invoke a Lambda function, alias, or version\.
         ]
 ```
 
+## CloudWatchDescribeAlarmHistoryPolicy<a name="cloudwatch-describe-alarm-history-policy"></a>
+
+Gives permission to describe CloudWatch alarm history\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "cloudwatch:DescribeAlarmHistory"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
 ## CloudWatchPutMetricPolicy<a name="cloudwatch-put-metric-policy"></a>
 
 Gives permission to put metrics to CloudWatch\.
@@ -107,7 +123,8 @@ Gives create, read, update, and delete permissions to a DynamoDB table\.
               "dynamodb:UpdateItem",
               "dynamodb:BatchWriteItem",
               "dynamodb:BatchGetItem",
-              "dynamodb:DescribeTable"
+              "dynamodb:DescribeTable",
+              "dynamodb:ConditionCheckItem"
             ],
             "Resource": [
               {
@@ -149,6 +166,45 @@ Gives read\-only permission to a DynamoDB table\.
               "dynamodb:Query",
               "dynamodb:BatchGetItem",
               "dynamodb:DescribeTable"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+                  {
+                    "tableName": {
+                      "Ref": "TableName"
+                    }
+                  }
+                ]
+              },
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
+                  {
+                    "tableName": {
+                      "Ref": "TableName"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+```
+
+## DynamoDBWritePolicy<a name="dynamo-db-write-policy"></a>
+
+Gives write\-only permission to a DynamoDB table\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "dynamodb:PutItem",
+              "dynamodb:UpdateItem",
+              "dynamodb:BatchWriteItem"
             ],
             "Resource": [
               {
@@ -266,6 +322,45 @@ Gives read\-only permission to objects in an Amazon S3 bucket\.
               "s3:GetBucketLocation",
               "s3:GetObjectVersion",
               "s3:GetLifecycleConfiguration"
+            ],
+            "Resource": [
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:s3:::${bucketName}",
+                  {
+                    "bucketName": {
+                      "Ref": "BucketName"
+                    }
+                  }
+                ]
+              },
+              {
+                "Fn::Sub": [
+                  "arn:${AWS::Partition}:s3:::${bucketName}/*",
+                  {
+                    "bucketName": {
+                      "Ref": "BucketName"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+```
+
+## S3WritePolicy<a name="s3-write-policy"></a>
+
+Gives write permission to objects in an Amazon S3 bucket\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:PutObject",
+              "s3:PutObjectAcl",
+              "s3:PutLifecycleConfiguration"
             ],
             "Resource": [
               {
@@ -555,12 +650,11 @@ Gives permission to describe and read DynamoDB streams and records\.
             "Action": [
               "dynamodb:DescribeStream",
               "dynamodb:GetRecords",
-              "dynamodb:GetShardIterator",
-              "dynamodb:ListStreams"
+              "dynamodb:GetShardIterator"
             ],
             "Resource": {
               "Fn::Sub": [
-                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/${streamName}",
+                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/stream/${streamName}",
                 {
                   "tableName": {
                     "Ref": "TableName"
@@ -571,7 +665,23 @@ Gives permission to describe and read DynamoDB streams and records\.
                 }
               ]
             }
-          }
+          },
+         {
+            "Effect": "Allow",
+            "Action": [
+              "dynamodb:ListStreams"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/stream/*",
+                {
+                  "tableName": {
+                    "Ref": "TableName"
+                  }
+                }
+              ]
+            }
+          }          
         ]
 ```
 
@@ -595,6 +705,7 @@ Gives permission to list and read an Amazon Kinesis stream\.
             "Effect": "Allow",
             "Action": [
               "kinesis:DescribeStream",
+              "kinesis:DescribeStreamSummary",
               "kinesis:GetRecords",
               "kinesis:GetShardIterator"
             ],
@@ -623,6 +734,7 @@ Gives permission to send email and verify identity\.
             "Action": [
               "ses:GetIdentityVerificationAttributes",
               "ses:SendEmail",
+              "ses:SendRawEmail",
               "ses:VerifyEmailIdentity"
             ],
             "Resource": {
@@ -682,6 +794,7 @@ Gives permission to create, publish, and delete an Amazon Kinesis stream\.
               "kinesis:DecreaseStreamRetentionPeriod",
               "kinesis:DeleteStream",
               "kinesis:DescribeStream",
+              "kinesis:DescribeStreamSummary",
               "kinesis:GetShardIterator",
               "kinesis:IncreaseStreamRetentionPeriod",
               "kinesis:ListTagsForStream",
@@ -713,6 +826,29 @@ Gives permission to decrypt with an AWS KMS key\.
         "Statement": [
           {
             "Action": "kms:Decrypt",
+            "Effect": "Allow",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:kms:${AWS::Region}:${AWS::AccountId}:key/${keyId}",
+                {
+                  "keyId": {
+                    "Ref": "KeyId"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## KMSEncryptPolicy<a name="kms-encrypt-policy"></a>
+
+Gives permission to encrypt with an AWS KMS key\.
+
+```
+        "Statement": [
+          {
+            "Action": "kms:Encrypt",
             "Effect": "Allow",
             "Resource": {
               "Fn::Sub": [
@@ -971,12 +1107,64 @@ Gives read permission to get details about a CodePipeline pipeline\.
           {
             "Effect": "Allow",
             "Action": [
+              "codepipeline:ListPipelineExecutions"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:codepipeline:${AWS::Region}:${AWS::AccountId}:${pipelinename}",
+                {
+                  "pipelinename": {
+                    "Ref": "PipelineName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## CloudWatchDashboardPolicy<a name="cloudwatch-dashboard-policy"></a>
+
+Gives permissions to put metrics to operate on CloudWatch dashboards\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
               "cloudwatch:GetDashboard",
               "cloudwatch:ListDashboards",
               "cloudwatch:PutDashboard",
               "cloudwatch:ListMetrics"
             ],
             "Resource": "*"
+          }
+        ]
+```
+
+## RekognitionFacesManagementPolicy<a name="rekognition-face-management-policy"></a>
+
+Gives permission to add, delete, and search faces in a collection\.
+
+```
+        "Statement": [{
+          "Effect": "Allow",
+          "Action": [
+            "rekognition:IndexFaces",
+            "rekognition:DeleteFaces",
+            "rekognition:SearchFaces",
+            "rekognition:SearchFacesByImage",
+            "rekognition:ListFaces"
+          ],
+          "Resource": {
+            "Fn::Sub": [
+              "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
+              {
+                "collectionId": {
+                  "Ref": "CollectionId"
+                }
+              }
+            ]
           }
         ]
 ```
@@ -1411,7 +1599,7 @@ Gives permission to start a Step Functions state machine execution\.
 
 ## CodeCommitCrudPolicy<a name="codecommit-crud-policy"></a>
 
-Gives permissions to create/read/update/delete objects within a specific codecommit repository\.
+Gives permissions to create/read/update/delete objects within a specific CodeCommit repository\.
 
 ```
         "Statement": [
@@ -1497,7 +1685,7 @@ Gives permissions to create/read/update/delete objects within a specific codecom
 
 ## CodeCommitReadPolicy<a name="codecommit-read-policy"></a>
 
-Gives permissions to read objects within a specific codecommit repository\.
+Gives permissions to read objects within a specific CodeCommit repository\.
 
 ```
         "Statement": [
@@ -1544,6 +1732,132 @@ Gives permissions to read objects within a specific codecommit repository\.
                 {
                   "repositoryName": {
                     "Ref": "RepositoryName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## AthenaQueryPolicy<a name="athena-query-policy"></a>
+
+Gives permissions to execute Athena queries\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "athena:ListWorkGroups",
+              "athena:GetExecutionEngine",
+              "athena:GetExecutionEngines",
+              "athena:GetNamespace",
+              "athena:GetCatalogs",
+              "athena:GetNamespaces",
+              "athena:GetTables",
+              "athena:GetTable"
+            ],
+            "Resource": "*"
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "athena:StartQueryExecution",
+              "athena:GetQueryResults",
+              "athena:DeleteNamedQuery",
+              "athena:GetNamedQuery",
+              "athena:ListQueryExecutions",
+              "athena:StopQueryExecution",
+              "athena:GetQueryResultsStream",
+              "athena:ListNamedQueries",
+              "athena:CreateNamedQuery",
+              "athena:GetQueryExecution",
+              "athena:BatchGetNamedQuery",
+              "athena:BatchGetQueryExecution",
+              "athena:GetWorkGroup"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:athena:${AWS::Region}:${AWS::AccountId}:workgroup/${workgroupName}",
+                {
+                  "workgroupName": {
+                    "Ref": "WorkGroupName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## TextractPolicy<a name="textract-policy"></a>
+
+Gives full access to Amazon Textract\.
+
+```
+        "Statement": [
+         {
+            "Effect": "Allow",
+            "Action": [
+              "textract:*"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
+## TextractDetectAnalyzePolicy<a name="textract-detect-analyze-policy"></a>
+
+Gives access to detect and analyze documents with Amazon Textract\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "textract:DetectDocumentText",
+              "textract:StartDocumentTextDetection",
+              "textract:StartDocumentAnalysis",
+              "textract:AnalyzeDocument"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
+## TextractGetResultPolicy<a name="textract-get-result-policy"></a>
+
+Gives access to get detected and analyzed documents from Amazon Textract\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "textract:GetDocumentTextDetection",
+              "textract:GetDocumentAnalysis"
+            ],
+            "Resource": "*"
+          }
+        ]
+```
+
+## EventBridgePutEventsPolicy<a name="eventbridge-put-events-policy"></a>
+
+Gives permissions to send events to EventBridge\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": "events:PutEvents",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:events:${AWS::Region}:${AWS::AccountId}:event-bus/${eventBusName}",
+                {
+                  "eventBusName": {
+                    "Ref": "EventBusName"
                   }
                 }
               ]

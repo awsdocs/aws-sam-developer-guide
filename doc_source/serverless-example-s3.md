@@ -40,13 +40,13 @@ Before you can test this application locally, you must use the AWS SAM CLI to cr
 1. Create an S3 bucket in the location where you want to save the packaged code\. If you want to use an existing S3 bucket, skip this step\.
 
    ```
-   aws_sam_ocr> aws s3 mb s3://bucketname
+   aws s3 mb s3://bucketname
    ```
 
 1. Create the deployment package by running the following `package` CLI command at the command prompt\. 
 
    ```
-   aws_sam_ocr> sam package \
+   sam package \
        --template-file template.yaml \
        --output-template-file packaged.yaml \
        --s3-bucket bucketname
@@ -62,7 +62,7 @@ Now that you've created the deployment package, you use it to deploy the applica
 + In the AWS SAM CLI, use the `deploy` command to deploy all of the resources that you defined in the template\. 
 
   ```
-  aws_sam_ocr> sam deploy \
+  sam deploy \
       --template-file packaged.yaml \
       --stack-name aws-sam-ocr \
       --capabilities CAPABILITY_IAM \
@@ -90,7 +90,7 @@ Before you can test the application locally, you must first retrieve the names o
 Use the AWS SAM CLI to generate a sample Amazon S3 event and invoke the Lambda function:
 
 ```
-$ TABLE_NAME=Table name obtained from AWS CloudFormation console sam local invoke --event SampleEvent.json
+TABLE_NAME=Table name obtained from AWS CloudFormation console sam local invoke --event SampleEvent.json
 ```
 
 The `TABLE_NAME=` portion sets the DynamoDB table name\. The `--event` parameter specifies the file that contains the test event message to pass to the Lambda function\.

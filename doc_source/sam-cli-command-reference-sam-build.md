@@ -36,7 +36,7 @@ $ sam build && sam package --s3-bucket <bucketname>
 
 | Option | Description | 
 | --- | --- | 
-| \-b, \-\-build\-dir DIRECTORY | The path to a folder where the built artifacts are stored\. | 
+| \-b, \-\-build\-dir DIRECTORY | The path to a folder where the built artifacts are stored\. This directory and all of its content will be removed with this option\. | 
 | \-s, \-\-base\-dir DIRECTORY | Resolves relative paths to the function's source code with respect to this folder\. Use this if the AWS SAM template and your source code aren't in the same enclosing folder\. By default, relative paths are resolved with respect to the template's location\. | 
 | \-u, \-\-use\-container | If your functions depend on packages that have natively compiled dependencies, use this flag to build your function inside an AWS Lambda\-like Docker container\. | 
 | \-m, \-\-manifest PATH | The path to a custom dependency manifest \(ex: package\.json\) to use instead of the default one\. | 
