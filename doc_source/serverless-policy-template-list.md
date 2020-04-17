@@ -624,6 +624,9 @@ Gives permission to publish a message to an Amazon SNS topic\.
 
 Gives access to create, delete, describe, and detach Elastic Network Interfaces\.
 
+**Important**
+You will need to pass an object, even an empty one in your template: "- VPCAccessPolicy: {}"
+
 ```
         "Statement": [
           {
