@@ -91,16 +91,35 @@ ARN of the DynamoDB stream\.
 
 ## Examples<a name="sam-property-function-dynamodb--examples"></a>
 
-### DynamoDB Event<a name="sam-property-function-dynamodb--examples--dynamodb-event"></a>
+### DynamoDB Event for Existing DynamoDB Table<a name="sam-property-function-dynamodb--examples--dynamodb-event-for-existing-dynamodb-table"></a>
 
-DynamoDB Event
+DynamoDB Event for a DynamoDB table that already exists in an AWS account\.
 
-#### YAML<a name="sam-property-function-dynamodb--examples--dynamodb-event--yaml"></a>
+#### YAML<a name="sam-property-function-dynamodb--examples--dynamodb-event-for-existing-dynamodb-table--yaml"></a>
 
 ```
-Properties:
-  Stream: arn:aws:dynamodb:us-east-1:123456789012:table/TestTable/stream/2016-08-11T21:21:33.291
-  StartingPosition: TRIM_HORIZON
-  BatchSize: 10
-  Enabled: false
+Events:
+  DDBEvent:
+    Properties:
+      Stream: arn:aws:dynamodb:us-east-1:123456789012:table/TestTable/stream/2016-08-11T21:21:33.291
+      StartingPosition: TRIM_HORIZON
+      BatchSize: 10
+      Enabled: false
+```
+
+### DynamoDB Event for DynamoDB Table Declared in Template<a name="sam-property-function-dynamodb--examples--dynamodb-event-for-dynamodb-table-declared-in-template"></a>
+
+DynamoDB Event for a DynamoDB table that is declared in the same template file\.
+
+#### YAML<a name="sam-property-function-dynamodb--examples--dynamodb-event-for-dynamodb-table-declared-in-template--yaml"></a>
+
+```
+Events:
+  DDBEvent:
+    Properties:
+      Stream: 
+        !GetAtt MyDynamoDBTable.StreamArn   # This must be the name of a DynamoDB table declared in the same template file
+      StartingPosition: TRIM_HORIZON
+      BatchSize: 10
+      Enabled: false
 ```

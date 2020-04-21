@@ -72,11 +72,12 @@ An example of Api Event
 #### YAML<a name="sam-property-function-api--examples--apievent--yaml"></a>
 
 ```
-ApiEvent:
-  Type: Api
-  Properties:
-    Path: /path
-    Method: get
-    RequestParameters:
-      - method.request.header.Authorization
+Events:
+  ApiEvent:
+    Type: Api
+    Properties:
+      Path: /path
+      Method: get
+      RequestParameters:
+        - method.request.header.Authorization
 ```

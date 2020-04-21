@@ -48,9 +48,11 @@ SQS Event
 #### YAML<a name="sam-property-function-sqs--examples--sqs-event--yaml"></a>
 
 ```
-Type: SQS
-Properties:
-  Queue: arn:aws:sqs:us-west-2:012345678901:my-queue
-  BatchSize: 10
-  Enabled: false
+Events:
+  SQSEvent:
+    Type: SQS
+    Properties:
+      Queue: arn:aws:sqs:us-west-2:012345678901:my-queue
+      BatchSize: 10
+      Enabled: false
 ```

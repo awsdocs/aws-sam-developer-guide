@@ -51,7 +51,7 @@ Adds an AssumeRolePolicyDocument for the default created `Role` for this functio
  `AutoPublishAlias`   <a name="sam-function-autopublishalias"></a>
 Name of the Lambda alias\. For more information about Lambda aliases, see [AWS Lambda Function Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)\.  
 For examples that use this property, see [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md)\.  
-This AWS SAM property generates two additional AWS CloudFormation resources: an [AWS::Lambda::Version](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) and an [AWS::Lambda::Alias](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html)\. These resources can be referenced with intrinsic functions using the referenceable properties `<function-LogicalId>.Version` and `<function-LogicalId>.Alias` respectively\.  
+Specifying this property generates the following AWS CloudFormation resources: an [AWS::Lambda::Version](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) and an [AWS::Lambda::Alias](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html)\. You can reference these resources with intrinsic functions using the referenceable properties `<function-LogicalId>.Version` and `<function-LogicalId>.Alias` respectively\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
@@ -256,7 +256,7 @@ Properties:
 
 ### Function Properties Example<a name="sam-resource-function--examples--function-properties-example"></a>
 
-The following is an example of an AWS::Serverless::Function that uses InlineCode, Tracing, Policies, and Layers\.
+The following is an example of an AWS::Serverless::Function that uses InlineCode, Tracing, Policies, Layers, and an Api event source\.
 
 #### YAML<a name="sam-resource-function--examples--function-properties-example--yaml"></a>
 
@@ -282,4 +282,10 @@ Properties:
             - s3:GetObject
             - s3:GetObjectACL
           Resource: 'arn:aws:s3:::my-bucket/*'
+  Events:
+    ApiEvent:
+      Type: Api
+      Properties:
+        Path: /path
+        Method: get
 ```

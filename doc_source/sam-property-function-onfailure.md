@@ -31,13 +31,11 @@ Type of the resource referenced in the destination\. Supported types are `SQS`, 
 
 ## Examples<a name="sam-property-function-onfailure--examples"></a>
 
-### EventInvoke Configuration Example<a name="sam-property-function-onfailure--examples--eventinvoke-configuration-example"></a>
+### EventInvoke Configuration Example with SQS and Lambda destinations<a name="sam-property-function-onfailure--examples--eventinvoke-configuration-example-with-sqs-and-lambda-destinations"></a>
 
-Example of how to use EventInvokeConfig\.
+In this example no Destination is given for the SQS OnSuccess configuration, so SAM implicitly creates a SQS queue and adds any necessary permissions\. Also for this example, a Destination for a Lambda resource declared in the template file is specified in the OnFailure configuration, so SAM adds the necessary permissions to this Lambda function to call the destination Lambda function\.
 
-Since no Destination is given for the SQS OnSuccess configuration, SAM will create a SQS queue and add any necessary permissions\. Since a Destination is given for the Lambda OnFailure configuration, SAM will only add the necessary permissions to the source Lambda function to call the destination Lambda function\.
-
-#### YAML<a name="sam-property-function-onfailure--examples--eventinvoke-configuration-example--yaml"></a>
+#### YAML<a name="sam-property-function-onfailure--examples--eventinvoke-configuration-example-with-sqs-and-lambda-destinations--yaml"></a>
 
 ```
 EventInvokeConfig:
@@ -46,5 +44,20 @@ EventInvokeConfig:
       Type: SQS
     OnFailure:
       Type: Lambda
-      Destination: !GetAtt DestinationLambda.Arn
+      Destination: !GetAtt DestinationLambda.Arn  # Arn of a Lambda function declared in the template file.
+```
+
+### EventInvoke Configuration Example with SNS destination<a name="sam-property-function-onfailure--examples--eventinvoke-configuration-example-with-sns-destination"></a>
+
+In this example a Destination is given for an SNS topic declared in the template file for the OnSuccess configuration\.
+
+#### YAML<a name="sam-property-function-onfailure--examples--eventinvoke-configuration-example-with-sns-destination--yaml"></a>
+
+```
+EventInvokeConfig:
+  DestinationConfig:
+    OnSuccess:
+      Type: SNS
+      Destination:
+        Ref: DestinationSNS       # Arn of an SNS topic declared in the tempate file
 ```
