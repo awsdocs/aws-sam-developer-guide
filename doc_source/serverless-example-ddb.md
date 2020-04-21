@@ -31,7 +31,7 @@ In this section, you download the application package, which consists of an AWS 
 For local testing, use the AWS SAM CLI to generate a sample DynamoDB event and invoke the Lambda function:
 
 ```
-sam local generate-event dynamodb update | sam local invoke ReadDynamoDBEvent
+sam local generate-event dynamodb update | sam local invoke --event - ReadDynamoDBEvent
 ```
 
 The `generate-event` command creates a test event source message like the messages that are created when all components are deployed to the AWS Cloud\. This event source message is piped to the Lambda function ReadDynamoDBEvent\.
