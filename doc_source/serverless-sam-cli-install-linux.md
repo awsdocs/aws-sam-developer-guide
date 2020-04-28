@@ -109,6 +109,15 @@ test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>
 echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 ```
 
+Note, if you are using Zsh, then use:
+
+```
+test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+test -r ~/.zshenv && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.zshenv
+echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.zprofile
+```
+
 Verify that Homebrew is installed:
 
 ```
