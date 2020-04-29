@@ -51,7 +51,7 @@ sam init --location /path/to/template/folder
 | --- | --- | 
 | \-\-no\-interactive | Disable interactive prompting for init parameters, and fail if any required values are missing\. | 
 |  \-l, \-\-location TEXT |  The template or application location \(Git, Mercurial, HTTP/HTTPS, ZIP, path\)\. This parameter is required if `--no-interactive` is specified and `--runtime`, `--name`, and `--app-template` are not provided\. For Git repositories, you must use location of the root of the repository\.  | 
-| \-r, \-\-runtime \[python2\.7 \| nodejs6\.10 \| ruby2\.5 \| java8 \| python3\.7 \| nodejs8\.10 \| dotnetcore2\.0 \| nodejs10\.x \| dotnetcore2\.1 \| dotnetcore1\.0 \| python3\.6 \| go1\.x\] |  The Lambda runtime of your application\. This parameter is required if `--no-interactive` is specified and `--location` is not provided\.  | 
+| \-r, \-\-runtime \[python2\.7 \| nodejs6\.10 \| ruby2\.5 \| ruby2\.7 \| java8 \| python3\.7 \| nodejs8\.10 \| dotnetcore2\.0 \| nodejs10\.x \| dotnetcore2\.1 \| dotnetcore1\.0 \| python3\.6 \| go1\.x\] |  The Lambda runtime of your application\. This parameter is required if `--no-interactive` is specified and `--location` is not provided\.  | 
 | \-d, \-\-dependency\-manager \[gradle \| mod \| maven \| bundler \| npm \| cli\-package \| pip\] | Dependency manager of your Lambda runtime | 
 | \-o, \-\-output\-dir PATH | The location where the initialized application is output\. | 
 | \-n, \-\-name TEXT |  The name of your project to be generated as a folder\. This parameter is required if `--no-interactive` is specified and `--location` is not provided\.  | 
