@@ -69,6 +69,18 @@ You can use the `--env-vars` argument with the `invoke` or `start-api` commands 
 }
 ```
 
+Alternatively, you can define a single `Parameters` entry that sets the enviroment variables for all functions. Note that it is not possible to mix this format with the one outlined above.
+
+```
+{
+  "Parameters": {
+    "TABLE_NAME": "localtable",
+    "BUCKET_NAME": "testBucket",
+    "STAGE": "dev"
+  }
+}
+```
+
 For example, if you save this content in a file named `env.json`, then the following command uses this file to override the included environment variables:
 
 ```
