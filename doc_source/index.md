@@ -1,7 +1,7 @@
 # AWS Serverless Application Model Developer Guide
 
 -----
-*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -92,10 +92,12 @@ Amazon's trademarks and trade dress may not be used in
    + [API Gateway Extensions](sam-specification-api-gateway-extensions.md)
 + [Authoring Serverless Applications](serverless-authoring.md)
    + [Validating AWS SAM Template Files](serverless-sam-cli-using-validate.md)
-   + [Building Applications with Dependencies](serverless-sam-cli-using-build.md)
    + [Working with Layers](serverless-sam-cli-layers.md)
    + [Using Nested Applications](serverless-sam-template-nested-applications.md)
    + [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md)
++ [Building Serverless Applications](serverless-building.md)
+   + [Building Applications](serverless-sam-cli-using-build.md)
+   + [Building Layers](building-layers.md)
 + [Testing and Debugging Serverless Applications](serverless-test-and-debug.md)
    + [Invoking Functions Locally](serverless-sam-cli-using-invoke.md)
    + [Running API Gateway Locally](serverless-sam-cli-using-start-api.md)

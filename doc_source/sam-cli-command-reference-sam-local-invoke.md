@@ -2,7 +2,7 @@
 
 Invokes a local Lambda function once and quits after invocation completes\.
 
-This is useful for developing serverless functions that handle asynchronous events \(such as Amazon S3 or Amazon Kinesis events\)\. It can also be useful if you want to compose a script of test cases\. The event body can be passed in either by `stdin` \(default\), or by using the `--event` parameter\. The runtime output \(logs etc\) is output to `stderr`, and the Lambda function result is output to `stdout`\.
+This is useful for developing serverless functions that handle asynchronous events \(such as Amazon S3 or Amazon Kinesis events\)\. It can also be useful if you want to compose a script of test cases\. The event body can be passed in using the `--event` parameter\. The runtime output \(logs etc\) is output to `stderr`, and the Lambda function result is output to `stdout`\.
 
 **Usage:**
 

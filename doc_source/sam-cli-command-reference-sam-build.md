@@ -6,6 +6,10 @@ The `sam build` command iterates through the functions in your application, look
 
 To use this command, update your AWS SAM template to specify the path to your function's source code in the resource's Code or CodeUri property\.
 
+You can also use this command to build layers\. For more information about building layers, see [Building Layers](building-layers.md)\.
+
+To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World Application](serverless-getting-started-hello-world.md)\. The `sam build` command is part of [Step 2: Build Your Application](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-build)\.
+
 **Usage:**
 
 ```

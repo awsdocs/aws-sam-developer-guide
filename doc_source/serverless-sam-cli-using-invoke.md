@@ -14,7 +14,7 @@ Examples:
 $ sam local invoke "Ratings" -e event.json
 
 # Invoking function with event via stdin
-$ echo '{"message": "Hey, are you there?" }' | sam local invoke "Ratings" --event -
+$ echo '{"message": "Hey, are you there?" }' | sam local invoke --event - "Ratings"
 
 # For more options
 $ sam local invoke --help

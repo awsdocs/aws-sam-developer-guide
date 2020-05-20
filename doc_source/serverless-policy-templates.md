@@ -10,9 +10,23 @@ If you want to request a new policy template to be added, do the following:
 
 1. Submit an issue in the AWS SAM GitHub project that includes the reasons for your pull request and a link to the request\. Use this link to submit a new issue: [AWS Serverless Application Model: Issues](https://github.com/awslabs/serverless-application-model/issues/new)\.
 
-## Examples<a name="serverless-policy-template-examples"></a>
+## Syntax<a name="serverless-policy-template-syntax"></a>
 
-There are two AWS SAM template examples in this section: one with a policy template that includes placeholder values, and one that doesn't include placeholder values\.
+For every policy template you specify in your AWS SAM template file, you must always specify an object containing the policy template's placeholder values\. If a policy template does not require any placeholder values, you must specify an empty object\.
+
+### YAML<a name="serverless-policy-template-syntax.yaml"></a>
+
+```
+MyFunction:
+  Type: AWS::Serverless::Function
+  Properties:
+    Policies:
+      - PolicyTemplateName1:        # Policy template with placeholder value
+          Key1: Value1
+      - PolicyTemplateName2: {}     # Policy template with no placeholder value
+```
+
+## Examples<a name="serverless-policy-template-examples"></a>
 
 ### Example 1: Policy Template with Placeholder Values<a name="policy-template-example-1"></a>
 
@@ -34,6 +48,9 @@ The following example shows that the [SQSPollerPolicy](serverless-policy-templat
 ### Example 2: Policy Template with No Placeholder Values<a name="policy-template-example-2"></a>
 
 The following example contains the [CloudWatchPutMetricPolicy](serverless-policy-template-list.md#cloudwatch-put-metric-policy) policy template, which has no placeholder values\.
+
+**Note**  
+Even though there are no placeholder values, you must specify an empty object, otherwise an error will result\.
 
 ```
 1. MyFunction:
@@ -119,3 +136,23 @@ The following is a table of the available policy templates\.
 | [TextractDetectAnalyzePolicy](serverless-policy-template-list.md#textract-detect-analyze-policy) | Gives access to detect and analyze documents with Amazon Textract\. | 
 | [TextractGetResultPolicy](serverless-policy-template-list.md#textract-get-result-policy) | Gives access to get detected and analyzed documents from Amazon Textract\. | 
 | [EventBridgePutEventsPolicy](serverless-policy-template-list.md#eventbridge-put-events-policy) | Gives permissions to send events to EventBridge\. | 
+
+## Troubleshooting<a name="serverless-policy-template-troubleshooting"></a>
+
+### SAM CLI error: "Must specify valid parameter values for policy template '<policy\-template\-name>'"<a name="serverless-policy-template-troubleshooting-"></a>
+
+When executing `sam build`, you see the following error:
+
+```
+"Must specify valid parameter values for policy template '<policy-template-name>'"
+```
+
+This means that you did not pass an empty object when declaring a policy template that does not have any placeholder values\.
+
+To fix this, declare the policy like the following example for [CloudWatchPutMetricPolicy](serverless-policy-template-list.md#cloudwatch-put-metric-policy)\.
+
+```
+1. MyFunction:
+2.   Policies:
+3.     - CloudWatchPutMetricPolicy: {}
+```

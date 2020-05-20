@@ -91,7 +91,11 @@ Auth:
                            }
                          }
                        }]
-    IpRangeBlacklist: ['10.20.30.40', '1.2.3.4']
-    SourceVpcBlacklist: ["vpce-1a2b3c4d"]
-    AwsAccountWhitelist: ['123456789101']
+    IpRangeBlacklist:
+      - "10.20.30.40"
+      - "1.2.3.4"
+    SourceVpcBlacklist:
+      - "vpce-1a2b3c4d"
+    AwsAccountWhitelist:
+      - "111122223333"
 ```

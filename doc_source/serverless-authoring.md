@@ -6,7 +6,6 @@ This section contains topics about how to validate your AWS SAM template, and ho
 
 **Topics**
 + [Validating AWS SAM Template Files](serverless-sam-cli-using-validate.md)
-+ [Building Applications with Dependencies](serverless-sam-cli-using-build.md)
 + [Working with Layers](serverless-sam-cli-layers.md)
 + [Using Nested Applications](serverless-sam-template-nested-applications.md)
 + [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md)

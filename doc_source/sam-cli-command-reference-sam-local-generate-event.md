@@ -24,7 +24,7 @@ sam local generate-event s3 [put/delete] --help
 sam local generate-event s3 [put/delete] --bucket <bucket> --key <key>
 
 # After you generate a sample event, you can use it to test your Lambda function locally
-sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam local invoke <function logical id>
+sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam local invoke -e - <function logical id>
 ```
 
 **Options:**

@@ -12,5 +12,5 @@ AWS SAM resources support a subset of resource attributes that are supported by 
 |  [AWS::Serverless::Application](sam-resource-application.md)  | No | No | Yes | No | No | No | 
 |  [AWS::Serverless::Function](sam-resource-function.md)  | No | No | Yes | No | No | No | 
 |  [AWS::Serverless::HttpApi](sam-resource-httpapi.md)  | No | No | Yes | No | No | No | 
-|  [AWS::Serverless::LayerVersion](sam-resource-layerversion.md)  | No | Yes | Yes | No | No | No | 
+|  [AWS::Serverless::LayerVersion](sam-resource-layerversion.md)  | No | Yes | Yes | [Yes](building-layers.md) | No | No | 
 |  [AWS::Serverless::SimpleTable](sam-resource-simpletable.md)  | No | No | Yes | No | No | No | 

@@ -49,9 +49,8 @@ Adds an AssumeRolePolicyDocument for the default created `Role` for this functio
 *AWS CloudFormation Compatibility*: This property is similar to the `[AssumeRolePolicyDocument](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument)` property of an `AWS::IAM::Role`\. AWS SAM adds this property to the generated IAM role for this function\. If a role ARN is provided for this function, this property does nothing\.
 
  `AutoPublishAlias`   <a name="sam-function-autopublishalias"></a>
-Name of the Lambda alias\. For more information about Lambda aliases, see [AWS Lambda Function Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)\.  
-For examples that use this property, see [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md)\.  
-Specifying this property generates the following AWS CloudFormation resources: an [AWS::Lambda::Version](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) and an [AWS::Lambda::Alias](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html)\. You can reference these resources with intrinsic functions using the referenceable properties `<function-LogicalId>.Version` and `<function-LogicalId>.Alias` respectively\.  
+Name of the Lambda alias\. For more information about Lambda aliases, see [AWS Lambda Function Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)\. For examples that use this property, see [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md)\.  
+AWS SAM generates [AWS::Lambda::Version](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) and [AWS::Lambda::Alias](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html) resources when this property is set\. For information about this scenario, see [AutoPublishAlias Property Is Specified](sam-specification-generated-resources-function.md#sam-specification-generated-resources-function-autopublishalias)\. For general information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation Resources](sam-specification-generated-resources.md)\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
@@ -157,8 +156,9 @@ The ARN of a permissions boundary to use for this function's execution role\. Th
 
  `Policies`   <a name="sam-function-policies"></a>
 One or more policies that this function needs\. They will be appended to the default role for this function\.  
-This property accepts a single string or a list of strings, and can be the name of AWS managed IAM policies or AWS SAM policy templates, or inline IAM policy document\(s\) formatted in YAML\. If the Role property is set, this property has no meaning\.  
+This property accepts a single string or a list of strings, and can be the name of AWS managed IAM policies or AWS SAM policy templates, or inline IAM policy document\(s\) formatted in YAML\.  
 For more information about AWS managed IAM policies, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)\. For more information about AWS SAM policy templates, see [AWS SAM Policy Templates](serverless-policy-templates.md)\. For more information about inline policies, see [Inline Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#inline-policies)\.  
+**NOTE**: If the `Role` property is set, this property is ignored\.  
 *Type*: String \| List \| Map  
 *Required*: No  
 *AWS CloudFormation Compatibility*: This property is similar to the `[Policies](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-policies)` property of an `AWS::IAM::Role`\. AWS SAM supports AWS managed policy names and AWS SAM policy templates, in addition to JSON policy documents\. AWS CloudFormation only accepts JSON policy documents\.

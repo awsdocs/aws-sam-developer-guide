@@ -2,6 +2,8 @@
 
 Creates a Lambda LayerVersion that contains library or runtime code needed by a Lambda Function\.
 
+The [AWS::Serverless::LayerVersion](#sam-resource-layerversion) resource also supports the `Metadata` resource attribute, so you can instruct AWS SAM to build layers included in your application\. For more information about building layers, see [Building Layers](building-layers.md)\.
+
 **Important Note**: Since the release of the [UpdateReplacePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html) resource attribute in AWS CloudFormation, [AWS::Lambda::LayerVersion](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html) \(recommended\) offers the same benefits as [AWS::Serverless::LayerVersion](#sam-resource-layerversion)\.
 
 When a Serverless LayerVersion is transformed, SAM also transforms the logical id of the resource so that old LayerVersions are not automatically deleted by CloudFormation when the resource is updated\.
@@ -35,7 +37,6 @@ List of runtimes compatible with this LayerVersion\.
 AWS S3 Uri, local file path, or LayerContent object of the layer code\.  
 If an AWS S3 Uri or LayerContent object is provided, The AWS S3 object referenced must be a valid ZIP archive that contains the contents of an [AWS Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\.  
 If a local file path is provided, the template must go through the workflow that includes the `sam deploy` or `sam package` command, in order for the content to be transformed properly\.  
-**Note**: Either `CodeUri` or `InlineCode` is required\.  
 *Type*: String \| [LayerContent](sam-property-layerversion-layercontent.md)  
 *Required*: Yes  
 *AWS CloudFormation Compatibility*: This property is similar to the `[Content](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content)` property of an `AWS::Serverless::LayerVersion`\. The nested Amazon S3 properties are named differently\.

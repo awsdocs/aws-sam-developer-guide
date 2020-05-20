@@ -35,6 +35,7 @@ The reference to an AWS\-managed certificate for use by the endpoint for this do
 
  `DomainName`   <a name="sam-httpapi-httpapidomainconfiguration-domainname"></a>
 The custom domain name for your API Gateway API\. Uppercase letters are not supported\.  
+AWS SAM generates an `AWS::ApiGatewayV2::DomainName` resource when this property is set\. For information about this scenario, see [DomainName Property Is Specified](sam-specification-generated-resources-httpapi.md#sam-specification-generated-resources-httpapi-domain-name)\. For general information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation Resources](sam-specification-generated-resources.md)\.  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation Compatibility*: This property is passed directly to the `[DomainName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-domainname)` property of an `AWS::ApiGateway2::DomainName`\.
