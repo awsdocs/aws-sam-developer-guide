@@ -2,6 +2,8 @@
 
 Creates a Lambda function, IAM execution role, and event source mappings that trigger the function\.
 
+The [AWS::Serverless::Function](#sam-resource-function) resource also supports the `Metadata` resource attribute, so you can instruct AWS SAM to build custom runtimes required by your application\. For more information about building custom runtimes, see [Building Custom Runtimes](building-custom-runtimes.md)\.
+
 ## Syntax<a name="sam-resource-function-syntax"></a>
 
 To declare this entity in your AWS SAM template, use the following syntax:
@@ -184,7 +186,8 @@ The ARN of an IAM role to use as this function's execution role\.
 *AWS CloudFormation Compatibility*: This property is similar to the `[Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role)` property of an `AWS::Lambda::Function`\. This is required in AWS CloudFormation but not in AWS SAM\. If a role isn't specified, one is created for you with a logical ID of `<function-logical-id>Role`\.
 
  `Runtime`   <a name="sam-function-runtime"></a>
-The runtime environment\.  
+The identifier of the function's [runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)\.  
+**Note**: If you specify the `provided` identifier for this property, you can use the `Metadata` resource attribute to instruct AWS SAM to build the custom runtime required by this function\. For more information about building custom runtimes, see [Building Custom Runtimes](building-custom-runtimes.md)\.  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation Compatibility*: This property is passed directly to the `[Runtime](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime)` property of an `AWS::Lambda::Function`\.

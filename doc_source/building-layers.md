@@ -1,6 +1,8 @@
 # Building Layers<a name="building-layers"></a>
 
-To build layers that you have declared in your AWS Serverless Application Model \(AWS SAM\) template file, include a `Metadata` resource attribute section with a `BuildMethod` entry\. For `BuildMethod`, specify the runtime environment that you want the layer to be built in\.
+To build layers that you have declared in your AWS Serverless Application Model \(AWS SAM\) template file, include a `Metadata` resource attribute section with a `BuildMethod` entry\. Valid values for `BuildMethod` are identifiers for an [AWS Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html), or `makefile`\.
+
+If you specify `makefile`, provide the custom makefile, where you declare a build target of the form `build-layer-logical-id` that contains the build commands for your layer\. Your makefile is responsible for compiling the layer if necessary, and copying the build artifacts into the proper location required for subsequent steps in your workflow\.
 
 The following is an example `Metadata` resource attribute section\.
 
@@ -18,7 +20,9 @@ When you include the `Metadata` resource attribute section, you can use the `[sa
 
 ## Examples<a name="building-applications-examples"></a>
 
-The following example AWS SAM template builds a layer\.
+### Template Example 1: Build a Layer Against the Python 3\.6 Runtime Environment<a name="building-applications-examples-python"></a>
+
+The following example AWS SAM template builds a layer against the Python 3\.6 runtime environment\.
 
 ```
 Resources:
@@ -31,6 +35,33 @@ Resources:
     Metadata:
       BuildMethod: python3.6              # Required to have AWS SAM build this layer
 ```
+
+### Template Example 2: Build a Layer Using a Custom makefile<a name="building-applications-examples-makefile"></a>
+
+The following example AWS SAM template uses a custom makefile to build the layer\.
+
+```
+Resources:
+  MyLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      ContentUri: my_layer
+      CompatibleRuntimes:
+        - python3.8
+    Metadata:
+      BuildMethod: makefile
+```
+
+The following makefile contains the build target and commands that will be executed\.
+
+```
+build-MyLayer:
+    mkdir -p "$(ARTIFACTS_DIR)/python"
+    cp *.py "$(ARTIFACTS_DIR)/python"
+    python -m pip install -r requirements.txt -t "$(ARTIFACTS_DIR)/python"
+```
+
+### Example sam build commands<a name="building-applications-examples-commands"></a>
 
 The following `sam build` commands build layers that include the `Metadata` resource attribute sections\.
 

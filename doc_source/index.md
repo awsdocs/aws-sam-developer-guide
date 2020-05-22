@@ -98,6 +98,7 @@ Amazon's trademarks and trade dress may not be used in
 + [Building Serverless Applications](serverless-building.md)
    + [Building Applications](serverless-sam-cli-using-build.md)
    + [Building Layers](building-layers.md)
+   + [Building Custom Runtimes](building-custom-runtimes.md)
 + [Testing and Debugging Serverless Applications](serverless-test-and-debug.md)
    + [Invoking Functions Locally](serverless-sam-cli-using-invoke.md)
    + [Running API Gateway Locally](serverless-sam-cli-using-start-api.md)

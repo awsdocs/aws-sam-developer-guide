@@ -1,24 +1,29 @@
 # sam build<a name="sam-cli-command-reference-sam-build"></a>
 
-Use this command to build your Lambda source code and generate deployment artifacts that target Lambda's execution environment\. By doing this, the functions that you build locally run in a similar environment in the AWS Cloud\.
+Builds a serverless application, and prepares it for subsequent steps in your workflow, like locally testing the application, or deploying it to the AWS Cloud\.
 
-The `sam build` command iterates through the functions in your application, looks for a manifest file \(such as `requirements.txt`\) that contains the dependencies, and automatically creates deployment artifacts that you can deploy to Lambda using the `sam package` and `sam deploy` commands\. You that can also use `sam build` in combination with other commands like `sam local invoke` to test your application locally\.
+The `sam build` command processes your AWS SAM template file, application code, and any applicable language\-specific files and dependencies, and copies build artifacts in the format and location expected by subsequent steps in your workflow\. You specify dependencies in a manifest file that you include in your application, such as `requirements.txt` for Python functions, or `package.json` for Node\.js functions\.
 
-To use this command, update your AWS SAM template to specify the path to your function's source code in the resource's Code or CodeUri property\.
+If a resource includes a `Metadata` resource attribute with a `BuildMethod` entry, `sam build` builds that resource according to the value of the `BuildMethod` entry\. Valid values for `BuildMethod` are identifiers for an [AWS Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html), or `makefile`:
++ **AWS Lambda runtime identifier**\. Build the resource against a Lambda runtime\. For the list of supported runtime identifiers, see [AWS Lambda runtimes](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)\.
++ **`makefile`\. **You must have a `makefile` that includes a build target named `build-resource-logical-id`\. In this case, `sam build` executes the commands of the build target\.
 
-You can also use this command to build layers\. For more information about building layers, see [Building Layers](building-layers.md)\.
+You can use the `Metadata` resource attribute with a `BuildMethod` entry to build layers and custom runtimes\. For information about building layers, see [Building Layers](building-layers.md)\. For information about building custom runtimes, see [Building Custom Runtimes](building-custom-runtimes.md)\.
 
-To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World Application](serverless-getting-started-hello-world.md)\. The `sam build` command is part of [Step 2: Build Your Application](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-build)\.
+To see an end\-to\-end example that uses this command, including locally testing and deploying to the AWS Cloud, see [Tutorial: Deploying a Hello World Application](serverless-getting-started-hello-world.md)\. The `sam build` command is part of [Step 2: Build Your Application](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-build)\.
 
 **Usage:**
 
 ```
-sam build [OPTIONS]
+sam build [OPTIONS] [RESOURCE_LOGICAL_ID]
 ```
 
 **Examples:**
 
 ```
+To use this command, update your SAM template to specify the path
+to your function's source code in the resource's Code or CodeUri property.
+
 To build on your workstation, run this command in folder containing
 SAM template. Built artifacts will be written to .aws-sam/build folder
 $ sam build
@@ -31,6 +36,9 @@ $ sam build && sam local invoke
   
 To build and package for deployment
 $ sam build && sam package --s3-bucket <bucketname>
+
+To build the 'MyFunction' resource
+$ sam build MyFunction
 ```
 
 **Options:**
@@ -40,14 +48,14 @@ $ sam build && sam package --s3-bucket <bucketname>
 
 | Option | Description | 
 | --- | --- | 
-| \-b, \-\-build\-dir DIRECTORY | The path to a folder where the built artifacts are stored\. This directory and all of its content will be removed with this option\. | 
-| \-s, \-\-base\-dir DIRECTORY | Resolves relative paths to the function's source code with respect to this folder\. Use this if the AWS SAM template and your source code aren't in the same enclosing folder\. By default, relative paths are resolved with respect to the template's location\. | 
+| \-b, \-\-build\-dir DIRECTORY | The path to a folder where the built artifacts are stored\. This directory and all of its content is removed with this option\. | 
+| \-s, \-\-base\-dir DIRECTORY | Resolves relative paths to the function's source code with respect to this folder\. Use this option if the AWS SAM template and your source code aren't in the same folder\. By default, relative paths are resolved with respect to the template's location\. | 
 | \-u, \-\-use\-container | If your functions depend on packages that have natively compiled dependencies, use this flag to build your function inside an AWS Lambda\-like Docker container\. | 
-| \-m, \-\-manifest PATH | The path to a custom dependency manifest \(ex: package\.json\) to use instead of the default one\. | 
+| \-m, \-\-manifest PATH | The path to a custom dependency manifest file \(for example, package\.json\) to use instead of the default\. | 
 | \-t, \-\-template PATH | The AWS SAM template file \[default: template\.\[yaml\|yml\]\]\. | 
 | \-\-parameter\-overrides | Optional\. A string that contains AWS CloudFormation parameter overrides, encoded as key\-value pairs\. Use the same format as the AWS CLI—for example, 'ParameterKey=KeyPairName, ParameterValue=MyKey ParameterKey=InstanceType, ParameterValue=t1\.micro'\. | 
-| \-\-skip\-pull\-image | Specifies whether the command should skip pulling down the latest Docker image for Lambda runtime\. | 
-| \-\-docker\-network TEXT | Specifies the name or id of an existing Docker network to Lambda Docker containers should connect to, along with the default bridge network\. If not specified, the Lambda containers will only connect to the default bridge Docker network\. | 
+| \-\-skip\-pull\-image | Specifies whether the command should skip pulling down the latest Docker image for the Lambda runtime\. | 
+| \-\-docker\-network TEXT | Specifies the name or ID of an existing Docker network that Lambda Docker containers should connect to, along with the default bridge network\. If not specified, the Lambda containers connect only to the default bridge Docker network\. | 
 | \-\-profile TEXT | Selects a specific profile from your credential file to get AWS credentials\. | 
 | \-\-region TEXT | Sets the AWS Region of the service \(for example, us\-east\-1\)\. | 
 | \-\-debug | Turns on debug logging to print debug message generated by the AWS SAM CLI\. | 

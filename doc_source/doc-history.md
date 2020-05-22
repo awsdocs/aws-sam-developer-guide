@@ -1,10 +1,11 @@
 # Document History for AWS Serverless Application Model<a name="doc-history"></a>
 
 The following table describes the important changes in each release of the *AWS Serverless Application Model Developer Guide*\. For notification about updates to this documentation, you can subscribe to an RSS feed by choosing the RSS button in the top menu panel\.
-+ **Latest documentation update: **May 19, 2020
++ **Latest documentation update: **May 21, 2020
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Building Custom Runtimes](#doc-history) | Added the ability to build custom runtimes\. For more information, see [Building Custom Runtimes](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/building-custom-runtimes.html)\. | May 21, 2020 | 
 | [Building Layers](#doc-history) | Added the ability to build individual LayerVersion resources\. For more information, see [Building Layers](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/building-layers.html)\. | May 19, 2020 | 
 | [Generated AWS CloudFormation Resources](#doc-history) | Provided details about the AWS CloudFormation resources that AWS SAM generates and how to reference them\. For more information, see [Generated AWS CloudFormation Resources](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)\. | April 8, 2020 | 
 | [Setting up AWS credentials](#doc-history) | Added instructions for setting up AWS credentials, for readers who have not already set them to use with other tools like one of the AWS SDKs or the AWS CLI\. For more information, see [Setting Up AWS Credentials](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-set-up-credentials.html)\. | January 17, 2020 | 
