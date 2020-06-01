@@ -1,10 +1,11 @@
 # Document History for AWS Serverless Application Model<a name="doc-history"></a>
 
 The following table describes the important changes in each release of the *AWS Serverless Application Model Developer Guide*\. For notification about updates to this documentation, you can subscribe to an RSS feed by choosing the RSS button in the top menu panel\.
-+ **Latest documentation update: **May 21, 2020
++ **Latest documentation update: **May 27, 2020
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Orchestrating Serverless Applications](#doc-history) | Added support for orchestrating applications by creating Step Functions state machines using AWS SAM\. For more information, see [Orchestrating Applications](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-step-functions-in-sam.html) and [AWS::Serverless::StateMachine](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html)\. | May 27, 2020 | 
 | [Building Custom Runtimes](#doc-history) | Added the ability to build custom runtimes\. For more information, see [Building Custom Runtimes](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/building-custom-runtimes.html)\. | May 21, 2020 | 
 | [Building Layers](#doc-history) | Added the ability to build individual LayerVersion resources\. For more information, see [Building Layers](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/building-layers.html)\. | May 19, 2020 | 
 | [Generated AWS CloudFormation Resources](#doc-history) | Provided details about the AWS CloudFormation resources that AWS SAM generates and how to reference them\. For more information, see [Generated AWS CloudFormation Resources](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)\. | April 8, 2020 | 

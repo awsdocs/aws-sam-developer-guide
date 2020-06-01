@@ -9,3 +9,4 @@ This section contains topics about how to validate your AWS SAM template, and ho
 + [Working with Layers](serverless-sam-cli-layers.md)
 + [Using Nested Applications](serverless-sam-template-nested-applications.md)
 + [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md)
++ [Orchestrating AWS Resources with AWS Step Functions](serverless-step-functions-in-sam.md)

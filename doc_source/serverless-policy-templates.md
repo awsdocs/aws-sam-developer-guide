@@ -136,6 +136,15 @@ The following is a table of the available policy templates\.
 | [TextractDetectAnalyzePolicy](serverless-policy-template-list.md#textract-detect-analyze-policy) | Gives access to detect and analyze documents with Amazon Textract\. | 
 | [TextractGetResultPolicy](serverless-policy-template-list.md#textract-get-result-policy) | Gives access to get detected and analyzed documents from Amazon Textract\. | 
 | [EventBridgePutEventsPolicy](serverless-policy-template-list.md#eventbridge-put-events-policy) | Gives permissions to send events to EventBridge\. | 
+| [ElasticMapReduceModifyInstanceFleetPolicy](serverless-policy-template-list.md#elastic-map-reduce-modify-instance-fleet-policy) | Gives permission to list details and modify capacities for instance fleets within a cluster\. | 
+| [ElasticMapReduceSetTerminationProtectionPolicy](serverless-policy-template-list.md#elastic-map-reduce-set-termination-protection-policy) | Gives permission to set termination protection for a cluster\. | 
+| [ElasticMapReduceModifyInstanceGroupsPolicy](serverless-policy-template-list.md#elastic-map-reduce-modify-instance-groups-policy) | Gives permission to list details and modify settings for instance groups within a cluster\. | 
+| [ElasticMapReduceCancelStepsPolicy](serverless-policy-template-list.md#elastic-map-reduce-cancel-steps-policy) | Gives permission to cancel a pending step or steps in a running cluster\. | 
+| [ElasticMapReduceTerminateJobFlowsPolicy](serverless-policy-template-list.md#elastic-map-reduce-terminate-job-flows-policy) | Gives permission to shut down a cluster\. | 
+| [ElasticMapReduceAddJobFlowStepsPolicy](serverless-policy-template-list.md#elastic-map-reduce-add-job-flows-policy) | Gives permission to add new steps to a running cluster\. | 
+| [SageMakerCreateEndpointPolicy](serverless-policy-template-list.md#sagemaker-create-endpoint-policy) | Gives permission to create an endpoint in Amazon SageMaker\. | 
+| [SageMakerCreateEndpointConfigPolicy](serverless-policy-template-list.md#sagemaker-create-endpoint-config-policy) | Gives permission to create an endpoint configuration in Amazon SageMaker\. | 
+| [EcsRunTaskPolicy](serverless-policy-template-list.md#ecs-run-task-policy) | Gives permission to start a new task for a task definition\. | 
 
 ## Troubleshooting<a name="serverless-policy-template-troubleshooting"></a>
 

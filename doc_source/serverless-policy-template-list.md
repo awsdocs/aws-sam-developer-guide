@@ -1865,3 +1865,222 @@ Gives permissions to send events to EventBridge\.
           }
         ]
 ```
+
+## ElasticMapReduceModifyInstanceFleetPolicy<a name="elastic-map-reduce-modify-instance-fleet-policy"></a>
+
+Gives permission to list details and modify capacities for instance fleets within a cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": [
+              "elasticmapreduce:ModifyInstanceFleet",
+              "elasticmapreduce:ListInstanceFleets"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## ElasticMapReduceSetTerminationProtectionPolicy<a name="elastic-map-reduce-set-termination-protection-policy"></a>
+
+Gives permission to set termination protection for a cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": "elasticmapreduce:SetTerminationProtection",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## ElasticMapReduceModifyInstanceGroupsPolicy<a name="elastic-map-reduce-modify-instance-groups-policy"></a>
+
+Gives permission to list details and modify settings for instance groups within a cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": [
+              "elasticmapreduce:ModifyInstanceGroups",
+              "elasticmapreduce:ListInstanceGroups"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## ElasticMapReduceCancelStepsPolicy<a name="elastic-map-reduce-cancel-steps-policy"></a>
+
+Gives permission to cancel a pending step or steps in a running cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": "elasticmapreduce:CancelSteps",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## ElasticMapReduceTerminateJobFlowsPolicy<a name="elastic-map-reduce-terminate-job-flows-policy"></a>
+
+Gives permission to shut down a cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": "elasticmapreduce:TerminateJobFlows",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## ElasticMapReduceAddJobFlowStepsPolicy<a name="elastic-map-reduce-add-job-flows-policy"></a>
+
+Gives permission to add new steps to a running cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": "elasticmapreduce:AddJobFlowSteps",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## SageMakerCreateEndpointPolicy<a name="sagemaker-create-endpoint-policy"></a>
+
+Gives permission to create an endpoint in Amazon SageMaker\.
+
+```
+        "Statement": [
+          {
+            "Action": [
+              "sagemaker:CreateEndpoint"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint/${endpointName}",
+                {
+                  "endpointName": {
+                    "Ref": "EndpointName"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## SageMakerCreateEndpointConfigPolicy<a name="sagemaker-create-endpoint-config-policy"></a>
+
+Gives permission to create an endpoint configuration in Amazon SageMaker\.
+
+```
+        "Statement": [
+          {
+            "Action": [
+              "sagemaker:CreateEndpointConfig"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint-config/${endpointConfigName}",
+                {
+                  "endpointConfigName": {
+                    "Ref": "EndpointConfigName"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## EcsRunTaskPolicy<a name="ecs-run-task-policy"></a>
+
+Gives permission to start a new task for a task definition\.
+
+```
+        "Statement": [
+          {
+            "Action": [
+              "ecs:RunTask"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:ecs:${AWS::Region}:${AWS::AccountId}:task-definition/${taskDefinition}",
+                {
+                  "taskDefinition": {
+                    "Ref": "TaskDefinition"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
