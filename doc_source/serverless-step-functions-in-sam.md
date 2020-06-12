@@ -11,6 +11,9 @@ The following are key features of AWS Step Functions:
 
 You can use the [AWS SAM Policy Templates](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html) available for common Step Functions development patterns\. These enable you to orchestrate Lambda functions and other AWS resources to form complex and robust workflows\.
 
+**Note**  
+To manage AWS SAM templates that contain Step Functions state machines, you must use version 0\.52\.0 or later of the AWS SAM CLI\. To check which version you have, execute the command `sam --version`\.
+
 ## Example<a name="serverless-step-functions-in-sam-example"></a>
 
 Following is an example AWS SAM template file snippet that has a Step Functions state machine defined in a definition file\. Note that the `my_state_machine.asl.json` file must be written in [Amazon States Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html)\.

@@ -139,6 +139,10 @@ sam deploy --guided
 
 Follow the on\-screen prompts\. You can just respond with `Enter` to accept the default options provided in the interactive experience\.
 
+**Note**  
+For the prompt `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]` AWS SAM is informing you that the sample application configures an API Gateway API without authorization\. When you deploy the sample application, AWS SAM creates a publicly available URL\.  
+You can acknowledge this notification by answering "Y" to the prompt\. For information configuring authorization, see [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
+
 **Example output:**
 
 ```
@@ -358,6 +362,21 @@ diff api-event.json event.json
 ```
 
 ## Troubleshooting<a name="serverless-getting-started-hello-world-troubleshooting"></a>
+
+### SAM CLI error: "Security Constraints Not Satisfied"<a name="troubleshooting-security-constraints"></a>
+
+When executing `sam deploy --guided`, you are prompted with the question `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]`\. If you respond to this prompt with "N" \(the default response\), you see the following error:
+
+```
+ 
+Error: Security Constraints Not Satisfied
+```
+
+The prompt is informing you that the application you're about to deploy may have an API Gateway API configured without authorization\. By responding "N" to this prompt \(the default\), you are saying this is not OK\.
+
+To fix this, you have the following options:
++ Configure your application with authorization\. For information configuring authorization, see [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
++ Respond to this question with "Y" to indicate that you are OK with deploying an application that has an API Gateway API configured without authorization\.
 
 ### SAM CLI error: "no such option: \-\-app\-template"<a name="serverless-getting-started-hello-world-troubleshooting-app-template"></a>
 

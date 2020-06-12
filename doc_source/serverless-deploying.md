@@ -32,3 +32,20 @@ You can use AWS SAM with a number of other AWS services to automate the deployme
 
 **Topics**
 + [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md)
+
+## Troubleshooting<a name="serverless-deploying-troubleshooting"></a>
+
+### SAM CLI error: "Security Constraints Not Satisfied"<a name="troubleshooting-security-constraints"></a>
+
+When executing `sam deploy --guided`, you are prompted with the question `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]`\. If you respond to this prompt with "N" \(the default response\), you see the following error:
+
+```
+ 
+Error: Security Constraints Not Satisfied
+```
+
+The prompt is informing you that the application you're about to deploy may have an API Gateway API configured without authorization\. By responding "N" to this prompt \(the default\), you are saying this is not OK\.
+
+To fix this, you have the following options:
++ Configure your application with authorization\. For information configuring authorization, see [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
++ Respond to this question with "Y" to indicate that you are OK with deploying an application that has an API Gateway API configured without authorization\.

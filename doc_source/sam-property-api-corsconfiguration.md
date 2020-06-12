@@ -67,9 +67,9 @@ Resources:
     Properties:
       StageName: Prod
       Cors:
-        AllowMethods: "POST, GET"
-        AllowHeaders: "X-Forwarded-For"
-        AllowOrigin: "www.example.com"
-        MaxAge: "600"
+        AllowMethods: "'POST, GET'"
+        AllowHeaders: "'X-Forwarded-For'"
+        AllowOrigin: "'www.example.com'"
+        MaxAge: "'600'"
         AllowCredentials: True
 ```

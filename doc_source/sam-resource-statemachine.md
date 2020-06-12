@@ -4,6 +4,8 @@ Creates an AWS Step Functions state machine, which enables you to orchestrate La
 
 For more information about Step Functions see [AWS Step Functions Developer Guide](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html)\.
 
+**Note**: To manage AWS SAM templates that contain Step Functions state machines, you must use version 0\.52\.0 or later of the AWS SAM CLI\. To check which version you have, execute the command `sam --version`\.
+
 ## Syntax<a name="sam-resource-statemachine-syntax"></a>
 
 To declare this entity in your AWS SAM template, use the following syntax:
@@ -43,7 +45,7 @@ A map \(string to string\) that specifies the mappings for placeholder variables
 
  `DefinitionUri`   <a name="sam-statemachine-definitionuri"></a>
 The Amazon S3 URI or local file path of the state machine definition written in [Amazon States Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html)\.  
-If a local file path is provided, the template must go through the workflow that includes the `sam deploy` or `sam package` command, in order for the definition to be transformed properly\.  
+If a local file path is provided, the template must go through the workflow that includes the `sam deploy` or `sam package` command, in order for the definition to be transformed properly\. To do this, you must use version 0\.52\.0 or later of the AWS SAM CLI\.  
 One of `Definition` or `DefinitionUri` must be provided\.  
 *Type*: String \| [S3Location](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitions3location)  
 *Required*: Conditional  

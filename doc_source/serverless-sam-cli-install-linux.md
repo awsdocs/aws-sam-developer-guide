@@ -142,7 +142,7 @@ You should see output like the following after successful installation of the AW
 
 ```
  
- SAM CLI, version 0.33.0
+ SAM CLI, version 0.52.0
 ```
 
 You're now ready to start development\.
