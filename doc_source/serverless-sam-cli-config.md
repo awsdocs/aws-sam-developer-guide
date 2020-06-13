@@ -31,10 +31,14 @@ Set the region you want to deploy to\. If you omit region, then the AWS SAM CLI 
 The name of the AWS CloudFormation stack you’re deploying to\.
 
 `capabilities`  
-A list of capabilities that you must specify to allow AWS CloudFormation to create certain stacks\. Some stack templates might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter\.  
+A list of capabilities that you must specify to allow AWS CloudFormation to create certain stacks\. Some stack templates might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter\.
 The only valid values are `CAPABILITY_IAM` and `CAPABILITY_NAMED_IAM`\. If you have IAM resources, you can specify either capability\. If you have IAM resources with custom names, you must specify `CAPABILITY_NAMED_IAM`\. If you don't specify this parameter, this action returns an `InsufficientCapabilities` error\.  
 Allowed values: `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`  
 Default value: `CAPABILITY_IAM`
+
+To use both capabilities, create an array following the example below.
+ `capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"` 
+
 
 `s3_bucket`  
 The S3 bucket name used for deployment artifacts for the `sam deploy` command\. You may use your own Amazon S3 bucket by providing your own value here\.
