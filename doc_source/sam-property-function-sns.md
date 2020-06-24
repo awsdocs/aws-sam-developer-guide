@@ -53,14 +53,17 @@ SNS Event Source Example
 #### YAML<a name="sam-property-function-sns--examples--sns-event-source-example--yaml"></a>
 
 ```
-Properties:
-  Topic: arn:aws:sns:us-east-1:123456789012:my_topic
-  SqsSubscription: True
-  FilterPolicy:
-    store: 
-      - example_corp
-    price_usd: 
-      - numeric: 
-          - ">="
-          - 100
+Events:
+  SNSEvent:
+    Type: SNS
+    Properties:
+      Topic: arn:aws:sns:us-east-1:123456789012:my_topic
+      SqsSubscription: True
+      FilterPolicy:
+        store: 
+          - example_corp
+        price_usd: 
+          - numeric: 
+              - ">="
+              - 100
 ```
