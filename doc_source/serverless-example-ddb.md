@@ -87,3 +87,7 @@ Now that you've created the deployment package, you use it to deploy the applica
 1. Insert a record into the table that you just created\.
 
 1. Go to the **Metrics** tab of the table, and choose **View all CloudWatch metrics**\. In the CloudWatch console, choose **Logs** to be able to view the log output\.
+
+## Next Steps<a name="gs-ex2-setup-deploy-app-next-steps"></a>
+
+The AWS SAM GitHub repository contains additional example applications for you to download and experiement with\. To access this repository, see [AWS SAM example applications](https://github.com/aws-samples/serverless-app-examples)\.

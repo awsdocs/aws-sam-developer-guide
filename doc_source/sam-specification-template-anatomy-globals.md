@@ -9,7 +9,7 @@ Example:
 ```
 Globals:
   Function:
-    Runtime: nodejs6.10
+    Runtime: nodejs12.x
     Timeout: 180
     Handler: index.handler
     Environment:
@@ -35,7 +35,7 @@ Resources:
             Method: POST
 ```
 
-In this example, both `HelloWorldFunction` and `ThumbnailFunction` use "nodejs6\.10" for `Runtime`, "180" seconds for `Timeout`, and "index\.handler" for `Handler`\. `HelloWorldFunction` adds the MESSAGE environment variable, in addition to the inherited TABLE\_NAME\. `ThumbnailFunction` inherits all the `Globals` properties and adds an API event source\.
+In this example, both `HelloWorldFunction` and `ThumbnailFunction` use "nodejs12\.x" for `Runtime`, "180" seconds for `Timeout`, and "index\.handler" for `Handler`\. `HelloWorldFunction` adds the MESSAGE environment variable, in addition to the inherited TABLE\_NAME\. `ThumbnailFunction` inherits all the `Globals` properties and adds an API event source\.
 
 ## Supported Resources and Properties<a name="sam-specification-template-anatomy-globals-supported-resources-and-properties"></a>
 
@@ -143,7 +143,7 @@ Example:
 ```
 Globals:
   Function:
-    Runtime: nodejs4.3
+    Runtime: nodejs12.x
 
 Resources:
   MyFunction:

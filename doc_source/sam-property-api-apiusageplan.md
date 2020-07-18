@@ -4,7 +4,7 @@ Configures a usage plan for an API Gateway API\. For more information about usag
 
 ## Syntax<a name="sam-property-api-apiusageplan-syntax"></a>
 
-To declare this entity in your AWS SAM template, use the following syntax:
+To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
 
 ### YAML<a name="sam-property-api-apiusageplan-syntax.yaml"></a>
 
@@ -26,38 +26,38 @@ Determines how this usage plan is configured\. Valid values are `PER_API`, `SHAR
 `NONE` disables the creation or association of a usage plan with this API\. This is only necessary if `SHARED` or `PER_API` is specified in the [Globals Section of the Template](sam-specification-template-anatomy-globals.md)\.  
 *Type*: String  
 *Required*: Yes  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Description`   <a name="sam-api-apiusageplan-description"></a>
 A description of the usage plan\.  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is passed directly to the `[Description](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description)` property of an `AWS::ApiGateway::UsagePlan`\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Description](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description)` property of an `AWS::ApiGateway::UsagePlan` resource\.
 
  `Quota`   <a name="sam-api-apiusageplan-quota"></a>
 Configures the number of requests that users can make within a given interval\.  
 *Type*: [QuotaSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota)  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is passed directly to the `[Quota](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota)` property of an `AWS::ApiGateway::UsagePlan`\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Quota](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota)` property of an `AWS::ApiGateway::UsagePlan` resource\.
 
  `Tags`   <a name="sam-api-apiusageplan-tags"></a>
 An array of arbitrary tags \(key\-value pairs\) to associate with the usage plan\.  
 This property uses the [CloudFormation Tag Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html)\.  
 *Type*: List  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is passed directly to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-tags)` property of an `AWS::ApiGateway::UsagePlan`\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-tags)` property of an `AWS::ApiGateway::UsagePlan` resource\.
 
  `Throttle`   <a name="sam-api-apiusageplan-throttle"></a>
 Configures the overall request rate \(average requests per second\) and burst capacity\.  
 *Type*: [ThrottleSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle)  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is passed directly to the `[Throttle](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle)` property of an `AWS::ApiGateway::UsagePlan`\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Throttle](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle)` property of an `AWS::ApiGateway::UsagePlan` resource\.
 
  `UsagePlanName`   <a name="sam-api-apiusageplan-usageplanname"></a>
 A name for the usage plan\.  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is passed directly to the `[UsagePlanName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname)` property of an `AWS::ApiGateway::UsagePlan`\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[UsagePlanName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname)` property of an `AWS::ApiGateway::UsagePlan` resource\.
 
 ## Examples<a name="sam-property-api-apiusageplan--examples"></a>
 

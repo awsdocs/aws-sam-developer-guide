@@ -96,3 +96,7 @@ TABLE_NAME=Table name obtained from AWS CloudFormation console sam local invoke 
 The `TABLE_NAME=` portion sets the DynamoDB table name\. The `--event` parameter specifies the file that contains the test event message to pass to the Lambda function\.
 
 You can now verify that the expected DynamoDB records were created, based on the results returned by Amazon Rekognition\.
+
+## Next Steps<a name="serverless-example-s3-next-steps"></a>
+
+The AWS SAM GitHub repository contains additional example applications for you to download and experiement with\. To access this repository, see [AWS SAM example applications](https://github.com/aws-samples/serverless-app-examples)\.

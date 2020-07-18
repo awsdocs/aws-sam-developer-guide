@@ -19,7 +19,7 @@ Resources:
    Type: AWS::Serverless::Function
    Properties:
      Handler: index.handler
-     Runtime: nodejs4.3
+     Runtime: nodejs12.x
      CodeUri: s3://bucket/code.zip
 
      AutoPublishAlias: live

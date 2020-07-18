@@ -4,7 +4,7 @@ AWS SAM uses AWS CloudFormation as the underlying deployment mechanism\. For mor
 
 You can deploy your application by using AWS SAM command line interface \(CLI\) commands\. You can also use other AWS services that integrate with AWS SAM to automate your deployments\.
 
-The standard input to deploying serverless applications is the build artifacts created using the `[sam build](sam-cli-command-reference-sam-build.md)`\. For more information about the `sam build` command, see [Building Serverless Applications](serverless-building.md)\.
+The standard input to deploying serverless applications is the build artifacts created using the ``\. For more information about the `sam build` command, see [Building Serverless Applications](serverless-building.md)\.
 
 ## Deploying Using the AWS SAM CLI<a name="serverless-sam-cli-using-package-and-deploy"></a>
 

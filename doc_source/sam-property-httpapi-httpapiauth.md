@@ -6,12 +6,12 @@ For more information about configuring access see [JWT Authorizers](https://docs
 
 ## Syntax<a name="sam-property-httpapi-httpapiauth-syntax"></a>
 
-To declare this entity in your AWS SAM template, use the following syntax:
+To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
 
 ### YAML<a name="sam-property-httpapi-httpapiauth-syntax.yaml"></a>
 
 ```
-  [Authorizers](#sam-httpapi-httpapiauth-authorizers): [OAuth2Authorizer](sam-property-httpapi-oauth2authorizer.md)
+  [Authorizers](#sam-httpapi-httpapiauth-authorizers): OAuth2Authorizer
   [DefaultAuthorizer](#sam-httpapi-httpapiauth-defaultauthorizer): String
 ```
 
@@ -22,7 +22,7 @@ The authorizer used to control access to your API Gateway API\.
 *Type*: [OAuth2Authorizer](sam-property-httpapi-oauth2authorizer.md)  
 *Required*: No  
 *Default*: None  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
 *Additional Notes*: SAM adds the Authorizers to the OpenApi definition of an Api\.
 
  `DefaultAuthorizer`   <a name="sam-httpapi-httpapiauth-defaultauthorizer"></a>
@@ -30,7 +30,7 @@ Specify a default authorizer for an API Gateway API, which will be used for auth
 *Type*: String  
 *Required*: No  
 *Default*: None  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-httpapi-httpapiauth--examples"></a>
 

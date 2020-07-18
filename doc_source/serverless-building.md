@@ -4,7 +4,7 @@ Building your serverless application involves taking your AWS SAM template file,
 
 For example, you might want to locally test your application, or you might want to deploy your application using the AWS SAM CLI\. Both of these activities use the build artifacts of your application as inputs\.
 
-This section shows you how to use the `[sam build](sam-cli-command-reference-sam-build.md)` command to build serverless applications using AWS SAM\. You have the option to build all functions and layers of your application, or individual components of your application, like a specific function or layer\.
+This section shows you how to use the `` command to build serverless applications using AWS SAM\. You have the option to build all functions and layers of your application, or individual components of your application, like a specific function or layer\.
 
 **Topics**
 + [Building Applications](serverless-sam-cli-using-build.md)

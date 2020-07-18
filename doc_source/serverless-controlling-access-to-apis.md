@@ -50,7 +50,7 @@ Resources:
     Properties:
       CodeUri: ./src
       Handler: index.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
       Events:
         GetRoot:
           Type: Api
@@ -64,7 +64,7 @@ Resources:
     Properties:
       CodeUri: ./src
       Handler: authorizer.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
 ```
 
 For more information about API Gateway Lambda authorizers, see [Use API Gateway Lambda Authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html) in the *API Gateway Developer Guide*\.
@@ -98,7 +98,7 @@ Resources:
     Properties:
       CodeUri: ./src
       Handler: index.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
       Events:
         GetRoot:
           Type: Api
@@ -112,7 +112,7 @@ Resources:
     Properties:
       CodeUri: ./src
       Handler: authorizer.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
 ```
 
 For more information about API Gateway Lambda authorizers, see [Use API Gateway Lambda Authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html) in the *API Gateway Developer Guide*\.
@@ -143,7 +143,7 @@ Resources:
     Properties:
       CodeUri: ./src
       Handler: lambda.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
       Events:
         Root:
           Type: Api
@@ -198,7 +198,7 @@ Resources:
     Properties:
       CodeUri: .
       Handler: index.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
       Events:
         GetRoot:
           Type: Api
@@ -232,7 +232,7 @@ Resources:
     Properties:
       CodeUri: .
       Handler: index.handler
-      Runtime: nodejs8.10
+      Runtime: nodejs12.x
       Events:
         ApiKey:
           Type: Api
@@ -308,7 +308,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.get
-      Runtime: nodejs6.10
+      Runtime: nodejs12.x
       InlineCode: module.exports = async () => throw new Error('Check out the response headers!')
       Events:
         GetResource:

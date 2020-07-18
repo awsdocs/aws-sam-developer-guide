@@ -72,18 +72,18 @@ The following is a table of the available policy templates\.
 
 | Policy Template | Description | 
 | --- | --- | 
-| [SQSPollerPolicy](serverless-policy-template-list.md#sqs-poller-policy) | Gives permission to poll an Amazon SQS Queue\. | 
-| [LambdaInvokePolicy](serverless-policy-template-list.md#lambda-invoke-policy) | Gives permission to invoke a Lambda function, alias, or version\. | 
+| [SQSPollerPolicy](serverless-policy-template-list.md#sqs-poller-policy) | Gives permission to poll an Amazon Simple Queue Service \(Amazon SQS\) queue\. | 
+| [LambdaInvokePolicy](serverless-policy-template-list.md#lambda-invoke-policy) | Gives permission to invoke an AWS Lambda function, alias, or version\. | 
 | [CloudWatchDescribeAlarmHistoryPolicy](serverless-policy-template-list.md#cloudwatch-describe-alarm-history-policy) | Gives permission to describe CloudWatch alarm history\. | 
-| [CloudWatchPutMetricPolicy](serverless-policy-template-list.md#cloudwatch-put-metric-policy) | Gives permission to put metrics to CloudWatch\. | 
-| [EC2DescribePolicy](serverless-policy-template-list.md#ec2-describe-policy) | Gives permission to describe Amazon EC2 instances\. | 
-| [DynamoDBCrudPolicy](serverless-policy-template-list.md#dynamo-db-crud-policy) | Gives create, read, update, and delete permissions to a DynamoDB table\. | 
+| [CloudWatchPutMetricPolicy](serverless-policy-template-list.md#cloudwatch-put-metric-policy) | Gives permission to send metrics to CloudWatch\. | 
+| [EC2DescribePolicy](serverless-policy-template-list.md#ec2-describe-policy) | Gives permission to describe Amazon Elastic Compute Cloud \(Amazon EC2\) instances\. | 
+| [DynamoDBCrudPolicy](serverless-policy-template-list.md#dynamo-db-crud-policy) | Gives create, read, update, and delete permissions to an Amazon DynamoDB table\. | 
 | [DynamoDBReadPolicy](serverless-policy-template-list.md#dynamo-db-read-policy) | Gives read\-only permission to a DynamoDB table\. | 
 | [DynamoDBWritePolicy](serverless-policy-template-list.md#dynamo-db-write-policy) | Gives write\-only permission to a DynamoDB table\. | 
 | [DynamoDBReconfigurePolicy](serverless-policy-template-list.md#dynamo-db-reconfigure-policy) | Gives permission to reconfigure a DynamoDB table\. | 
-| [SESSendBouncePolicy](serverless-policy-template-list.md#ses-send-bounce-policy) | Gives SendBounce permission to an Amazon SES identity\. | 
+| [SESSendBouncePolicy](serverless-policy-template-list.md#ses-send-bounce-policy) | Gives SendBounce permission to an Amazon Simple Email Service \(Amazon SES\) identity\. | 
 | [ElasticsearchHttpPostPolicy](serverless-policy-template-list.md#elastic-search-http-post-policy) | Gives POST permission to Amazon Elasticsearch Service\. | 
-| [S3ReadPolicy](serverless-policy-template-list.md#s3-read-policy) | Gives read\-only permission to objects in an Amazon S3 bucket\. | 
+| [S3ReadPolicy](serverless-policy-template-list.md#s3-read-policy) | Gives read\-only permission to objects in an Amazon Simple Storage Service \(Amazon S3\) bucket\. | 
 | [S3WritePolicy](serverless-policy-template-list.md#s3-write-policy) | Gives write permission to objects in an Amazon S3 bucket\. | 
 | [S3CrudPolicy](serverless-policy-template-list.md#s3-crud-policy) | Gives create, read, update, and delete permission to objects in an Amazon S3 bucket\. | 
 | [AMIDescribePolicy](serverless-policy-template-list.md#ami-describe-policy) | Gives permission to describe Amazon Machine Images \(AMIs\)\. | 
@@ -93,25 +93,25 @@ The following is a table of the available policy templates\.
 | [RekognitionReadPolicy](serverless-policy-template-list.md#rekognition-read-policy) | Gives permission to list and search faces\. | 
 | [RekognitionWriteOnlyAccessPolicy](serverless-policy-template-list.md#rekognition-write-only-access-policy) | Gives permission to create collection and index faces\. | 
 | [SQSSendMessagePolicy](serverless-policy-template-list.md#sqs-send-message-policy) | Gives permission to send message to an Amazon SQS queue\. | 
-| [SNSPublishMessagePolicy](serverless-policy-template-list.md#sqs-publish-message-policy) | Gives permission to publish a message to an Amazon SNS topic\. | 
-| [VPCAccessPolicy](serverless-policy-template-list.md#vpc-access-policy) | Gives access to create, delete, describe, and detach Elastic Network Interfaces\. | 
+| [SNSPublishMessagePolicy](serverless-policy-template-list.md#sqs-publish-message-policy) | Gives permission to publish a message to an Amazon Simple Notification Service \(Amazon SNS\) topic\. | 
+| [VPCAccessPolicy](serverless-policy-template-list.md#vpc-access-policy) | Gives access to create, delete, describe, and detach elastic network interfaces\. | 
 | [DynamoDBStreamReadPolicy](serverless-policy-template-list.md#dynamo-db-stream-read-policy) | Gives permission to describe and read DynamoDB streams and records\. | 
 | [KinesisStreamReadPolicy](serverless-policy-template-list.md#kinesis-stream-read-policy) | Gives permission to list and read an Amazon Kinesis stream\. | 
 | [SESCrudPolicy](serverless-policy-template-list.md#ses-crud-policy) | Gives permission to send email and verify identity\. | 
 | [SNSCrudPolicy](serverless-policy-template-list.md#sns-crud-policy) | Gives permission to create, publish, and subscribe to Amazon SNS topics\. | 
 | [KinesisCrudPolicy](serverless-policy-template-list.md#kinesis-crud-policy) | Gives permission to create, publish, and delete an Amazon Kinesis stream\. | 
-| [KMSDecryptPolicy](serverless-policy-template-list.md#kms-decrypt-policy) | Gives permission to decrypt with an AWS KMS key\. | 
-| [KMSEncryptPolicy](serverless-policy-template-list.md#kms-encrypt-policy) | Gives permission to encrypt with an AWS KMS key\. | 
+| [KMSDecryptPolicy](serverless-policy-template-list.md#kms-decrypt-policy) | Gives permission to decrypt with an AWS Key Management Service \(AWS KMS\) key\. | 
+| [KMSEncryptPolicy](serverless-policy-template-list.md#kms-encrypt-policy) | Gives permission to encrypt with an AWS Key Management Service \(AWS KMS\) key\. | 
 | [PollyFullAccessPolicy](serverless-policy-template-list.md#polly-full-access-policy) | Gives full access permission to Amazon Polly lexicon resources\. | 
 | [S3FullAccessPolicy](serverless-policy-template-list.md#s3-full-access-policy) | Gives full access permission to objects in an Amazon S3 bucket\. | 
 | [CodePipelineLambdaExecutionPolicy](serverless-policy-template-list.md#code-pipeline-lambda-execution-policy) | Gives permission for a Lambda function invoked by CodePipeline to report the status of the job\. | 
 | [ServerlessRepoReadWriteAccessPolicy](serverless-policy-template-list.md#serverlessrepo-read-write-access-policy) | Gives permission to create and list applications in the AWS Serverless Application Repository service\. | 
 | [EC2CopyImagePolicy](serverless-policy-template-list.md#ec2-copy-image-policy) | Gives permission to copy Amazon EC2 images\. | 
 | [AWSSecretsManagerRotationPolicy](serverless-policy-template-list.md#secrets-manager-rotation-policy) | Gives permission to rotate a secret in AWS Secrets Manager\. | 
-| [AWSSecretsManagerGetSecretValuePolicy](serverless-policy-template-list.md#secrets-manager-get-secret-value-policy) | Gives permission to GetSecretValue for the specified AWS Secrets Manager secret\. | 
+| [AWSSecretsManagerGetSecretValuePolicy](serverless-policy-template-list.md#secrets-manager-get-secret-value-policy) | Gives permission to get the secret value for the specified AWS Secrets Manager secret\. | 
 | [CodePipelineReadOnlyPolicy](serverless-policy-template-list.md#code-pipeline-readonly-policy) | Gives read permission to get details about a CodePipeline pipeline\. | 
 | [CloudWatchDashboardPolicy](serverless-policy-template-list.md#cloudwatch-dashboard-policy) | Gives permissions to put metrics to operate on CloudWatch dashboards\. | 
-| [RekognitionFacesManagementPolicy](serverless-policy-template-list.md#rekognition-face-management-policy) | Gives permission to add, delete, and search faces in a collection\. | 
+| [RekognitionFacesManagementPolicy](serverless-policy-template-list.md#rekognition-face-management-policy) | Gives permission to add, delete, and search faces in an Amazon Rekognition collection\. | 
 | [RekognitionFacesPolicy](serverless-policy-template-list.md#rekognition-faces-policy) | Gives permission to compare and detect faces and labels\. | 
 | [RekognitionLabelsPolicy](serverless-policy-template-list.md#rekognition-labels-policy) | Gives permission to detect object and moderation labels\. | 
 | [DynamoDBBackupFullAccessPolicy](serverless-policy-template-list.md#ddb-back-full-policy) | Gives read and write permission to DynamoDB on\-demand backups for a table\. | 
@@ -126,8 +126,8 @@ The following is a table of the available policy templates\.
 | [OrganizationsListAccountsPolicy](serverless-policy-template-list.md#organizations-list-accounts-policy) | Gives read\-only permission to list child account names and IDs\. | 
 | [SESBulkTemplatedCrudPolicy](serverless-policy-template-list.md#ses-bulk-templated-crud-policy) | Gives permission to send email, templated email, templated bulk emails and verify identity\. | 
 | [SESEmailTemplateCrudPolicy](serverless-policy-template-list.md#ses-email-template-crud-policy) | Gives permission to create, get, list, update and delete Amazon SES email templates\. | 
-| [FilterLogEventsPolicy](serverless-policy-template-list.md#filter-log-events-policy) | Gives permission to filter log events from a specified log group\. | 
-| [SSMParameterReadPolicy](serverless-policy-template-list.md#ssm-parameter-read-policy) | Gives permission to access a parameter to load secrets in this account\. | 
+| [FilterLogEventsPolicy](serverless-policy-template-list.md#filter-log-events-policy) | Gives permission to filter CloudWatch Logs events from a specified log group\. | 
+| [SSMParameterReadPolicy](serverless-policy-template-list.md#ssm-parameter-read-policy) | Gives permission to access a parameters from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. | 
 | [StepFunctionsExecutionPolicy](serverless-policy-template-list.md#stepfunctions-execution-policy) | Gives permission to start a Step Functions state machine execution\. | 
 | [CodeCommitCrudPolicy](serverless-policy-template-list.md#codecommit-crud-policy) | Gives permissions to create/read/update/delete objects within a specific CodeCommit repository\. | 
 | [CodeCommitReadPolicy](serverless-policy-template-list.md#codecommit-read-policy) | Gives permissions to read objects within a specific CodeCommit repository\. | 
@@ -145,6 +145,7 @@ The following is a table of the available policy templates\.
 | [SageMakerCreateEndpointPolicy](serverless-policy-template-list.md#sagemaker-create-endpoint-policy) | Gives permission to create an endpoint in Amazon SageMaker\. | 
 | [SageMakerCreateEndpointConfigPolicy](serverless-policy-template-list.md#sagemaker-create-endpoint-config-policy) | Gives permission to create an endpoint configuration in Amazon SageMaker\. | 
 | [EcsRunTaskPolicy](serverless-policy-template-list.md#ecs-run-task-policy) | Gives permission to start a new task for a task definition\. | 
+| [EFSWriteAccessPolicy](serverless-policy-template-list.md#efs-write-access-policy) | Gives permission to mount an Amazon EFS file system with write access\. | 
 
 ## Troubleshooting<a name="serverless-policy-template-troubleshooting"></a>
 

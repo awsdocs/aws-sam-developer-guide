@@ -6,7 +6,7 @@ SAM will automatically add appropriate permission to your Lambda function execut
 
 ## Syntax<a name="sam-property-function-deadletterqueue-syntax"></a>
 
-To declare this entity in your AWS SAM template, use the following syntax:
+To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
 
 ### YAML<a name="sam-property-function-deadletterqueue-syntax.yaml"></a>
 
@@ -21,14 +21,14 @@ To declare this entity in your AWS SAM template, use the following syntax:
 The Amazon Resource Name \(ARN\) of an Amazon SQS queue or Amazon SNS topic\.  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is passed directly to the `[TargetArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html#cfn-lambda-function-deadletterconfig-targetarn)` property of the `AWS::Lambda::Function` `DeadLetterConfig` data type\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[TargetArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html#cfn-lambda-function-deadletterconfig-targetarn)` property of the `AWS::Lambda::Function` `DeadLetterConfig` data type\.
 
  `Type`   <a name="sam-function-deadletterqueue-type"></a>
 The type of dead letter queue\.  
 Supported values: `SNS`, `SQS`\.  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-deadletterqueue--examples"></a>
 

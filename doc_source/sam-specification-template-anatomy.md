@@ -1,13 +1,13 @@
 # AWS SAM Template Anatomy<a name="sam-specification-template-anatomy"></a>
 
-The format of an AWS SAM template closely follows the format of an AWS CloudFormation template, which is described in [Template Anatomy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html) in the *AWS CloudFormation User Guide*\.
+The format of an AWS SAM template file closely follows the format of an AWS CloudFormation template file, which is described in [Template Anatomy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html) in the *AWS CloudFormation User Guide*\.
 
-The primary differences between AWS SAM templates and AWS CloudFormation templates are the following:
-+ **Transform declaration\.** The declaration `Transform: AWS::Serverless-2016-10-31` is required for AWS SAM templates\. This declaration identifies an AWS CloudFormation template as an AWS SAM template\. For more information about transforms, see [Transform](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html) in the *AWS CloudFormation User Guide*\.
+The primary differences between AWS SAM template files and AWS CloudFormation template files are the following:
++ **Transform declaration\.** The declaration `Transform: AWS::Serverless-2016-10-31` is required for AWS SAM template files\. This declaration identifies an AWS CloudFormation template file as an AWS SAM template file\. For more information about transforms, see [Transform](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html) in the *AWS CloudFormation User Guide*\.
 + **Globals section\. ** The Globals section is unique to AWS SAM\. It defines properties that are common to all your serverless functions and APIs\. All the `AWS::Serverless::Function`, `AWS::Serverless::Api`, and `AWS::Serverless::SimpleTable` resources inherit the properties that are defined in the Globals section\. For more information about the Globals section, see [Globals Section of the Template](sam-specification-template-anatomy-globals.md) in the *AWS Serverless Application Model Developer Guide*\.
 + **Resources section\. ** In AWS SAM templates the Resources section can contain a combination of AWS CloudFormation resources and AWS SAM resources\. For more information about AWS CloudFormation resources, see [AWS Resource and Property Types Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html) in the *AWS CloudFormation User Guide*\. For more information about AWS SAM resources see [AWS SAM Resource and Property Reference](sam-specification-resources-and-properties.md) in the *AWS Serverless Application Model Developer Guide*\.
 
-All other sections of an AWS SAM template correspond to the AWS CloudFormation template section of the same name\.
+All other sections of an AWS SAM template file correspond to the AWS CloudFormation template file section of the same name\.
 
 ## YAML<a name="template-anatomy-outline.yaml"></a>
 
@@ -82,3 +82,7 @@ This section is similar to the Resources section of AWS CloudFormation templates
 **[Outputs \(optional\)](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html)**  
 Describes the values that are returned whenever you view your stack's properties\. For example, you can declare an output for an S3 bucket name, and then call the `aws cloudformation describe-stacks` AWS CLI command to view the name\.  
 This section corresponds directly with the Outputs section of AWS CloudFormation templates\.
+
+## Next Steps<a name="template-anatomy-next-steps"></a>
+
+To download and deploy a sample serverless application that contains an AWS SAM template file, see [Getting Started with AWS SAM](serverless-getting-started.md) and execute the [Tutorial: Deploying a Hello World Application](serverless-getting-started-hello-world.md)\.

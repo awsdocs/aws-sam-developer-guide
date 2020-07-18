@@ -4,7 +4,7 @@ An application that has been published to the [AWS Serverless Application Reposi
 
 ## Syntax<a name="sam-property-application-applicationlocationobject-syntax"></a>
 
-To declare this entity in your AWS SAM template, use the following syntax:
+To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
 
 ### YAML<a name="sam-property-application-applicationlocationobject-syntax.yaml"></a>
 
@@ -19,13 +19,13 @@ To declare this entity in your AWS SAM template, use the following syntax:
 The Amazon Resource Name \(ARN\) of the application\.  
 *Type*: String  
 *Required*: Yes  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `SemanticVersion`   <a name="sam-application-applicationlocationobject-semanticversion"></a>
 The semantic version of the application\.  
 *Type*: String  
 *Required*: Yes  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-application-applicationlocationobject--examples"></a>
 

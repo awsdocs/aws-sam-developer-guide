@@ -1,6 +1,6 @@
 # Invoking Functions Locally<a name="serverless-sam-cli-using-invoke"></a>
 
-You can invoke your function locally by using the `[sam local invoke](sam-cli-command-reference-sam-local-invoke.md)` command and providing its function logical ID and an event file\. Alternatively, `sam local invoke` also accepts `stdin` as an event\.
+You can invoke your function locally by using the `` command and providing its function logical ID and an event file\. Alternatively, `sam local invoke` also accepts `stdin` as an event\.
 
 **Note**  
 The `sam local invoke` command described in this section corresponds to the AWS CLI command [ `aws lambda invoke`](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\. You can use either version of this command to invoke a Lambda function that you've uploaded to the AWS Cloud\.

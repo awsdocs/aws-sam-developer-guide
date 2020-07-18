@@ -18,7 +18,7 @@ Here is an exampe AWS SAM CLI config file that is created when using the `sam de
  [default.deploy.parameters]
  region = "us-west-2"
  stack_name = "my-app-stack"
- capabilites = "CAPABILITY_IAM"
+ capabilities = "CAPABILITY_IAM"
  s3_bucket = "my-source-bucket"
 ```
 
@@ -31,9 +31,9 @@ Set the region you want to deploy to\. If you omit region, then the AWS SAM CLI 
 The name of the AWS CloudFormation stack you’re deploying to\.
 
 `capabilities`  
-A list of capabilities that you must specify to allow AWS CloudFormation to create certain stacks\. Some stack templates might include resources that can affect permissions in your AWS account, for example, by creating new AWS Identity and Access Management \(IAM\) users\. For those stacks, you must explicitly acknowledge their capabilities by specifying this parameter\.  
-The only valid values are `CAPABILITY_IAM` and `CAPABILITY_NAMED_IAM`\. If you have IAM resources, you can specify either capability\. If you have IAM resources with custom names, you must specify `CAPABILITY_NAMED_IAM`\. If you don't specify this parameter, this action returns an `InsufficientCapabilities` error\.  
-Allowed values: `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`  
+In some cases, you must explicitly acknowledge that your stack template contains certain capabilities in order for AWS CloudFormation to create the stack\. For more information see [CreateChangeSet](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html) in the *AWS CloudFormation API Reference*\.  
+The valid values are the same as the [CreateChangeSet](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html) AWS CloudFormation API\.  
+Valid values: `CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_AUTO_EXPAND`  
 Default value: `CAPABILITY_IAM`
 
 `s3_bucket`  
