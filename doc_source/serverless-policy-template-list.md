@@ -1587,7 +1587,7 @@ Gives permission to start a Step Functions state machine execution\.
               "Fn::Sub": [
                 "arn:${AWS::Partition}:states:${AWS::Region}:${AWS::AccountId}:stateMachine:${stateMachineName}",
                 {
-                  "stateMachineName": {
+                  "StateMachineName": {
                     "Ref": "StateMachineName"
                   }
                 }
