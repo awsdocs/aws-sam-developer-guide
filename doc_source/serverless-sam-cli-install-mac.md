@@ -54,7 +54,7 @@ To install Homebrew, you must first install Git\. For more information about Git
 Once you have successfully installed Git, run the following to install Homebrew, making sure to follow the prompts:
 
 ```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
 Verify that Homebrew is installed:
