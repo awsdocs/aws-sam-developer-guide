@@ -44,7 +44,7 @@ Property to define the type of API Gateway endpoint to be mapped to the custom d
 Valid values are `REGIONAL` or `EDGE`\.  
 *Type*: String  
 *Required*: No  
-*Default*: REGIONAL  
+*Default*: `REGIONAL`   
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Route53`   <a name="sam-api-domainconfiguration-route53"></a>

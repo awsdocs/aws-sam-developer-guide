@@ -93,10 +93,10 @@ A string\-to\-string map that specifies the tags added to the state machine and 
 
  `Type`   <a name="sam-statemachine-type"></a>
 The type of the state machine\.  
-Valid values: STANDARD or EXPRESS  
+Valid values: `STANDARD` or `EXPRESS`\.  
 *Type*: String  
 *Required*: No  
-*Default*: STANDARD  
+*Default*: `STANDARD`   
 *AWS CloudFormation compatibility*: This property is passed directly to the `[StateMachineType](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinetype)` property of an `AWS::StepFunctions::StateMachine` resource\.
 
 ## Return Values<a name="sam-resource-statemachine-return-values"></a>

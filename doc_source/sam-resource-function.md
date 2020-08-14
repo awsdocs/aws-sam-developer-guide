@@ -215,7 +215,7 @@ The maximum time that the function can run before it is killed, in seconds\.
 
  `Tracing`   <a name="sam-function-tracing"></a>
 The string that specifies the function's X\-Ray tracing mode\. For more information about X\-Ray, see [Using AWS X\-Ray](https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html) in the AWS Lambda Developer Guide\.  
-Supported values: Active and PassThrough  
+Supported values: `Active` and `PassThrough`\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[TracingConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig)` property of an `AWS::Lambda::Function` resource\. If `Tracing` is set to `Active`, then AWS SAM adds the `arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess` policy to the Lambda role\.

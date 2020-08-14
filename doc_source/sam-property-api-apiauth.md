@@ -54,11 +54,11 @@ Specify a default authorizer for an API Gateway API, which will be used for auth
 
  `InvokeRole`   <a name="sam-api-apiauth-invokerole"></a>
 Sets integration credentials for all resources and methods to this value\.  
-Supported values: CALLER\_CREDENTIALS, NONE, IAM Role Arn\.  
+Supported values: `CALLER_CREDENTIALS`, `NONE`, IAM Role Arn\.  
 `CALLER_CREDENTIALS` maps to `arn:aws:iam::*:user/*`, which uses the caller credentials to invoke the endpoint\.  
 *Type*: String  
 *Required*: No  
-*Default*: CALLER\_CREDENTIALS  
+*Default*: `CALLER_CREDENTIALS`   
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `ResourcePolicy`   <a name="sam-api-apiauth-resourcepolicy"></a>

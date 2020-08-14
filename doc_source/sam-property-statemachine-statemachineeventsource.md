@@ -9,7 +9,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 ### YAML<a name="sam-property-statemachine-statemachineeventsource-syntax.yaml"></a>
 
 ```
-  [Properties](#sam-statemachine-statemachineeventsource-properties): Schedule | CloudWatchEvent | EventBridgeRule | StateMachineApi
+  [Properties](#sam-statemachine-statemachineeventsource-properties): Schedule | CloudWatchEvent | EventBridgeRule | Api
   [Type](#sam-statemachine-statemachineeventsource-type): String
 ```
 
@@ -17,7 +17,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
  `Properties`   <a name="sam-statemachine-statemachineeventsource-properties"></a>
 An object describing the properties of this event mapping\. The set of properties must conform to the defined `Type`\.  
-*Type*: [Schedule](sam-property-statemachine-schedule.md) \| [CloudWatchEvent](sam-property-statemachine-statemachinecloudwatchevent.md) \| [EventBridgeRule](sam-property-statemachine-eventbridgerule.md) \| [StateMachineApi](sam-property-statemachine-statemachineapi.md)  
+*Type*: [Schedule](sam-property-statemachine-schedule.md) \| [CloudWatchEvent](sam-property-statemachine-statemachinecloudwatchevent.md) \| [EventBridgeRule](sam-property-statemachine-eventbridgerule.md) \| [Api](sam-property-statemachine-statemachineapi.md)  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 

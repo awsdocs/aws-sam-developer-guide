@@ -10,7 +10,7 @@ The configuration file for a project should be created as `samconfig.toml` in yo
 
 ## Example<a name="serverless-sam-cli-config-example"></a>
 
-Here is an exampe AWS SAM CLI config file that is created when using the `sam deploy --guided` command:
+Here is an example AWS SAM CLI config file that is created when using the `sam deploy --guided` command:
 
 ```
  

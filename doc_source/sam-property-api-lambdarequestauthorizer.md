@@ -40,10 +40,10 @@ Adds authorizer credentials to the OpenApi definition of the Lambda authorizer\.
 
  `FunctionPayloadType`   <a name="sam-api-lambdarequestauthorizer-functionpayloadtype"></a>
 This property can be used to define the type of Lambda Authorizer for an API\.  
-Supported values: TOKEN and REQUEST  
+Supported values: `TOKEN` and `REQUEST`\.  
 *Type*: String  
 *Required*: No  
-*Default*: TOKEN  
+*Default*: `TOKEN`   
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Identity`   <a name="sam-api-lambdarequestauthorizer-identity"></a>

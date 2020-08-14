@@ -37,23 +37,23 @@ sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam loc
 | \-\-help | Shows this message and exits\. | 
 
 **Commands:**
-+ alexa\-skills\-kit
-+ alexa\-smart\-home
-+ apigateway
-+ batch
-+ cloudformation
-+ cloudfront
-+ cloudwatch
-+ codecommit
-+ codepipeline
-+ cognito
-+ config
-+ dynamodb
-+ kinesis
-+ lex
-+ rekognition
-+ s3
-+ ses
-+ sns
-+ sqs
-+ stepfunctions
++ `alexa-skills-kit`
++ `alexa-smart-home`
++ `apigateway`
++ `batch`
++ `cloudformation`
++ `cloudfront`
++ `cloudwatch`
++ `codecommit`
++ `codepipeline`
++ `cognito`
++ `config`
++ `dynamodb`
++ `kinesis`
++ `lex`
++ `rekognition`
++ `s3`
++ `ses`
++ `sns`
++ `sqs`
++ `stepfunctions`

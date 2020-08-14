@@ -34,7 +34,7 @@ This guide assumes that you've completed the steps in the [Installing the AWS SA
 
 1. Installed Homebrew\. Note: Homebrew is only a prerequisite for Linux and macOS\.
 
-1. Installed the AWS SAM CLI\. Note: Make sure you have version 0\.33\.0 or later\. You can check which version you have by executing the command `sam --version`\.
+1. Installed the AWS SAM CLI\. Note: Make sure you have version 1\.0\.0 or later\. You can check which version you have by executing the command `sam --version`\.
 
 ## Step 1: Download a Sample AWS SAM Application<a name="serverless-getting-started-hello-world-initialize"></a>
 

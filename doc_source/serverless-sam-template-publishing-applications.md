@@ -24,8 +24,8 @@ Before you publish an application to the AWS Serverless Application Repository, 
 + Your application code and dependencies referenced by the AWS SAM template\.
 + A semantic version for your application \(required to share your application publicly\)\. This value can be as simple as 1\.0\.
 + A URL that points to your application's source code\.
-+ A README\.md file\. This file should describe how customers can use your application, and how to configure it before deploying it in their own AWS accounts\. 
-+ A LICENSE\.txt file \(required to share your application publicly\)\.
++ A `README.md` file\. This file should describe how customers can use your application, and how to configure it before deploying it in their own AWS accounts\. 
++ A `LICENSE.txt` file \(required to share your application publicly\)\.
 + A valid Amazon S3 bucket policy that grants the service read permissions for artifacts uploaded to Amazon S3 when you packaged your application\. To do this, follow these steps:
 
   1. Open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)\.

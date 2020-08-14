@@ -2,7 +2,7 @@
 
 The object describing a `Kinesis` event source type\.
 
-SAM generates [AWS::Lambda::EventSourceMapping](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html) resource when this event type is set
+AWS SAM generates an [AWS::Lambda::EventSourceMapping](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html) resource when this event type is set\.
 
 ## Syntax<a name="sam-property-function-kinesis-syntax"></a>
 

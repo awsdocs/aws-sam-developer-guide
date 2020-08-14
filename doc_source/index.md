@@ -66,6 +66,7 @@ Amazon's trademarks and trade dress may not be used in
                + [HttpApiFunctionAuth](sam-property-function-httpapifunctionauth.md)
             + [IoTRule](sam-property-function-iotrule.md)
             + [Kinesis](sam-property-function-kinesis.md)
+            + [MSK](sam-property-function-msk.md)
             + [S3](sam-property-function-s3.md)
             + [Schedule](sam-property-function-schedule.md)
             + [SNS](sam-property-function-sns.md)
@@ -145,4 +146,4 @@ Amazon's trademarks and trade dress may not be used in
       + [Policy Template List](serverless-policy-template-list.md)
    + [Telemetry in the AWS SAM CLI](serverless-sam-telemetry.md)
    + [Important Notes](important-notes.md)
-+ [Document History for AWS Serverless Application Model](doc-history.md)
++ [Document History for AWS SAM](doc-history.md)
