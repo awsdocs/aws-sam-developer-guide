@@ -75,3 +75,9 @@ sam build function-logical-id
 # Build the entire application, including the layers that any function depends on
 sam build
 ```
+
+### Interesting Github Pages about Lambda Layers
+
+[Keith's Layers (Klayers)](https://github.com/keithrozario/Klayers)
+[Git Binaries fro AWS Layers](https://github.com/lambci/git-lambda-layer)
+[Serverless Ninja Github](https://github.com/allanchua101/serverless-ninja/tree/master/005-shared-layers)
