@@ -79,5 +79,5 @@ sam build
 ### Interesting Github Pages about Lambda Layers
 
 [Keith's Layers (Klayers)](https://github.com/keithrozario/Klayers)
-[Git Binaries fro AWS Layers](https://github.com/lambci/git-lambda-layer)
+[Git Binaries for AWS Layers](https://github.com/lambci/git-lambda-layer)
 [Serverless Ninja Github](https://github.com/allanchua101/serverless-ninja/tree/master/005-shared-layers)
