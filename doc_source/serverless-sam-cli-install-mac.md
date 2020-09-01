@@ -54,7 +54,7 @@ To install Homebrew, you must first install Git\. For more information about Git
 Once you have successfully installed Git, run the following to install Homebrew, making sure to follow the prompts:
 
 ```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
 Verify that Homebrew is installed:
@@ -67,8 +67,9 @@ You should see output like the following on successful installation of Homebrew:
 
 ```
  
- Homebrew 2.1.6 
- Homebrew/homebrew-core (git revision ef21; last commit 2019-06-19)
+Homebrew 2.4.11
+Homebrew/homebrew-core (git revision 54246b; last commit 2020-08-13)
+Homebrew/homebrew-cask (git revision 4fd7ce; last commit 2020-08-14)
 ```
 
 ## Step 5: Install the AWS SAM CLI<a name="serverless-sam-cli-install-mac-sam-cli"></a>
@@ -90,7 +91,7 @@ You should see output like the following after successful installation of the AW
 
 ```
  
- SAM CLI, version 1.0.0
+SAM CLI, version 1.1.0
 ```
 
 You're now ready to start development\.
