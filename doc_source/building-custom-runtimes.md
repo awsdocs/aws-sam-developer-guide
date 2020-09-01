@@ -27,9 +27,9 @@ Resources:
 The following `makefile` contains the build target and commands that will be executed\.
 
 ```
-    build-HelloRustFunction:
-    	cargo build --release --target x86_64-unknown-linux-musl
-    	cp ./target/x86_64-unknown-linux-musl/release/bootstrap $(ARTIFACTS_DIR)
+build-HelloRustFunction:
+  cargo build --release --target x86_64-unknown-linux-musl
+  cp ./target/x86_64-unknown-linux-musl/release/bootstrap $(ARTIFACTS_DIR)
 ```
 
 For more information about setting up your development environment in order to execute the `cargo build` command in the previous `makefile`, see the [Rust Runtime for AWS Lambda](https://aws.amazon.com/blogs/opensource/rust-runtime-for-aws-lambda/) blog post\.
