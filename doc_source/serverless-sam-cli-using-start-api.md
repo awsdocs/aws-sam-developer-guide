@@ -5,7 +5,7 @@ Use the `` command to start a local instance of API Gateway that you will use to
 **Note**  
 "Hot reloading" is when only the files that changed are refreshed without losing the state of the application\. In contrast, "live reloading" is when the entire application is refreshed, such that the state of the application is lost\.
 
-You must execute `sam local invoke` in the project directory containing the function you want to invoke\.
+You must execute `sam local start-api` in the project directory containing the function you want to invoke\.
 
 Example:
 
