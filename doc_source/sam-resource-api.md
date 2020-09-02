@@ -25,7 +25,7 @@ Properties:
   [DefinitionBody](#sam-api-definitionbody): String
   [DefinitionUri](#sam-api-definitionuri): String | ApiDefinition
   [Domain](#sam-api-domain): DomainConfiguration
-  [EndpointConfiguration](#sam-api-endpointconfiguration): String
+  [EndpointConfiguration](#sam-api-endpointconfiguration): EndpointConfiguration
   [GatewayResponses](#sam-api-gatewayresponses): Map
   [MethodSettings](#sam-api-methodsettings): [MethodSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings)
   [MinimumCompressionSize](#sam-api-minimumcompressionsize): Integer
@@ -105,14 +105,13 @@ Configures a custom domain for this API Gateway API\.
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `EndpointConfiguration`   <a name="sam-api-endpointconfiguration"></a>
-Specify the type of endpoint for API endpoint\.  
-Valid values are `REGIONAL`, `EDGE`, or `PRIVATE`\.  
-*Type*: String  
+The endpoint type of a REST API\.  
+*Type*: [EndpointConfiguration](sam-property-api-endpointconfiguration.md)  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is similar to the `[EndpointConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointconfiguration)` property of an `AWS::ApiGateway::RestApi` resource\. AWS SAM only accepts a single endpoint configuration string\.
+*AWS CloudFormation compatibility*: This property is similar to the `[EndpointConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointconfiguration)` property of an `AWS::ApiGateway::RestApi` resource\. The nested configuration properties are named differently\.
 
  `GatewayResponses`   <a name="sam-api-gatewayresponses"></a>
-Configures Gateway Reponses for an API\. Gateway Responses are responses returned by API Gateway, either directly or through the use of Lambda Authorizers\. For more information, see the documentation for the [Api Gateway OpenApi extension for Gateway Responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.html)\.  
+Configures Gateway Responses for an API\. Gateway Responses are responses returned by API Gateway, either directly or through the use of Lambda Authorizers\. For more information, see the documentation for the [Api Gateway OpenApi extension for Gateway Responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.html)\.  
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
@@ -227,7 +226,7 @@ Resources:
 
 ### ApiCorsExample<a name="sam-resource-api--examples--apicorsexample"></a>
 
-An AWS SAM template snippet with an API defined in an external Swagger file along with Lambda integrations and CORS configurations\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition\. See [GitHub](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_swagger_cors) for the full example\.
+An AWS SAM template snippet with an API defined in an external Swagger file along with Lambda integrations and CORS configurations\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition\.
 
 #### YAML<a name="sam-resource-api--examples--apicorsexample--yaml"></a>
 
@@ -250,7 +249,7 @@ Resources:
 
 ### ApiCognitoAuthExample<a name="sam-resource-api--examples--apicognitoauthexample"></a>
 
-An AWS SAM template snippet with an API that uses AWS Cognito to authorize requests against the API\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition\. See [GitHub](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_cognito_auth) for the full example\.
+An AWS SAM template snippet with an API that uses AWS Cognito to authorize requests against the API\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition\.
 
 #### YAML<a name="sam-resource-api--examples--apicognitoauthexample--yaml"></a>
 

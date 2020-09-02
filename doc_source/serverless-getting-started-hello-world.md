@@ -64,7 +64,7 @@ Follow the on\-screen prompts\. For this tutorial we recommend you choose AWS Qu
 
 **What AWS SAM is doing:**
 
-This command creates a directory with the name you provided as the project name\. The contents of the project directory are similar to the following \(these contents are created when one of the Python runtimes and the Hello World Example are chose\):
+This command creates a directory with the name you provided as the project name\. The contents of the project directory are similar to the following \(these contents are created when one of the Python runtimes and the Hello World Example are chosen\):
 
 ```
  

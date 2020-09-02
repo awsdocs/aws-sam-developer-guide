@@ -19,7 +19,7 @@ sam package [OPTIONS] [ARGS]...
 | Option | Description | 
 | --- | --- | 
 | \-\-template\-file PATH | The path where your AWS SAM template is located\. Default: template\.\[yaml\|yml\]\. | 
-| \-\-s3\-bucket TEXT | The name of the S3 bucket where this command uploads the artifacts that are referenced in your template\. Required\. | 
+| \-\-s3\-bucket TEXT | The name of the Amazon S3 bucket where this command uploads your AWS CloudFormation template\. Required\. | 
 | \-\-s3\-prefix TEXT | Prefix added to the artifacts name that are uploaded to the Amazon S3 bucket\. The prefix name is a path name \(folder name\) for the Amazon S3 bucket\. | 
 | \-\-kms\-key\-id TEXT | The ID of an AWS KMS key used to encrypt artifacts that are at rest in the Amazon S3 bucket\. | 
 | \-\-output\-template\-file PATH | The path to the file where the command writes the packaged template\. If you don't specify a path, the command writes the template to the standard output\. | 

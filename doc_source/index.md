@@ -40,6 +40,7 @@ Amazon's trademarks and trade dress may not be used in
          + [CorsConfiguration](sam-property-api-corsconfiguration.md)
          + [DomainConfiguration](sam-property-api-domainconfiguration.md)
             + [Route53Configuration](sam-property-api-route53configuration.md)
+         + [EndpointConfiguration](sam-property-api-endpointconfiguration.md)
       + [AWS::Serverless::Application](sam-resource-application.md)
          + [ApplicationLocationObject](sam-property-application-applicationlocationobject.md)
       + [AWS::Serverless::Function](sam-resource-function.md)

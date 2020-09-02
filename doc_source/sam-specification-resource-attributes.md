@@ -8,9 +8,16 @@ AWS SAM resources support a subset of resource attributes that are supported by 
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Resource Type  |  [CreationPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-creationpolicy.html)  |  [DeletionPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html)  |  [DependsOn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html)  |  [Metadata](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html)  |  [UpdatePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html)  |  [UpdateReplacePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html)  | 
-|  [AWS::Serverless::Api](sam-resource-api.md)  | No | No | Yes | No | No | No | 
-|  [AWS::Serverless::Application](sam-resource-application.md)  | No | No | Yes | No | No | No | 
-|  [AWS::Serverless::Function](sam-resource-function.md)  | No | No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/icon-yes.png) [Yes](building-custom-runtimes.md) | No | No | 
-|  [AWS::Serverless::HttpApi](sam-resource-httpapi.md)  | No | No | Yes | No | No | No | 
-|  [AWS::Serverless::LayerVersion](sam-resource-layerversion.md)  | No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/icon-yes.png) [Yes](building-layers.md) | No | No | 
-|  [AWS::Serverless::SimpleTable](sam-resource-simpletable.md)  | No | No | Yes | No | No | No | 
+|  [AWS::Serverless::Api](sam-resource-api.md)  |  |  | ✓ |  |  |  | 
+|  [AWS::Serverless::Application](sam-resource-application.md)  |  |  | ✓ |  |  |  | 
+|  [AWS::Serverless::Function](sam-resource-function.md)  |  |  | ✓ | [✓](building-custom-runtimes.md)\* |  |  | 
+|  [AWS::Serverless::HttpApi](sam-resource-httpapi.md)  |  |  | ✓ |  |  |  | 
+|  [AWS::Serverless::LayerVersion](sam-resource-layerversion.md)  |  | ✓ | ✓ | [✓](building-layers.md)\*\* |  |  | 
+|  [AWS::Serverless::SimpleTable](sam-resource-simpletable.md)  |  |  | ✓ |  |  |  | 
+|  [AWS::Serverless::StateMachine](sam-resource-statemachine.md)  |  |  | ✓ |  |  |  | 
+
+**Notes:**
+
+\* For more information about using the `Metadata` resource attribute with the `AWS::Serverless::Function` resource type, see [Building Custom Runtimes](building-custom-runtimes.md)\.
+
+\*\* For more information about using the `Metadata` resource attribute with the `AWS::Serverless::LayerVersion` resource type, see [Building Layers](building-layers.md)\.

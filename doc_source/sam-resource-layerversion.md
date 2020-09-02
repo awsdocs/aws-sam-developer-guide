@@ -39,7 +39,7 @@ If an AWS S3 Uri or LayerContent object is provided, The AWS S3 object reference
 If a local file path is provided, the template must go through the workflow that includes the `sam deploy` or `sam package` command, in order for the content to be transformed properly\.  
 *Type*: String \| [LayerContent](sam-property-layerversion-layercontent.md)  
 *Required*: Yes  
-*AWS CloudFormation compatibility*: This property is similar to the `[Content](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content)` property of an `AWS::Serverless::LayerVersion` resource\. The nested Amazon S3 properties are named differently\.
+*AWS CloudFormation compatibility*: This property is similar to the `[Content](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content)` property of an `AWS::Lambda::LayerVersion` resource\. The nested Amazon S3 properties are named differently\.
 
  `Description`   <a name="sam-layerversion-description"></a>
 Description of this layer\.  

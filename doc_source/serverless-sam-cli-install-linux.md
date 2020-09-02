@@ -169,7 +169,7 @@ For example, if you used the instructions in this topic to both 1\) Install Home
 
 ```
   
- /home/homebrew/.homebrew/bin/sam
+ /home/linuxbrew/.linuxbrew/bin/sam
 ```
 
 ## Next Steps<a name="serverless-sam-cli-install-linux-next-steps"></a>

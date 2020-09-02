@@ -37,8 +37,8 @@ You must have Docker installed and working to be able to run serverless projects
 
 1. Configure your shared drives\.
 
-   The AWS SAM CLI requires that the project directory, or any parent directory, is listed in a shared drive\. Choose your version of Windows below for the correct shared drive instructions:
-   + To share drives on Windows 10, see [ Docker Shared Drives](https://docs.docker.com/docker-for-windows/#shared-drives)\.
+   The AWS SAM CLI requires that the project directory, or any parent directory, is listed in a shared drive\. In some cases you must share your drive in order for Docker to function properly\.
+   + If you're using Windows 10 in Hyper\-V mode, see [ Docker File Sharing](https://docs.docker.com/docker-for-windows/#file-sharing)\.
    + To share drives on older versions of Windows, see [Add Shared Directories](https://docs.docker.com/toolbox/toolbox_install_windows/#optional-add-shared-directories)\.
 
 1. Verify the installation\.
