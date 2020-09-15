@@ -10,7 +10,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
 ```
   [Type](#sam-api-endpointconfiguration-type): String
-  [VpcEndpointIds](#sam-api-endpointconfiguration-vpcendpointids): List
+  [VPCEndpointIds](#sam-api-endpointconfiguration-vpcendpointids): List
 ```
 
 ## Properties<a name="sam-property-api-endpointconfiguration-properties"></a>
@@ -22,7 +22,7 @@ Valid values: `EDGE` or `REGIONAL` or `PRIVATE`\.
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-types)` property of the `AWS::ApiGateway::RestApi` `EndpointConfiguration` data type\.
 
- `VpcEndpointIds`   <a name="sam-api-endpointconfiguration-vpcendpointids"></a>
+ `VPCEndpointIds`   <a name="sam-api-endpointconfiguration-vpcendpointids"></a>
 A list of VPC endpoint IDs of a REST API against which to create Route53 aliases\.  
 *Type*: List  
 *Required*: No  
@@ -39,7 +39,7 @@ Endpoint Configuration example
 ```
 EndpointConfiguration:
   Type: EDGE
-  VpcEndpointIds:
+  VPCEndpointIds:
     - vpce-123a123a
     - vpce-321a321a
 ```
