@@ -161,7 +161,7 @@ A map \(string to string\) that specifies the tags to be added to this API Gatew
 *AWS CloudFormation compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tags)` property of an `AWS::ApiGateway::Stage` resource\. The Tags property in SAM consists of Key:Value pairs; in CloudFormation it consists of a list of Tag objects\.
 
  `TracingEnabled`   <a name="sam-api-tracingenabled"></a>
-Indicates whether active tracing with X\-Ray is enabled for the stage\.  
+Indicates whether active tracing with X\-Ray is enabled for the stage\. For more information about X\-Ray, see [Tracing user requests to REST APIs using X\-Ray](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-xray.html) in the API Gateway Developer Guide\.  
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[TracingEnabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled)` property of an `AWS::ApiGateway::Stage` resource\.
@@ -176,15 +176,15 @@ A map \(string to string\) that defines the stage variables, where the variable 
 
 ### Ref<a name="sam-resource-api-return-values-ref"></a>
 
-When the logical ID of this resource is provided to the Ref intrinsic function, it returns the ID of the underlying API Gateway API\.
+When the logical ID of this resource is provided to the `Ref` intrinsic function, it returns the ID of the underlying API Gateway API\.
 
-For more information about using the Ref function, see [Ref](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)\. 
+For more information about using the `Ref` function, see [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html) in the *AWS CloudFormation User Guide*\. 
 
 ### Fn::GetAtt<a name="sam-resource-api-return-values-fn--getatt"></a>
 
 `Fn::GetAtt` returns a value for a specified attribute of this type\. The following are the available attributes and sample return values\. 
 
-For more information about using `Fn::GetAtt`, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html)\. 
+For more information about using `Fn::GetAtt`, see [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html) in the *AWS CloudFormation User Guide*\. 
 
 `RootResourceId`  <a name="RootResourceId-fn::getatt"></a>
 The root resource ID for a `RestApi` resource, such as `a0bc123d4e`\.

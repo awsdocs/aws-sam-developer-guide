@@ -6,9 +6,9 @@ AWS SAM applications in the AWS Serverless Application Repository that use polic
 
 If you want to request a new policy template to be added, do the following:
 
-1. Submit a pull request against the policy\_templates\.json source file in the `develop` branch of the AWS SAM GitHub project\. You can find the source file in [policy\_templates\.json](https://github.com/awslabs/serverless-application-model/blob/develop/samtranslator/policy_templates_data/policy_templates.json) on the GitHub website\.
+1. Submit a pull request against the policy\_templates\.json source file in the `develop` branch of the AWS SAM GitHub project\. You can find the source file in [policy\_templates\.json](https://github.com/aws/serverless-application-model/blob/develop/samtranslator/policy_templates_data/policy_templates.json) on the GitHub website\.
 
-1. Submit an issue in the AWS SAM GitHub project that includes the reasons for your pull request and a link to the request\. Use this link to submit a new issue: [AWS Serverless Application Model: Issues](https://github.com/awslabs/serverless-application-model/issues/new)\.
+1. Submit an issue in the AWS SAM GitHub project that includes the reasons for your pull request and a link to the request\. Use this link to submit a new issue: [AWS Serverless Application Model: Issues](https://github.com/aws/serverless-application-model/issues/new)\.
 
 ## Syntax<a name="serverless-policy-template-syntax"></a>
 

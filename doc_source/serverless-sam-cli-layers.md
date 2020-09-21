@@ -15,7 +15,7 @@ ServerlessFunction:
         - <LayerVersion ARN>
 ```
 
-For more information about including layers in your application, see either [AWS::Serverless::Function](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction) in the AWS SAM GitHub repository, or [AWS::Lambda::Function](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html) in the *AWS CloudFormation User Guide*\.
+For more information about including layers in your application, see either [https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction) in the AWS SAM GitHub repository, or [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html) in the *AWS CloudFormation User Guide*\.
 
 When you invoke your function using one of the sam local CLI subcommands, the layers package of your function is downloaded and cached on your local host\. See the following chart for default cache directory locations\. After the package is cached, the AWS SAM CLI overlays the layers onto a Docker image that's used to invoke your function\. The AWS SAM CLI generates the names of the images it builds, as well as the LayerVersions that are held in the cache\. You can find more details about the schema in the following sections\.
 

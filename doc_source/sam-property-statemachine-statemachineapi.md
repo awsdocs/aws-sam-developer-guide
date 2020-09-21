@@ -1,6 +1,6 @@
 # Api<a name="sam-property-statemachine-statemachineapi"></a>
 
-The object describing an `Api` event source type\. If an [AWS::Serverless::Api](sam-resource-api.md) resource is defined, the path and method values must correspond to an operation in the OpenApi definition of the API\.
+The object describing an `Api` event source type\. If an [AWS::Serverless::Api](sam-resource-api.md) resource is defined, the path and method values must correspond to an operation in the OpenAPI definition of the API\.
 
 ## Syntax<a name="sam-property-statemachine-statemachineapi-syntax"></a>
 
@@ -38,7 +38,7 @@ The URI path for which this function is invoked\. The value must start with `/`\
 
  `RestApiId`   <a name="sam-statemachine-statemachineapi-restapiid"></a>
 The identifier of a `RestApi` resource, which must contain an operation with the given path and method\. Typically, this is set to reference an [AWS::Serverless::Api](sam-resource-api.md) resource that is defined in this template\.  
-If you don't definet this property, AWS SAM creates a default [AWS::Serverless::Api](sam-resource-api.md) resource using a generated `OpenApi` document that contains a union of all paths and methods defined by `Api` events defined in this template that do not specify a `RestApiId`\.  
+If you don't define this property, AWS SAM creates a default [AWS::Serverless::Api](sam-resource-api.md) resource using a generated `OpenApi` document\. That resource contains a union of all paths and methods defined by `Api` events in the same template that do not specify a `RestApiId`\.  
 This property can't reference an [AWS::Serverless::Api](sam-resource-api.md) resource that is defined in another template\.  
 *Type*: String  
 *Required*: No  

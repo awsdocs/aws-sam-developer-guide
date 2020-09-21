@@ -1,6 +1,6 @@
 # Api<a name="sam-property-function-api"></a>
 
-The object describing an `Api` event source type\. If an [AWS::Serverless::Api](sam-resource-api.md) resource is defined, the path and method values must correspond to an operation in the OpenApi definition of the API\.
+The object describing an `Api` event source type\. If an [AWS::Serverless::Api](sam-resource-api.md) resource is defined, the path and method values must correspond to an operation in the OpenAPI definition of the API\.
 
 If no [AWS::Serverless::Api](sam-resource-api.md) is defined, the function input and output are a representation of the HTTP request and HTTP response\.
 
@@ -57,7 +57,7 @@ If a parameter is a string and not a Function Request Parameter Object, then `Re
 
  `RestApiId`   <a name="sam-function-api-restapiid"></a>
 Identifier of a RestApi resource, which must contain an operation with the given path and method\. Typically, this is set to reference an [AWS::Serverless::Api](sam-resource-api.md) resource defined in this template\.  
-If not defined, a default [AWS::Serverless::Api](sam-resource-api.md) resource is created using a generated OpenApi document containing a union of all paths and methods defined by Api events defined in this template that do not specify a `RestApiId`\.  
+If you don't define this property, AWS SAM creates a default [AWS::Serverless::Api](sam-resource-api.md) resource using a generated `OpenApi` document\. That resource contains a union of all paths and methods defined by `Api` events in the same template that do not specify a `RestApiId`\.  
 This cannot reference an [AWS::Serverless::Api](sam-resource-api.md) resource defined in another template\.  
 *Type*: String  
 *Required*: No  

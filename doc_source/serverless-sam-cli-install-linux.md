@@ -172,6 +172,10 @@ For example, if you used the instructions in this topic to both 1\) Install Home
  /home/linuxbrew/.linuxbrew/bin/sam
 ```
 
+### Error: "AWS SAM CLI no longer supports installations on Python 2\.7\."<a name="serverless-sam-cli-install-linux-troubleshooting-sam-cli-old-python"></a>
+
+Your system is using an old installation of Python that is not compatible with the AWS SAM CLI\. If you receive this error, follow the instructions in [Installing the AWS SAM CLI on Linux](#serverless-sam-cli-install-linux) to install a version of Python compatible with the AWS SAM CLI\.
+
 ## Next Steps<a name="serverless-sam-cli-install-linux-next-steps"></a>
 
 You're now ready to begin building your own serverless applications using AWS SAM\! If you want to start with sample serverless applications, choose one of the following links:

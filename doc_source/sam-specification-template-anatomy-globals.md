@@ -1,8 +1,8 @@
 # Globals Section of the Template<a name="sam-specification-template-anatomy-globals"></a>
 
-Resources in an AWS SAM template tend to have shared configuration, such as `Runtime`, `Memory`, `VPCConfig`, `Environment`, and `Cors`\. Instead of duplicating this information in every resource, you can write them once in the `Globals` section and let your resources inherit them\.
+Sometimes resources that you declare in an AWS SAM template have common configurations\. For example, you might have an application with multiple `AWS::Serverless::Function` resources that have identical `Runtime`, `Memory`, `VPCConfig`, `Environment`, and `Cors` configurations\. Instead of duplicating this information in every resource, you can declare them once in the `Globals` section and let your resources inherit them\.
 
-The `Globals` section is supported by the `AWS::Serverless::Function`, `AWS::Serverless::Api`, and `AWS::Serverless::SimpleTable` resources\.
+The `Globals` section is supported by the `AWS::Serverless::Function`, `AWS::Serverless::Api`, `AWS::Serverless::HttpApi`, and `AWS::Serverless::SimpleTable` resources\.
 
 Example:
 
@@ -39,12 +39,11 @@ In this example, both `HelloWorldFunction` and `ThumbnailFunction` use "nodejs12
 
 ## Supported Resources and Properties<a name="sam-specification-template-anatomy-globals-supported-resources-and-properties"></a>
 
-Currently, AWS SAM supports the following resources and properties:
+AWS SAM supports the following resources and properties\.
 
 ```
 Globals:
   Function:
-    # Properties of AWS::Serverless::Function
     Handler:
     Runtime:
     CodeUri:
@@ -62,11 +61,11 @@ Globals:
     DeploymentPreference:
     PermissionsBoundary:
     ReservedConcurrentExecutions:
+    ProvisionedConcurrencyConfig:
+    AssumeRolePolicyDocument:
     EventInvokeConfig:
 
   Api:
-    # Properties of AWS::Serverless::Api
-    # Also works with Implicit APIs
     Auth:
     Name:
     DefinitionUri:
@@ -86,49 +85,27 @@ Globals:
     Domain:
 
   HttpApi:
-    # Properties of AWS::Serverless::HttpApi
-    # Also works with Implicit APIs
     Auth:
-    CorsConfiguration:
     AccessLogSettings:
+    StageVariables:
     Tags:
-    DefaultRouteSettings:
-    RouteSettings:
-    Domain:
 
   SimpleTable:
-    # Properties of AWS::Serverless::SimpleTable
     SSESpecification:
 ```
 
+**Note**  
+Any resources and properties that are not included in the previous list are not supported\. Some reasons for not supporting them include: 1\) They open potential security issues, or 2\) They make the template hard to understand\.
+
 ## Implicit APIs<a name="sam-specification-template-anatomy-globals-implicit-apis"></a>
 
-*Implicit APIs* are APIs that are created by AWS SAM when you declare an API in the `Events` section\. You can use `Globals` to override all the properties of implicit APIs\.
-
-## Unsupported Properties<a name="sam-specification-template-anatomy-globals-unsupported-properties"></a>
-
-The following properties are not supported in the `Globals` section\. We made the explicit call to not support them because they either made the template hard to understand, or they might open a potential security issue\.
-
-```
-  Function:
-    Role:
-    Policies:
-    FunctionName:
-    Events:
-
-  Api:
-    StageName:
-    DefinitionBody:
-
-  HttpApi:
-    StageName:
-    DefinitionBody:
-    DefinitionUri:
-```
+AWS SAM creates *implicit APIs* when you declare an API in the `Events` section\. You can use `Globals` to override all properties of implicit APIs\.
 
 ## Overridable Properties<a name="sam-specification-template-anatomy-globals-overrideable"></a>
 
-Properties that are declared in the `Globals` section can be overridden by the resource\. For example, you can add new variables to an environment variable map, or you can override globally declared variables\. But the resource **cannot** remove a property that's specified in the Globals environment variables map\. More generally, the Globals section declares properties that are shared by all your resources\. Some resources can provide new values for globally declared properties, but they can't completely remove them\. If some resources use a property but others don't, then you must not declare them in the Globals section\.
+Resources can override the properties that you declare in the `Globals` section\. For example, you can add new variables to an environment variable map, or you can override globally declared variables\. But the resource cannot remove a property that's specified in the `Globals` section\.
+
+More generally, the `Globals` section declares properties that all your resources share\. Some resources can provide new values for globally declared properties, but they can't remove them\. If some resources use a property but others don't, then you must not declare them in the `Globals` section\.
 
 The following sections describe how overriding works for different data types\.
 
@@ -136,7 +113,7 @@ The following sections describe how overriding works for different data types\.
 
 Primitive data types include strings, numbers, Booleans, and so on\.
 
-The value specified in the Resources section **replaces** the value in the Globals section\.
+The value specified in the `Resources` section replaces the value in the `Globals` section\.
 
 Example:
 
@@ -158,7 +135,7 @@ The `Runtime` for `MyFunction` is set to `python3.6`\.
 
 Maps are also known as dictionaries or collections of key\-value pairs\.
 
-Map entries in the resource are **merged** with global map entries\. If there are duplicates, the resource entry overrides the global entry\.
+Map entries in the `Resources` section are merged with global map entries\. If there are duplicates, the `Resource` section entry overrides the `Globals` section entry\.
 
 Example:
 
@@ -194,7 +171,7 @@ The environment variables of `MyFunction` are set to the following:
 
 Lists are also known as arrays\.
 
-Entries in the Globals section are **prepended** to the list in the Resource section\.
+List entries in the `Globals` section are prepended to the list in the `Resources` section\.
 
 Example:
 

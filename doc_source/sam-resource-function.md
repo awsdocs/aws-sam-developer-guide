@@ -88,7 +88,7 @@ If a `DeploymentPreference` object is specified, AWS SAM creates an [AWS::CodeDe
 *Type*: [DeploymentPreference](sam-property-function-deploymentpreference.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
-*See Also*: See the [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md) documentation for more information about this property\.
+*See also*: See the [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md) documentation for more information about this property\.
 
  `Description`   <a name="sam-function-description"></a>
 A description of the function\.  
@@ -166,7 +166,7 @@ The ARN of a permissions boundary to use for this function's execution role\. Th
 
  `Policies`   <a name="sam-function-policies"></a>
 One or more policies that this function needs\. They will be appended to the default role for this function\.  
-This property accepts a single string or a list of strings, and can be the name of AWS managed IAM policies or AWS SAM policy templates, or inline IAM policy document\(s\) formatted in YAML\.  
+This property accepts a single string or a list of strings\. The property can be the name of AWS managed AWS Identity and Access Management \(IAM\) policies, AWS SAM policy templates, or one or more inline policy documents formatted as a map\.  
 For more information about AWS managed IAM policies, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)\. For more information about AWS SAM policy templates, see [AWS SAM Policy Templates](serverless-policy-templates.md)\. For more information about inline policies, see [Inline Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#inline-policies)\.  
 **NOTE**: If the `Role` property is set, this property is ignored\.  
 *Type*: String \| List \| Map  
@@ -214,7 +214,7 @@ The maximum time that the function can run before it is killed, in seconds\.
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Timeout](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout)` property of an `AWS::Lambda::Function` resource\.
 
  `Tracing`   <a name="sam-function-tracing"></a>
-The string that specifies the function's X\-Ray tracing mode\. For more information about X\-Ray, see [Using AWS X\-Ray](https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html) in the AWS Lambda Developer Guide\.  
+The string that specifies the function's X\-Ray tracing mode\. For more information about X\-Ray, see [Using AWS Lambda with AWS X\-Ray](https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html) in the AWS Lambda Developer Guide\.  
 Supported values: `Active` and `PassThrough`\.  
 *Type*: String  
 *Required*: No  
@@ -236,15 +236,15 @@ The configuration that enables this function to access private resources within 
 
 ### Ref<a name="sam-resource-function-return-values-ref"></a>
 
-When the logical ID of this resource is provided to the Ref intrinsic function, it returns the resource name of the underlying Lambda function\.
+When the logical ID of this resource is provided to the `Ref` intrinsic function, it returns the resource name of the underlying Lambda function\.
 
-For more information about using the Ref function, see [Ref](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)\. 
+For more information about using the `Ref` function, see [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html) in the *AWS CloudFormation User Guide*\. 
 
 ### Fn::GetAtt<a name="sam-resource-function-return-values-fn--getatt"></a>
 
 `Fn::GetAtt` returns a value for a specified attribute of this type\. The following are the available attributes and sample return values\. 
 
-For more information about using `Fn::GetAtt`, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html)\. 
+For more information about using `Fn::GetAtt`, see [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html) in the *AWS CloudFormation User Guide*\. 
 
 `Arn`  <a name="Arn-fn::getatt"></a>
 The Amazon Resource Name \(ARN\) of the underlying Lambda function\.

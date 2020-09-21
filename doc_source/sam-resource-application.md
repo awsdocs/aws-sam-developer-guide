@@ -56,15 +56,15 @@ The length of time, in minutes, that AWS CloudFormation waits for the nested sta
 
 ### Ref<a name="sam-resource-application-return-values-ref"></a>
 
-When the logical ID of this resource is provided to the Ref intrinsic function, it returns the resource name of the underlying `AWS::CloudFormation::Stack` resource\.
+When the logical ID of this resource is provided to the `Ref` intrinsic function, it returns the resource name of the underlying `AWS::CloudFormation::Stack` resource\.
 
-For more information about using the Ref function, see [Ref](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html)\. 
+For more information about using the `Ref` function, see [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html) in the *AWS CloudFormation User Guide*\. 
 
 ### Fn::GetAtt<a name="sam-resource-application-return-values-fn--getatt"></a>
 
 `Fn::GetAtt` returns a value for a specified attribute of this type\. The following are the available attributes and sample return values\. 
 
-For more information about using `Fn::GetAtt`, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html)\. 
+For more information about using `Fn::GetAtt`, see [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html) in the *AWS CloudFormation User Guide*\. 
 
 `Outputs.ApplicationOutputName`  <a name="Outputs.ApplicationOutputName-fn::getatt"></a>
 The value of the stack output with name `ApplicationOutputName`\.

@@ -53,7 +53,7 @@ Windows Installer \(MSI\) files are the package installer files for the Windows 
 
 Follow these steps to install the AWS SAM CLI using the MSI file\. 
 
-1. Install the AWS SAM CLI [ 64\-bit](https://github.com/awslabs/aws-sam-cli/releases/latest/download/AWS_SAM_CLI_64_PY3.msi)\.
+1. Install the AWS SAM CLI [ 64\-bit](https://github.com/aws/aws-sam-cli/releases/latest/download/AWS_SAM_CLI_64_PY3.msi)\.
 **Note**  
 If you operate on 32\-bit system, see [Installing AWS SAM CLI on 32\-bit Windows](important-notes.md#important-notes-32-bit-windows)\.
 

@@ -15,4 +15,4 @@ pip install aws-sam-cli
 ```
 
 **Important**  
-Although the `pip install aws-sam-cli` command also works on 64\-bit Windows, we recommend that you use the [64\-bit MSI](https://github.com/awslabs/aws-sam-cli/releases/latest/download/AWS_SAM_CLI_64_PY3.msi) to install AWS SAM CLI on 64\-bit systems\.
+Although the `pip install aws-sam-cli` command also works on 64\-bit Windows, we recommend that you use the [64\-bit MSI](https://github.com/aws/aws-sam-cli/releases/latest/download/AWS_SAM_CLI_64_PY3.msi) to install AWS SAM CLI on 64\-bit systems\.
