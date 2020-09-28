@@ -20,6 +20,7 @@ Here is an example AWS SAM CLI config file that is created when using the `sam d
  stack_name = "my-app-stack"
  capabilities = "CAPABILITY_IAM"
  s3_bucket = "my-source-bucket"
+ tags = '"project=app-stack","env=production"'
 ```
 
 ## Options<a name="serverless-sam-cli-config-options"></a>
@@ -38,3 +39,6 @@ Default value: `CAPABILITY_IAM`
 
 `s3_bucket`  
 The S3 bucket name used for deployment artifacts for the `sam deploy` command\. You may use your own Amazon S3 bucket by providing your own value here\.
+
+`tags`
+The tags that will be propagated to the resources created. See [CloudFormation stack options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-add-tags.html). Note use of quotes.
