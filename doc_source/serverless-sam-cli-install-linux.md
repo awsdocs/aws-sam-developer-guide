@@ -15,15 +15,15 @@ The following steps help you to install and configure the required prerequisites
 **Note**  
 These instructions cause your environment's default Python version to be the one installed by Homebrew\. The change in default Python version occurs in [Step 4: Install Homebrew](#serverless-sam-cli-install-linux-homebrew)\.
 
-## Step 1: Create an AWS Account<a name="serverless-sam-cli-install-linux-aws-account"></a>
+## Step 1: Create an AWS account<a name="serverless-sam-cli-install-linux-aws-account"></a>
 
 If you don't already have an AWS account, see [aws\.amazon\.com](https://aws.amazon.com/) and choose **Create an AWS Account**\. For detailed instructions, see [Create and Activate an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)\.
 
-## Step 2: Create an IAM User with Administrator Permissions<a name="serverless-sam-cli-install-linux-iam-permissions"></a>
+## Step 2: Create an IAM user with administrator permissions<a name="serverless-sam-cli-install-linux-iam-permissions"></a>
 
 If you don't already have an IAM user with administrator permissions, see [Creating Your First IAM Admin User and Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
 
-In addition, you must set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. For example, the AWS SAM CLI makes calls to Amazon S3 and AWS CloudFormation\. For more information about setting up AWS credentials, see [Setting Up AWS Credentials](serverless-getting-started-set-up-credentials.md)\.
+In addition, you must set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. For example, the AWS SAM CLI makes calls to Amazon S3 and AWS CloudFormation\. For more information about setting up AWS credentials, see [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)\.
 
 ## Step 3: Install Docker<a name="serverless-sam-cli-install-linux-docker"></a>
 
@@ -142,7 +142,7 @@ You should see output like the following after successful installation of the AW
 
 ```
  
- SAM CLI, version 1.0.0
+ SAM CLI, version 1.3.0
 ```
 
 You're now ready to start development\.
@@ -157,7 +157,7 @@ brew upgrade aws-sam-cli
 
 ## Troubleshooting<a name="serverless-sam-cli-install-linux-troubleshooting"></a>
 
-### Docker Error: "Cannot connect to the Docker daemon\. Is the docker daemon running on this host?"<a name="serverless-sam-cli-install-linux-troubleshooting-docker-deamon"></a>
+### Docker error: "Cannot connect to the Docker daemon\. Is the docker daemon running on this host?"<a name="serverless-sam-cli-install-linux-troubleshooting-docker-deamon"></a>
 
 In some cases, you may need to reboot your instance to provide permissionst for the `ec2-user` to access the Docker daemon\. If you receive this error, try rebooting your instance\.
 
@@ -176,8 +176,8 @@ For example, if you used the instructions in this topic to both 1\) Install Home
 
 Your system is using an old installation of Python that is not compatible with the AWS SAM CLI\. If you receive this error, follow the instructions in [Installing the AWS SAM CLI on Linux](#serverless-sam-cli-install-linux) to install a version of Python compatible with the AWS SAM CLI\.
 
-## Next Steps<a name="serverless-sam-cli-install-linux-next-steps"></a>
+## Next steps<a name="serverless-sam-cli-install-linux-next-steps"></a>
 
 You're now ready to begin building your own serverless applications using AWS SAM\! If you want to start with sample serverless applications, choose one of the following links:
-+ [Tutorial: Deploying a Hello World Application](serverless-getting-started-hello-world.md) – Step\-by\-step instructions to download, build, and deploy a simple serverless application\.
++ [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md) – Step\-by\-step instructions to download, build, and deploy a simple serverless application\.
 + [AWS SAM example applications in GitHub](https://github.com/aws-samples/serverless-app-examples) – Sample applications in the AWS SAM GitHub repository that you can further experiment with\.

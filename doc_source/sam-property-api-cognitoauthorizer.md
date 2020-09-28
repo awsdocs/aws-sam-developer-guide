@@ -2,7 +2,7 @@
 
 Define a Amazon Cognito User Pool authorizer\.
 
-For more information and examples, see [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.
+For more information and examples, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.
 
 ## Syntax<a name="sam-property-api-cognitoauthorizer-syntax"></a>
 

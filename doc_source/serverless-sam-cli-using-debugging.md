@@ -1,4 +1,4 @@
-# Step\-Through Debugging Lambda Functions Locally<a name="serverless-sam-cli-using-debugging"></a>
+# Step\-through debugging Lambda functions locally<a name="serverless-sam-cli-using-debugging"></a>
 
 You can use AWS SAM with a number of AWS toolkits to test and debug your serverless applications locally\.
 
@@ -14,7 +14,7 @@ For more information about AWS toolkits that you can use with AWS SAM, see the f
 + [AWS Toolkit for IntelliJ](https://aws.amazon.com/intellij/)
 + [AWS Toolkit for Visual Studio Code](https://aws.amazon.com/visualstudiocode/)
 
-## Running AWS SAM Locally<a name="serverless-sam-cli-running-locally"></a>
+## Running AWS SAM locally<a name="serverless-sam-cli-running-locally"></a>
 
 The commands `sam local invoke` and `sam local start-api` both support local step\-through debugging of your Lambda functions\. To run AWS SAM locally with step\-through debugging support enabled, specify `--debug-port` or `-d` on the command line\. For example:
 
@@ -32,6 +32,6 @@ If you're using `sam local start-api`, the local API Gateway instance exposes al
 **Topics**
 
 The following topics provide examples of how to set up your environment to test and debug your serverless applications locally\.
-+ [Step\-Through Debugging Node\.js Functions Locally](serverless-sam-cli-using-debugging-nodejs.md)
-+ [Step\-Through Debugging Python Functions Locally](serverless-sam-cli-using-debugging-python.md)
-+ [Step\-Through Debugging Golang Functions Locally](serverless-sam-cli-using-debugging-golang.md)
++ [Step\-through debugging Node\.js functions locally](serverless-sam-cli-using-debugging-nodejs.md)
++ [Step\-through debugging Python functions locally](serverless-sam-cli-using-debugging-python.md)
++ [Step\-through debugging Golang functions locally](serverless-sam-cli-using-debugging-golang.md)

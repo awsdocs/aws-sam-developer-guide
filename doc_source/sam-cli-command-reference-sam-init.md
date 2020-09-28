@@ -57,5 +57,8 @@ sam init --location /path/to/template/folder
 | \-n, \-\-name TEXT |  The name of your project to be generated as a folder\. This parameter is required if `--no-interactive` is specified and `--location` is not provided\.  | 
 | \-\-app\-template TEXT |  Identifier of the managed application template you want to use\. If not sure, call 'sam init' without options for an interactive workflow\. This parameter is required if `--no-interactive` is specified and `--location` is not provided\. This parameter is only available in SAM CLI version 0\.30\.0 or later\. Specifying this parameter with an earlier version will result in an error\.  | 
 | \-\-no\-input | Disables Cookiecutter prompting and accept default values that are defined in the template configuration\. | 
+| \-\-extra\-content | Override any custom parameters in the template's cookiecutter\.json configuration, for example, \{"customParam1": "customValue1", "customParam2":"customValue2"\} | 
+| \-\-config\-file PATH | The path and file name of the configuration file containing default parameter values to use\. The default value is "samconfig\.toml" in the root of the project directory\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
+| \-\-config\-env TEXT | The environment name specifying the default parameter values in the configuration file to use\. The default value is "default"\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
 | \-\-debug | Turns on debug logging\. | 
 | \-h, \-\-help | Shows this message and exits\. | 

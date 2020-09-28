@@ -49,4 +49,4 @@ sam local invoke --env-vars env.json
 
 ## Layers<a name="serverless-sam-cli-using-invoke-layers"></a>
 
-If your application includes layers, see [Working with Layers](serverless-sam-cli-layers.md) for more information about how to debug layers issues on your local host\.
+If your application includes layers, see [Working with layers](serverless-sam-cli-layers.md) for more information about how to debug layers issues on your local host\.

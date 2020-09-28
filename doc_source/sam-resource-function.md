@@ -2,7 +2,7 @@
 
 Creates a Lambda function, IAM execution role, and event source mappings that trigger the function\.
 
-The [AWS::Serverless::Function](#sam-resource-function) resource also supports the `Metadata` resource attribute, so you can instruct AWS SAM to build custom runtimes required by your application\. For more information about building custom runtimes, see [Building Custom Runtimes](building-custom-runtimes.md)\.
+The [AWS::Serverless::Function](#sam-resource-function) resource also supports the `Metadata` resource attribute, so you can instruct AWS SAM to build custom runtimes required by your application\. For more information about building custom runtimes, see [Building custom runtimes](building-custom-runtimes.md)\.
 
 ## Syntax<a name="sam-resource-function-syntax"></a>
 
@@ -52,8 +52,8 @@ Adds an AssumeRolePolicyDocument for the default created `Role` for this functio
 *AWS CloudFormation compatibility*: This property is similar to the `[AssumeRolePolicyDocument](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument)` property of an `AWS::IAM::Role` resource\. AWS SAM adds this property to the generated IAM role for this function\. If a role ARN is provided for this function, this property does nothing\.
 
  `AutoPublishAlias`   <a name="sam-function-autopublishalias"></a>
-Name of the Lambda alias\. For more information about Lambda aliases, see [AWS Lambda Function Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)\. For examples that use this property, see [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md)\.  
-AWS SAM generates [AWS::Lambda::Version](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) and [AWS::Lambda::Alias](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html) resources when this property is set\. For information about this scenario, see [AutoPublishAlias Property Is Specified](sam-specification-generated-resources-function.md#sam-specification-generated-resources-function-autopublishalias)\. For general information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation Resources](sam-specification-generated-resources.md)\.  
+Name of the Lambda alias\. For more information about Lambda aliases, see [AWS Lambda Function Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)\. For examples that use this property, see [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\.  
+AWS SAM generates [AWS::Lambda::Version](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) and [AWS::Lambda::Alias](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html) resources when this property is set\. For information about this scenario, see [AutoPublishAlias property is specified](sam-specification-generated-resources-function.md#sam-specification-generated-resources-function-autopublishalias)\. For general information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
@@ -88,7 +88,7 @@ If a `DeploymentPreference` object is specified, AWS SAM creates an [AWS::CodeDe
 *Type*: [DeploymentPreference](sam-property-function-deploymentpreference.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
-*See also*: See the [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md) documentation for more information about this property\.
+*See also*: See the [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md) documentation for more information about this property\.
 
  `Description`   <a name="sam-function-description"></a>
 A description of the function\.  
@@ -167,7 +167,7 @@ The ARN of a permissions boundary to use for this function's execution role\. Th
  `Policies`   <a name="sam-function-policies"></a>
 One or more policies that this function needs\. They will be appended to the default role for this function\.  
 This property accepts a single string or a list of strings\. The property can be the name of AWS managed AWS Identity and Access Management \(IAM\) policies, AWS SAM policy templates, or one or more inline policy documents formatted as a map\.  
-For more information about AWS managed IAM policies, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)\. For more information about AWS SAM policy templates, see [AWS SAM Policy Templates](serverless-policy-templates.md)\. For more information about inline policies, see [Inline Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#inline-policies)\.  
+For more information about AWS managed IAM policies, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)\. For more information about AWS SAM policy templates, see [AWS SAM policy templates](serverless-policy-templates.md)\. For more information about inline policies, see [Inline Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#inline-policies)\.  
 **NOTE**: If the `Role` property is set, this property is ignored\.  
 *Type*: String \| List \| Map  
 *Required*: No  
@@ -195,7 +195,7 @@ The ARN of an IAM role to use as this function's execution role\.
 
  `Runtime`   <a name="sam-function-runtime"></a>
 The identifier of the function's [runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)\.  
-**Note**: If you specify the `provided` identifier for this property, you can use the `Metadata` resource attribute to instruct AWS SAM to build the custom runtime required by this function\. For more information about building custom runtimes, see [Building Custom Runtimes](building-custom-runtimes.md)\.  
+**Note**: If you specify the `provided` identifier for this property, you can use the `Metadata` resource attribute to instruct AWS SAM to build the custom runtime required by this function\. For more information about building custom runtimes, see [Building custom runtimes](building-custom-runtimes.md)\.  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Runtime](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime)` property of an `AWS::Lambda::Function` resource\.

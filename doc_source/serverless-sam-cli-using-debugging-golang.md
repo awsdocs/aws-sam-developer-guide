@@ -1,4 +1,4 @@
-# Step\-Through Debugging Golang Functions Locally<a name="serverless-sam-cli-using-debugging-golang"></a>
+# Step\-through debugging Golang functions locally<a name="serverless-sam-cli-using-debugging-golang"></a>
 
 Golang function step\-through debugging is slightly different when compared to Node\.js, Java, and Python\. We require [Delve](https://github.com/go-delve/delve) as the debugger, and wrap your function with it at runtime\. The debugger is run in headless mode, listening on the debug port\.
 
@@ -8,7 +8,7 @@ When you're debugging, you must compile your function in debug mode:
 GOARCH=amd64 GOOS=linux go build -gcflags='-N -l' -o <output path> <path to code directory>
 ```
 
-## Delve Debugger<a name="serverless-sam-cli-using-debugging-golang-debugger"></a>
+## Delve debugger<a name="serverless-sam-cli-using-debugging-golang-debugger"></a>
 
 You must compile [Delve](https://github.com/go-delve/delve) to run in the container and provide its local path with the `--debugger-path` argument\.
 
@@ -18,7 +18,7 @@ Build [Delve](https://github.com/go-delve/delve) locally as follows:
 GOARCH=amd64 GOOS=linux go build -o <delve folder path>/dlv github.com/go-delve/delve/cmd/dlv
 ```
 
-### Delve Debugger Path<a name="serverless-sam-cli-using-debugging-golang-debugger-path"></a>
+### Delve debugger path<a name="serverless-sam-cli-using-debugging-golang-debugger-path"></a>
 
 The output path needs to end in `/dlv`\. The Docker container expects the dlv binary file to be in the `<delve folder path>`\. If it's not, a mounting issue occurs\.
 
@@ -33,7 +33,7 @@ Invoke AWS SAM similar to the following:
 sam local start-api -d 5986 --debugger-path <delve folder path>
 ```
 
-### Delve Debugger API Version<a name="serverless-sam-cli-using-debugging-golang-debugger-api"></a>
+### Delve debugger API version<a name="serverless-sam-cli-using-debugging-golang-debugger-api"></a>
 
 To run the [Delve](https://github.com/go-delve/delve) debugger with an API version of your choice, specify the desired API version using an [additional debug argument](serverless-sam-cli-using-debugging-additional-arguments.md) `-delveAPI`\.
 

@@ -2,7 +2,7 @@
 
 Configure a Lambda Authorizer to control access to your API with a Lambda function\.
 
-For more information and examples, see [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.
+For more information and examples, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.
 
 ## Syntax<a name="sam-property-api-lambdarequestauthorizer-syntax"></a>
 

@@ -1,4 +1,4 @@
-# Building Applications<a name="serverless-sam-cli-using-build"></a>
+# Building applications<a name="serverless-sam-cli-using-build"></a>
 
 To build your serverless application, use the `` command\.
 

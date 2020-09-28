@@ -48,7 +48,7 @@ Configures Access Log Setting for a stage\.
 
  `Auth`   <a name="sam-api-auth"></a>
 Configure authorization to control access to your API Gateway API\.  
-For more information about configuring access using AWS SAM see [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.  
+For more information about configuring access using AWS SAM see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.  
 *Type*: [ApiAuth](sam-property-api-apiauth.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

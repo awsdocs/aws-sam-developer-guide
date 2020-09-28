@@ -1,4 +1,4 @@
-# Globals Section of the Template<a name="sam-specification-template-anatomy-globals"></a>
+# Globals section of the AWS SAM template<a name="sam-specification-template-anatomy-globals"></a>
 
 Sometimes resources that you declare in an AWS SAM template have common configurations\. For example, you might have an application with multiple `AWS::Serverless::Function` resources that have identical `Runtime`, `Memory`, `VPCConfig`, `Environment`, and `Cors` configurations\. Instead of duplicating this information in every resource, you can declare them once in the `Globals` section and let your resources inherit them\.
 
@@ -37,7 +37,7 @@ Resources:
 
 In this example, both `HelloWorldFunction` and `ThumbnailFunction` use "nodejs12\.x" for `Runtime`, "180" seconds for `Timeout`, and "index\.handler" for `Handler`\. `HelloWorldFunction` adds the MESSAGE environment variable, in addition to the inherited TABLE\_NAME\. `ThumbnailFunction` inherits all the `Globals` properties and adds an API event source\.
 
-## Supported Resources and Properties<a name="sam-specification-template-anatomy-globals-supported-resources-and-properties"></a>
+## Supported resources and properties<a name="sam-specification-template-anatomy-globals-supported-resources-and-properties"></a>
 
 AWS SAM supports the following resources and properties\.
 
@@ -101,7 +101,7 @@ Any resources and properties that are not included in the previous list are not 
 
 AWS SAM creates *implicit APIs* when you declare an API in the `Events` section\. You can use `Globals` to override all properties of implicit APIs\.
 
-## Overridable Properties<a name="sam-specification-template-anatomy-globals-overrideable"></a>
+## Overridable properties<a name="sam-specification-template-anatomy-globals-overrideable"></a>
 
 Resources can override the properties that you declare in the `Globals` section\. For example, you can add new variables to an environment variable map, or you can override globally declared variables\. But the resource cannot remove a property that's specified in the `Globals` section\.
 
@@ -109,7 +109,7 @@ More generally, the `Globals` section declares properties that all your resource
 
 The following sections describe how overriding works for different data types\.
 
-### Primitive Data Types Are Replaced<a name="sam-specification-template-anatomy-globals-overrideable-primitives"></a>
+### Primitive data types are replaced<a name="sam-specification-template-anatomy-globals-overrideable-primitives"></a>
 
 Primitive data types include strings, numbers, Booleans, and so on\.
 
@@ -131,7 +131,7 @@ Resources:
 
 The `Runtime` for `MyFunction` is set to `python3.6`\.
 
-### Maps Are Merged<a name="sam-specification-template-anatomy-globals-overrideable-maps"></a>
+### Maps are merged<a name="sam-specification-template-anatomy-globals-overrideable-maps"></a>
 
 Maps are also known as dictionaries or collections of key\-value pairs\.
 
@@ -167,7 +167,7 @@ The environment variables of `MyFunction` are set to the following:
 }
 ```
 
-### Lists Are Additive<a name="sam-specification-template-anatomy-globals-overrideable-lists"></a>
+### Lists are additive<a name="sam-specification-template-anatomy-globals-overrideable-lists"></a>
 
 Lists are also known as arrays\.
 

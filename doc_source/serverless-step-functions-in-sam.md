@@ -1,4 +1,4 @@
-# Orchestrating AWS Resources with AWS Step Functions<a name="serverless-step-functions-in-sam"></a>
+# Orchestrating AWS resources with AWS Step Functions<a name="serverless-step-functions-in-sam"></a>
 
 You can use [AWS Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/) to orchestrate AWS Lambda functions and other AWS resources to form complex and robust workflows\.
 
@@ -32,7 +32,7 @@ Resources:
 
 To download a sample AWS SAM application that includes a Step Functions state machine, see [Create a Step Functions State Machine Using AWS SAM](https://docs.aws.amazon.com/step-functions/latest/dg/tutorial-state-machine-using-sam.html) in the *AWS Step Functions Developer Guide*\.
 
-## More Information<a name="serverless-step-functions-in-sam-more-information"></a>
+## More information<a name="serverless-step-functions-in-sam-more-information"></a>
 
 To learn more about Step Functions and using it with AWS SAM, see the following:
 + [How AWS Step Functions works](https://docs.aws.amazon.com/step-functions/latest/dg/how-step-functions-works.html)

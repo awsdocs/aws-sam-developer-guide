@@ -31,7 +31,9 @@ sam local invoke [OPTIONS] [FUNCTION_IDENTIFIER]
 | \-\-layer\-cache\-basedir DIRECTORY | Specifies the location basedir where the layers your template uses are downloaded to\. | 
 | \-\-skip\-pull\-image | Specifies whether the CLI should skip pulling down the latest Docker image for the Lambda runtime\. | 
 | \-\-force\-image\-build | Specifies whether the CLI should rebuild the image used for invoking functions with layers\. | 
-| \-\-profile TEXT | The AWS credentials profile to use\. | 
-| \-\-region TEXT | Sets the AWS Region of the service \(for example, us\-east\-1\)\. | 
+| \-\-profile TEXT | The specific profile from your credential file that gets AWS credentials\. | 
+| \-\-region TEXT | The AWS Region to deploy to\. For example, us\-east\-1\. | 
+| \-\-config\-file PATH | The path and file name of the configuration file containing default parameter values to use\. The default value is "samconfig\.toml" in the root of the project directory\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
+| \-\-config\-env TEXT | The environment name specifying the default parameter values in the configuration file to use\. The default value is "default"\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
 | \-\-debug | Turns on debug logging\. | 
 | \-\-help | Shows this message and exits\. | 

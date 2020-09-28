@@ -1,6 +1,6 @@
 # DeploymentPreference<a name="sam-property-function-deploymentpreference"></a>
 
-Specifies the configurations to enable gradual Lambda deployments\. For more information about configuring gradual Lambda deployments, see [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md)\.
+Specifies the configurations to enable gradual Lambda deployments\. For more information about configuring gradual Lambda deployments, see [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\.
 
 **Note**: You must specify an `AutoPublishAlias` in your [AWS::Serverless::Function](sam-resource-function.md) to use a `DeploymentPreference` object, otherwise an error will result\.
 
@@ -53,7 +53,7 @@ A list of trigger configurations you want to associate with the deployment group
 *AWS CloudFormation compatibility*: This property is passed directly to the `[TriggerConfigurations](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations)` property of an `AWS::CodeDeploy::DeploymentGroup` resource\.
 
  `Type`   <a name="sam-function-deploymentpreference-type"></a>
-There are two categories of deployment types at the moment: Linear and Canary\. For more information about available deployment types see [Deploying Serverless Applications Gradually](automating-updates-to-serverless-apps.md)\.  
+There are two categories of deployment types at the moment: Linear and Canary\. For more information about available deployment types see [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\.  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

@@ -1,4 +1,4 @@
-# AWS SAM Template Metadata Section Properties<a name="serverless-sam-template-publishing-applications-metadata-properties"></a>
+# AWS SAM template Metadata section properties<a name="serverless-sam-template-publishing-applications-metadata-properties"></a>
 
 `AWS::ServerlessRepo::Application` is a metadata key that you can use to specify application information that you want published to the AWS Serverless Application Repository\.
 
@@ -25,7 +25,7 @@ This table provides information about the properties of the `Metadata` section o
 | SemanticVersion | String | FALSE |  The semantic version of the application\. For the Semantic Versioning specification, see the [Semantic Versioning](https://semver.org/) website\. You must provide a value for this property in order to make your application public\.  | 
 | SourceCodeUrl | String | FALSE | A link to a public repository for the source code of your application\. | 
 
-## Use Cases<a name="serverless-sam-template-publishing-applications-metadata-properties-cases"></a>
+## Use cases<a name="serverless-sam-template-publishing-applications-metadata-properties-cases"></a>
 
 This section lists the use cases for publishing applications, along with the `Metadata` properties that are processed for that use case\. Properties that are *not* listed for a given use case are ignored\.
 + **Creating a new application** – A new application is created if there is no application in the AWS Serverless Application Repository with a matching name for an account\.

@@ -6,7 +6,7 @@ When it's accessed \(through a browser, CLI, and so on\), it starts a Docker con
 
 If you're using an interpreted language, local changes are available immediately in the Docker container on every invoke\. For more compiled languages or projects that require complex packing support, we recommend that you run your own building solution, and point AWS SAM to the directory or file that contains the build artifacts\.
 
-To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World Application](serverless-getting-started-hello-world.md)\. The `sam local start-api` command is part of [Step 4: Testing Your Application Locally \(Optional\)](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-test-locally)\.
+To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md)\. The `sam local start-api` command is part of [Step 4: Testing your application locally \(optional\)](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-test-locally)\.
 
 **Usage:**
 
@@ -36,7 +36,9 @@ sam local start-api [OPTIONS]
 | \-\-layer\-cache\-basedir DIRECTORY | Specifies the location basedir where the Layers your template uses are downloaded to\. | 
 | \-\-skip\-pull\-image | Specifies whether the CLI should skip pulling down the latest Docker image for the Lambda runtime\. | 
 | \-\-force\-image\-build | Specifies whether CLI should rebuild the image used for invoking functions with layers\. | 
-| \-\-profile TEXT | The AWS credentials profile to use\. | 
-| \-\-region TEXT | Sets the AWS Region of the service \(for example, us\-east\-1\)\. | 
+| \-\-profile TEXT | The specific profile from your credential file that gets AWS credentials\. | 
+| \-\-region TEXT | The AWS Region to deploy to\. For example, us\-east\-1\. | 
+| \-\-config\-file PATH | The path and file name of the configuration file containing default parameter values to use\. The default value is "samconfig\.toml" in the root of the project directory\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
+| \-\-config\-env TEXT | The environment name specifying the default parameter values in the configuration file to use\. The default value is "default"\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
 | \-\-debug | Turns on debug logging\. | 
 | \-\-help | Shows this message and exits\. | 

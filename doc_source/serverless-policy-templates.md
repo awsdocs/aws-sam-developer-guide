@@ -1,4 +1,4 @@
-# AWS SAM Policy Templates<a name="serverless-policy-templates"></a>
+# AWS SAM policy templates<a name="serverless-policy-templates"></a>
 
 AWS SAM allows you to choose from a list of policy templates to scope the permissions of your Lambda functions to the resources that are used by your application\.
 
@@ -28,7 +28,7 @@ MyFunction:
 
 ## Examples<a name="serverless-policy-template-examples"></a>
 
-### Example 1: Policy Template with Placeholder Values<a name="policy-template-example-1"></a>
+### Example 1: Policy template with placeholder values<a name="policy-template-example-1"></a>
 
 The following example shows that the [SQSPollerPolicy](serverless-policy-template-list.md#sqs-poller-policy) policy template expects a `QueueName` as a resource\. The AWS SAM template retrieves the name of the "`MyQueue`" Amazon SQS queue, which you can create in the same application or requested as a parameter to the application\.
 
@@ -45,7 +45,7 @@ The following example shows that the [SQSPollerPolicy](serverless-policy-templat
 10.             !GetAtt MyQueue.QueueName
 ```
 
-### Example 2: Policy Template with No Placeholder Values<a name="policy-template-example-2"></a>
+### Example 2: Policy template with no placeholder values<a name="policy-template-example-2"></a>
 
 The following example contains the [CloudWatchPutMetricPolicy](serverless-policy-template-list.md#cloudwatch-put-metric-policy) policy template, which has no placeholder values\.
 
@@ -63,7 +63,7 @@ Even though there are no placeholder values, you must specify an empty object, o
 8.       - CloudWatchPutMetricPolicy: {}
 ```
 
-## Policy Template Table<a name="serverless-policy-template-table"></a>
+## Policy template table<a name="serverless-policy-template-table"></a>
 
 The following is a table of the available policy templates\.
 

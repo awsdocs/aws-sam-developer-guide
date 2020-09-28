@@ -1,4 +1,4 @@
-# Running API Gateway Locally<a name="serverless-sam-cli-using-start-api"></a>
+# Running API Gateway locally<a name="serverless-sam-cli-using-start-api"></a>
 
 Use the `` command to start a local instance of API Gateway that you will use to test HTTP request/response functionality\. This functionality features hot reloading to enable you to quickly develop and iterate over your functions\.
 
@@ -77,4 +77,4 @@ sam local start-api --env-vars env.json
 
 ## Layers<a name="serverless-sam-cli-using-start-api-layers"></a>
 
-If your application includes layers, see [Working with Layers](serverless-sam-cli-layers.md) for more information about how to debug layers issues on your local host\.
+If your application includes layers, see [Working with layers](serverless-sam-cli-layers.md) for more information about how to debug layers issues on your local host\.

@@ -1,4 +1,4 @@
-# Policy Template List<a name="serverless-policy-template-list"></a>
+# Policy template list<a name="serverless-policy-template-list"></a>
 
 The following are the available policy templates, along with the permissions that are applied to each one\. AWS Serverless Application Model \(AWS SAM\) automatically populates the placeholder items \(such as AWS Region and account ID\) with the appropriate information\.
 

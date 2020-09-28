@@ -1,4 +1,4 @@
-# Resource Attributes<a name="sam-specification-resource-attributes"></a>
+# Resource attributes<a name="sam-specification-resource-attributes"></a>
 
 Resource attributes are attributes that you can add to a resource to control additional behaviors and relationships\. For more information about resource attributes, see [Resource Attribute Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-product-attribute-reference.html) in the *AWS CloudFormation User Guide*\.
 
@@ -18,6 +18,6 @@ AWS SAM resources support a subset of resource attributes that are supported by 
 
 **Notes:**
 
-\* For more information about using the `Metadata` resource attribute with the `AWS::Serverless::Function` resource type, see [Building Custom Runtimes](building-custom-runtimes.md)\.
+\* For more information about using the `Metadata` resource attribute with the `AWS::Serverless::Function` resource type, see [Building custom runtimes](building-custom-runtimes.md)\.
 
-\*\* For more information about using the `Metadata` resource attribute with the `AWS::Serverless::LayerVersion` resource type, see [Building Layers](building-layers.md)\.
+\*\* For more information about using the `Metadata` resource attribute with the `AWS::Serverless::LayerVersion` resource type, see [Building layers](building-layers.md)\.

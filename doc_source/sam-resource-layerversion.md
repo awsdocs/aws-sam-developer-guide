@@ -2,7 +2,7 @@
 
 Creates a Lambda LayerVersion that contains library or runtime code needed by a Lambda Function\.
 
-The [AWS::Serverless::LayerVersion](#sam-resource-layerversion) resource also supports the `Metadata` resource attribute, so you can instruct AWS SAM to build layers included in your application\. For more information about building layers, see [Building Layers](building-layers.md)\.
+The [AWS::Serverless::LayerVersion](#sam-resource-layerversion) resource also supports the `Metadata` resource attribute, so you can instruct AWS SAM to build layers included in your application\. For more information about building layers, see [Building layers](building-layers.md)\.
 
 **Important Note**: Since the release of the [UpdateReplacePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html) resource attribute in AWS CloudFormation, [AWS::Lambda::LayerVersion](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html) \(recommended\) offers the same benefits as [AWS::Serverless::LayerVersion](#sam-resource-layerversion)\.
 

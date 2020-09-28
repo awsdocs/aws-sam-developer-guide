@@ -1,4 +1,4 @@
-# Working with Layers<a name="serverless-sam-cli-layers"></a>
+# Working with layers<a name="serverless-sam-cli-layers"></a>
 
 The AWS SAM CLI supports applications that include layers\. For more information about layers, see [Lambda Layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\.
 

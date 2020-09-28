@@ -10,15 +10,15 @@ The following steps help you to install and configure the required prerequisites
 
 1. Install the AWS SAM CLI\.
 
-## Step 1: Create an AWS Account<a name="serverless-sam-cli-install-windows-aws-account"></a>
+## Step 1: Create an AWS account<a name="serverless-sam-cli-install-windows-aws-account"></a>
 
 If you don't already have an AWS account, see [aws\.amazon\.com](https://aws.amazon.com/) and choose **Create an AWS Account**\. For detailed instructions, see [Create and Activate an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)\.
 
-## Step 2: Create an IAM User with Administrator Permissions<a name="serverless-sam-cli-install-windows-iam-permissions"></a>
+## Step 2: Create an IAM user with administrator permissions<a name="serverless-sam-cli-install-windows-iam-permissions"></a>
 
 If you don't already have an IAM user with administrator permissions, see [Creating Your First IAM Admin User and Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
 
-In addition, you must set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. For example, the AWS SAM CLI makes calls to Amazon S3 and AWS CloudFormation\. For more information about setting up AWS credentials, see [Setting Up AWS Credentials](serverless-getting-started-set-up-credentials.md)\.
+In addition, you must set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. For example, the AWS SAM CLI makes calls to Amazon S3 and AWS CloudFormation\. For more information about setting up AWS credentials, see [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)\.
 
 ## Step 3: Install Docker<a name="serverless-sam-cli-install-windows-docker"></a>
 
@@ -74,8 +74,8 @@ If you operate on 32\-bit system, see [Installing AWS SAM CLI on 32\-bit Windows
 
 You're now ready to start development\.
 
-## Next Steps<a name="serverless-sam-cli-install-windows-next-steps"></a>
+## Next steps<a name="serverless-sam-cli-install-windows-next-steps"></a>
 
 You're now ready to begin building your own serverless applications using AWS SAM\! If you want to start with sample serverless applications, choose one of the following links:
-+ [Tutorial: Deploying a Hello World Application](serverless-getting-started-hello-world.md) – Step\-by\-step instructions to download, build, and deploy a simple serverless application\.
++ [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md) – Step\-by\-step instructions to download, build, and deploy a simple serverless application\.
 + [AWS SAM example applications in GitHub](https://github.com/aws-samples/serverless-app-examples) – Sample applications in the AWS SAM GitHub repository that you can further experiment with\.

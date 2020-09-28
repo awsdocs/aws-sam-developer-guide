@@ -1,4 +1,4 @@
-# Building Layers<a name="building-layers"></a>
+# Building layers<a name="building-layers"></a>
 
 To build layers that you have declared in your AWS Serverless Application Model \(AWS SAM\) template file, include a `Metadata` resource attribute section with a `BuildMethod` entry\. Valid values for `BuildMethod` are identifiers for an [AWS Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html), or `makefile`\.
 
@@ -20,7 +20,7 @@ When you include the `Metadata` resource attribute section, you can use the `` c
 
 ## Examples<a name="building-applications-examples"></a>
 
-### Template Example 1: Build a Layer Against the Python 3\.6 Runtime Environment<a name="building-applications-examples-python"></a>
+### Template example 1: Build a layer against the Python 3\.6 runtime environment<a name="building-applications-examples-python"></a>
 
 The following example AWS SAM template builds a layer against the Python 3\.6 runtime environment\.
 
@@ -36,7 +36,7 @@ Resources:
       BuildMethod: python3.6              # Required to have AWS SAM build this layer
 ```
 
-### Template Example 2: Build a Layer Using a Custom makefile<a name="building-applications-examples-makefile"></a>
+### Template example 2: Build a layer using a custom makefile<a name="building-applications-examples-makefile"></a>
 
 The following example AWS SAM template uses a custom makefile to build the layer\.
 

@@ -1,4 +1,4 @@
-# Deploying Serverless Applications Gradually<a name="automating-updates-to-serverless-apps"></a>
+# Deploying serverless applications gradually<a name="automating-updates-to-serverless-apps"></a>
 
 If you use AWS SAM to create your serverless application, it comes built\-in with [CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to provide gradual Lambda deployments\. With just a few lines of configuration, AWS SAM does the following for you:
 + Deploys new versions of your Lambda function, and automatically creates aliases that point to the new version\. 

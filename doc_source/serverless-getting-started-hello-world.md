@@ -1,4 +1,4 @@
-# Tutorial: Deploying a Hello World Application<a name="serverless-getting-started-hello-world"></a>
+# Tutorial: Deploying a Hello World application<a name="serverless-getting-started-hello-world"></a>
 
 In this guide, you download, build, and deploy a sample Hello World application using AWS SAM\. You then test the application in the AWS Cloud, and optionally test it locally on your development host\.
 
@@ -36,7 +36,7 @@ This guide assumes that you've completed the steps in the [Installing the AWS SA
 
 1. Installed the AWS SAM CLI\. Note: Make sure you have version 1\.0\.0 or later\. You can check which version you have by executing the command `sam --version`\.
 
-## Step 1: Download a Sample AWS SAM Application<a name="serverless-getting-started-hello-world-initialize"></a>
+## Step 1: Download a sample AWS SAM application<a name="serverless-getting-started-hello-world-initialize"></a>
 
 **Command to run:**
 
@@ -88,7 +88,7 @@ There are three especially important files:
 + `hello_world/app.py`: Contains your actual Lambda handler logic\.
 + `hello_world/requirements.txt`: Contains any Python dependencies that the application requires, and is used for `sam build`\.
 
-## Step 2: Build Your Application<a name="serverless-getting-started-hello-world-build"></a>
+## Step 2: Build your application<a name="serverless-getting-started-hello-world-build"></a>
 
 **Command to run:**
 
@@ -129,7 +129,7 @@ You can see the following top\-level tree under `.aws-sam`:
 
 `HelloWorldFunction` is a directory that contains your `app.py` file, as well as third\-party dependencies that your application uses\.
 
-## Step 3: Deploy Your Application to the AWS Cloud<a name="serverless-getting-started-hello-world-deploy"></a>
+## Step 3: Deploy your application to the AWS Cloud<a name="serverless-getting-started-hello-world-deploy"></a>
 
 **Command to run:**
 
@@ -141,7 +141,7 @@ Follow the on\-screen prompts\. You can just respond with `Enter` to accept the 
 
 **Note**  
 For the prompt `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]` AWS SAM is informing you that the sample application configures an API Gateway API without authorization\. When you deploy the sample application, AWS SAM creates a publicly available URL\.  
-You can acknowledge this notification by answering "Y" to the prompt\. For information configuring authorization, see [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
+You can acknowledge this notification by answering "Y" to the prompt\. For information configuring authorization, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
 
 **Example output:**
 
@@ -240,7 +240,7 @@ You should see output like the following after successfully deploying your appli
 
 If you see `{"message": "hello world"}` after executing the `curl` command, it means that you've successfully deployed your serverless application to AWS, and are calling your live Lambda function\. Otherwise, see the [Troubleshooting](#serverless-getting-started-hello-world-troubleshooting) section later in this tutorial\.
 
-## Step 4: Testing Your Application Locally \(Optional\)<a name="serverless-getting-started-hello-world-test-locally"></a>
+## Step 4: Testing your application locally \(optional\)<a name="serverless-getting-started-hello-world-test-locally"></a>
 
 When you're developing your application, you might also find it useful to test locally\. The AWS SAM CLI provides the `sam local` command to run your application using Docker containers that simulate the execution environment of Lambda\. There are two options to do this: 
 + Host your API locally
@@ -248,7 +248,7 @@ When you're developing your application, you might also find it useful to test l
 
 This step describes both options\.
 
-### Host Your API Locally<a name="serverless-getting-started-hello-world-test-locally-host"></a>
+### Host your API locally<a name="serverless-getting-started-hello-world-test-locally-host"></a>
 
 **Command to run:**
 
@@ -298,7 +298,7 @@ curl http://127.0.0.1:3000/hello
 
 The `start-api` command starts up a local endpoint that replicates your REST API endpoint\. It downloads an execution container that you can run your function locally in\. The end result is the same output that you saw when you called your function in the AWS Cloud\.
 
-### Making One\-off Invocations<a name="serverless-getting-started-hello-world-test-locally-invoke"></a>
+### Making one\-off invocations<a name="serverless-getting-started-hello-world-test-locally-invoke"></a>
 
 **Command to run:**
 
@@ -375,7 +375,7 @@ Error: Security Constraints Not Satisfied
 The prompt is informing you that the application you're about to deploy may have an API Gateway API configured without authorization\. By responding "N" to this prompt \(the default\), you are saying this is not OK\.
 
 To fix this, you have the following options:
-+ Configure your application with authorization\. For information configuring authorization, see [Controlling Access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
++ Configure your application with authorization\. For information configuring authorization, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
 + Respond to this question with "Y" to indicate that you are OK with deploying an application that has an API Gateway API configured without authorization\.
 
 ### SAM CLI error: "no such option: \-\-app\-template"<a name="serverless-getting-started-hello-world-troubleshooting-app-template"></a>
@@ -409,7 +409,7 @@ When executing `sam deploy`, you see the following error:
 Error: Failed to create managed resources: Unable to locate credentials
 ```
 
-This means that you have not set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. To fix this, you must set up AWS credentials\. For more information, see [Setting Up AWS Credentials](serverless-getting-started-set-up-credentials.md)\.
+This means that you have not set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. To fix this, you must set up AWS credentials\. For more information, see [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)\.
 
 ### SAM CLI error: "Running AWS SAM projects locally requires Docker\. Have you got it installed?"<a name="serverless-getting-started-hello-world-troubleshooting-docker"></a>
 
@@ -446,7 +446,7 @@ When trying to invoke the API Gateway endpoint, you see the following error:
 
 This means that you've attempted to send a request to an invalid domain\. This can happen if your serverless application failed to deploy successfully, or if you have a typo in your `curl` command\. Verify that the application was deployed successfully by using the AWS CloudFormation console or AWS CLI, and that your `curl` command is correct\.
 
-## Clean Up<a name="serverless-getting-started-hello-world-cleanup"></a>
+## Clean up<a name="serverless-getting-started-hello-world-cleanup"></a>
 
 If you no longer need the AWS resources you created by running this tutorial, you can remove them by deleting the AWS CloudFormation stack that you deployed\.
 
@@ -468,7 +468,7 @@ Alternatively, you can delete the AWS CloudFormation stack by executing the foll
 aws cloudformation delete-stack --stack-name sam-app --region region
 ```
 
-### Verify Deleted Stack<a name="serverless-getting-started-hello-world-cleanup-verify"></a>
+### Verify deleted stack<a name="serverless-getting-started-hello-world-cleanup-verify"></a>
 
 For both methods of deleting the AWS CloudFormation stack, you can verify it was deleted by going to the [https://console\.aws\.amazon\.com/cloudformation](https://console.aws.amazon.com/cloudformation/), choosing **Stacks** in the left navigation pane, and choosing **Deleted** in the dropdown to the right of the search text box\. You should see your stack name **sam\-app** \(or the name of the stack you created\) in the list of deleted stacks\.
 
@@ -482,7 +482,7 @@ In this tutorial, you've done the following:
 
 1. Deleted the AWS resources that you no longer need\.
 
-## Next Steps<a name="serverless-getting-started-hello-world-next-steps"></a>
+## Next steps<a name="serverless-getting-started-hello-world-next-steps"></a>
 
 You're now ready to start building your own applications using the AWS SAM CLI\.
 

@@ -1,4 +1,4 @@
-# Important Notes<a name="important-notes"></a>
+# Important notes<a name="important-notes"></a>
 
 This section contains important notes and known issues for AWS Serverless Application Model\.
 

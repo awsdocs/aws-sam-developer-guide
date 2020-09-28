@@ -1,4 +1,4 @@
-# Process Amazon S3 Events<a name="serverless-example-s3"></a>
+# Process Amazon S3 events<a name="serverless-example-s3"></a>
 
 With this example application, you build on what you learned in the previous examples, and install a more complex application\. This application consists of a Lambda function that's invoked by an Amazon S3 object upload event source\. This exercise shows you how to access AWS resources and make AWS service calls through a Lambda function\.
 
@@ -8,11 +8,11 @@ This sample serverless application processes object\-creation events in Amazon S
 With this example application, you perform steps in a slightly different order than in previous examples\. The reason for this is that this example requires that AWS resources are created and IAM permissions are configured *before* you can test the Lambda function locally\. We're going to leverage AWS CloudFormation to create the resources and configure the permissions for you\. Otherwise, you would need to do this manually before you can test the Lambda function locally\.  
 Because this example is more complicated, be sure that you're familiar with installing the previous example applications before executing this one\.
 
-## Before You Begin<a name="serverless-example-s3-prereq"></a>
+## Before you begin<a name="serverless-example-s3-prereq"></a>
 
 Make sure that you've completed the required setup in the [Installing the AWS SAM CLI](serverless-sam-cli-install.md)\.
 
-## Step 1: Initialize the Application<a name="serverless-example-s3-setup-local-app"></a>
+## Step 1: Initialize the application<a name="serverless-example-s3-setup-local-app"></a>
 
 In this section, you download the sample application, which consists of an AWS SAM template and application code\.
 
@@ -31,7 +31,7 @@ In this section, you download the sample application, which consists of an AWS S
    + `src/` directory – Contains the Amazon S3 application code\.
    + `SampleEvent.json` – The sample event source, which is used for local testing\.
 
-## Step 2: Package the Application<a name="serverless-example-s3-package-serverless-app"></a>
+## Step 2: Package the application<a name="serverless-example-s3-package-serverless-app"></a>
 
 Before you can test this application locally, you must use the AWS SAM CLI to create a deployment package, which you use to deploy the application to the AWS Cloud\. This deployment creates the necessary AWS resources and permissions that are required to test the application locally\.
 
@@ -54,7 +54,7 @@ Before you can test this application locally, you must use the AWS SAM CLI to cr
 
    You specify the new template file, `packaged.yaml`, when you deploy the application in the next step\.
 
-## Step 3: Deploy the Application<a name="serverless-example-s3-deploy-serverless-app"></a>
+## Step 3: Deploy the application<a name="serverless-example-s3-deploy-serverless-app"></a>
 
 Now that you've created the deployment package, you use it to deploy the application to the AWS Cloud\. You then test the application by invoking it in the AWS Cloud\.
 
@@ -81,7 +81,7 @@ Now that you've created the deployment package, you use it to deploy the applica
 
 1. Verify that the DynamoDB table contains new records that contain text that Amazon Rekognition found in the uploaded image\.
 
-## Step 4: Test the Application Locally<a name="serverless-example-s3-test-locally"></a>
+## Step 4: Test the application locally<a name="serverless-example-s3-test-locally"></a>
 
 Before you can test the application locally, you must first retrieve the names of the AWS resources that were created by AWS CloudFormation\.
 + Retrieve the Amazon S3 key name and bucket name from AWS CloudFormation\. Modify the `SampleEvent.json` file by replacing the values for the object key, bucket name, and bucket ARN\.
@@ -97,6 +97,6 @@ The `TABLE_NAME=` portion sets the DynamoDB table name\. The `--event` parameter
 
 You can now verify that the expected DynamoDB records were created, based on the results returned by Amazon Rekognition\.
 
-## Next Steps<a name="serverless-example-s3-next-steps"></a>
+## Next steps<a name="serverless-example-s3-next-steps"></a>
 
 The AWS SAM GitHub repository contains additional example applications for you to download and experiement with\. To access this repository, see [AWS SAM example applications](https://github.com/aws-samples/serverless-app-examples)\.
