@@ -1,6 +1,6 @@
 # Building custom runtimes<a name="building-custom-runtimes"></a>
 
-You can use the `` command to build custom runtimes required for your Lambda function\. You declare your Lambda function to use a custom runtime by specifying `Runtime: provided` for the function\.
+You can use the `sam build` command to build custom runtimes required for your Lambda function\. You declare your Lambda function to use a custom runtime by specifying `Runtime: provided` for the function\.
 
 To build a custom runtime, declare the `Metadata` resource attribute with a `BuildMethod: makefile` entry\. You provide a custom makefile, where you declare a build target of the form `build-function-logical-id` that contains the build commands for your runtime\. Your makefile is responsible for compiling the custom runtime if necessary, and copying the build artifacts into the proper location required for subsequent steps in your workflow\.
 

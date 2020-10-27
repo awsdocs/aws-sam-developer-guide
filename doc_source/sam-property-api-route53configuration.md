@@ -24,14 +24,14 @@ Configures a custom distribution of the API custom domain name\.
 *Required*: No  
 *Default*: Use the API Gateway distribution\.  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[DNSName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget-1.html#cfn-route53-aliastarget-dnshostname)` property of an `AWS::Route53::RecordSetGroup AliasTarget` resource\.  
-*Additional Notes*: The domain name of a [CloudFront distribution](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html)\.
+*Additional notes*: The domain name of a [CloudFront distribution](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html)\.
 
  `EvaluateTargetHealth`   <a name="sam-api-route53configuration-evaluatetargethealth"></a>
 When EvaluateTargetHealth is true, an alias record inherits the health of the referenced AWS resource, such as an Elastic Load Balancing load balancer or another record in the hosted zone\.  
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[EvaluateTargetHealth](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth)` property of an `AWS::Route53::RecordSetGroup AliasTarget` resource\.  
-*Additional Notes*: You can't set EvaluateTargetHealth to true when the alias target is a CloudFront distribution\.
+*Additional notes*: You can't set EvaluateTargetHealth to true when the alias target is a CloudFront distribution\.
 
  `HostedZoneId`   <a name="sam-api-route53configuration-hostedzoneid"></a>
 The ID of the hosted zone that you want to create records in\.  

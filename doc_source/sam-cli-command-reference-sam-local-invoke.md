@@ -4,6 +4,11 @@ Invokes a local Lambda function once and quits after invocation completes\.
 
 This is useful for developing serverless functions that handle asynchronous events \(such as Amazon S3 or Amazon Kinesis events\)\. It can also be useful if you want to compose a script of test cases\. The event body can be passed in using the `--event` parameter\. The runtime output \(logs etc\) is output to `stderr`, and the Lambda function result is output to `stdout`\.
 
+**AWS SAM CLI support for Lambda extensions \(Preview\)**  
+To locally test a serverless application that uses Lambda extensions, set the `ENABLE_LAMBDA_EXTENSIONS_PREVIEW` environment variable to "1"\. For example:  
+`ENABLE_LAMBDA_EXTENSIONS_PREVIEW=1 sam local invoke`  
+For more information about Lambda extensions, see [Using AWS Lambda extensions](https://docs.aws.amazon.com/lambda/latest/dg/using-extensions.html) in the *AWS Lambda Developer Guide*\.
+
 **Usage:**
 
 ```

@@ -44,8 +44,7 @@ The configuration file is in the [TOML file format](https://toml.io/en/)\. The A
 + The configuration value can take the following forms:
 
   1. For parameters that take an argument, the entry value is the argument surrounded by double quotes\. For example, `region = "us-west-2"`\.
-
-  1. For parameters that take key\-value pairs, the pairs are space\-delimited and value of each pair is surrounded by encoded double quotes\. For example, `tags = "project=\"my-application\" stage=\"production\""`\.
+     + For arguments that are key\-value pairs, the pairs are space\-delimited and value of each pair is surrounded by encoded double quotes\. For example, `tags = "project=\"my-application\" stage=\"production\""`\.
 
   1. For toggle parameters, the value can be `true` or `false` \(no quotes\)\. For example, `confirm_changeset = true`\.
 

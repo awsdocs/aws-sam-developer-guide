@@ -42,7 +42,7 @@ For more information, see [Controlling access to API Gateway APIs](serverless-co
 *Required*: No  
 *Default*: None  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
-*Additional Notes*: SAM adds the Authorizers to the OpenApi definition of an Api\.
+*Additional notes*: SAM adds the Authorizers to the OpenApi definition of an Api\.
 
  `DefaultAuthorizer`   <a name="sam-api-apiauth-defaultauthorizer"></a>
 Specify a default authorizer for an API Gateway API, which will be used for authorizing API calls by default\.  
@@ -66,7 +66,7 @@ Configure Resource Policy for all methods and paths on an API\.
 *Type*: [ResourcePolicyStatement](sam-property-api-resourcepolicystatement.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
-*Additional Notes*: This setting can also be defined on individual `AWS::Serverless::Function` using the [ApiFunctionAuth](sam-property-function-apifunctionauth.md)\. This is required for APIs with `EndpointConfiguration: PRIVATE`\.
+*Additional notes*: This setting can also be defined on individual `AWS::Serverless::Function` using the [ApiFunctionAuth](sam-property-function-apifunctionauth.md)\. This is required for APIs with `EndpointConfiguration: PRIVATE`\.
 
  `UsagePlan`   <a name="sam-api-apiauth-usageplan"></a>
 Configures a usage plan associated with this API\. For more information about usage plans see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the API Gateway Developer Guide\.  

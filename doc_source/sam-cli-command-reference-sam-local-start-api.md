@@ -8,6 +8,11 @@ If you're using an interpreted language, local changes are available immediately
 
 To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md)\. The `sam local start-api` command is part of [Step 4: Testing your application locally \(optional\)](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-test-locally)\.
 
+**AWS SAM CLI support for Lambda extensions \(Preview\)**  
+To locally test a serverless application that uses Lambda extensions, set the `ENABLE_LAMBDA_EXTENSIONS_PREVIEW` environment variable to "1"\. For example:  
+`ENABLE_LAMBDA_EXTENSIONS_PREVIEW=1 sam local start-api`  
+For more information about Lambda extensions, see [Using AWS Lambda extensions](https://docs.aws.amazon.com/lambda/latest/dg/using-extensions.html) in the *AWS Lambda Developer Guide*\.
+
 **Usage:**
 
 ```

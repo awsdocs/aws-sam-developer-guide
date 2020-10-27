@@ -24,7 +24,7 @@ List of basepaths to be configured with the API Gateway Domain Name\.
 *Required*: No  
 *Default*: /  
 *AWS CloudFormation compatibility*: This property is similar to the `[BasePath](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apimapping.html)` property of an `AWS::ApiGatewayV2::ApiMapping` resource\. SAM will create multiple `AWS::ApiGatewayV2::ApiMapping` resources, one per `BasePath` specified in this property\.  
-*Additional Notes*: SAM will create multiple `AWS::ApiGatewayV2::ApiMapping` resources, one per `BasePath` specified in this property\.
+*Additional notes*: SAM will create multiple `AWS::ApiGatewayV2::ApiMapping` resources, one per `BasePath` specified in this property\.
 
  `CertificateArn`   <a name="sam-httpapi-httpapidomainconfiguration-certificatearn"></a>
 The reference to an AWS\-managed certificate for use by the endpoint for this domain name\. AWS Certificate Manager is the only supported source\.  

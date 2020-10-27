@@ -44,7 +44,7 @@ Specifies the `InvokeRole` to use for `AWS_IAM` authorization\.
 *Required*: No  
 *Default*: `CALLER_CREDENTIALS`   
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
-*Additional Notes*: `CALLER_CREDENTIALS` maps to `arn:aws:iam::*:user/*`, which uses the caller credentials to invoke the endpoint\.
+*Additional notes*: `CALLER_CREDENTIALS` maps to `arn:aws:iam::*:user/*`, which uses the caller credentials to invoke the endpoint\.
 
  `ResourcePolicy`   <a name="sam-function-apifunctionauth-resourcepolicy"></a>
 Configure Resource Policy for this path on an API\.  

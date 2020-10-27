@@ -142,8 +142,8 @@ The following is a table of the available policy templates\.
 | [ElasticMapReduceCancelStepsPolicy](serverless-policy-template-list.md#elastic-map-reduce-cancel-steps-policy) | Gives permission to cancel a pending step or steps in a running cluster\. | 
 | [ElasticMapReduceTerminateJobFlowsPolicy](serverless-policy-template-list.md#elastic-map-reduce-terminate-job-flows-policy) | Gives permission to shut down a cluster\. | 
 | [ElasticMapReduceAddJobFlowStepsPolicy](serverless-policy-template-list.md#elastic-map-reduce-add-job-flows-policy) | Gives permission to add new steps to a running cluster\. | 
-| [SageMakerCreateEndpointPolicy](serverless-policy-template-list.md#sagemaker-create-endpoint-policy) | Gives permission to create an endpoint in Amazon SageMaker\. | 
-| [SageMakerCreateEndpointConfigPolicy](serverless-policy-template-list.md#sagemaker-create-endpoint-config-policy) | Gives permission to create an endpoint configuration in Amazon SageMaker\. | 
+| [SageMakerCreateEndpointPolicy](serverless-policy-template-list.md#sagemaker-create-endpoint-policy) | Gives permission to create an endpoint in SageMaker\. | 
+| [SageMakerCreateEndpointConfigPolicy](serverless-policy-template-list.md#sagemaker-create-endpoint-config-policy) | Gives permission to create an endpoint configuration in SageMaker\. | 
 | [EcsRunTaskPolicy](serverless-policy-template-list.md#ecs-run-task-policy) | Gives permission to start a new task for a task definition\. | 
 | [EFSWriteAccessPolicy](serverless-policy-template-list.md#efs-write-access-policy) | Gives permission to mount an Amazon EFS file system with write access\. | 
 

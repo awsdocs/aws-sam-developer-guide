@@ -20,7 +20,7 @@ Attribute name of the primary key\.
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[AttributeName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html#cfn-dynamodb-attributedef-attributename)` property of the `AWS::DynamoDB::Table` `AttributeDefinition` data type\.  
-*Additional Notes*: This property is also passed to the [AttributeName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-keyschema.html#aws-properties-dynamodb-keyschema-attributename) property of an `AWS::DynamoDB::Table KeySchema` data type\.
+*Additional notes*: This property is also passed to the [AttributeName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-keyschema.html#aws-properties-dynamodb-keyschema-attributename) property of an `AWS::DynamoDB::Table KeySchema` data type\.
 
  `Type`   <a name="sam-simpletable-primarykeyobject-type"></a>
 The data type for the primary key\.  

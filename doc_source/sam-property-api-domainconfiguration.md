@@ -30,7 +30,7 @@ The reference to an AWS\-managed certificate for use by the endpoint for this do
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is similar to the `[CertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn)` property of an `AWS::ApiGateway::DomainName` resource\. If `EndpointConfiguration` is set to `REGIONAL` \(the default value\), `CertificateArn` maps to [RegionalCertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn) in `AWS::ApiGateway::DomainName`\. If the `EndpointConfiguration` is set to `EDGE`, `CertificateArn` maps to [CertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn) in `AWS::ApiGateway::DomainName`\.  
-*Additional Notes*: For an `EDGE` endpoint, the certificate must be created in the `us-east-1` region\.
+*Additional notes*: For an `EDGE` endpoint, the certificate must be created in the `us-east-1` region\.
 
  `DomainName`   <a name="sam-api-domainconfiguration-domainname"></a>
 The custom domain name for your API Gateway API\. Uppercase letters are not supported\.  

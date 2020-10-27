@@ -1,6 +1,6 @@
 # Running API Gateway locally<a name="serverless-sam-cli-using-start-api"></a>
 
-Use the `` command to start a local instance of API Gateway that you will use to test HTTP request/response functionality\. This functionality features hot reloading to enable you to quickly develop and iterate over your functions\.
+Use the `sam local start\-api` command to start a local instance of API Gateway that you will use to test HTTP request/response functionality\. This functionality features hot reloading to enable you to quickly develop and iterate over your functions\.
 
 **Note**  
 "Hot reloading" is when only the files that changed are refreshed without losing the state of the application\. In contrast, "live reloading" is when the entire application is refreshed, such that the state of the application is lost\.

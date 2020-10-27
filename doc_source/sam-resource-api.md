@@ -149,10 +149,11 @@ Version of OpenApi to use\. This can either be `2.0` for the Swagger specificati
 
  `StageName`   <a name="sam-api-stagename"></a>
 The name of the stage, which API Gateway uses as the first path segment in the invoke Uniform Resource Identifier \(URI\)\.  
+To reference the stage resource, use `<api-logical-id>.Stage`\. For more information about referencing resources generated when an [AWS::Serverless::Api](#sam-resource-api) resource is specified, see [AWS CloudFormation resources generated when AWS::Serverless::Api is specified](sam-specification-generated-resources-api.md)\. For general information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is similar to the `[StageName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-stagename)` property of an `AWS::ApiGateway::Stage` resource\. It is required in SAM, but not required in API Gateway  
-*Additional Notes*: The Implicit API has a stage name of "Prod"\.
+*Additional notes*: The Implicit API has a stage name of "Prod"\.
 
  `Tags`   <a name="sam-api-tags"></a>
 A map \(string to string\) that specifies the tags to be added to this API Gateway stage\. Keys and values are limited to alphanumeric characters\. Keys can be 1 to 127 Unicode characters in length and cannot be prefixed with aws:\. Values can be 1 to 255 Unicode characters in length\.  

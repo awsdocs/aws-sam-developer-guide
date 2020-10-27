@@ -1,6 +1,6 @@
 # Building applications<a name="serverless-sam-cli-using-build"></a>
 
-To build your serverless application, use the `` command\.
+To build your serverless application, use the `sam build` command\.
 
 `sam build` also gathers the build artifacts of your application's dependencies, and places them in the proper format and location for subsequent steps in your workflow\. You specify dependencies in a manifest file that you include in your application \(such as `requirements.txt` for Python functions, or `package.json` for Nodejs functions\), or by using the `Layers` property of a function resource\. The `Layers` property contains a list of Lambda layer resources that the function depends on\.
 

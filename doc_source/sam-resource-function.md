@@ -88,7 +88,7 @@ If a `DeploymentPreference` object is specified, AWS SAM creates an [AWS::CodeDe
 *Type*: [DeploymentPreference](sam-property-function-deploymentpreference.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
-*See also*: See the [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md) documentation for more information about this property\.
+*See also*: For more information about this property, see [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\.
 
  `Description`   <a name="sam-function-description"></a>
 A description of the function\.  

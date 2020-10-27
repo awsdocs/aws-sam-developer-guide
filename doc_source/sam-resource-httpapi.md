@@ -105,7 +105,7 @@ A map \(string to string\) that specifies the tags to be added to this API Gatew
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
-*Additional Notes*: Because Tags requires AWS SAM to modify your OpenAPI definition, they will only be added if the `DefinitionBody` property is specified—no tags will be added if the `DefinitionUri` property is provided\. AWS SAM automatically adds a `httpapi:createdBy:SAM` tag\. Tags will also be added to `AWS::ApiGatewayV2::Stage` and `AWS::ApiGatewayV2::DomainName` \(if `DomainName` is specified\)\.
+*Additional notes*: Because Tags requires AWS SAM to modify your OpenAPI definition, they will only be added if the `DefinitionBody` property is specified—no tags will be added if the `DefinitionUri` property is provided\. AWS SAM automatically adds a `httpapi:createdBy:SAM` tag\. Tags will also be added to `AWS::ApiGatewayV2::Stage` and `AWS::ApiGatewayV2::DomainName` \(if `DomainName` is specified\)\.
 
 ## Return Values<a name="sam-resource-httpapi-return-values"></a>
 

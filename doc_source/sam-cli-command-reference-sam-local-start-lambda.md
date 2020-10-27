@@ -2,6 +2,11 @@
 
 Enables you to programmatically invoke your Lambda function locally by using the AWS CLI or SDKs\. This command starts a local endpoint that emulates AWS Lambda\. You can run your automated tests against this local Lambda endpoint\. When you send an invoke to this endpoint using the AWS CLI or SDK, it locally executes the Lambda function that's specified in the request\.
 
+**AWS SAM CLI support for Lambda extensions \(Preview\)**  
+To locally test a serverless application that uses Lambda extensions, set the `ENABLE_LAMBDA_EXTENSIONS_PREVIEW` environment variable to "1"\. For example:  
+`ENABLE_LAMBDA_EXTENSIONS_PREVIEW=1 sam local start-lambda`  
+For more information about Lambda extensions, see [Using AWS Lambda extensions](https://docs.aws.amazon.com/lambda/latest/dg/using-extensions.html) in the *AWS Lambda Developer Guide*\.
+
 **Usage:**
 
 ```

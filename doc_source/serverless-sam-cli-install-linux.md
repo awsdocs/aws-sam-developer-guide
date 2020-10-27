@@ -25,6 +25,14 @@ If you don't already have an IAM user with administrator permissions, see [Creat
 
 In addition, you must set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. For example, the AWS SAM CLI makes calls to Amazon S3 and AWS CloudFormation\. For more information about setting up AWS credentials, see [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)\.
 
+**Note**  
+If you want to use the AWS SAM CLI with an IAM user that does *not* have administrator permissions, you can instead attach a set of AWS managed policies to the IAM user\. The following set of AWS managed policies are sufficient to deploy the Hello World sample application:  
+AWSCloudFormationFullAccess
+IAMFullAccess
+AWSLambdaFullAccess
+AmazonAPIGatewayAdministrator
+ For more information about attaching policies to an IAM user, see [Changing permissions for an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_change-permissions.html)\.
+
 ## Step 3: Install Docker<a name="serverless-sam-cli-install-linux-docker"></a>
 
 **Note**  

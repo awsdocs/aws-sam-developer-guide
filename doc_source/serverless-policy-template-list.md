@@ -2012,7 +2012,7 @@ Gives permission to add new steps to a running cluster\.
 
 ## SageMakerCreateEndpointPolicy<a name="sagemaker-create-endpoint-policy"></a>
 
-Gives permission to create an endpoint in Amazon SageMaker\.
+Gives permission to create an endpoint in SageMaker\.
 
 ```
         "Statement": [
@@ -2037,7 +2037,7 @@ Gives permission to create an endpoint in Amazon SageMaker\.
 
 ## SageMakerCreateEndpointConfigPolicy<a name="sagemaker-create-endpoint-config-policy"></a>
 
-Gives permission to create an endpoint configuration in Amazon SageMaker\.
+Gives permission to create an endpoint configuration in SageMaker\.
 
 ```
         "Statement": [
