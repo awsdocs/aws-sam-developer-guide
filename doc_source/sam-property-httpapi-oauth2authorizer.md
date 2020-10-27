@@ -1,8 +1,8 @@
 # OAuth2Authorizer<a name="sam-property-httpapi-oauth2authorizer"></a>
 
-Definition for an OAuth 2\.0 authorizer, also known to as a JSON Web Token \(JWT\) authorizer\.
+Definition for an OAuth 2\.0 authorizer\.
 
-For more information, see [Controlling access to HTTP APIs with JWT authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html) in the API Gateway Developer Guide\.
+For more information, see the [API Gateway documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html)\.
 
 ## Syntax<a name="sam-property-httpapi-oauth2authorizer-syntax"></a>
 
@@ -31,19 +31,19 @@ Identity source expression for this authorizer\.
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `JwtConfiguration`   <a name="sam-httpapi-oauth2authorizer-jwtconfiguration"></a>
-JWT configuration for this authorizer\.  
-This is passed through to the `jwtConfiguration` section of an `x-amazon-apigateway-authorizer` in the `securitySchemes` section of an OpenAPI definition\.  
+JSON Web Token \(JWT\) configuration for this authorizer\.  
+This is passed through to the `jwtConfiguration` section of a `x-amazon-apigateway-authorizer` in the `securitySchemes` section of an OpenApi document\.  
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-httpapi-oauth2authorizer--examples"></a>
 
-### OAuth 2\.0 authorizer<a name="sam-property-httpapi-oauth2authorizer--examples--oauth-2.0-authorizer"></a>
+### OAuth2 Authorizer<a name="sam-property-httpapi-oauth2authorizer--examples--oauth2-authorizer"></a>
 
-OAuth 2\.0 authorizer Example
+OAuth2 Authorizer Example
 
-#### YAML<a name="sam-property-httpapi-oauth2authorizer--examples--oauth-2.0-authorizer--yaml"></a>
+#### YAML<a name="sam-property-httpapi-oauth2authorizer--examples--oauth2-authorizer--yaml"></a>
 
 ```
 Auth:
