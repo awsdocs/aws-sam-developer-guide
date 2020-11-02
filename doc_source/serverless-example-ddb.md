@@ -90,4 +90,4 @@ Now that you've created the deployment package, you use it to deploy the applica
 
 ## Next steps<a name="gs-ex2-setup-deploy-app-next-steps"></a>
 
-The AWS SAM GitHub repository contains additional example applications for you to download and experiement with\. To access this repository, see [AWS SAM example applications](https://github.com/aws-samples/serverless-app-examples)\.
+The AWS SAM GitHub repository contains additional example applications for you to download and experiment with\. To access this repository, see [AWS SAM example applications](https://github.com/aws-samples/serverless-app-examples)\.
