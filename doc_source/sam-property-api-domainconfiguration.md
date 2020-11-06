@@ -13,45 +13,59 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [CertificateArn](#sam-api-domainconfiguration-certificatearn): String
   [DomainName](#sam-api-domainconfiguration-domainname): String
   [EndpointConfiguration](#sam-api-domainconfiguration-endpointconfiguration): String
+  [MutualTlsAuthentication](#sam-api-domainconfiguration-mutualtlsauthentication): [MutualTlsAuthentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication)
   [Route53](#sam-api-domainconfiguration-route53): Route53Configuration
+  [SecurityPolicy](#sam-api-domainconfiguration-securitypolicy): String
 ```
 
 ## Properties<a name="sam-property-api-domainconfiguration-properties"></a>
 
  `BasePath`   <a name="sam-api-domainconfiguration-basepath"></a>
-List of basepaths to be configured with the API Gateway Domain Name\.  
+A list of the basepaths to configure with the Amazon API Gateway domain name\.  
 *Type*: List  
 *Required*: No  
 *Default*: /  
-*AWS CloudFormation compatibility*: This property is similar to the `[BasePath](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-basepath)` property of an `AWS::ApiGateway::BasePathMapping` resource\. SAM will create multiple `AWS::ApiGateway::BasePathMapping` resources, one per `BasePath` specified in this property\.
+*AWS CloudFormation compatibility*: This property is similar to the `[BasePath](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-basepath)` property of an `AWS::ApiGateway::BasePathMapping` resource\. AWS SAM creates multiple `AWS::ApiGateway::BasePathMapping` resources, one per `BasePath` specified in this property\.
 
  `CertificateArn`   <a name="sam-api-domainconfiguration-certificatearn"></a>
-The reference to an AWS\-managed certificate for use by the endpoint for this domain name\. AWS Certificate Manager is the only supported source\.  
+The Amazon Resource Name \(ARN\) of an AWS managed certificate this domain name's endpoint\. AWS Certificate Manager is the only supported source\.  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is similar to the `[CertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn)` property of an `AWS::ApiGateway::DomainName` resource\. If `EndpointConfiguration` is set to `REGIONAL` \(the default value\), `CertificateArn` maps to [RegionalCertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-regionalcertificatearn) in `AWS::ApiGateway::DomainName`\. If the `EndpointConfiguration` is set to `EDGE`, `CertificateArn` maps to [CertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn) in `AWS::ApiGateway::DomainName`\.  
-*Additional notes*: For an `EDGE` endpoint, the certificate must be created in the `us-east-1` region\.
+*Additional notes*: For an `EDGE` endpoint, you must create the certificate in the `us-east-1` AWS Region\.
 
  `DomainName`   <a name="sam-api-domainconfiguration-domainname"></a>
 The custom domain name for your API Gateway API\. Uppercase letters are not supported\.  
-AWS SAM generates an [AWS::ApiGateway::DomainName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html) resource when this property is set\. For information about this scenario, see [DomainName property is specified](sam-specification-generated-resources-api.md#sam-specification-generated-resources-api-domain-name)\. For general information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.  
+AWS SAM generates an [AWS::ApiGateway::DomainName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html) resource when this property is set\. For information about this scenario, see [DomainName property is specified](sam-specification-generated-resources-api.md#sam-specification-generated-resources-api-domain-name)\. For information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[DomainName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-domainname)` property of an `AWS::ApiGateway::DomainName` resource\.
 
  `EndpointConfiguration`   <a name="sam-api-domainconfiguration-endpointconfiguration"></a>
-Property to define the type of API Gateway endpoint to be mapped to the custom domain\. The value of this property controls how the `CertificateArn` property gets mapped in AWS CloudFormation\. See `CertificateArn` above\.  
+Defines the type of API Gateway endpoint to map to the custom domain\. The value of this property determines how the `CertificateArn` property is mapped in AWS CloudFormation\.  
 Valid values are `REGIONAL` or `EDGE`\.  
 *Type*: String  
 *Required*: No  
 *Default*: `REGIONAL`   
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
+ `MutualTlsAuthentication`   <a name="sam-api-domainconfiguration-mutualtlsauthentication"></a>
+The mutual Transport Layer Security \(TLS\) authentication configuration for a custom domain name\.  
+*Type*: [MutualTlsAuthentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication)  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[MutualTlsAuthentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication)` property of an `AWS::ApiGateway::DomainName` resource\.
+
  `Route53`   <a name="sam-api-domainconfiguration-route53"></a>
-Property that adds Route53 configuration based on the values defined\.  
+Defines an Amazon Route 53 configuration\.  
 *Type*: [Route53Configuration](sam-property-api-route53configuration.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+ `SecurityPolicy`   <a name="sam-api-domainconfiguration-securitypolicy"></a>
+The TLS version plus cipher suite for this domain name\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[SecurityPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-securitypolicy)` property of an `AWS::ApiGateway::DomainName` resource\.
 
 ## Examples<a name="sam-property-api-domainconfiguration--examples"></a>
 

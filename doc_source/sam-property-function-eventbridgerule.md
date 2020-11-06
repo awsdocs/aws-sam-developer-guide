@@ -15,6 +15,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [Input](#sam-function-eventbridgerule-input): String
   [InputPath](#sam-function-eventbridgerule-inputpath): String
   [Pattern](#sam-function-eventbridgerule-pattern): [EventPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern)
+  [TargetId](#sam-function-eventbridgerule-targetid): String
 ```
 
 ## Properties<a name="sam-property-function-eventbridgerule-properties"></a>
@@ -43,6 +44,13 @@ Describes which events are routed to the specified target\. For more information
 *Type*: [EventPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern)  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[EventPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern)` property of an `AWS::Events::Rule` resource\.
+
+ `TargetId`   <a name="sam-function-eventbridgerule-targetid"></a>
+A name for the events rule target that EventBridge invokes when a rule is triggered\. The `TargetId` can include alphanumeric characters, periods \(\.\), hyphens \(\-\), and underscores \(\_\)\.  
+If this property is not specified, AWS SAM will generate a `TargetId` value\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Id](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-id)` property of the `AWS::Events::Rule` `Target` data type\.
 
 ## Examples<a name="sam-property-function-eventbridgerule--examples"></a>
 

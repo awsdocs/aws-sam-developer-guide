@@ -99,4 +99,4 @@ You can now verify that the expected DynamoDB records were created, based on the
 
 ## Next steps<a name="serverless-example-s3-next-steps"></a>
 
-The AWS SAM GitHub repository contains additional example applications for you to download and experiement with\. To access this repository, see [AWS SAM example applications](https://github.com/aws-samples/serverless-app-examples)\.
+The AWS SAM GitHub repository contains additional example applications for you to download and experiment with\. To access this repository, see [AWS SAM example applications](https://github.com/aws-samples/serverless-app-examples)\.

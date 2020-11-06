@@ -7,19 +7,21 @@ Use the `sam local start\-api` command to start a local instance of API Gateway 
 
 You must execute `sam local start-api` in the project directory containing the function you want to invoke\.
 
-Example:
+By default, AWS SAM uses Lambda proxy integrations, and supports both `HttpApi` and `Api` resource types\. For more information about proxy integrations for `HttpApi` resource types, see [Working with Lambda proxy integrations for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html)\. For more information about proxy integrations with `Api` resource types, see [Understand API Gateway Lambda proxy integration](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-create-api-as-simple-proxy)\.
+
+**Example**:
 
 ```
 sam local start-api
 ```
 
-AWS SAM automatically finds any functions within your AWS SAM template that have `Api` event sources defined\. Then, it mounts them at the defined HTTP paths\.
+AWS SAM automatically finds any functions within your AWS SAM template that have `HttpApi` or `Api` event sources defined\. Then, it mounts them at the defined HTTP paths\.
 
 This animation shows running API Gateway locally using Microsoft Visual Studio Code:
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/sam-start-api.gif)
 
-In the following example, the `Ratings` function mounts `ratings.py:handler()` at `/ratings` for `GET` requests:
+In the following `Api` example, the `Ratings` function mounts `ratings.py:handler()` at `/ratings` for `GET` requests:
 
 ```
 Ratings:
@@ -35,9 +37,7 @@ Ratings:
           Method: get
 ```
 
-By default, AWS SAM uses [ Proxy Integration](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-api-as-simple-proxy-for-lambda.html) and expects the response from your Lambda function to include one or more of the following: `statusCode`, `headers`, or `body`\.
-
-For example:
+Here is an example `Api` response:
 
 ```
 // Example of a Proxy Integration response
@@ -50,9 +50,7 @@ exports.handler = (event, context, callback) => {
 }
 ```
 
-For examples in other AWS Lambda languages, see [ Proxy Integration](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-api-as-simple-proxy-for-lambda.html)\.
-
-*Environment Variable File*
+**Environment Variable File**
 
 You can use the `--env-vars` argument with the `invoke` or `start-api` commands to provide a JSON file that contains values to override the environment variables already defined in your function template\. Structure the file as follows:
 

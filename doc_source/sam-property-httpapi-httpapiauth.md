@@ -2,7 +2,7 @@
 
 Configure authorization to control access to your Amazon API Gateway HTTP API\.
 
-For more information about configuring access to HTTP APIs, see [Controlling and managing access to an HTTP API in ](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-access-control.html) in the API Gateway Developer Guide\.
+For more information about configuring access to HTTP APIs, see [Controlling and managing access to an HTTP API in API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-access-control.html) in the API Gateway Developer Guide\.
 
 ## Syntax<a name="sam-property-httpapi-httpapiauth-syntax"></a>
 

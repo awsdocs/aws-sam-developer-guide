@@ -37,7 +37,7 @@ Converts the given query strings to a list of mapping expressions in the format 
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `ReauthorizeEvery`   <a name="sam-httpapi-lambdaauthorizationidentity-reauthorizeevery"></a>
-The time\-to\-live \(TTL\) period, in seconds, that specifies how long caches authorizer results\. If you specify a value greater than 0, caches the authorizer responses\. The maximum value is 3600, or 1 hour\.  
+The time\-to\-live \(TTL\) period, in seconds, that specifies how long API Gateway caches authorizer results\. If you specify a value greater than 0, API Gateway caches the authorizer responses\. The maximum value is 3600, or 1 hour\.  
 *Type*: Integer  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
