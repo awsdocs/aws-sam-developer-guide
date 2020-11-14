@@ -20,10 +20,6 @@ $ echo '{"message": "Hey, are you there?" }' | sam local invoke --event - "Ratin
 $ sam local invoke --help
 ```
 
-This animation shows invoking a Lambda function locally using Microsoft Visual Studio Code:
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/sam-invoke.gif)
-
 ## Environment Variable File<a name="serverless-sam-cli-using-invoke-environment-file"></a>
 
 You can use the `--env-vars` argument with the `invoke` or `start-api` commands\. You do this to provide a JSON file that contains values to override the environment variables that are already defined in your function template\. Structure the file as follows:

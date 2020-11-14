@@ -17,10 +17,6 @@ sam local start-api
 
 AWS SAM automatically finds any functions within your AWS SAM template that have `HttpApi` or `Api` event sources defined\. Then, it mounts them at the defined HTTP paths\.
 
-This animation shows running API Gateway locally using Microsoft Visual Studio Code:
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/images/sam-start-api.gif)
-
 In the following `Api` example, the `Ratings` function mounts `ratings.py:handler()` at `/ratings` for `GET` requests:
 
 ```
