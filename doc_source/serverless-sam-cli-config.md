@@ -34,7 +34,7 @@ The configuration file is in the [TOML file format](https://toml.io/en/)\. The A
 ### Tables<a name="rules-tables"></a>
 + The AWS SAM CLI uses TOML tables to group configuration entries by environment and command\.
 + The format of the table header is `[environment.command.parameters]`\. For example, for the `sam deploy` command, the configuration table header is `[default.deploy.parameters]`\.
-+ For subcommands, the format of the table header is `[environment.command_subcommand.parameters]`\. For example, for the `sam local invoke` command, the configuration table header is `[default.local_invoke.parameters]`\.
++ For subcommands, the format of the table header is `[environment.command_subcommand.parameters]` with `-` \(hyphen\) characters replaced with `_` \(underscore\)\. For example, for the `sam local start-api` command, the configuration table header is `[default.local_start_api.parameters]`\.
 + The default environment name is `default`\. You can override the default environment name using the `--config-env` parameter\.
 + A single configuration file can contain tables for multiple environments and multiple commands/subcommands\.
 
