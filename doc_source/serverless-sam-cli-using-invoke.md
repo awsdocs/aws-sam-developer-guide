@@ -1,4 +1,4 @@
-# Invoking Functions Locally<a name="serverless-sam-cli-using-invoke"></a>
+# Invoking functions locally<a name="serverless-sam-cli-using-invoke"></a>
 
 You can invoke your function locally by using the `sam local invoke` command and providing its function logical ID and an event file\. Alternatively, `sam local invoke` also accepts `stdin` as an event\.
 
