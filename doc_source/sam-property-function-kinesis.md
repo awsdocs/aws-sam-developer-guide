@@ -78,7 +78,7 @@ The number of batches to process from each shard concurrently\.
 
  `StartingPosition`   <a name="sam-function-kinesis-startingposition"></a>
 The position in a stream from which to start reading\.  
-Valid values: `TRIM_HORIZON` or `LATEST`\.  
+*Valid values*: `TRIM_HORIZON` or `LATEST`  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[StartingPosition](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition)` property of an `AWS::Lambda::EventSourceMapping` resource\.

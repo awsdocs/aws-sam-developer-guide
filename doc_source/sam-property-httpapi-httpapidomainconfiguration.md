@@ -45,7 +45,7 @@ Defines the type of API Gateway endpoint to map to the custom domain\. The value
 The only valid value for HTTP APIs is `REGIONAL`\.  
 *Type*: String  
 *Required*: No  
-*Default*: `REGIONAL`   
+*Default*: `REGIONAL`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `MutualTlsAuthentication`   <a name="sam-httpapi-httpapidomainconfiguration-mutualtlsauthentication"></a>

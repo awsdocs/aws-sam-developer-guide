@@ -24,7 +24,7 @@ The version of the SQL rules engine to use when evaluating the rule\.
 *AWS CloudFormation compatibility*: This property is passed directly to the `[AwsIotSqlVersion](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-awsiotsqlversion)` property of an `AWS::IoT::TopicRule TopicRulePayload` resource\.
 
  `Sql`   <a name="sam-function-iotrule-sql"></a>
-The SQL statement used to query the topic\. For more information, see [AWS IoT SQL Reference](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference) in the AWS IoT Developer Guide\.  
+The SQL statement used to query the topic\. For more information, see [AWS IoT SQL Reference](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference) in the *AWS IoT Developer Guide*\.  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Sql](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-sql)` property of an `AWS::IoT::TopicRule TopicRulePayload` resource\.

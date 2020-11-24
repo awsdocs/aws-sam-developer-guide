@@ -23,7 +23,7 @@ An object describing the properties of this event mapping\. The set of propertie
 
  `Type`   <a name="sam-statemachine-statemachineeventsource-type"></a>
 The event type\.  
-Valid values: `Api`, `Schedule`, `CloudWatchEvent`, `EventBridgeRule`\.  
+*Valid values*: `Api`, `Schedule`, `CloudWatchEvent`, `EventBridgeRule`  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

@@ -42,7 +42,7 @@ If you have specified a Global Authorizer on the API and want to make a specific
 Specifies the `InvokeRole` to use for `AWS_IAM` authorization\.  
 *Type*: String  
 *Required*: No  
-*Default*: `CALLER_CREDENTIALS`   
+*Default*: `CALLER_CREDENTIALS`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
 *Additional notes*: `CALLER_CREDENTIALS` maps to `arn:aws:iam::*:user/*`, which uses the caller credentials to invoke the endpoint\.
 

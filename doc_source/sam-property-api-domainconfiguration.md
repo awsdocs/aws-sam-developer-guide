@@ -43,10 +43,10 @@ AWS SAM generates an [AWS::ApiGateway::DomainName](https://docs.aws.amazon.com/A
 
  `EndpointConfiguration`   <a name="sam-api-domainconfiguration-endpointconfiguration"></a>
 Defines the type of API Gateway endpoint to map to the custom domain\. The value of this property determines how the `CertificateArn` property is mapped in AWS CloudFormation\.  
-Valid values are `REGIONAL` or `EDGE`\.  
+*Valid values*: `REGIONAL` or `EDGE`  
 *Type*: String  
 *Required*: No  
-*Default*: `REGIONAL`   
+*Default*: `REGIONAL`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `MutualTlsAuthentication`   <a name="sam-api-domainconfiguration-mutualtlsauthentication"></a>

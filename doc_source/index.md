@@ -116,6 +116,7 @@ Amazon's trademarks and trade dress may not be used in
       + [OAuth 2.0/JWT authorizer example](serverless-controlling-access-to-apis-oauth2-authorizer.md)
       + [Customized response example](serverless-controlling-access-to-apis-customize-response.md)
    + [Orchestrating AWS resources with AWS Step Functions](serverless-step-functions-in-sam.md)
+   + [Configuring code signing for AWS SAM applications](authoring-codesigning.md)
 + [Building serverless applications](serverless-building.md)
    + [Building applications](serverless-sam-cli-using-build.md)
    + [Building layers](building-layers.md)

@@ -21,6 +21,7 @@ Properties:
   [Events](#sam-statemachine-events): EventSource
   [Logging](#sam-statemachine-logging): [LoggingConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-loggingconfiguration)
   [Name](#sam-statemachine-name): String
+  [PermissionsBoundary](#sam-statemachine-permissionsboundary): String
   [Policies](#sam-statemachine-policies): String | List | Map
   [Role](#sam-statemachine-role): String
   [Tags](#sam-statemachine-tags): Map
@@ -70,6 +71,12 @@ The name of the state machine\.
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[StateMachineName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinename)` property of an `AWS::StepFunctions::StateMachine` resource\.
 
+ `PermissionsBoundary`   <a name="sam-statemachine-permissionsboundary"></a>
+The ARN of a permissions boundary to use for this state machine's execution role\. This property only works if the role is generated for you\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[PermissionsBoundary](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-permissionsboundary)` property of an `AWS::IAM::Role` resource\.
+
  `Policies`   <a name="sam-statemachine-policies"></a>
 One or more policies that this state machine's execution role needs\.  
 This property accepts a single string or a list of strings\. The property can be the name of AWS managed AWS Identity and Access Management \(IAM\) policies, AWS SAM policy templates, or one or more inline policy documents formatted as a map\.  
@@ -80,37 +87,37 @@ If the `Role` property is set, this property is ignored\.
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Role`   <a name="sam-statemachine-role"></a>
-The Amazon Resource Name \(ARN\) of an IAM role to use as this state machine's execution role\.  
+The ARN of an IAM role to use as this state machine's execution role\.  
 You must provide either a `Role` or `Policies`\.  
 *Type*: String  
 *Required*: Conditional  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[RoleArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn)` property of an `AWS::StepFunctions::StateMachine` resource\.
 
  `Tags`   <a name="sam-statemachine-tags"></a>
-A string\-to\-string map that specifies the tags added to the state machine and the corresponding IAM execution role\.  
+A string\-to\-string map that specifies the tags added to the state machine and the corresponding execution role\.  
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tags)` property of an `AWS::StepFunctions::StateMachine` resource\.
 
  `Tracing`   <a name="sam-statemachine-tracing"></a>
-Selects whether or not AWS X\-Ray is enabled for the state machine\. For more information about using X\-Ray with Step Functions, see [AWS X\-Ray and Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-xray-tracing.html) in the AWS Step Functions Developer Guide\.  
+Selects whether or not AWS X\-Ray is enabled for the state machine\. For more information about using X\-Ray with Step Functions, see [AWS X\-Ray and Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-xray-tracing.html) in the *AWS Step Functions Developer Guide*\.  
 *Type*: [TracingConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tracingconfiguration)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[TracingConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tracingconfiguration)` property of an `AWS::StepFunctions::StateMachine` resource\.
 
  `Type`   <a name="sam-statemachine-type"></a>
 The type of the state machine\.  
-Valid values: `STANDARD` or `EXPRESS`\.  
+*Valid values*: `STANDARD` or `EXPRESS`  
 *Type*: String  
 *Required*: No  
-*Default*: `STANDARD`   
+*Default*: `STANDARD`  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[StateMachineType](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinetype)` property of an `AWS::StepFunctions::StateMachine` resource\.
 
 ## Return Values<a name="sam-resource-statemachine-return-values"></a>
 
 ### Ref<a name="sam-resource-statemachine-return-values-ref"></a>
 
-When you provide the logical ID of this resource to the `Ref` intrinsic function, `Ref` returns the Amazon Resource Name \(ARN\) of the underlying `AWS::StepFunctions::StateMachine` resource\.
+When you provide the logical ID of this resource to the Ref intrinsic function, Ref returns the Amazon Resource Name \(ARN\) of the underlying `AWS::StepFunctions::StateMachine` resource\.
 
 For more information about using the `Ref` function, see [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html) in the *AWS CloudFormation User Guide*\. 
 

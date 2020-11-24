@@ -1,6 +1,6 @@
 # ApiUsagePlan<a name="sam-property-api-apiusageplan"></a>
 
-Configures a usage plan for an API Gateway API\. For more information about usage plans, see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the API Gateway Developer Guide\.
+Configures a usage plan for an API Gateway API\. For more information about usage plans, see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the *API Gateway Developer Guide*\.
 
 ## Syntax<a name="sam-property-api-apiusageplan-syntax"></a>
 
@@ -24,6 +24,7 @@ Determines how this usage plan is configured\. Valid values are `PER_API`, `SHAR
 `PER_API` creates [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html), [AWS::ApiGateway::ApiKey](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html), and [AWS::ApiGateway::UsagePlanKey](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html) resources that are specific to this API\. These resources have logical IDs of `<api-logical-id>UsagePlan`, `<api-logical-id>ApiKey`, and `<api-logical-id>UsagePlanKey`, respectively\.  
 `SHARED` creates [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html), [AWS::ApiGateway::ApiKey](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html), and [AWS::ApiGateway::UsagePlanKey](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html) resources that are shared across any API that also has `CreateUsagePlan: SHARED` in the same AWS SAM template\. These resources have logical IDs of `ServerlessUsagePlan`, `ServerlessApiKey`, and `ServerlessUsagePlanKey`, respectively\. If you use this option, we recommend that you add additional configuration for this usage plan on only one API resource to avoid conflicting definitions and an uncertain state\.  
 `NONE` disables the creation or association of a usage plan with this API\. This is only necessary if `SHARED` or `PER_API` is specified in the [Globals section of the AWS SAM template](sam-specification-template-anatomy-globals.md)\.  
+*Valid values*: `PER_API`, `SHARED`, and `NONE`  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

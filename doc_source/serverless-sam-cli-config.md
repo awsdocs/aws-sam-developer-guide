@@ -25,7 +25,7 @@ Here is an example configuration file that contains seven parameters for the `de
 
 ## Configuration file rules<a name="rules"></a>
 
-The configuration file is in the [TOML file format](https://toml.io/en/)\. The AWS SAM CLI applies the following rules to configuration files:
+The AWS SAM CLI applies the following rules to configuration files:
 
 ### File name and location<a name="rules-name-location"></a>
 + The default configuration file is named `samconfig.toml` and is located in your project's root directory\.
@@ -42,11 +42,9 @@ The configuration file is in the [TOML file format](https://toml.io/en/)\. The A
 + Each configuration entry is a TOML key\-value pair\.
 + The configuration key is the long\-form parameter name with the `-` \(hyphen\) character replaced with `_` \(underscore\)\. For the list of available parameters for each command, see the [AWS SAM CLI command reference](serverless-sam-cli-command-reference.md), or run `sam command --help`\.
 + The configuration value can take the following forms:
-
-  1. For parameters that take an argument, the entry value is the argument surrounded by double quotes\. For example, `region = "us-west-2"`\.
-     + For arguments that are key\-value pairs, the pairs are space\-delimited and value of each pair is surrounded by encoded double quotes\. For example, `tags = "project=\"my-application\" stage=\"production\""`\.
-
-  1. For toggle parameters, the value can be `true` or `false` \(no quotes\)\. For example, `confirm_changeset = true`\.
+  + For parameters that take an argument, the entry value is the argument surrounded by double quotes\. For example, `region = "us-west-2"`\.
+    + For arguments that are key\-value pairs, the pairs are space\-delimited and value of each pair is surrounded by encoded double quotes\. For example, `tags = "project=\"my-application\" stage=\"production\""`\.
+  + For toggle parameters, the value can be `true` or `false` \(no quotes\)\. For example, `confirm_changeset = true`\.
 
 ### Precedence<a name="rules-precedence"></a>
 + Parameter values that you provide on the command line take precedence over corresponding entries in the configuration file\. For example, if your configuration file contains the entry `stack_name = "DefaultStack"` and you run the command `sam deploy --stack-name MyCustomStack`, then the deployed stack name is `MyCustomStack`\.
@@ -63,6 +61,7 @@ These prompts include the question `"Save arguments to samconfig.toml [Y/n]:"`\.
 + `region`
 + `config_changeset`
 + `capabilities`
++ `signing_profiles`
 + `parameter_overrides`
 
 If you've previously written a configuration file, the AWS SAM CLI reads it and uses those parameter values as the default values for the corresponding prompts\. If you specify values on the command line for any of these parameters, the AWS SAM CLI uses those values as the default values\.

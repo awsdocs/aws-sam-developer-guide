@@ -2,7 +2,7 @@
 
 Definition for an OAuth 2\.0 authorizer, also known to as a JSON Web Token \(JWT\) authorizer\.
 
-For more information, see [Controlling access to HTTP APIs with JWT authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html) in the API Gateway Developer Guide\.
+For more information, see [Controlling access to HTTP APIs with JWT authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html) in the *API Gateway Developer Guide*\.
 
 ## Syntax<a name="sam-property-httpapi-oauth2authorizer-syntax"></a>
 

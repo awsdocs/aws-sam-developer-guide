@@ -2,7 +2,7 @@
 
 Manage cross\-origin resource sharing \(CORS\) for your HTTP APIs\. Specify the domain to allow as a string or specify a dictionary with additional Cors configuration\. NOTE: Cors requires SAM to modify your OpenAPI definition, so it only works with inline OpenApi defined in the `DefinitionBody` property\.
 
-For more information about CORS, see [Configuring CORS for an HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html) in the Amazon API Gateway Developer Guide\.
+For more information about CORS, see [Configuring CORS for an HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html) in the *API Gateway Developer Guide*\.
 
 Note: If HttpApiCorsConfiguration is set both in OpenAPI and at the property level, AWS SAM merges them with the properties taking precedence\.
 

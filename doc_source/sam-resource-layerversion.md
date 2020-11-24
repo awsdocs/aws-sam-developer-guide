@@ -62,7 +62,7 @@ Information about the license for this LayerVersion\.
 
  `RetentionPolicy`   <a name="sam-layerversion-retentionpolicy"></a>
 Specifies whether old versions of your LayerVersion are retained or deleted after an update\.  
-Supported values: `Retain` and `Delete`\.  
+*Valid values*: `Retain` or `Delete`  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  

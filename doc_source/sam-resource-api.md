@@ -24,6 +24,7 @@ Properties:
   [Cors](#sam-api-cors): String | CorsConfiguration
   [DefinitionBody](#sam-api-definitionbody): String
   [DefinitionUri](#sam-api-definitionuri): String | ApiDefinition
+  [Description](#sam-api-description): String
   [Domain](#sam-api-domain): DomainConfiguration
   [EndpointConfiguration](#sam-api-endpointconfiguration): EndpointConfiguration
   [GatewayResponses](#sam-api-gatewayresponses): Map
@@ -48,7 +49,7 @@ Configures Access Log Setting for a stage\.
 
  `Auth`   <a name="sam-api-auth"></a>
 Configure authorization to control access to your API Gateway API\.  
-For more information about configuring access using AWS SAM see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.  
+For more information about configuring access using AWS SAM see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.  
 *Type*: [ApiAuth](sam-property-api-apiauth.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
@@ -79,7 +80,7 @@ Configure a canary setting to a stage of a regular deployment\.
 
  `Cors`   <a name="sam-api-cors"></a>
 Manage Cross\-origin resource sharing \(CORS\) for all your API Gateway APIs\. Specify the domain to allow as a string or specify a dictionary with additional Cors configuration\. NOTE: CORS requires AWS SAM to modify your OpenAPI definition\. So, it works only if inline OpenApi is defined with DefinitionBody\.  
-For more information about CORS, see [Enable CORS for an API Gateway REST API Resource](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html) in the Amazon API Gateway Developer Guide\.\.  
+For more information about CORS, see [Enable CORS for an API Gateway REST API Resource](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html) in the *API Gateway Developer Guide*\.  
 *Type*: String \| [CorsConfiguration](sam-property-api-corsconfiguration.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
@@ -97,6 +98,12 @@ Intrinsic functions are not supported in external OpenApi files referenced by `D
 *Type*: String \| [ApiDefinition](sam-property-api-apidefinition.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[BodyS3Location](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location)` property of an `AWS::ApiGateway::RestApi` resource\. The nested Amazon S3 properties are named differently\.
+
+ `Description`   <a name="sam-api-description"></a>
+A description of the Api resource\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Description](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-description)` property of an `AWS::ApiGateway::RestApi` resource\.
 
  `Domain`   <a name="sam-api-domain"></a>
 Configures a custom domain for this API Gateway API\.  
@@ -162,7 +169,7 @@ A map \(string to string\) that specifies the tags to be added to this API Gatew
 *AWS CloudFormation compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tags)` property of an `AWS::ApiGateway::Stage` resource\. The Tags property in SAM consists of Key:Value pairs; in CloudFormation it consists of a list of Tag objects\.
 
  `TracingEnabled`   <a name="sam-api-tracingenabled"></a>
-Indicates whether active tracing with X\-Ray is enabled for the stage\. For more information about X\-Ray, see [Tracing user requests to REST APIs using X\-Ray](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-xray.html) in the API Gateway Developer Guide\.  
+Indicates whether active tracing with X\-Ray is enabled for the stage\. For more information about X\-Ray, see [Tracing user requests to REST APIs using X\-Ray](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-xray.html) in the *API Gateway Developer Guide*\.  
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[TracingEnabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled)` property of an `AWS::ApiGateway::Stage` resource\.

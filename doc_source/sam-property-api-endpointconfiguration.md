@@ -17,7 +17,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
  `Type`   <a name="sam-api-endpointconfiguration-type"></a>
 The endpoint type of a REST API\.  
-Valid values: `EDGE` or `REGIONAL` or `PRIVATE`\.  
+*Valid values*: `EDGE` or `REGIONAL` or `PRIVATE`  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-types)` property of the `AWS::ApiGateway::RestApi` `EndpointConfiguration` data type\.

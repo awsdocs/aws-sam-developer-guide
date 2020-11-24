@@ -1,6 +1,6 @@
 # ResourcePolicyStatement<a name="sam-property-function-resourcepolicystatement"></a>
 
-Configures a resource policy for all methods and paths of an API\. For more information about resource policies, see [Controlling access to an API with API Gateway resource policies](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html) in the API Gateway Developer Guide\.
+Configures a resource policy for all methods and paths of an API\. For more information about resource policies, see [Controlling access to an API with API Gateway resource policies](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html) in the *API Gateway Developer Guide*\.
 
 ## Syntax<a name="sam-property-function-resourcepolicystatement-syntax"></a>
 
