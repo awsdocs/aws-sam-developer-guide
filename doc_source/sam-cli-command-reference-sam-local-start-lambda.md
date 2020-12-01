@@ -60,6 +60,7 @@ aws lambda invoke --function-name "HelloWorldFunction" --endpoint-url "http://12
 | \-\-debug\-args TEXT | Additional arguments to be passed to the debugger\. | 
 | \-v, \-\-docker\-volume\-basedir TEXT | The location of the base directory where the AWS SAM file exists\. If Docker is running on a remote machine, you must mount the path where the AWS SAM file exists on the Docker machine, and modify this value to match the remote machine\. | 
 | \-\-docker\-network TEXT | The name or ID of an existing Docker network that Lambda Docker containers should connect to, along with the default bridge network\. If this is specified, the Lambda containers only connect to the default bridge Docker network\. | 
+| \-\-container\-env\-vars | Optional\. Pass environment variables to image container when locally debugging\. | 
 | \-l, \-\-log\-file TEXT | The log file to send runtime logs to\. | 
 | \-\-layer\-cache\-basedir DIRECTORY | Specifies the location basedir where the layers your template uses are downloaded to\. | 
 | \-\-skip\-pull\-image | Specifies whether the CLI should skip pulling down the latest Docker image for the Lambda runtime\. | 

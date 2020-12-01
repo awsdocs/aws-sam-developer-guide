@@ -2,7 +2,7 @@
 
 Creates an AWS Lambda function, an AWS Identity and Access Management \(IAM\) execution role, and event source mappings that trigger the function\.
 
-The [AWS::Serverless::Function](#sam-resource-function) resource also supports the `Metadata` resource attribute, so you can instruct AWS SAM to build custom runtimes required by your application\. For more information about building custom runtimes, see [Building custom runtimes](building-custom-runtimes.md)\.
+The [AWS::Serverless::Function](#sam-resource-function) resource also supports the `Metadata` resource attribute, so you can instruct AWS SAM to build custom runtimes that your application requires\. For more information about building custom runtimes, see [Building custom runtimes](building-custom-runtimes.md)\.
 
 ## Syntax<a name="sam-resource-function-syntax"></a>
 
@@ -27,10 +27,13 @@ Properties:
   [FileSystemConfigs](#sam-function-filesystemconfigs): List
   [FunctionName](#sam-function-functionname): String
   [Handler](#sam-function-handler): String
+  [ImageConfig](#sam-function-imageconfig): ImageConfig
+  [ImageUri](#sam-function-imageuri): String
   [InlineCode](#sam-function-inlinecode): String
   [KmsKeyArn](#sam-function-kmskeyarn): String
   [Layers](#sam-function-layers): List
   [MemorySize](#sam-function-memorysize): Integer
+  [PackageType](#sam-function-packagetype): String
   [PermissionsBoundary](#sam-function-permissionsboundary): String
   [Policies](#sam-function-policies): String | List | Map
   [ProvisionedConcurrencyConfig](#sam-function-provisionedconcurrencyconfig): [ProvisionedConcurrencyConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-provisionedconcurrencyconfig)
@@ -53,7 +56,7 @@ Adds an AssumeRolePolicyDocument for the default created `Role` for this functio
 *AWS CloudFormation compatibility*: This property is similar to the `[AssumeRolePolicyDocument](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument)` property of an `AWS::IAM::Role` resource\. AWS SAM adds this property to the generated IAM role for this function\. If a role's Amazon Resource Name \(ARN\) is provided for this function, this property does nothing\.
 
  `AutoPublishAlias`   <a name="sam-function-autopublishalias"></a>
-The name of the Lambda alias\. For more information about Lambda aliases, see [Lambda function aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html) in the AWS Lambda Developer Guide\. For examples that use this property, see [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\.  
+The name of the Lambda alias\. For more information about Lambda aliases, see [Lambda function aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html) in the *AWS Lambda Developer Guide*\. For examples that use this property, see [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\.  
 AWS SAM generates [AWS::Lambda::Version](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) and [AWS::Lambda::Alias](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html) resources when this property is set\. For information about this scenario, see [AutoPublishAlias property is specified](sam-specification-generated-resources-function.md#sam-specification-generated-resources-function-autopublishalias)\. For general information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.  
 *Type*: String  
 *Required*: No  
@@ -84,7 +87,7 @@ If a local file path is provided, for the code to be transformed properly the te
 *AWS CloudFormation compatibility*: This property is similar to the `[Code](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code)` property of an `AWS::Lambda::Function` resource\. The nested Amazon S3 properties are named differently\.
 
  `DeadLetterQueue`   <a name="sam-function-deadletterqueue"></a>
-Configures an Amazon Simple Notification Service \(Amazon SNS\) topic or Amazon Simple Queue Service \(Amazon SQS\) queue where Lambda sends events that it can't process\. For more information about dead\-letter queue functionality, see [AWS Lambda function dead letter queues](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq) in the AWS Lambda Developer Guide\.  
+Configures an Amazon Simple Notification Service \(Amazon SNS\) topic or Amazon Simple Queue Service \(Amazon SQS\) queue where Lambda sends events that it can't process\. For more information about dead\-letter queue functionality, see [AWS Lambda function dead letter queues](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq) in the *AWS Lambda Developer Guide*\.  
 *Type*: Map \| [DeadLetterQueue](sam-property-function-deadletterqueue.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[DeadLetterConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html)` property of an `AWS::Lambda::Function` resource\. In AWS CloudFormation the type is derived from the `TargetArn`, whereas in AWS SAM you must pass the type along with the `TargetArn`\.
@@ -140,6 +143,18 @@ The function within your code that is called to begin execution\.
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Handler](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler)` property of an `AWS::Lambda::Function` resource\.
 
+ `ImageConfig`   <a name="sam-function-imageconfig"></a>
+The object used to configure Lambda container image settings\. For more information, see [Using container images with Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the *AWS Lambda Developer Guide*\.  
+*Type*: [ImageConfig](sam-property-function-imageconfig.md)  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+ `ImageUri`   <a name="sam-function-imageuri"></a>
+The URI of the Amazon Elastic Container Registry \(Amazon ECR\) repository for the Lambda function's container image\. For more information, see [Using container images with Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the *AWS Lambda Developer Guide*\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
  `InlineCode`   <a name="sam-function-inlinecode"></a>
 The Lambda function code that is written directly in the template\.  
 **Note**: Either `CodeUri` or `InlineCode` is required\.  
@@ -164,6 +179,13 @@ The size of the memory in MB allocated per invocation of the function\.
 *Type*: Integer  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[MemorySize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-memorysize)` property of an `AWS::Lambda::Function` resource\.
+
+ `PackageType`   <a name="sam-function-packagetype"></a>
+The deployment package type of the Lambda function\. For more information, see [Lambda deployment packages](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html) in the *AWS Lambda Developer Guide*\.  
+*Valid values*: `Zip` or `Image`  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `PermissionsBoundary`   <a name="sam-function-permissionsboundary"></a>
 The ARN of a permissions boundary to use for this function's execution role\. This property works only if the role is generated for you\.  

@@ -31,6 +31,7 @@ AWSCloudFormationFullAccess
 IAMFullAccess
 AWSLambdaFullAccess
 AmazonAPIGatewayAdministrator
+AmazonEC2ContainerRegistryFullAccess
  For more information about attaching policies to an IAM user, see [Changing permissions for an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_change-permissions.html)\.
 
 ## Step 3: Install Docker<a name="serverless-sam-cli-install-linux-docker"></a>

@@ -6,7 +6,7 @@ When it's accessed \(through a browser, CLI, and so on\), it starts a Docker con
 
 If you're using an interpreted language, local changes are available immediately in the Docker container on every invoke\. For more compiled languages or projects that require complex packing support, we recommend that you run your own building solution, and point AWS SAM to the directory or file that contains the build artifacts\.
 
-To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md)\. The `sam local start-api` command is part of [Step 4: Testing your application locally \(optional\)](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-test-locally)\.
+To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md)\. The `sam local start-api` command is part of [Step 4: \(Optional\) Test your application locally](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-test-locally)\.
 
 **AWS SAM CLI support for Lambda extensions \(Preview\)**  
 To locally test a serverless application that uses Lambda extensions, set the `ENABLE_LAMBDA_EXTENSIONS_PREVIEW` environment variable to "1"\. For example:  
@@ -37,6 +37,7 @@ sam local start-api [OPTIONS]
 | \-\-debug\-args TEXT | Additional arguments to be passed to the debugger\. | 
 | \-v, \-\-docker\-volume\-basedir TEXT | The location of the base directory where the AWS SAM file exists\. If Docker is running on a remote machine, you must mount the path where the AWS SAM file exists on the Docker machine, and modify this value to match the remote machine\. | 
 | \-\-docker\-network TEXT | The name or ID of an existing Docker network that the Lambda Docker containers should connect to, along with the default bridge network\. If this isn't specified, the Lambda containers only connect to the default bridge Docker network\. | 
+| \-\-container\-env\-vars | Optional\. Pass environment variables to image container when locally debugging\. | 
 | \-l, \-\-log\-file TEXT | The log file to send runtime logs to\. | 
 | \-\-layer\-cache\-basedir DIRECTORY | Specifies the location basedir where the Layers your template uses are downloaded to\. | 
 | \-\-skip\-pull\-image | Specifies whether the CLI should skip pulling down the latest Docker image for the Lambda runtime\. | 
