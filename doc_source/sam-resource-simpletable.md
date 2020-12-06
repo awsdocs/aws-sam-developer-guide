@@ -32,9 +32,9 @@ Attribute name and type to be used as the table's primary key\. If not provided,
  `ProvisionedThroughput`   <a name="sam-simpletable-provisionedthroughput"></a>
 Read and write throughput provisioning information\.  
 If `ProvisionedThroughput` is not specified `BillingMode` will be specified as `PAY_PER_REQUEST`\.  
-*Type*: [ProvisionedThroughput](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-provisionedthroughput.html)  
+*Type*: [ProvisionedThroughput](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html 
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is passed directly to the `[ProvisionedThroughput](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-provisionedthroughput.html)` property of an `AWS::DynamoDB::Table` resource\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[ProvisionedThroughput](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html)` property of an `AWS::DynamoDB::Table` resource\.
 
  `SSESpecification`   <a name="sam-simpletable-ssespecification"></a>
 Specifies the settings to enable server\-side encryption\.  
