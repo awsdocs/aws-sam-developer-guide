@@ -21,6 +21,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [ParallelizationFactor](#sam-function-dynamodb-parallelizationfactor): Integer
   [StartingPosition](#sam-function-dynamodb-startingposition): String
   [Stream](#sam-function-dynamodb-stream): String
+  [TumblingWindowInSeconds](#sam-function-dynamodb-tumblingwindowinseconds): Integer
 ```
 
 ## Properties<a name="sam-property-function-dynamodb-properties"></a>
@@ -88,6 +89,13 @@ ARN of the DynamoDB stream\.
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[EventSourceArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn)` property of an `AWS::Lambda::EventSourceMapping` resource\.
+
+ `TumblingWindowInSeconds`   <a name="sam-function-dynamodb-tumblingwindowinseconds"></a>
+The duration, in seconds, of a processing window\. The valid range is 1 to 900 \(15 minutes\)\.  
+For more information, see [Tumbling windows](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#streams-tumbling) in the *AWS Lambda Developer Guide*\.  
+*Type*: Integer  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[TumblingWindowInSeconds](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-tumblingwindowinseconds)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
 ## Examples<a name="sam-property-function-dynamodb--examples"></a>
 

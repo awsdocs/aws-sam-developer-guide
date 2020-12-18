@@ -66,7 +66,7 @@ Specifies whether old versions of your LayerVersion are retained or deleted afte
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
-*Additional notes*: When you specify `Retain`, AWS SAM adds a [Resource Attribute](http://mhirayam.aka.corp.amazon.com/docs-preview/sam-gh-migration/serverless-application-model/latest/developerguide/sam-specification-resource-attributes.html) of `DeletionPolicy: Retain` to the transformed `AWS::Lambda::LayerVersion` resource\.
+*Additional notes*: When you specify `Retain`, AWS SAM adds a [Resource attributes](sam-specification-resource-attributes.md) of `DeletionPolicy: Retain` to the transformed `AWS::Lambda::LayerVersion` resource\.
 
 ## Return Values<a name="sam-resource-layerversion-return-values"></a>
 

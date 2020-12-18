@@ -39,7 +39,7 @@ Specify an existing SQS queue arn\.
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `QueuePolicyLogicalId`   <a name="sam-function-sqssubscriptionobject-queuepolicylogicalid"></a>
-Give a custom logicalId name for the [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queuepolicy.html) resource\.  
+Give a custom logicalId name for the [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html) resource\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

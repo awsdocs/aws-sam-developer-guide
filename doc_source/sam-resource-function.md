@@ -169,7 +169,7 @@ The ARN of an AWS Key Management Service \(AWS KMS\) key that Lambda uses to enc
 *AWS CloudFormation compatibility*: This property is passed directly to the `[KmsKeyArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-kmskeyarn)` property of an `AWS::Lambda::Function` resource\.
 
  `Layers`   <a name="sam-function-layers"></a>
-The list of `LayerVersion` ARNs that this functiopn should use\. The order specified here is the order in which they will be imported when running the Lambda function\.  
+The list of `LayerVersion` ARNs that this function should use\. The order specified here is the order in which they will be imported when running the Lambda function\.  
 *Type*: List  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Layers](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-layers)` property of an `AWS::Lambda::Function` resource\.

@@ -58,8 +58,9 @@ These prompts include the question `"Save arguments to samconfig.toml [Y/n]:"`\.
 + `stack_name`
 + `s3_bucket`
 + `s3_prefix`
++ `image_repository`
 + `region`
-+ `config_changeset`
++ `confirm_changeset`
 + `capabilities`
 + `signing_profiles`
 + `parameter_overrides`

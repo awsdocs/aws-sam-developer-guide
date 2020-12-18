@@ -28,7 +28,7 @@ sam deploy [OPTIONS] [ARGS]...
 | \-g, \-\-guided |  Specify this flag to have AWS SAM use prompts to guide you through the deployment\.  | 
 | \-t, \-\-template\-file, \-\-template PATH | The path and file name where your AWS SAM template is located\. Default: template\.\[yaml\|yml\]\. | 
 | \-\-stack\-name TEXT | \(Required\) The name of the AWS CloudFormation stack that you're deploying to\. If you specify an existing stack, the command updates the stack\. If you specify a new stack, the command creates it\. | 
-| \-\-s3\-bucket TEXT | The name of the Amazon S3 bucket where this command uploads your AWS CloudFormation template\. This is required to deploy templates that are larger than 51,200 bytes\. | 
+| \-\-s3\-bucket TEXT | The URI of the Amazon S3 bucket where this command uploads your AWS CloudFormation template\. This is required to deploy templates that are larger than 51,200 bytes\. | 
 | \-\-s3\-prefix TEXT | The prefix added to the names of the artifacts that are uploaded to the Amazon S3 bucket\. The prefix name is a path name \(folder name\) for the Amazon S3 bucket\. | 
 | \-\-image\-repository TEXT | The name of the Amazon Elastic Container Registry \(Amazon ECR\) repository where this command uploads your function's image\. Required for functions declared with the Image package type\. | 
 | \-\-signing\-profiles LIST | \(Optional\) The list of signing profiles to sign your deployment packages with\. This parameter takes a list of key\-value pairs, where the key is the name of the function or layer to sign, and the value is the signing profile, with an optional profile owner delimited with :\. For example, FunctionNameToSign=SigningProfileName1 LayerNameToSign=SigningProfileName2:SigningProfileOwner\. | 

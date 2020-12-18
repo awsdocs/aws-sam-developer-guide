@@ -1,8 +1,12 @@
 # Process DynamoDB events<a name="serverless-example-ddb"></a>
 
+
+
 With this example application, you build on what you learned in the overview and the Quick Start guide, and install another example application\. This application consists of a Lambda function that's invoked by a DynamoDB table event source\. The Lambda function is very simple—it logs data that was passed in through the event source message\.
 
 This exercise shows you how to mimic event source messages that are passed to Lambda functions when they're invoked\.
+
+
 
 ## Before you begin<a name="gs-ex2-prereq"></a>
 
@@ -67,6 +71,8 @@ Now that you've created the deployment package, you use it to deploy the applica
 
 **To deploy the serverless application to the AWS Cloud**
 + In the AWS SAM CLI, use the `deploy` CLI command to deploy all of the resources that you defined in the template\. 
+
+  
 
   ```
   sam deploy \
