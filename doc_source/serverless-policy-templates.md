@@ -83,9 +83,9 @@ The following is a table of the available policy templates\.
 | [DynamoDBReconfigurePolicy](serverless-policy-template-list.md#dynamo-db-reconfigure-policy) | Gives permission to reconfigure a DynamoDB table\. | 
 | [SESSendBouncePolicy](serverless-policy-template-list.md#ses-send-bounce-policy) | Gives SendBounce permission to an Amazon Simple Email Service \(Amazon SES\) identity\. | 
 | [ElasticsearchHttpPostPolicy](serverless-policy-template-list.md#elastic-search-http-post-policy) | Gives POST permission to Amazon Elasticsearch Service\. | 
-| [S3ReadPolicy](serverless-policy-template-list.md#s3-read-policy) | Gives read\-only permission to objects in an Amazon Simple Storage Service \(Amazon S3\) bucket\. | 
-| [S3WritePolicy](serverless-policy-template-list.md#s3-write-policy) | Gives write permission to objects in an Amazon S3 bucket\. | 
-| [S3CrudPolicy](serverless-policy-template-list.md#s3-crud-policy) | Gives create, read, update, and delete permission to objects in an Amazon S3 bucket\. | 
+| [S3ReadPolicy](serverless-policy-template-list.md#s3-read-policy) | Gives read\-only permission to read objects in an Amazon Simple Storage Service \(Amazon S3\) bucket\. | 
+| [S3WritePolicy](serverless-policy-template-list.md#s3-write-policy) | Gives write permission to write objects into an Amazon S3 bucket\. | 
+| [S3CrudPolicy](serverless-policy-template-list.md#s3-crud-policy) | Gives create, read, update, and delete permission to act on the objects in an Amazon S3 bucket\. | 
 | [AMIDescribePolicy](serverless-policy-template-list.md#ami-describe-policy) | Gives permission to describe Amazon Machine Images \(AMIs\)\. | 
 | [CloudFormationDescribeStacksPolicy](serverless-policy-template-list.md#cloud-formation-describe-stacks-policy) | Gives permission to describe AWS CloudFormation stacks\. | 
 | [RekognitionDetectOnlyPolicy](serverless-policy-template-list.md#rekognition-detect-only-policy) | Gives permission to detect faces, labels, and text\. | 
@@ -103,7 +103,7 @@ The following is a table of the available policy templates\.
 | [KMSDecryptPolicy](serverless-policy-template-list.md#kms-decrypt-policy) | Gives permission to decrypt with an AWS Key Management Service \(AWS KMS\) key\. | 
 | [KMSEncryptPolicy](serverless-policy-template-list.md#kms-encrypt-policy) | Gives permission to encrypt with an AWS Key Management Service \(AWS KMS\) key\. | 
 | [PollyFullAccessPolicy](serverless-policy-template-list.md#polly-full-access-policy) | Gives full access permission to Amazon Polly lexicon resources\. | 
-| [S3FullAccessPolicy](serverless-policy-template-list.md#s3-full-access-policy) | Gives full access permission to objects in an Amazon S3 bucket\. | 
+| [S3FullAccessPolicy](serverless-policy-template-list.md#s3-full-access-policy) | Gives full access permission to act on objects in an Amazon S3 bucket\. | 
 | [CodePipelineLambdaExecutionPolicy](serverless-policy-template-list.md#code-pipeline-lambda-execution-policy) | Gives permission for a Lambda function invoked by CodePipeline to report the status of the job\. | 
 | [ServerlessRepoReadWriteAccessPolicy](serverless-policy-template-list.md#serverlessrepo-read-write-access-policy) | Gives permission to create and list applications in the AWS Serverless Application Repository service\. | 
 | [EC2CopyImagePolicy](serverless-policy-template-list.md#ec2-copy-image-policy) | Gives permission to copy Amazon EC2 images\. | 
