@@ -25,6 +25,8 @@ In this section, you download the application package, which consists of an AWS 
    --location gh:aws-samples/cookiecutter-aws-sam-dynamodb-python \
    --no-input
    ```
+   
+   Note that `gh` in the command above will be expanded to github url.
 
 1. Review the contents of the directory that the command created \(`dynamodb_event_reader/`\): 
    + `template.yaml` – Defines two AWS resources that the Read DynamoDB application needs: a Lambda function and a DynamoDB table\. The template also defines mapping between the two resources\.
@@ -97,3 +99,4 @@ Now that you've created the deployment package, you use it to deploy the applica
 ## Next steps<a name="gs-ex2-setup-deploy-app-next-steps"></a>
 
 The AWS SAM GitHub repository contains additional example applications for you to download and experiment with\. To access this repository, see [AWS SAM example applications](https://github.com/aws-samples/serverless-app-examples)\.
+
