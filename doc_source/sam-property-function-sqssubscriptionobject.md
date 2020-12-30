@@ -4,7 +4,7 @@ Specify an existing SQS queue option to SNS event
 
 ## Syntax<a name="sam-property-function-sqssubscriptionobject-syntax"></a>
 
-To declare this entity in your AWS SAM template, use the following syntax:
+To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
 
 ### YAML<a name="sam-property-function-sqssubscriptionobject-syntax.yaml"></a>
 
@@ -23,32 +23,32 @@ The maximum number of items to retrieve in a single batch for the SQS queue\.
 *Type*: String  
 *Required*: No  
 *Default*: 10  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Enabled`   <a name="sam-function-sqssubscriptionobject-enabled"></a>
 Disables the SQS event source mapping to pause polling and invocation\.  
 *Type*: Boolean  
 *Required*: No  
 *Default*: True  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `QueueArn`   <a name="sam-function-sqssubscriptionobject-queuearn"></a>
 Specify an existing SQS queue arn\.  
 *Type*: String  
 *Required*: Yes  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `QueuePolicyLogicalId`   <a name="sam-function-sqssubscriptionobject-queuepolicylogicalid"></a>
-Give a custom logicalId name for the [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queuepolicy.html) resource\.  
+Give a custom logicalId name for the [AWS::SQS::QueuePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html) resource\.  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `QueueUrl`   <a name="sam-function-sqssubscriptionobject-queueurl"></a>
 Specify the queue URL associated with the `QueueArn` property\.  
 *Type*: String  
 *Required*: Yes  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-sqssubscriptionobject--examples"></a>
 

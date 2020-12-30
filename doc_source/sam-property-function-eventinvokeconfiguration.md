@@ -4,12 +4,12 @@ Configuration options for [asynchronous](https://docs.aws.amazon.com/lambda/late
 
 ## Syntax<a name="sam-property-function-eventinvokeconfiguration-syntax"></a>
 
-To declare this entity in your AWS SAM template, use the following syntax:
+To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
 
 ### YAML<a name="sam-property-function-eventinvokeconfiguration-syntax.yaml"></a>
 
 ```
-  [DestinationConfig](#sam-function-eventinvokeconfiguration-destinationconfig): [EventInvokeDestinationConfiguration](sam-property-function-eventinvokedestinationconfiguration.md)
+  [DestinationConfig](#sam-function-eventinvokeconfiguration-destinationconfig): EventInvokeDestinationConfiguration
   [MaximumEventAgeInSeconds](#sam-function-eventinvokeconfiguration-maximumeventageinseconds): Integer
   [MaximumRetryAttempts](#sam-function-eventinvokeconfiguration-maximumretryattempts): Integer
 ```
@@ -20,19 +20,19 @@ To declare this entity in your AWS SAM template, use the following syntax:
 A configuration object that specifies the destination of an event after Lambda processes it\.  
 *Type*: [EventInvokeDestinationConfiguration](sam-property-function-eventinvokedestinationconfiguration.md)  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is similar to the `[DestinationConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig.html)` property of an `AWS::Lambda::EventInvokeConfig`\. SAM requires an extra parameter, "Type", that does not exist in CloudFormation\.
+*AWS CloudFormation compatibility*: This property is similar to the `[DestinationConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig.html)` property of an `AWS::Lambda::EventInvokeConfig` resource\. SAM requires an extra parameter, "Type", that does not exist in CloudFormation\.
 
  `MaximumEventAgeInSeconds`   <a name="sam-function-eventinvokeconfiguration-maximumeventageinseconds"></a>
 The maximum age of a request that Lambda sends to a function for processing\.  
 *Type*: Integer  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is passed directly to the `[MaximumEventAgeInSeconds](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumeventageinseconds)` property of an `AWS::Lambda::EventInvokeConfig`\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[MaximumEventAgeInSeconds](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumeventageinseconds)` property of an `AWS::Lambda::EventInvokeConfig` resource\.
 
  `MaximumRetryAttempts`   <a name="sam-function-eventinvokeconfiguration-maximumretryattempts"></a>
 The maximum number of times to retry before the function returns an error\.  
 *Type*: Integer  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is passed directly to the `[MaximumRetryAttempts](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumretryattempts)` property of an `AWS::Lambda::EventInvokeConfig`\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[MaximumRetryAttempts](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumretryattempts)` property of an `AWS::Lambda::EventInvokeConfig` resource\.
 
 ## Examples<a name="sam-property-function-eventinvokeconfiguration--examples"></a>
 
