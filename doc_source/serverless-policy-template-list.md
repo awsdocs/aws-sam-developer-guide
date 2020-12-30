@@ -624,6 +624,9 @@ Gives permission to publish a message to an Amazon Simple Notification Service \
 
 Gives access to create, delete, describe, and detach elastic network interfaces\.
 
+**Important**
+You will need to pass an object, even an empty one in your template: "- VPCAccessPolicy: {}"
+
 ```
         "Statement": [
           {
