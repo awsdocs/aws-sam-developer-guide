@@ -4,7 +4,7 @@ Allows you to run your serverless application locally for quick development and 
 
 When it's accessed \(through a browser, CLI, and so on\), it starts a Docker container locally to invoke the function\. It reads the CodeUri property of the `AWS::Serverless::Function` resource to find the path in your file system that contains the Lambda function code\. This could be the project's root directory for interpreted languages like Node\.js and Python, or a build directory that stores your compiled artifacts or a Java Archive \(JAR\) file\. 
 
-If you're using an interpreted language, local changes are available immediately in the Docker container on every invoke\. For more compiled languages or projects that require complex packing support, we recommend that you run your own building solution, and point AWS SAM to the directory or file that contains the build artifacts\.
+If you're using an interpreted language, local changes are available immediately in the Docker container on every invoke\. For more compiled languages or projects that require complex packing support, we recommend that you run your own building solution, and point AWS SAM to the directory or file that contains the build artifacts (via the [CodeUri](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html#sam-function-codeuri) field in your AWS SAM template file)\.
 
 To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md)\. The `sam local start-api` command is part of [Step 4: \(Optional\) Test your application locally](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-test-locally)\.
 
