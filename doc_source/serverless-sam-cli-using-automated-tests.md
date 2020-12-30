@@ -1,4 +1,4 @@
-# Integrating with Automated Tests<a name="serverless-sam-cli-using-automated-tests"></a>
+# Integrating with automated tests<a name="serverless-sam-cli-using-automated-tests"></a>
 
 You can use the `sam local invoke` command to manually test your code by running Lambda functions locally\. With the AWS SAM CLI, you can easily author automated integration tests by first running tests against local Lambda functions before deploying to the AWS Cloud\. 
 

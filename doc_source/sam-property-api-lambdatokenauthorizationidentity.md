@@ -4,7 +4,7 @@ This property can be used to specify an IdentitySource in an incoming request fo
 
 ## Syntax<a name="sam-property-api-lambdatokenauthorizationidentity-syntax"></a>
 
-To declare this entity in your AWS SAM template, use the following syntax:
+To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
 
 ### YAML<a name="sam-property-api-lambdatokenauthorizationidentity-syntax.yaml"></a>
 
@@ -20,13 +20,13 @@ The time\-to\-live \(TTL\) period, in seconds, that specifies how long API Gatew
 *Type*: Integer  
 *Required*: No  
 *Default*: 300  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `ValidationExpression`   <a name="sam-api-lambdatokenauthorizationidentity-validationexpression"></a>
 Specify a validation expression for validating the incoming Identity\.  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-api-lambdatokenauthorizationidentity--examples"></a>
 

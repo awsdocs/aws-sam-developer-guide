@@ -1,4 +1,4 @@
-# Generating Sample Event Payloads<a name="serverless-sam-cli-using-generate-event"></a>
+# Generating sample event payloads<a name="serverless-sam-cli-using-generate-event"></a>
 
 To make local development and testing of Lambda functions easier, you can generate and customize event payloads for a number of AWS services like API Gateway, AWS CloudFormation, Amazon S3, and so on\.
 
