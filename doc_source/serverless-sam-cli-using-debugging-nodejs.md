@@ -1,4 +1,4 @@
-# Step\-Through Debugging Node\.js Functions Locally<a name="serverless-sam-cli-using-debugging-nodejs"></a>
+# Step\-through debugging Node\.js functions locally<a name="serverless-sam-cli-using-debugging-nodejs"></a>
 
 The following is an example that shows how to debug a Node\.js function with Microsoft Visual Studio Code:
 

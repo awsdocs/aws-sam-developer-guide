@@ -24,7 +24,7 @@ sam local generate-event s3 [put/delete] --help
 sam local generate-event s3 [put/delete] --bucket <bucket> --key <key>
 
 # After you generate a sample event, you can use it to test your Lambda function locally
-sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam local invoke <function logical id>
+sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam local invoke -e - <function logical id>
 ```
 
 **Options:**
@@ -34,26 +34,28 @@ sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam loc
 
 | Option | Description | 
 | --- | --- | 
+| \-\-config\-file PATH | The path and file name of the configuration file containing default parameter values to use\. The default value is "samconfig\.toml" in the root of the project directory\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
+| \-\-config\-env TEXT | The environment name specifying the default parameter values in the configuration file to use\. The default value is "default"\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
 | \-\-help | Shows this message and exits\. | 
 
 **Commands:**
-+ alexa\-skills\-kit
-+ alexa\-smart\-home
-+ apigateway
-+ batch
-+ cloudformation
-+ cloudfront
-+ cloudwatch
-+ codecommit
-+ codepipeline
-+ cognito
-+ config
-+ dynamodb
-+ kinesis
-+ lex
-+ rekognition
-+ s3
-+ ses
-+ sns
-+ sqs
-+ stepfunctions
++ `alexa-skills-kit`
++ `alexa-smart-home`
++ `apigateway`
++ `batch`
++ `cloudformation`
++ `cloudfront`
++ `cloudwatch`
++ `codecommit`
++ `codepipeline`
++ `cognito`
++ `config`
++ `dynamodb`
++ `kinesis`
++ `lex`
++ `rekognition`
++ `s3`
++ `ses`
++ `sns`
++ `sqs`
++ `stepfunctions`

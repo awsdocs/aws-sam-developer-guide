@@ -1,4 +1,4 @@
-# API Gateway Extensions<a name="sam-specification-api-gateway-extensions"></a>
+# API Gateway extensions<a name="sam-specification-api-gateway-extensions"></a>
 
 API Gateway extensions are extensions to the OpenAPI specification that support the AWS\-specific authorization and API Gateway\-specific API integrations\. For more information about API Gateway extensions, see [API Gateway Extensions to OpenAPI](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html)\.
 
