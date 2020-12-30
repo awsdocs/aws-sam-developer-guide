@@ -1,4 +1,4 @@
-# AWS CloudFormation Resources Generated When AWS::Serverless::HttpApi Is Specified<a name="sam-specification-generated-resources-httpapi"></a>
+# AWS CloudFormation resources generated when AWS::Serverless::HttpApi is specified<a name="sam-specification-generated-resources-httpapi"></a>
 
 When an `AWS::Serverless::HttpApi` is specified, AWS Serverless Application Model \(AWS SAM\) generates the `AWS::ApiGatewayV2::Api` AWS CloudFormation resource\.
 
@@ -9,11 +9,11 @@ When an `AWS::Serverless::HttpApi` is specified, AWS Serverless Application Mode
 In addition to this AWS CloudFormation resource, when `AWS::Serverless::HttpApi` is specified, AWS SAM also generates AWS CloudFormation resources for the following scenarios:
 
 **Topics**
-+ [StageName Property Is Specified](#sam-specification-generated-resources-httpapi-stage-name)
-+ [StageName Property Is *Not* Specified](#sam-specification-generated-resources-httpapi-not-stage-name)
-+ [DomainName Property Is Specified](#sam-specification-generated-resources-httpapi-domain-name)
++ [StageName property is specified](#sam-specification-generated-resources-httpapi-stage-name)
++ [StageName property is *not* specified](#sam-specification-generated-resources-httpapi-not-stage-name)
++ [DomainName property is specified](#sam-specification-generated-resources-httpapi-domain-name)
 
-## StageName Property Is Specified<a name="sam-specification-generated-resources-httpapi-stage-name"></a>
+## StageName property is specified<a name="sam-specification-generated-resources-httpapi-stage-name"></a>
 
 When the `StageName` property of an `AWS::Serverless::HttpApi` is specified, AWS SAM generates the `AWS::ApiGatewayV2::Stage` AWS CloudFormation resource\.
 
@@ -22,7 +22,7 @@ When the `StageName` property of an `AWS::Serverless::HttpApi` is specified, AWS
 `<stage‑name>` is the string that the `StageName` property is set to\. For example, if you set `StageName` to `Gamma`, the `LogicalId` is: *MyHttpApiGamma*Stage\.  
 *Referenceable property: *`<httpapi‑LogicalId>.Stage`
 
-## StageName Property Is *Not* Specified<a name="sam-specification-generated-resources-httpapi-not-stage-name"></a>
+## StageName property is *not* specified<a name="sam-specification-generated-resources-httpapi-not-stage-name"></a>
 
 When the `StageName` property of an `AWS::Serverless::HttpApi` is *not* specified, AWS SAM generates the `AWS::ApiGatewayV2::Stage` AWS CloudFormation resource\.
 
@@ -30,7 +30,7 @@ When the `StageName` property of an `AWS::Serverless::HttpApi` is *not* specifie
 *`LogicalId`: *`<httpapi‑LogicalId>ApiGatewayDefaultStage`  
 *Referenceable property: *`<httpapi‑LogicalId>.Stage`
 
-## DomainName Property Is Specified<a name="sam-specification-generated-resources-httpapi-domain-name"></a>
+## DomainName property is specified<a name="sam-specification-generated-resources-httpapi-domain-name"></a>
 
 When the `DomainName` property of the `Domain` property of an `AWS::Serverless::HttpApi` is specified, AWS SAM generates the `AWS::ApiGatewayV2::DomainName` AWS CloudFormation resource\.
 

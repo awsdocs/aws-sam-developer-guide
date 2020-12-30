@@ -1,10 +1,10 @@
-# Policy Template List<a name="serverless-policy-template-list"></a>
+# Policy template list<a name="serverless-policy-template-list"></a>
 
-The following are the available policy templates, along with the permissions that are applied to each one\. AWS SAM automatically populates the placeholder items \(such as AWS Region and account ID\) with the appropriate information\.
+The following are the available policy templates, along with the permissions that are applied to each one\. AWS Serverless Application Model \(AWS SAM\) automatically populates the placeholder items \(such as AWS Region and account ID\) with the appropriate information\.
 
 ## SQSPollerPolicy<a name="sqs-poller-policy"></a>
 
-Gives permission to poll an Amazon SQS Queue\.
+Gives permission to poll an Amazon Simple Queue Service \(Amazon SQS\) queue\.
 
 ```
         "Statement": [
@@ -34,7 +34,7 @@ Gives permission to poll an Amazon SQS Queue\.
 
 ## LambdaInvokePolicy<a name="lambda-invoke-policy"></a>
 
-Gives permission to invoke a Lambda function, alias, or version\.
+Gives permission to invoke an AWS Lambda function, alias, or version\.
 
 ```
         "Statement": [
@@ -59,7 +59,7 @@ Gives permission to invoke a Lambda function, alias, or version\.
 
 ## CloudWatchDescribeAlarmHistoryPolicy<a name="cloudwatch-describe-alarm-history-policy"></a>
 
-Gives permission to describe CloudWatch alarm history\.
+Gives permission to describe Amazon CloudWatch alarm history\.
 
 ```
         "Statement": [
@@ -75,7 +75,7 @@ Gives permission to describe CloudWatch alarm history\.
 
 ## CloudWatchPutMetricPolicy<a name="cloudwatch-put-metric-policy"></a>
 
-Gives permission to put metrics to CloudWatch\.
+Gives permission to send metrics to CloudWatch\.
 
 ```
         "Statement": [
@@ -91,7 +91,7 @@ Gives permission to put metrics to CloudWatch\.
 
 ## EC2DescribePolicy<a name="ec2-describe-policy"></a>
 
-Gives permission to describe Amazon EC2 instances\.
+Gives permission to describe Amazon Elastic Compute Cloud \(Amazon EC2\) instances\.
 
 ```
          "Statement": [
@@ -108,7 +108,7 @@ Gives permission to describe Amazon EC2 instances\.
 
 ## DynamoDBCrudPolicy<a name="dynamo-db-crud-policy"></a>
 
-Gives create, read, update, and delete permissions to a DynamoDB table\.
+Gives create, read, update, and delete permissions to an Amazon DynamoDB table\.
 
 ```
         "Statement": [
@@ -259,7 +259,7 @@ Gives permission to reconfigure a DynamoDB table\.
 
 ## SESSendBouncePolicy<a name="ses-send-bounce-policy"></a>
 
-Gives SendBounce permission to an Amazon SES identity\.
+Gives SendBounce permission to an Amazon Simple Email Service \(Amazon SES\) identity\.
 
 ```
         "Statement": [
@@ -310,7 +310,7 @@ Gives POST and PUT permission to Amazon Elasticsearch Service\.
 
 ## S3ReadPolicy<a name="s3-read-policy"></a>
 
-Gives read\-only permission to objects in an Amazon S3 bucket\.
+Gives read\-only permission to objects in an Amazon Simple Storage Service \(Amazon S3\) bucket\.
 
 ```
         "Statement": [
@@ -597,7 +597,7 @@ Gives permission to send message to an Amazon SQS queue\.
 
 ## SNSPublishMessagePolicy<a name="sqs-publish-message-policy"></a>
 
-Gives permission to publish a message to an Amazon SNS topic\.
+Gives permission to publish a message to an Amazon Simple Notification Service \(Amazon SNS\) topic\.
 
 ```
         "Statement": [
@@ -622,7 +622,7 @@ Gives permission to publish a message to an Amazon SNS topic\.
 
 ## VPCAccessPolicy<a name="vpc-access-policy"></a>
 
-Gives access to create, delete, describe, and detach Elastic Network Interfaces\.
+Gives access to create, delete, describe, and detach elastic network interfaces\.
 
 **Important**
 You will need to pass an object, even an empty one in your template: "- VPCAccessPolicy: {}"
@@ -823,7 +823,7 @@ Gives permission to create, publish, and delete an Amazon Kinesis stream\.
 
 ## KMSDecryptPolicy<a name="kms-decrypt-policy"></a>
 
-Gives permission to decrypt with an AWS KMS key\.
+Gives permission to decrypt with an AWS Key Management Service \(AWS KMS\) key\.
 
 ```
         "Statement": [
@@ -970,7 +970,7 @@ Gives full access permission to objects in an Amazon S3 bucket\.
 
 ## CodePipelineLambdaExecutionPolicy<a name="code-pipeline-lambda-execution-policy"></a>
 
-Gives permission for a Lambda function invoked by CodePipeline to report the status of the job\.
+Gives permission for a Lambda function invoked by AWS CodePipeline to report the status of the job\.
 
 ```
         "Statement": [
@@ -987,7 +987,7 @@ Gives permission for a Lambda function invoked by CodePipeline to report the sta
 
 ## ServerlessRepoReadWriteAccessPolicy<a name="serverlessrepo-read-write-access-policy"></a>
 
-Gives permission to create and list applications in the AWS Serverless Application Repository service\.
+Gives permission to create and list applications in the AWS Serverless Application Repository \(AWS SAM\) service\.
 
 ```
         "Statement": [
@@ -1078,7 +1078,7 @@ Gives permission to rotate a secret in AWS Secrets Manager\.
 
 ## AWSSecretsManagerGetSecretValuePolicy<a name="secrets-manager-get-secret-value-policy"></a>
 
-Gives permission to GetSecretValue for the specified AWS Secrets Manager secret\.
+Gives permission to get the secret value for the specified AWS Secrets Manager secret\.
 
 ```
         "Statement": [
@@ -1147,7 +1147,7 @@ Gives permissions to put metrics to operate on CloudWatch dashboards\.
 
 ## RekognitionFacesManagementPolicy<a name="rekognition-face-management-policy"></a>
 
-Gives permission to add, delete, and search faces in a collection\.
+Gives permission to add, delete, and search faces in an Amazon Rekognition collection\.
 
 ```
         "Statement": [{
@@ -1416,7 +1416,7 @@ Gives permission to create, write, update, and delete a Kinesis Data Firehose de
 
 ## EKSDescribePolicy<a name="eks-describe-policy"></a>
 
-Gives permission to describe or list Amazon EKS clusters\.
+Gives permission to describe or list Amazon Elastic Kubernetes Service \(Amazon EKS\) clusters\.
 
 ```
         "Statement": [
@@ -1433,7 +1433,7 @@ Gives permission to describe or list Amazon EKS clusters\.
 
 ## CostExplorerReadOnlyPolicy<a name="cost-explorer-readonly-policy"></a>
 
-Gives read\-only permission to the read\-only Cost Explorer APIs for billing history\.
+Gives read\-only permission to the read\-only AWS Cost Explorer \(Cost Explorer\) APIs for billing history\.
 
 ```
         "Statement": [{
@@ -1466,7 +1466,7 @@ Gives read\-only permission to list child account names and IDs\.
 
 ## SESBulkTemplatedCrudPolicy<a name="ses-bulk-templated-crud-policy"></a>
 
-Gives permission to send email, templated email, templated bulk emails and verify identity\.
+Gives permission to send Amazon SES email, templated email, and templated bulk emails and to verify identity\.
 
 ```
         "Statement": [
@@ -1496,7 +1496,7 @@ Gives permission to send email, templated email, templated bulk emails and verif
 
 ## SESEmailTemplateCrudPolicy<a name="ses-email-template-crud-policy"></a>
 
-Gives permission to create, get, list, update and delete Amazon SES email templates\.
+Gives permission to create, get, list, update, and delete Amazon SES email templates\.
 
 ```
         "Statement": [{
@@ -1515,7 +1515,7 @@ Gives permission to create, get, list, update and delete Amazon SES email templa
 
 ## FilterLogEventsPolicy<a name="filter-log-events-policy"></a>
 
-Gives permission to filter log events from a specified log group\.
+Gives permission to filter CloudWatch Logs events from a specified log group\.
 
 ```
         "Statement": [
@@ -1540,10 +1540,10 @@ Gives permission to filter log events from a specified log group\.
 
 ## SSMParameterReadPolicy<a name="ssm-parameter-read-policy"></a>
 
-Gives permission to access a parameter to load secrets in this account\.
+Gives permission to access a parameters from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\.
 
 **Note**  
-If you are not using default key, you will also need `KMSDecryptPolicy`\.
+If you are not using default key, you will also need the `KMSDecryptPolicy` policy\.
 
 ```
         "Statement": [
@@ -1602,7 +1602,7 @@ Gives permission to start a Step Functions state machine execution\.
 
 ## CodeCommitCrudPolicy<a name="codecommit-crud-policy"></a>
 
-Gives permissions to create/read/update/delete objects within a specific CodeCommit repository\.
+Gives permissions to create, read, update, and delete objects within a specific CodeCommit repository\.
 
 ```
         "Statement": [
@@ -1848,7 +1848,7 @@ Gives access to get detected and analyzed documents from Amazon Textract\.
 
 ## EventBridgePutEventsPolicy<a name="eventbridge-put-events-policy"></a>
 
-Gives permissions to send events to EventBridge\.
+Gives permissions to send events to Amazon EventBridge\.
 
 ```
         "Statement": [
@@ -1864,6 +1864,265 @@ Gives permissions to send events to EventBridge\.
                   }
                 }
               ]
+            }
+          }
+        ]
+```
+
+## ElasticMapReduceModifyInstanceFleetPolicy<a name="elastic-map-reduce-modify-instance-fleet-policy"></a>
+
+Gives permission to list details and modify capacities for instance fleets within a cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": [
+              "elasticmapreduce:ModifyInstanceFleet",
+              "elasticmapreduce:ListInstanceFleets"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## ElasticMapReduceSetTerminationProtectionPolicy<a name="elastic-map-reduce-set-termination-protection-policy"></a>
+
+Gives permission to set termination protection for a cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": "elasticmapreduce:SetTerminationProtection",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## ElasticMapReduceModifyInstanceGroupsPolicy<a name="elastic-map-reduce-modify-instance-groups-policy"></a>
+
+Gives permission to list details and modify settings for instance groups within a cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": [
+              "elasticmapreduce:ModifyInstanceGroups",
+              "elasticmapreduce:ListInstanceGroups"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## ElasticMapReduceCancelStepsPolicy<a name="elastic-map-reduce-cancel-steps-policy"></a>
+
+Gives permission to cancel a pending step or steps in a running cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": "elasticmapreduce:CancelSteps",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## ElasticMapReduceTerminateJobFlowsPolicy<a name="elastic-map-reduce-terminate-job-flows-policy"></a>
+
+Gives permission to shut down a cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": "elasticmapreduce:TerminateJobFlows",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## ElasticMapReduceAddJobFlowStepsPolicy<a name="elastic-map-reduce-add-job-flows-policy"></a>
+
+Gives permission to add new steps to a running cluster\.
+
+```
+        "Statement": [
+          {
+            "Action": "elasticmapreduce:AddJobFlowSteps",
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+                {
+                  "clusterId": {
+                    "Ref": "ClusterId"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## SageMakerCreateEndpointPolicy<a name="sagemaker-create-endpoint-policy"></a>
+
+Gives permission to create an endpoint in SageMaker\.
+
+```
+        "Statement": [
+          {
+            "Action": [
+              "sagemaker:CreateEndpoint"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint/${endpointName}",
+                {
+                  "endpointName": {
+                    "Ref": "EndpointName"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## SageMakerCreateEndpointConfigPolicy<a name="sagemaker-create-endpoint-config-policy"></a>
+
+Gives permission to create an endpoint configuration in SageMaker\.
+
+```
+        "Statement": [
+          {
+            "Action": [
+              "sagemaker:CreateEndpointConfig"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint-config/${endpointConfigName}",
+                {
+                  "endpointConfigName": {
+                    "Ref": "EndpointConfigName"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## EcsRunTaskPolicy<a name="ecs-run-task-policy"></a>
+
+Gives permission to start a new task for a task definition\.
+
+```
+        "Statement": [
+          {
+            "Action": [
+              "ecs:RunTask"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:ecs:${AWS::Region}:${AWS::AccountId}:task-definition/${taskDefinition}",
+                {
+                  "taskDefinition": {
+                    "Ref": "TaskDefinition"
+                  }
+                }
+              ]
+            },
+            "Effect": "Allow"
+          }
+        ]
+```
+
+## EFSWriteAccessPolicy<a name="efs-write-access-policy"></a>
+
+Gives permission to mount an Amazon EFS file system with write access\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "elasticfilesystem:ClientMount",
+              "elasticfilesystem:ClientWrite"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:elasticfilesystem:${AWS::Region}:${AWS::AccountId}:file-system/${FileSystem}",
+                {
+                  "FileSystem": {
+                    "Ref": "FileSystem"
+                  }
+                }
+              ]
+            },
+            "Condition": {
+              "StringEquals": {
+                "elasticfilesystem:AccessPointArn": {
+                  "Fn::Sub": [
+                    "arn:${AWS::Partition}:elasticfilesystem:${AWS::Region}:${AWS::AccountId}:access-point/${AccessPoint}",
+                    {
+                      "AccessPoint": {
+                        "Ref": "AccessPoint"
+                      }
+                    }
+                  ]
+                }
+              }
             }
           }
         ]
