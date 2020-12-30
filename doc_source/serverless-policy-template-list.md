@@ -310,7 +310,7 @@ Gives POST and PUT permission to Amazon Elasticsearch Service\.
 
 ## S3ReadPolicy<a name="s3-read-policy"></a>
 
-Gives read\-only permission to objects in an Amazon Simple Storage Service \(Amazon S3\) bucket\.
+Gives read\-only permission to read objects in an Amazon Simple Storage Service \(Amazon S3\) bucket\.
 
 ```
         "Statement": [
@@ -351,7 +351,7 @@ Gives read\-only permission to objects in an Amazon Simple Storage Service \(Ama
 
 ## S3WritePolicy<a name="s3-write-policy"></a>
 
-Gives write permission to objects in an Amazon S3 bucket\.
+Gives write permission to write objects into an Amazon S3 bucket\.
 
 ```
         "Statement": [
@@ -390,7 +390,7 @@ Gives write permission to objects in an Amazon S3 bucket\.
 
 ## S3CrudPolicy<a name="s3-crud-policy"></a>
 
-Gives create, read, update, and delete permission to objects in an Amazon S3 bucket\.
+Gives create, read, update, and delete permission to act on the objects in an Amazon S3 bucket\.
 
 ```
         "Statement": [
@@ -624,9 +624,6 @@ Gives permission to publish a message to an Amazon Simple Notification Service \
 
 Gives access to create, delete, describe, and detach elastic network interfaces\.
 
-**Important**
-You will need to pass an object, even an empty one in your template: "- VPCAccessPolicy: {}"
-
 ```
         "Statement": [
           {
@@ -823,8 +820,7 @@ Gives permission to create, publish, and delete an Amazon Kinesis stream\.
 
 ## KMSDecryptPolicy<a name="kms-decrypt-policy"></a>
 
-Gives permission to decrypt with an AWS KMS key\.
-Note that the keyId cannot be a key alias, but is required to be the actual KMS key id.
+Gives permission to decrypt with an AWS Key Management Service \(AWS KMS\) key\. Note that `keyId` must be an AWS KMS key ID, and not a key alias\.
 
 ```
         "Statement": [
@@ -847,8 +843,7 @@ Note that the keyId cannot be a key alias, but is required to be the actual KMS 
 
 ## KMSEncryptPolicy<a name="kms-encrypt-policy"></a>
 
-Gives permission to encrypt with an AWS KMS key\.
-Note that the keyId cannot be a key alias, but is required to be the actual KMS key id.
+Gives permission to encrypt with an AWS KMS key\. Note that keyId must be an AWS KMS key ID, and not a key alias\.
 
 ```
         "Statement": [
@@ -913,7 +908,7 @@ Gives full access permission to Amazon Polly lexicon resources\.
 
 ## S3FullAccessPolicy<a name="s3-full-access-policy"></a>
 
-Gives full access permission to objects in an Amazon S3 bucket\.
+Gives full access permission to act on the objects in an Amazon S3 bucket\.
 
 ```
         "Statement": [
@@ -2129,4 +2124,3 @@ Gives permission to mount an Amazon EFS file system with write access\.
           }
         ]
 ```
-

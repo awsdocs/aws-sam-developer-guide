@@ -139,7 +139,7 @@ On successful installation of the AWS SAM CLI, you should see output like the fo
 
 ```
  
- SAM CLI, version 1.3.0
+ SAM CLI, version 1.15.0
 ```
 
 You're now ready to start development\.

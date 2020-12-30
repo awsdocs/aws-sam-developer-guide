@@ -103,7 +103,7 @@ The following is a table of the available policy templates\.
 | [KMSDecryptPolicy](serverless-policy-template-list.md#kms-decrypt-policy) | Gives permission to decrypt with an AWS Key Management Service \(AWS KMS\) key\. | 
 | [KMSEncryptPolicy](serverless-policy-template-list.md#kms-encrypt-policy) | Gives permission to encrypt with an AWS Key Management Service \(AWS KMS\) key\. | 
 | [PollyFullAccessPolicy](serverless-policy-template-list.md#polly-full-access-policy) | Gives full access permission to Amazon Polly lexicon resources\. | 
-| [S3FullAccessPolicy](serverless-policy-template-list.md#s3-full-access-policy) | Gives full access permission to act on objects in an Amazon S3 bucket\. | 
+| [S3FullAccessPolicy](serverless-policy-template-list.md#s3-full-access-policy) | Gives full access permission to act on the objects in an Amazon S3 bucket\. | 
 | [CodePipelineLambdaExecutionPolicy](serverless-policy-template-list.md#code-pipeline-lambda-execution-policy) | Gives permission for a Lambda function invoked by CodePipeline to report the status of the job\. | 
 | [ServerlessRepoReadWriteAccessPolicy](serverless-policy-template-list.md#serverlessrepo-read-write-access-policy) | Gives permission to create and list applications in the AWS Serverless Application Repository service\. | 
 | [EC2CopyImagePolicy](serverless-policy-template-list.md#ec2-copy-image-policy) | Gives permission to copy Amazon EC2 images\. | 

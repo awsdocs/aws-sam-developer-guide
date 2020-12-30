@@ -69,9 +69,10 @@ brew --version
 You should see output like the following on successful installation of Homebrew:
 
 ```
-Homebrew 2.5.7
-Homebrew/homebrew-core (git revision 1be3ad; last commit 2020-10-29)
-Homebrew/homebrew-cask (git revision a0cf3; last commit 2020-10-29)
+ 
+ Homebrew 2.5.7
+ Homebrew/homebrew-core (git revision 1be3ad; last commit 2020-10-29)
+ Homebrew/homebrew-cask (git revision a0cf3; last commit 2020-10-29)
 ```
 
 ## Step 5: Install the AWS SAM CLI<a name="serverless-sam-cli-install-mac-sam-cli"></a>
@@ -92,7 +93,8 @@ sam --version
 You should see output like the following after successful installation of the AWS SAM CLI:
 
 ```
- SAM CLI, version 1.6.2
+ 
+ SAM CLI, version 1.15.0
 ```
 
 You're now ready to start development\.

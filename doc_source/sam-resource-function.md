@@ -27,7 +27,7 @@ Properties:
   [FileSystemConfigs](#sam-function-filesystemconfigs): List
   [FunctionName](#sam-function-functionname): String
   [Handler](#sam-function-handler): String
-  [ImageConfig](#sam-function-imageconfig): ImageConfig
+  [ImageConfig](#sam-function-imageconfig): [ImageConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-imageconfig)
   [ImageUri](#sam-function-imageuri): String
   [InlineCode](#sam-function-inlinecode): String
   [KmsKeyArn](#sam-function-kmskeyarn): String
@@ -145,15 +145,15 @@ The function within your code that is called to begin execution\.
 
  `ImageConfig`   <a name="sam-function-imageconfig"></a>
 The object used to configure Lambda container image settings\. For more information, see [Using container images with Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the *AWS Lambda Developer Guide*\.  
-*Type*: [ImageConfig](sam-property-function-imageconfig.md)  
+*Type*: [ImageConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-imageconfig)  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[ImageConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-imageconfig)` property of an `AWS::Lambda::Function` resource\.
 
  `ImageUri`   <a name="sam-function-imageuri"></a>
 The URI of the Amazon Elastic Container Registry \(Amazon ECR\) repository for the Lambda function's container image\. For more information, see [Using container images with Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the *AWS Lambda Developer Guide*\.  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[ImageUri](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-imageuri)` property of the `AWS::Lambda::Function` `Code` data type\.
 
  `InlineCode`   <a name="sam-function-inlinecode"></a>
 The Lambda function code that is written directly in the template\.  
@@ -185,7 +185,7 @@ The deployment package type of the Lambda function\. For more information, see [
 *Valid values*: `Zip` or `Image`  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[PackageType](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-packagetype)` property of an `AWS::Lambda::Function` resource\.
 
  `PermissionsBoundary`   <a name="sam-function-permissionsboundary"></a>
 The ARN of a permissions boundary to use for this function's execution role\. This property works only if the role is generated for you\.  
@@ -247,7 +247,7 @@ The string that specifies the function's X\-Ray tracing mode\. For more informat
 *Valid values*: `Active` or `PassThrough`  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is similar to the `[TracingConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig)` property of an `AWS::Lambda::Function` resource\. If `Tracing` is set to `Active`, then AWS SAM adds the `arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess` policy to the Lambda execution role\.
+*AWS CloudFormation compatibility*: This property is similar to the `[TracingConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig)` property of an `AWS::Lambda::Function` resource\. If the `Tracing` property is set to `Active` and the `Role` property is not specified, then AWS SAM adds the `arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess` policy to the Lambda execution role that it creates for you\.
 
  `VersionDescription`   <a name="sam-function-versiondescription"></a>
 Specifies the `Description` field that is added on the new Lambda version resource\.  
@@ -332,4 +332,23 @@ Properties:
       Properties:
         Path: /path
         Method: get
+```
+
+### ImageConfig example<a name="sam-resource-function--examples--imageconfig-example"></a>
+
+The following is an example of an `ImageConfig` for a Lambda function of package type `Image`\.
+
+#### YAML<a name="sam-resource-function--examples--imageconfig-example--yaml"></a>
+
+```
+HelloWorldFunction:
+  Type: AWS::Serverless::Function
+  Properties:
+    PackageType: Image
+    ImageConfig:
+      Command:
+        - "app.lambda_handler"
+      EntryPoint:
+        - "entrypoint1"
+      WorkingDirectory: "workDir"
 ```

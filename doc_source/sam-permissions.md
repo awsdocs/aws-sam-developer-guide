@@ -24,8 +24,9 @@ You can grant users a subset of permissions using [AWS managed policies](https:/
 For example, the following AWS managed policies are sufficient to [deploy the sample Hello World application](serverless-getting-started-hello-world.md):
 + AWSCloudFormationFullAccess
 + IAMFullAccess
-+ AWSLambdaFullAccess
++ AWSLambda\_FullAccess
 + AmazonAPIGatewayAdministrator
++ AmazonS3FullAccess
 + AmazonEC2ContainerRegistryFullAccess
 
  For information about attaching policies to an IAM user, see [Changing permissions for an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_change-permissions.html) in the *IAM User Guide*\.

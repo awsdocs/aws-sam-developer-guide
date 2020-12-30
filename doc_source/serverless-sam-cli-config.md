@@ -34,7 +34,8 @@ The AWS SAM CLI applies the following rules to configuration files:
 ### Tables<a name="rules-tables"></a>
 + The AWS SAM CLI uses TOML tables to group configuration entries by environment and command\.
 + The format of the table header is `[environment.command.parameters]`\. For example, for the `sam deploy` command, the configuration table header is `[default.deploy.parameters]`\.
-+ For subcommands, the format of the table header is `[environment.command_subcommand.parameters]` with `-` \(hyphen\) characters replaced with `_` \(underscore\)\. For example, for the `sam local start-api` command, the configuration table header is `[default.local_start_api.parameters]`\.
++ For subcommands, the format of the table header is `[environment.command_subcommand.parameters]`\. That is, delimit the command and subcommand with `_` \(underscore\)\. For example, for the `sam local invoke` command, the configuration table header is `[default.local_invoke.parameters]`\.
++ If any command or subcommand contains a `-` \(hyphen\) character, replace it with with `_` \(underscore\)\. For example, for the `sam local start-api` command, the configuration table header is `[default.local_start_api.parameters]`\.
 + The default environment name is `default`\. You can override the default environment name using the `--config-env` parameter\.
 + A single configuration file can contain tables for multiple environments and multiple commands/subcommands\.
 
@@ -43,6 +44,7 @@ The AWS SAM CLI applies the following rules to configuration files:
 + The configuration key is the long\-form parameter name with the `-` \(hyphen\) character replaced with `_` \(underscore\)\. For the list of available parameters for each command, see the [AWS SAM CLI command reference](serverless-sam-cli-command-reference.md), or run `sam command --help`\.
 + The configuration value can take the following forms:
   + For parameters that take an argument, the entry value is the argument surrounded by double quotes\. For example, `region = "us-west-2"`\.
+    + For multiple arguments, the arguments are space\-delimited within double quotes\. For example, `capabilities = "CAPABILITY_IAM CAPABILITY_NAMED_IAM"`\.
     + For arguments that are key\-value pairs, the pairs are space\-delimited and value of each pair is surrounded by encoded double quotes\. For example, `tags = "project=\"my-application\" stage=\"production\""`\.
   + For toggle parameters, the value can be `true` or `false` \(no quotes\)\. For example, `confirm_changeset = true`\.
 

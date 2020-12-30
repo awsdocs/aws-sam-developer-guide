@@ -60,10 +60,10 @@ Events:
       Topic: arn:aws:sns:us-east-1:123456789012:my_topic
       SqsSubscription: True
       FilterPolicy:
-        store: 
+        store:
           - example_corp
-        price_usd: 
-          - numeric: 
+        price_usd:
+          - numeric:
               - ">="
               - 100
 ```

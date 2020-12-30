@@ -4,7 +4,7 @@ A serverless application can include one or more **nested applications**\. You c
 
 As serverless architectures grow, common patterns emerge in which the same components are defined in multiple application templates\. You can now separate out common patterns as dedicated applications, and then nest them as part of new or existing application templates\. With nested applications, you can stay more focused on the business logic that's unique to your application\.
 
-To define a nested application in your serverless application, use the [AWS::Serverless::Application](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-application.html) resource type\.
+To define a nested application in your serverless application, use the [AWS::Serverless::Application](sam-resource-application.md) resource type\.
 
 You can define nested applications from the following two sources:
 + An **AWS Serverless Application Repository application** – You can define nested applications by using applications that are available to your account in the AWS Serverless Application Repository\. These can be *private* applications in your account, applications that are *privately shared* with your account, or applications that are *publicly shared* in the AWS Serverless Application Repository\. For more information about the different deployment permissions levels, see [Application Deployment Permissions](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverless-app-consuming-applications.html#application-deployment-permissions) and [Publishing Applications](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverless-app-publishing-applications.html) in the *AWS Serverless Application Repository Developer Guide*\.
