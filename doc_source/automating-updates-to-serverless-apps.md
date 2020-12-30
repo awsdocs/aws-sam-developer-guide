@@ -1,4 +1,4 @@
-# Deploying Serverless Applications Gradually<a name="automating-updates-to-serverless-apps"></a>
+# Deploying serverless applications gradually<a name="automating-updates-to-serverless-apps"></a>
 
 If you use AWS SAM to create your serverless application, it comes built\-in with [CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to provide gradual Lambda deployments\. With just a few lines of configuration, AWS SAM does the following for you:
 + Deploys new versions of your Lambda function, and automatically creates aliases that point to the new version\. 
@@ -19,7 +19,7 @@ Resources:
    Type: AWS::Serverless::Function
    Properties:
      Handler: index.handler
-     Runtime: nodejs4.3
+     Runtime: nodejs12.x
      CodeUri: s3://bucket/code.zip
 
      AutoPublishAlias: live
@@ -51,4 +51,4 @@ These revisions to the AWS SAM template do the following:
   + **PreTraffic**: Before traffic shifting starts, CodeDeploy invokes the pre\-traffic hook Lambda function\. This Lambda function must call back to CodeDeploy and indicate success or failure\. If the function fails, it aborts and reports a failure back to AWS CloudFormation\. If the function succeeds, CodeDeploy proceeds to traffic shifting\.
   + **PostTraffic**: After traffic shifting completes, CodeDeploy invokes the post\-traffic hook Lambda function\. This is similar to the pre\-traffic hook, where the function must call back to CodeDeploy to report a success or failure\. Use post\-traffic hooks to run integration tests or other validation actions\.
 
-  For more information, see [SAM Reference to Safe Deployments](https://github.com/awslabs/serverless-application-model/blob/master/docs/safe_lambda_deployments.rst)\. 
+  For more information, see [SAM Reference to Safe Deployments](https://github.com/aws/serverless-application-model/blob/master/docs/safe_lambda_deployments.rst)\. 

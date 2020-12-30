@@ -1,4 +1,4 @@
-# AWS SAM CLI Command Reference<a name="serverless-sam-cli-command-reference"></a>
+# AWS SAM CLI command reference<a name="serverless-sam-cli-command-reference"></a>
 
 This section is the reference for the AWS SAM CLI commands\.
 

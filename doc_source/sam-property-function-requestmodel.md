@@ -4,7 +4,7 @@ Configure Request Model for a specific Api\+Path\+Method\.
 
 ## Syntax<a name="sam-property-function-requestmodel-syntax"></a>
 
-To declare this entity in your AWS SAM template, use the following syntax:
+To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
 
 ### YAML<a name="sam-property-function-requestmodel-syntax.yaml"></a>
 
@@ -19,13 +19,13 @@ To declare this entity in your AWS SAM template, use the following syntax:
 Name of a model defined in the Models property of the [AWS::Serverless::Api](sam-resource-api.md)\.  
 *Type*: String  
 *Required*: Yes  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Required`   <a name="sam-function-requestmodel-required"></a>
 adds a `required` property in the parameters section of OpenApi definition for given API endpoint  
 *Type*: Boolean  
 *Required*: No  
-*AWS CloudFormation Compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-function-requestmodel--examples"></a>
 
