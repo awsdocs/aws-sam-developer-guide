@@ -823,7 +823,8 @@ Gives permission to create, publish, and delete an Amazon Kinesis stream\.
 
 ## KMSDecryptPolicy<a name="kms-decrypt-policy"></a>
 
-Gives permission to decrypt with an AWS Key Management Service \(AWS KMS\) key\.
+Gives permission to decrypt with an AWS KMS key\.
+Note that the keyId cannot be a key alias, but is required to be the actual KMS key id.
 
 ```
         "Statement": [
@@ -847,6 +848,7 @@ Gives permission to decrypt with an AWS Key Management Service \(AWS KMS\) key\.
 ## KMSEncryptPolicy<a name="kms-encrypt-policy"></a>
 
 Gives permission to encrypt with an AWS KMS key\.
+Note that the keyId cannot be a key alias, but is required to be the actual KMS key id.
 
 ```
         "Statement": [
@@ -2127,3 +2129,4 @@ Gives permission to mount an Amazon EFS file system with write access\.
           }
         ]
 ```
+
