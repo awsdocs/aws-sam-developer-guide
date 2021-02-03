@@ -92,3 +92,6 @@ sam local start-api -d 5890
 # Change HelloWorldFunction to reflect the logical name found in template.yaml
 sam local generate-event apigateway aws-proxy | sam local invoke HelloWorldFunction -d 5890
 ```
+**Note**  
+ Layers don't work locally due to not supporting zip file. This is a know issue https://github.com/aws/aws-sam-cli/issues/947
+ SAM local doesn't extract layer zipfile, just mounts this file as a directory instead
