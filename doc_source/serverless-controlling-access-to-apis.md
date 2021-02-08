@@ -35,7 +35,7 @@ The following table summarizes the mechanisms that each resource type supports\.
 
   The `AWS::Serverless::Api` resource type supports Amazon Cognito user pools\. The `AWS::Serverless::HttpApi` resource type supports the use of Amazon Cognito as a JWT issuer\.
 
-  For more information, see [Control access to a REST API using Amazon Cognito User Pools as authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html) in the *API Gateway Developer Guide*\. For an example, see [Amazon Cognito user pool example](serverless-controlling-access-to-apis-cognito-user-pool.md)\.
+  For more information, see [Control access to a REST API using Amazon Cognito user pools as authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html) in the *API Gateway Developer Guide*\. For an example, see [Amazon Cognito user pool example](serverless-controlling-access-to-apis-cognito-user-pool.md)\.
 + **API keys** – API keys are alphanumeric string values that you distribute to application developer customers to grant access to your API\.
 
   Only the `AWS::Serverless::Api` resource type supports API keys\.

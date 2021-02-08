@@ -36,7 +36,7 @@ Before you publish an application to the AWS Serverless Application Repository, 
 
   1. Choose the **Bucket Policy** button\.
 
-  1. Paste the following policy statement into the **Bucket policy editor**\. Make sure to substitute your bucket name in the Resource property value\.
+  1. Paste the following policy statement into the **Bucket policy editor**\. Make sure to substitute your bucket name in the Resource element, and your AWS account ID in the Condition element\. The expression in the Condition element ensure AWS Serverless Application Repository only has permission to access applications from the specified AWS account\. For more information about policy statements, see [IAM JSON policy elements reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html) in the *IAM User Guide*\.
 
      ```
       1. {
@@ -48,10 +48,15 @@ Before you publish an application to the AWS Serverless Application Repository, 
       7.                 "Service":  "serverlessrepo.amazonaws.com"
       8.             },
       9.             "Action": "s3:GetObject",
-     10.             "Resource": "arn:aws:s3:::<your-bucket-name>/*"
-     11.         }
-     12.     ]
-     13. }
+     10.             "Resource": "arn:aws:s3:::<your-bucket-name>/*",
+     11.             "Condition" : {
+     12.                 "StringEquals": {
+     13.                     "aws:SourceAccount": "123456789012"
+     14.                 }
+     15.             }
+     16.         }
+     17.     ]
+     18. }
      ```
 
   1. Choose the **Save** button\.

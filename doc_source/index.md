@@ -1,7 +1,7 @@
 # AWS Serverless Application Model Developer Guide
 
 -----
-*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2021 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -63,6 +63,7 @@ Amazon's trademarks and trade dress may not be used in
             + [Cognito](sam-property-function-cognito.md)
             + [DynamoDB](sam-property-function-dynamodb.md)
             + [EventBridgeRule](sam-property-function-eventbridgerule.md)
+               + [DeadLetterConfig](sam-property-function-deadletterconfig.md)
             + [HttpApi](sam-property-function-httpapi.md)
                + [HttpApiFunctionAuth](sam-property-function-httpapifunctionauth.md)
             + [IoTRule](sam-property-function-iotrule.md)
@@ -71,6 +72,7 @@ Amazon's trademarks and trade dress may not be used in
             + [MSK](sam-property-function-msk.md)
             + [S3](sam-property-function-s3.md)
             + [Schedule](sam-property-function-schedule.md)
+               + [DeadLetterConfig](sam-property-function-scheduledeadletterconfig.md)
             + [SNS](sam-property-function-sns.md)
                + [SqsSubscriptionObject](sam-property-function-sqssubscriptionobject.md)
             + [SQS](sam-property-function-sqs.md)
@@ -90,12 +92,14 @@ Amazon's trademarks and trade dress may not be used in
          + [PrimaryKeyObject](sam-property-simpletable-primarykeyobject.md)
       + [AWS::Serverless::StateMachine](sam-resource-statemachine.md)
          + [EventSource](sam-property-statemachine-statemachineeventsource.md)
-            + [Schedule](sam-property-statemachine-schedule.md)
             + [Api](sam-property-statemachine-statemachineapi.md)
                + [ApiStateMachineAuth](sam-property-statemachine-apistatemachineauth.md)
                   + [ResourcePolicyStatement](sam-property-statemachine-resourcepolicystatement.md)
             + [CloudWatchEvent](sam-property-statemachine-statemachinecloudwatchevent.md)
             + [EventBridgeRule](sam-property-statemachine-statemachineeventbridgerule.md)
+               + [DeadLetterConfig](sam-property-statemachine-statemachinedeadletterconfig.md)
+            + [Schedule](sam-property-statemachine-statemachineschedule.md)
+               + [DeadLetterConfig](sam-property-statemachine-statemachinescheduledeadletterconfig.md)
    + [Resource attributes](sam-specification-resource-attributes.md)
    + [Intrinsic functions](sam-specification-intrinsic-functions.md)
    + [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)

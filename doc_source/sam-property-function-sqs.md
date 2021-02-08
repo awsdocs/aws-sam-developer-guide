@@ -1,6 +1,6 @@
 # SQS<a name="sam-property-function-sqs"></a>
 
-The object describing an `SQS` event source type\.
+The object describing an `SQS` event source type\. For more information, see [Using AWS Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html) in the *AWS Lambda Developer Guide*\.
 
 SAM generates [AWS::Lambda::EventSourceMapping](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html) resource when this event type is set
 

@@ -169,6 +169,30 @@ For example, if you used the instructions in this topic to both install Homebrew
  /home/linuxbrew/.linuxbrew/bin/sam
 ```
 
+### Installing Homebrew message: "Enter your password to install to /home/linuxbrew/\.linuxbrew"<a name="serverless-sam-cli-install-linux-troubleshooting-homebrew-enter-password"></a>
+
+During **Step 4: Install Homebrew**, by default you are prompted to provide a password\. However, you may not want to set up a password for the current user, for example when you are setting up a non\-interactive environment like CI/CD systems\.
+
+If you do not want to set up a password for the current user, you can install Homebrew in non\-interactive mode by setting the environmentment variable `CI=1`\. For example:
+
+```
+CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+### Installing AWS SAM CLI error: "The following formulae cannot be installed from bottles and must be built from source\. pkg\-config, gdbm, openssl@1\.1, ncurses, xz and python@3\.8<a name="serverless-sam-cli-install-linux-troubleshooting-build-from-sourced"></a>
+
+During **Step 5: Install the AWS SAM CLI**, if you see this error, it is because you don't have the `gcc` module installed\. Installing the gcc module depends on your Linux distribution, as follows:
+
+```
+# for Amazon Linux, Amazon Linux 2, CentOS and RedHat:
+sudo yum install gcc
+# for Debian and Ubuntu:
+sudo apt-get update
+sudo apt-get install gcc
+```
+
+After installing the `gcc` module, run the commands in **Step 5: Install the AWS SAM CLI** again\.
+
 ## Next steps<a name="serverless-sam-cli-install-linux-next-steps"></a>
 
 You're now ready to begin building your own serverless applications using AWS SAM\. To start with a sample serverless application, choose one of the following links:

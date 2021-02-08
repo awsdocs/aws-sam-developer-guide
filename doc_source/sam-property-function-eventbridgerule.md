@@ -1,8 +1,8 @@
 # EventBridgeRule<a name="sam-property-function-eventbridgerule"></a>
 
-The object describing an `EventBridgeRule` event source type\.
+The object describing an `EventBridgeRule` event source type, which sets your serverless function as the target of an Amazon EventBridge rule\. For more information, see [What Is Amazon EventBridge?](https://docs.aws.amazon.com/eventbridge/latest/userguide/what-is-amazon-eventbridge.html) in the *Amazon EventBridge User Guide*\.
 
-AWS Serverless Application Model \(AWS SAM\) generates an [AWS::Events::Rule](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html) resource when this event type is set\.
+AWS SAM generates an [AWS::Events::Rule](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html) resource when this event type is set\.
 
 ## Syntax<a name="sam-property-function-eventbridgerule-syntax"></a>
 
@@ -11,14 +11,23 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 ### YAML<a name="sam-property-function-eventbridgerule-syntax.yaml"></a>
 
 ```
+  [DeadLetterConfig](#sam-function-eventbridgerule-deadletterconfig): DeadLetterConfig
   [EventBusName](#sam-function-eventbridgerule-eventbusname): String
   [Input](#sam-function-eventbridgerule-input): String
   [InputPath](#sam-function-eventbridgerule-inputpath): String
   [Pattern](#sam-function-eventbridgerule-pattern): [EventPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern)
+  [RetryPolicy](#sam-function-eventbridgerule-retrypolicy): [RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)
   [TargetId](#sam-function-eventbridgerule-targetid): String
 ```
 
 ## Properties<a name="sam-property-function-eventbridgerule-properties"></a>
+
+ `DeadLetterConfig`   <a name="sam-function-eventbridgerule-deadletterconfig"></a>
+Configure the Amazon Simple Queue Service \(Amazon SQS\) queue where EventBridge sends events after a failed target invocation\. Invocation can fail, for example, when sending an event to a Lambda function that doesn't exist, or when EventBridge has insufficient permissions to invoke the Lambda function\. For more information, see [Event retry policy and using dead\-letter queues](https://docs.aws.amazon.com/eventbridge/latest/userguide/rule-dlq.html) in the *Amazon EventBridge User Guide*\.  
+**Note:** The [AWS::Serverless::Function](sam-resource-function.md) resource type has a similar data type, `DeadLetterQueue`, which handles failures that occur after successful invocation of the target Lambda function\. Examples of these types of failures include Lambda throttling, or errors returned by the Lambda target function\. For more information about the function `DeadLetterQueue` property, see [AWS Lambda function dead\-letter queues](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq) in the *AWS Lambda Developer Guide*\.  
+*Type*: [DeadLetterConfig](sam-property-function-deadletterconfig.md)  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is similar to the `[DeadLetterConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-deadletterconfig)` property of the `AWS::Events::Rule` `Target` data type\. The AWS SAM version of this property includes additional subproperties, in case you want AWS SAM to create the dead\-letter queue for you\.
 
  `EventBusName`   <a name="sam-function-eventbridgerule-eventbusname"></a>
 The event bus to associate with this rule\. If you omit this property, AWS SAM uses the default event bus\.  
@@ -45,9 +54,15 @@ Describes which events are routed to the specified target\. For more information
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[EventPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern)` property of an `AWS::Events::Rule` resource\.
 
+ `RetryPolicy`   <a name="sam-function-eventbridgerule-retrypolicy"></a>
+A `RetryPolicy` object that includes information about the retry policy settings\. For more information, see [Event retry policy and using dead\-letter queues](https://docs.aws.amazon.com/eventbridge/latest/userguide/rule-dlq.html) in the *Amazon EventBridge User Guide*\.  
+*Type*: [RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)` property of the `AWS::Events::Rule` `Target` data type\.
+
  `TargetId`   <a name="sam-function-eventbridgerule-targetid"></a>
 A name for the events rule target that EventBridge invokes when a rule is triggered\. The `TargetId` can include alphanumeric characters, periods \(\.\), hyphens \(\-\), and underscores \(\_\)\.  
-If this property is not specified, AWS SAM will generate a `TargetId` value\.  
+If this property is not specified, AWS SAM generates a `TargetId` value\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Id](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-id)` property of the `AWS::Events::Rule` `Target` data type\.
@@ -69,4 +84,10 @@ EBRule:
       detail:
         state:
           - terminated
+    RetryPolicy:
+      MaximumRetryAttempts: 5
+      MaximumEventAgeInSeconds: 900
+    DeadLetterConfig:
+      Type: SQS
+      QueueLogicalId: EBRuleDLQ
 ```

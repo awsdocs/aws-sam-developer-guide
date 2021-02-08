@@ -73,9 +73,10 @@ Intrinsic functions are not supported in external OpenApi definition files that 
 
  `Description`   <a name="sam-httpapi-description"></a>
 A description of the HttpApi resource\.  
+**Note**: This property requires AWS SAM to modify the HttpApi resource's OpenAPI definition, to set the `description` field\. The following two scenarios result in an error: 1\) The `DefinitionBody` property is specified with the `description` field set in the OpenAPI definition \(since this is a conflict that AWS SAM won't resolve\), or 2\) The `DefinitionUri` property is specified \(since AWS SAM won't modify an OpenAPI definition that it retrieves from Amazon S3\)\.  
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is passed directly to the `[Description](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-description)` property of an `AWS::ApiGatewayV2::Api` resource\.
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `DisableExecuteApiEndpoint`   <a name="sam-httpapi-disableexecuteapiendpoint"></a>
 Specifies whether clients can invoke your HTTP API by using the default `execute-api` endpoint `https://{api_id}.execute-api.{region}.amazonaws.com`\. By default, clients can invoke your API with the default endpoint\. To require that clients only use a custom domain name to invoke your API, disable the default endpoint\.  

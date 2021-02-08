@@ -35,7 +35,15 @@ For example, the following AWS managed policies are sufficient to [deploy the sa
 
 For the most granular level of access control, you can grant specific IAM permissions to users using [policy statements](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_statement.html)\. If you use this option, make sure that the policy statement includes all of the actions and resources required for the serverless applications that the users manage\.
 
-For example, the following policy statement grants sufficient permissions to [deploy the sample Hello World application](serverless-getting-started-hello-world.md):
+The best practice with this option is to deny users the permission to create roles, including Lambda execution roles, so they can't grant themselves escalated permissions\. So, you as the administrator must first create a [Lambda execution role](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html) that will be specified in the serverless applications that users will manage\. For information about creating Lambda execution roles, see [Creating an execution role in the IAM console](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html#permissions-executionrole-console)\.
+
+For the [sample Hello World application](serverless-getting-started-hello-world.md) the **AWSLambdaBasicExecutionRole** is sufficient to run the application\. After you've created a Lambda execution role, modify the AWS SAM template file of the sample Hello World application to add the following property to the `AWS::Serverless::Function` resource:
+
+```
+  Role: lambda-execution-role-arn
+```
+
+With the modified Hello World application in place, the following policy statement grants sufficient permissions for users to deploy, update, and delete the application:
 
 ```
 {
@@ -64,7 +72,7 @@ For example, the following policy statement grants sufficient permissions to [de
                 "cloudformation:GetTemplateSummary"
             ],
             "Resource": [
-                "arn:aws:cloudformation:*:111122223333:stack/*/*"
+                "arn:aws:cloudformation:*:111122223333:stack/*"
             ]
         },
         {
@@ -135,7 +143,6 @@ For example, the following policy statement grants sufficient permissions to [de
             "Effect": "Allow",
             "Action": [
                 "iam:AttachRolePolicy",
-                "iam:CreateRole",
                 "iam:DeleteRole",
                 "iam:DetachRolePolicy",
                 "iam:GetRole",

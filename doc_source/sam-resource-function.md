@@ -78,10 +78,11 @@ The ARN of the [AWS::Lambda::CodeSigningConfig](https://docs.aws.amazon.com/AWSC
 *AWS CloudFormation compatibility*: This property is passed directly to the `[CodeSigningConfigArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-codesigningconfigarn)` property of an `AWS::Lambda::Function` resource\.
 
  `CodeUri`   <a name="sam-function-codeuri"></a>
-The function code's Amazon S3 URI, local file path, or [FunctionCode](sam-property-function-functioncode.md) object\.  
-If an Amazon S3 URI or [FunctionCode](sam-property-function-functioncode.md) object is provided, the Amazon S3 object referenced must be a valid [Lambda deployment package](https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html)\.  
-If a local file path is provided, for the code to be transformed properly the template must go through the workflow that includes the `sam deploy` or `sam package` command\.  
-**Note**: Either `CodeUri` or `InlineCode` is required\.  
+The function code's Amazon S3 URI, local file path, or [FunctionCode](sam-property-function-functioncode.md) object\. This property only applies if the `PackageType` property is set to `Zip`, otherwise it is ignored\.  
+**Notes**:  
+1\. If the `PackageType` property is set to `Zip` \(default\), then one of `CodeUri` or `InlineCode` is required\.  
+2\. If an Amazon S3 URI or [FunctionCode](sam-property-function-functioncode.md) object is provided, the Amazon S3 object referenced must be a valid [Lambda deployment package](https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html)\.  
+3\. If a local file path is provided, for the code to be transformed properly the template must go through the workflow that includes the `sam deploy` or `sam package` command\.  
 *Type*: String \| [FunctionCode](sam-property-function-functioncode.md)  
 *Required*: Conditional  
 *AWS CloudFormation compatibility*: This property is similar to the `[Code](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code)` property of an `AWS::Lambda::Function` resource\. The nested Amazon S3 properties are named differently\.
@@ -138,9 +139,9 @@ A name for the function\. If you don't specify a name, a unique name is generate
 *AWS CloudFormation compatibility*: This property is passed directly to the `[FunctionName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-functionname)` property of an `AWS::Lambda::Function` resource\.
 
  `Handler`   <a name="sam-function-handler"></a>
-The function within your code that is called to begin execution\.  
+The function within your code that is called to begin execution\. This property is only required if the `PackageType` property is set to `Zip`\.  
 *Type*: String  
-*Required*: Yes  
+*Required*: Conditional  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Handler](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler)` property of an `AWS::Lambda::Function` resource\.
 
  `ImageConfig`   <a name="sam-function-imageconfig"></a>
@@ -150,14 +151,15 @@ The object used to configure Lambda container image settings\. For more informat
 *AWS CloudFormation compatibility*: This property is passed directly to the `[ImageConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-imageconfig)` property of an `AWS::Lambda::Function` resource\.
 
  `ImageUri`   <a name="sam-function-imageuri"></a>
-The URI of the Amazon Elastic Container Registry \(Amazon ECR\) repository for the Lambda function's container image\. For more information, see [Using container images with Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the *AWS Lambda Developer Guide*\.  
+The URI of the Amazon Elastic Container Registry \(Amazon ECR\) repository for the Lambda function's container image\. This property only applies if the `PackageType` property is set to `Image`, otherwise it is ignored\. For more information, see [Using container images with Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the *AWS Lambda Developer Guide*\.  
+**Note**: If the `PackageType` property is set to `Image`, then either `ImageUri` is required, or you must or you must build your application with necessary `Metadata` entries in the AWS SAM template file\. For more information, see [Building applications](serverless-sam-cli-using-build.md)\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[ImageUri](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-imageuri)` property of the `AWS::Lambda::Function` `Code` data type\.
 
  `InlineCode`   <a name="sam-function-inlinecode"></a>
-The Lambda function code that is written directly in the template\.  
-**Note**: Either `CodeUri` or `InlineCode` is required\.  
+The Lambda function code that is written directly in the template\. This property only applies if the `PackageType` property is set to `Zip`, otherwise it is ignored\.  
+**Note**: If the `PackageType` property is set to `Zip` \(defult\), then one of `CodeUri` or `InlineCode` is required\.  
 *Type*: String  
 *Required*: Conditional  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[ZipFile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-zipfile)` property of the `AWS::Lambda::Function` `Code` data type\.
@@ -182,9 +184,13 @@ The size of the memory in MB allocated per invocation of the function\.
 
  `PackageType`   <a name="sam-function-packagetype"></a>
 The deployment package type of the Lambda function\. For more information, see [Lambda deployment packages](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html) in the *AWS Lambda Developer Guide*\.  
+**Notes**:  
+1\. If this property is set to `Zip` \(default\), then either `CodeUri` or `InlineCode` applies, and `ImageUri` is ignored\.  
+2\. If this property is set to `Image`, then only `ImageUri` applies, and both `CodeUri` and `InlineCode` are ignored\.  
 *Valid values*: `Zip` or `Image`  
 *Type*: String  
 *Required*: No  
+*Default*: `Zip`  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[PackageType](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-packagetype)` property of an `AWS::Lambda::Function` resource\.
 
  `PermissionsBoundary`   <a name="sam-function-permissionsboundary"></a>
@@ -223,10 +229,10 @@ The ARN of an IAM role to use as this function's execution role\.
 *AWS CloudFormation compatibility*: This property is similar to the `[Role](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role)` property of an `AWS::Lambda::Function` resource\. This is required in AWS CloudFormation but not in AWS SAM\. If a role isn't specified, one is created for you with a logical ID of `<function-logical-id>Role`\.
 
  `Runtime`   <a name="sam-function-runtime"></a>
-The identifier of the function's [runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)\.  
+The identifier of the function's [runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)\. This property is only required if the `PackageType` property is set to `Zip`\.  
 **Note**: If you specify the `provided` identifier for this property, you can use the `Metadata` resource attribute to instruct AWS SAM to build the custom runtime that this function requires\. For more information about building custom runtimes, see [Building custom runtimes](building-custom-runtimes.md)\.  
 *Type*: String  
-*Required*: Yes  
+*Required*: Conditional  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Runtime](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime)` property of an `AWS::Lambda::Function` resource\.
 
  `Tags`   <a name="sam-function-tags"></a>
@@ -282,7 +288,7 @@ The ARN of the underlying Lambda function\.
 
 ### Simple function<a name="sam-resource-function--examples--simple-function"></a>
 
-The following is a basic example of an [AWS::Serverless::Function](#sam-resource-function) resource\.
+The following is a basic example of an [AWS::Serverless::Function](#sam-resource-function) resource of package type `Zip` \(default\) and function code in an Amazon S3 bucket\.
 
 #### YAML<a name="sam-resource-function--examples--simple-function--yaml"></a>
 
@@ -291,12 +297,12 @@ Type: AWS::Serverless::Function
 Properties:
   Handler: index.handler
   Runtime: python3.6
-  CodeUri: s3://bucket/key
+  CodeUri: s3://bucket-name/key-name
 ```
 
 ### Function properties example<a name="sam-resource-function--examples--function-properties-example"></a>
 
-The following is an example of an [AWS::Serverless::Function](#sam-resource-function) that uses `InlineCode`, `Layers`, `Tracing`, `Policies`, `Amazon EFS`, and an `Api` event source\.
+The following is an example of an [AWS::Serverless::Function](#sam-resource-function) of package type `Zip` \(default\) that uses `InlineCode`, `Layers`, `Tracing`, `Policies`, `Amazon EFS`, and an `Api` event source\.
 
 #### YAML<a name="sam-resource-function--examples--function-properties-example--yaml"></a>
 
@@ -345,6 +351,7 @@ HelloWorldFunction:
   Type: AWS::Serverless::Function
   Properties:
     PackageType: Image
+    ImageUri: account-id.dkr.ecr.region.amazonaws.com/ecr-repo-name:image-name
     ImageConfig:
       Command:
         - "app.lambda_handler"

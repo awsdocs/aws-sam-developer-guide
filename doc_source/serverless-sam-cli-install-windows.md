@@ -75,6 +75,10 @@ If you operate on 32\-bit system, see [Installing AWS SAM CLI on 32\-bit Windows
     SAM CLI, version 1.15.0
    ```
 
+1. Install Git\.
+
+   To download sample applications using the `sam init` command, you must also install Git\. For instructions, see [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)\.
+
 You're now ready to start development\.
 
 ## Next steps<a name="serverless-sam-cli-install-windows-next-steps"></a>
