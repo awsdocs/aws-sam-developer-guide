@@ -1,6 +1,8 @@
 # Installing the AWS SAM CLI on Linux<a name="serverless-sam-cli-install-linux"></a>
 
-Follow these steps to install and configure the prerequisites for using the AWS SAM command line interface \(CLI\) on your Linux host:
+The AWS SAM command line interface \(CLI\) is supported on 64\-bit versions of recent distributions of CentOS, Fedora, Ubuntu, and Amazon Linux 2\. To install the AWS SAM CLI, you must extract or "unzip" the downloaded package\. If your operating system doesn't have the built\-in unzip command, use an equivalent\.
+
+To install and configure the prerequisites for using the AWS SAM CLI on your Linux host, follow these steps:
 
 1. Create an AWS account\.
 
@@ -8,12 +10,7 @@ Follow these steps to install and configure the prerequisites for using the AWS 
 
 1. Install Docker\. **Note:** Docker is a prerequisite only for testing your application locally\.
 
-1. Install Homebrew\.
-
 1. Install the AWS SAM CLI\.
-
-**Note**  
-Following these instructions changes your environment's default Python version to the one that Homebrew installs\. This change occurs in [Step 4: Install Homebrew](#serverless-sam-cli-install-linux-homebrew)\.
 
 ## Step 1: Create an AWS account<a name="serverless-sam-cli-install-linux-aws-account"></a>
 
@@ -31,7 +28,7 @@ In addition, to enable the AWS SAM CLI to make AWS service calls, you must set u
 ## Step 3: Install Docker<a name="serverless-sam-cli-install-linux-docker"></a>
 
 **Note**  
-Docker is a prerequisite only for testing your application locally and for building deployment packages using the `--use-container` flag\. If you don't plan to use these features initially, you can skip this section or install Docker at a later time\.
+Docker is a prerequisite only for testing your application locally and for building deployment packages using the \-\-use\-container flag\. If you don't plan to use these features initially, you can skip this section or install Docker at a later time\.
 
 Docker is an application that runs containers on your Linux machines\. AWS SAM provides a local environment that's similar to AWS Lambda to use as a Docker container\. You can use this container to build, test, and debug your serverless applications\.
 
@@ -59,15 +56,15 @@ If you're using Amazon Linux 2, follow these steps to install Docker:
    sudo service docker start
    ```
 
-1. Add the `ec2-user` to the `docker` group so that you can run Docker commands without using `sudo`\.
+1. Add the `ec2-user` to the `docker` group so that you can run Docker commands without using sudo\.
 
    ```
    sudo usermod -a -G docker ec2-user
    ```
 
-1. Log out and log back in again to pick up the new `docker` group permissions\. You can do this by closing your current SSH terminal window and reconnecting to your instance in a new one\. Your new SSH session will have the appropriate `docker` group permissions\.
+1. Pick up the new `docker` group permissions by logging out and logging back in again\. To do this, close your current SSH terminal window and reconnect to your instance in a new one\. Your new SSH session should have the appropriate `docker` group permissions\.
 
-1. Verify that the `ec2-user` can run Docker commands without using `sudo`\.
+1. Verify that the `ec2-user` can run Docker commands without using sudo\.
 
    ```
    docker ps
@@ -76,122 +73,120 @@ If you're using Amazon Linux 2, follow these steps to install Docker:
    You should see the following output, confirming that Docker is installed and running:
 
    ```
-    
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
    ```
 
 If you run into issues installing Docker, see the [Troubleshooting](#serverless-sam-cli-install-linux-troubleshooting) section later in this guide\. Or, see the [Troubleshooting](https://docs.docker.com/engine/install/linux-postinstall/#troubleshooting) section of **Post\-installation steps for Linux** on the Docker Docs website\.
 
-## Step 4: Install Homebrew<a name="serverless-sam-cli-install-linux-homebrew"></a>
+## Step 4: Install the AWS SAM CLI<a name="serverless-sam-cli-install-linux-sam-cli"></a>
 
-**Note**  
-This step changes your environment's default Python version to the one that Homebrew installs\.
+To install the AWS SAM CLI, follow these steps:
 
-To install the AWS SAM CLI on Linux, we recommend using the Homebrew package manager\. For more information about Homebrew, see [Homebrew on Linux](https://docs.brew.sh/Homebrew-on-Linux) on the Homebrew Documentation website\.
+1. Download the [AWS SAM CLI zip file](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip) to a directory of your choice\.
 
-To install Homebrew, you must first install Git\. Git is available on many different operating systems, including most modern Linux distributions\. For instructions about installing Git on your particular operating system, see [Installing Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on the Git website\.
+1. Verify the integrity and authenticity of the downloaded installer files by generating a hash value using the following command:
 
-After successfully installing Git, to install Homebrew, run the following command:
+   ```
+   sha256sum aws-sam-cli-linux-x86_64.zip
+   ```
 
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
+   The output should look like the following example:
 
-Next, add Homebrew to your PATH by running the following commands\. These commands work on all major flavors of Linux by adding either `~/.profile` on Debian and Ubuntu, or `~/.bash_profile` on CentOS, Fedora, and RedHat\.
+   ```
+    5b9c61df9a92f0e9f7d335a124ae5d94cc10a11b424fa2635e0cfaeb56bdd3e3  aws-sam-cli-linux-x86_64.zip
+   ```
 
-```
-test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-```
+   Compare the hash value with the one for your desired AWS SAM CLI version in the [AWS SAM CLI release notes](https://github.com/aws/aws-sam-cli/releases/latest) on GitHub\.
 
-Verify that Homebrew is installed\.
+1. Unzip the installation files into the `sam-installation/` subdirectory\.
 
-```
-brew --version
-```
+   ```
+   unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+   ```
 
-On successful installation of Homebrew, you should see output like the following:
+1. Install the AWS SAM CLI\.
 
-```
- 
- Homebrew 2.1.6 
- Homebrew/homebrew-core (git revision ef21; last commit 2019-06-19)
-```
+   ```
+   sudo ./sam-installation/install
+   ```
 
-## Step 5: Install the AWS SAM CLI<a name="serverless-sam-cli-install-linux-sam-cli"></a>
+1. Verify the installation\.
 
-To install the AWS SAM CLI using Homebrew, run the following commands:
+   ```
+   sam --version
+   ```
 
-```
-brew tap aws/tap
-brew install aws-sam-cli
-```
+   On successful installation, you should see output like the following:
 
-Verify the installation\.
-
-```
-sam --version
-```
-
-On successful installation of the AWS SAM CLI, you should see output like the following:
-
-```
- 
- SAM CLI, version 1.15.0
-```
+   ```
+    SAM CLI, version 1.18.0
+   ```
 
 You're now ready to start development\.
 
 ## Upgrading<a name="serverless-sam-cli-install-linux-upgrading"></a>
 
-To upgrade the AWS SAM CLI, you still use Homebrew, but replace `install` with `upgrade` as follows:
+To upgrade the AWS SAM CLI, perform the same steps as in the previous **Install the AWS SAM CLI** section, but add the \-\-update option to the install command, as follows:
 
 ```
-brew upgrade aws-sam-cli
+sudo ./sam-installation/install --update
 ```
+
+## Uninstalling<a name="serverless-sam-cli-install-linux-uninstalling"></a>
+
+To uninstall the AWS SAM CLI, you must delete the symlink and installation directory by running the following commands:
+
+1. Locate the symlink and install paths\.
+   + Find the symlink using the which command:
+
+     ```
+     which sam
+     ```
+
+     The output shows the path where the AWS SAM binaries are located, for example:
+
+     ```
+      /usr/local/bin/sam
+     ```
+   + Find the directory that the symlink points to using the ls command:
+
+     ```
+     ls -l /usr/local/bin/sam
+     ```
+
+     In the following example, the installation directory is `/usr/local/aws-sam-cli`\.
+
+     ```
+      lrwxrwxrwx 1 ec2-user ec2-user 49 Oct 22 09:49 /usr/local/bin/sam -> /usr/local/aws-sam-cli/current/bin/sam
+     ```
+
+1. Delete the symlink\.
+
+   ```
+   sudo rm /usr/local/bin/sam
+   ```
+
+1. Delete the installation directory\.
+
+   ```
+   sudo rm -rf /usr/local/aws-sam-cli
+   ```
 
 ## Troubleshooting<a name="serverless-sam-cli-install-linux-troubleshooting"></a>
 
 ### Docker error: "Cannot connect to the Docker daemon\. Is the docker daemon running on this host?"<a name="serverless-sam-cli-install-linux-troubleshooting-docker-deamon"></a>
 
-In some cases, to provide permissions for the `ec2-user` to access the Docker daemon, you might need to reboot your instance\. If you receive this error, try rebooting your instance\.
+In some cases, to provide permissions for the `ec2-user` to access the Docker daemon, you might have to reboot your instance\. If you receive this error, try rebooting your instance\.
 
 ### Shell error: "command not found"<a name="serverless-sam-cli-install-linux-troubleshooting-sam-cli-not-found"></a>
 
-If you receive this error, your shell is unable to locate the AWS SAM CLI executable in the path\. Verify the location of the directory where you installed the AWS SAM CLI executable, and then verify that the directory is on your path\.
+If you receive this error, your shell can't locate the AWS SAM CLI executable in the path\. Verify the location of the directory where you installed the AWS SAM CLI executable, and then verify that the directory is on your path\.
 
-For example, if you used the instructions in this topic to both install Homebrew and use Homebrew to install the AWS SAM CLI, then the AWS SAM CLI executable is installed to the following location:
+### AWS SAM CLI error: "/lib64/libc\.so\.6: version `GLIBC\_2\.14' not found \(required by /usr/local/aws\-sam\-cli/dist/libz\.so\.1\)"<a name="serverless-sam-cli-install-linux-troubleshooting-sam-cli-missing-lib"></a>
 
-```
-  
- /home/linuxbrew/.linuxbrew/bin/sam
-```
-
-### Installing Homebrew message: "Enter your password to install to /home/linuxbrew/\.linuxbrew"<a name="serverless-sam-cli-install-linux-troubleshooting-homebrew-enter-password"></a>
-
-During **Step 4: Install Homebrew**, by default you are prompted to provide a password\. However, you may not want to set up a password for the current user, for example when you are setting up a non\-interactive environment like CI/CD systems\.
-
-If you do not want to set up a password for the current user, you can install Homebrew in non\-interactive mode by setting the environmentment variable `CI=1`\. For example:
-
-```
-CI=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
-
-### Installing AWS SAM CLI error: "The following formulae cannot be installed from bottles and must be built from source\. pkg\-config, gdbm, openssl@1\.1, ncurses, xz and python@3\.8<a name="serverless-sam-cli-install-linux-troubleshooting-build-from-sourced"></a>
-
-During **Step 5: Install the AWS SAM CLI**, if you see this error, it is because you don't have the `gcc` module installed\. Installing the gcc module depends on your Linux distribution, as follows:
-
-```
-# for Amazon Linux, Amazon Linux 2, CentOS and RedHat:
-sudo yum install gcc
-# for Debian and Ubuntu:
-sudo apt-get update
-sudo apt-get install gcc
-```
-
-After installing the `gcc` module, run the commands in **Step 5: Install the AWS SAM CLI** again\.
+If you receive this error, you're using an unsupported version of Linux, and the built\-in glibc version is out of date\. Try either of the following:
++ Upgrade your Linux host to the 64\-bit version of a recent distribution of CentOS, Fedora, Ubuntu, or Amazon Linux 2\.
++ Follow the instructions for [Installing the AWS SAM CLI on Linux using Homebrew](sam-cli-install-linux-alt.md)\.
 
 ## Next steps<a name="serverless-sam-cli-install-linux-next-steps"></a>
 

@@ -65,18 +65,19 @@ LambdaAuthorizer example
 #### YAML<a name="sam-property-httpapi-lambdaauthorizer--examples--lambdaauthorizer--yaml"></a>
 
 ```
-Authorizer:
-  MyLambdaAuthorizer:
-    AuthorizerPayloadFormatVersion: 2.0
-    FunctionArn:
-      Fn::GetAtt:
-        - MyAuthFunction
-        - Arn
-    FunctionInvokeRole:
-      Fn::GetAtt:
-        - LambdaAuthInvokeRole
-        - Arn
-    Identity:
-      Headers:
-        - Authorization
+Auth:
+  Authorizers:
+    MyLambdaAuthorizer:
+      AuthorizerPayloadFormatVersion: 2.0
+      FunctionArn:
+        Fn::GetAtt:
+          - MyAuthFunction
+          - Arn
+      FunctionInvokeRole:
+        Fn::GetAtt:
+          - LambdaAuthInvokeRole
+          - Arn
+      Identity:
+        Headers:
+          - Authorization
 ```

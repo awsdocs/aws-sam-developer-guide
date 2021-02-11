@@ -18,6 +18,7 @@ Amazon's trademarks and trade dress may not be used in
 + [Getting started with AWS SAM](serverless-getting-started.md)
    + [Installing the AWS SAM CLI](serverless-sam-cli-install.md)
       + [Installing the AWS SAM CLI on Linux](serverless-sam-cli-install-linux.md)
+         + [Installing the AWS SAM CLI on Linux using Homebrew](sam-cli-install-linux-alt.md)
       + [Installing the AWS SAM CLI on Windows](serverless-sam-cli-install-windows.md)
       + [Installing the AWS SAM CLI on macOS](serverless-sam-cli-install-mac.md)
    + [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)

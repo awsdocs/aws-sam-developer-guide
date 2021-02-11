@@ -81,6 +81,16 @@ If you operate on 32\-bit system, see [Installing AWS SAM CLI on 32\-bit Windows
 
 You're now ready to start development\.
 
+## Uninstalling<a name="serverless-sam-cli-install-windows-uninstalling"></a>
+
+To uninstall the AWS SAM CLI using Windows Settings, follow these steps:
+
+1. From the Start menu, search for "Add or remove programs"\.
+
+1. Select the entry named **AWS SAM Command Line Interface** and choose **Uninstall** to launch the uninstaller\.
+
+1. Confirm that you want to uninstall the AWS SAM CLI\.
+
 ## Next steps<a name="serverless-sam-cli-install-windows-next-steps"></a>
 
 You're now ready to begin building your own serverless applications using AWS SAM\! If you want to start with sample serverless applications, choose one of the following links:

@@ -101,10 +101,18 @@ You're now ready to start development\.
 
 ## Upgrading<a name="serverless-sam-cli-install-mac-upgrading"></a>
 
-To upgrade the AWS SAM CLI, you still use Homebrew, but replace `install` with `upgrade` as follows:
+To upgrade the AWS SAM CLI, using Homebrew, run the following command:
 
 ```
 brew upgrade aws-sam-cli
+```
+
+## Uninstalling<a name="serverless-sam-cli-install-mac-uninstalling"></a>
+
+To uinstall the AWS SAM CLI, using Homebrew, run the following command:
+
+```
+brew uninstall aws-sam-cli
 ```
 
 ## Next steps<a name="serverless-sam-cli-install-mac-next-steps"></a>
