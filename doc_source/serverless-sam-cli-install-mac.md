@@ -25,7 +25,7 @@ If you don't want to grant administrator privileges to users who use the AWS Com
 
 In addition, to enable the AWS SAM CLI to make AWS service calls, you must set up AWS credentials\. For more information, see [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)\.
 
-## Step 3: Install Docker<a name="serverless-sam-cli-install-mac-docker"></a>
+## Step 3: Install Docker (optional)<a name="serverless-sam-cli-install-mac-docker"></a>
 
 **Note**  
 Docker is a prerequisite only for testing your application locally and for building deployment packages using the `--use-container` flag\. If you don't plan to use these features initially, you can skip this section or install Docker at a later time\.
