@@ -17,6 +17,8 @@ You can use the AWS SAM CLI commands to develop, test, and deploy your serverles
 + `sam package` – Use this command to bundle your application code and dependencies into a "deployment package"\. The deployment package is needed to upload your application to the AWS Cloud\.
 + `sam deploy` – Use this command to deploy your serverless application to the AWS Cloud\. It creates the AWS resources and sets permissions and other configurations that are defined in the AWS SAM template\.
 
+For instructions about installing the AWS SAM CLI, see [Installing the AWS SAM CLI](serverless-sam-cli-install.md)\.
+
 ## AWS SAM policy templates<a name="serverless-policy-temps"></a>
 
 AWS SAM allows you to choose from a list of policy templates to scope the permissions of your Lambda functions to the resources that are used by your application\.

@@ -17,7 +17,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [InputPath](#sam-function-eventbridgerule-inputpath): String
   [Pattern](#sam-function-eventbridgerule-pattern): [EventPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern)
   [RetryPolicy](#sam-function-eventbridgerule-retrypolicy): [RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)
-  [TargetId](#sam-function-eventbridgerule-targetid): String
+  [Target](#sam-function-eventbridgerule-target): Target
 ```
 
 ## Properties<a name="sam-property-function-eventbridgerule-properties"></a>
@@ -60,12 +60,11 @@ A `RetryPolicy` object that includes information about the retry policy settings
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)` property of the `AWS::Events::Rule` `Target` data type\.
 
- `TargetId`   <a name="sam-function-eventbridgerule-targetid"></a>
-A name for the events rule target that EventBridge invokes when a rule is triggered\. The `TargetId` can include alphanumeric characters, periods \(\.\), hyphens \(\-\), and underscores \(\_\)\.  
-If this property is not specified, AWS SAM generates a `TargetId` value\.  
-*Type*: String  
+ `Target`   <a name="sam-function-eventbridgerule-target"></a>
+The AWS resource that EventBridge invokes when a rule is triggered\. You can use this property to specify the logical ID of the target\. If this property is not specified, then AWS SAM generates the logical ID of the target\.  
+*Type*: [Target](sam-property-function-target.md)  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is passed directly to the `[Id](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-id)` property of the `AWS::Events::Rule` `Target` data type\.
+*AWS CloudFormation compatibility*: This property is similar to the `[Targets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-targets)` property of an `AWS::Events::Rule` resource\. The AWS SAM version of this property only allows you to specify the logical ID of a single target\.
 
 ## Examples<a name="sam-property-function-eventbridgerule--examples"></a>
 
@@ -90,4 +89,6 @@ EBRule:
     DeadLetterConfig:
       Type: SQS
       QueueLogicalId: EBRuleDLQ
+    Target:
+      Id: MyTarget
 ```

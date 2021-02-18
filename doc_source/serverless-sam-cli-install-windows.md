@@ -6,7 +6,7 @@ Follow these steps to install and configure the prerequisites for using the AWS 
 
 1. Configure IAM permissions and AWS credentials\.
 
-1. Install Docker\. **Note:** Docker is a prerequisite only for testing your application locally\.
+1. Install Docker\. **Note:** Docker is a prerequisite only for testing your application locally or using the `--use-container` option\.
 
 1. Install the AWS SAM CLI\.
 
@@ -23,10 +23,10 @@ If you don't want to grant administrator privileges to users who use the AWS Com
 
 In addition, to enable the AWS SAM CLI to make AWS service calls, you must set up AWS credentials\. For more information, see [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)\.
 
-## Step 3: Install Docker<a name="serverless-sam-cli-install-windows-docker"></a>
+## Step 3: Install Docker \(optional\)<a name="serverless-sam-cli-install-windows-docker"></a>
 
 **Note**  
-Docker is a prerequisite only for testing your application locally and for building deployment packages using the `--use-container` flag\. If you don't plan to use these features initially, you can skip this section or install Docker at a later time\.
+Docker is a prerequisite only for testing your application locally and for building deployment packages using the `--use-container` option\. If you don't plan to use these features initially, you can skip this section or install Docker at a later time\.
 
 Docker is an application that runs containers on your Linux machines\. AWS SAM provides a local environment that's similar to AWS Lambda to use as a Docker container\. You can use this container to build, test, and debug your serverless applications\.
 

@@ -65,6 +65,7 @@ Amazon's trademarks and trade dress may not be used in
             + [DynamoDB](sam-property-function-dynamodb.md)
             + [EventBridgeRule](sam-property-function-eventbridgerule.md)
                + [DeadLetterConfig](sam-property-function-deadletterconfig.md)
+               + [Target](sam-property-function-target.md)
             + [HttpApi](sam-property-function-httpapi.md)
                + [HttpApiFunctionAuth](sam-property-function-httpapifunctionauth.md)
             + [IoTRule](sam-property-function-iotrule.md)
