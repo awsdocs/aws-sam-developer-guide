@@ -1,6 +1,6 @@
 # sam init<a name="sam-cli-command-reference-sam-init"></a>
 
-Initializes a serverless application with an AWS SAM template\. The template provides a folder structure for your AWS Lambda functions, and is connected to a event sources such as APIs, Amazon Simple Storage Service \(Amazon S3\) buckets, or Amazon DynamoDB tables\. This application includes everything that you need to get started and to eventually extend it into a production\-scale application\.
+Initializes a serverless application with an AWS SAM template\. The template provides a folder structure for your AWS Lambda functions, and is connected to event sources such as APIs, Amazon Simple Storage Service \(Amazon S3\) buckets, or Amazon DynamoDB tables\. This application includes everything that you need to get started and to eventually extend it into a production\-scale application\.
 
 For some sample applications, you can choose the package type of the application, either `Zip` or `Image`\. For more information about Lambda package types, see [Lambda deployment packages](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html) in the *AWS Lambda Developer Guide*\.
 
