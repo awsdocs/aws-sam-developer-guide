@@ -1,4 +1,4 @@
-# Step\-Through Debugging Python Functions Locally<a name="serverless-sam-cli-using-debugging-python"></a>
+# Step\-through debugging Python functions locally<a name="serverless-sam-cli-using-debugging-python"></a>
 
 Python step\-through debugging requires you to enable remote debugging in your Lambda function code\. This is a two\-step process:
 
@@ -21,7 +21,7 @@ pip install ptvsd -t hello_world/build/
 cp hello_world/app.py hello_world/build/
 ```
 
-## Ptvsd Configuration<a name="serverless-sam-cli-using-debugging-python-ptvsd"></a>
+## Ptvsd configuration<a name="serverless-sam-cli-using-debugging-python-ptvsd"></a>
 
 Next, you need to enable ptvsd within your code\. To do this, open `hello_world/build/app.py`, and add the following ptvsd specifics:
 

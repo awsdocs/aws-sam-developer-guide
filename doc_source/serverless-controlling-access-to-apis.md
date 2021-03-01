@@ -1,324 +1,76 @@
-# Controlling Access to API Gateway APIs<a name="serverless-controlling-access-to-apis"></a>
+# Controlling access to API Gateway APIs<a name="serverless-controlling-access-to-apis"></a>
 
-You can use AWS SAM to control who can access your API Gateway APIs by enabling authorization within your AWS SAM template\.
+To control who can access your Amazon API Gateway APIs, you can enable authorization within your AWS SAM template\.
 
-AWS SAM supports several mechanisms for controlling access to your API Gateway APIs:
-+ **Lambda authorizers**\. A Lambda authorizer \(formerly known as a *custom authorizer*\) is a Lambda function that you provide to control access to your API\. When your API is called, this Lambda function is invoked with a request context or an authorization token that is provided by the client application\. The Lambda function returns a policy document that specifies the operations that the caller is authorized to perform, if any\. For more information about Lambda authorizers, see [Use API Gateway Lambda Authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html) in the *API Gateway Developer Guide*\. For examples of Lambda authorizers, see [Example: Defining Lambda Token Authorizers](#serverless-controlling-access-to-apis-lambda-token-authorizer) and [Example: Defining Lambda Request Authorizers](#serverless-controlling-access-to-apis-lambda-request-authorizer) later in this topic\.
+AWS SAM supports several mechanisms for controlling access to your API Gateway APIs\. The set of supported mechanisms differs between `AWS::Serverless::HttpApi` and `AWS::Serverless::Api` resource types\.
 
-   
-+ **Amazon Cognito user pools**\. Amazon Cognito user pools are user directories in Amazon Cognito\. A client of your API must first sign a user in to the user pool, and obtain an identity or access token for the user\. Then your API is called with one of the returned tokens\. The API call succeeds only if the required token is valid\. For more information about Amazon Cognito user pools, see [Control Access to REST API Using Amazon Cognito User Pools as Authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html) in the *API Gateway Developer Guide*\. For an example of Amazon Cognito user pools, see [Example: Defining Amazon Cognito User Pools](#serverless-controlling-access-to-apis-cognito-user-pool) later in this topic\.
+The following table summarizes the mechanisms that each resource type supports\.
 
-   
-+ **IAM permissions**\. You can control who can invoke your API using [IAM permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions.html)\. Users calling your API must be authenticated with IAM credentials\. Calls to your API only succeed if there is an IAM policy attached to the IAM user that represents the API caller, an IAM group that contains the user, or an IAM role that is assumed by the user\. For more information about IAM permissions, see [Control Access to an API with IAM Permissions](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html) in the *API Gateway Developer Guide*\. For an example of IAM permissions, see [Example: Defining IAM Permissions](#serverless-controlling-access-to-apis-permissions) later in this topic\.
 
-   
-+ **API keys**\. API keys are alphanumeric string values that you distribute to application developer customers to grant access to your API\. For more information about API keys, see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the *API Gateway Developer Guide*\. For an example of API keys, see [Example: Defining API Keys](#serverless-controlling-access-to-apis-keys) later in this topic\.
+| Mechanisms for controlling access | AWS::Serverless::HttpApi | AWS::Serverless::Api | 
+| --- | --- | --- | 
+| Lambda authorizers | ✓ | ✓ | 
+| IAM permissions |  | ✓ | 
+| Amazon Cognito user pools | ✓ \* | ✓ | 
+| API keys |  | ✓ | 
+| Resource policies |  | ✓ | 
+| OAuth 2\.0/JWT authorizers | ✓ |  | 
 
-   
-+ **Resource policies**\. Resource policies are JSON policy documents that you can attach to an API Gateway API to control whether a specified principal \(typically an IAM user or role\) can invoke the API\. For more information about resource policies, see [Control Access to an API with Amazon API Gateway Resource Policies](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html) in the *API Gateway Developer Guide*\. For an example of resource policies, see [Example: Defining Resource Policies](#serverless-controlling-access-to-apis-resource-policies) later in this topic\.
+\* You can use Amazon Cognito as a JSON Web Token \(JWT\) issuer with the `AWS::Serverless::HttpApi` resource type\.
++ **Lambda authorizers** – A Lambda authorizer \(formerly known as a *custom authorizer*\) is a Lambda function that you provide to control access to your API\. When your API is called, this Lambda function is invoked with a request context or an authorization token that the client application provides\. The Lambda function responds whether the caller is authorized to perform the requested operation\.
 
-In addition, you can use AWS SAM to customize the content of some API Gateway error responses\. For more information about customizing API Gateway error responses, see [Set Up Gateway Responses to Customize Error Responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html)\. For an example of customized responses, see [Example: Defining Customized Responses](#serverless-controlling-access-to-apis-customize-response) later in this topic\.
+  Both the `AWS::Serverless::HttpApi` and `AWS::Serverless::Api` resource types support Lambda authorizers\.
 
-## Choosing a Mechanism to Control Access<a name="serverless-controlling-access-to-apis-choices"></a>
+  For more information about Lambda authorizers with `AWS::Serverless::HttpApi`, see [Working with AWS Lambda authorizers for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html) in the *API Gateway Developer Guide*\. For more information about Lambda authorizers with `AWS::Serverless::Api`, see [Use API Gateway Lambda authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html) in the *API Gateway Developer Guide*\.
 
-The mechanism that you choose to control access to your API Gateway APIs depends on a few factors\. For example, if you have a greenfield project that doesn't have either authorization or access control set up yet, then Amazon Cognito user pools might be your best option\. This is because when you set up user pools, you also set up both authentication and access control automatically\. 
+  For examples of Lambda authorizers for either resource type, see [Lambda authorizer examples](serverless-controlling-access-to-apis-lambda-authorizer.md)\.
 
-However, if your application already has authentication set up, then using Lambda authorizers might be the best option\. This is because you can call your existing authentication service and return a policy document based on the response\. Also, if your application requires custom authentication or access control logic that user pools don't support, then Lambda authorizers might be your best option\.
-
-After you've decided which mechanism to use, see the corresponding section in this topic to see how to use AWS SAM to configure your application to use that mechanism\.
-
-## Example: Defining Lambda Token Authorizers<a name="serverless-controlling-access-to-apis-lambda-token-authorizer"></a>
-
-You can control access to your APIs by defining a Lambda Token authorizer within your AWS SAM template\. To do this, you use the [API Auth Object](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api-auth-object) data type\.
-
-The following is an example AWS SAM template section for a Lambda Token authorizer:
-
-```
-Resources:
-  MyApi:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: Prod
-      Auth:
-        DefaultAuthorizer: MyLambdaTokenAuthorizer
-        Authorizers:
-          MyLambdaTokenAuthorizer:
-            FunctionArn: !GetAtt MyAuthFunction.Arn
-
-  MyFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: ./src
-      Handler: index.handler
-      Runtime: nodejs8.10
-      Events:
-        GetRoot:
-          Type: Api
-          Properties:
-            RestApiId: !Ref MyApi
-            Path: /
-            Method: get
-
-  MyAuthFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: ./src
-      Handler: authorizer.handler
-      Runtime: nodejs8.10
-```
-
-For more information about API Gateway Lambda authorizers, see [Use API Gateway Lambda Authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html) in the *API Gateway Developer Guide*\.
-
-For a full sample application that includes a Lambda Token authorizer, see [API Gateway \+ Lambda TOKEN Authorizer Example](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_lambda_token_auth)\.
-
-## Example: Defining Lambda Request Authorizers<a name="serverless-controlling-access-to-apis-lambda-request-authorizer"></a>
-
-You can control access to your APIs by defining a Lambda Request authorizer within your AWS SAM template\. To do this, you use the [API Auth Object](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api-auth-object) data type\.
-
-The following is an example AWS SAM template section for a Lambda Request authorizer:
-
-```
-Resources:
-  MyApi:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: Prod
-      Auth:
-        DefaultAuthorizer: MyLambdaRequestAuthorizer
-        Authorizers:
-          MyLambdaRequestAuthorizer:
-            FunctionPayloadType: REQUEST
-            FunctionArn: !GetAtt MyAuthFunction.Arn
-            Identity:
-              QueryStrings:
-                - auth
-
-  MyFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: ./src
-      Handler: index.handler
-      Runtime: nodejs8.10
-      Events:
-        GetRoot:
-          Type: Api
-          Properties:
-            RestApiId: !Ref MyApi
-            Path: /
-            Method: get
-
-  MyAuthFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: ./src
-      Handler: authorizer.handler
-      Runtime: nodejs8.10
-```
-
-For more information about API Gateway Lambda authorizers, see [Use API Gateway Lambda Authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html) in the *API Gateway Developer Guide*\.
-
-For a full sample application that includes a Lambda Request authorizer, see [API Gateway \+ Lambda REQUEST Authorizer Example](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_lambda_request_auth)\.
-
-## Example: Defining Amazon Cognito User Pools<a name="serverless-controlling-access-to-apis-cognito-user-pool"></a>
-
-You can control access to your APIs by defining Amazon Cognito user pools within your AWS SAM template\. To do this, you use the [API Auth Object](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api-auth-object) data type\.
-
-The following is an example AWS SAM template section for a user pool:
-
-```
-Resources:
-  MyApi:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: Prod
-      Cors: "'*'"
-      Auth:
-        DefaultAuthorizer: MyCognitoAuthorizer
-        Authorizers:
-          MyCognitoAuthorizer:
-            UserPoolArn: !GetAtt MyCognitoUserPool.Arn
-
-  MyFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: ./src
-      Handler: lambda.handler
-      Runtime: nodejs8.10
-      Events:
-        Root:
-          Type: Api
-          Properties:
-            RestApiId: !Ref MyApi
-            Path: /
-            Method: GET
-
-  MyCognitoUserPool:
-    Type: AWS::Cognito::UserPool
-    Properties:
-      UserPoolName: !Ref CognitoUserPoolName
-      Policies:
-        PasswordPolicy:
-          MinimumLength: 8
-      UsernameAttributes:
-        - email
-      Schema:
-        - AttributeDataType: String
-          Name: email
-          Required: false
   
-  MyCognitoUserPoolClient:
-    Type: AWS::Cognito::UserPoolClient
-    Properties:
-      UserPoolId: !Ref MyCognitoUserPool
-      ClientName: !Ref CognitoUserPoolClientName
-      GenerateSecret: false
-```
++ **IAM permissions** – You can control who can invoke your API using [AWS Identity and Access Management \(IAM\) permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_controlling.html)\. Users calling your API must be authenticated with IAM credentials\. Calls to your API succeed only if there is an IAM policy attached to the IAM user that represents the API caller, an IAM group that contains the user, or an IAM role that the user assumes\.
 
-For more information about Amazon Cognito user pools, see [Control Access to a REST API Using Amazon Cognito User Pools as Authorizer ](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html) in the *API Gateway Developer Guide*\.
+  Only the `AWS::Serverless::Api` resource type supports IAM permissions\.
 
-For a full sample application that includes a user pool as an authorizer, see [API Gateway \+ Cognito Auth \+ Cognito Hosted Auth Example](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_cognito_auth)\.
+  For more information, see [Control access to an API with IAM permissions](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html) in the *API Gateway Developer Guide*\. For an example, see [IAM permission example](serverless-controlling-access-to-apis-permissions.md)\.
++ **Amazon Cognito user pools** – Amazon Cognito user pools are user directories in Amazon Cognito\. A client of your API must first sign in a user to the user pool and obtain an identity or access token for the user\. Then the client calls your API with one of the returned tokens\. The API call succeeds only if the required token is valid\.
 
-## Example: Defining IAM Permissions<a name="serverless-controlling-access-to-apis-permissions"></a>
+  The `AWS::Serverless::Api` resource type supports Amazon Cognito user pools\. The `AWS::Serverless::HttpApi` resource type supports the use of Amazon Cognito as a JWT issuer\.
 
-You can control access to your APIs by defining IAM permissions within your AWS SAM template\. To do this, you use the [API Auth Object](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api-auth-object) data type\.
+  For more information, see [Control access to a REST API using Amazon Cognito user pools as authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html) in the *API Gateway Developer Guide*\. For an example, see [Amazon Cognito user pool example](serverless-controlling-access-to-apis-cognito-user-pool.md)\.
++ **API keys** – API keys are alphanumeric string values that you distribute to application developer customers to grant access to your API\.
 
-The following is an example AWS SAM template section for IAM permissions:
+  Only the `AWS::Serverless::Api` resource type supports API keys\.
 
-```
-Resources:
-  MyApi:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: Prod
-      Auth:
-        DefaultAuthorizer: AWS_IAM
+  For more information about API keys, see [Creating and using usage plans with API keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the *API Gateway Developer Guide*\. For an example of API keys, see [API key example](serverless-controlling-access-to-apis-keys.md)\.
++ **Resource policies** – Resource policies are JSON policy documents that you can attach to an API Gateway API\. Use resource policies to control whether a specified principal \(typically an IAM user or role\) can invoke the API\.
 
-  MyFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: .
-      Handler: index.handler
-      Runtime: nodejs8.10
-      Events:
-        GetRoot:
-          Type: Api
-          Properties:
-            RestApiId: !Ref MyApi
-            Path: /
-            Method: get
-```
+  Only the `AWS::Serverless::Api` resource type supports resource policies as a mechanism for controlling access to API Gateway APIs\.
 
-For more information about IAM permissions, see [Control Access to an API Using IAM Permissions](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html) in the *API Gateway Developer Guide*\.
+  For more information about resource policies, see [Controlling access to an API with API Gateway resource policies](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html) in the *API Gateway Developer Guide*\. For an example of resource policies, see [Resource policy example](serverless-controlling-access-to-apis-resource-policies.md)\.
++ **OAuth 2\.0/JWT authorizers** – You can use JWTs as a part of [OpenID Connect \(OIDC\)](https://openid.net/specs/openid-connect-core-1_0.html) and [OAuth 2\.0](https://oauth.net/2/) frameworks to control access to your APIs\. API Gateway validates the JWTs that clients submit with API requests, and allows or denies requests based on token validation and, optionally, scopes in the token\.
 
-For a full sample application that includes a user pool as an authorizer, see [API Gateway \+ IAM Permissions Example](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_aws_iam_auth)\.
+  Only the `AWS::Serverless::HttpApi` resource type supports OAuth 2\.0/JWT authorizers\.
 
-## Example: Defining API Keys<a name="serverless-controlling-access-to-apis-keys"></a>
+  For more information, see [Controlling access to HTTP APIs with JWT authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html) in the *API Gateway Developer Guide*\. For an example, see [OAuth 2\.0/JWT authorizer example](serverless-controlling-access-to-apis-oauth2-authorizer.md)\.
 
-You can control access to your APIs by requiring API keys within your AWS SAM template\. To do this, you use the [API Auth Object](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api-auth-object) data type\.
+## Choosing a mechanism to control access<a name="serverless-controlling-access-to-apis-choices"></a>
 
-The following is an example AWS SAM template section for API keys:
+The mechanism that you choose to use for controlling access to your API Gateway APIs depends on a few factors\. For example, if you have a greenfield project without either authorization or access control set up, then Amazon Cognito user pools might be your best option\. This is because when you set up user pools, you also automatically set up both authentication and access control\.
 
-```
-Resources:
-  MyApi:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: Prod
-      Auth:
-        ApiKeyRequired: true # sets for all methods
+However, if your application already has authentication set up, then using Lambda authorizers might be your best option\. This is because you can call your existing authentication service and return a policy document based on the response\. Also, if your application requires custom authentication or access control logic that user pools don't support, then Lambda authorizers might be your best option\.
 
-  MyFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: .
-      Handler: index.handler
-      Runtime: nodejs8.10
-      Events:
-        ApiKey:
-          Type: Api
-          Properties:
-            RestApiId: !Ref MyApi
-            Path: /
-            Method: get
-            Auth:
-              ApiKeyRequired: true
-```
+When you've chosen which mechanism to use, see the corresponding section in [Examples](#serverless-controlling-access-to-apis-examples) for how to use AWS SAM to configure your application to use that mechanism\.
 
-For more information about API keys, see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the *API Gateway Developer Guide*\.
+## Customizing error responses<a name="serverless-controlling-access-to-apis-responses"></a>
 
-## Example: Defining Resource Policies<a name="serverless-controlling-access-to-apis-resource-policies"></a>
+You can use AWS SAM to customize the content of some API Gateway error responses\. Only the `AWS::Serverless::Api` resource type supports customized API Gateway responses\.
 
-You can control access to your APIs by attaching a resource policy within your AWS SAM template\. To do this, you use the [API Auth Object](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api-auth-object) data type\.
+For more information about API Gateway responses, see [Gateway responses in API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-gatewayResponse-definition.html) in the *API Gateway Developer Guide*\. For an example of customized responses, see [Customized response example](serverless-controlling-access-to-apis-customize-response.md)\.
 
-The following is an example AWS SAM template section for resource policies:
-
-```
-Resources:
-  ExplicitApi:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: Prod
-      EndpointConfiguration: PRIVATE
-      Auth:
-        ResourcePolicy:
-          CustomStatements: {
-              Effect: 'Allow',
-              Action: 'execute-api:Invoke', 
-              Resource: ['execute-api:/*/*/*'],
-              Principal: '*'
-            }
-  MinimalFunction:
-    Type: 'AWS::Serverless::Function'
-    Properties:
-      CodeUri: s3://sam-demo-bucket/hello.zip
-      Handler: hello.handler
-      Runtime: python2.7
-      Events:
-        AddItem:
-          Type: Api
-          Properties:
-            RestApiId: 
-              Ref: ExplicitApi
-            Path: /add
-            Method: post
-```
-
-For more information about resource policies, see [Control Access to an API with Amazon API Gateway Resource Policies](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies.html) in the *API Gateway Developer Guide*\.
-
-## Example: Defining Customized Responses<a name="serverless-controlling-access-to-apis-customize-response"></a>
-
-You can customize some API Gateway error responses by defining response headers within your AWS SAM template\. To do this, you use the [Gateway Response Object](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#gateway-response-object) data type\.
-
-The following is an example AWS SAM template section for API Gateway responses:
-
-```
-Resources:
-  MyApi:
-    Type: AWS::Serverless::Api
-    Properties:
-      StageName: Prod
-      GatewayResponses:
-        DEFAULT_4xx:
-          ResponseParameters:
-            Headers:
-              Access-Control-Expose-Headers: "'WWW-Authenticate'"
-              Access-Control-Allow-Origin: "'*'"
-
-  GetFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      Handler: index.get
-      Runtime: nodejs6.10
-      InlineCode: module.exports = async () => throw new Error('Check out the response headers!')
-      Events:
-        GetResource:
-          Type: Api
-          Properties:
-            Path: /error
-            Method: get
-            RestApiId: !Ref MyApi
-```
-
-For more information about customizing API Gateway messages, see [Set Up Gateway Responses to Customize Error Responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html) in the *API Gateway Developer Guide*\.
-
-For a full sample application that includes a customized error response, see [API Gateway \+ GatewayResponse Example](https://github.com/awslabs/serverless-application-model/tree/master/examples/2016-10-31/api_gateway_responses)\.
+## Examples<a name="serverless-controlling-access-to-apis-examples"></a>
++ [Lambda authorizer examples](serverless-controlling-access-to-apis-lambda-authorizer.md)
++ [IAM permission example](serverless-controlling-access-to-apis-permissions.md)
++ [Amazon Cognito user pool example](serverless-controlling-access-to-apis-cognito-user-pool.md)
++ [API key example](serverless-controlling-access-to-apis-keys.md)
++ [Resource policy example](serverless-controlling-access-to-apis-resource-policies.md)
++ [OAuth 2\.0/JWT authorizer example](serverless-controlling-access-to-apis-oauth2-authorizer.md)
++ [Customized response example](serverless-controlling-access-to-apis-customize-response.md)

@@ -1,6 +1,6 @@
-# Invoking Functions Locally<a name="serverless-sam-cli-using-invoke"></a>
+# Invoking functions locally<a name="serverless-sam-cli-using-invoke"></a>
 
-You can invoke your function locally by using the `[sam local invoke](sam-cli-command-reference-sam-local-invoke.md)` command and providing its function logical ID and an event file\. Alternatively, `sam local invoke` also accepts `stdin` as an event\.
+You can invoke your function locally by using the `sam local invoke` command and providing its function logical ID and an event file\. Alternatively, `sam local invoke` also accepts `stdin` as an event\.
 
 **Note**  
 The `sam local invoke` command described in this section corresponds to the AWS CLI command [ `aws lambda invoke`](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\. You can use either version of this command to invoke a Lambda function that you've uploaded to the AWS Cloud\.
@@ -14,7 +14,7 @@ Examples:
 $ sam local invoke "Ratings" -e event.json
 
 # Invoking function with event via stdin
-$ echo '{"message": "Hey, are you there?" }' | sam local invoke "Ratings"
+$ echo '{"message": "Hey, are you there?" }' | sam local invoke --event - "Ratings"
 
 # For more options
 $ sam local invoke --help
@@ -26,7 +26,7 @@ This animation shows invoking a Lambda function locally using Microsoft Visual S
 
 ## Environment Variable File<a name="serverless-sam-cli-using-invoke-environment-file"></a>
 
-You can use the `--env-vars` argument with the `invoke` or `start-api` commands\. You do this to provide a JSON file that contains values to override the environment variables that are already defined in your function template\. Structure the file as follows:
+You can use the `--env-vars` argument with the `invoke` or `start-api` commands\. You do this to provide a JSON file that contains values to override the environment variables that are already defined in your function template\. You can structure the file as follows:
 
 ```
 {
@@ -41,7 +41,19 @@ You can use the `--env-vars` argument with the `invoke` or `start-api` commands\
 }
 ```
 
-For example, if you save this content in a file named `env.json`, then the following command uses this file to override the included environment variables:
+Alternatively, your environment file can contain a single `Parameters` entry with the environment variables for all functions\. Note that you can't mix this format with the example above\.
+
+```
+{
+  "Parameters": {
+    "TABLE_NAME": "localtable",
+    "BUCKET_NAME": "testBucket",
+    "STAGE": "dev"
+  }
+}
+```
+
+Save your environment variables in a file named `env.json`\. The following command uses this file to override the included environment variables:
 
 ```
 sam local invoke --env-vars env.json
@@ -49,4 +61,4 @@ sam local invoke --env-vars env.json
 
 ## Layers<a name="serverless-sam-cli-using-invoke-layers"></a>
 
-If your application includes layers, see [Working with Layers](serverless-sam-cli-layers.md) for more information about how to debug layers issues on your local host\.
+If your application includes layers, see [Working with layers](serverless-sam-cli-layers.md) for more information about how to debug layers issues on your local host\.
