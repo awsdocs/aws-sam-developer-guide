@@ -336,7 +336,7 @@ Your initialized application comes with a default `aws-proxy` event for API Gate
 
 ```
 sam local generate-event apigateway aws-proxy --body "" --path "hello" --method GET > api-event.json
-diff api-event.json event.json
+diff api-event.json events/event.json
 ```
 
 **Example output:**
