@@ -47,9 +47,9 @@ This property can be used to define the type of Lambda Authorizer for an Api\.
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Identity`   <a name="sam-api-lambdatokenauthorizer-identity"></a>
-This property can be used to specify an `IdentitySource` in an incoming request for an authorizer\.  
+This property can be used to specify an `IdentitySource` in an incoming request for an authorizer\. This property is only required if the `FunctionPayloadType` property is set to `REQUEST`\.  
 *Type*: [LambdaTokenAuthorizationIdentity](sam-property-api-lambdatokenauthorizationidentity.md)  
-*Required*: No  
+*Required*: Conditional  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-api-lambdatokenauthorizer--examples"></a>

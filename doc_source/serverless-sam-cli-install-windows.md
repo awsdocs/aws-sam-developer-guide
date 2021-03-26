@@ -91,6 +91,20 @@ To uninstall the AWS SAM CLI using Windows Settings, follow these steps:
 
 1. Confirm that you want to uninstall the AWS SAM CLI\.
 
+## Nightly build<a name="serverless-sam-cli-install-windows-nightly-build"></a>
+
+A nightly build of the AWS SAM CLI is available for you to install\. Once installed, you can use the nightly build using the `sam-nightly` command\. You can install and use both the production and nightly build versions of the AWS SAM CLI at the same time\.
+
+The nightly build contains a pre\-release version of AWS SAM CLI code that may be less stable than the production version\. Note that the nightly build does not contain pre\-release version of the build image, so building a serverless application with the `--use-container` option uses the latest production version of the build image\.
+
+The nightly build is available with this download link: [AWS SAM CLI nightly build](https://github.com/aws/aws-sam-cli/releases/download/sam-cli-nightly/AWS_SAM_CLI_64_PY3.msi)\. To install the nightly build version of the AWS SAM CLI, perform the same steps as in the [Step 4: Install the AWS SAM CLI](#serverless-sam-cli-install-windows-sam-cli) section earlier in this topic, but use the nightly build download link instead\.
+
+To verify you have installed the nightly build version, run the `sam-nightly --version` command\. The output of this command is in the form `1.X.Y.dev<YYYYMMDDHHmm>`, for example:
+
+```
+SAM CLI, version 1.20.0.dev202103151200
+```
+
 ## Next steps<a name="serverless-sam-cli-install-windows-next-steps"></a>
 
 You're now ready to begin building your own serverless applications using AWS SAM\! If you want to start with sample serverless applications, choose one of the following links:

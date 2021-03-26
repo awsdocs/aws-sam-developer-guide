@@ -25,7 +25,7 @@ List of authorization scopes for this authorizer\.
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Identity`   <a name="sam-api-cognitoauthorizer-identity"></a>
-This property can be used to specify an `IdentitySource` in an incoming request for an authorizer  
+This property can be used to specify an `IdentitySource` in an incoming request for an authorizer\.  
 *Type*: [CognitoAuthorizationIdentity](sam-property-api-cognitoauthorizationidentity.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

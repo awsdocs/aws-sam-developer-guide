@@ -68,6 +68,25 @@ To upgrade the AWS SAM CLI using Homebrew, replace install with upgrade as follo
 brew upgrade aws-sam-cli
 ```
 
+## Nightly build using Homebrew<a name="sam-cli-install-linux-alt-nightly-build"></a>
+
+A nightly build of the AWS SAM CLI is available for you to install\. Once installed, you can use the nightly build using the `sam-nightly` command\. You can install and use both the production and nightly build versions of the AWS SAM CLI at the same time\.
+
+The nightly build contains a pre\-release version of AWS SAM CLI code that may be less stable than the production version\. Note that the nightly build does not contain pre\-release version of the build image, so building a serverless application with the `--use-container` option uses the latest production version of the build image\.
+
+To install the nightly build version of the AWS SAM CLI, run the following commands:
+
+```
+brew tap aws/tap
+brew install aws-sam-cli-nightly
+```
+
+To verify you have installed the nightly build version, run the `sam-nightly --version` command\. The output of this command is in the form `1.X.Y.dev<YYYYMMDDHHmm>`, for example:
+
+```
+SAM CLI, version 1.20.0.dev202103151200
+```
+
 ## Troubleshooting<a name="sam-cli-install-linux-alt-troubleshooting"></a>
 
 ### Installing Homebrew message: "Enter your password to install to /home/linuxbrew/\.linuxbrew"<a name="serverless-sam-cli-install-linux-troubleshooting-homebrew-enter-password"></a>

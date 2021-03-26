@@ -4,9 +4,9 @@ To build your serverless application, use the `sam build` command\. This command
 
 You specify your application's dependencies in a manifest file, such as `requirements.txt` \(Python\) or `package.json` \(Node\.js\), or by using the `Layers` property of a function resource\. The `Layers` property contains a list of [AWS Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) resources that the Lambda function depends on\.
 
-The format of your application's build artifacts depends on each function's `PackageType` property\. The options for the `PackageType` property are:
+The format of your application's build artifacts depends on each function's `PackageType` property\. The options for this property are:
 + **`Zip`** – A \.zip file archive, which contains your application code and its dependencies\. If you package your code as a \.zip file archive, you must specify a Lambda runtime for your function\.
-+ **`Image`** – A container image, which includes the base operating system, the runtime, and extensions, in addition to your application code and its dependencies\.
++ **`Image`** – A container image, which includes the base operating system, runtime, and extensions, in addition to your application code and its dependencies\.
 
 For more information about Lambda package types, see [Lambda deployment packages](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html) in the *AWS Lambda Developer Guide*\.
 
@@ -14,17 +14,25 @@ For more information about Lambda package types, see [Lambda deployment packages
 
 To build your serverless application as a \.zip file archive, declare `PackageType: Zip` for your serverless function\.
 
-If your Lambda function depends on packages that have natively compiled programs, use the `--use-container` flag\. The `--use-container` flag locally compiles your functions in a Docker container that behaves like a Lambda environment, so they are in the right format when you deploy them to the AWS Cloud\.
+If your Lambda function depends on packages that have natively compiled programs, use the `--use-container` flag\. This flag locally compiles your functions in a Docker container that behaves like a Lambda environment, so they're in the right format when you deploy them to the AWS Cloud\.
 
-See the Examples section later in this topic for an example of building a \.zip file archive application\.
+For an example of building a \.zip file archive application, see the Examples section later in this topic\.
 
 ## Building a container image<a name="build-container-image"></a>
 
 To build your serverless application as a container image, declare `PackageType: Image` for your serverless function\. You must also declare the `Metadata` resource attribute with the following entries:
-+ `Dockerfile`: The name of the Dockerfile associated with the Lambda function
-+ `DockerContext`: The location of the Dockerfile
-+ `DockerTag`: Optional tag to apply to the built image
-+ `DockerBuildArgs`: Build arguments for the build
+
+`Dockerfile`  
+The name of the Dockerfile associated with the Lambda function\.
+
+`DockerContext`  
+The location of the Dockerfile\.
+
+`DockerTag`  
+\(Optional\) A tag to apply to the built image\.
+
+`DockerBuildArgs`  
+Build arguments for the build\.
 
 The following is an example `Metadata` resource attribute section:
 
@@ -35,7 +43,48 @@ The following is an example `Metadata` resource attribute section:
       DockerTag: v1
 ```
 
-To download a sample application that is configured with the `Image` package type, see **Step 1: Download a sample AWS SAM application** in [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md)\. At the prompt asking which package type you want to install, choose `Image`\.
+To download a sample application that's configured with the `Image` package type, see [Step 1: Download a sample AWS SAM application](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-initialize) in **Tutorial: Deploying a Hello World application**\. At the prompt asking which package type you want to install, choose `Image`\.
+
+## Container environment variable file<a name="serverless-sam-cli-using-container-environment-file"></a>
+
+To provide a JSON file that contains environment variables for the build container, use the `--container-env-var-file` argument with the `sam build` command\. You can provide a single environment variable that applies to all serverless resources, or different environment variables for each resource\.
+
+### Format<a name="serverless-sam-cli-using-container-environment-file-format"></a>
+
+The format for passing environment variables to a build container depends on how many environment variables you provide for your resources\.
+
+To provide a single environment variable for all resources, specify a `Parameters` object like the following:
+
+```
+{
+  "Parameters": {
+    "GITHUB_TOKEN": "TOKEN_GLOBAL"
+  }
+}
+```
+
+To provide different environment variables for each resource, specify objects for each resource like the following:
+
+```
+{
+  "MyFunction1": {
+    "GITHUB_TOKEN": "TOKEN1"
+  },
+  "MyFunction2": {
+    "GITHUB_TOKEN": "TOKEN2"
+  }
+}
+```
+
+Save your environment variables as a file, for example, named `env.json`\. The following command uses this file to pass your environment variables to the build container:
+
+```
+sam build --use-container --container-env-var-file env.json
+```
+
+### Precedence<a name="serverless-sam-cli-using-container-environment-file-precedence"></a>
++ The environment variables that you provide for specific resources take precedence over the single environment variable for all resources\.
++ Environment variables that you provide on the command line take precedence over environment variables in a file\.
 
 ## Examples<a name="building-applications-examples"></a>
 

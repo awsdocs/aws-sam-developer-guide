@@ -93,10 +93,10 @@ To install the AWS SAM CLI, follow these steps:
    The output should look like the following example:
 
    ```
-    5b9c61df9a92f0e9f7d335a124ae5d94cc10a11b424fa2635e0cfaeb56bdd3e3  aws-sam-cli-linux-x86_64.zip
+    <64-character SHA256 hash value> aws-sam-cli-linux-x86_64.zip
    ```
 
-   Compare the hash value with the one for your desired AWS SAM CLI version in the [AWS SAM CLI release notes](https://github.com/aws/aws-sam-cli/releases/latest) on GitHub\.
+   Compare the 64\-character SHA256 hash value with the one for your desired AWS SAM CLI version in the [AWS SAM CLI release notes](https://github.com/aws/aws-sam-cli/releases/latest) on GitHub\.
 
 1. Unzip the installation files into the `sam-installation/` subdirectory\.
 
@@ -126,7 +126,7 @@ You're now ready to start development\.
 
 ## Upgrading<a name="serverless-sam-cli-install-linux-upgrading"></a>
 
-To upgrade the AWS SAM CLI, perform the same steps as in the previous **Install the AWS SAM CLI** section, but add the \-\-update option to the install command, as follows:
+To upgrade the AWS SAM CLI, perform the same steps as in the **Install the AWS SAM CLI** section earlier in this topic, but add the \-\-update option to the install command, as follows:
 
 ```
 sudo ./sam-installation/install --update
@@ -171,6 +171,20 @@ To uninstall the AWS SAM CLI, you must delete the symlink and installation direc
    ```
    sudo rm -rf /usr/local/aws-sam-cli
    ```
+
+## Nightly build<a name="serverless-sam-cli-install-linux-nightly-build"></a>
+
+A nightly build of the AWS SAM CLI is available for you to install\. Once installed, you can use the nightly build using the `sam-nightly` command\. You can install and use both the production and nightly build versions of the AWS SAM CLI at the same time\.
+
+The nightly build contains a pre\-release version of AWS SAM CLI code that may be less stable than the production version\. Note that the nightly build does not contain pre\-release version of the build image, so building a serverless application with the `--use-container` option uses the latest production version of the build image\.
+
+The nightly build is available with this download link: [AWS SAM CLI nightly build](https://github.com/aws/aws-sam-cli/releases/download/sam-cli-nightly/aws-sam-cli-linux-x86_64.zip)\. To install the nightly build version of the AWS SAM CLI, perform the same steps as in the [Step 4: Install the AWS SAM CLI](#serverless-sam-cli-install-linux-sam-cli) section earlier in this topic, but use the nightly build download link instead\. You can find the hash values for the nightly build installer files in the [AWS SAM CLI release notes for nightly builds](https://github.com/aws/aws-sam-cli/releases/tag/sam-cli-nightly) on GitHub\.
+
+To verify you have installed the nightly build version, run the `sam-nightly --version` command\. The output of this command is in the form `1.X.Y.dev<YYYYMMDDHHmm>`, for example:
+
+```
+SAM CLI, version 1.20.0.dev202103151200
+```
 
 ## Troubleshooting<a name="serverless-sam-cli-install-linux-troubleshooting"></a>
 

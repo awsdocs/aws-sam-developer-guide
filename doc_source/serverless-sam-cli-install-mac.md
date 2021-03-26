@@ -115,6 +115,25 @@ To uinstall the AWS SAM CLI, using Homebrew, run the following command:
 brew uninstall aws-sam-cli
 ```
 
+## Nightly build<a name="serverless-sam-cli-install-mac-nightly-build"></a>
+
+A nightly build of the AWS SAM CLI is available for you to install\. Once installed, you can use the nightly build using the `sam-nightly` command\. You can install and use both the production and nightly build versions of the AWS SAM CLI at the same time\.
+
+The nightly build contains a pre\-release version of AWS SAM CLI code that may be less stable than the production version\. Note that the nightly build does not contain pre\-release version of the build image, so building a serverless application with the `--use-container` option uses the latest production version of the build image\.
+
+To install the nightly build version of the AWS SAM CLI, run the following commands:
+
+```
+brew tap aws/tap
+brew install aws-sam-cli-nightly
+```
+
+To verify you have installed the nightly build version, run the `sam-nightly --version` command\. The output of this command is in the form `1.X.Y.dev<YYYYMMDDHHmm>`, for example:
+
+```
+SAM CLI, version 1.20.0.dev202103151200
+```
+
 ## Next steps<a name="serverless-sam-cli-install-mac-next-steps"></a>
 
 You're now ready to begin building your own serverless applications using AWS SAM\! If you want to start with sample serverless applications, choose one of the following links:

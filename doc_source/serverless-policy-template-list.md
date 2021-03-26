@@ -445,7 +445,7 @@ Gives permission to describe Amazon Machine Images \(AMIs\)\.
               "ec2:DescribeImages"
             ],
             "Resource": {
-              "Fn::Sub": "arn:${AWS::Partition}:ec2:${AWS::Region}:${AWS::AccountId}:image/*"
+              "*"
             }
           }
         ]
@@ -2120,6 +2120,31 @@ Gives permission to mount an Amazon EFS file system with write access\.
                   ]
                 }
               }
+            }
+          }
+        ]
+```
+
+## Route53ChangeResourceRecordSetsPolicy<a name="route53-change-resource-record-sets-policy"></a>
+
+Gives permission to change resource record sets in Route 53\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "route53:ChangeResourceRecordSets"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:route53:::hostedzone/${HostedZoneId}",
+                {
+                  "HostedZoneId": {
+                    "Ref": "HostedZoneId"
+                  }
+                }
+              ]
             }
           }
         ]

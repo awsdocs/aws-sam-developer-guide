@@ -159,7 +159,7 @@ The URI of the Amazon Elastic Container Registry \(Amazon ECR\) repository for t
 
  `InlineCode`   <a name="sam-function-inlinecode"></a>
 The Lambda function code that is written directly in the template\. This property only applies if the `PackageType` property is set to `Zip`, otherwise it is ignored\.  
-**Note**: If the `PackageType` property is set to `Zip` \(defult\), then one of `CodeUri` or `InlineCode` is required\.  
+**Note**: If the `PackageType` property is set to `Zip` \(default\), then one of `CodeUri` or `InlineCode` is required\.  
 *Type*: String  
 *Required*: Conditional  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[ZipFile](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-zipfile)` property of the `AWS::Lambda::Function` `Code` data type\.
