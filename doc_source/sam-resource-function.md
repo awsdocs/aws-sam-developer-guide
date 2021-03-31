@@ -152,7 +152,7 @@ The object used to configure Lambda container image settings\. For more informat
 
  `ImageUri`   <a name="sam-function-imageuri"></a>
 The URI of the Amazon Elastic Container Registry \(Amazon ECR\) repository for the Lambda function's container image\. This property only applies if the `PackageType` property is set to `Image`, otherwise it is ignored\. For more information, see [Using container images with Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the *AWS Lambda Developer Guide*\.  
-**Note**: If the `PackageType` property is set to `Image`, then either `ImageUri` is required, or you must or you must build your application with necessary `Metadata` entries in the AWS SAM template file\. For more information, see [Building applications](serverless-sam-cli-using-build.md)\.  
+**Note**: If the `PackageType` property is set to `Image`, then either `ImageUri` is required, or you must build your application with necessary `Metadata` entries in the AWS SAM template file\. For more information, see [Building applications](serverless-sam-cli-using-build.md)\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[ImageUri](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-imageuri)` property of the `AWS::Lambda::Function` `Code` data type\.
