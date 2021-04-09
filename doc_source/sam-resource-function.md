@@ -78,11 +78,11 @@ The ARN of the [AWS::Lambda::CodeSigningConfig](https://docs.aws.amazon.com/AWSC
 *AWS CloudFormation compatibility*: This property is passed directly to the `[CodeSigningConfigArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-codesigningconfigarn)` property of an `AWS::Lambda::Function` resource\.
 
  `CodeUri`   <a name="sam-function-codeuri"></a>
-The function code's Amazon S3 URI, local file path, or [FunctionCode](sam-property-function-functioncode.md) object\. This property only applies if the `PackageType` property is set to `Zip`, otherwise it is ignored\.  
+The function code's Amazon S3 URI, path to local folder, or [FunctionCode](sam-property-function-functioncode.md) object\. This property only applies if the `PackageType` property is set to `Zip`, otherwise it is ignored\.  
 **Notes**:  
 1\. If the `PackageType` property is set to `Zip` \(default\), then one of `CodeUri` or `InlineCode` is required\.  
 2\. If an Amazon S3 URI or [FunctionCode](sam-property-function-functioncode.md) object is provided, the Amazon S3 object referenced must be a valid [Lambda deployment package](https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html)\.  
-3\. If a local file path is provided, for the code to be transformed properly the template must go through the workflow that includes the `sam deploy` or `sam package` command\.  
+3\. If the path to a local folder is provided, for the code to be transformed properly the template must go through the workflow that includes [sam build](sam-cli-command-reference-sam-build.md) followed by either [sam deploy](sam-cli-command-reference-sam-deploy.md) or [sam package](sam-cli-command-reference-sam-package.md)\. By default, relative paths are resolved with respect to the AWS SAM template's location\.  
 *Type*: String \| [FunctionCode](sam-property-function-functioncode.md)  
 *Required*: Conditional  
 *AWS CloudFormation compatibility*: This property is similar to the `[Code](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code)` property of an `AWS::Lambda::Function` resource\. The nested Amazon S3 properties are named differently\.

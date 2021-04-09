@@ -2,6 +2,10 @@
 
 Packages an AWS SAM application\. This command creates a \.zip file of your code and dependencies, and uploads the file to Amazon Simple Storage Service \(Amazon S3\)\. It then returns a copy of your AWS SAM template, replacing references to local artifacts with the Amazon S3 location where the command uploaded the artifacts\.
 
+
+
+By default when you use this command, the AWS SAM CLI assumes that your current working directory is your project's root directory\. The AWS SAM CLI first tries to locate a template file built using the [sam build](sam-cli-command-reference-sam-build.md) command, located in the `.aws-sam` subfolder, and named `template.yaml`\. Next, the AWS SAM CLI tries to locate a template file named `template.yaml` or `template.yml` in the current working directory\. If you specify the `--template` option, AWS SAM CLI's default behavior is overridden, and will package just that AWS SAM template and the local resources it points to\.
+
 **Note**  
 [sam deploy](sam-cli-command-reference-sam-deploy.md) now implicitly performs the functionality of `sam package`\. You can use the [sam deploy](sam-cli-command-reference-sam-deploy.md) command directly to package and deploy your application\.
 
@@ -18,7 +22,7 @@ sam package [OPTIONS] [ARGS]...
 
 | Option | Description | 
 | --- | --- | 
-| \-t, \-\-template\-file, \-\-template PATH | The path and file name where your AWS SAM template is located\. Default: template\.\[yaml\|yml\]\. | 
+| \-t, \-\-template\-file, \-\-template PATH | The path and file name where your AWS SAM template is located\.**Note:** If you specify this option, AWS SAM packages only the template and the local resources that it points to\. | 
 | \-\-s3\-bucket TEXT | \(Required\) The name of the Amazon S3 bucket where this command uploads your AWS CloudFormation template\. | 
 | \-\-s3\-prefix TEXT | Prefix added to the artifacts name that are uploaded to the Amazon S3 bucket\. The prefix name is a path name \(folder name\) for the Amazon S3 bucket\. This only applies for functions declared with Zip package type\. | 
 | \-\-image\-repository TEXT | The URI of the Amazon Elastic Container Registry \(Amazon ECR\) repository where this command uploads your function's image\. Required for functions declared with the Image package type\. | 

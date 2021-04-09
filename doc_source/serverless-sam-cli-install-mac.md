@@ -109,7 +109,7 @@ brew upgrade aws-sam-cli
 
 ## Uninstalling<a name="serverless-sam-cli-install-mac-uninstalling"></a>
 
-To uinstall the AWS SAM CLI, using Homebrew, run the following command:
+To uninstall the AWS SAM CLI, using Homebrew, run the following command:
 
 ```
 brew uninstall aws-sam-cli

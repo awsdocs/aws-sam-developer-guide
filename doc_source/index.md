@@ -162,6 +162,7 @@ Amazon's trademarks and trade dress may not be used in
    + [AWS SAM CLI configuration file](serverless-sam-cli-config.md)
    + [AWS SAM policy templates](serverless-policy-templates.md)
       + [Policy template list](serverless-policy-template-list.md)
+   + [Image repositories](serverless-image-repositories.md)
    + [Telemetry in the AWS SAM CLI](serverless-sam-telemetry.md)
    + [Permissions](sam-permissions.md)
    + [Important notes](important-notes.md)

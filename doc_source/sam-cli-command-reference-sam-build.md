@@ -44,6 +44,12 @@ $ sam build --use-container --container-env-var Function1.GITHUB_TOKEN=<token1> 
 
 To build with environment variables passed to the build container from a file
 $ sam build --use-container --container-env-var-file <env-file.json>
+
+Build a Node.js 12 application using a container image pulled from DockerHub
+$ sam build --use-container --build-image amazon/aws-sam-cli-build-image-nodejs12.x
+
+Build a function resource using using the Python 3.8 container image pulled from DockerHub
+$ sam build --use-container --build-image Function1=amazon/aws-sam-cli-build-image-python3.8 
   
 To build and run your functions locally
 $ sam build && sam local invoke
@@ -66,10 +72,11 @@ $ sam build MyNestedStack/MyFunction
 | Option | Description | 
 | --- | --- | 
 | \-b, \-\-build\-dir DIRECTORY | The path to a directory where the built artifacts are stored\. This directory and all of its content are removed with this option\. | 
-| \-s, \-\-base\-dir DIRECTORY | Resolves relative paths to the Lambda function's source code with respect to this directory\. Use this option if the AWS SAM template and your source code aren't in the same directory\. By default, relative paths are resolved with respect to the template's location\. | 
+| \-s, \-\-base\-dir DIRECTORY | Resolves relative paths to the function's or layer's source code with respect to this directory\. Use this option if you want to change how relative paths to source code folders are resolved\. By default, relative paths are resolved with respect to the AWS SAM template's location\.In addition to the resources in the root application or stack you are building, this option also applies nested applications or stacks\.This option applies to the following resource types and properties:[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-build.html) | 
 | \-u, \-\-use\-container | If your functions depend on packages that have natively compiled dependencies, use this option to build your function inside a Lambda\-like Docker container\. | 
-| \-e, \-\-container\-env\-var TEXT | Environment variables to pass to the build container\. You can specify this option multiple times\. Each instance of this option takes a key\-value pair, where the key is the resource and environment variable, and the value is the environment variable's value\. For example: \-\-container\-env\-var Function1\.GITHUB\_TOKEN=TOKEN1 \-\-container\-env\-var Function2\.GITHUB\_TOKEN=TOKEN2\. | 
-| \-ef, \-\-container\-env\-var\-file PATH | The path and file name of a JSON file that contains values for the container's environment variables\. For more information about container environment variable files, see [Container environment variable file](serverless-sam-cli-using-build.md#serverless-sam-cli-using-container-environment-file)\. | 
+| \-e, \-\-container\-env\-var TEXT | Environment variables to pass to the build container\. You can specify this option multiple times\. Each instance of this option takes a key\-value pair, where the key is the resource and environment variable, and the value is the environment variable's value\. For example: \-\-container\-env\-var Function1\.GITHUB\_TOKEN=TOKEN1 \-\-container\-env\-var Function2\.GITHUB\_TOKEN=TOKEN2\.This option only applies if the `--use-container` option is specified, otherwise an error will result\. | 
+| \-ef, \-\-container\-env\-var\-file PATH | The path and file name of a JSON file that contains values for the container's environment variables\. For more information about container environment variable files, see [Container environment variable file](serverless-sam-cli-using-build.md#serverless-sam-cli-using-container-environment-file)\.This option only applies if the `--use-container` option is specified, otherwise an error will result\. | 
+| \-\-build\-image TEXT |  The URI of the container image that you want to pull for the build\. By default, AWS SAM pulls the container image from Amazon ECR Public\. Use this option to pull the image from another location\. You can specify this option multiple times\. Each instance of this option can take either a string or a key\-value pair\. If you specify a string, it is the URI of the container image to use for all resources in your application\. For example, `sam build --use-container --build-image amazon/aws-sam-cli-build-image-python3.8`\. If you specify a key\-value pair, the key is the resource name, and the value is the URI of the container image to use for that resource\. For example `sam build --use-container --build-image Function1=amazon/aws-sam-cli-build-image-python3.8`\. With key\-value pairs, you can specify different container images for different resources\. This option only applies if the `--use-container` option is specified, otherwise an error will result\.  | 
 | \-m, \-\-manifest PATH | The path to a custom dependency manifest file \(for example, package\.json\) to use instead of the default\. | 
 | \-t, \-\-template\-file, \-\-template PATH | The path and file name of AWS SAM template file \[default: template\.\[yaml\|yml\]\]\. | 
 | \-\-parameter\-overrides | \(Optional\) A string that contains AWS CloudFormation parameter overrides encoded as key\-value pairs\. Uses the same format as the AWS Command Line Interface \(AWS CLI\)\. For example: 'ParameterKey=KeyPairName, ParameterValue=MyKey ParameterKey=InstanceType, ParameterValue=t1\.micro'\. | 
