@@ -1,10 +1,11 @@
 # Document history for AWS SAM<a name="doc-history"></a>
 
 The following table describes the important changes in each release of the *AWS Serverless Application Model Developer Guide*\. For notifications about updates to this documentation, you can subscribe to an RSS feed\.
-+ **Latest documentation update:** April 6, 2021
++ **Latest documentation update:** April 29, 2021
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [AWS SAM CLI AWS CDK integration \(preview\)](#doc-history) | You can now use the AWS SAM CLI to locally test and build AWS CDK applications\. This is a public preview release\. For more information, see [AWS Cloud Development Kit \(AWS CDK\) \(Preview\)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-cdk.html)\. | April 29, 2021 | 
 | [Default container image repository changed to Amazon ECR Public](#doc-history) | The default container image repository changed from DockerHub to [Amazon ECR Public](https://docs.aws.amazon.com/AmazonECR/latest/public/what-is-ecr.html)\. For more information, see [Image repositories](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-image-repositories.html)\. | April 6, 2021 | 
 | [Nightly AWS SAM CLI builds](#doc-history) | You can now install a pre\-release version of the AWS SAM CLI, which is built nightly\. For more information, see the **Nightly build** section of the OS subtopic of your choice under [Installing the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)\. | March 25, 2021 | 
 | [Build container environment variables support](#doc-history) | You can now pass environment variables to build containers\. For more information, see the `--container-env-var` and `--container-env-var-file` options in [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-build.html](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-build.html)\. | March 4, 2021 | 
