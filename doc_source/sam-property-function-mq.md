@@ -78,9 +78,9 @@ Events:
     Properties:
       Broker: arn:aws:mq:us-east-2:123456789012:broker:MyBroker:b-1234a5b6-78cd-901e-2fgh-3i45j6k178l9
       Queues: List of queues
+      BatchSize: 200
+      Enabled: True
       SourceAccessConfigurations:
         - Type: String
           URI: String
-       BatchSize: 200
-       Enabled: True
 ```
