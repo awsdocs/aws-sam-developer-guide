@@ -36,10 +36,10 @@ A description of the rule\.
 
  `Enabled`   <a name="sam-statemachine-statemachineschedule-enabled"></a>
 Indicates whether the rule is enabled\.  
-To disable the rule, set this property to `False`\.  
+To disable the rule, set this property to `false`\.  
 *Type*: Boolean  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is similar to the `[State](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state)` property of an `AWS::Events::Rule` resource\. If this property is set to `True` then AWS SAM passes `ENABLED`, otherwise it passes `DISABLED`\.
+*AWS CloudFormation compatibility*: This property is similar to the `[State](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state)` property of an `AWS::Events::Rule` resource\. If this property is set to `true` then AWS SAM passes `ENABLED`, otherwise it passes `DISABLED`\.
 
  `Input`   <a name="sam-statemachine-statemachineschedule-input"></a>
 Valid JSON text passed to the target\. If you use this property, nothing from the event text itself is passed to the target\.  
@@ -80,5 +80,5 @@ CWSchedule:
     Schedule: 'rate(1 minute)'
     Name: TestSchedule
     Description: test schedule
-    Enabled: False
+    Enabled: false
 ```

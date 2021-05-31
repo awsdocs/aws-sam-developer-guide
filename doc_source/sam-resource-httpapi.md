@@ -164,7 +164,7 @@ The following example shows how to set up authorization on HTTP API endpoints\.
 
 ```
 Properties:
-  FailOnWarnings: True
+  FailOnWarnings: true
   Auth:
     DefaultAuthorizer: OAuth2
     Authorizers:
@@ -198,7 +198,7 @@ Note that AWS SAM fills in any missing Lambda integrations for HttpApi events th
 
 ```
 Properties:
-  FailOnWarnings: True
+  FailOnWarnings: true
   DefinitionBody:
     info:
       version: '1.0'
@@ -281,7 +281,7 @@ Resources:
           ThrottlingBurstLimit: 500 # overridden in HttpApi Event
       StageVariables:
         StageVar: Value
-      FailOnWarnings: True
+      FailOnWarnings: true
 
   AccessLogs:
     Type: AWS::Logs::LogGroup

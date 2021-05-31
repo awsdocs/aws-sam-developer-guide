@@ -16,7 +16,7 @@ To build your serverless application as a \.zip file archive, declare `PackageTy
 
 If your Lambda function depends on packages that have natively compiled programs, use the `--use-container` flag\. This flag locally compiles your functions in a Docker container that behaves like a Lambda environment, so they're in the right format when you deploy them to the AWS Cloud\.
 
-When you use the `--use-container` option, by default AWS SAM pulls the container image from [Amazon ECR Public](https://docs.aws.amazon.com/odedeploy/)\. If you would like to pull a container image from another repository, for example DockerHub, you can use the `--build-image` option and provide the URI of an alternate container image\. Following are two example commands for building applications using container images from the DockerHub repository:
+When you use the `--use-container` option, by default AWS SAM pulls the container image from [Amazon ECR Public](https://docs.aws.amazon.com/AmazonECR/latest/public/what-is-ecr.html)\. If you would like to pull a container image from another repository, for example DockerHub, you can use the `--build-image` option and provide the URI of an alternate container image\. Following are two example commands for building applications using container images from the DockerHub repository:
 
 ```
 # Build a Node.js 12 application using a container image pulled from DockerHub

@@ -10,7 +10,7 @@ Next, determine whether you have the AWS CLI installed\. Then follow the instruc
 
 ## Using the AWS CLI<a name="serverless-getting-started-set-up-credentials-cli"></a>
 
-If you have the AWS CLI installed, use the **aws configure** command and follow the prompts:
+If you have the AWS CLI installed, use the `aws configure` command and follow the prompts:
 
 ```
 $ aws configure
@@ -20,7 +20,7 @@ Default region name [None]:
 Default output format [None]:
 ```
 
-For information about the **aws configure** command, see [Quickly Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
+For information about the `aws configure` command, see [Quickly Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
 
 ## Not using the AWS CLI<a name="serverless-getting-started-set-up-credentials-no-cli"></a>
 

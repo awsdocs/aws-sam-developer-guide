@@ -1,7 +1,7 @@
 # AWS Serverless Application Model Developer Guide
 
 -----
-*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -106,8 +106,12 @@ Amazon's trademarks and trade dress may not be used in
    + [Intrinsic functions](sam-specification-intrinsic-functions.md)
    + [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)
       + [AWS CloudFormation resources generated when AWS::Serverless::Api is specified](sam-specification-generated-resources-api.md)
+      + [AWS CloudFormation resources generated when AWS::Serverless::Application is specified](sam-specification-generated-resources-application.md)
       + [AWS CloudFormation resources generated when AWS::Serverless::Function is specified](sam-specification-generated-resources-function.md)
       + [AWS CloudFormation resources generated when AWS::Serverless::HttpApi is specified](sam-specification-generated-resources-httpapi.md)
+      + [AWS CloudFormation resources generated when AWS::Serverless::LayerVersion is specified](sam-specification-generated-resources-layerversion.md)
+      + [AWS CloudFormation resources generated when AWS::Serverless::SimpleTable is specified](sam-specification-generated-resources-simpletable.md)
+      + [AWS CloudFormation resources generated when AWS::Serverless::StateMachine is specified](sam-specification-generated-resources-statemachine.md)
    + [API Gateway extensions](sam-specification-api-gateway-extensions.md)
 + [Authoring serverless applications](serverless-authoring.md)
    + [Validating AWS SAM template files](serverless-sam-cli-using-validate.md)
@@ -133,9 +137,6 @@ Amazon's trademarks and trade dress may not be used in
    + [Integrating with automated tests](serverless-sam-cli-using-automated-tests.md)
    + [Generating sample event payloads](serverless-sam-cli-using-generate-event.md)
    + [Step-through debugging Lambda functions locally](serverless-sam-cli-using-debugging.md)
-      + [Step-through debugging Node.js functions locally](serverless-sam-cli-using-debugging-nodejs.md)
-      + [Step-through debugging Python functions locally](serverless-sam-cli-using-debugging-python.md)
-      + [Step-through debugging Golang functions locally](serverless-sam-cli-using-debugging-golang.md)
    + [Passing additional runtime debug arguments](serverless-sam-cli-using-debugging-additional-arguments.md)
 + [Deploying serverless applications](serverless-deploying.md)
    + [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)
@@ -146,10 +147,10 @@ Amazon's trademarks and trade dress may not be used in
 + [Example serverless applications](serverless-example-applications.md)
    + [Process DynamoDB events](serverless-example-ddb.md)
    + [Process Amazon S3 events](serverless-example-s3.md)
-+ [AWS Cloud Development Kit (AWS CDK) (Preview)](serverless-cdk.md)
-   + [Getting started with AWS SAM and the AWS CDK](serverless-cdk-getting-started.md)
-   + [Locally testing AWS CDK applications](serverless-cdk-testing.md)
-   + [Building AWS CDK applications](serverless-cdk-building.md)
++ [AWS Cloud Development Kit (CDK) (Preview)](serverless-cdk.md)
+   + [Getting started with AWS SAM and the CDK](serverless-cdk-getting-started.md)
+   + [Locally testing CDK applications](serverless-cdk-testing.md)
+   + [Building CDK applications](serverless-cdk-building.md)
 + [AWS SAM reference](serverless-sam-reference.md)
    + [AWS SAM CLI command reference](serverless-sam-cli-command-reference.md)
       + [sam build](sam-cli-command-reference-sam-build.md)

@@ -147,7 +147,7 @@ MySampleStateMachine:
     DefinitionUri: statemachine/my_state_machine.asl.json
     Role: arn:aws:iam::123456123456:role/service-role/my-sample-role
     Tracing:
-      Enabled: True
+      Enabled: true
     DefinitionSubstitutions:
       MyFunctionArn: !GetAtt MyFunction.Arn
       MyDDBTable: !Ref TransactionTable
@@ -174,5 +174,5 @@ MySampleStateMachine:
           End: true
     Role: arn:aws:iam::123456123456:role/service-role/my-sample-role
     Tracing:
-      Enabled: True
+      Enabled: true
 ```

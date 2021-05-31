@@ -71,5 +71,5 @@ Resources:
         AllowHeaders: "'X-Forwarded-For'"
         AllowOrigin: "'www.example.com'"
         MaxAge: "'600'"
-        AllowCredentials: True
+        AllowCredentials: true
 ```

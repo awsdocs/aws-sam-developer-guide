@@ -58,7 +58,7 @@ Events:
     Type: SNS
     Properties:
       Topic: arn:aws:sns:us-east-1:123456789012:my_topic
-      SqsSubscription: True
+      SqsSubscription: true
       FilterPolicy:
         store:
           - example_corp

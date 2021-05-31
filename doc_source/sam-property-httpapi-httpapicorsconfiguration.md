@@ -76,5 +76,5 @@ CorsConfiguration:
   AllowMethods:
     - GET
   MaxAge: 600
-  AllowCredentials: True
+  AllowCredentials: true
 ```

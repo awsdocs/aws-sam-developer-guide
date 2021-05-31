@@ -69,7 +69,7 @@ Example deployment preference that contains pre\- and post\-traffic hooks\.
 
 ```
 DeploymentPreference:
-  Enabled: True
+  Enabled: true
   Type: Canary10Percent10Minutes 
   Alarms:
     - Ref: AliasErrorMetricGreaterThanZeroAlarm
@@ -89,7 +89,7 @@ Example deployment preference that uses `Fn::If` for configuring alarms\. In thi
 
 ```
 DeploymentPreference:
-  Enabled: True
+  Enabled: true
   Type: Canary10Percent10Minutes 
   Alarms:
     Fn::If:

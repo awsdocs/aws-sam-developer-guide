@@ -1,17 +1,10 @@
 # Generated AWS CloudFormation resources<a name="sam-specification-generated-resources"></a>
 
-When AWS Serverless Application Model \(AWS SAM\) processes your AWS SAM template file, it generates AWS CloudFormation resources\. The set of AWS CloudFormation resources that AWS SAM generates differs depending on the scenarios that you specify\. A *scenario* is the combination of AWS SAM resources and properties specified in your template file\. You can reference the generated AWS CloudFormation resources elsewhere within your template file, similar to how you reference resources that you declare explicitly in your template file\.
+When AWS Serverless Application Model \(AWS SAM\) processes your AWS SAM template file, it generates one or more AWS CloudFormation resources\. The set of AWS CloudFormation resources that AWS SAM generates differs depending on the scenarios that you specify\. A *scenario* is the combination of AWS SAM resources and properties specified in your template file\. You can reference the generated AWS CloudFormation resources elsewhere within your template file, similar to how you reference resources that you declare explicitly in your template file\.
 
 For example, if you specify an `AWS::Serverless::Function` resource in your AWS SAM template file, AWS SAM always generates an `AWS::Lambda::Function` base resource\. If you also specify the optional `AutoPublishAlias` property, AWS SAM additionally generates `AWS::Lambda::Alias` and `AWS::Lambda::Version` resources\.
 
 This section lists the scenarios and the AWS CloudFormation resources that they generate, and shows how to reference the generated AWS CloudFormation resources in your AWS SAM template file\.
-
-**Topics**
-+ [Referencing generated AWS CloudFormation resources](#sam-specification-generated-resources-referencing)
-+ [Generated AWS CloudFormation resource reference](#sam-specification-generated-resources-scenarios)
-+ [AWS CloudFormation resources generated when AWS::Serverless::Api is specified](sam-specification-generated-resources-api.md)
-+ [AWS CloudFormation resources generated when AWS::Serverless::Function is specified](sam-specification-generated-resources-function.md)
-+ [AWS CloudFormation resources generated when AWS::Serverless::HttpApi is specified](sam-specification-generated-resources-httpapi.md)
 
 ## Referencing generated AWS CloudFormation resources<a name="sam-specification-generated-resources-referencing"></a>
 
@@ -31,23 +24,28 @@ For some generated resources, AWS SAM provides a referenceable property of the A
 **Note**  
 Not all generated AWS CloudFormation resources have referenceable properties\. For those resources, you must use the `LogicalId`\.
 
-## Generated AWS CloudFormation resource reference<a name="sam-specification-generated-resources-scenarios"></a>
+## Generated AWS CloudFormation resource scenarios<a name="sam-specification-generated-resources-scenarios"></a>
 
-The following table summarizes the AWS SAM resources and properties that make up the scenarios that generate AWS CloudFormation resources\.
-
-The topics in the **AWS SAM Resources** column provide details about the base resources that are generated when you specify the AWS SAM resource\. The topics in the **Scenarios** column provide details about the additional resources generated for that scenario\.
+The following table summarizes the AWS SAM resources and properties that make up the scenarios that generate AWS CloudFormation resources\. The topics in the **Scenarios** column provide details about the additional AWS CloudFormation resources that AWS SAM generates for that scenario\.
 
 
-|  |  | 
-| --- |--- |
-|  AWS SAM Resources  |  Scenarios  | 
-| [AWS::Serverless::Api](sam-specification-generated-resources-api.md) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)  | 
-| [AWS::Serverless::Function](sam-specification-generated-resources-function.md) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)  | 
-| [AWS::Serverless::HttpApi](sam-specification-generated-resources-httpapi.md) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)  | 
+| AWS SAM resource | Base AWS CloudFormation resource | Scenarios | 
+| --- | --- | --- | 
+| AWS::Serverless::Api  | [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)  | 
+| AWS::Serverless::Application  | [AWS::CloudFormation::Stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)  | 
+| AWS::Serverless::Function | [AWS::Lambda::Function](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)  | 
+| AWS::Serverless::HttpApi | [AWS::ApiGatewayV2::Api](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)  | 
+| AWS::Serverless::LayerVersion  | [AWS::Lambda::LayerVersion](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)  | 
+| AWS::Serverless::SimpleTable  | [AWS::DynamoDB::Table](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)  | 
+| AWS::Serverless::StateMachine  | [AWS::StepFunctions::StateMachine](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html)  | 
 
 **Topics**
 + [Referencing generated AWS CloudFormation resources](#sam-specification-generated-resources-referencing)
-+ [Generated AWS CloudFormation resource reference](#sam-specification-generated-resources-scenarios)
++ [Generated AWS CloudFormation resource scenarios](#sam-specification-generated-resources-scenarios)
 + [AWS CloudFormation resources generated when AWS::Serverless::Api is specified](sam-specification-generated-resources-api.md)
++ [AWS CloudFormation resources generated when AWS::Serverless::Application is specified](sam-specification-generated-resources-application.md)
 + [AWS CloudFormation resources generated when AWS::Serverless::Function is specified](sam-specification-generated-resources-function.md)
 + [AWS CloudFormation resources generated when AWS::Serverless::HttpApi is specified](sam-specification-generated-resources-httpapi.md)
++ [AWS CloudFormation resources generated when AWS::Serverless::LayerVersion is specified](sam-specification-generated-resources-layerversion.md)
++ [AWS CloudFormation resources generated when AWS::Serverless::SimpleTable is specified](sam-specification-generated-resources-simpletable.md)
++ [AWS CloudFormation resources generated when AWS::Serverless::StateMachine is specified](sam-specification-generated-resources-statemachine.md)

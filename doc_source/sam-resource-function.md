@@ -217,7 +217,7 @@ The provisioned concurrency configuration of a function's alias\.
 
  `ReservedConcurrentExecutions`   <a name="sam-function-reservedconcurrentexecutions"></a>
 The maximum number of concurrent executions that you want to reserve for the function\.  
-For more information about this property, see [AWS Lambda Function Scaling](https://docs.aws.amazon.com/lambda/latest/dg/scaling.html) in the *AWS Lambda Developer Guide*\.  
+For more information about this property, see [Lambda Function Scaling](https://docs.aws.amazon.com/lambda/latest/dg/scaling.html) in the *AWS Lambda Developer Guide*\.  
 *Type*: Integer  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[ReservedConcurrentExecutions](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions)` property of an `AWS::Lambda::Function` resource\.
