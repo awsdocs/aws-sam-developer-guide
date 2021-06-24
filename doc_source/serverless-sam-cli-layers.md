@@ -1,8 +1,18 @@
 # Working with layers<a name="serverless-sam-cli-layers"></a>
 
-The AWS SAM CLI supports applications that include layers\. For more information about layers, see [AWS Lambda layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\.
+Using AWS SAM, you can include layers in your serverless applications\. For more information about layers, see [AWS Lambda layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) in the *AWS Lambda Developer Guide*\.
 
-The following is an example AWS SAM template with a Lambda function that includes a layer:
+This topic provides information about the following:
++ Including layers in your application
++ How layers are cached locally
+
+For information about building custom layers, see [Building layers](building-layers.md)\.
+
+## Including layers in your application<a name="including-layers"></a>
+
+To include layers in your application, use the `Layers` property of the [AWS::Serverless::Function](sam-resource-function.md) resource type\.
+
+Following is an example AWS SAM template with a Lambda function that includes a layer:
 
 ```
 ServerlessFunction:
@@ -15,9 +25,24 @@ ServerlessFunction:
         - <LayerVersion ARN>
 ```
 
-For more information about including layers in your application, see [AWS::Serverless::Function](sam-resource-function.md)\.
+## How layers are cached locally<a name="local-testing-with-layers"></a>
 
-When you invoke your function using one of the sam local CLI subcommands, the layers package of your function is downloaded and cached on your local host\. See the following chart for default cache directory locations\. After the package is cached, the AWS SAM CLI overlays the layers onto a Docker image that's used to invoke your function\. The AWS SAM CLI generates the names of the images it builds, as well as the LayerVersions that are held in the cache\. You can find more details about the schema in the following sections\.
+When you invoke your function using one of the `sam local` commands, the layers package of your function is downloaded and cached on your local host\.
+
+The following table shows the default cache directory locations for different operating systems\.
+
+
+****  
+
+| OS | Location | 
+| --- | --- | 
+| Windows 7 | C:\\Users\\<user>\\AppData\\Roaming\\AWS SAM | 
+| Windows 8 | C:\\Users\\<user>\\AppData\\Roaming\\AWS SAM | 
+| Windows 10 | C:\\Users\\<user>\\AppData\\Roaming\\AWS SAM | 
+| macOS | \~/\.aws\-sam/layers\-pkg | 
+| Unix | \~/\.aws\-sam/layers\-pkg | 
+
+After the package is cached, the AWS SAM CLI overlays the layers onto a Docker image that's used to invoke your function\. The AWS SAM CLI generates the names of the images it builds, as well as the LayerVersions that are held in the cache\. You can find more details about the schema in the following sections\.
 
 To inspect the overlaid layers, execute the following command to start a bash session in the image that you want to inspect:
 
@@ -72,16 +97,3 @@ Then combine this value with the function's runtime, with a delimiter of '\-':
 ```
 python3.7-2dd7ac5ffb30d515926aefffd
 ```
-
-**Default Cache Directory Locations**
-
-
-****  
-
-| OS | Location | 
-| --- | --- | 
-| Windows 7 | C:\\Users\\<user>\\AppData\\Roaming\\AWS SAM | 
-| Windows 8 | C:\\Users\\<user>\\AppData\\Roaming\\AWS SAM | 
-| Windows 10 | C:\\Users\\<user>\\AppData\\Roaming\\AWS SAM | 
-| macOS | \~/\.aws\-sam/layers\-pkg | 
-| Unix | \~/\.aws\-sam/layers\-pkg | 

@@ -25,7 +25,7 @@ The Amazon Resource Name \(ARN\) of an Amazon SQS queue or Amazon SNS topic\.
 
  `Type`   <a name="sam-function-deadletterqueue-type"></a>
 The type of dead letter queue\.  
-Supported values: `SNS`, `SQS`\.  
+*Valid values*: `SNS`, `SQS`  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

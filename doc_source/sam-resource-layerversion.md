@@ -34,9 +34,9 @@ List of runtimes compatible with this LayerVersion\.
 *AWS CloudFormation compatibility*: This property is passed directly to the `[CompatibleRuntimes](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-compatibleruntimes)` property of an `AWS::Lambda::LayerVersion` resource\.
 
  `ContentUri`   <a name="sam-layerversion-contenturi"></a>
-AWS S3 Uri, local file path, or LayerContent object of the layer code\.  
-If an AWS S3 Uri or LayerContent object is provided, The AWS S3 object referenced must be a valid ZIP archive that contains the contents of an [AWS Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\.  
-If a local file path is provided, the template must go through the workflow that includes the `sam deploy` or `sam package` command, in order for the content to be transformed properly\.  
+Amazon S3 Uri, path to local folder, or LayerContent object of the layer code\.  
+If an Amazon S3 Uri or LayerContent object is provided, The Amazon S3 object referenced must be a valid ZIP archive that contains the contents of an [Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\.  
+If a path to a local folder is provided, for the content to be transformed properly the template must go through the workflow that includes [sam build](sam-cli-command-reference-sam-build.md) followed by either [sam deploy](sam-cli-command-reference-sam-deploy.md) or [sam package](sam-cli-command-reference-sam-package.md)\. By default, relative paths are resolved with respect to the AWS SAM template's location\.  
 *Type*: String \| [LayerContent](sam-property-layerversion-layercontent.md)  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is similar to the `[Content](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content)` property of an `AWS::Lambda::LayerVersion` resource\. The nested Amazon S3 properties are named differently\.
@@ -62,11 +62,11 @@ Information about the license for this LayerVersion\.
 
  `RetentionPolicy`   <a name="sam-layerversion-retentionpolicy"></a>
 Specifies whether old versions of your LayerVersion are retained or deleted after an update\.  
-Supported values: `Retain` and `Delete`\.  
+*Valid values*: `Retain` or `Delete`  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  
-*Additional notes*: When you specify `Retain`, AWS SAM adds a [Resource Attribute](http://mhirayam.aka.corp.amazon.com/docs-preview/sam-gh-migration/serverless-application-model/latest/developerguide/sam-specification-resource-attributes.html) of `DeletionPolicy: Retain` to the transformed `AWS::Lambda::LayerVersion` resource\.
+*Additional notes*: When you specify `Retain`, AWS SAM adds a [Resource attributes](sam-specification-resource-attributes.md) of `DeletionPolicy: Retain` to the transformed `AWS::Lambda::LayerVersion` resource\.
 
 ## Return Values<a name="sam-resource-layerversion-return-values"></a>
 

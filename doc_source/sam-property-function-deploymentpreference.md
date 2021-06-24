@@ -23,6 +23,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
  `Alarms`   <a name="sam-function-deploymentpreference-alarms"></a>
 A list of CloudWatch alarms that you want to be triggered by any errors raised by the deployment\.  
+This property accepts the `Fn::If` intrinsic function\. See the Examples section at the bottom of this topic for an example template that uses `Fn::If`\.  
 *Type*: List  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
@@ -60,15 +61,15 @@ There are two categories of deployment types at the moment: Linear and Canary\. 
 
 ## Examples<a name="sam-property-function-deploymentpreference--examples"></a>
 
-### DeploymentPreference<a name="sam-property-function-deploymentpreference--examples--deploymentpreference"></a>
+### DeploymentPreference with pre\- and post\-traffic hooks\.<a name="sam-property-function-deploymentpreference--examples--deploymentpreference-with-pre--and-post-traffic-hooks."></a>
 
-Example deployment preference
+Example deployment preference that contains pre\- and post\-traffic hooks\.
 
-#### YAML<a name="sam-property-function-deploymentpreference--examples--deploymentpreference--yaml"></a>
+#### YAML<a name="sam-property-function-deploymentpreference--examples--deploymentpreference-with-pre--and-post-traffic-hooks.--yaml"></a>
 
 ```
 DeploymentPreference:
-  Enabled: True
+  Enabled: true
   Type: Canary10Percent10Minutes 
   Alarms:
     - Ref: AliasErrorMetricGreaterThanZeroAlarm
@@ -78,4 +79,22 @@ DeploymentPreference:
       Ref: PreTrafficLambdaFunction
     PostTraffic:
       Ref: PostTrafficLambdaFunction
+```
+
+### DeploymentPreference with Fn::If intrinsic function<a name="sam-property-function-deploymentpreference--examples--deploymentpreference-with-fn::if-intrinsic-function"></a>
+
+Example deployment preference that uses `Fn::If` for configuring alarms\. In this example, `Alarm1` will be configured if `MyCondition` is `true`, and `Alarm2` and `Alarm5` will be configured if `MyCondition` is `false`\.
+
+#### YAML<a name="sam-property-function-deploymentpreference--examples--deploymentpreference-with-fn::if-intrinsic-function--yaml"></a>
+
+```
+DeploymentPreference:
+  Enabled: true
+  Type: Canary10Percent10Minutes 
+  Alarms:
+    Fn::If:
+      - MyCondition
+      - - Alarm1
+      - - Alarm2
+        - Alarm5
 ```

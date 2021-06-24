@@ -24,7 +24,7 @@ Attribute name of the primary key\.
 
  `Type`   <a name="sam-simpletable-primarykeyobject-type"></a>
 The data type for the primary key\.  
-Supported values: `String`, `Number`, `Binary`\.  
+*Valid values*: `String`, `Number`, `Binary`  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[AttributeType](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html#cfn-dynamodb-attributedef-attributename-attributetype)` property of the `AWS::DynamoDB::Table` `AttributeDefinition` data type\.

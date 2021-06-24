@@ -53,4 +53,4 @@ Resources:
       GenerateSecret: false
 ```
 
-For more information about Amazon Cognito user pools, see [Control access to a REST API using Amazon Cognito User Pools as authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html) in the *API Gateway Developer Guide*\.
+For more information about Amazon Cognito user pools, see [Control access to a REST API using Amazon Cognito user pools as authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html) in the *API Gateway Developer Guide*\.

@@ -1,12 +1,12 @@
 # Installing the AWS SAM CLI on macOS<a name="serverless-sam-cli-install-mac"></a>
 
-The following steps help you to install and configure the required prerequisites for using the AWS SAM CLI on your macOS host:
+Follow these steps to install and configure the prerequisites for using the AWS SAM command line interface \(CLI\) on your macOS host:
 
 1. Create an AWS account\.
 
-1. Configure IAM permissions\.
+1. Configure AWS Identity and Access Management \(IAM\) permissions and AWS credentials\.
 
-1. Install Docker\. Note: Docker is only a prerequisite for testing your application locally\.
+1. Install Docker\. **Note:** Docker is a prerequisite only for testing your application locally or using the `--use-container` option
 
 1. Install Homebrew\.
 
@@ -14,30 +14,25 @@ The following steps help you to install and configure the required prerequisites
 
 ## Step 1: Create an AWS account<a name="serverless-sam-cli-install-mac-aws-account"></a>
 
-If you don't already have an AWS account, see [aws\.amazon\.com](https://aws.amazon.com/) and choose **Create an AWS Account**\. For detailed instructions, see [Create and Activate an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)\.
+If you don't already have an AWS account, see [aws\.amazon\.com](https://aws.amazon.com/) and choose **Create an AWS Account**\. For detailed instructions, see [How do I create and activate a new AWS account?](http://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
 
-## Step 2: Create an IAM user with administrator permissions<a name="serverless-sam-cli-install-mac-iam-permissions"></a>
+## Step 2: Configure IAM permissions and AWS credentials<a name="serverless-sam-cli-install-mac-iam-permissions"></a>
 
-If you don't already have an IAM user with administrator permissions, see [Creating Your First IAM Admin User and Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
-
-In addition, you must set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. For example, the AWS SAM CLI makes calls to Amazon S3 and AWS CloudFormation\. For more information about setting up AWS credentials, see [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)\.
+The IAM user that you use with AWS SAM must have sufficient permissions to make necessary AWS service calls and manage AWS resources\. The simplest way to ensure that a user has sufficient permissions is to grant administrator privileges to them\. For more information, see [Creating your first IAM admin user and group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
 
 **Note**  
-If you want to use the AWS SAM CLI with an IAM user that does *not* have administrator permissions, you can instead attach a set of AWS managed policies to the IAM user\. The following set of AWS managed policies are sufficient to deploy the Hello World sample application:  
-AWSCloudFormationFullAccess
-IAMFullAccess
-AWSLambdaFullAccess
-AmazonAPIGatewayAdministrator
- For more information about attaching policies to an IAM user, see [Changing permissions for an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_change-permissions.html)\.
+If you don't want to grant administrator privileges to users who use the AWS Command Line Interface \(AWS CLI\), you can grant restricted sets of permissions to them\. For more information, see [Permissions](sam-permissions.md)\.
 
-## Step 3: Install Docker<a name="serverless-sam-cli-install-mac-docker"></a>
+In addition, to enable the AWS SAM CLI to make AWS service calls, you must set up AWS credentials\. For more information, see [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)\.
+
+## Step 3: Install Docker \(optional\)<a name="serverless-sam-cli-install-mac-docker"></a>
 
 **Note**  
-Docker is only a prerequisite for testing your application locally and to build deployment packages using the `--use-container` flag\. You may skip this section or install Docker at a later time if you do not plan to use these features initially\.
+Docker is a prerequisite only for testing your application locally and for building deployment packages using the `--use-container` option\. If you don't plan to use these features initially, you can skip this section or install Docker at a later time\.
 
 Docker is an application that runs containers on your macOS machines\. AWS SAM provides a local environment that's similar to AWS Lambda to use as a Docker container\. You can use this container to build, test, and debug your serverless applications\.
 
-You must have Docker installed and working to be able to run serverless projects and functions locally with the AWS SAM CLI\. The AWS SAM CLI uses the `DOCKER_HOST` environment variable to contact the Docker daemon\. The following steps describe how to install, configure, and verify a Docker installation to work with the AWS SAM CLI\.
+To run serverless projects and functions locally with the AWS SAM CLI, you must have Docker installed and working\. The AWS SAM CLI uses the `DOCKER_HOST` environment variable to contact the Docker daemon\. The following steps describe how to install, configure, and verify a Docker installation to work with the AWS SAM CLI\.
 
 1. Install Docker
 
@@ -75,9 +70,9 @@ You should see output like the following on successful installation of Homebrew:
 
 ```
  
- Homebrew 2.4.11
- Homebrew/homebrew-core (git revision 54246b; last commit 2020-08-13)
- Homebrew/homebrew-cask (git revision 4fd7ce; last commit 2020-08-14)
+ Homebrew 2.5.7
+ Homebrew/homebrew-core (git revision 1be3ad; last commit 2020-10-29)
+ Homebrew/homebrew-cask (git revision a0cf3; last commit 2020-10-29)
 ```
 
 ## Step 5: Install the AWS SAM CLI<a name="serverless-sam-cli-install-mac-sam-cli"></a>
@@ -99,17 +94,44 @@ You should see output like the following after successful installation of the AW
 
 ```
  
- SAM CLI, version 1.3.0
+ SAM CLI, version 1.15.0
 ```
 
 You're now ready to start development\.
 
 ## Upgrading<a name="serverless-sam-cli-install-mac-upgrading"></a>
 
-To upgrade the AWS SAM CLI, you still use Homebrew, but replace `install` with `upgrade` as follows:
+To upgrade the AWS SAM CLI, using Homebrew, run the following command:
 
 ```
 brew upgrade aws-sam-cli
+```
+
+## Uninstalling<a name="serverless-sam-cli-install-mac-uninstalling"></a>
+
+To uninstall the AWS SAM CLI, using Homebrew, run the following command:
+
+```
+brew uninstall aws-sam-cli
+```
+
+## Nightly build<a name="serverless-sam-cli-install-mac-nightly-build"></a>
+
+A nightly build of the AWS SAM CLI is available for you to install\. Once installed, you can use the nightly build using the `sam-nightly` command\. You can install and use both the production and nightly build versions of the AWS SAM CLI at the same time\.
+
+The nightly build contains a pre\-release version of AWS SAM CLI code that may be less stable than the production version\. Note that the nightly build does not contain pre\-release version of the build image, so building a serverless application with the `--use-container` option uses the latest production version of the build image\.
+
+To install the nightly build version of the AWS SAM CLI, run the following commands:
+
+```
+brew tap aws/tap
+brew install aws-sam-cli-nightly
+```
+
+To verify you have installed the nightly build version, run the `sam-nightly --version` command\. The output of this command is in the form `1.X.Y.dev<YYYYMMDDHHmm>`, for example:
+
+```
+SAM CLI, version 1.20.0.dev202103151200
 ```
 
 ## Next steps<a name="serverless-sam-cli-install-mac-next-steps"></a>

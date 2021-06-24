@@ -1,6 +1,6 @@
 # AWS CloudFormation resources generated when AWS::Serverless::Function is specified<a name="sam-specification-generated-resources-function"></a>
 
-When an `AWS::Serverless::Function` is specified, AWS Serverless Application Model \(AWS SAM\) creates the `AWS::Lambda::Function` AWS CloudFormation resource\.
+When an `AWS::Serverless::Function` is specified, AWS Serverless Application Model \(AWS SAM\) always creates an `AWS::Lambda::Function` base AWS CloudFormation resource\.
 
 **`AWS::Lambda::Function`**  
 *`LogicalId`: *`<function‑LogicalId>`  
@@ -10,7 +10,13 @@ In addition to this AWS CloudFormation resource, when `AWS::Serverless::Function
 
 **Topics**
 + [AutoPublishAlias property is specified](#sam-specification-generated-resources-function-autopublishalias)
-+ [Role property is *not* specified](#sam-specification-generated-resources-function-not-role)
++ [Role property is not specified](#sam-specification-generated-resources-function-not-role)
++ [DeploymentPreference property is specified](#sam-specification-generated-resources-function-deploymentpreference)
++ [An Api event source is specified](#sam-specification-generated-resources-function-api)
++ [An HttpApi event source is specified](#sam-specification-generated-resources-function-httpapi)
++ [A streaming event source is specified](#sam-specification-generated-resources-function-streaming)
++ [An event bridge \(or event bus\) event source is specified](#sam-specification-generated-resources-function-eventbridge)
++ [An IotRule event source is specified](#sam-specification-generated-resources-function-iotrule)
 + [OnSuccess \(or OnFailure\) property is specified for Amazon SNS events](#sam-specification-generated-resources-function-sns-onsuccess)
 + [OnSuccess \(or OnFailure\) property is specified for Amazon SQS events](#sam-specification-generated-resources-function-sqs-onsuccess)
 
@@ -28,12 +34,68 @@ When the `AutoPublishAlias` property of an `AWS::Serverless::Function` is specif
 `<sha>` is a unique hash value that is generated when the stack is created\. For example, *MyFunction*Version*926eeb5ff1*\.  
 *Referenceable property: *`<function‑LogicalId>.Version`
 
-## Role property is *not* specified<a name="sam-specification-generated-resources-function-not-role"></a>
+## Role property is not specified<a name="sam-specification-generated-resources-function-not-role"></a>
 
-When the `Role` property of an `AWS::Serverless::Function` is *not* specified, AWS SAM generates the `AWS::IAM::Role` AWS CloudFormation resource\.
+When the `Role` property of an `AWS::Serverless::Function` is *not* specified, AWS SAM generates an `AWS::IAM::Role` AWS CloudFormation resource\.
 
 **`AWS::IAM::Role`**  
 *`LogicalId`: *`<function‑LogicalId>Role`  
+*Referenceable property: *N/A \(you must use the `LogicalId` to reference this AWS CloudFormation resource\)
+
+## DeploymentPreference property is specified<a name="sam-specification-generated-resources-function-deploymentpreference"></a>
+
+When the `DeploymentPreference` property of an `AWS::Serverless::Function` is specified, AWS SAM generates the following resources AWS CloudFormation resources: `AWS::CodeDeploy::Application` and `AWS::CodeDeploy::DeploymentGroup`\. In addition, if the `Role` property of the `DeploymentPreference` object is *not* specified, AWS SAM also generates an `AWS::IAM::Role` AWS CloudFormation resource\.
+
+**`AWS::CodeDeploy::Application`**  
+*`LogicalId`: *`ServerlessDeploymentApplication`  
+*Referenceable property: *N/A \(you must use the `LogicalId` to reference this AWS CloudFormation resource\)
+
+**`AWS::CodeDeploy::DeploymentGroup`**  
+*`LogicalId`: *`<function‑LogicalId>DeploymentGroup`  
+*Referenceable property: *N/A \(you must use the `LogicalId` to reference this AWS CloudFormation resource\)
+
+**`AWS::IAM::Role`**  
+*`LogicalId`: *`CodeDeployServiceRole`  
+*Referenceable property: *N/A \(you must use the `LogicalId` to reference this AWS CloudFormation resource\)
+
+## An Api event source is specified<a name="sam-specification-generated-resources-function-api"></a>
+
+When the `Event` property of an `AWS::Serverless::Function` is set to `Api`, but the `RestApiId` property is *not* specified, AWS SAM generates the `AWS::ApiGateway::RestApi` AWS CloudFormation resource\.
+
+**`AWS::ApiGateway::RestApi`**  
+*`LogicalId`: *`ServerlessRestApi`  
+*Referenceable property: *N/A \(you must use the `LogicalId` to reference this AWS CloudFormation resource\)
+
+## An HttpApi event source is specified<a name="sam-specification-generated-resources-function-httpapi"></a>
+
+When the `Event` property of an `AWS::Serverless::Function` is set to `HttpApi`, but the `ApiId` property is *not* specified, AWS SAM generates the `AWS::ApiGatewayV2::Api` AWS CloudFormation resource\.
+
+**`AWS::ApiGatewayV2::Api`**  
+*`LogicalId`: *`ServerlessHttpApi`  
+*Referenceable property: *N/A \(you must use the `LogicalId` to reference this AWS CloudFormation resource\)
+
+## A streaming event source is specified<a name="sam-specification-generated-resources-function-streaming"></a>
+
+When the `Event` property of an `AWS::Serverless::Function` is set to one of the streaming types, AWS SAM generates the `AWS::Lambda::EventSourceMapping` AWS CloudFormation resource\. This applies to the following types: `DynamoDB`, `Kinesis`, `MQ`, `MSK`, and `SQS`\.
+
+**`AWS::Lambda::EventSourceMapping`**  
+*`LogicalId`: *`<function‑LogicalId><event‑LogicalId>`  
+*Referenceable property: *N/A \(you must use the `LogicalId` to reference this AWS CloudFormation resource\)
+
+## An event bridge \(or event bus\) event source is specified<a name="sam-specification-generated-resources-function-eventbridge"></a>
+
+When the `Event` property of an `AWS::Serverless::Function` is set to one of the event bridge \(or event bus\) types, AWS SAM generates the `AWS::Events::Rule` AWS CloudFormation resource\. This applies to the following types: `EventBridgeRule`, `Schedule`, and `CloudWatchEvents`\.
+
+**`AWS::Events::Rule`**  
+*`LogicalId`: *`<function‑LogicalId><event‑LogicalId>`  
+*Referenceable property: *N/A \(you must use the `LogicalId` to reference this AWS CloudFormation resource\)
+
+## An IotRule event source is specified<a name="sam-specification-generated-resources-function-iotrule"></a>
+
+When the `Event` property of an `AWS::Serverless::Function` is set to IoTRule, AWS SAM generates the `AWS::IoT::TopicRule` AWS CloudFormation resource\.
+
+**`AWS::IoT::TopicRule`**  
+*`LogicalId`: *`<function‑LogicalId><event‑LogicalId>`  
 *Referenceable property: *N/A \(you must use the `LogicalId` to reference this AWS CloudFormation resource\)
 
 ## OnSuccess \(or OnFailure\) property is specified for Amazon SNS events<a name="sam-specification-generated-resources-function-sns-onsuccess"></a>

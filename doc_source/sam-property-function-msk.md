@@ -1,6 +1,6 @@
 # MSK<a name="sam-property-function-msk"></a>
 
-The object describing an `MSK` event source type\.
+The object describing an `MSK` event source type\. For more information, see [Using AWS Lambda with Amazon MSK](https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html) in the *AWS Lambda Developer Guide*\.
 
 AWS SAM generates an [AWS::Lambda::EventSourceMapping](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html) resource when this event type is set\.
 
@@ -20,13 +20,13 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
  `StartingPosition`   <a name="sam-function-msk-startingposition"></a>
 The position in a stream from which to start reading\.  
-Valid values: `TRIM_HORIZON` or `LATEST`\.  
+*Valid values*: `TRIM_HORIZON` or `LATEST`  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[StartingPosition](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
  `Stream`   <a name="sam-function-msk-stream"></a>
-The ARN of the data stream or a stream consumer\.  
+The Amazon Resource Name \(ARN\) of the data stream or a stream consumer\.  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[EventSourceArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn)` property of an `AWS::Lambda::EventSourceMapping` resource\.

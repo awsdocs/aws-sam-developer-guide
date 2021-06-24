@@ -2,7 +2,7 @@
 
 Configure authorization to control access to your API Gateway API\.
 
-For more information and examples for configuring access using AWS SAM see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.
+For more information and examples for configuring access using AWS SAM see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
 
 ## Syntax<a name="sam-property-api-apiauth-syntax"></a>
 
@@ -30,14 +30,14 @@ If the `DefaultAuthorizer` and `Cors` properties are set, then setting `AddDefau
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `ApiKeyRequired`   <a name="sam-api-apiauth-apikeyrequired"></a>
-If set to true then an API key is required for all API events\. For more information about API keys see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the API Gateway Developer Guide\.  
+If set to true then an API key is required for all API events\. For more information about API keys see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the *API Gateway Developer Guide*\.  
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Authorizers`   <a name="sam-api-apiauth-authorizers"></a>
 The authorizer used to control access to your API Gateway API\.  
-For more information, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.  
+For more information, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.  
 *Type*: [CognitoAuthorizer](sam-property-api-cognitoauthorizer.md) \| [LambdaTokenAuthorizer](sam-property-api-lambdatokenauthorizer.md) \| [LambdaRequestAuthorizer](sam-property-api-lambdarequestauthorizer.md)  
 *Required*: No  
 *Default*: None  
@@ -54,11 +54,11 @@ Specify a default authorizer for an API Gateway API, which will be used for auth
 
  `InvokeRole`   <a name="sam-api-apiauth-invokerole"></a>
 Sets integration credentials for all resources and methods to this value\.  
-Supported values: `CALLER_CREDENTIALS`, `NONE`, IAM Role Arn\.  
 `CALLER_CREDENTIALS` maps to `arn:aws:iam::*:user/*`, which uses the caller credentials to invoke the endpoint\.  
+*Valid values*: `CALLER_CREDENTIALS`, `NONE`, `IAMRoleArn`  
 *Type*: String  
 *Required*: No  
-*Default*: `CALLER_CREDENTIALS`   
+*Default*: `CALLER_CREDENTIALS`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `ResourcePolicy`   <a name="sam-api-apiauth-resourcepolicy"></a>
@@ -69,7 +69,7 @@ Configure Resource Policy for all methods and paths on an API\.
 *Additional notes*: This setting can also be defined on individual `AWS::Serverless::Function` using the [ApiFunctionAuth](sam-property-function-apifunctionauth.md)\. This is required for APIs with `EndpointConfiguration: PRIVATE`\.
 
  `UsagePlan`   <a name="sam-api-apiauth-usageplan"></a>
-Configures a usage plan associated with this API\. For more information about usage plans see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the API Gateway Developer Guide\.  
+Configures a usage plan associated with this API\. For more information about usage plans see [Create and Use Usage Plans with API Keys](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html) in the *API Gateway Developer Guide*\.  
 This AWS SAM property generates three additional AWS CloudFormation resources when this property is set: an [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html), an [AWS::ApiGateway::UsagePlanKey](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html), and an [AWS::ApiGateway::ApiKey](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html)\. For information about this scenario, see [UsagePlan property is specified](sam-specification-generated-resources-api.md#sam-specification-generated-resources-api-usage-plan)\. For general information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.  
 *Type*: [ApiUsagePlan](sam-property-api-apiusageplan.md)  
 *Required*: No  

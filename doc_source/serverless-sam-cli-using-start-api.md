@@ -48,7 +48,7 @@ exports.handler = (event, context, callback) => {
 
 **Environment Variable File**
 
-You can use the `--env-vars` argument with the `invoke` or `start-api` commands to provide a JSON file that contains values to override the environment variables already defined in your function template\. Structure the file as follows:
+You can use the `--env-vars` argument with the `invoke` or `start-api` commands to provide a JSON file that contains values to override the environment variables already defined in your function template\. You can structure the file as follows:
 
 ```
 {
@@ -63,7 +63,19 @@ You can use the `--env-vars` argument with the `invoke` or `start-api` commands 
 }
 ```
 
-For example, if you save this content in a file named `env.json`, then the following command uses this file to override the included environment variables:
+Alternatively, your environment file can contain a single `Parameters` entry with the environment variables for all functions\. Note that you can't mix this format with the example above\.
+
+```
+{
+  "Parameters": {
+    "TABLE_NAME": "localtable",
+    "BUCKET_NAME": "testBucket",
+    "STAGE": "dev"
+  }
+}
+```
+
+Save your environment variables in a file named `env.json`\. The following command uses this file to override the included environment variables:
 
 ```
 sam local start-api --env-vars env.json

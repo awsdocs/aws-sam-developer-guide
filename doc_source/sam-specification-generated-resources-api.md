@@ -1,6 +1,6 @@
 # AWS CloudFormation resources generated when AWS::Serverless::Api is specified<a name="sam-specification-generated-resources-api"></a>
 
-When an `AWS::Serverless::Api` is specified, AWS Serverless Application Model \(AWS SAM\) always generates the following AWS CloudFormation resources: an `AWS::ApiGateway::RestApi`, an `AWS::ApiGateway::Stage`, and an `AWS::ApiGateway::Deployment`\.
+When an `AWS::Serverless::Api` is specified, AWS Serverless Application Model \(AWS SAM\) always generates an `AWS::ApiGateway::RestApi` base AWS CloudFormation resource\. In addition, it also always generates an `AWS::ApiGateway::Stage` and an `AWS::ApiGateway::Deployment` resource\.
 
 **`AWS::ApiGateway::RestApi`**  
 *`LogicalId`: *`<api‑LogicalId>`  

@@ -24,6 +24,7 @@ Properties:
   [Cors](#sam-api-cors): String | CorsConfiguration
   [DefinitionBody](#sam-api-definitionbody): String
   [DefinitionUri](#sam-api-definitionuri): String | ApiDefinition
+  [Description](#sam-api-description): String
   [Domain](#sam-api-domain): DomainConfiguration
   [EndpointConfiguration](#sam-api-endpointconfiguration): EndpointConfiguration
   [GatewayResponses](#sam-api-gatewayresponses): Map
@@ -48,7 +49,7 @@ Configures Access Log Setting for a stage\.
 
  `Auth`   <a name="sam-api-auth"></a>
 Configure authorization to control access to your API Gateway API\.  
-For more information about configuring access using AWS SAM see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.  
+For more information about configuring access using AWS SAM see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.  
 *Type*: [ApiAuth](sam-property-api-apiauth.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
@@ -79,7 +80,7 @@ Configure a canary setting to a stage of a regular deployment\.
 
  `Cors`   <a name="sam-api-cors"></a>
 Manage Cross\-origin resource sharing \(CORS\) for all your API Gateway APIs\. Specify the domain to allow as a string or specify a dictionary with additional Cors configuration\. NOTE: CORS requires AWS SAM to modify your OpenAPI definition\. So, it works only if inline OpenApi is defined with DefinitionBody\.  
-For more information about CORS, see [Enable CORS for an API Gateway REST API Resource](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html) in the Amazon API Gateway Developer Guide\.\.  
+For more information about CORS, see [Enable CORS for an API Gateway REST API Resource](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html) in the *API Gateway Developer Guide*\.  
 *Type*: String \| [CorsConfiguration](sam-property-api-corsconfiguration.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
@@ -91,12 +92,18 @@ OpenAPI specification that describes your API\. If neither `DefinitionUri` nor `
 *AWS CloudFormation compatibility*: This property is similar to the `[Body](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body)` property of an `AWS::ApiGateway::RestApi` resource\. If certain properties are provided, content may be inserted or modified into the DefinitionBody before being passed to CloudFormation\. Properties include `Auth`, `BinaryMediaTypes`, `Cors`, `GatewayResponses`, `Models`, and an `EventSource` of type Api on for a corresponding `AWS::Serverless::Function`\.
 
  `DefinitionUri`   <a name="sam-api-definitionuri"></a>
-AWS S3 Uri, local file path, or location object of the the OpenAPI document defining the API\. The AWS S3 object this property references must be a valid OpenAPI file\. If neither `DefinitionUri` nor `DefinitionBody` are specified, SAM will generate a `DefinitionBody` for you based on your template configuration\.  
+Amazon S3 Uri, local file path, or location object of the the OpenAPI document defining the API\. The Amazon S3 object this property references must be a valid OpenAPI file\. If neither `DefinitionUri` nor `DefinitionBody` are specified, SAM will generate a `DefinitionBody` for you based on your template configuration\.  
 If a local file path is provided, the template must go through the workflow that includes the `sam deploy` or `sam package` command, in order for the definition to be transformed properly\.  
 Intrinsic functions are not supported in external OpenApi files referenced by `DefinitionUri`\. Use instead the `DefinitionBody` property with the [Include Transform](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html) to import an OpenApi definition into the template\.  
 *Type*: String \| [ApiDefinition](sam-property-api-apidefinition.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[BodyS3Location](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location)` property of an `AWS::ApiGateway::RestApi` resource\. The nested Amazon S3 properties are named differently\.
+
+ `Description`   <a name="sam-api-description"></a>
+A description of the Api resource\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Description](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-description)` property of an `AWS::ApiGateway::RestApi` resource\.
 
  `Domain`   <a name="sam-api-domain"></a>
 Configures a custom domain for this API Gateway API\.  
@@ -162,7 +169,7 @@ A map \(string to string\) that specifies the tags to be added to this API Gatew
 *AWS CloudFormation compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tags)` property of an `AWS::ApiGateway::Stage` resource\. The Tags property in SAM consists of Key:Value pairs; in CloudFormation it consists of a list of Tag objects\.
 
  `TracingEnabled`   <a name="sam-api-tracingenabled"></a>
-Indicates whether active tracing with X\-Ray is enabled for the stage\. For more information about X\-Ray, see [Tracing user requests to REST APIs using X\-Ray](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-xray.html) in the API Gateway Developer Guide\.  
+Indicates whether active tracing with X\-Ray is enabled for the stage\. For more information about X\-Ray, see [Tracing user requests to REST APIs using X\-Ray](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-xray.html) in the *API Gateway Developer Guide*\.  
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[TracingEnabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tracingenabled)` property of an `AWS::ApiGateway::Stage` resource\.
@@ -250,7 +257,7 @@ Resources:
 
 ### ApiCognitoAuthExample<a name="sam-resource-api--examples--apicognitoauthexample"></a>
 
-An AWS SAM template snippet with an API that uses AWS Cognito to authorize requests against the API\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition\.
+An AWS SAM template snippet with an API that uses Amazon Cognito to authorize requests against the API\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition\.
 
 #### YAML<a name="sam-resource-api--examples--apicognitoauthexample--yaml"></a>
 

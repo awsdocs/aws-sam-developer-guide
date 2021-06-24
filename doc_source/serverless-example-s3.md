@@ -61,6 +61,8 @@ Now that you've created the deployment package, you use it to deploy the applica
 **To deploy the serverless application to the AWS Cloud**
 + In the AWS SAM CLI, use the `deploy` command to deploy all of the resources that you defined in the template\. 
 
+  
+
   ```
   sam deploy \
       --template-file packaged.yaml \

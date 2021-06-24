@@ -45,7 +45,7 @@ Defines the type of API Gateway endpoint to map to the custom domain\. The value
 The only valid value for HTTP APIs is `REGIONAL`\.  
 *Type*: String  
 *Required*: No  
-*Default*: `REGIONAL`   
+*Default*: `REGIONAL`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `MutualTlsAuthentication`   <a name="sam-httpapi-httpapidomainconfiguration-mutualtlsauthentication"></a>
@@ -55,7 +55,7 @@ The mutual transport layer security \(TLS\) authentication configuration for a c
 *AWS CloudFormation compatibility*: This property is passed directly to the `[MutualTlsAuthentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-mutualtlsauthentication)` property of an `AWS::ApiGatewayV2::DomainName` resource\.
 
  `Route53`   <a name="sam-httpapi-httpapidomainconfiguration-route53"></a>
-Defines an Amazon Route 53 configuration\.  
+Defines an Amazon Route 53 configuration\.  
 *Type*: [Route53Configuration](sam-property-httpapi-route53configuration.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

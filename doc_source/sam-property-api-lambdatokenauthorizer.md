@@ -2,7 +2,7 @@
 
 Configure a Lambda Authorizer to control access to your API with a Lambda function\.
 
-For more information and examples, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md) in the AWS Serverless Application Model Developer Guide\.
+For more information and examples, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
 
 ## Syntax<a name="sam-property-api-lambdatokenauthorizer-syntax"></a>
 
@@ -40,16 +40,16 @@ Adds authorizer credentials to the OpenApi definition of the Lambda authorizer\.
 
  `FunctionPayloadType`   <a name="sam-api-lambdatokenauthorizer-functionpayloadtype"></a>
 This property can be used to define the type of Lambda Authorizer for an Api\.  
-Supported values: `TOKEN` and `REQUEST`\.  
+*Valid values*: `TOKEN` or `REQUEST`  
 *Type*: String  
 *Required*: No  
-*Default*: `TOKEN`   
+*Default*: `TOKEN`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Identity`   <a name="sam-api-lambdatokenauthorizer-identity"></a>
-This property can be used to specify an `IdentitySource` in an incoming request for an authorizer\.  
+This property can be used to specify an `IdentitySource` in an incoming request for an authorizer\. This property is only required if the `FunctionPayloadType` property is set to `REQUEST`\.  
 *Type*: [LambdaTokenAuthorizationIdentity](sam-property-api-lambdatokenauthorizationidentity.md)  
-*Required*: No  
+*Required*: Conditional  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-api-lambdatokenauthorizer--examples"></a>

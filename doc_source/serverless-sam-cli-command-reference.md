@@ -1,6 +1,6 @@
 # AWS SAM CLI command reference<a name="serverless-sam-cli-command-reference"></a>
 
-This section is the reference for the AWS SAM CLI commands\.
+This section is the reference for the AWS SAM CLI commands\. For instructions about installing the AWS SAM CLI, see [Installing the AWS SAM CLI](serverless-sam-cli-install.md)\.
 
 **Topics**
 + [sam build](sam-cli-command-reference-sam-build.md)

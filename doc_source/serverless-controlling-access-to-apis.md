@@ -24,6 +24,8 @@ The following table summarizes the mechanisms that each resource type supports\.
   For more information about Lambda authorizers with `AWS::Serverless::HttpApi`, see [Working with AWS Lambda authorizers for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html) in the *API Gateway Developer Guide*\. For more information about Lambda authorizers with `AWS::Serverless::Api`, see [Use API Gateway Lambda authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-use-lambda-authorizer.html) in the *API Gateway Developer Guide*\.
 
   For examples of Lambda authorizers for either resource type, see [Lambda authorizer examples](serverless-controlling-access-to-apis-lambda-authorizer.md)\.
+
+  
 + **IAM permissions** – You can control who can invoke your API using [AWS Identity and Access Management \(IAM\) permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_controlling.html)\. Users calling your API must be authenticated with IAM credentials\. Calls to your API succeed only if there is an IAM policy attached to the IAM user that represents the API caller, an IAM group that contains the user, or an IAM role that the user assumes\.
 
   Only the `AWS::Serverless::Api` resource type supports IAM permissions\.
@@ -33,7 +35,7 @@ The following table summarizes the mechanisms that each resource type supports\.
 
   The `AWS::Serverless::Api` resource type supports Amazon Cognito user pools\. The `AWS::Serverless::HttpApi` resource type supports the use of Amazon Cognito as a JWT issuer\.
 
-  For more information, see [Control access to a REST API using Amazon Cognito User Pools as authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html) in the *API Gateway Developer Guide*\. For an example, see [Amazon Cognito user pool example](serverless-controlling-access-to-apis-cognito-user-pool.md)\.
+  For more information, see [Control access to a REST API using Amazon Cognito user pools as authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-integrate-with-cognito.html) in the *API Gateway Developer Guide*\. For an example, see [Amazon Cognito user pool example](serverless-controlling-access-to-apis-cognito-user-pool.md)\.
 + **API keys** – API keys are alphanumeric string values that you distribute to application developer customers to grant access to your API\.
 
   Only the `AWS::Serverless::Api` resource type supports API keys\.

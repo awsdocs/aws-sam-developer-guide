@@ -62,7 +62,7 @@ NOTE: PayloadFormatVersion requires SAM to modify your OpenAPI definition, so it
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `RouteSettings`   <a name="sam-function-httpapi-routesettings"></a>
-The per\-route route settings for this HTTP API\. For more information about route settings, see [AWS::ApiGatewayV2::Stage RouteSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html) in the API Gateway Developer Guide\.  
+The per\-route route settings for this HTTP API\. For more information about route settings, see [AWS::ApiGatewayV2::Stage RouteSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html) in the *API Gateway Developer Guide*\.  
 Note: If RouteSettings are specified in both the HttpApi resource and event source, AWS SAM merges them with the event source properties taking precedence\.  
 *Type*: [RouteSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings)  
 *Required*: No  

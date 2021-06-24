@@ -1,6 +1,6 @@
 # AWS::Serverless::HttpApi<a name="sam-resource-httpapi"></a>
 
-Creates an Amazon API Gateway HTTP API, which enables you to create RESTful APIs with lower latency and lower costs than REST APIs\. For more information, see [Working with HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html) in the API Gateway Developer Guide\.
+Creates an Amazon API Gateway HTTP API, which enables you to create RESTful APIs with lower latency and lower costs than REST APIs\. For more information, see [Working with HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html) in the *API Gateway Developer Guide*\.
 
 ## Syntax<a name="sam-resource-httpapi-syntax"></a>
 
@@ -17,6 +17,7 @@ Properties:
   [DefaultRouteSettings](#sam-httpapi-defaultroutesettings): [RouteSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings)
   [DefinitionBody](#sam-httpapi-definitionbody): String
   [DefinitionUri](#sam-httpapi-definitionuri): String | HttpApiDefinition
+  [Description](#sam-httpapi-description): String
   [DisableExecuteApiEndpoint](#sam-httpapi-disableexecuteapiendpoint): Boolean
   [Domain](#sam-httpapi-domain): HttpApiDomainConfiguration
   [FailOnWarnings](#sam-httpapi-failonwarnings): Boolean
@@ -36,14 +37,14 @@ The settings for access logging in a stage\.
 
  `Auth`   <a name="sam-httpapi-auth"></a>
 Configures authorization for controlling access to your API Gateway HTTP API\.  
-For more information, see [Controlling access to HTTP APIs with JWT authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html) in the API Gateway Developer Guide\.  
+For more information, see [Controlling access to HTTP APIs with JWT authorizers](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-jwt-authorizer.html) in the *API Gateway Developer Guide*\.  
 *Type*: [HttpApiAuth](sam-property-httpapi-httpapiauth.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `CorsConfiguration`   <a name="sam-httpapi-corsconfiguration"></a>
 Manages cross\-origin resource sharing \(CORS\) for all your API Gateway HTTP APIs\. Specify the domain to allow as a string, or specify an `HttpApiCorsConfiguration` object\. Note that CORS requires AWS SAM to modify your OpenAPI definition, so CORS works only if the `DefinitionBody` property is specified\.  
-For more information, see [Configuring CORS for an HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html) in the Amazon API Gateway Developer Guide\.  
+For more information, see [Configuring CORS for an HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html) in the *API Gateway Developer Guide*\.  
 **Note**: If `CorsConfiguration` is set both in an OpenAPI definition and at the property level, then AWS SAM merges both configuration sources with the properties taking precedence\.  
 **Note**: If this property is set to `true`, then all origins are allowed\.  
 *Type*: String \| [HttpApiCorsConfiguration](sam-property-httpapi-httpapicorsconfiguration.md)  
@@ -70,6 +71,13 @@ Intrinsic functions are not supported in external OpenApi definition files that 
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[BodyS3Location](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-bodys3location)` property of an `AWS::ApiGatewayV2::Api` resource\. The nested Amazon S3 properties are named differently\.
 
+ `Description`   <a name="sam-httpapi-description"></a>
+A description of the HttpApi resource\.  
+**Note**: This property requires AWS SAM to modify the HttpApi resource's OpenAPI definition, to set the `description` field\. The following two scenarios result in an error: 1\) The `DefinitionBody` property is specified with the `description` field set in the OpenAPI definition \(since this is a conflict that AWS SAM won't resolve\), or 2\) The `DefinitionUri` property is specified \(since AWS SAM won't modify an OpenAPI definition that it retrieves from Amazon S3\)\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
  `DisableExecuteApiEndpoint`   <a name="sam-httpapi-disableexecuteapiendpoint"></a>
 Specifies whether clients can invoke your HTTP API by using the default `execute-api` endpoint `https://{api_id}.execute-api.{region}.amazonaws.com`\. By default, clients can invoke your API with the default endpoint\. To require that clients only use a custom domain name to invoke your API, disable the default endpoint\.  
 *Type*: Boolean  
@@ -89,7 +97,7 @@ Specifies whether to roll back the HTTP API creation \(`true`\) or not \(`false`
 *AWS CloudFormation compatibility*: This property is passed directly to the `[FailOnWarnings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-failonwarnings)` property of an `AWS::ApiGatewayV2::Api` resource\.
 
  `RouteSettings`   <a name="sam-httpapi-routesettings"></a>
-The route settings, per route, for this HTTP API\. For more information, see [Working with routes for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-routes.html) in the API Gateway Developer Guide\.  
+The route settings, per route, for this HTTP API\. For more information, see [Working with routes for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-routes.html) in the *API Gateway Developer Guide*\.  
 *Type*: [RouteSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[RouteSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings)` property of an `AWS::ApiGatewayV2::Stage` resource\.
@@ -156,7 +164,7 @@ The following example shows how to set up authorization on HTTP API endpoints\.
 
 ```
 Properties:
-  FailOnWarnings: True
+  FailOnWarnings: true
   Auth:
     DefaultAuthorizer: OAuth2
     Authorizers:
@@ -190,7 +198,7 @@ Note that AWS SAM fills in any missing Lambda integrations for HttpApi events th
 
 ```
 Properties:
-  FailOnWarnings: True
+  FailOnWarnings: true
   DefinitionBody:
     info:
       version: '1.0'
@@ -273,7 +281,7 @@ Resources:
           ThrottlingBurstLimit: 500 # overridden in HttpApi Event
       StageVariables:
         StageVar: Value
-      FailOnWarnings: True
+      FailOnWarnings: true
 
   AccessLogs:
     Type: AWS::Logs::LogGroup

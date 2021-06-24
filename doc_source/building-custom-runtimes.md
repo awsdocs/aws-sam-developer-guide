@@ -2,7 +2,7 @@
 
 You can use the `sam build` command to build custom runtimes required for your Lambda function\. You declare your Lambda function to use a custom runtime by specifying `Runtime: provided` for the function\.
 
-To build a custom runtime, declare the `Metadata` resource attribute with a `BuildMethod: makefile` entry\. You provide a custom makefile, where you declare a build target of the form `build-function-logical-id` that contains the build commands for your runtime\. Your makefile is responsible for compiling the custom runtime if necessary, and copying the build artifacts into the proper location required for subsequent steps in your workflow\.
+To build a custom runtime, declare the `Metadata` resource attribute with a `BuildMethod: makefile` entry\. You provide a custom makefile, where you declare a build target of the form `build-function-logical-id` that contains the build commands for your runtime\. Your makefile is responsible for compiling the custom runtime if necessary, and copying the build artifacts into the proper location required for subsequent steps in your workflow\. The location of the makefile is specified by the `CodeUri` property of the function resource, and must be named `Makefile`\.
 
 ## Examples<a name="building-custom-runtimes-examples"></a>
 
@@ -24,7 +24,7 @@ Resources:
       BuildMethod: makefile
 ```
 
-The following `makefile` contains the build target and commands that will be executed\.
+The following makefile contains the build target and commands that will be executed\. Note that the `CodeUri` property is set to `.`, so the makefile must be located in the project root directory \(that is, the same directory as the application's AWS SAM template file\)\. The filename must be `Makefile`\.
 
 ```
 build-HelloRustFunction:
@@ -50,7 +50,7 @@ Resources:
       BuildMethod: makefile
 ```
 
-The following `makefile` contains the build target and commands that will be executed\.
+The following makefile contains the build target and commands that will be executed\. Note that the `CodeUri` property is set to `hello_world`, so the makefile must be located in the root of the `hello_world` subdirectory, and the filename must be `Makefile`\.
 
 ```
 build-HelloWorldFunction:

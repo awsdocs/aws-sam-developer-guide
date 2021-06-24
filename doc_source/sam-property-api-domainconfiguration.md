@@ -43,10 +43,10 @@ AWS SAM generates an [AWS::ApiGateway::DomainName](https://docs.aws.amazon.com/A
 
  `EndpointConfiguration`   <a name="sam-api-domainconfiguration-endpointconfiguration"></a>
 Defines the type of API Gateway endpoint to map to the custom domain\. The value of this property determines how the `CertificateArn` property is mapped in AWS CloudFormation\.  
-Valid values are `REGIONAL` or `EDGE`\.  
+*Valid values*: `REGIONAL` or `EDGE`  
 *Type*: String  
 *Required*: No  
-*Default*: `REGIONAL`   
+*Default*: `REGIONAL`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `MutualTlsAuthentication`   <a name="sam-api-domainconfiguration-mutualtlsauthentication"></a>
@@ -56,7 +56,7 @@ The mutual Transport Layer Security \(TLS\) authentication configuration for a c
 *AWS CloudFormation compatibility*: This property is passed directly to the `[MutualTlsAuthentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication)` property of an `AWS::ApiGateway::DomainName` resource\.
 
  `Route53`   <a name="sam-api-domainconfiguration-route53"></a>
-Defines an Amazon Route 53 configuration\.  
+Defines an Amazon Route 53 configuration\.  
 *Type*: [Route53Configuration](sam-property-api-route53configuration.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

@@ -4,8 +4,11 @@ With the AWS SAM command line interface \(CLI\), you can locally test and "step\
 
 When you locally invoke a Lambda function in debug mode within the AWS SAM CLI, you can then attach a debugger to it\. With the debugger, you can step through your code line by line, see the values of various variables, and fix issues the same way you would for any other application\.
 
+**Note**  
+If your application includes one or more layers, when you locally run and debug your application the layers package is downloaded and cached on your local host\. For more information, see [How layers are cached locally](serverless-sam-cli-layers.md#local-testing-with-layers)\.
+
 **Topics**
-+ [Invoking Functions Locally](serverless-sam-cli-using-invoke.md)
++ [Invoking functions locally](serverless-sam-cli-using-invoke.md)
 + [Running API Gateway locally](serverless-sam-cli-using-start-api.md)
 + [Integrating with automated tests](serverless-sam-cli-using-automated-tests.md)
 + [Generating sample event payloads](serverless-sam-cli-using-generate-event.md)

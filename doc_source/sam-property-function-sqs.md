@@ -1,6 +1,6 @@
 # SQS<a name="sam-property-function-sqs"></a>
 
-The object describing an `SQS` event source type\.
+The object describing an `SQS` event source type\. For more information, see [Using AWS Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html) in the *AWS Lambda Developer Guide*\.
 
 SAM generates [AWS::Lambda::EventSourceMapping](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html) resource when this event type is set
 
@@ -13,6 +13,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 ```
   [BatchSize](#sam-function-sqs-batchsize): Integer
   [Enabled](#sam-function-sqs-enabled): Boolean
+  [MaximumBatchingWindowInSeconds](#sam-function-sqs-maximumbatchingwindowinseconds): Integer
   [Queue](#sam-function-sqs-queue): String
 ```
 
@@ -25,13 +26,19 @@ The maximum number of items to retrieve in a single batch\.
 *Default*: 10  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[BatchSize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize)` property of an `AWS::Lambda::EventSourceMapping` resource\.  
 *Minimum*: `1`  
-*Maximum*: `10`
+*Maximum*: `10000`
 
  `Enabled`   <a name="sam-function-sqs-enabled"></a>
 Disables the event source mapping to pause polling and invocation\.  
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Enabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled)` property of an `AWS::Lambda::EventSourceMapping` resource\.
+
+ `MaximumBatchingWindowInSeconds`   <a name="sam-function-sqs-maximumbatchingwindowinseconds"></a>
+The maximum amount of time, in seconds, to gather records before invoking the function\.  
+*Type*: Integer  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[MaximumBatchingWindowInSeconds](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumbatchingwindowinseconds)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
  `Queue`   <a name="sam-function-sqs-queue"></a>
 The ARN of the queue\.  

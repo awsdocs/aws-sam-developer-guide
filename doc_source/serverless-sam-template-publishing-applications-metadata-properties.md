@@ -41,7 +41,7 @@ This section lists the use cases for publishing applications, along with the `Me
   + `SemanticVersion`
   + The content of the AWS SAM template \(for example, any event sources, resources, and Lambda function code\)
 
-   
+   
 + **Creating an application version** – An application version is created if there is already an application in the AWS Serverless Application Repository with a matching name for an account *and* the SemanticVersion *is* changing\.
   + `Description`
   + `Author`
@@ -52,7 +52,7 @@ This section lists the use cases for publishing applications, along with the `Me
   + `SemanticVersion`
   + The content of the AWS SAM template \(for example, any event sources, resources, and Lambda function code\)
 
-   
+   
 + **Updating an application** – An application is updated if there is already an application in the AWS Serverless Application Repository with a matching name for an account *and* the SemanticVersion *is not* changing\.
   + `Description`
   + `Author`
