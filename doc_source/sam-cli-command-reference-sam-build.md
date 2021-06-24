@@ -64,8 +64,15 @@ To build the 'MyFunction' resource of the 'MyNestedStack' nested stack
 $ sam build MyNestedStack/MyFunction
 ```
 
-**Options:**
+**Arguments:**
 
+****  
+
+| Argument  | Description |
+| --- | --- | 
+| RESOURCE_LOGICAL_ID | Optional augment that makes SAM build only an individual resource located in the SAM template.  Downstream SAM package and deploy will deploy only this resource. Good for building a single function in template that has multiple functions as part of a step function or building a layer shared by many functions\. |
+
+**Options:**
 
 ****  
 
