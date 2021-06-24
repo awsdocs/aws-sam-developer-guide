@@ -1,16 +1,26 @@
 # Deploying serverless applications<a name="serverless-deploying"></a>
 
-AWS SAM uses AWS CloudFormation as the underlying deployment mechanism\. For more information, see [What is AWS CloudFormation?](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/) in the *AWS CloudFormation User Guide*\.
+AWS SAM uses AWS CloudFormation as the underlying deployment mechanism\. For more information, see [What is AWS CloudFormation?](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/) in the *AWS CloudFormation User Guide*\. The standard inputs to deploying serverless applications are the build artifacts created using the [sam build](sam-cli-command-reference-sam-build.md) command\. For more information about sam build, see [Building serverless applications](serverless-building.md)\.
 
-You can deploy your application using AWS SAM command line interface \(CLI\) commands\. To automate your deployments, you can also use other AWS services that integrate with AWS SAM\.
+You can deploy your application manually using AWS SAM command line interface \(CLI\) commands\. You can also automate the deployments of your application using a continuous integration and continuous deployment \(CI/CD\) system\. Common CI/CD systems that you can use to deploy AWS SAM applications include [AWS CodePipeline](http://aws.amazon.com/codepipeline), [Jenkins](https://www.jenkins.io/), [GitLab CI/CD](https://docs.gitlab.com/ee/ci/), and [GitHub Actions](https://github.com/features/actions)\.
 
-The standard inputs to deploying serverless applications are the build artifacts created using the `sam build` command\. For more information about `sam build`, see [Building serverless applications](serverless-building.md)\.
+## Deploying using CI/CD systems<a name="serverless-deploying-ci-cd"></a>
+
+AWS SAM simplifies CI/CD tasks for serverless applications with the help of build container images\. The images that AWS SAM provides include the AWS SAM CLI and build tools for a number of supported AWS Lambda runtimes\. This makes it easier to build and package serverless applications using the AWS SAM CLI\. These images also alleviate the need for teams to create and manage their own images for CI/CD systems\. For more information about AWS SAM build container images, see [Image repositories](serverless-image-repositories.md)\.
+
+Multiple CI/CD systems support AWS SAM build container images\. Which CI/CD system you should use depends on several factors\. These include whether your application uses a single runtime or multiple runtimes, or whether you want to build your application within a container image or directly on a host machine, either a virtual machine \(VM\) or bare metal host\.
+
+The following topics provide examples for configuring your CI/CD system to build serverless applications within an AWS SAM build container image:
++ [Deploying using AWS CodePipeline](deploying-using-codepipeline.md)
++ [Deploying using Jenkins](deploying-using-jenkins.md)
++ [Deploying using GitLab CI/CD](deploying-using-gitlab.md)
++ [Deploying using GitHub Actions](deploying-using-github.md)
 
 ## Deploying using the AWS SAM CLI<a name="serverless-sam-cli-using-package-and-deploy"></a>
 
-After you develop and test your serverless application locally, you can deploy your application using the `sam deploy` command\.
+After you develop and test your serverless application locally, you can deploy your application using the [sam deploy](sam-cli-command-reference-sam-deploy.md) command\.
 
-If you want AWS SAM to guide you through the deployment with prompts, specify the `--guided` flag\. When you specify this flag, the `sam deploy` command zips your application artifacts, uploads them to either Amazon S3 \(for \.zip file archives\) or Amazon ECR \(for contain images\), and then deploys your application to the AWS Cloud\.
+To have AWS SAM guide you through the deployment with prompts, specify the \-\-guided flag\. When you specify this flag, the sam deploy command zips your application artifacts, uploads them either to Amazon Simple Storage Service \(Amazon S3\) \(for \.zip file archives\) or to Amazon Elastic Container Registry \(Amazon ECR\) \(for contain images\)\. The command then deploys your application to the AWS Cloud\.
 
 **Example:**
 
@@ -19,30 +29,25 @@ If you want AWS SAM to guide you through the deployment with prompts, specify th
 sam deploy --guided
 ```
 
-## Publishing serverless applications<a name="serverless-deploying-publishing"></a>
-
-The AWS Serverless Application Repository is a service that hosts serverless applications that are built using AWS SAM\. If you want to share serverless applications with others, you can publish them in the AWS Serverless Application Repository\. You can also search, browse, and deploy serverless applications that others have published\. For more information, see [What Is the AWS Serverless Application Repository?](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/what-is-serverlessrepo.html) in the *AWS Serverless Application Repository Developer Guide*\.
-
-## Automating deployments<a name="serverless-deploying-automated"></a>
-
-To automate the deployment process of your serverless application, you can use AWS SAM with a number of other AWS services\.
-+ **CodeBuild**: Use AWS CodeBuild to build, locally test, and package your serverless application\. For more information, see [What is AWS CodeBuild?](https://docs.aws.amazon.com/codebuild/latest/userguide/) in the *AWS CodeBuild User Guide*\.
-+ **CodeDeploy**: Use [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to gradually deploy updates to your serverless applications\. For more information, see [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\.
-+ **CodePipeline**: Use AWS CodePipeline to model, visualize, and automate the steps that are required to release your serverless application\. For more information, see [What is AWS CodePipeline?](https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html) in the *AWS CodePipeline User Guide*\.
-
-## Troubleshooting<a name="serverless-deploying-troubleshooting"></a>
+## Troubleshooting deployments using the AWS SAM CLI<a name="serverless-deploying-troubleshooting"></a>
 
 ### AWS SAM CLI error: "Security Constraints Not Satisfied"<a name="troubleshooting-security-constraints"></a>
 
-When executing `sam deploy --guided`, you are prompted with the question `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]`\. If you respond to this prompt with "N" \(the default response\), you see the following error:
+When running sam deploy \-\-guided, you're prompted with the question `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]`\. If you respond to this prompt with **N** \(the default response\), you see the following error:
 
 ```
  
 Error: Security Constraints Not Satisfied
 ```
 
-The prompt is informing you that the application you're about to deploy may have an API Gateway API configured without authorization\. By responding "N" to this prompt \(the default\), you are saying that this is not OK\.
+The prompt is informing you that the application you're about to deploy might have an Amazon API Gateway API configured without authorization\. By responding **N** to this prompt, you're saying that this is not OK\.
 
 To fix this, you have the following options:
 + Configure your application with authorization\. For information about configuring authorization, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
-+ Respond to this question with "Y" to indicate that you are OK with deploying an application that has an API Gateway API configured without authorization\.
++ Respond to this question with **Y** to indicate that you're OK with deploying an application that has an API Gateway API configured without authorization\.
+
+## Gradual deployments<a name="serverless-deploying-gradual"></a>
+
+If you want to deploy your AWS SAM application gradually rather than all at once, you can specify deployment configurations that AWS CodeDeploy provides\. For more information, see [Working with deployment configurations in CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html) in the *AWS CodeDeploy User Guide*\.
+
+For information about configuring your AWS SAM application to deploy gradually, see [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\.

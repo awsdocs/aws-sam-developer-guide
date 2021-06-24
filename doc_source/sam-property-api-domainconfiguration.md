@@ -56,7 +56,7 @@ The mutual Transport Layer Security \(TLS\) authentication configuration for a c
 *AWS CloudFormation compatibility*: This property is passed directly to the `[MutualTlsAuthentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication)` property of an `AWS::ApiGateway::DomainName` resource\.
 
  `Route53`   <a name="sam-api-domainconfiguration-route53"></a>
-Defines an Amazon Route 53 configuration\.  
+Defines an Amazon Route 53 configuration\.  
 *Type*: [Route53Configuration](sam-property-api-route53configuration.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

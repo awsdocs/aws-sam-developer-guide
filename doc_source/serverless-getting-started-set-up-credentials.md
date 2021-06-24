@@ -37,7 +37,7 @@ If you don't have the AWS CLI installed, you can either create a credentials fil
   aws_secret_access_key = your_secret_access_key
   ```
 
-   
+   
 + **Environment variables** – You can set the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables\.
 
   To set these variables on Linux or macOS, use the **export** command:

@@ -26,6 +26,8 @@ AWS SAM allows you to choose from a list of policy templates to scope the permis
 ## Topics<a name="reference-sam-topics"></a>
 + [AWS Serverless Application Model \(AWS SAM\) specification](sam-specification.md)
 + [AWS SAM CLI command reference](serverless-sam-cli-command-reference.md)
++ [AWS SAM CLI configuration file](serverless-sam-cli-config.md)
 + [AWS SAM policy templates](serverless-policy-templates.md)
++ [Image repositories](serverless-image-repositories.md)
 + [Telemetry in the AWS SAM CLI](serverless-sam-telemetry.md)
 + [Permissions](sam-permissions.md)

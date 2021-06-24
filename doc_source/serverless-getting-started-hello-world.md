@@ -128,7 +128,7 @@ You can see the following top\-level tree under `.aws-sam`:
 
 ```
  
- .aws_sam/
+ .aws-sam/
    └── build/
        ├── HelloWorldFunction/
        └── template.yaml
@@ -372,18 +372,18 @@ diff api-event.json events/event.json
 
 ### AWS SAM CLI error: "Security Constraints Not Satisfied"<a name="troubleshooting-security-constraints"></a>
 
-When executing `sam deploy --guided`, you are prompted with the question `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]`\. If you respond to this prompt with "N" \(the default response\), you see the following error:
+When running sam deploy \-\-guided, you're prompted with the question `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]`\. If you respond to this prompt with **N** \(the default response\), you see the following error:
 
 ```
  
 Error: Security Constraints Not Satisfied
 ```
 
-The prompt is informing you that the application you're about to deploy may have an API Gateway API configured without authorization\. By responding "N" to this prompt \(the default\), you are saying that this is not OK\.
+The prompt is informing you that the application you're about to deploy might have an Amazon API Gateway API configured without authorization\. By responding **N** to this prompt, you're saying that this is not OK\.
 
 To fix this, you have the following options:
 + Configure your application with authorization\. For information about configuring authorization, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
-+ Respond to this question with "Y" to indicate that you are OK with deploying an application that has an API Gateway API configured without authorization\.
++ Respond to this question with **Y** to indicate that you're OK with deploying an application that has an API Gateway API configured without authorization\.
 
 ### AWS SAM CLI error: "no such option: \-\-app\-template"<a name="serverless-getting-started-hello-world-troubleshooting-app-template"></a>
 

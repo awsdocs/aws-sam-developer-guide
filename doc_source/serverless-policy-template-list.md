@@ -2127,7 +2127,7 @@ Gives permission to mount an Amazon EFS file system with write access\.
 
 ## Route53ChangeResourceRecordSetsPolicy<a name="route53-change-resource-record-sets-policy"></a>
 
-Gives permission to change resource record sets in Route 53\.
+Gives permission to change resource record sets in Route 53\.
 
 ```
         "Statement": [

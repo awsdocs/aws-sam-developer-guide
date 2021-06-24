@@ -57,7 +57,7 @@ When this property is set, AWS SAM creates a `AWS::Route53::RecordSet` resource 
 
 ### Route 53 Configuration Example<a name="sam-property-httpapi-route53configuration--examples--route-53-configuration-example"></a>
 
-This example shows how to configure Route 53\.
+This example shows how to configure Route 53\.
 
 #### YAML<a name="sam-property-httpapi-route53configuration--examples--route-53-configuration-example--yaml"></a>
 
