@@ -20,7 +20,7 @@ $ echo '{"message": "Hey, are you there?" }' | sam local invoke --event - "Ratin
 $ sam local invoke --help
 ```
 
-## Environment Variable File<a name="serverless-sam-cli-using-invoke-environment-file"></a>
+## Environment variable file<a name="serverless-sam-cli-using-invoke-environment-file"></a>
 
 You can use the `--env-vars` argument with the `invoke` or `start-api` commands\. You do this to provide a JSON file that contains values to override the environment variables that are already defined in your function template\. You can structure the file as follows:
 
