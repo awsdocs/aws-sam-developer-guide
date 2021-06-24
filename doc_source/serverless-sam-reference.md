@@ -1,12 +1,12 @@
-# AWS SAM Reference<a name="serverless-sam-reference"></a>
+# AWS SAM reference<a name="serverless-sam-reference"></a>
 
-## AWS SAM Specification<a name="serverless-sam-spec"></a>
+## AWS SAM specification<a name="serverless-sam-spec"></a>
 
-The AWS SAM specification is an open\-source specification under the Apache 2\.0 license\. The current version of the AWS SAM specification is available in the [AWS Serverless Application Model \(AWS SAM\) Specification](sam-specification.md)\.
+The AWS SAM specification is an open\-source specification under the Apache 2\.0 license\. The current version of the AWS SAM specification is available in the [AWS Serverless Application Model \(AWS SAM\) specification](sam-specification.md)\.
 
 AWS SAM templates are an extension of AWS CloudFormation templates\. For the full reference for AWS CloudFormation templates, see [AWS CloudFormation Template Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-reference.html)\.
 
-## AWS SAM CLI Command Reference<a name="serverless-sam-cli"></a>
+## AWS SAM CLI command reference<a name="serverless-sam-cli"></a>
 
 The **AWS SAM CLI** is a command line tool that operates on an AWS SAM template and application code\. With the AWS SAM CLI, you can invoke Lambda functions locally, create a deployment package for your serverless application, deploy your serverless application to the AWS Cloud, and so on\.
 
@@ -17,12 +17,17 @@ You can use the AWS SAM CLI commands to develop, test, and deploy your serverles
 + `sam package` – Use this command to bundle your application code and dependencies into a "deployment package"\. The deployment package is needed to upload your application to the AWS Cloud\.
 + `sam deploy` – Use this command to deploy your serverless application to the AWS Cloud\. It creates the AWS resources and sets permissions and other configurations that are defined in the AWS SAM template\.
 
-## AWS SAM Policy Templates<a name="serverless-policy-temps"></a>
+For instructions about installing the AWS SAM CLI, see [Installing the AWS SAM CLI](serverless-sam-cli-install.md)\.
+
+## AWS SAM policy templates<a name="serverless-policy-temps"></a>
 
 AWS SAM allows you to choose from a list of policy templates to scope the permissions of your Lambda functions to the resources that are used by your application\.
 
-**Topics**
-+ [AWS Serverless Application Model \(AWS SAM\) Specification](sam-specification.md)
-+ [AWS SAM CLI Command Reference](serverless-sam-cli-command-reference.md)
-+ [AWS SAM Policy Templates](serverless-policy-templates.md)
+## Topics<a name="reference-sam-topics"></a>
++ [AWS Serverless Application Model \(AWS SAM\) specification](sam-specification.md)
++ [AWS SAM CLI command reference](serverless-sam-cli-command-reference.md)
++ [AWS SAM CLI configuration file](serverless-sam-cli-config.md)
++ [AWS SAM policy templates](serverless-policy-templates.md)
++ [Image repositories](serverless-image-repositories.md)
 + [Telemetry in the AWS SAM CLI](serverless-sam-telemetry.md)
++ [Permissions](sam-permissions.md)

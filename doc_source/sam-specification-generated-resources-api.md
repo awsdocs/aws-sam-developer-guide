@@ -1,6 +1,6 @@
-# AWS CloudFormation Resources Generated When AWS::Serverless::Api Is Specified<a name="sam-specification-generated-resources-api"></a>
+# AWS CloudFormation resources generated when AWS::Serverless::Api is specified<a name="sam-specification-generated-resources-api"></a>
 
-When an `AWS::Serverless::Api` is specified, AWS Serverless Application Model \(AWS SAM\) always generates the following AWS CloudFormation resources: an `AWS::ApiGateway::RestApi`, an `AWS::ApiGateway::Stage`, and an `AWS::ApiGateway::Deployment`\.
+When an `AWS::Serverless::Api` is specified, AWS Serverless Application Model \(AWS SAM\) always generates an `AWS::ApiGateway::RestApi` base AWS CloudFormation resource\. In addition, it also always generates an `AWS::ApiGateway::Stage` and an `AWS::ApiGateway::Deployment` resource\.
 
 **`AWS::ApiGateway::RestApi`**  
 *`LogicalId`: *`<api‑LogicalId>`  
@@ -19,10 +19,10 @@ When an `AWS::Serverless::Api` is specified, AWS Serverless Application Model \(
 In addition to these AWS CloudFormation resources, when `AWS::Serverless::Api` is specified, AWS SAM generates additional AWS CloudFormation resources for the following scenarios\.
 
 **Topics**
-+ [DomainName Property Is Specified](#sam-specification-generated-resources-api-domain-name)
-+ [UsagePlan Property Is Specified](#sam-specification-generated-resources-api-usage-plan)
++ [DomainName property is specified](#sam-specification-generated-resources-api-domain-name)
++ [UsagePlan property is specified](#sam-specification-generated-resources-api-usage-plan)
 
-## DomainName Property Is Specified<a name="sam-specification-generated-resources-api-domain-name"></a>
+## DomainName property is specified<a name="sam-specification-generated-resources-api-domain-name"></a>
 
 When the `DomainName` property of the `Domain` property of an `AWS::Serverless::Api` is specified, AWS SAM generates the `AWS::ApiGateway::DomainName` AWS CloudFormation resource\.
 
@@ -31,7 +31,7 @@ When the `DomainName` property of the `Domain` property of an `AWS::Serverless::
 `<sha>` is a unique hash value that is generated when the stack is created\. For example: `ApiGatewayDomainName926eeb5ff1`\.  
 *Referenceable property: *`<api‑LogicalId>.DomainName`
 
-## UsagePlan Property Is Specified<a name="sam-specification-generated-resources-api-usage-plan"></a>
+## UsagePlan property is specified<a name="sam-specification-generated-resources-api-usage-plan"></a>
 
 When the `UsagePlan` property of the `Auth` property of an `AWS::Serverless::Api` is specified, AWS SAM generates the following AWS CloudFormation resources: `AWS::ApiGateway::UsagePlan`, `AWS::ApiGateway::UsagePlanKey`, and `AWS::ApiGateway::ApiKey`\.
 

@@ -1,4 +1,4 @@
-# Setting Up AWS Credentials<a name="serverless-getting-started-set-up-credentials"></a>
+# Setting up AWS credentials<a name="serverless-getting-started-set-up-credentials"></a>
 
 The AWS SAM command line interface \(CLI\) requires you to set AWS credentials so that it can make calls to AWS services on your behalf\. For example, the AWS SAM CLI makes calls to Amazon S3 and AWS CloudFormation\.
 
@@ -10,7 +10,7 @@ Next, determine whether you have the AWS CLI installed\. Then follow the instruc
 
 ## Using the AWS CLI<a name="serverless-getting-started-set-up-credentials-cli"></a>
 
-If you have the AWS CLI installed, use the **aws configure** command and follow the prompts:
+If you have the AWS CLI installed, use the `aws configure` command and follow the prompts:
 
 ```
 $ aws configure
@@ -20,9 +20,9 @@ Default region name [None]:
 Default output format [None]:
 ```
 
-For information about the **aws configure** command, see [Quickly Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
+For information about the `aws configure` command, see [Quickly Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
 
-## Not Using the AWS CLI<a name="serverless-getting-started-set-up-credentials-no-cli"></a>
+## Not using the AWS CLI<a name="serverless-getting-started-set-up-credentials-no-cli"></a>
 
 If you don't have the AWS CLI installed, you can either create a credentials file or set environment variables:
 + **Credentials file** – You can set credentials in the AWS credentials file on your local system\. This file must be located in one of the following locations:
@@ -37,7 +37,7 @@ If you don't have the AWS CLI installed, you can either create a credentials fil
   aws_secret_access_key = your_secret_access_key
   ```
 
-   
+   
 + **Environment variables** – You can set the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables\.
 
   To set these variables on Linux or macOS, use the **export** command:

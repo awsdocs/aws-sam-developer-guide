@@ -1,4 +1,4 @@
-# Passing Additional Runtime Debug Arguments<a name="serverless-sam-cli-using-debugging-additional-arguments"></a>
+# Passing additional runtime debug arguments<a name="serverless-sam-cli-using-debugging-additional-arguments"></a>
 
 To pass additional runtime arguments when you're debugging your function, use the environment variable `DEBUGGER_ARGS`\. This passes a string of arguments directly into the run command that the AWS SAM CLI uses to start your function\.
 

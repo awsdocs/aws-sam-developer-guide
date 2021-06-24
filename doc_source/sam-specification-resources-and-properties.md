@@ -1,4 +1,4 @@
-# AWS SAM Resource and Property Reference<a name="sam-specification-resources-and-properties"></a>
+# AWS SAM resource and property reference<a name="sam-specification-resources-and-properties"></a>
 
 This section contains reference information for the AWS SAM resource and property types\.
 
