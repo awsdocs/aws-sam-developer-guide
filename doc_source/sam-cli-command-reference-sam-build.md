@@ -66,13 +66,15 @@ $ sam build MyNestedStack/MyFunction
 
 **Arguments:**
 
+
 ****  
 
-| Argument  | Description |
+| Argument | Description | 
 | --- | --- | 
-| RESOURCE_LOGICAL_ID | Optional augment that makes SAM build only an individual resource located in the SAM template.  Downstream SAM package and deploy will deploy only this resource. Good for building a single function in template that has multiple functions as part of a step function or building a layer shared by many functions\. |
+| RESOURCE\_LOGICAL\_ID | Optional\. Instructs AWS SAM to build a single resource declared in the AWS SAM template\. The build artifacts for the specified resource will be the only ones available for subsequent commands in the workflow, i\.e\. sam package and sam deploy\. | 
 
 **Options:**
+
 
 ****  
 
