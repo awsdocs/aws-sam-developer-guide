@@ -24,7 +24,7 @@ To use the AWS SAM CLI with AWS CDK, you must install the AWS CDK, and the publi
   SAM CLI, version 1.22.0.dev202104281200
   ```
 
-## Locally testing a AWS CDK application<a name="serverless-cdk-tutorial-hello-world"></a>
+## Locally testing an AWS CDK application<a name="serverless-cdk-tutorial-hello-world"></a>
 
 To locally test an AWS CDK application using the AWS SAM CLI, you must start with a AWS CDK application that contains a Lambda function\. If you don't already have a AWS CDK application that contains a Lambda function, you can follow the instructions for [Creating a serverless application using the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/serverless_example.html) in the *AWS Cloud Development Kit \(CDK\) Developer Guide*\.
 
