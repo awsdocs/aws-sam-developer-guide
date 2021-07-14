@@ -46,7 +46,7 @@ This is passed through to the `authorizerUri` section of an `x-amazon-apigateway
 The ARN of the IAM role that has the credentials required to invoke the authorizer\.  
 This is passed through to the `authorizerCredentials` section of an `x-amazon-apigateway-authorizer` in the `securitySchemes` section of an OpenAPI definition\.  
 *Type*: String  
-*Required*: No  
+*Required*: Yes  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Identity`   <a name="sam-httpapi-lambdaauthorizer-identity"></a>
