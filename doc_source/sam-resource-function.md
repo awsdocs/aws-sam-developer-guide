@@ -89,6 +89,10 @@ The function code's Amazon S3 URI, path to local folder, or [FunctionCode](sam-p
 
  `DeadLetterQueue`   <a name="sam-function-deadletterqueue"></a>
 Configures an Amazon Simple Notification Service \(Amazon SNS\) topic or Amazon Simple Queue Service \(Amazon SQS\) queue where Lambda sends events that it can't process\. For more information about dead\-letter queue functionality, see [AWS Lambda function dead letter queues](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq) in the *AWS Lambda Developer Guide*\.  
+
+**Note**  
+If the event source is a queue, make sure that you configure the dead\-letter queue with the [RedrivePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html#aws-sqs-queue-redrive) of the source queue, not on the Lambda function\. The dead\-letter queue that you configure on a function is used for the function's [asynchronous invocation queue](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html), not for event source queues\.
+
 *Type*: Map \| [DeadLetterQueue](sam-property-function-deadletterqueue.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[DeadLetterConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html)` property of an `AWS::Lambda::Function` resource\. In AWS CloudFormation the type is derived from the `TargetArn`, whereas in AWS SAM you must pass the type along with the `TargetArn`\.
