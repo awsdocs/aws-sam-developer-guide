@@ -135,4 +135,12 @@ Resources:
       CodeUri: ./src
       Handler: authorizer.handler
       Runtime: nodejs12.x
+
+  MyAuthFunctionApiGatewayInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !GetAtt MyAuthFunction.Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${MyApi}/*"
 ```
