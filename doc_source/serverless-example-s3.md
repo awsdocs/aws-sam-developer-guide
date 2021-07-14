@@ -77,7 +77,7 @@ Now that you've created the deployment package, you use it to deploy the applica
 
 **To test the serverless application in the AWS Cloud**
 
-1. Upload an image to the Amazon S3 bucket that you created for this sample application\.
+1. Upload an image to the Amazon S3 bucket that was created for this sample application in the previous deploy step (via AWS CloudFormation)\.
 
 1. Open the DynamoDB console and find the table that was created\. See the table for results returned by Amazon Rekognition\.
 
@@ -98,6 +98,8 @@ TABLE_NAME=Table name obtained from AWS CloudFormation console sam local invoke 
 The `TABLE_NAME=` portion sets the DynamoDB table name\. The `--event` parameter specifies the file that contains the test event message to pass to the Lambda function\.
 
 You can now verify that the expected DynamoDB records were created, based on the results returned by Amazon Rekognition\.
+
+Since the DynamoDB table already contains the record written in previous step, this local test will overwrite that record because it has the same value for `id` field. The updated record will have a new value for the `DateTime` field\.
 
 ## Next steps<a name="serverless-example-s3-next-steps"></a>
 
