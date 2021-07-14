@@ -59,6 +59,4 @@ Events:
     Properties:
       Path: /path
       Method: get
-      RequestParameters:
-        - method.request.header.Authorization
 ```
