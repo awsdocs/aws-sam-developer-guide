@@ -28,4 +28,4 @@ Resources:
             Method: get
 ```
 
-For more information about IAM permissions, see [Control access to an API with IAM permissions](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html) in the *API Gateway Developer Guide*\.
+For more information about IAM permissions, see [Control access for invoking an API](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html) in the *API Gateway Developer Guide*\.

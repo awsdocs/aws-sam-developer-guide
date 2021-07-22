@@ -15,9 +15,9 @@ You can use the AWS SAM CLI to locally test your AWS CDK applications by running
 **Note**  
 The AWS SAM CLI only supports Lambda functions created with the standard Lambda construct\. For information about the standard Lambda construct, see [@aws\-cdk/aws\-lambda module](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-readme.html)\.
 
-When you run any of the `sam local` commands with a AWS CDK application, the AWS SAM CLI runs `cdk synth` on your behalf if the [cloud assembly](https://docs.aws.amazon.com/cdk/latest/guide/apps.html#apps_cloud_assembly) doesn't already exist\. The default location of the cloud assembly relative to the project root directory is `./aws-sam/build`\.
+When you run any of the sam local commands with a AWS CDK application, the AWS SAM CLI runs cdk synth on your behalf if the [cloud assembly](https://docs.aws.amazon.com/cdk/latest/guide/apps.html#apps_cloud_assembly) doesn't already exist\. The default location of the cloud assembly relative to the project root directory is `./aws-sam/build`\.
 
-When running `sam local invoke` you need the function identifier that you want to invoke, and the stack name where the function is defined\.
+When running sam local invoke you need the function identifier that you want to invoke, and the stack name where the function is defined\.
 
 **Usage:**
 

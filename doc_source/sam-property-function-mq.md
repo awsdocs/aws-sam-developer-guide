@@ -58,7 +58,10 @@ The value of this property is a UUID\. For example: `1abc23d4-567f-8ab9-cde0-1fa
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `SourceAccessConfigurations`   <a name="sam-function-mq-sourceaccessconfigurations"></a>
-The Secrets Manager secret that stores your broker credentials\. Specify secrets using the [SourceAccessConfigurations](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-sourceaccessconfiguration.html) data type\.  
+An array of the authentication protocol or vitual host\. Specify this using the [SourceAccessConfigurations](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-sourceaccessconfiguration.html) data type\.  
+**Note:** For the `MQ` event source type, the only valid configuration types are `BASIC_AUTH` and `VIRTUAL_HOST`\.  
+`BASIC_AUTH` \- The Secrets Manager secret that stores your broker credentials\. For this type, the credential must be in the following format: `{"username": "your-username", "password": "your-password"}`\. Only one object of type `BASIC_AUTH` is allowed\.  
+`VIRTUAL_HOST` \- The name of the virtual host in your RabbitMQ broker\. Lambda will use this Rabbit MQ's host as the event source\. Only one object of type `VIRTUAL_HOST` is allowed\.  
 *Type*: List  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[SourceAccessConfigurations](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-sourceaccessconfigurations)` property of an `AWS::Lambda::EventSourceMapping` resource\.
@@ -79,8 +82,8 @@ Events:
       Broker: arn:aws:mq:us-east-2:123456789012:broker:MyBroker:b-1234a5b6-78cd-901e-2fgh-3i45j6k178l9
       Queues: List of queues
       SourceAccessConfigurations:
-        - Type: String
-          URI: String
+        - Type: BASIC_AUTH
+          URI: arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName
       BatchSize: 200
       Enabled: true
 ```

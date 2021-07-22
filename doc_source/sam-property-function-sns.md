@@ -42,7 +42,7 @@ Set this property to true, or specify `SqsSubscriptionObject` to enable batching
 The ARN of the topic to subscribe to\.  
 *Type*: String  
 *Required*: Yes  
-*AWS CloudFormation compatibility*: This property is passed directly to the `[TopicArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn)` property of an `AWS::SNS::Topic` resource\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[TopicArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn)` property of an `AWS::SNS::Subscription` resource\.
 
 ## Examples<a name="sam-property-function-sns--examples"></a>
 

@@ -7,14 +7,14 @@
 | --- |
 | CDK integration with the AWS SAM CLI is currently in public preview\. During public preview, CDK integration with the AWS SAM CLI may be subject to backwards incompatible changes\. | 
 
-The AWS SAM CLI provides support for building Lambda functions and layers defined in your AWS CDK application by detecting that the following command is run in the AWS CDK application directory:
+The AWS SAM CLI provides support for building Lambda functions and layers defined in your AWS CDK application by detecting that the following command is run from the project root directory of your AWS CDK application:
 + [sam build](sam-cli-command-reference-sam-build.md)
 
-When you run the `sam build` command with a AWS CDK application, AWS SAM runs `cdk synth` on your behalf to produce the [cloud assembly](https://docs.aws.amazon.com/cdk/latest/guide/apps.html#apps_cloud_assembly) that will be needed for subsequent steps in your development workflow\. The default location of the cloud assembly relative to the project root directory is `./aws-sam/build`\.
+When you run the sam build command with a AWS CDK application, AWS SAM runs cdk synth on your behalf to produce the [cloud assembly](https://docs.aws.amazon.com/cdk/latest/guide/apps.html#apps_cloud_assembly) that will be needed for subsequent steps in your development workflow\. The default location of the cloud assembly relative to the project root directory is `./aws-sam/build`\.
 
 **Options:**
 
-For the public preview version of the AWS SAM CLI, the following options are available in addition to the options available in the production version of the `sam build` function\.
+For the public preview version of the AWS SAM CLI, the following options are available in addition to the options available in the production version of the sam build command\.
 
 
 ****  

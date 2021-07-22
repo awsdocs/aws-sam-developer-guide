@@ -30,6 +30,7 @@ Properties:
   [GatewayResponses](#sam-api-gatewayresponses): Map
   [MethodSettings](#sam-api-methodsettings): [MethodSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings)
   [MinimumCompressionSize](#sam-api-minimumcompressionsize): Integer
+  [Mode](#sam-api-mode): String
   [Models](#sam-api-models): Map
   [Name](#sam-api-name): String
   [OpenApiVersion](#sam-api-openapiversion): String
@@ -134,6 +135,13 @@ Allow compression of response bodies based on client's Accept\-Encoding header\.
 *Type*: Integer  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[MinimumCompressionSize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-minimumcompressionsize)` property of an `AWS::ApiGateway::RestApi` resource\.
+
+ `Mode`   <a name="sam-api-mode"></a>
+This property applies only when you use OpenAPI to define your REST API\. The `Mode` determines how API Gateway handles resource updates\. For more information, see [Mode](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-mode) property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource type\.  
+*Valid values*: `overwrite` or `merge`  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Mode](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-mode)` property of an `AWS::ApiGateway::RestApi` resource\.
 
  `Models`   <a name="sam-api-models"></a>
 The schemas to be used by your API methods\. These schemas can be described using JSON or YAML\. See the Examples section at the bottom of this page for example models\.  

@@ -24,14 +24,22 @@ To use the AWS SAM CLI with AWS CDK, you must install the AWS CDK, and the publi
   SAM CLI, version 1.22.0.dev202104281200
   ```
 
-## Locally testing an AWS CDK application<a name="serverless-cdk-tutorial-hello-world"></a>
+## Downloading and locally testing an AWS CDK application<a name="serverless-cdk-tutorial-hello-world"></a>
 
-To locally test an AWS CDK application using the AWS SAM CLI, you must start with a AWS CDK application that contains a Lambda function\. If you don't already have a AWS CDK application that contains a Lambda function, you can follow the instructions for [Creating a serverless application using the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/serverless_example.html) in the *AWS Cloud Development Kit \(CDK\) Developer Guide*\.
+To locally test an AWS CDK application using the AWS SAM CLI, you must start with a AWS CDK application that contains a Lambda function\. If you don't already have a AWS CDK application that contains a Lambda function, you can either download a sample AWS CDK application using the AWS SAM CLI, or follow the instructions for [Creating a serverless application using the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/serverless_example.html) in the *AWS Cloud Development Kit \(CDK\) Developer Guide*\.
 
 **Note**  
 The AWS SAM CLI only supports Lambda functions created with the standard Lambda construct\. For information about the standard Lambda construct, see [@aws\-cdk/aws\-lambda module](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-lambda-readme.html)\.
 
-Locally testing your AWS CDK application involves using the AWS SAM CLI to locally invoke a Lambda function defined in your application\. To do this, you need the function identifier that you want to invoke, and the stack name where the function is defined\.
+To download a sample AWS CDK application using the AWS SAM CLI, run the sam init command and specify a `CDK` project type\. There are two ways to do this:
++ **On the command line**: Use the `--project-type CDK` option\. For example:
+
+  ```
+  sam-beta-cdk init --project-type CDK --package-type Zip --runtime python3.8 --dependency-manager pip --app-template hello-world --cdk-language python --name sam-cdk-app-demo
+  ```
++ **Using interactive prompts**: Run the sam\-beta\-cdk init command\. Then, at the prompt asking `Which type of project would you like to create?` answer `CDK`\. Answer all other necessary prompts based on your needs for the sample project\.
+
+You can use the AWS SAM CLI to locally invoke a Lambda function defined in your application\. To do this, you need the function identifier that you want to invoke, and the stack name where the function is defined\.
 
 For example, consider a stack and a function that are declared with the following sample:
 

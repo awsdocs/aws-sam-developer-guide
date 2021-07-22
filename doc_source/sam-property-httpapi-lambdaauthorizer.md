@@ -43,8 +43,9 @@ This is passed through to the `authorizerUri` section of an `x-amazon-apigateway
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `FunctionInvokeRole`   <a name="sam-httpapi-lambdaauthorizer-functioninvokerole"></a>
-The ARN of the IAM role that has the credentials required to invoke the authorizer\.  
+The ARN of the IAM role that has the credentials required for API Gateway to invoke the authorizer function\. Specify this parameter if your function's resource\-based policy doesn't grant API Gateway `lambda:InvokeFunction` permission\.  
 This is passed through to the `authorizerCredentials` section of an `x-amazon-apigateway-authorizer` in the `securitySchemes` section of an OpenAPI definition\.  
+For more information, see [Create a Lambda authorizer](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html#http-api-lambda-authorizer.example-create) in the *API Gateway Developer Guide*\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

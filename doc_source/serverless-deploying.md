@@ -2,19 +2,23 @@
 
 AWS SAM uses AWS CloudFormation as the underlying deployment mechanism\. For more information, see [What is AWS CloudFormation?](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/) in the *AWS CloudFormation User Guide*\. The standard inputs to deploying serverless applications are the build artifacts created using the [sam build](sam-cli-command-reference-sam-build.md) command\. For more information about sam build, see [Building serverless applications](serverless-building.md)\.
 
-You can deploy your application manually using AWS SAM command line interface \(CLI\) commands\. You can also automate the deployments of your application using a continuous integration and continuous deployment \(CI/CD\) system\. Common CI/CD systems that you can use to deploy AWS SAM applications include [AWS CodePipeline](http://aws.amazon.com/codepipeline), [Jenkins](https://www.jenkins.io/), [GitLab CI/CD](https://docs.gitlab.com/ee/ci/), and [GitHub Actions](https://github.com/features/actions)\.
+You can deploy your application manually using AWS SAM command line interface \(CLI\) commands\. You can also automate the deployments of your application using a continuous integration and continuous deployment \(CI/CD\) system\. You can use many common CI/CD systems for deploying AWS SAM applications, including [AWS CodePipeline](http://aws.amazon.com/codepipeline), [Jenkins](https://www.jenkins.io/), [GitLab CI/CD](https://docs.gitlab.com/ee/ci/), and [GitHub Actions](https://github.com/features/actions)\.
 
 ## Deploying using CI/CD systems<a name="serverless-deploying-ci-cd"></a>
+
+AWS SAM helps organizations create pipelines for their preferred CI/CD systems, so that they can realize the benefits of CI/CD with minimal effort, such as accelerating deployment frequency, shortening lead time for changes, and reducing deployment errors\.
 
 AWS SAM simplifies CI/CD tasks for serverless applications with the help of build container images\. The images that AWS SAM provides include the AWS SAM CLI and build tools for a number of supported AWS Lambda runtimes\. This makes it easier to build and package serverless applications using the AWS SAM CLI\. These images also alleviate the need for teams to create and manage their own images for CI/CD systems\. For more information about AWS SAM build container images, see [Image repositories](serverless-image-repositories.md)\.
 
 Multiple CI/CD systems support AWS SAM build container images\. Which CI/CD system you should use depends on several factors\. These include whether your application uses a single runtime or multiple runtimes, or whether you want to build your application within a container image or directly on a host machine, either a virtual machine \(VM\) or bare metal host\.
 
-The following topics provide examples for configuring your CI/CD system to build serverless applications within an AWS SAM build container image:
-+ [Deploying using AWS CodePipeline](deploying-using-codepipeline.md)
-+ [Deploying using Jenkins](deploying-using-jenkins.md)
-+ [Deploying using GitLab CI/CD](deploying-using-gitlab.md)
-+ [Deploying using GitHub Actions](deploying-using-github.md)
+AWS SAM also provides a set of default pipeline templates for multiple CI/CD systems that encapsulate AWS's deployment best practices\. These default pipeline templates use standard JSON/YAML pipeline configuration formats, and the built\-in best practices help perform multi\-account and multi\-region deployments, and verify that pipelines cannot make unintended changes to infrastructure\.
+
+You have two main options for using AWS SAM to deploy your serverless applications: 1\) Modify your existing pipeline configuration to use AWS SAM CLI commands, or 2\) Generate an example CI/CD pipeline configuration that you can use as a starting point for your own application\.
+
+For more information about these options, see the following topics:
++ [Modifying your existing CI/CD pipelines](serverless-deploying-modify-pipeline.md)
++ [Generating starter CI/CD pipelines](serverless-generating-example-ci-cd.md)
 
 ## Deploying using the AWS SAM CLI<a name="serverless-sam-cli-using-package-and-deploy"></a>
 
