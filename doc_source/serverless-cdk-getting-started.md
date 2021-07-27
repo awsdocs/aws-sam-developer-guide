@@ -16,7 +16,7 @@ To use the AWS SAM CLI with AWS CDK, you must install the AWS CDK, and the publi
 + To install the public preview version of the AWS SAM CLI, follow the same instructions for [Installing the AWS SAM CLI](serverless-sam-cli-install.md) the OS of your development host, but use the public preview download link or installation command as listed below:
   + **Linux:** The private preview build is available with this download link: [AWS SAM CLI beta CDK build](https://github.com/aws/aws-sam-cli/releases/download/sam-cli-beta-cdk/aws-sam-cli-linux-x86_64.zip)\.
   + **Windows:** The private preview is available with this download link: [AWS SAM CLI beta CDK build](https://github.com/aws/aws-sam-cli/releases/download/sam-cli-beta-cdk/AWS_SAM_CLI_64_PY3.msi)\.
-  + **macOS:** The private preview is available using the following command `brew install aws-sam-cli-beta-cdk`\.
+  + **macOS:** The private preview is available using the following command `brew tap aws/tap && brew install aws-sam-cli-beta-cdk`\.
 
   To verify you have installed the public preview version, run the `sam-beta-cdk --version` command\. The output of this command is in the form `1.X.Y.dev<YYYYMMDDHHmm>`, for example:
 
