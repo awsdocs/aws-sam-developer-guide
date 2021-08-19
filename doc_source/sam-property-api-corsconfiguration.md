@@ -56,7 +56,7 @@ String containing the number of seconds to cache CORS Preflight request\.
 
 ### CorsConfiguration<a name="sam-property-api-corsconfiguration--examples--corsconfiguration"></a>
 
-Cors Configuration example\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition with Cors configured\.
+Cors Configuration example\. This is just a portion of an AWS SAM template file showing an [AWS::Serverless::Api](sam-resource-api.md) definition with Cors configured\.
 
 #### YAML<a name="sam-property-api-corsconfiguration--examples--corsconfiguration--yaml"></a>
 

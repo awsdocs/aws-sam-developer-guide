@@ -2,7 +2,7 @@
 
 Creates a DynamoDB table with a single attribute primary key\. It is useful when data only needs to be accessed via a primary key\.
 
-To use the more advanced functionality of DynamoDB, use an [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html) resource instead\.
+To use the more advanced functionality of DynamoDB, use an [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html) resource instead\.
 
 ## Syntax<a name="sam-resource-simpletable-syntax"></a>
 

@@ -27,7 +27,7 @@ There are a number of exceptions to the resource attribute rules described previ
   + `AWS::CodeDeploy::Application`
   + `AWS::CodeDeploy::DeploymentGroup`
   + The `AWS::IAM::Role` named `CodeDeployServiceRole` that is created for this scenario
-+ If your AWS SAM teplate contains multiple functions with API event sources that are implicitly created, then the functions will share the generated `AWS::ApiGateway::RestApi` resource\. In this scenario, if the functions have different resource attributes, then for the generated `AWS::ApiGateway::RestApi` resource, AWS SAM copies the resource attributes according to the following prioritized lists:
++ If your AWS SAM template contains multiple functions with API event sources that are implicitly created, then the functions will share the generated `AWS::ApiGateway::RestApi` resource\. In this scenario, if the functions have different resource attributes, then for the generated `AWS::ApiGateway::RestApi` resource, AWS SAM copies the resource attributes according to the following prioritized lists:
   + `UpdateReplacePolicy`:
 
     1. `Retain`

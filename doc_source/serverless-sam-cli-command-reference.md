@@ -4,6 +4,7 @@ This section is the reference for the AWS SAM CLI commands\. For instructions ab
 
 **Topics**
 + [sam build](sam-cli-command-reference-sam-build.md)
++ [sam delete](sam-cli-command-reference-sam-delete.md)
 + [sam deploy](sam-cli-command-reference-sam-deploy.md)
 + [sam init](sam-cli-command-reference-sam-init.md)
 + [sam local generate\-event](sam-cli-command-reference-sam-local-generate-event.md)

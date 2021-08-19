@@ -2,7 +2,7 @@
 
 The object describing an `MQ` event source type\. For more information, see [Using Lambda with Amazon MQ](https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html) in the *AWS Lambda Developer Guide*\.
 
-AWS SAM generates an [AWS::Lambda::EventSourceMapping](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html) resource when this event type is set\.
+AWS SAM generates an [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html) resource when this event type is set\.
 
 **Note:** To have an Amazon MQ queue in a virtual private cloud \(VPC\) but your Lambda function in a public network, your function's execution role must include the following permissions: `ec2:CreateNetworkInterface`, `ec2:DeleteNetworkInterface`, `ec2:DescribeNetworkInterfaces`, `ec2:DescribeSecurityGroups`, `ec2:DescribeSubnets`, `ec2:DescribeVpcs`\. For more information, see [Execution role permissions](https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#events-mq-permissions) in the *AWS Lambda Developer Guide*\.
 

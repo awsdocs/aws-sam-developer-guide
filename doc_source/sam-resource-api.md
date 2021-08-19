@@ -137,7 +137,7 @@ Allow compression of response bodies based on client's Accept\-Encoding header\.
 *AWS CloudFormation compatibility*: This property is passed directly to the `[MinimumCompressionSize](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-minimumcompressionsize)` property of an `AWS::ApiGateway::RestApi` resource\.
 
  `Mode`   <a name="sam-api-mode"></a>
-This property applies only when you use OpenAPI to define your REST API\. The `Mode` determines how API Gateway handles resource updates\. For more information, see [Mode](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-mode) property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource type\.  
+This property applies only when you use OpenAPI to define your REST API\. The `Mode` determines how API Gateway handles resource updates\. For more information, see [Mode](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-mode) property of the [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource type\.  
 *Valid values*: `overwrite` or `merge`  
 *Type*: String  
 *Required*: No  
@@ -242,7 +242,7 @@ Resources:
 
 ### ApiCorsExample<a name="sam-resource-api--examples--apicorsexample"></a>
 
-An AWS SAM template snippet with an API defined in an external Swagger file along with Lambda integrations and CORS configurations\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition\.
+An AWS SAM template snippet with an API defined in an external Swagger file along with Lambda integrations and CORS configurations\. This is just a portion of an AWS SAM template file showing an [AWS::Serverless::Api](#sam-resource-api) definition\.
 
 #### YAML<a name="sam-resource-api--examples--apicorsexample--yaml"></a>
 
@@ -265,7 +265,7 @@ Resources:
 
 ### ApiCognitoAuthExample<a name="sam-resource-api--examples--apicognitoauthexample"></a>
 
-An AWS SAM template snippet with an API that uses Amazon Cognito to authorize requests against the API\. This is just a portion of an AWS SAM template file showing an AWS::Serverless::Api definition\.
+An AWS SAM template snippet with an API that uses Amazon Cognito to authorize requests against the API\. This is just a portion of an AWS SAM template file showing an [AWS::Serverless::Api](#sam-resource-api) definition\.
 
 #### YAML<a name="sam-resource-api--examples--apicognitoauthexample--yaml"></a>
 
@@ -286,7 +286,7 @@ Resources:
 
 ### ApiModelsExample<a name="sam-resource-api--examples--apimodelsexample"></a>
 
-An AWS SAM template snippet with an API that includes a Models schema\. This is just a portion of an AWS SAM template file, showing an AWS::Serverless::Api definition with two model schemas\.
+An AWS SAM template snippet with an API that includes a Models schema\. This is just a portion of an AWS SAM template file, showing an [AWS::Serverless::Api](#sam-resource-api) definition with two model schemas\.
 
 #### YAML<a name="sam-resource-api--examples--apimodelsexample--yaml"></a>
 

@@ -2,7 +2,7 @@
 
 The object describing a `CloudWatchLogs` event source type\.
 
-This event generates a [AWS::Logs::SubscriptionFilter](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html) resource and specifies a subscription filter and associates it with the specified log group\.
+This event generates a [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html) resource and specifies a subscription filter and associates it with the specified log group\.
 
 ## Syntax<a name="sam-property-function-cloudwatchlogs-syntax"></a>
 

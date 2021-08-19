@@ -1,6 +1,6 @@
 # AWS::Serverless::Application<a name="sam-resource-application"></a>
 
-Embeds a serverless application from the [AWS Serverless Application Repository](https://serverlessrepo.aws.amazon.com/applications) or from an Amazon S3 bucket as a nested application\. Nested applications are deployed as nested [AWS::CloudFormation::Stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stack.html) resources, which can contain multiple other resources including other [AWS::Serverless::Application](#sam-resource-application) resources\.
+Embeds a serverless application from the [AWS Serverless Application Repository](https://serverlessrepo.aws.amazon.com/applications) or from an Amazon S3 bucket as a nested application\. Nested applications are deployed as nested [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stack.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stack.html) resources, which can contain multiple other resources including other [AWS::Serverless::Application](#sam-resource-application) resources\.
 
 ## Syntax<a name="sam-resource-application-syntax"></a>
 

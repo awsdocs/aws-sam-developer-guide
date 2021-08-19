@@ -17,6 +17,7 @@ The following table lists the URIs of [Amazon ECR Public](https://docs.aws.amazo
 | Node\.js 14 | [public\.ecr\.aws/sam/build\-nodejs14\.x](https://gallery.ecr.aws/sam/build-nodejs14.x) | [amazon/aws\-sam\-cli\-build\-image\-nodejs14\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-nodejs14.x) | 
 | Node\.js 12 | [public\.ecr\.aws/sam/build\-nodejs12\.x](https://gallery.ecr.aws/sam/build-nodejs12.x) | [amazon/aws\-sam\-cli\-build\-image\-nodejs12\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-nodejs12.x) | 
 | Node\.js 10 | [public\.ecr\.aws/sam/build\-nodejs10\.x](https://gallery.ecr.aws/sam/build-nodejs10.x) | [amazon/aws\-sam\-cli\-build\-image\-nodejs10\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-nodejs10.x) | 
+| Python 3\.9 | [public\.ecr\.aws/sam/build\-python3\.9](https://gallery.ecr.aws/sam/build-python3.9) | Not supported | 
 | Python 3\.8 | [public\.ecr\.aws/sam/build\-python3\.8](https://gallery.ecr.aws/sam/build-python3.8) | [amazon/aws\-sam\-cli\-build\-image\-python3\.8](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-python3.8) | 
 | Python 3\.7 | [public\.ecr\.aws/sam/build\-python3\.7](https://gallery.ecr.aws/sam/build-python3.7) | [amazon/aws\-sam\-cli\-build\-image\-python3\.7](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-python3.7) | 
 | Python 3\.6 | [public\.ecr\.aws/sam/build\-python3\.6](https://gallery.ecr.aws/sam/build-python3.6) | [amazon/aws\-sam\-cli\-build\-image\-python3\.6](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-python3.6) | 
