@@ -116,7 +116,7 @@ A map that defines the stage variables\. Variable names can have alphanumeric an
 *AWS CloudFormation compatibility*: This property is passed directly to the `[StageVariables](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-stagevariables)` property of an `AWS::ApiGatewayV2::Stage` resource\.
 
  `Tags`   <a name="sam-httpapi-tags"></a>
-A map \(string to string\) that specifies the tags to add to this API Gateway stage\. Keys and values are limited to alphanumeric characters\. Keys can be 1 to 127 Unicode characters in length and cannot include the prefix `aws:`\. Values can be 1 to 255 Unicode characters in length\.  
+A map \(string to string\) that specifies the tags to add to this API Gateway stage\. Keys can be 1 to 128 Unicode characters in length and cannot include the prefix `aws:`\. You can use any of the following characters: the set of Unicode letters, digits, whitespace, `_`, `.`, `/`, `=`, `+`, and `-`\. Values can be 1 to 256 Unicode characters in length\.  
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.  

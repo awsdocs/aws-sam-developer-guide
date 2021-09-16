@@ -82,7 +82,7 @@ The following is a table of the available policy templates\.
 | [DynamoDBWritePolicy](serverless-policy-template-list.md#dynamo-db-write-policy) | Gives write\-only permission to a DynamoDB table\. | 
 | [DynamoDBReconfigurePolicy](serverless-policy-template-list.md#dynamo-db-reconfigure-policy) | Gives permission to reconfigure a DynamoDB table\. | 
 | [SESSendBouncePolicy](serverless-policy-template-list.md#ses-send-bounce-policy) | Gives SendBounce permission to an Amazon Simple Email Service \(Amazon SES\) identity\. | 
-| [ElasticsearchHttpPostPolicy](serverless-policy-template-list.md#elastic-search-http-post-policy) | Gives POST permission to Amazon Elasticsearch Service\. | 
+| [ElasticsearchHttpPostPolicy](serverless-policy-template-list.md#elastic-search-http-post-policy) | Gives POST permission to Amazon OpenSearch Service\. | 
 | [S3ReadPolicy](serverless-policy-template-list.md#s3-read-policy) | Gives read\-only permission to read objects in an Amazon Simple Storage Service \(Amazon S3\) bucket\. | 
 | [S3WritePolicy](serverless-policy-template-list.md#s3-write-policy) | Gives write permission to write objects into an Amazon S3 bucket\. | 
 | [S3CrudPolicy](serverless-policy-template-list.md#s3-crud-policy) | Gives create, read, update, and delete permission to act on the objects in an Amazon S3 bucket\. | 
@@ -146,7 +146,7 @@ The following is a table of the available policy templates\.
 | [SageMakerCreateEndpointConfigPolicy](serverless-policy-template-list.md#sagemaker-create-endpoint-config-policy) | Gives permission to create an endpoint configuration in SageMaker\. | 
 | [EcsRunTaskPolicy](serverless-policy-template-list.md#ecs-run-task-policy) | Gives permission to start a new task for a task definition\. | 
 | [EFSWriteAccessPolicy](serverless-policy-template-list.md#efs-write-access-policy) | Gives permission to mount an Amazon EFS file system with write access\. | 
-| [Route53ChangeResourceRecordSetsPolicy](serverless-policy-template-list.md#route53-change-resource-record-sets-policy) | Gives permission to change resource record sets in Route 53\. | 
+| [Route53ChangeResourceRecordSetsPolicy](serverless-policy-template-list.md#route53-change-resource-record-sets-policy) | Gives permission to change resource record sets in Route 53\. | 
 
 ## Troubleshooting<a name="serverless-policy-template-troubleshooting"></a>
 

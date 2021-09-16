@@ -187,7 +187,7 @@ The size of the memory in MB allocated per invocation of the function\.
 The deployment package type of the Lambda function\. For more information, see [Lambda deployment packages](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html) in the *AWS Lambda Developer Guide*\.  
 **Notes**:  
 1\. If this property is set to `Zip` \(default\), then either `CodeUri` or `InlineCode` applies, and `ImageUri` is ignored\.  
-2\. If this property is set to `Image`, then only `ImageUri` applies, and both `CodeUri` and `InlineCode` are ignored\.  
+2\. If this property is set to `Image`, then only `ImageUri` applies, and both `CodeUri` and `InlineCode` are ignored\. The Amazon ECR repository required to store the functionsl container image can be auto created by the AWS SAM CLI\. For more information, see [sam deploy](sam-cli-command-reference-sam-deploy.md)\.  
 *Valid values*: `Zip` or `Image`  
 *Type*: String  
 *Required*: No  
@@ -237,7 +237,7 @@ The identifier of the function's [runtime](https://docs.aws.amazon.com/lambda/la
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Runtime](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime)` property of an `AWS::Lambda::Function` resource\.
 
  `Tags`   <a name="sam-function-tags"></a>
-A map \(string to string\) that specifies the tags added to this function\. Keys and values are limited to alphanumeric characters\. Keys can be 1 to 127 Unicode characters in length and cannot be prefixed with `aws:`\. Values can be 1 to 255 Unicode characters in length\.  
+A map \(string to string\) that specifies the tags added to this function\. For details about valid keys and values for tags, see [Tag Key and Value Requirements](https://docs.aws.amazon.com/lambda/latest/dg/configuration-tags.html#configuration-tags-restrictions) in the *AWS Lambda Developer Guide*\.  
 When the stack is created, AWS SAM automatically adds a `lambda:createdBy:SAM` tag to this Lambda function, and to the default roles that are generated for this function\.  
 *Type*: Map  
 *Required*: No  

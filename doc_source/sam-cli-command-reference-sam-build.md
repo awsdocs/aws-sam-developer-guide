@@ -48,7 +48,7 @@ $ sam build --use-container --container-env-var-file <env-file.json>
 Build a Node.js 12 application using a container image pulled from DockerHub
 $ sam build --use-container --build-image amazon/aws-sam-cli-build-image-nodejs12.x
 
-Build a function resource using the Python 3.8 container image pulled from DockerHub
+Build a function resource using using the Python 3.8 container image pulled from DockerHub
 $ sam build --use-container --build-image Function1=amazon/aws-sam-cli-build-image-python3.8 
   
 To build and run your functions locally

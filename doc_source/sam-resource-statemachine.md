@@ -94,10 +94,10 @@ You must provide either a `Role` or `Policies`\.
 *AWS CloudFormation compatibility*: This property is passed directly to the `[RoleArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn)` property of an `AWS::StepFunctions::StateMachine` resource\.
 
  `Tags`   <a name="sam-statemachine-tags"></a>
-A string\-to\-string map that specifies the tags added to the state machine and the corresponding execution role\.  
+A string\-to\-string map that specifies the tags added to the state machine and the corresponding execution role\. For information about valid keys and values for tags, see the [Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tags) property of an [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html) resource\.  
 *Type*: Map  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is passed directly to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tags)` property of an `AWS::StepFunctions::StateMachine` resource\.
+*AWS CloudFormation compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tags)` property of an `AWS::StepFunctions::StateMachine` resource\. AWS SAM automatically adds a `stateMachine:createdBy:SAM` tag to this resource, and to the default role that is generated for it\.
 
  `Tracing`   <a name="sam-statemachine-tracing"></a>
 Selects whether or not AWS X\-Ray is enabled for the state machine\. For more information about using X\-Ray with Step Functions, see [AWS X\-Ray and Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-xray-tracing.html) in the *AWS Step Functions Developer Guide*\.  

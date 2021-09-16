@@ -64,12 +64,15 @@ With the modified Hello World application in place, the following policy stateme
             "Effect": "Allow",
             "Action": [
                 "cloudformation:CreateChangeSet",
+                "cloudformation:CreateStack",
                 "cloudformation:DeleteStack",
                 "cloudformation:DescribeChangeSet",
                 "cloudformation:DescribeStackEvents",
                 "cloudformation:DescribeStacks",
                 "cloudformation:ExecuteChangeSet",
-                "cloudformation:GetTemplateSummary"
+                "cloudformation:GetTemplateSummary",
+                "cloudformation:ListStackResources",
+                "cloudformation:UpdateStack"
             ],
             "Resource": [
                 "arn:aws:cloudformation:*:111122223333:stack/*"
@@ -94,6 +97,8 @@ With the modified Hello World application in place, the following policy stateme
                 "ecr:BatchCheckLayerAvailability",
                 "ecr:BatchGetImage",
                 "ecr:CompleteLayerUpload",
+                "ecr:CreateRepository",
+                "ecr:DeleteRepository",
                 "ecr:DescribeImages",
                 "ecr:DescribeRepositories",
                 "ecr:GetDownloadUrlForLayer",

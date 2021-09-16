@@ -147,6 +147,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Generating starter CI/CD pipelines](serverless-generating-example-ci-cd.md)
       + [Generating starter pipeline for AWS CodePipeline](serverless-generating-example-ci-cd-codepipeline.md)
       + [Generating starter pipelines for Jenkins, GitLab CI/CD, or GitHub Actions](serverless-generating-example-ci-cd-others.md)
+   + [Customizing starter pipelines](serverless-customizing-starter-pipelines.md)
 + [Monitoring serverless applications](serverless-monitoring.md)
    + [Working with logs](serverless-sam-cli-logging.md)
 + [Publishing serverless applications using the AWS SAM CLI](serverless-sam-template-publishing-applications.md)

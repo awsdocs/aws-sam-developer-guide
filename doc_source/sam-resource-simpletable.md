@@ -49,7 +49,7 @@ Name for the DynamoDB Table\.
 *AWS CloudFormation compatibility*: This property is passed directly to the `[TableName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tablename)` property of an `AWS::DynamoDB::Table` resource\.
 
  `Tags`   <a name="sam-simpletable-tags"></a>
-A map \(string to string\) that specifies the tags to be added to this SimpleTable\. Keys and values are limited to alphanumeric characters\. Keys can be 1 to 127 Unicode characters in length and cannot be prefixed with aws:\. Values can be 1 to 255 Unicode characters in length\.  
+A map \(string to string\) that specifies the tags to be added to this SimpleTable\. For details about valid keys and values for tags, see [Resource tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html) in the *AWS CloudFormation User Guide*\.  
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tags)` property of an `AWS::DynamoDB::Table` resource\. The Tags property in SAM consists of Key:Value pairs; in CloudFormation it consists of a list of Tag objects\.

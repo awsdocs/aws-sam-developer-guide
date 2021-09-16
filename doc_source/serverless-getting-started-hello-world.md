@@ -38,8 +38,6 @@ This guide assumes that you've completed the steps for your operating system in 
 
 1. Installing the AWS SAM command line interface \(CLI\)\. **Note:** Make sure that you have version 1\.13\.0 or later\. Check the version by running the `sam --version` command\.
 
-1. If you select the `Image` package type, having an Amazon Elastic Container Registry \(Amazon ECR\) repository URI to perform a deployment\.
-
 ## Step 1: Download a sample AWS SAM application<a name="serverless-getting-started-hello-world-initialize"></a>
 
 **Command to run:**
@@ -144,7 +142,7 @@ You can see the following top\-level tree under `.aws-sam`:
 sam deploy --guided
 ```
 
-Follow the on\-screen prompts\. To accept the default options provided in the interactive experience, respond with `Enter`\. If you selected the `Image` package type when you downloaded your sample application, you are prompted for an Amazon ECR repository\. To deploy your serverless application, provide a valid Amazon ECR repository URI\.
+Follow the on\-screen prompts\. To accept the default options provided in the interactive experience, respond with `Enter`\.
 
 **Note**  
 For the prompt `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]`, AWS SAM is informing you that the sample application configures an API Gateway API without authorization\. When you deploy the sample application, AWS SAM creates a publicly available URL\.  
