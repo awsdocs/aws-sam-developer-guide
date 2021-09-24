@@ -101,17 +101,14 @@ The following example blocks two IP addresses and a source VPC, and allows an AW
 ```
 Auth:
   ResourcePolicy:
-    CustomStatements: [{
-                         "Effect": "Allow",
-                         "Principal": "*",
-                         "Action": "execute-api:Invoke",
-                         "Resource": "execute-api:/Prod/GET/pets",
-                         "Condition": {
-                           "IpAddress": {
-                             "aws:SourceIp": "1.2.3.4"
-                           }
-                         }
-                       }]
+      CustomStatements:
+        - Effect: Allow
+          Principal: *
+          Action: "execute-api:Invoke"
+          Resource: "execute-api:/Prod/GET/pets"
+          Condition:
+            IpAddress: 
+              "aws:SourceIp": "1.2.3.4"
     IpRangeBlacklist:
       - "10.20.30.40"
       - "1.2.3.4"
