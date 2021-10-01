@@ -14,6 +14,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 Type: AWS::Serverless::Function
 Properties:
   [AssumeRolePolicyDocument](#sam-function-assumerolepolicydocument): JSON
+  [Architectures](#sam-function-Architectures): List
   [AutoPublishAlias](#sam-function-autopublishalias): String
   [AutoPublishCodeSha256](#sam-function-autopublishcodesha256): String
   [CodeSigningConfigArn](#sam-function-codesigningconfigarn): String
@@ -54,6 +55,13 @@ Adds an AssumeRolePolicyDocument for the default created `Role` for this functio
 *Type*: JSON  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[AssumeRolePolicyDocument](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument)` property of an `AWS::IAM::Role` resource\. AWS SAM adds this property to the generated IAM role for this function\. If a role's Amazon Resource Name \(ARN\) is provided for this function, this property does nothing\.
+
+ `Architectures`   <a name="sam-function-architectures"></a>
+The instruction set architecture that the function supports. Enter a string array with one of the valid values. The default value is x86_64.\.  
+*Type*: List  
+*Required*: No
+*Valid Values*: x86_64 | arm64
+*AWS CloudFormation compatibility*: This property is similar to the `[Architectures](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html)` property of an `Architectures` resource\. **Note** AWS::Lambda::Function documentation not updated yet with this property either.
 
  `AutoPublishAlias`   <a name="sam-function-autopublishalias"></a>
 The name of the Lambda alias\. For more information about Lambda aliases, see [Lambda function aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html) in the *AWS Lambda Developer Guide*\. For examples that use this property, see [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\.  
