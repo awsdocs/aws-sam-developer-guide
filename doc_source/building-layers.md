@@ -2,7 +2,7 @@
 
 You can use AWS SAM to build custom layers\. For information about layers, see [AWS Lambda layers](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html) in the *AWS Lambda Developer Guide*\.
 
-To build a custom layer, declare it in your AWS Serverless Application Model \(AWS SAM\) template file and include a `Metadata` resource attribute section with a `BuildMethod` entry\. Valid values for `BuildMethod` are identifiers for an [AWS Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html), or `makefile`\.
+To build a custom layer, declare it in your AWS Serverless Application Model \(AWS SAM\) template file and include a `Metadata` resource attribute section with a `BuildMethod` entry\. Valid values for `BuildMethod` are identifiers for an [AWS Lambda runtime](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html), or `makefile`\. Include a `BuildArchitecture` entry to specify the instruction set architectures that your layer supports\. Valid values for `BuildArchitecture` are [Lambda instruction set architectures](https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html)\.
 
 If you specify `makefile`, provide the custom makefile, where you declare a build target of the form `build-layer-logical-id` that contains the build commands for your layer\. Your makefile is responsible for compiling the layer if necessary, and copying the build artifacts into the proper location required for subsequent steps in your workflow\. The location of the makefile is specified by the `ContentUri` property of the layer resource, and must be named `Makefile`\.
 
@@ -15,7 +15,8 @@ The following is an example `Metadata` resource attribute section\.
 
 ```
     Metadata:
-      BuildMethod: python3.6
+      BuildMethod: python3.8
+      BuildArchitecture: arm64
 ```
 
 **Note**  

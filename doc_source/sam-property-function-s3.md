@@ -29,7 +29,7 @@ The Amazon S3 bucket event for which to invoke the Lambda function\. See [Amazon
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Event](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig-event)` property of the `AWS::S3::Bucket` `LambdaConfiguration` data type\.
 
  `Filter`   <a name="sam-function-s3-filter"></a>
-The filtering rules that determine which Amazon S3 objects invoke the Lambda function\. For information about Amazon S3 key name filtering, see [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) in the *Amazon Simple Storage Service Developer Guide*\.  
+The filtering rules that determine which Amazon S3 objects invoke the Lambda function\. For information about Amazon S3 key name filtering, see [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) in the *Amazon Simple Storage Service User Guide*\.  
 *Type*: [NotificationFilter](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Filter](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html)` property of the `AWS::S3::Bucket` `LambdaConfiguration` data type\.
