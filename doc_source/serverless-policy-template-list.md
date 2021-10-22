@@ -444,9 +444,7 @@ Gives permission to describe Amazon Machine Images \(AMIs\)\.
             "Action": [
               "ec2:DescribeImages"
             ],
-            "Resource": {
-              "*"
-            }
+            "Resource": "*"
           }
         ]
 ```
@@ -1166,7 +1164,7 @@ Gives permission to add, delete, and search faces in an Amazon Rekognition colle
               }
             ]
           }
-        ]
+        }]
 ```
 
 ## RekognitionFacesPolicy<a name="rekognition-faces-policy"></a>
