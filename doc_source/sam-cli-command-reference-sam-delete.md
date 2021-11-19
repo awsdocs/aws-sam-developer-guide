@@ -2,7 +2,7 @@
 
 Deletes an AWS SAM application by deleting the AWS CloudFormation stack, the artifacts that were packaged and deployed to Amazon S3 and Amazon ECR, and the AWS SAM template file\.
 
-Also checks whether there is an Amazon ECR companion stack deployed, and if so prompts the user about deleting that stack and Amazon ECR repositories\. If `--no-prompts` is specified, then companion stacks and Amazon ECR reponsitories are deleted by default\.
+Also checks whether there is an Amazon ECR companion stack deployed, and if so prompts the user about deleting that stack and Amazon ECR repositories\. If `--no-prompts` is specified, then companion stacks and Amazon ECR repositories are deleted by default\.
 
 **Usage:**
 
