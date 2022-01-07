@@ -17,6 +17,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 ```
 Type: AWS::Serverless::LayerVersion
 Properties:
+  [CompatibleArchitectures](#sam-layerversion-compatiblearchitectures): List
   [CompatibleRuntimes](#sam-layerversion-compatibleruntimes): List
   [ContentUri](#sam-layerversion-contenturi): String | LayerContent
   [Description](#sam-layerversion-description): String
@@ -26,6 +27,15 @@ Properties:
 ```
 
 ## Properties<a name="sam-resource-layerversion-properties"></a>
+
+ `CompatibleArchitectures`   <a name="sam-layerversion-compatiblearchitectures"></a>
+Specifies the supported instruction set architectures for the layer version\.  
+For more information about this property, see [Lambda instruction set architectures](https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html) in the *AWS Lambda Developer Guide*\.  
+*Valid values*: `x86_64`, `arm64`  
+*Type*: List  
+*Required*: No  
+*Default*: `x86_64`  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[CompatibleArchitectures](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-compatiblearchitectures)` property of an `AWS::Lambda::LayerVersion` resource\.
 
  `CompatibleRuntimes`   <a name="sam-layerversion-compatibleruntimes"></a>
 List of runtimes compatible with this LayerVersion\.  

@@ -4,6 +4,8 @@ AWS SAM simplifies continuous integration and continuous deployment \(CI/CD\) ta
 
 AWS SAM build container image URIs are tagged with the version of the AWS SAM CLI included in that image\. If you specify the untagged URI, then the latest version is used\. For example, `public.ecr.aws/sam/build-nodejs14.x` uses the latest image\. However, `public.ecr.aws/sam/build-nodejs14.x:1.24.1` uses the the image containing AWS SAM CLI version 1\.24\.1\.
 
+Starting with version 1\.33\.0 of the AWS SAM CLI, both `x86_64` and `arm64` container images are available for supported runtimes\. For more information, see [Lambda runtimes](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html) in the *AWS Lambda Developer Guide*\.
+
 **Note**  
 Prior to version 1\.22\.0 of the AWS SAM CLI, DockerHub was the default repository that the AWS SAM CLI pulled the container image from\. Starting with version 1\.22\.0, the default repository changed to Amazon Elastic Container Registry Public \(Amazon ECR Public\)\. To pull a container image from a repository other than the current default, you can use the [sam build](sam-cli-command-reference-sam-build.md) command with the \-\-build\-image option\. The examples at the end of this topic show how to build applications using DockerHub repository images\.
 
@@ -27,6 +29,7 @@ The following table lists the URIs of [Amazon ECR Public](https://docs.aws.amazo
 | Java 11 | [public\.ecr\.aws/sam/build\-java11](https://gallery.ecr.aws/sam/build-java11) | [amazon/aws\-sam\-cli\-build\-image\-java11](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-java11) | 
 | Java 8 \(AL2\) | [public\.ecr\.aws/sam/build\-java8\.al2](https://gallery.ecr.aws/sam/build-java8.al2) | [amazon/aws\-sam\-cli\-build\-image\-java8\.al2](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-java8.al2) | 
 | Java 8 | [public\.ecr\.aws/sam/build\-java8](https://gallery.ecr.aws/sam/build-java8) | [amazon/aws\-sam\-cli\-build\-image\-java8](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-java8) | 
+| Go 1\.x | [public\.ecr\.aws/sam/build\-go1\.x](https://gallery.ecr.aws/sam/build-go1.x) | [amazon/aws\-sam\-cli\-build\-image\-go1\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-go1.x) | 
 | Custom runtime \(AL2\) | [public\.ecr\.aws/sam/build\-provided\.al2](https://gallery.ecr.aws/sam/build-provided.al2) | [amazon/aws\-sam\-cli\-build\-image\-provided\.al2](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-provided.al2) | 
 | Custom runtime | [public\.ecr\.aws/sam/build\-provided](https://gallery.ecr.aws/sam/build-provided) | [amazon/aws\-sam\-cli\-build\-image\-provided](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-provided) | 
 
@@ -38,6 +41,6 @@ The following two example commands build applications using container images fro
 # Build a Node.js 12 application using a container image pulled from DockerHub
 sam build --use-container --build-image amazon/aws-sam-cli-build-image-nodejs12.x
 
-# Build a function resource using using the Python 3.8 container image pulled from DockerHub
+# Build a function resource using the Python 3.8 container image pulled from DockerHub
 sam build --use-container --build-image Function1=amazon/aws-sam-cli-build-image-python3.8
 ```

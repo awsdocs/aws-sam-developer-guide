@@ -76,11 +76,17 @@ If you're using Amazon Linux 2, follow these steps to install Docker:
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
    ```
 
+**Note**  
+On Linux, to build and run Lambda functions with a different instruction set architecture than your host machine, you must take additional steps to configure Docker\. For example, to run `arm64` functions on an `x86_64` machine, you can run the following command to configure the Docker daemon: `docker run --rm --privileged multiarch/qemu-user-static --reset -p yes`\.
+
 If you run into issues installing Docker, see the [Troubleshooting](#serverless-sam-cli-install-linux-troubleshooting) section later in this guide\. Or, see the [Troubleshooting](https://docs.docker.com/engine/install/linux-postinstall/#troubleshooting) section of **Post\-installation steps for Linux** on the Docker Docs website\.
 
 ## Step 4: Install the AWS SAM CLI<a name="serverless-sam-cli-install-linux-sam-cli"></a>
 
-To install the AWS SAM CLI, follow these steps:
+To install the AWS SAM CLI, on follow these steps:
+
+------
+#### [ x86\_64  ]
 
 1. Download the [AWS SAM CLI zip file](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip) to a directory of your choice\.
 
@@ -121,6 +127,29 @@ To install the AWS SAM CLI, follow these steps:
    ```
     SAM CLI, version 1.18.0
    ```
+
+------
+#### [ ARM ]
+
+1. Use `pip` to install the AWS SAM CLI\.
+
+   ```
+   pip install aws-sam-cli
+   ```
+
+1. Verify the installation\.
+
+   ```
+   sam --version
+   ```
+
+   On successful installation, you should see output like the following:
+
+   ```
+    SAM CLI, version 1.18.0
+   ```
+
+------
 
 You're now ready to start development\.
 

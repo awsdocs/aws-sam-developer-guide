@@ -38,7 +38,7 @@ Endpoint Configuration example
 
 ```
 EndpointConfiguration:
-  Type: EDGE
+  Type: PRIVATE
   VPCEndpointIds:
     - vpce-123a123a
     - vpce-321a321a

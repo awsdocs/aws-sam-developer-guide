@@ -64,6 +64,7 @@ Globals:
     ProvisionedConcurrencyConfig:
     AssumeRolePolicyDocument:
     EventInvokeConfig:
+    Architectures:
 
   Api:
     Auth:

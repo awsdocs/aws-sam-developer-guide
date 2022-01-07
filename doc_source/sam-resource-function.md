@@ -13,6 +13,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 ```
 Type: AWS::Serverless::Function
 Properties:
+  [Architectures](#sam-function-architectures): List
   [AssumeRolePolicyDocument](#sam-function-assumerolepolicydocument): JSON
   [AutoPublishAlias](#sam-function-autopublishalias): String
   [AutoPublishCodeSha256](#sam-function-autopublishcodesha256): String
@@ -48,6 +49,15 @@ Properties:
 ```
 
 ## Properties<a name="sam-resource-function-properties"></a>
+
+ `Architectures`   <a name="sam-function-architectures"></a>
+The instruction set architecture for the function\.  
+For more information about this property, see [Lambda instruction set architectures](https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html) in the *AWS Lambda Developer Guide*\.  
+*Valid values*: One of `x86_64` or `arm64`  
+*Type*: List  
+*Required*: No  
+*Default*: `x86_64`  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Architectures](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-architectures)` property of an `AWS::Lambda::Function` resource\.
 
  `AssumeRolePolicyDocument`   <a name="sam-function-assumerolepolicydocument"></a>
 Adds an AssumeRolePolicyDocument for the default created `Role` for this function\. If this property isn't specified, AWS SAM adds a default assume role for this function\.  
@@ -154,6 +164,7 @@ The object used to configure Lambda container image settings\. For more informat
  `ImageUri`   <a name="sam-function-imageuri"></a>
 The URI of the Amazon Elastic Container Registry \(Amazon ECR\) repository for the Lambda function's container image\. This property only applies if the `PackageType` property is set to `Image`, otherwise it is ignored\. For more information, see [Using container images with Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html) in the *AWS Lambda Developer Guide*\.  
 **Note**: If the `PackageType` property is set to `Image`, then either `ImageUri` is required, or you must build your application with necessary `Metadata` entries in the AWS SAM template file\. For more information, see [Building applications](serverless-sam-cli-using-build.md)\.  
+Building your application with necessary `Metadata` entries takes precedence over `ImageUri`, so if you specify both then `ImageUri` is ignored\.  
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[ImageUri](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-imageuri)` property of the `AWS::Lambda::Function` `Code` data type\.

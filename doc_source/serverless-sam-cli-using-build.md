@@ -14,6 +14,8 @@ For more information about Lambda package types, see [Lambda deployment packages
 
 To build your serverless application as a \.zip file archive, declare `PackageType: Zip` for your serverless function\.
 
+AWS SAM builds your application for the [architecture](sam-resource-function.md#sam-function-architectures) that you specify\. If you don't specify an architecture, AWS SAM uses `x86_64` by default\.
+
 If your Lambda function depends on packages that have natively compiled programs, use the `--use-container` flag\. This flag locally compiles your functions in a Docker container that behaves like a Lambda environment, so they're in the right format when you deploy them to the AWS Cloud\.
 
 When you use the `--use-container` option, by default AWS SAM pulls the container image from [Amazon ECR Public](https://docs.aws.amazon.com/AmazonECR/latest/public/what-is-ecr.html)\. If you would like to pull a container image from another repository, for example DockerHub, you can use the `--build-image` option and provide the URI of an alternate container image\. Following are two example commands for building applications using container images from the DockerHub repository:
@@ -22,7 +24,7 @@ When you use the `--use-container` option, by default AWS SAM pulls the containe
 # Build a Node.js 12 application using a container image pulled from DockerHub
 sam build --use-container --build-image amazon/aws-sam-cli-build-image-nodejs12.x
 
-# Build a function resource using using the Python 3.8 container image pulled from DockerHub
+# Build a function resource using the Python 3.8 container image pulled from DockerHub
 sam build --use-container --build-image Function1=amazon/aws-sam-cli-build-image-python3.8
 ```
 
@@ -56,6 +58,9 @@ The following is an example `Metadata` resource attribute section:
 ```
 
 To download a sample application that's configured with the `Image` package type, see [Step 1: Download a sample AWS SAM application](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-initialize) in **Tutorial: Deploying a Hello World application**\. At the prompt asking which package type you want to install, choose `Image`\.
+
+**Note**  
+If you specify a multi\-architecture base image in your Dockerfile, AWS SAM builds your container image for your host machine's architecture\. To build for a different architecture, specify a base image that uses the specific target architecture\.
 
 ## Container environment variable file<a name="serverless-sam-cli-using-container-environment-file"></a>
 
@@ -114,7 +119,7 @@ sam build --use-container
 # Build a Node.js 12 application using a container image pulled from DockerHub
 sam build --use-container --build-image amazon/aws-sam-cli-build-image-nodejs12.x
 
-# Build a function resource using using the Python 3.8 container image pulled from DockerHub
+# Build a function resource using the Python 3.8 container image pulled from DockerHub
 sam build --use-container --build-image Function1=amazon/aws-sam-cli-build-image-python3.8 
 
 # Build and run your functions locally

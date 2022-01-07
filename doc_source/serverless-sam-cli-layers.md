@@ -92,8 +92,8 @@ To compute the unique layers hash, combine all unique layer names with a delimit
 myLayer-1-926eeb5ff1-mySecondLayer-1-6bc1022bdf = 2dd7ac5ffb30d515926aef
 ```
 
-Then combine this value with the function's runtime, with a delimiter of '\-':
+Then combine this value with the function's runtime and architecture, with a delimiter of '\-':
 
 ```
-python3.7-2dd7ac5ffb30d515926aefffd
+python3.7-x86_64-2dd7ac5ffb30d515926aefffd
 ```
