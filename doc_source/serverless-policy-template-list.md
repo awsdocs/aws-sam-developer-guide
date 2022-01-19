@@ -124,7 +124,11 @@ Gives create, read, update, and delete permissions to an Amazon DynamoDB table\.
               "dynamodb:BatchWriteItem",
               "dynamodb:BatchGetItem",
               "dynamodb:DescribeTable",
-              "dynamodb:ConditionCheckItem"
+              "dynamodb:ConditionCheckItem",
+              "dynamodb:PartiQLSelect",
+              "dynamodb:PartiQLUpdate",
+              "dynamodb:PartiQLInsert",
+              "dynamodb:PartiQLDelete"
             ],
             "Resource": [
               {
@@ -165,7 +169,8 @@ Gives read\-only permission to a DynamoDB table\.
               "dynamodb:Scan",
               "dynamodb:Query",
               "dynamodb:BatchGetItem",
-              "dynamodb:DescribeTable"
+              "dynamodb:DescribeTable",
+              "dynamodb:PartiQLSelect"
             ],
             "Resource": [
               {
@@ -204,7 +209,9 @@ Gives write\-only permission to a DynamoDB table\.
             "Action": [
               "dynamodb:PutItem",
               "dynamodb:UpdateItem",
-              "dynamodb:BatchWriteItem"
+              "dynamodb:BatchWriteItem",
+              "dynamodb:PartiQLUpdate",
+              "dynamodb:PartiQLInsert"
             ],
             "Resource": [
               {
