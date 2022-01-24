@@ -1,3 +1,8 @@
+**Note** 
+Install using `pip install aws-sam-cli` or `brew install aws-sam-cli`
+More details [here](serverless-sam-cli-install.md) 
+
+
 # What is the AWS Serverless Application Model \(AWS SAM\)?<a name="what-is-sam"></a>
 
 The AWS Serverless Application Model \(AWS SAM\) is an open\-source framework that you can use to build [serverless applications](https://aws.amazon.com/serverless/) on AWS\.
