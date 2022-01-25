@@ -157,7 +157,7 @@ A name for the API Gateway RestApi resource
 
  `OpenApiVersion`   <a name="sam-api-openapiversion"></a>
 Version of OpenApi to use\. This can either be `2.0` for the Swagger specification, or one of the OpenApi 3\.0 versions, like `3.0.1`\. For more information about OpenAPI, see the [OpenAPI Specification](https://swagger.io/specification/)\.  
-**Note**: Setting this property to any valid value will also remove the stage `Stage` that SAM creates\.  
+**Note**: For reasons of backwards compatibility, SAM creates a stage called `Stage` by default. Setting this property to any valid value will prevent the creation of the auto-generated stage `Stage`\.
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
