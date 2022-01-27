@@ -1,7 +1,7 @@
 **Note** 
 
 Install using \-
-`brew install aws-sam-cli` or `pip install aws-sam-cli` in your [Python venv](https://docs.python.org/3/library/venv.html)</b>
+`brew install aws-sam-cli`</b>
 More details [here](serverless-sam-cli-install.md)\.
 
 
