@@ -1096,6 +1096,31 @@ Gives permission to get the secret value for the specified AWS Secrets Manager s
         ]
 ```
 
+## AcmGetCertificatePolicy<a name="acm-get-certificate-policy"></a>
+
+Gives permission to get a certificate and its certificate chain from ACM\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "acm:GetCertificate"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "${certificateArn}",
+                {
+                  "certificateArn": {
+                    "Ref": "CertificateArn"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
 ## CodePipelineReadOnlyPolicy<a name="code-pipeline-readonly-policy"></a>
 
 Gives read permission to get details about a CodePipeline pipeline\.
