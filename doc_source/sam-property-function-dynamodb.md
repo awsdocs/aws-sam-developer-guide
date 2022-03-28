@@ -15,6 +15,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [BisectBatchOnFunctionError](#sam-function-dynamodb-bisectbatchonfunctionerror): Boolean
   [DestinationConfig](#sam-function-dynamodb-destinationconfig): [DestinationConfig](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-destinationconfig)
   [Enabled](#sam-function-dynamodb-enabled): Boolean
+  [FilterCriteria](#sam-function-dynamodb-filtercriteria): [FilterCriteria](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-filtercriteria)
   [FunctionResponseTypes](#sam-function-dynamodb-functionresponsetypes): List
   [MaximumBatchingWindowInSeconds](#sam-function-dynamodb-maximumbatchingwindowinseconds): Integer
   [MaximumRecordAgeInSeconds](#sam-function-dynamodb-maximumrecordageinseconds): Integer
@@ -53,6 +54,12 @@ Disables the event source mapping to pause polling and invocation\.
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Enabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled)` property of an `AWS::Lambda::EventSourceMapping` resource\.
+
+ `FilterCriteria`   <a name="sam-function-dynamodb-filtercriteria"></a>
+A object that defines the criteria to determine whether Lambda should process an event\. For more information, see [AWS Lambda event filtering](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html) in the *AWS Lambda Developer Guide*\.  
+*Type*: [FilterCriteria](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-filtercriteria)  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[FilterCriteria](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-filtercriteria)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
  `FunctionResponseTypes`   <a name="sam-function-dynamodb-functionresponsetypes"></a>
 A list of the response types currently applied to the event source mapping\. For more information, see [Reporting batch item failures](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-ddb-batchfailurereporting) in the *AWS Lambda Developer Guide*\.  

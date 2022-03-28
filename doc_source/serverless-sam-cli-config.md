@@ -26,6 +26,7 @@ Here's an example configuration file that contains three sets of parameters for 
  [default.build.parameters]
  container_env_var = ["Function1.GITHUB_TOKEN=TOKEN1", "Function2.GITHUB_TOKEN=TOKEN2"]
  container_env_var_file = "env.json"
+ no_beta_features = true
 ```
 
 ## Configuration file rules<a name="rules"></a>
@@ -84,6 +85,7 @@ The list of entries in the `deploy` command table that AWS SAM can update includ
 + `confirm_changeset`
 + `capabilities`
 + `signing_profiles`
++ `disable_rollback`
 + `parameter_overrides`
 **Note**  
 There's a special case for a configuration file that contains entries for the same parameter in both the `deploy` and `global` command tables\. In this case, if you run `sam deploy --guided` and provide the same value for that parameter as the `global` command table entry, then the `deploy` command table entry is removed\.  

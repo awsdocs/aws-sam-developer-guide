@@ -15,7 +15,7 @@ Properties:
   [Auth](#sam-httpapi-auth): HttpApiAuth
   [CorsConfiguration](#sam-httpapi-corsconfiguration): String | HttpApiCorsConfiguration
   [DefaultRouteSettings](#sam-httpapi-defaultroutesettings): [RouteSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings)
-  [DefinitionBody](#sam-httpapi-definitionbody): String
+  [DefinitionBody](#sam-httpapi-definitionbody): JSON
   [DefinitionUri](#sam-httpapi-definitionuri): String | HttpApiDefinition
   [Description](#sam-httpapi-description): String
   [DisableExecuteApiEndpoint](#sam-httpapi-disableexecuteapiendpoint): Boolean
@@ -59,7 +59,7 @@ The default route settings for this HTTP API\. These settings apply to all route
 
  `DefinitionBody`   <a name="sam-httpapi-definitionbody"></a>
 The OpenAPI definition that describes your HTTP API\. If you don't specify a `DefinitionUri` or a `DefinitionBody`, AWS SAM generates a `DefinitionBody` for you based on your template configuration\.  
-*Type*: String  
+*Type*: JSON  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[Body](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-body)` property of an `AWS::ApiGatewayV2::Api` resource\. If certain properties are provided, AWS SAM may insert content into or modify the `DefinitionBody` before it is passed to AWS CloudFormation\. Properties include `Auth` and an `EventSource` of type HttpApi for a corresponding `AWS::Serverless::Function` resource\.
 

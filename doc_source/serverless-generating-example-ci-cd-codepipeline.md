@@ -23,7 +23,8 @@ You can run the following command to help with this setup:
 sam pipeline bootstrap
 ```
 
-Note that you need to run the previous command once for each deployment stage of your pipeline\.
+**Note**  
+Run the previous command for each deployment stage of your pipeline\.
 
 ## Step 2: Generate the pipeline configuration<a name="generating-example-step-2"></a>
 
@@ -45,14 +46,14 @@ For AWS CodePipeline you can now create the connection by running the following 
 sam deploy -t codepipeline.yaml --stack-name <pipeline-stack-name> --capabilities=CAPABILITY_IAM --region <region-X>
 ```
 
-If you are using GitHub or BitBucket, after running the sam deploy command previously, complete the connection by following the steps under **To complete a connection** found on the [Update a pending connection](https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-update.html) topic in the *Developer Tools console user guide*\. In addition, store a copy of the `CodeStarConnectionArn` from the output of the sam deploy command, because you will need it if you want to use AWS CodePipeline with another branch than `main`\.
+If you are using GitHub or Bitbucket, after running the sam deploy command previously, complete the connection by following the steps under **To complete a connection** found on the [Update a pending connection](https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-update.html) topic in the *Developer Tools console user guide*\. In addition, store a copy of the `CodeStarConnectionArn` from the output of the sam deploy command, because you will need it if you want to use AWS CodePipeline with another branch than `main`\.
 
 ## Configuring other branches<a name="configuring-other-branches"></a>
 
 By default, AWS CodePipeline uses the `main` branch with AWS SAM\. If you want to use a branch other than `main`, you must run the sam deploy command again\. Note that depending on which Git repository you are using, you may also need to provide the `CodeStarConnectionArn`:
 
 ```
-# For GitHub and BitBucket
+# For GitHub and Bitbucket
 sam deploy -t codepipeline.yaml --stack-name <feature-pipeline-stack-name> --capabilities=CAPABILITY_IAM --parameter-overrides="FeatureGitBranch=<branch-name> CodeStarConnectionArn=<codestar-connection-arn>"
 
 # For AWS CodeCommit

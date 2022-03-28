@@ -14,6 +14,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [DomainName](#sam-httpapi-httpapidomainconfiguration-domainname): String
   [EndpointConfiguration](#sam-httpapi-httpapidomainconfiguration-endpointconfiguration): String
   [MutualTlsAuthentication](#sam-httpapi-httpapidomainconfiguration-mutualtlsauthentication): [MutualTlsAuthentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-mutualtlsauthentication)
+  [OwnershipVerificationCertificateArn](#sam-httpapi-httpapidomainconfiguration-ownershipverificationcertificatearn): String
   [Route53](#sam-httpapi-httpapidomainconfiguration-route53): Route53Configuration
   [SecurityPolicy](#sam-httpapi-httpapidomainconfiguration-securitypolicy): String
 ```
@@ -54,6 +55,12 @@ The mutual transport layer security \(TLS\) authentication configuration for a c
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[MutualTlsAuthentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-mutualtlsauthentication)` property of an `AWS::ApiGatewayV2::DomainName` resource\.
 
+ `OwnershipVerificationCertificateArn`   <a name="sam-httpapi-httpapidomainconfiguration-ownershipverificationcertificatearn"></a>
+The ARN of the public certificate issued by ACM to validate ownership of your custom domain\. Required only when you configure mutual TLS and you specify an ACM imported or private CA certificate ARN for the `CertificateArn`\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[OwnershipVerificationCertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-ownershipverificationcertificatearn)` property of the `AWS::ApiGatewayV2::DomainName` `DomainNameConfiguration` data type\.
+
  `Route53`   <a name="sam-httpapi-httpapidomainconfiguration-route53"></a>
 Defines an Amazon Route 53 configuration\.  
 *Type*: [Route53Configuration](sam-property-httpapi-route53configuration.md)  
@@ -83,6 +90,6 @@ Domain:
   Route53:
     HostedZoneId: Z1PA6795UKMFR9
   BasePath:
-    - /foo
-    - /bar
+    - foo
+    - bar
 ```

@@ -147,6 +147,7 @@ The following is a table of the available policy templates\.
 | [EcsRunTaskPolicy](serverless-policy-template-list.md#ecs-run-task-policy) | Gives permission to start a new task for a task definition\. | 
 | [EFSWriteAccessPolicy](serverless-policy-template-list.md#efs-write-access-policy) | Gives permission to mount an Amazon EFS file system with write access\. | 
 | [Route53ChangeResourceRecordSetsPolicy](serverless-policy-template-list.md#route53-change-resource-record-sets-policy) | Gives permission to change resource record sets in Route 53\. | 
+| [AcmGetCertificatePolicy](serverless-policy-template-list.md#acm-get-certificate-policy) | Gives a permission to read a certificate from AWS Certificate Manager\. | 
 
 ## Troubleshooting<a name="serverless-policy-template-troubleshooting"></a>
 

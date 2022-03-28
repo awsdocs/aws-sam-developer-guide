@@ -235,4 +235,4 @@ If you receive this error, you're using an unsupported version of Linux, and the
 
 You're now ready to begin building your own serverless applications using AWS SAM\. To start with a sample serverless application, choose one of the following links:
 + [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md) – Step\-by\-step instructions to download, build, and deploy a simple serverless application\.
-+ [AWS SAM example applications in GitHub](https://github.com/aws-samples/serverless-app-examples) – Sample applications in the AWS SAM GitHub repository that you can further experiment with\.
++ [AWS SAM example applications and patterns](https://serverlessland.com/patterns?framework=SAM) – Sample applications and patterns from community authors that you can further experiment with\.

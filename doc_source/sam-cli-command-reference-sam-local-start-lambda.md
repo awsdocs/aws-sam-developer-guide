@@ -64,6 +64,7 @@ aws lambda invoke --function-name "HelloWorldFunction" --endpoint-url "http://12
 | \-\-container\-env\-vars | Optional\. Pass environment variables to image container when locally debugging\. | 
 | \-l, \-\-log\-file TEXT | The log file to send runtime logs to\. | 
 | \-\-layer\-cache\-basedir DIRECTORY | Specifies the location basedir where the layers your template uses are downloaded to\. | 
+| \-\-invoke\-image TEXT |  The URI of the container image that you want to use for the local function invocation\. By default, AWS SAM pulls the container image from Amazon ECR Public\. Use this option to pull the image from another location\. For example, `sam local start-lambda MyFunction --invoke-image amazon/aws-sam-cli-emulation-image-python3.8`\.  | 
 | \-\-skip\-pull\-image | Specifies whether the CLI should skip pulling down the latest Docker image for the Lambda runtime\. | 
 | \-\-force\-image\-build | Specify whether the CLI should rebuild the image used for invoking functions with layers\. | 
 | \-\-profile TEXT | The specific profile from your credential file that gets AWS credentials\. | 

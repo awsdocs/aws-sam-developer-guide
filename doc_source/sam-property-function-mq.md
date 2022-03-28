@@ -16,6 +16,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [BatchSize](#sam-function-mq-batchsize): Integer
   [Broker](#sam-function-mq-broker): String
   [Enabled](#sam-function-mq-enabled): Boolean
+  [MaximumBatchingWindowInSeconds](#sam-function-mq-maximumbatchingwindowinseconds): Integer
   [Queues](#sam-function-mq-queues): List
   [SecretsManagerKmsKeyId](#sam-function-mq-secretsmanagerkmskeyid): String
   [SourceAccessConfigurations](#sam-function-mq-sourceaccessconfigurations): List
@@ -43,6 +44,12 @@ If true, the event source mapping is active\. To pause polling and invocation, s
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Enabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled)` property of an `AWS::Lambda::EventSourceMapping` resource\.
+
+ `MaximumBatchingWindowInSeconds`   <a name="sam-function-mq-maximumbatchingwindowinseconds"></a>
+The maximum amount of time to gather records before invoking the function, in seconds\.  
+*Type*: Integer  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[MaximumBatchingWindowInSeconds](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumbatchingwindowinseconds)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
  `Queues`   <a name="sam-function-mq-queues"></a>
 The name of the Amazon MQ broker destination queue to consume\.  

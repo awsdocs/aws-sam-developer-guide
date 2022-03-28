@@ -57,7 +57,7 @@ On successful installation of the AWS SAM CLI, you should see output like the fo
 
 ```
  
- SAM CLI, version 1.15.0
+ SAM CLI, version 1.35.0
 ```
 
 ## Upgrading the AWS SAM CLI using Homebrew<a name="sam-cli-install-linux-alt-upgrading"></a>

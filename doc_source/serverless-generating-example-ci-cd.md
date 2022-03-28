@@ -2,7 +2,7 @@
 
 When you are ready to deploy your serverless application in an automated manner, you can generate a deployment pipeline for your CI/CD system of choice\. AWS SAM provides a set of starter pipeline templates with which you can generate pipelines in minutes using the [sam pipeline init](sam-cli-command-reference-sam-pipeline-init.md) command\.
 
-The starter pipeline templates use the familiar JSON/YAML syntax of the CI/CD system, and incorporate best practices such as managing artifacts across multiple accounts and regions, and using the minimum amount of permissions required to deploy the application\. Currently, the AWS SAM CLI supports generating starter CI/CD pipeline configurations for [AWS CodePipeline](http://aws.amazon.com/codepipeline), [Jenkins](https://www.jenkins.io/), [GitLab CI/CD](https://docs.gitlab.com/ee/ci/), and [GitHub Actions](https://github.com/features/actions)\.
+The starter pipeline templates use the familiar JSON/YAML syntax of the CI/CD system, and incorporate best practices such as managing artifacts across multiple accounts and regions, and using the minimum amount of permissions required to deploy the application\. Currently, the AWS SAM CLI supports generating starter CI/CD pipeline configurations for [AWS CodePipeline](http://aws.amazon.com/codepipeline), [Jenkins](https://www.jenkins.io/), [GitLab CI/CD](https://docs.gitlab.com/ee/ci/), [GitHub Actions](https://github.com/features/actions), and [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/)\.
 
 Here are the high\-level tasks you need to perform to generate a starter pipeline configuration:
 
@@ -18,4 +18,4 @@ After you've generated the starter pipeline configuration and committed it to yo
 
 The ordering of these steps, and details of each step, vary based on your CI/CD system:
 + If you are using AWS CodePipeline, see [Generating starter pipeline for AWS CodePipeline](serverless-generating-example-ci-cd-codepipeline.md)\.
-+ If you are using Jenkins, GitLab CI/CD, or GitHub Actions, see [Generating starter pipelines for Jenkins, GitLab CI/CD, or GitHub Actions](serverless-generating-example-ci-cd-others.md)\.
++ If you are using Jenkins, GitLab CI/CD, GitHub Actions, or Bitbucket Pipelines, see [Generating starter pipelines for Jenkins, GitLab CI/CD, GitHub Actions, or Bitbucket Pipelines](serverless-generating-example-ci-cd-others.md)\.

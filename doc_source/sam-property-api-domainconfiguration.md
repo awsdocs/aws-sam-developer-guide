@@ -14,6 +14,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [DomainName](#sam-api-domainconfiguration-domainname): String
   [EndpointConfiguration](#sam-api-domainconfiguration-endpointconfiguration): String
   [MutualTlsAuthentication](#sam-api-domainconfiguration-mutualtlsauthentication): [MutualTlsAuthentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication)
+  [OwnershipVerificationCertificateArn](#sam-api-domainconfiguration-ownershipverificationcertificatearn): String
   [Route53](#sam-api-domainconfiguration-route53): Route53Configuration
   [SecurityPolicy](#sam-api-domainconfiguration-securitypolicy): String
 ```
@@ -55,6 +56,12 @@ The mutual Transport Layer Security \(TLS\) authentication configuration for a c
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[MutualTlsAuthentication](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication)` property of an `AWS::ApiGateway::DomainName` resource\.
 
+ `OwnershipVerificationCertificateArn`   <a name="sam-api-domainconfiguration-ownershipverificationcertificatearn"></a>
+The ARN of the public certificate issued by ACM to validate ownership of your custom domain\. Required only when you configure mutual TLS and you specify an ACM imported or private CA certificate ARN for the `CertificateArn`\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[OwnershipVerificationCertificateArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-ownershipverificationcertificatearn)` property of an `AWS::ApiGateway::DomainName` resource\.
+
  `Route53`   <a name="sam-api-domainconfiguration-route53"></a>
 Defines an Amazon Route 53 configuration\.  
 *Type*: [Route53Configuration](sam-property-api-route53configuration.md)  
@@ -83,6 +90,6 @@ Domain:
   Route53:
     HostedZoneId: Z1PA6795UKMFR9
   BasePath:
-    - /foo
-    - /bar
+    - foo
+    - bar
 ```

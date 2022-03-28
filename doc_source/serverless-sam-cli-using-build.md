@@ -159,3 +159,30 @@ RUN python3.8 -m pip install -r requirements.txt
 # Overwrite the command by providing a different command directly in the template.
 CMD ["app.lambda_handler"]
 ```
+
+### Example 3: npm ci<a name="examples-npm-ci"></a>
+
+For Node\.js applications, you can use `npm ci` instead of `npm install` to install dependencies\. To use `npm ci`, specify `UseNpmCi: True` under `BuildProperties` in your Lambda function's `Metadata` resource attribute\. To use `npm ci`, your application must have a `package-lock.json` or `npm-shrinkwrap.json` file present in the `CodeUri` for your Lambda function\.
+
+The following example uses `npm ci` to install dependencies when you run `sam build`:
+
+```
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: hello-world/
+      Handler: app.handler
+      Runtime: nodejs14.x
+      Architectures:
+        - x86_64
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+    Metadata:
+      BuildProperties:
+        UseNpmCi: True
+```

@@ -14,7 +14,7 @@ For more information about settings that are optionally stored when specifying t
 
 Deploying AWS Lambda functions through AWS CloudFormation requires an Amazon Simple Storage Service \(Amazon S3\) bucket for the Lambda deployment package\. The AWS SAM CLI creates and manages this Amazon S3 bucket for you\. AWS SAM enables encryption for all files stored in Amazon S3\.
 
-If your application includes any function or layer resources declared with `PackageType: Image`, then you can instruct the AWS SAM CLI to automatically create the required Amazon ECR repositories for you, using either the `--resolve-images-repos` option, or the `--guided` option and responding to prompt "Create managed ERC respositories for all functions?" with `Y`\.
+If your application includes any function or layer resources declared with `PackageType: Image`, then you can instruct the AWS SAM CLI to automatically create the required Amazon ECR repositories for you, using either the `--resolve-image-repos` option, or the `--guided` option and responding to prompt "Create managed ERC respositories for all functions?" with `Y`\.
 
 **Usage:**
 
@@ -52,6 +52,7 @@ sam deploy [OPTIONS] [ARGS]...
 | \-\-notification\-arns LIST | A list of Amazon Simple Notification Service \(Amazon SNS\) topic ARNs that AWS CloudFormation associates with the stack\. | 
 | \-\-tags LIST | A list of tags to associate with the stack that is created or updated\. AWS CloudFormation also propagates these tags to resources in the stack that support it\. | 
 | \-\-parameter\-overrides | A string that contains AWS CloudFormation parameter overrides encoded as key\-value pairs\. Use the same format as the AWS Command Line Interface \(AWS CLI\)\. For example, ParameterKey=ParameterValue InstanceType=t1\.micro\. | 
+| \-\-disable\-rollback \| \-\-no\-disable\-rollback | Specify whether to rollback your AWS CloudFormation stack if an error occurs during a deployment\. By default, your AWS CloudFormation stack rolls back to the last stable state if there's an error during a deployment\. If you specify \-\-disable\-rollback and an error occurs during a deployment, resources that have been created or updated before the error occurs aren't rolled back\. | 
 | \-\-config\-file PATH | The path and file name of the configuration file containing default parameter values to use\. The default value is samconfig\.toml in the root of the project directory\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
 | \-\-config\-env TEXT | The environment name specifying the default parameter values in the configuration file to use\. The default value is default\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
 | \-\-no\-progressbar | Do not display a progress bar when uploading artifacts to Amazon S3\. | 

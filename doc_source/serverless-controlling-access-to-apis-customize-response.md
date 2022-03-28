@@ -11,7 +11,7 @@ Resources:
     Properties:
       StageName: Prod
       GatewayResponses:
-        DEFAULT_4xx:
+        DEFAULT_4XX:
           ResponseParameters:
             Headers:
               Access-Control-Expose-Headers: "'WWW-Authenticate'"

@@ -151,12 +151,22 @@ With the modified Hello World application in place, the following policy stateme
                 "iam:DeleteRole",
                 "iam:DetachRolePolicy",
                 "iam:GetRole",
-                "iam:PassRole",
                 "iam:TagRole"
             ],
             "Resource": [
                 "arn:aws:iam::111122223333:role/*"
             ]
+        },
+        {
+            "Sid": "IAMPassRole",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:PassedToService": "lambda.amazonaws.com"
+                }
+            }
         },
         {
             "Sid": "APIGateway",
@@ -175,5 +185,11 @@ With the modified Hello World application in place, the following policy stateme
     ]
 }
 ```
+
+**Note**  
+The example policy statement in this section grants sufficient permission for you to deploy, update, and delete the the [sample Hello World application](serverless-getting-started-hello-world.md)\. If you add additional resource types to your application, you need to update the policy statement to include the following:  
+Permission for your application to call the service's actions\.
+The service principal, if needed for the service's actions\.
+For example, if you add a Step Functions workflow, you may need to add permissions for actions listed [here](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsstepfunctions.html#awsstepfunctions-actions-as-permissions), and the `states.amazonaws.com` service principal\.
 
 For more information about IAM policies, see [Managing IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage.html) in the *IAM User Guide*\.

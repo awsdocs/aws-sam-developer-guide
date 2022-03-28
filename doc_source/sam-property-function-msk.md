@@ -11,12 +11,19 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 ### YAML<a name="sam-property-function-msk-syntax.yaml"></a>
 
 ```
+  [MaximumBatchingWindowInSeconds](#sam-function-msk-maximumbatchingwindowinseconds): Integer
   [StartingPosition](#sam-function-msk-startingposition): String
   [Stream](#sam-function-msk-stream): String
   [Topics](#sam-function-msk-topics): List
 ```
 
 ## Properties<a name="sam-property-function-msk-properties"></a>
+
+ `MaximumBatchingWindowInSeconds`   <a name="sam-function-msk-maximumbatchingwindowinseconds"></a>
+The maximum amount of time to gather records before invoking the function, in seconds\.  
+*Type*: Integer  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[MaximumBatchingWindowInSeconds](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumbatchingwindowinseconds)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
  `StartingPosition`   <a name="sam-function-msk-startingposition"></a>
 The position in a stream from which to start reading\.  

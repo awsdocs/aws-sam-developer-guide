@@ -22,9 +22,10 @@ Properties:
   [CacheClusterSize](#sam-api-cacheclustersize): String
   [CanarySetting](#sam-api-canarysetting): [CanarySetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-canarysetting)
   [Cors](#sam-api-cors): String | CorsConfiguration
-  [DefinitionBody](#sam-api-definitionbody): String
+  [DefinitionBody](#sam-api-definitionbody): JSON
   [DefinitionUri](#sam-api-definitionuri): String | ApiDefinition
   [Description](#sam-api-description): String
+  [DisableExecuteApiEndpoint](#sam-api-disableexecuteapiendpoint): Boolean
   [Domain](#sam-api-domain): DomainConfiguration
   [EndpointConfiguration](#sam-api-endpointconfiguration): EndpointConfiguration
   [GatewayResponses](#sam-api-gatewayresponses): Map
@@ -88,7 +89,7 @@ For more information about CORS, see [Enable CORS for an API Gateway REST API Re
 
  `DefinitionBody`   <a name="sam-api-definitionbody"></a>
 OpenAPI specification that describes your API\. If neither `DefinitionUri` nor `DefinitionBody` are specified, SAM will generate a `DefinitionBody` for you based on your template configuration\.  
-*Type*: String  
+*Type*: JSON  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[Body](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body)` property of an `AWS::ApiGateway::RestApi` resource\. If certain properties are provided, content may be inserted or modified into the DefinitionBody before being passed to CloudFormation\. Properties include `Auth`, `BinaryMediaTypes`, `Cors`, `GatewayResponses`, `Models`, and an `EventSource` of type Api for a corresponding `AWS::Serverless::Function`\.
 
@@ -105,6 +106,12 @@ A description of the Api resource\.
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Description](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-description)` property of an `AWS::ApiGateway::RestApi` resource\.
+
+ `DisableExecuteApiEndpoint`   <a name="sam-api-disableexecuteapiendpoint"></a>
+Specifies whether clients can invoke your API by using the default `execute-api` endpoint `https://{api_id}.execute-api.{region}.amazonaws.com`\. By default, clients can invoke your API with the default endpoint\. To require that clients only use a custom domain name to invoke your API, disable the default endpoint\.  
+*Type*: Boolean  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[DisableExecuteApiEndpoint](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-disableexecuteapiendpoint)` property of an `AWS::ApiGateway::RestApi` resource\.
 
  `Domain`   <a name="sam-api-domain"></a>
 Configures a custom domain for this API Gateway API\.  

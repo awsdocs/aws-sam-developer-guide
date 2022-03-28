@@ -9,7 +9,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 ### YAML<a name="sam-property-function-eventsource-syntax.yaml"></a>
 
 ```
-  [Properties](#sam-function-eventsource-properties): S3 | SNS | Kinesis | DynamoDB | SQS | Api | Schedule | CloudWatchEvent | EventBridgeRule | CloudWatchLogs | IoTRule | AlexaSkill | Cognito | HttpApi | MSK | MQ
+  [Properties](#sam-function-eventsource-properties): S3 | SNS | Kinesis | DynamoDB | SQS | Api | Schedule | CloudWatchEvent | EventBridgeRule | CloudWatchLogs | IoTRule | AlexaSkill | Cognito | HttpApi | MSK | MQ | SelfManagedKafka
   [Type](#sam-function-eventsource-type): String
 ```
 
@@ -17,13 +17,13 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
  `Properties`   <a name="sam-function-eventsource-properties"></a>
 Object describing properties of this event mapping\. The set of properties must conform to the defined Type\.  
-*Type*: [S3](sam-property-function-s3.md) \| [SNS](sam-property-function-sns.md) \| [Kinesis](sam-property-function-kinesis.md) \| [DynamoDB](sam-property-function-dynamodb.md) \| [SQS](sam-property-function-sqs.md) \| [Api](sam-property-function-api.md) \| [Schedule](sam-property-function-schedule.md) \| [CloudWatchEvent](sam-property-function-cloudwatchevent.md) \| [EventBridgeRule](sam-property-function-eventbridgerule.md) \| [CloudWatchLogs](sam-property-function-cloudwatchlogs.md) \| [IoTRule](sam-property-function-iotrule.md) \| [AlexaSkill](sam-property-function-alexaskill.md) \| [Cognito](sam-property-function-cognito.md) \| [HttpApi](sam-property-function-httpapi.md) \| [MSK](sam-property-function-msk.md) \| [MQ](sam-property-function-mq.md)  
+*Type*: [S3](sam-property-function-s3.md) \| [SNS](sam-property-function-sns.md) \| [Kinesis](sam-property-function-kinesis.md) \| [DynamoDB](sam-property-function-dynamodb.md) \| [SQS](sam-property-function-sqs.md) \| [Api](sam-property-function-api.md) \| [Schedule](sam-property-function-schedule.md) \| [CloudWatchEvent](sam-property-function-cloudwatchevent.md) \| [EventBridgeRule](sam-property-function-eventbridgerule.md) \| [CloudWatchLogs](sam-property-function-cloudwatchlogs.md) \| [IoTRule](sam-property-function-iotrule.md) \| [AlexaSkill](sam-property-function-alexaskill.md) \| [Cognito](sam-property-function-cognito.md) \| [HttpApi](sam-property-function-httpapi.md) \| [MSK](sam-property-function-msk.md) \| [MQ](sam-property-function-mq.md) \| [SelfManagedKafka](sam-property-function-selfmanagedkafka.md)  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Type`   <a name="sam-function-eventsource-type"></a>
 The event type\.  
-*Valid values*: `S3`, `SNS`, `Kinesis`, `DynamoDB`, `SQS`, `Api`, `Schedule`, `CloudWatchEvent`, `CloudWatchLogs`, `IoTRule`, `AlexaSkill`, `Cognito`, `EventBridgeRule`, `HttpApi`, `MSK`, `MQ`  
+*Valid values*: `S3`, `SNS`, `Kinesis`, `DynamoDB`, `SQS`, `Api`, `Schedule`, `CloudWatchEvent`, `CloudWatchLogs`, `IoTRule`, `AlexaSkill`, `Cognito`, `EventBridgeRule`, `HttpApi`, `MSK`, `MQ`, `SelfManagedKafka`  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

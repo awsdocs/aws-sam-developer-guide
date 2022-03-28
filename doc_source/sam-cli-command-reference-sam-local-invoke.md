@@ -43,6 +43,7 @@ sam local invoke [OPTIONS] [FUNCTION_LOGICAL_ID]
 | \-\-layer\-cache\-basedir DIRECTORY | Specifies the location of the base directory where the layers that your template uses are downloaded to\. | 
 | \-\-skip\-pull\-image | Specifies whether the AWS SAM CLI should skip pulling down the latest Docker image for the Lambda runtime\. | 
 | \-\-force\-image\-build | Specifies whether the AWS SAM CLI should rebuild the image used for invoking Lambda functions with layers\. | 
+| \-\-invoke\-image TEXT |  The URI of the container image that you want to use for the local function invocation\. By default, AWS SAM pulls the container image from Amazon ECR Public\. Use this option to pull the image from another location\. For example, `sam local invoke MyFunction --invoke-image amazon/aws-sam-cli-emulation-image-python3.8`\.  | 
 | \-\-profile TEXT | The specific profile from your credential file that gets AWS credentials\. | 
 | \-\-region TEXT | The AWS Region to deploy to\. For example, us\-east\-1\. | 
 | \-\-config\-file PATH | The path and file name of the configuration file containing default parameter values to use\. The default value is "samconfig\.toml" in the root of the project directory\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 

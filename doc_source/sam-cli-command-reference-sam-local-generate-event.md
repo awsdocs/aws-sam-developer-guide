@@ -53,9 +53,11 @@ sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam loc
 + `dynamodb`
 + `kinesis`
 + `lex`
++ `lex-v2`
 + `rekognition`
 + `s3`
 + `ses`
 + `sns`
 + `sqs`
 + `stepfunctions`
++ `workmail`
