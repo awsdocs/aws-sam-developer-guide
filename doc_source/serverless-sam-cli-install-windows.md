@@ -72,7 +72,7 @@ If you operate on 32\-bit system, see [Installing AWS SAM CLI on 32\-bit Windows
 
    ```
     
-    SAM CLI, version 1.35.0
+    SAM CLI, version 1.46.0
    ```
 
 1. Install Git\.
