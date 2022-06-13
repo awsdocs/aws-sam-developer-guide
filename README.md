@@ -4,6 +4,9 @@ The open source version of the Developer Guide for AWS Serverless Application Mo
 
 Link to Index: [AWS Serverless Application Model (AWS SAM) Developer Guide](doc_source/index.md)
 
+**NOTE** The default branch for this repo has changed to `main`. 
+If you have cloned the previous default branch, please update your local repo to use the `main` branch.
+
 ## License
 
 This library is licensed under the Apache 2.0 License. 
