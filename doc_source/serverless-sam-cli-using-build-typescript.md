@@ -26,6 +26,12 @@ The `BuildProperties` object supports the following properties for esbuild\. All
 **EntryPoints**  
 Specifies entry points for your application\.
 
+**External**  
+Specifies the list of packages to be omitted from the build\.
+
+**Loader**  
+Specifies the list of configurations for loading data for a given file type\.
+
 **Minify**  
 Specifies whether to minify the bundled output code\. The default value is `true`\.
 

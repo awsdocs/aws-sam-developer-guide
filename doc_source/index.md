@@ -80,6 +80,8 @@ Amazon's trademarks and trade dress may not be used in
                + [SqsSubscriptionObject](sam-property-function-sqssubscriptionobject.md)
             + [SQS](sam-property-function-sqs.md)
          + [FunctionCode](sam-property-function-functioncode.md)
+         + [FunctionUrlConfig](sam-property-function-functionurlconfig.md)
+            + [Cors](sam-property-function-cors.md)
       + [AWS::Serverless::HttpApi](sam-resource-httpapi.md)
          + [HttpApiAuth](sam-property-httpapi-httpapiauth.md)
             + [LambdaAuthorizer](sam-property-httpapi-lambdaauthorizer.md)

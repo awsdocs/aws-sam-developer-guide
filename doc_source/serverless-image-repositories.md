@@ -16,6 +16,7 @@ The following table lists the URIs of [Amazon ECR Public](https://docs.aws.amazo
 
 | Runtime |  Amazon ECR Public \(default starting with version 1\.22\.0\)  | DockerHub\(default prior to version 1\.22\.0\)  | 
 | --- | --- | --- | 
+| Node\.js 16 | [public\.ecr\.aws/sam/build\-nodejs16\.x](https://gallery.ecr.aws/sam/build-nodejs16.x) | Not supported | 
 | Node\.js 14 | [public\.ecr\.aws/sam/build\-nodejs14\.x](https://gallery.ecr.aws/sam/build-nodejs14.x) | [amazon/aws\-sam\-cli\-build\-image\-nodejs14\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-nodejs14.x) | 
 | Node\.js 12 | [public\.ecr\.aws/sam/build\-nodejs12\.x](https://gallery.ecr.aws/sam/build-nodejs12.x) | [amazon/aws\-sam\-cli\-build\-image\-nodejs12\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-nodejs12.x) | 
 | Node\.js 10 | [public\.ecr\.aws/sam/build\-nodejs10\.x](https://gallery.ecr.aws/sam/build-nodejs10.x) | [amazon/aws\-sam\-cli\-build\-image\-nodejs10\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-nodejs10.x) | 

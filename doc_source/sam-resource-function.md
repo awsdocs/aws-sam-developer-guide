@@ -23,10 +23,12 @@ Properties:
   [DeploymentPreference](#sam-function-deploymentpreference): DeploymentPreference
   [Description](#sam-function-description): String
   [Environment](#sam-function-environment): [Environment](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html)
+  [EphemeralStorage](#sam-function-ephemeralstorage): [EphemeralStorage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-ephemeralstorage)
   [EventInvokeConfig](#sam-function-eventinvokeconfig): EventInvokeConfiguration
   [Events](#sam-function-events): EventSource
   [FileSystemConfigs](#sam-function-filesystemconfigs): List
   [FunctionName](#sam-function-functionname): String
+  [FunctionUrlConfig](#sam-function-functionurlconfig): FunctionUrlConfig
   [Handler](#sam-function-handler): String
   [ImageConfig](#sam-function-imageconfig): [ImageConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-imageconfig)
   [ImageUri](#sam-function-imageuri): String
@@ -124,6 +126,13 @@ The configuration for the runtime environment\.
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Environment](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html)` property of an `AWS::Lambda::Function` resource\.
 
+ `EphemeralStorage`   <a name="sam-function-ephemeralstorage"></a>
+An object that specifies the disk space, in MB, available to your Lambda function in `/tmp`\.  
+For more information about this property, see [Lambda execution environment](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html) in the *AWS Lambda Developer Guide*\.  
+*Type*: [EphemeralStorage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-ephemeralstorage)  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[EphemeralStorage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-ephemeralstorage)` property of an `AWS::Lambda::Function` resource\.
+
  `EventInvokeConfig`   <a name="sam-function-eventinvokeconfig"></a>
 The object that describes event invoke configuration on a Lambda function\.  
 *Type*: [EventInvokeConfiguration](sam-property-function-eventinvokeconfiguration.md)  
@@ -148,6 +157,13 @@ A name for the function\. If you don't specify a name, a unique name is generate
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[FunctionName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-functionname)` property of an `AWS::Lambda::Function` resource\.
+
+ `FunctionUrlConfig`   <a name="sam-function-functionurlconfig"></a>
+The object that describes a function URL\. A function URL is an HTTPS endpoint that you can use to invoke your function\.  
+For more information, see [Function URLs](https://docs.aws.amazon.com/lambda/latest/dg/lambda-urls.html) in the *AWS Lambda Developer Guide*\.  
+*Type*: [FunctionUrlConfig](sam-property-function-functionurlconfig.md)  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Handler`   <a name="sam-function-handler"></a>
 The function within your code that is called to begin execution\. This property is only required if the `PackageType` property is set to `Zip`\.  

@@ -13,6 +13,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 ```
   [Authorizers](#sam-httpapi-httpapiauth-authorizers): OAuth2Authorizer | LambdaAuthorizer
   [DefaultAuthorizer](#sam-httpapi-httpapiauth-defaultauthorizer): String
+  [EnableIamAuthorizer](#sam-httpapi-httpapiauth-enableiamauthorizer): Boolean
 ```
 
 ## Properties<a name="sam-property-httpapi-httpapiauth-properties"></a>
@@ -26,10 +27,16 @@ The authorizer used to control access to your API Gateway API\.
 *Additional notes*: AWS SAM adds the authorizers to the OpenAPI definition\.
 
  `DefaultAuthorizer`   <a name="sam-httpapi-httpapiauth-defaultauthorizer"></a>
-Specify the default authorizer to use for authorizing API calls to your API Gateway API\.  
+Specify the default authorizer to use for authorizing API calls to your API Gateway API\. You can specify `AWS_IAM` as a default authorizer if `EnableIamAuthorizer` is set to `true`\. Otherwise, specify an authorizer that you've defined in `Authorizers`\.  
 *Type*: String  
 *Required*: No  
 *Default*: None  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+ `EnableIamAuthorizer`   <a name="sam-httpapi-httpapiauth-enableiamauthorizer"></a>
+Specify whether to use IAM authorization for the API route\.  
+*Type*: Boolean  
+*Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-httpapi-httpapiauth--examples"></a>
@@ -53,4 +60,16 @@ Auth:
           - MyApi
       IdentitySource: "$request.querystring.param"
   DefaultAuthorizer: OAuth2Authorizer
+```
+
+### IAM authorizer<a name="sam-property-httpapi-httpapiauth--examples--iam-authorizer"></a>
+
+IAM authorizer example
+
+#### YAML<a name="sam-property-httpapi-httpapiauth--examples--iam-authorizer--yaml"></a>
+
+```
+Auth:
+  EnableIamAuthorizer: true
+  DefaultAuthorizer: AWS_IAM
 ```

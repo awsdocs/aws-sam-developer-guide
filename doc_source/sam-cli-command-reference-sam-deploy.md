@@ -59,6 +59,15 @@ sam deploy [OPTIONS] [ARGS]...
 | \-\-debug | Turns on debug logging to print the debug message that the AWS SAM CLI generates and to display timestamps\. | 
 | \-\-help | Shows this message and exits\. | 
 
+**Environment variables:**
+
+
+****  
+
+| Environment variable | Description | 
+| --- | --- | 
+| SAM\_CLI\_POLL\_DELAY |  Specify a delay, in seconds, between `DesbribeStack` API calls\.  | 
+
 ## Examples<a name="examples"></a>
 
 ### Parameters<a name="examples-parameters"></a>
@@ -109,4 +118,12 @@ Signing Profile Owner Account ID (optional):
 #Signing profile details for layer 'MyLayer', which is used by functions {'HelloWorld'}
 Signing Profile Name: 
 Signing Profile Owner Account ID (optional):
+```
+
+### SAM\_CLI\_POLL\_DELAY<a name="examples-delay"></a>
+
+Here is an example `sam deploy` call using the `SAM_CLI_POLL_DELAY` variable to set a 5 second delay between `DescribeStack` API calls\.
+
+```
+SAM_CLI_POLL_DELAY=5 sam deploy
 ```

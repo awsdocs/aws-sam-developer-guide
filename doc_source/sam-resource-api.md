@@ -6,6 +6,12 @@ An [AWS::Serverless::Api](#sam-resource-api) resource need not be explicitly add
 
 An [AWS::Serverless::Api](#sam-resource-api) resource should be used to define and document the API using OpenApi, which provides more ability to configure the underlying Amazon API Gateway resources\.
 
+We recommend that you use AWS CloudFormation hooks or IAM policies to verify that API Gateway resources have authorizers attached to them to control access to them\.
+
+For more information about using AWS CloudFormation hooks, see [Registering hooks](https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/registering-hook-python.html) in the *AWS CloudFormation CLI user guide* and the [apigw\-enforce\-authorizer](https://github.com/aws-cloudformation/aws-cloudformation-samples/tree/main/hooks/python-hooks/apigw-enforce-authorizer/) GitHub repository\.
+
+For more information about using IAM policies, see [Require that API routes have authorization](https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-require-authorization) in the *API Gateway Developer Guide*\.
+
 ## Syntax<a name="sam-resource-api-syntax"></a>
 
 To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
@@ -63,7 +69,7 @@ List of MIME types that your API could return\. Use this to enable binary suppor
 *AWS CloudFormation compatibility*: This property is similar to the `[BinaryMediaTypes](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes)` property of an `AWS::ApiGateway::RestApi` resource\. The list of BinaryMediaTypes is added to both the AWS CloudFormation resource and the OpenAPI document\.
 
  `CacheClusterEnabled`   <a name="sam-api-cacheclusterenabled"></a>
-Indicates whether cache clustering is enabled for the stage\.  
+Indicates whether caching is enabled for the stage\. To cache responses, you must also set `CachingEnabled` to `true` under `MethodSettings`\.  
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[CacheClusterEnabled](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled)` property of an `AWS::ApiGateway::Stage` resource\.
@@ -325,4 +331,45 @@ Resources:
               type: string
             price:
               type: integer
+```
+
+### Caching example<a name="sam-resource-api--examples--caching-example"></a>
+
+A Hello World AWS SAM template file that contains a Lambda Function with an API endpoint\. The API has caching enabled for one resource and method\. For more information about caching, see [Enabling API caching to enhance responsiveness](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html) in the *API Gateway Developer Guide*\.
+
+#### YAML<a name="sam-resource-api--examples--caching-example--yaml"></a>
+
+```
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS SAM template with a simple API definition
+Resources:
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      CacheClusterEnabled: true
+      CacheClusterSize: '0.5'
+      MethodSettings:
+        - ResourcePath: /
+          HttpMethod: GET
+          CachingEnabled: true
+          CacheTtlInSeconds: 300
+
+  ApiFunction: # Adds a GET api endpoint at "/" to the ApiGatewayApi via an Api event
+    Type: AWS::Serverless::Function
+    Properties:
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
+            RestApiId:
+              Ref: ApiGatewayApi
+      Runtime: python3.7
+      Handler: index.handler
+      InlineCode: |
+        def handler(event, context):
+            return {'body': 'Hello World!', 'statusCode': 200}
 ```

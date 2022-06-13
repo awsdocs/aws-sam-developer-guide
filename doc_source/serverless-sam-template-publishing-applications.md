@@ -92,7 +92,7 @@ For more information about the `Metadata` section of the AWS SAM template, see [
 Run the following AWS SAM CLI command, which uploads the application's artifacts to Amazon S3 and outputs a new template file called `packaged.yaml`:
 
 ```
-sam package --template-file template.yaml --output-template-file packaged.yaml --s3-bucket <your-bucket-name>
+sam package --output-template-file packaged.yaml --s3-bucket <your-bucket-name>
 ```
 
 You use the `packaged.yaml` template file in the next step to publish the application to the AWS Serverless Application Repository\. This file is similar to the original template file \(`template.yaml`\), but it has a key difference—the `CodeUri`, `LicenseUrl`, and `ReadmeUrl` properties point to the Amazon S3 bucket and objects that contain the respective artifacts\.

@@ -39,6 +39,7 @@ sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam loc
 | \-\-help | Shows this message and exits\. | 
 
 **Commands:**
++ `alb`
 + `alexa-skills-kit`
 + `alexa-smart-home`
 + `apigateway`

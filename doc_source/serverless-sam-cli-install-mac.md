@@ -30,6 +30,9 @@ In addition, to enable the AWS SAM CLI to make AWS service calls, you must set u
 **Note**  
 Docker is a prerequisite only for testing your application locally and for building deployment packages using the `--use-container` option\. If you don't plan to use these features initially, you can skip this section or install Docker at a later time\.
 
+**Note**  
+We officially support Docker Desktop but, starting with SAM CLI version 1\.47\.0, you can use alternatives as long as they use the Docker runtime\.
+
 Docker is an application that runs containers on your macOS machines\. AWS SAM provides a local environment that's similar to AWS Lambda to use as a Docker container\. You can use this container to build, test, and debug your serverless applications\.
 
 To run serverless projects and functions locally with the AWS SAM CLI, you must have Docker installed and working\. The AWS SAM CLI uses the `DOCKER_HOST` environment variable to contact the Docker daemon\. The following steps describe how to install, configure, and verify a Docker installation to work with the AWS SAM CLI\.

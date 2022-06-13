@@ -65,6 +65,7 @@ Globals:
     AssumeRolePolicyDocument:
     EventInvokeConfig:
     Architectures:
+    EphemeralStorage:
 
   Api:
     Auth:
