@@ -13,8 +13,8 @@ You can define nested applications from the following two sources:
 See the following sections for details on how to use AWS SAM to define both of these types of nested applications in your serverless application\.
 
 **Note**  
-The maximum number of applications that can be nested in a serverless application is 200\.  
-The maximum number of parameters a nested application can have is 60\.
+The maximum number of applications that can be nested in a serverless application is 500\.  
+The maximum number of parameters a nested application can have is 200\.
 
 ## Defining a nested application from the AWS Serverless Application Repository<a name="serverless-sam-template-nested-applications-how-to-serverlessrepo"></a>
 
