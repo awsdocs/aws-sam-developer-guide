@@ -16,4 +16,6 @@ This section is the reference for the AWS SAM CLI commands\. For instructions ab
 + [sam pipeline bootstrap](sam-cli-command-reference-sam-pipeline-bootstrap.md)
 + [sam pipeline init](sam-cli-command-reference-sam-pipeline-init.md)
 + [sam publish](sam-cli-command-reference-sam-publish.md)
++ [sam sync](sam-cli-command-reference-sam-sync.md)
++ [sam traces](sam-cli-command-reference-sam-traces.md)
 + [sam validate](sam-cli-command-reference-sam-validate.md)

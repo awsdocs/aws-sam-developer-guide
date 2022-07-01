@@ -147,6 +147,7 @@ With the modified Hello World application in place, the following policy stateme
             "Sid": "IAM",
             "Effect": "Allow",
             "Action": [
+                "iam:CreateRole",
                 "iam:AttachRolePolicy",
                 "iam:DeleteRole",
                 "iam:DetachRolePolicy",

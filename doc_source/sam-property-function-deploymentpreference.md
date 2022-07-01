@@ -14,6 +14,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [Alarms](#sam-function-deploymentpreference-alarms): List
   [Enabled](#sam-function-deploymentpreference-enabled): Boolean
   [Hooks](#sam-function-deploymentpreference-hooks): Hooks
+  [PassthroughCondition](#sam-function-deploymentpreference-passthroughcondition): Boolean
   [Role](#sam-function-deploymentpreference-role): String
   [TriggerConfigurations](#sam-function-deploymentpreference-triggerconfigurations): List
   [Type](#sam-function-deploymentpreference-type): String
@@ -38,6 +39,12 @@ Whether this deployment preference is enabled\.
  `Hooks`   <a name="sam-function-deploymentpreference-hooks"></a>
 Validation Lambda functions that are run before and after traffic shifting\.  
 *Type*: [Hooks](sam-property-function-hooks.md)  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+ `PassthroughCondition`   <a name="sam-function-deploymentpreference-passthroughcondition"></a>
+If True, and if this deployment preference is enabled, the function's Condition will be passed through to the generated CodeDeploy resource\. Generally, you should set this to True\. Otherwise, the CodeDeploy resource would be created even if the function's Condition resolves to False\.  
+*Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 

@@ -14,7 +14,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
 ```
   [AuthType](#sam-function-functionurlconfig-authtype): String
-  [Cors](#sam-function-functionurlconfig-cors): Cors
+  [Cors](#sam-function-functionurlconfig-cors): [Cors](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html)
 ```
 
 ## Properties<a name="sam-property-function-functionurlconfig-properties"></a>
@@ -24,13 +24,13 @@ The type of authorization for your function URL\. Set to `AWS_IAM` to use IAM to
 For more information, see [Function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html) in the *AWS Lambda Developer Guide*  
 *Type*: String  
 *Required*: Yes  
-*AWS CloudFormation compatibility*: This property is passed directly to the `[AuthType](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-authorizationtype)` property of an `AWS::Lambda::FunctionUrl` resource\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[AuthType](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-authorizationtype)` property of an `AWS::Lambda::Url` resource\.
 
  `Cors`   <a name="sam-function-functionurlconfig-cors"></a>
 The Cross\-Origin Resource Sharing \(CORS\) settings for your function URL\.  
-*Type*: [Cors](sam-property-function-cors.md)  
+*Type*: [Cors](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html)  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Cors](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html)` property of an `AWS::Lambda::Url` resource\.
 
 ## Examples<a name="sam-property-function-functionurlconfig--examples"></a>
 

@@ -1,17 +1,10 @@
 # Getting started with AWS SAM Accelerate<a name="accelerate-getting-started"></a>
 
-
-****  
-
-|  | 
-| --- |
-| Accelerate is currently in public preview\. During public preview, Accelerate may be subject to backwards incompatible changes\. | 
-
  This topic describes what you need to use AWS SAM Accelerate, and provides instructions for building and deploying a simple application\.
 
 ## Prerequisites<a name="serverless-accelerate-getting-started-prerequisites"></a>
 
-To use the AWS SAM Accelerate, you must install version 1\.34\.1 or greater of the AWS SAM CLI\. For installation instructions, see [Installing the AWS SAM CLI](serverless-sam-cli-install.md)\.
+To use the AWS SAM Accelerate, you must install version 1\.53\.0 or greater of the AWS SAM CLI\. For installation instructions, see [Installing the AWS SAM CLI](serverless-sam-cli-install.md)\.
 
 ## Getting started with Accelerate tutorial<a name="accelerate-tutorial"></a>
 
@@ -69,7 +62,7 @@ Invoke your API using `curl`, and then check the logs from your Lambda function\
 curl https://restapiid.execute-api.us-east-1.amazonaws.com/Prod/hello/
 ```
 
-Use the [`logs`](accelerate-monitoring.md#accelerate-logs) command to fetch logs from your application\.
+Use the [`logs`](sam-cli-command-reference-sam-logs.md) command to fetch logs from your application\.
 
 ```
 sam logs --tail

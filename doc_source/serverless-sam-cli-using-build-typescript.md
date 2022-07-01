@@ -73,7 +73,7 @@ Resources:
 
 ## Using the esbuild preview feature<a name="serverless-sam-cli-using-build-esbuild-preview"></a>
 
-To use esbuild, you must opt in to the preview feature\. You can use a [configuration file](serverless-sam-cli-config.md), an environment variable, or a command line argument to use esbuild\. If you don't specify any of these, the AWS SAM CLI interactively prompts you to confirm whether or not to use the preview feature\. The following examples opt in to use esbuild and [sam sync](accelerate-sync.md)\.
+To use esbuild, you must opt in to the preview feature\. You can use a [configuration file](serverless-sam-cli-config.md), an environment variable, or a command line argument to use esbuild\. If you don't specify any of these, the AWS SAM CLI interactively prompts you to confirm whether or not to use the preview feature\. The following examples opt in to use esbuild and [sam sync](sam-cli-command-reference-sam-sync.md)\.
 
 ------
 #### [ Configuration file ]
