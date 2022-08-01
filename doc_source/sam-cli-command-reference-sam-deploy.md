@@ -64,9 +64,9 @@ sam deploy [OPTIONS] [ARGS]...
 
 ****  
 
-| Environment variable | Description | 
-| --- | --- | 
-| SAM\_CLI\_POLL\_DELAY |  Specify a delay, in seconds, between `DesbribeStack` API calls\.  | 
+| Environment variable | Description | Default value | 
+| --- | --- | :---: | 
+| SAM\_CLI\_POLL\_DELAY |  Specify a delay, in seconds, between [`DescribeStackEvents`](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackEvents.html) API calls\.  | `0.5` | 
 
 ## Examples<a name="examples"></a>
 
@@ -122,8 +122,9 @@ Signing Profile Owner Account ID (optional):
 
 ### SAM\_CLI\_POLL\_DELAY<a name="examples-delay"></a>
 
-Here is an example `sam deploy` call using the `SAM_CLI_POLL_DELAY` variable to set a 5 second delay between `DescribeStack` API calls\.
+Here is an example `sam deploy` call using the `SAM_CLI_POLL_DELAY` variable to set a 5 seconds delay between [`DescribeStackEvents`](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackEvents.html) API calls\.
 
 ```
 SAM_CLI_POLL_DELAY=5 sam deploy
 ```
+It helps preventing CloudFormation [`ThrottlingException`](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/CommonErrors.html#CommonErrors-ThrottlingException) as default value is `0.5`.
