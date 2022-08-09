@@ -34,7 +34,7 @@ There are a variety AWS Toolkits that work with different combinations of IDEs a
 
 ## Running AWS SAM locally in debug mode<a name="serverless-sam-cli-running-locally"></a>
 
-In addition to integrating with AWS Toolkits, you can also run AWS SAM in "debug mode" to attach to third\-party debuggers like [ptvsd](https://pypi.org/project/ptvsd/) or [delve](https://github.com/go-delve/delve)\.
+In addition to integrating with AWS Toolkits, you can also run AWS SAM in "debug mode" to attach to third\-party debuggers like [debugpy](https://pypi.org/project/debugpy/) or [delve](https://github.com/go-delve/delve)\.
 
 To run AWS SAM in debug mode, use commands [sam local invoke](sam-cli-command-reference-sam-local-invoke.md) or [sam local start\-api](sam-cli-command-reference-sam-local-start-api.md) with the `--debug-port` or `-d` option\.
 
