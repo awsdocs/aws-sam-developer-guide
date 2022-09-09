@@ -37,10 +37,10 @@ For additional examples of building a \.zip file archive application, see the Ex
 To build your serverless application as a container image, declare `PackageType: Image` for your serverless function\. You must also declare the `Metadata` resource attribute with the following entries:
 
 `Dockerfile`  
-The name of the Dockerfile associated with the Lambda function\.
+Path to the `Dockerfile` associated with the Lambda function (relative to `DockerContext`)\.
 
 `DockerContext`  
-The location of the Dockerfile\.
+Directory that contains the `Dockerfile`. Typically `Dockerfile` is a direct child of `Dockercontext`, but it can also be in a nested directory\.
 
 `DockerTag`  
 \(Optional\) A tag to apply to the built image\.
