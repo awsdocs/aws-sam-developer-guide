@@ -125,7 +125,7 @@ To install the AWS SAM CLI, on follow these steps:
    On successful installation, you should see output like the following:
 
    ```
-    SAM CLI, version 1.18.0
+    SAM CLI, version 1.59.0
    ```
 
 ------
@@ -146,7 +146,7 @@ To install the AWS SAM CLI, on follow these steps:
    On successful installation, you should see output like the following:
 
    ```
-    SAM CLI, version 1.18.0
+    SAM CLI, version 1.59.0
    ```
 
 ------
