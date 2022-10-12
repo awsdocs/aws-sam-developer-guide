@@ -12,6 +12,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
 ```
   [DeadLetterConfig](#sam-function-eventbridgerule-deadletterconfig): DeadLetterConfig
+  [Enabled](#sam-function-eventbridgerule-enabled): Boolean
   [EventBusName](#sam-function-eventbridgerule-eventbusname): String
   [Input](#sam-function-eventbridgerule-input): String
   [InputPath](#sam-function-eventbridgerule-inputpath): String
@@ -28,6 +29,13 @@ Configure the Amazon Simple Queue Service \(Amazon SQS\) queue where EventBridge
 *Type*: [DeadLetterConfig](sam-property-function-deadletterconfig.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[DeadLetterConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-deadletterconfig)` property of the `AWS::Events::Rule` `Target` data type\. The AWS SAM version of this property includes additional subproperties, in case you want AWS SAM to create the dead\-letter queue for you\.
+
+ `Enabled`   <a name="sam-function-eventbridgerule-enabled"></a>
+Indicates whether the rule is enabled\.  
+To disable the rule, set this property to `false`\.  
+*Type*: Boolean  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is similar to the `[State](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state)` property of an `AWS::Events::Rule` resource\. If this property is set to `true` then AWS SAM passes `ENABLED`, otherwise it passes `DISABLED`\.
 
  `EventBusName`   <a name="sam-function-eventbridgerule-eventbusname"></a>
 The event bus to associate with this rule\. If you omit this property, AWS SAM uses the default event bus\.  
@@ -91,4 +99,5 @@ EBRule:
       QueueLogicalId: EBRuleDLQ
     Target:
       Id: MyTarget
+    Enabled: false
 ```
