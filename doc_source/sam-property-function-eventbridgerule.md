@@ -17,6 +17,8 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [InputPath](#sam-function-eventbridgerule-inputpath): String
   [Pattern](#sam-function-eventbridgerule-pattern): [EventPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern)
   [RetryPolicy](#sam-function-eventbridgerule-retrypolicy): [RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)
+  [RuleName](#sam-function-eventbridgerule-name): String
+  [State](#sam-function-eventbridgerule-state): String
   [Target](#sam-function-eventbridgerule-target): Target
 ```
 
@@ -60,6 +62,19 @@ A `RetryPolicy` object that includes information about the retry policy settings
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)` property of the `AWS::Events::Rule` `Target` data type\.
 
+ `RuleName`   <a name="sam-function-eventbridgerule-rulename"></a>
+The name of the rule\. If you omit this property, AWS SAM generates the name.
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[Name](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-name)` property of an `AWS::Events::Rule` resource\.
+
+ `State`   <a name="sam-function-eventbridgerule-state"></a>
+The state of the rule\.
+*Type*: String  
+*Required*: No  
+*Default*: `ENABLED`
+*AWS CloudFormation compatibility*: This property is passed directly to the `[State](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state)` property of an `AWS::Events::Rule` resource\.
+
  `Target`   <a name="sam-function-eventbridgerule-target"></a>
 The AWS resource that EventBridge invokes when a rule is triggered\. You can use this property to specify the logical ID of the target\. If this property is not specified, then AWS SAM generates the logical ID of the target\.  
 *Type*: [Target](sam-property-function-target.md)  
@@ -79,6 +94,7 @@ EBRule:
   Type: EventBridgeRule
   Properties:
     Input: '{"Key": "Value"}'
+    RuleName: MyRule
     Pattern:
       detail:
         state:
