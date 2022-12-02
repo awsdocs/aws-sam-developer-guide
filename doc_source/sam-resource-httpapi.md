@@ -182,16 +182,6 @@ Properties:
           audience:
             - MyApi
         IdentitySource: "$request.querystring.param"
-      OpenIdAuth:
-        AuthorizationScopes:
-          - scope1
-          - scope2
-        OpenIdConnectUrl: "https://www.example.com/v1/connect/oidc/.well-known/openid-configuration"
-        JwtConfiguration:
-          issuer: "https://www.example.com/v1/connect/oidc"
-          audience:
-            - MyApi
-        IdentitySource: "$request.querystring.param"
 ```
 
 ### HttpApi with OpenAPI definition<a name="sam-resource-httpapi--examples--httpapi-with-openapi-definition"></a>
