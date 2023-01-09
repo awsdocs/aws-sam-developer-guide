@@ -15,6 +15,7 @@ To declare this entity in your AWS SAM template, use the following syntax\.
   [FilterCriteria](#sam-function-msk-filtercriteria): [FilterCriteria](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filtercriteria.html)
   [MaximumBatchingWindowInSeconds](#sam-function-msk-maximumbatchingwindowinseconds): Integer
   [StartingPosition](#sam-function-msk-startingposition): String
+  StartingPositionTimestamp: Double
   [Stream](#sam-function-msk-stream): String
   [Topics](#sam-function-msk-topics): List
 ```
@@ -41,10 +42,19 @@ The maximum amount of time to gather records before invoking the function, in se
 
  `StartingPosition`   <a name="sam-function-msk-startingposition"></a>
 The position in a stream from which to start reading\.  
-*Valid values*: `TRIM_HORIZON` or `LATEST`  
++ `AT_TIMESTAMP` – Specify a time from which to start reading records\.
++ `LATEST` – Read only new records\.
++ `TRIM_HORIZON` – Process all available records\.
+*Valid values*: `AT_TIMESTAMP` \| `LATEST` \| `TRIM_HORIZON`  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[StartingPosition](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition)` property of an `AWS::Lambda::EventSourceMapping` resource\.
+
+ `StartingPositionTimestamp`   <a name="sam-function-msk-startingpositiontimestamp"></a>
+The time from which to start reading, in Unix time seconds\. Define `StartingPositionTimestamp` when `StartingPosition` is specified as `AT_TIMESTAMP`\.  
+*Type*: Double  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[StartingPositionTimestamp](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingpositiontimestamp)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
  `Stream`   <a name="sam-function-msk-stream"></a>
 The Amazon Resource Name \(ARN\) of the data stream or a stream consumer\.  

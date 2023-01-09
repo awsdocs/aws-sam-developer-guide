@@ -22,6 +22,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [MaximumRetryAttempts](#sam-function-dynamodb-maximumretryattempts): Integer
   [ParallelizationFactor](#sam-function-dynamodb-parallelizationfactor): Integer
   [StartingPosition](#sam-function-dynamodb-startingposition): String
+  StartingPositionTimestamp: Double
   [Stream](#sam-function-dynamodb-stream): String
   [TumblingWindowInSeconds](#sam-function-dynamodb-tumblingwindowinseconds): Integer
 ```
@@ -94,10 +95,19 @@ The number of batches to process from each shard concurrently\.
 
  `StartingPosition`   <a name="sam-function-dynamodb-startingposition"></a>
 The position in a stream from which to start reading\.  
-*Valid values*: `TRIM_HORIZON` or `LATEST`  
++ `AT_TIMESTAMP` – Specify a time from which to start reading records\.
++ `LATEST` – Read only new records\.
++ `TRIM_HORIZON` – Process all available records\.
+*Valid values*: `AT_TIMESTAMP` \| `LATEST` \| `TRIM_HORIZON`  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[StartingPosition](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition)` property of an `AWS::Lambda::EventSourceMapping` resource\.
+
+ `StartingPositionTimestamp`   <a name="sam-function-dynamodb-startingpositiontimestamp"></a>
+The time from which to start reading, in Unix time seconds\. Define `StartingPositionTimestamp` when `StartingPosition` is specified as `AT_TIMESTAMP`\.  
+*Type*: Double  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[StartingPositionTimestamp](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingpositiontimestamp)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
  `Stream`   <a name="sam-function-dynamodb-stream"></a>
 The Amazon Resource Name \(ARN\) of the DynamoDB stream\.  

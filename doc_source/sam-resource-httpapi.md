@@ -27,6 +27,7 @@ Properties:
   [DisableExecuteApiEndpoint](#sam-httpapi-disableexecuteapiendpoint): Boolean
   [Domain](#sam-httpapi-domain): HttpApiDomainConfiguration
   [FailOnWarnings](#sam-httpapi-failonwarnings): Boolean
+  Name: String
   [RouteSettings](#sam-httpapi-routesettings): [RouteSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings)
   [StageName](#sam-httpapi-stagename): String
   [StageVariables](#sam-httpapi-stagevariables): [Json](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-stagevariables)
@@ -77,8 +78,10 @@ Intrinsic functions are not supported in external OpenApi definition files that 
 *AWS CloudFormation compatibility*: This property is similar to the `[BodyS3Location](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-bodys3location)` property of an `AWS::ApiGatewayV2::Api` resource\. The nested Amazon S3 properties are named differently\.
 
  `Description`   <a name="sam-httpapi-description"></a>
-A description of the HttpApi resource\.  
-This property requires AWS SAM to modify the HttpApi resource's OpenAPI definition, to set the `description` field\. The following two scenarios result in an error: 1\) The `DefinitionBody` property is specified with the `description` field set in the OpenAPI definition \(since this is a conflict that AWS SAM won't resolve\), or 2\) The `DefinitionUri` property is specified \(since AWS SAM won't modify an OpenAPI definition that it retrieves from Amazon S3\)\.
+The description of the HTTP API resource\.  
+When you specify `Description`, AWS SAM will modify the HTTP API resource's OpenApi definition by setting the `description` field\. The following scenarios will result in an error:  
++ The `DefinitionBody` property is specified with the `description` field set in the Open API definition – This results in a conflict of the `description` field that AWS SAM won't resolve\.
++ The `DefinitionUri` property is specified – AWS SAM won't modify an Open API definition that is retrieved from Amazon S3\.
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
@@ -100,6 +103,15 @@ Specifies whether to roll back the HTTP API creation \(`true`\) or not \(`false`
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[FailOnWarnings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-failonwarnings)` property of an `AWS::ApiGatewayV2::Api` resource\.
+
+`Name`  <a name="sam-httpapi-name"></a>
+The name of the HTTP API resource\.  
+When you specify `Name`, AWS SAM will modify the HTTP API resource's OpenAPI definition by setting the `title` field\. The following scenarios will result in an error:  
++ The `DefinitionBody` property is specified with the `title` field set in the Open API definition – This results in a conflict of the `title` field that AWS SAM won't resolve\.
++ The `DefinitionUri` property is specified – AWS SAM won't modify an Open API definition that is retrieved from Amazon S3\.
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `RouteSettings`   <a name="sam-httpapi-routesettings"></a>
 The route settings, per route, for this HTTP API\. For more information, see [Working with routes for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-routes.html) in the *API Gateway Developer Guide*\.  

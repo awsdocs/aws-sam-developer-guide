@@ -22,6 +22,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [MaximumRetryAttempts](#sam-function-kinesis-maximumretryattempts): Integer
   [ParallelizationFactor](#sam-function-kinesis-parallelizationfactor): Integer
   [StartingPosition](#sam-function-kinesis-startingposition): String
+  StartingPositionTimestamp: Double
   [Stream](#sam-function-kinesis-stream): String
   [TumblingWindowInSeconds](#sam-function-kinesis-tumblingwindowinseconds): Integer
 ```
@@ -94,10 +95,19 @@ The number of batches to process from each shard concurrently\.
 
  `StartingPosition`   <a name="sam-function-kinesis-startingposition"></a>
 The position in a stream from which to start reading\.  
-*Valid values*: `TRIM_HORIZON` or `LATEST`  
++ `AT_TIMESTAMP` – Specify a time from which to start reading records\.
++ `LATEST` – Read only new records\.
++ `TRIM_HORIZON` – Process all available records\.
+*Valid values*: `AT_TIMESTAMP` \| `LATEST` \| `TRIM_HORIZON`  
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[StartingPosition](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition)` property of an `AWS::Lambda::EventSourceMapping` resource\.
+
+ `StartingPositionTimestamp`   <a name="sam-function-kinesis-startingpositiontimestamp"></a>
+The time from which to start reading, in Unix time seconds\. Define `StartingPositionTimestamp` when `StartingPosition` is specified as `AT_TIMESTAMP`\.  
+*Type*: Double  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[StartingPositionTimestamp](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingpositiontimestamp)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
  `Stream`   <a name="sam-function-kinesis-stream"></a>
 The Amazon Resource Name \(ARN\) of the data stream or a stream consumer\.  
