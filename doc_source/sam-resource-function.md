@@ -77,7 +77,7 @@ AWS SAM generates [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuid
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `AutoPublishCodeSha256`   <a name="sam-function-autopublishcodesha256"></a>
-The string value that is used, along with the value in `CodeUri`, to determine whether a new Lambda version should be published\.  
+The string value that is used, along with the value in `CodeUri`, to determine whether a new Lambda version should be published\. This property is only used when `AutoPublishAlias` is also defined\.  
 This property addresses a problem that occurs when an AWS SAM template has the following characteristics: the `DeploymentPreference` object is configured for gradual deployments \(as described in [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\), the `AutoPublishAlias` property is set and doesn't change between deployments, and the `CodeUri` property is set and doesn't change between deployments\.  
 This scenario can occur when the deployment package stored in an Amazon Simple Storage Service \(Amazon S3\) location is replaced by a new deployment package that contains updated Lambda function code, but the `CodeUri` property remains unchanged \(as opposed to the new deployment package being uploaded to a new Amazon S3 location and the `CodeUri` being changed to the new location\)\.  
 In this scenario, to trigger the gradual deployment successfully, you must provide a unique value for `AutoPublishCodeSha256`\.  
