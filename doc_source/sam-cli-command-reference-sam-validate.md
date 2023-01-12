@@ -16,7 +16,7 @@ sam validate [OPTIONS]
 | Option | Description | 
 | --- | --- | 
 | \-t, \-\-template, \-\-template\-file PATH |   The AWS SAM template file\. Default value is `template.[yaml\|yml]`\.   If your template is in your current working directory and is named `template.[yaml\|yml\|json]`, this option is not required\.   If you just ran sam build, this option is not required\.   | 
-| \-lint |   Run linting validation on template through cfn\-lint\. Create a `cfnlintrc` config file to specify additional parameters\. For more information, see [cfn\-lint](https://github.com/aws-cloudformation/cfn-lint) in the *AWS CloudFormation GitHub repository*\.   | 
+| \-\-lint |   Run linting validation on template through cfn\-lint\. Create a `cfnlintrc` config file to specify additional parameters\. For more information, see [cfn\-lint](https://github.com/aws-cloudformation/cfn-lint) in the *AWS CloudFormation GitHub repository*\.   | 
 | \-\-profile TEXT | The specific profile from your credential file that gets AWS credentials\. | 
 |  \-\-region TEXT | The AWS Region to deploy to\. For example, us\-east\-1\. | 
 | \-\-config\-file PATH | The path and file name of the configuration file containing default parameter values to use\. The default value is "samconfig\.toml" in the root of the project directory\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 

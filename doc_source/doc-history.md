@@ -1,10 +1,11 @@
 # Document history for AWS SAM<a name="doc-history"></a>
 
 The following table describes the important changes in each release of the *AWS Serverless Application Model Developer Guide*\. For notifications about updates to this documentation, you can subscribe to an RSS feed\.
-+ **Latest documentation update:** January 11, 2023
++ **Latest documentation update:** January 12, 2023
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Configure scaling of SQS pollers for Lambda functions](#doc-history) | Configure scaling of SQS pollers with the `ScalingConfig` property for `AWS::Serverless::Function`\. To learn more, see `[ ScalingConfig](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-sqs.html#sam-function-sqs-scalingconfig)`\. | January 12, 2023 | 
 | [Validate AWS SAM applications with cfn\-lint](#doc-history) |  You can use cfn\-lint to validate your AWS SAM templates through the AWS SAM CLI\. To learn more, see [ Validate with cfn\-lint](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/validate-cfn-lint.html)\.  | January 11, 2023 | 
 | [Monitor your serverless applications with CloudWatch Application Insights](#doc-history) |  Configure Amazon CloudWatch Application Insights to monitor your AWS SAM applications\. To learn more, see [ Monitor your serverless applications with CloudWatch Application Insights](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/monitor-app-insights.html)\.  | December 19, 2022 | 
 | [Added AWS SAM CLI package installer for macOS](#doc-history) |  Install the AWS SAM CLI using the new macOS package installer\. To learn more, see [Installing the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)\.  | December 6, 2022 | 

@@ -17,6 +17,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [FunctionResponseTypes](#sam-function-sqs-functionresponsetypes): List
   [MaximumBatchingWindowInSeconds](#sam-function-sqs-maximumbatchingwindowinseconds): Integer
   [Queue](#sam-function-sqs-queue): String
+  ScalingConfig: [ScalingConfig](https://docs.aws.amazon.com/https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html)
 ```
 
 ## Properties<a name="sam-property-function-sqs-properties"></a>
@@ -61,9 +62,15 @@ The ARN of the queue\.
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[EventSourceArn](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
+ `ScalingConfig`   <a name="sam-function-sqs-scalingconfig"></a>
+Scaling configuration of SQS pollers to control the invoke rate and set maximum concurrent invokes\.  
+*Type*: `[ScalingConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html)`  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[ScalingConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html)` property of an `AWS::Lambda::EventSourceMapping` resource\.
+
 ## Examples<a name="sam-property-function-sqs--examples"></a>
 
-### SQS Event<a name="sam-property-function-sqs--examples--sqs-event"></a>
+### SQS event<a name="sam-property-function-sqs--examples--sqs-event"></a>
 
 SQS Event
 
@@ -80,4 +87,20 @@ Events:
       FilterCriteria: 
         Filters: 
           - Pattern: '{"key": ["val1", "val2"]}'
+```
+
+### Lambda function with an SQS event that has scaling configured<a name="sam-property-function-sqs--examples--sqs-event-scaling"></a>
+
+```
+MyFunction:
+  Type: AWS::Serverless::Function
+  Properties:
+    ...
+    Events:
+      MySQSEvent:
+        Type: SQS
+          Properties:
+            ...
+            ScalingConfig:
+              MaximumConcurrency: 10
 ```
