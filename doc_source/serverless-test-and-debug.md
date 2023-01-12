@@ -14,3 +14,4 @@ If your application includes one or more layers, when you locally run and debug 
 + [Generating sample event payloads](serverless-sam-cli-using-generate-event.md)
 + [Step\-through debugging Lambda functions locally](serverless-sam-cli-using-debugging.md)
 + [Passing additional runtime debug arguments](serverless-sam-cli-using-debugging-additional-arguments.md)
++ [Validate your AWS SAM applications with AWS CloudFormation Linter](validate-cfn-lint.md)

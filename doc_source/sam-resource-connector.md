@@ -163,11 +163,11 @@ Resources:
         - Write
 ```
 
-### Transformed AWS CloudFormation template<a name="sam-resource-connector--examples--transformed--template"></a>
+### Transformed AWS CloudFormation template<a name="sam-resource-connector--examples--transformed-template"></a>
 
 The following is the transformed AWS CloudFormation template from the example above\.
 
-#### YAML<a name="sam-resource-connector--examples--transformed--template--yaml"></a>
+#### JSON<a name="sam-resource-connector--examples--transformed-template--json"></a>
 
 ```
 "FunctionToTableConnectorPolicy": {

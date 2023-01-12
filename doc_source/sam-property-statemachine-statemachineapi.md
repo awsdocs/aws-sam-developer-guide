@@ -13,6 +13,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [Method](#sam-statemachine-statemachineapi-method): String
   [Path](#sam-statemachine-statemachineapi-path): String
   [RestApiId](#sam-statemachine-statemachineapi-restapiid): String
+  UnescapeMappingTemplate: Boolean
 ```
 
 ## Properties<a name="sam-property-statemachine-statemachineapi-properties"></a>
@@ -42,6 +43,14 @@ If you don't define this property, AWS SAM creates a default [AWS::Serverless::A
 This property can't reference an [AWS::Serverless::Api](sam-resource-api.md) resource that is defined in another template\.  
 *Type*: String  
 *Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+ `UnescapeMappingTemplate`   <a name="sam-statemachine-statemachineapi-unescapemappingtemplate"></a>
+Unescapes single quotes, by replacing `\'` with `'`, on the input that is passed to the state machine\. Use when your input contains single quotes\.  
+If set to `False` and your input contains single quotes, an error will occur\.
+*Type*: Boolean  
+*Required*: No  
+*Default*: False  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
 ## Examples<a name="sam-property-statemachine-statemachineapi--examples"></a>
