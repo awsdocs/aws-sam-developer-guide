@@ -19,6 +19,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [RetryPolicy](#sam-statemachine-statemachineschedule-retrypolicy): [RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)
   [Schedule](#sam-statemachine-statemachineschedule-schedule): String
   [State](#sam-statemachine-statemachineschedule-state): String
+  Target: Target
 ```
 
 ## Properties<a name="sam-property-statemachine-statemachineschedule-properties"></a>
@@ -74,6 +75,12 @@ Specify either the `Enabled` or `State` property, but not both\.
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[State](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state)` property of an `AWS::Events::Rule` resource\.
+
+ `Target`   <a name="sam-statemachine-statemachineschedule-target"></a>
+The AWS resource that EventBridge invokes when a rule is triggered\. You can use this property to specify the logical ID of the target\. If this property is not specified, then AWS SAM generates the logical ID of the target\.  
+*Type*: [Target](sam-property-statemachine-statemachinetarget.md)  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is similar to the `[Targets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-targets)` property of an `AWS::Events::Rule` resource\. The AWS SAM version of this property only allows you to specify the logical ID of a single target\.
 
 ## Examples<a name="sam-property-statemachine-statemachineschedule--examples"></a>
 
