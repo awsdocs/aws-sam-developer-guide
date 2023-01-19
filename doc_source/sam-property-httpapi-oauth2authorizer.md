@@ -33,7 +33,7 @@ Identity source expression for this authorizer\.
  `JwtConfiguration`   <a name="sam-httpapi-oauth2authorizer-jwtconfiguration"></a>
 JWT configuration for this authorizer\.  
 This is passed through to the `jwtConfiguration` section of an `x-amazon-apigateway-authorizer` in the `securitySchemes` section of an OpenAPI definition\.  
-Use lowercase `issuer` and `audience` properties with [AWS::Serverless::HttpApi](sam-resource-httpapi.md) and uppercase `Issuer` and `Audience` properties with [AWS::ApiGatewayV2::Authorizer](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-authorizer-jwtconfiguration.html)\.
+Properties `issuer` and `audience` are case insensitive and can be used either lowercase as in OpenAPI or uppercase `Issuer` and `Audience` as in [ AWS::ApiGatewayV2::Authorizer](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-authorizer-jwtconfiguration.html)\. 
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

@@ -12,6 +12,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
 ```
   [FilterPolicy](#sam-function-sns-filterpolicy): [SnsFilterPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy)
+  RedrivePolicy: Json
   [Region](#sam-function-sns-region): String
   [SqsSubscription](#sam-function-sns-sqssubscription): Boolean | SqsSubscriptionObject
   [Topic](#sam-function-sns-topic): String
@@ -24,6 +25,13 @@ The filter policy JSON assigned to the subscription\. For more information, see 
 *Type*: [SnsFilterPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[FilterPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy)` property of an `AWS::SNS::Subscription` resource\.
+
+ `RedrivePolicy`   <a name="sam-function-sns-redrivepolicy"></a>
+When specified, sends undeliverable messages to the specified Amazon SQS dead\-letter queue\. Messages that can't be delivered due to client errors \(for example, when the subscribed endpoint is unreachable\) or server errors \(for example, when the service that powers the subscribed endpoint becomes unavailable\) are held in the dead\-letter queue for further analysis or reprocessing\.  
+For more information about the redrive policy and dead\-letter queues, see [ Amazon SQS dead\-letter queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html) in the *Amazon Simple Queue Service Developer Guide*\.  
+*Type*: Json  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[ RedrivePolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-redrivepolicy)` property of an `AWS::SNS::Subscription` resource\.
 
  `Region`   <a name="sam-function-sns-region"></a>
 For cross\-region subscriptions, the region in which the topic resides\.  
