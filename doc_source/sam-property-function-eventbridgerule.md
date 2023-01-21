@@ -14,7 +14,6 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [DeadLetterConfig](#sam-function-eventbridgerule-deadletterconfig): DeadLetterConfig
   [EventBusName](#sam-function-eventbridgerule-eventbusname): String
   [Input](#sam-function-eventbridgerule-input): String
-  [Name](#sam-function-eventbridgerule-name): String
   [InputPath](#sam-function-eventbridgerule-inputpath): String
   [Name](#sam-function-eventbridgerule-name): String
   [Pattern](#sam-function-eventbridgerule-pattern): [EventPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern)
