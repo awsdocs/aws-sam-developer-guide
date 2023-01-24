@@ -29,6 +29,9 @@ To upgrade the AWS SAM CLI on macOS using Homebrew, run the following command:
 $ brew upgrade aws-sam-cli
 ```
 
+**Note**  
+To upgrade to AWS SAM v1\.70\.1 or newer, we recommend running brew upgrade aws/tap/aws\-sam\-cli instead\. 
+
 #### Package installer<a name="manage-sam-cli-versions-upgrade-macos-pkg"></a>
 
  To upgrade the AWS SAM CLI using the package installer, install the latest package version\. For instructions, see [Installing the AWS SAM CLI](install-sam-cli.md#install-sam-cli-instructions)\. 

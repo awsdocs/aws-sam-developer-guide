@@ -26,7 +26,7 @@ Before you continue, complete all [prerequisites](prerequisites.md) in the previ
 1. Verify the integrity and authenticity of the downloaded installer files by generating a hash value using the following command:
 
    ```
-   sha256sum aws-sam-cli-linux-x86_64.zip
+   $ sha256sum aws-sam-cli-linux-x86_64.zip
    ```
 
    The output should look like the following example:
@@ -42,19 +42,19 @@ Before you continue, complete all [prerequisites](prerequisites.md) in the previ
 If your operating system doesn't have the built\-in unzip command, use an equivalent\.
 
    ```
-   unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+   $ unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
    ```
 
 1. Install the AWS SAM CLI\.
 
    ```
-   sudo ./sam-installation/install
+   $ sudo ./sam-installation/install
    ```
 
 1. Verify the installation\.
 
    ```
-   sam --version
+   $ sam --version
    ```
 
    On successful installation, you should see output like the following:
@@ -69,13 +69,13 @@ If your operating system doesn't have the built\-in unzip command, use an equiva
 1. Use `pip` to install the AWS SAM CLI\.
 
    ```
-   pip install aws-sam-cli
+   $ pip install aws-sam-cli
    ```
 
 1. Verify the installation\.
 
    ```
-   sam --version
+   $ sam --version
    ```
 
    On successful installation, you should see output like the following:
@@ -93,14 +93,17 @@ You must have Homebrew installed on your Linux machine\. For install instruction
 To install the AWS SAM CLI using Homebrew, run the following commands:
 
 ```
-brew tap aws/tap
-brew install aws-sam-cli
+$ brew tap aws/tap
+$ brew install aws-sam-cli
 ```
+
+**Note**  
+Starting with AWS SAM CLI v1\.70\.1, running aws/tap is no longer needed due to a change with the `homebrew-core` library\. To install AWS SAM CLI v1\.70\.1 or newer, we recommend running brew install aws/tap/aws\-sam\-cli instead\. 
 
 Verify the installation\.
 
 ```
-sam --version
+$ sam --version
 ```
 
 On successful installation of the AWS SAM CLI, you should see output like the following:
@@ -377,14 +380,17 @@ You must have Homebrew installed on your machine\. For install instructions, see
 Follow these steps to install the AWS SAM CLI using Homebrew:
 
 ```
-brew tap aws/tap
-brew install aws-sam-cli
+$ brew tap aws/tap
+$ brew install aws-sam-cli
 ```
+
+**Note**  
+Starting with AWS SAM CLI v1\.70\.1, running aws/tap is no longer needed due to a change with the `homebrew-core` library\. To install AWS SAM CLI v1\.70\.1 or newer, we recommend running brew install aws/tap/aws\-sam\-cli instead\. 
 
 Verify the installation:
 
 ```
-sam --version
+$ sam --version
 ```
 
 After successful installation of the AWS SAM CLI, you should see output like the following:
