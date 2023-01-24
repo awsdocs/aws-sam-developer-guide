@@ -43,7 +43,7 @@ sam local invoke [OPTIONS] [FUNCTION_LOGICAL_ID]
 | \-\-container\-env\-vars | \(Optional\) Pass environment variables to the Lambda function image container when debugging locally\. | 
 | \-l, \-\-log\-file TEXT | The log file to send runtime logs to\. | 
 | \-\-layer\-cache\-basedir DIRECTORY | Specifies the location of the base directory where the layers that your template uses are downloaded to\. | 
-| \-\-skip\-pull\-image | Specifies whether the AWS SAM CLI should skip pulling down the latest Docker image for the Lambda runtime\. | 
+| \-\-skip\-pull\-image |  By default, the AWS SAM CLI checks Lambda's latest remote runtime environment and updates your local image automatically to keep in sync\. Specify this option to skip pulling down the latest Docker image for your Lambda runtime environment\.  | 
 | \-\-beta\-features \| \-\-no\-beta\-features | Allow or deny beta features\. | 
 | \-\-force\-image\-build | Specifies whether the AWS SAM CLI should rebuild the image used for invoking Lambda functions with layers\. | 
 | \-\-invoke\-image TEXT |  The URI of the container image that you want to use for the local function invocation\. By default, AWS SAM pulls the container image from Amazon ECR Public\. Use this option to pull the image from another location\. For example, `sam local invoke MyFunction --invoke-image amazon/aws-sam-cli-emulation-image-python3.8`\.  | 

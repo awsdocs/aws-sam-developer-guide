@@ -44,6 +44,7 @@ Properties:
   [Role](#sam-function-role): String
   [RolePath](#sam-function-rolepath): String
   [Runtime](#sam-function-runtime): String
+  RuntimeManagementConfig: RuntimeManagementConfig
   [SnapStart](#sam-function-snapstart): SnapStart
   [Tags](#sam-function-tags): Map
   [Timeout](#sam-function-timeout): Integer
@@ -272,6 +273,13 @@ If you specify the `provided` identifier for this property, you can use the `Met
 *Required*: Conditional  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Runtime](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime)` property of an `AWS::Lambda::Function` resource\.
 
+ `RuntimeManagementConfig`   <a name="sam-function-runtimemanagementconfig"></a>
+Configure runtime management options for your Lambda functions such as runtime environment updates, rollback behavior, and selecting a specific runtime version\. To learn more, see [Lambda runtime updates](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html) in the *AWS Lambda Developer Guide*\.  
+If `AutoPublishAlias` is configured, `RuntimeManagementConfig` will apply to both `$LATEST` and to the newly created version of the function\.
+*Type*: RuntimeManagementConfig  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `RuntimeManagementConfig` property of an `AWS::Lambda::Function` resource\.
+
  `SnapStart`   <a name="sam-function-snapstart"></a>
 Create a snapshot of any new Lambda function version\. A snapshot is a cached state of your initialized function, including all of its dependencies\. The function is initialized just once and the cached state is reused for all future invocations, improving application performance by reducing the number of times your function must be initialized\. To learn more, see [SnapStart](https://docs.aws.amazon.com/lambda/latest/dg/API_SnapStart.html) in the *AWS Lambda API Reference*\.  
 *Type*: [SnapStart](sam-property-function-snapstart.md)  
@@ -402,4 +410,43 @@ HelloWorldFunction:
       EntryPoint:
         - "entrypoint1"
       WorkingDirectory: "workDir"
+```
+
+### RuntimeManagementConfig examples<a name="sam-resource-function--examples--runtimemanagementconfig-examples"></a>
+
+#### A Lambda function configured to update its runtime environment according to current behavior<a name="sam-resource-function--examples--runtimemanagementconfig-example1"></a>
+
+```
+TestFunction
+  Type: AWS::Serverless::Function
+  Properties:
+    ...
+    Runtime: python3.9
+    RuntimeManagementConfig:
+      UpdateRuntimeOn: Auto
+```
+
+#### A Lambda function configured to update its runtime environment when the function is updated<a name="sam-resource-function--examples--runtimemanagementconfig-example2"></a>
+
+```
+TestFunction
+  Type: AWS::Serverless::Function
+  Properties:
+    ...
+    Runtime: python3.9
+    RuntimeManagementConfig:
+      UpdateRuntimeOn: FunctionUpdate
+```
+
+#### A Lambda function configured to update its runtime environment manually<a name="sam-resource-function--examples--runtimemanagementconfig-example3"></a>
+
+```
+TestFunction
+  Type: AWS::Serverless::Function
+  Properties:
+    ...
+    Runtime: python3.9
+    RuntimeManagementConfig:
+      RuntimeVersionArn: arn:aws:lambda:us-east-1::runtime:4c459dd0104ee29ec65dcad056c0b3ddbe20d6db76b265ade7eda9a066859b1e
+      UpdateRuntimeOn: Manual
 ```

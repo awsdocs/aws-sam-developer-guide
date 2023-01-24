@@ -1,10 +1,11 @@
 # Document history for AWS SAM<a name="doc-history"></a>
 
 The following table describes the important changes in each release of the *AWS Serverless Application Model Developer Guide*\. For notifications about updates to this documentation, you can subscribe to an RSS feed\.
-+ **Latest documentation update:** January 13, 2023
++ **Latest documentation update:** January 24, 2023
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Added runtime management options to the AWS SAM template specification](#doc-history) | Configure runtime management options for your Lambda functions\. To learn more, see `[RuntimeManagementConfig](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html#sam-function-runtimemanagementconfig)`\.  | January 24, 2023 | 
 | [Target property added to EventSource for AWS::Serverless::StateMachine resource\.](#doc-history) | `AWS::Serverless::StateMachine` resource type supports the `Target` property for `[EventBridgeRule](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-statemachine-statemachineeventbridgerule-target.html)` and `[Schedule](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-statemachine-statemachineschedule-target.html)` event sources\. | January 13, 2023 | 
 | [Configure scaling of SQS pollers for Lambda functions](#doc-history) | Configure scaling of SQS pollers with the `ScalingConfig` property for `AWS::Serverless::Function`\. To learn more, see `[ ScalingConfig](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-sqs.html#sam-function-sqs-scalingconfig)`\. | January 12, 2023 | 
 | [Validate AWS SAM applications with cfn\-lint](#doc-history) |  You can use cfn\-lint to validate your AWS SAM templates through the AWS SAM CLI\. To learn more, see [ Validate with cfn\-lint](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/validate-cfn-lint.html)\.  | January 11, 2023 | 
