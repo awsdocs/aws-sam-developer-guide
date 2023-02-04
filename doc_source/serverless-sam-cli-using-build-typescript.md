@@ -6,12 +6,14 @@ To build a Node\.js Lambda function with esbuild, add a `Metadata` object to you
 
 ## Metadata properties<a name="serverless-sam-cli-using-build-typescript-metadata"></a>
 
-The `Metadata` object supports the following properties for esbuild:
+The `Metadata` object supports the following properties for esbuild\.
 
-**BuildMethod**  
+### BuildMethod<a name="serverless-sam-cli-using-build-typescript-metadata-buildmethod"></a>
+
 Specifies the bundler for your application\. The only supported value is `esbuild`\.
 
-**BuildProperties**  
+### BuildProperties<a name="serverless-sam-cli-using-build-typescript-metadata-buildproperties"></a>
+
 Specifies the build properties for your Lambda function code\.
 
 The `BuildProperties` object supports the following properties for esbuild\. All of the properties are optional\. By default, AWS SAM uses your Lambda function handler for the entry point\.
@@ -22,6 +24,9 @@ Specifies entry points for your application\.
 **External**  
 Specifies the list of packages to omit from the build\.
 
+**Format**  
+Specifies the output format of the generated JavaScript files in your application\. For more information, see [Format](https://esbuild.github.io/api/#format) in the *esbuild website*\.
+
 **Loader**  
 Specifies the list of configurations for loading data for a given file type\.
 
@@ -30,6 +35,9 @@ Specifies which `package.json` fields to try to import when resolving a package\
 
 **Minify**  
 Specifies whether to minify the bundled output code\. The default value is `true`\.
+
+**OutExtension**  
+Customize the file extension of the files that esbuild generates\. For more information, see [Out extension](https://esbuild.github.io/api/#out-extension) in the *esbuild website*\.
 
 **Sourcemap**  
 Specifies whether the bundler produces a source map file\. The default value is `false`\.  
@@ -67,7 +75,10 @@ Resources:
     Metadata:
       BuildMethod: esbuild
       BuildProperties:
+        Format: esm
         Minify: false
+        OutExtension:
+          - .js=.mjs
         Target: "es2020"
         Sourcemap: true
         EntryPoints: 

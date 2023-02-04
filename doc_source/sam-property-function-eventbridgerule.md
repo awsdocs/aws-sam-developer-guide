@@ -14,11 +14,11 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [DeadLetterConfig](#sam-function-eventbridgerule-deadletterconfig): DeadLetterConfig
   [EventBusName](#sam-function-eventbridgerule-eventbusname): String
   [Input](#sam-function-eventbridgerule-input): String
-  [Name](#sam-function-eventbridgerule-name): String
   [InputPath](#sam-function-eventbridgerule-inputpath): String
   [Name](#sam-function-eventbridgerule-name): String
   [Pattern](#sam-function-eventbridgerule-pattern): [EventPattern](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-eventpattern)
   [RetryPolicy](#sam-function-eventbridgerule-retrypolicy): [RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)
+  State: String
   [Target](#sam-function-eventbridgerule-target): Target
 ```
 
@@ -67,6 +67,13 @@ A `RetryPolicy` object that includes information about the retry policy settings
 *Type*: [RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[RetryPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy)` property of the `AWS::Events::Rule` `Target` data type\.
+
+ `State`   <a name="sam-function-eventbridgerule-state"></a>
+The state of the rule\.  
+*Accepted values*: `DISABLED | ENABLED`  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[State](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state) ` property of an `AWS::Events::Rule` resource\.
 
  `Target`   <a name="sam-function-eventbridgerule-target"></a>
 The AWS resource that EventBridge invokes when a rule is triggered\. You can use this property to specify the logical ID of the target\. If this property is not specified, then AWS SAM generates the logical ID of the target\.  

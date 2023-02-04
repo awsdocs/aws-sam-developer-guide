@@ -16,7 +16,7 @@ To declare this entity in your AWS SAM template, use the following syntax\.
   [Enabled](#sam-function-selfmanagedkafka-enabled): Boolean
   [FilterCriteria](#sam-function-selfmanagedkafka-filtercriteria): [FilterCriteria](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filtercriteria.html)
   [KafkaBootstrapServers](#sam-function-selfmanagedkafka-kafkabootstrapservers): List
-  [SourceAccessConfigurations](#sam-function-selfmanagedkafka-sourceaccessconfigurations): [SourceAccessConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-sourceaccessconfigurations)
+  [SourceAccessConfigurations](#sam-function-selfmanagedkafka-sourceaccessconfigurations): [SourceAccessConfigurations](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-sourceaccessconfigurations)
   [Topics](#sam-function-selfmanagedkafka-topics): List
 ```
 
@@ -57,9 +57,10 @@ The list of bootstrap servers for your Kafka brokers\. Include the port, for exa
 
  `SourceAccessConfigurations`   <a name="sam-function-selfmanagedkafka-sourceaccessconfigurations"></a>
 An array of the authentication protocol, VPC components, or virtual host to secure and define your event source\.  
-*Type*: [SourceAccessConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-sourceaccessconfigurations)  
+*Valid values*: `BASIC_AUTH | CLIENT_CERTIFICATE_TLS_AUTH | SASL_SCRAM_256_AUTH | SASL_SCRAM_512_AUTH | SERVER_ROOT_CA_CERTIFICATE`  
+*Type*: List of [SourceAccessConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-sourceaccessconfiguration.html)  
 *Required*: Yes  
-*AWS CloudFormation compatibility*: This property is passed directly to the `[SourceAccessConfigurations](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-sourceaccessconfigurations)` property of an `AWS::Lambda::EventSourceMapping` resource\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[ SourceAccessConfigurations](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-sourceaccessconfigurations)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
  `Topics`   <a name="sam-function-selfmanagedkafka-topics"></a>
 The name of the Kafka topic\.  
