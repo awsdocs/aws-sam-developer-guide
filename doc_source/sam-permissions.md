@@ -10,7 +10,7 @@ The AWS Serverless Application Model \(AWS SAM\) provides two options that simpl
 
 ## AWS SAM connectors<a name="sam-permissions-intro-connectors"></a>
 
-Connectors are a way to grant model the permissions needed for two services in your SAM template to successfully interact. Connectors are defined with the `Connectors` resource attribute or as an AWS SAM abstract resource type, identified as `AWS::Serverless::Connector`. SAM connectors can be used to grant `Read` and `Write` access of data and events from a supported AWS resource to another\. To learn more about AWS SAM connectors, see [Managing resource permissions with AWS SAM connectors](managing-permissions-connectors.md)\.
+Connectors are a way of provisioning permissions between two resources\. You do this by describing how they should interact with each other in your AWS SAM template\. They can be defined using either the `Connectors` resource attribute or `AWS::Serverless::Connector` resource type\. Connectors support the provisioning of `Read` and `Write` access of data and events between a combination of AWS resources\. To learn more about AWS SAM connectors, see [Managing resource permissions with AWS SAM connectors](managing-permissions-connectors.md)\.
 
 ## AWS SAM policy templates<a name="sam-permissions-intro-policy-templates"></a>
 
