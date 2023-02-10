@@ -126,7 +126,7 @@ The package installer has two installation methods that you can choose from:
 
 1. Command line
 
-You can install for all users or just your current user\. To install for all users, root user authorization is required\.
+You can install for all users or just your current user\. To install for all users, superuser authorization is required\.
 
 #### Installation steps<a name="install-sam-cli-instructions-macos-steps"></a>
 

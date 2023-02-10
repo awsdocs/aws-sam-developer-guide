@@ -6,6 +6,8 @@ This section contains reference information for the AWS Serverless Application M
 
 The `AWS::Serverless::Connector` resource type supports a select number of connections between source and destination resources\. When configuring connectors in your AWS SAM template, use the following table to reference supported connections and the properties that need to be defined for each source and destination resource type\. For more information about configuring connectors in your template, see [AWS::Serverless::Connector](sam-resource-connector.md)\.
 
+For both source and destination resources, when defined within the same template, use the `Id` property\. Optionally, a `Qualifier` can be added to narrow the scope of your defined resource\. When the resource is not within the same template, use a combination of supported properties\.
+
  To request new connections, [submit a new issue](https://github.com/aws/serverless-application-model/issues/new?assignees=&labels=area%2Fconnectors,stage%2Fneeds-triage&template=other.md&title=%28New%20Connector%20Profile%29) at the *serverless\-application\-model AWS GitHub repository*\.
 
 

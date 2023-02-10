@@ -1,5 +1,8 @@
 # AWS CloudFormation resources generated when you specify AWS::Serverless::Connector<a name="sam-specification-generated-resources-connector"></a>
 
+**Note**  
+When you define connectors through the embedded `Connectors` property, it is first transformed into an `AWS::Serverless::Connector` resource before generating these resources\.
+
 When you specify an `AWS::Serverless::Connector` resource in an AWS SAM template, AWS SAM generates the following AWS CloudFormation resources as needed\.
 
 **`AWS::IAM::ManagedPolicy`**  

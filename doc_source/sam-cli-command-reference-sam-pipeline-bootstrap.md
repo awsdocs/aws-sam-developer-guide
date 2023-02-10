@@ -5,7 +5,9 @@ This command generates the required AWS infrastructure resources to connect to y
 This command sets up the following AWS infrastructure resources:
 + Option of configuring pipeline permissions through:
   + A pipeline IAM user with access key ID and secret key access credentials to be shared with the CI/CD system\.
-  + Supported CI/CD platforms through OIDC\. For an introduction on using OIDC with AWS SAM pipeline, go to [Using OIDC User Accounts with AWS SAM pipeline](deploying-with-oidc.md)\.
+**Note**  
+We recommend rotating access keys regularly\. For more information, see [ Rotate access keys regularly for use cases that require long\-term credentials ](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#rotate-credentials) in the *IAM User Guide*\.
+  + Supported CI/CD platforms through OIDC\. For an introduction on using OIDC with AWS SAM pipeline, go to [Using OIDC authentication with AWS SAM pipeline](deploying-with-oidc.md)\.
 + An AWS CloudFormation execution IAM role assumed by AWS CloudFormation to deploy the AWS SAM application\.
 + An Amazon S3 bucket to hold the AWS SAM artifacts\.
 + Optionally, an Amazon ECR image repository to hold container image Lambda deployment packages \(if you have a resource that is of package type `Image`\)\.
