@@ -142,7 +142,8 @@ The following is a table of the available policy templates\.
 | [SNSPublishMessagePolicy](serverless-policy-template-list.md#sqs-publish-message-policy) | Gives permission to publish a message to an Amazon Simple Notification Service \(Amazon SNS\) topic\. | 
 | [SQSPollerPolicy](serverless-policy-template-list.md#sqs-poller-policy) | Gives permission to poll an Amazon Simple Queue Service \(Amazon SQS\) queue\. | 
 | [SQSSendMessagePolicy](serverless-policy-template-list.md#sqs-send-message-policy) | Gives permission to send message to an Amazon SQS queue\. | 
-| [SSMParameterReadPolicy](serverless-policy-template-list.md#ssm-parameter-read-policy) | Gives permission to access a parameters from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. | 
+| [SSMParameterReadPolicy](serverless-policy-template-list.md#ssm-parameter-read-policy) | Gives permission to access a parameters from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. Used when parameter name doesn't have slash prefix\. | 
+| [SSMParameterWithSlashPrefixReadPolicy](serverless-policy-template-list.md#ssm-parameter-read-policy) | Gives permission to access a parameters from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. Used when parameter name has slash prefix\. | 
 | [StepFunctionsExecutionPolicy](serverless-policy-template-list.md#stepfunctions-execution-policy) | Gives permission to start a Step Functions state machine execution\. | 
 | [TextractDetectAnalyzePolicy](serverless-policy-template-list.md#textract-detect-analyze-policy) | Gives access to detect and analyze documents with Amazon Textract\. | 
 | [TextractGetResultPolicy](serverless-policy-template-list.md#textract-get-result-policy) | Gives access to get detected and analyzed documents from Amazon Textract\. | 

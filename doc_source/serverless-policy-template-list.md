@@ -74,6 +74,7 @@ The following are the available policy templates, along with the permissions tha
 + [SQSPollerPolicy](#sqs-poller-policy)
 + [SQSSendMessagePolicy](#sqs-send-message-policy)
 + [SSMParameterReadPolicy](#ssm-parameter-read-policy)
++ [SSMParameterWithSlashPrefixReadPolicy](#ssm-parameter-with-slash-prefix-read-policy)
 + [StepFunctionsExecutionPolicy](#stepfunctions-execution-policy)
 + [TextractDetectAnalyzePolicy](#textract-detect-analyze-policy)
 + [TextractGetResultPolicy](#textract-get-result-policy)
@@ -2120,7 +2121,7 @@ Gives permission to send message to an Amazon SQS queue\.
 
 ## SSMParameterReadPolicy<a name="ssm-parameter-read-policy"></a>
 
-Gives permission to access a parameters from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\.
+Gives permission to access a parameters from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. Use when parameter name doesn't have slash prefix\.
 
 **Note**  
 If you are not using default key, you will also need the `KMSDecryptPolicy` policy\.
@@ -2144,6 +2145,43 @@ If you are not using default key, you will also need the `KMSDecryptPolicy` poli
             "Resource": {
               "Fn::Sub": [
                 "arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${parameterName}",
+                {
+                  "parameterName": {
+                    "Ref": "ParameterName"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+```
+
+## SSMParameterWithSlashPrefixReadPolicy<a name="ssm-parameter-with-slash-prefix-read-policy"></a>
+
+Gives permission to access a parameters from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. Use when parameter name has slash prefix\.
+
+**Note**  
+If you are not using default key, you will also need the `KMSDecryptPolicy` policy\.
+
+```
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Action": [
+              "ssm:DescribeParameters"
+            ],
+            "Resource": "*"
+          },
+          {
+            "Effect": "Allow",
+            "Action": [
+              "ssm:GetParameters",
+              "ssm:GetParameter",
+              "ssm:GetParametersByPath"
+            ],
+            "Resource": {
+              "Fn::Sub": [
+                "arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter${parameterName}",
                 {
                   "parameterName": {
                     "Ref": "ParameterName"
