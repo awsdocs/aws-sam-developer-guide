@@ -10,6 +10,15 @@ The format of your application's build artifacts depends on each function's `Pac
 
 For more information about Lambda package types, see [Lambda deployment packages](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html) in the *AWS Lambda Developer Guide*\.
 
+**Topics**
++ [Building a \.zip file archive](#build-zip-archive)
++ [Building a container image](#build-container-image)
++ [Container environment variable file](#serverless-sam-cli-using-container-environment-file)
++ [Examples](#building-applications-examples)
++ [Building functions outside of AWS SAM](#building-applications-skip)
++ [Building Node\.js Lambda functions with esbuild](serverless-sam-cli-using-build-typescript.md)
++ [Building \.NET 7 Lambda functions with Native AOT compilation](build-dotnet7.md)
+
 ## Building a \.zip file archive<a name="build-zip-archive"></a>
 
 To build your serverless application as a \.zip file archive, declare `PackageType: Zip` for your serverless function\.
@@ -186,3 +195,51 @@ Resources:
       BuildProperties:
         UseNpmCi: True
 ```
+
+## Building functions outside of AWS SAM<a name="building-applications-skip"></a>
+
+By default, when you run sam build, AWS SAM builds all of your function resources\. Other options include:
++ **Build all function resources outside of AWS SAM** – If you build all of your function resources manually or through another tool, sam build is not required\. You can skip sam build and move on to the next step in your process, such as performing local testing or deploying your application\.
++ **Build some function resources outside of AWS SAM** – If you want AWS SAM to build some of your function resources while having other function resources built outside of AWS SAM, you can specify this in your AWS SAM template\.
+
+### Build some function resources outside of AWS SAM<a name="building-applications-skip-some"></a>
+
+To have AWS SAM skip a function when using sam build, configure the following in your AWS SAM template:
+
+1. Add the `SkipBuild: True` metadata property to your function\.
+
+1. Specify the path to your built function resources\.
+
+Here is an example, with `TestFunction` configured to be skipped\. Its built resources are located at `built-resources/TestFunction.zip`\.
+
+```
+TestFunction:
+  Type: AWS::Serverless::Function
+  Properties:
+    CodeUri: built-resources/TestFunction.zip
+    Handler: TimeHandler::handleRequest
+    Runtime: java11
+  Metadata:
+    SkipBuild: True
+```
+
+Now, when you run sam build, AWS SAM will do the following:
+
+1. AWS SAM will skip functions configured with `SkipBuild: True`\.
+
+1. AWS SAM will build all other function resources and cache them in the `.aws-sam` build directory\.
+
+1. For skipped functions, their template in the `.aws-sam` build directory will automatically be updated to reference the specified path to your built function resources\.
+
+   Here is an example of the cached template for `TestFunction` in the `.aws-sam` build directory:
+
+   ```
+   TestFunction:
+     Type: AWS::Serverless::Function
+     Properties:
+       CodeUri: ../../built-resources/TestFunction.zip
+       Handler: TimeHandler::handleRequest
+       Runtime: java11
+     Metadata:
+       SkipBuild: True
+   ```
