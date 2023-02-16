@@ -2121,7 +2121,7 @@ Gives permission to send message to an Amazon SQS queue\.
 
 ## SSMParameterReadPolicy<a name="ssm-parameter-read-policy"></a>
 
-Gives permission to access a parameters from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. Use when parameter name doesn't have slash prefix\.
+Gives permission to access a parameter from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. Use when parameter name doesn't have slash prefix\.
 
 **Note**  
 If you are not using default key, you will also need the `KMSDecryptPolicy` policy\.
@@ -2158,7 +2158,7 @@ If you are not using default key, you will also need the `KMSDecryptPolicy` poli
 
 ## SSMParameterWithSlashPrefixReadPolicy<a name="ssm-parameter-with-slash-prefix-read-policy"></a>
 
-Gives permission to access a parameters from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. Use when parameter name has slash prefix\.
+Gives permission to access a parameter from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. Use when parameter name has slash prefix\.
 
 **Note**  
 If you are not using default key, you will also need the `KMSDecryptPolicy` policy\.
