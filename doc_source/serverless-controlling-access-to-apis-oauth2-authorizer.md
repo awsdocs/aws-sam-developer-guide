@@ -29,7 +29,7 @@ Resources:
       Events:
         GetRoot:
           Properties:
-            ApiId: MyApi
+            ApiId: !Ref MyApi
             Method: get
             Path: /
             PayloadFormatVersion: "2.0"
