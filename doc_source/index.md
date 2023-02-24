@@ -143,6 +143,7 @@ sponsored by Amazon.
    + [Building applications](serverless-sam-cli-using-build.md)
       + [Building Node.js Lambda functions with esbuild](serverless-sam-cli-using-build-typescript.md)
       + [Building .NET 7 Lambda functions with Native AOT compilation](build-dotnet7.md)
+      + [Building Rust Lambda functions with Cargo Lambda](building-rust.md)
    + [Building layers](building-layers.md)
    + [Building custom runtimes](building-custom-runtimes.md)
 + [Testing and debugging serverless applications](serverless-test-and-debug.md)

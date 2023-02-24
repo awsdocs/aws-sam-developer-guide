@@ -18,6 +18,7 @@ For more information about Lambda package types, see [Lambda deployment packages
 + [Building functions outside of AWS SAM](#building-applications-skip)
 + [Building Node\.js Lambda functions with esbuild](serverless-sam-cli-using-build-typescript.md)
 + [Building \.NET 7 Lambda functions with Native AOT compilation](build-dotnet7.md)
++ [Building Rust Lambda functions with Cargo Lambda](building-rust.md)
 
 ## Building a \.zip file archive<a name="build-zip-archive"></a>
 
