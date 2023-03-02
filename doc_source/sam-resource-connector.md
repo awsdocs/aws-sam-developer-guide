@@ -20,7 +20,7 @@ We recommend using the embedded connectors syntax for most use cases\. Being emb
   Connectors:
     <connector-logical-id:
       Properties:
-        [Destination](#sam-connector-destination): ResourceReference
+        [Destination](#sam-connector-destination): ResourceReference | List of ResourceReference
         [Permissions](#sam-connector-permissions): List
         [SourceReference](#sam-connector-sourcereference): SourceReference
 ```
@@ -30,7 +30,7 @@ We recommend using the embedded connectors syntax for most use cases\. Being emb
 ```
 Type: AWS::Serverless::Connector
 Properties:
-  [Destination](#sam-connector-destination): ResourceReference
+  [Destination](#sam-connector-destination): ResourceReference | List of ResourceReference
   [Permissions](#sam-connector-permissions): List
   [Source](#sam-connector-source): ResourceReference
 ```
@@ -39,7 +39,7 @@ Properties:
 
  `Destination`   <a name="sam-connector-destination"></a>
 The destination resource\.  
-*Type*: [ResourceReference](sam-property-connector-resourcereference.md)  
+*Type*: [ ResourceReference](sam-property-connector-resourcereference.md) \| List of [ResourceReference](sam-property-connector-resourcereference.md)  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 

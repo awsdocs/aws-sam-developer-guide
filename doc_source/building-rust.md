@@ -162,17 +162,23 @@ Resources:
 `Cargo.toml` file:
 
 ```
-[package]name = "test-handler"
+[package]
+name = "test-handler"
 version = "0.1.0"
 edition = "2021"
 
-[dependencies]lambda_runtime = "0.6.0"
+[dependencies]
+lambda_runtime = "0.6.0"
 serde = "1.0.136"
-tokio = { version = "1", features = ["macros"] }tracing = { version = "0.1", features = ["log"] }tracing-subscriber = { version = "0.3", default-features = false, features = ["fmt"] }
+tokio = { version = "1", features = ["macros"] }
+tracing = { version = "0.1", features = ["log"] }
+tracing-subscriber = { version = "0.3", default-features = false, features = ["fmt"] }
 
-[[bin]]name = "function_a"
+[[bin]]
+name = "function_a"
 path = "src/function_a.rs"
 
-[[bin]]name = "function_b"
+[[bin]]
+name = "function_b"
 path = "src/function_b.rs"
 ```
