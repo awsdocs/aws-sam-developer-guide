@@ -74,7 +74,6 @@ The following are the available policy templates, along with the permissions tha
 + [SQSPollerPolicy](#sqs-poller-policy)
 + [SQSSendMessagePolicy](#sqs-send-message-policy)
 + [SSMParameterReadPolicy](#ssm-parameter-read-policy)
-+ [SSMParameterWithSlashPrefixReadPolicy](#ssm-parameter-with-slash-prefix-read-policy)
 + [StepFunctionsExecutionPolicy](#stepfunctions-execution-policy)
 + [TextractDetectAnalyzePolicy](#textract-detect-analyze-policy)
 + [TextractGetResultPolicy](#textract-get-result-policy)
@@ -86,24 +85,24 @@ The following are the available policy templates, along with the permissions tha
 Gives a permission to read a certificate from AWS Certificate Manager\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "acm:GetCertificate"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "${certificateArn}",
-                {
-                  "certificateArn": {
-                    "Ref": "CertificateArn"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "acm:GetCertificate"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "${certificateArn}",
+        {
+          "certificateArn": {
+            "Ref": "CertificateArn"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## AMIDescribePolicy<a name="ami-describe-policy"></a>
@@ -111,15 +110,15 @@ Gives a permission to read a certificate from AWS Certificate Manager\.
 Gives permission to describe Amazon Machine Images \(AMIs\)\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "ec2:DescribeImages"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ec2:DescribeImages"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## AthenaQueryPolicy<a name="athena-query-policy"></a>
@@ -127,50 +126,50 @@ Gives permission to describe Amazon Machine Images \(AMIs\)\.
 Gives permissions to execute Athena queries\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "athena:ListWorkGroups",
-              "athena:GetExecutionEngine",
-              "athena:GetExecutionEngines",
-              "athena:GetNamespace",
-              "athena:GetCatalogs",
-              "athena:GetNamespaces",
-              "athena:GetTables",
-              "athena:GetTable"
-            ],
-            "Resource": "*"
-          },
-          {
-            "Effect": "Allow",
-            "Action": [
-              "athena:StartQueryExecution",
-              "athena:GetQueryResults",
-              "athena:DeleteNamedQuery",
-              "athena:GetNamedQuery",
-              "athena:ListQueryExecutions",
-              "athena:StopQueryExecution",
-              "athena:GetQueryResultsStream",
-              "athena:ListNamedQueries",
-              "athena:CreateNamedQuery",
-              "athena:GetQueryExecution",
-              "athena:BatchGetNamedQuery",
-              "athena:BatchGetQueryExecution",
-              "athena:GetWorkGroup"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:athena:${AWS::Region}:${AWS::AccountId}:workgroup/${workgroupName}",
-                {
-                  "workgroupName": {
-                    "Ref": "WorkGroupName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "athena:ListWorkGroups",
+      "athena:GetExecutionEngine",
+      "athena:GetExecutionEngines",
+      "athena:GetNamespace",
+      "athena:GetCatalogs",
+      "athena:GetNamespaces",
+      "athena:GetTables",
+      "athena:GetTable"
+    ],
+    "Resource": "*"
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "athena:StartQueryExecution",
+      "athena:GetQueryResults",
+      "athena:DeleteNamedQuery",
+      "athena:GetNamedQuery",
+      "athena:ListQueryExecutions",
+      "athena:StopQueryExecution",
+      "athena:GetQueryResultsStream",
+      "athena:ListNamedQueries",
+      "athena:CreateNamedQuery",
+      "athena:GetQueryExecution",
+      "athena:BatchGetNamedQuery",
+      "athena:BatchGetQueryExecution",
+      "athena:GetWorkGroup"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:athena:${AWS::Region}:${AWS::AccountId}:workgroup/${workgroupName}",
+        {
+          "workgroupName": {
+            "Ref": "WorkGroupName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## AWSSecretsManagerGetSecretValuePolicy<a name="secrets-manager-get-secret-value-policy"></a>
@@ -178,24 +177,24 @@ Gives permissions to execute Athena queries\.
 Gives permission to get the secret value for the specified AWS Secrets Manager secret\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "secretsmanager:GetSecretValue"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "${secretArn}",
-                {
-                  "secretArn": {
-                    "Ref": "SecretArn"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "secretsmanager:GetSecretValue"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "${secretArn}",
+        {
+          "secretArn": {
+            "Ref": "SecretArn"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## AWSSecretsManagerRotationPolicy<a name="secrets-manager-rotation-policy"></a>
@@ -203,41 +202,41 @@ Gives permission to get the secret value for the specified AWS Secrets Manager s
 Gives permission to rotate a secret in AWS Secrets Manager\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "secretsmanager:DescribeSecret",
-              "secretsmanager:GetSecretValue",
-              "secretsmanager:PutSecretValue",
-              "secretsmanager:UpdateSecretVersionStage"
-            ],
-            "Resource": {
-              "Fn::Sub": "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:*"
-            },
-            "Condition": {
-              "StringEquals": {
-                "secretsmanager:resource/AllowRotationLambdaArn": {
-                  "Fn::Sub": [
-                    "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${functionName}",
-                    {
-                      "functionName": {
-                        "Ref": "FunctionName"
-                      }
-                    }
-                  ]
-                }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "secretsmanager:DescribeSecret",
+      "secretsmanager:GetSecretValue",
+      "secretsmanager:PutSecretValue",
+      "secretsmanager:UpdateSecretVersionStage"
+    ],
+    "Resource": {
+      "Fn::Sub": "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:*"
+    },
+    "Condition": {
+      "StringEquals": {
+        "secretsmanager:resource/AllowRotationLambdaArn": {
+          "Fn::Sub": [
+            "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${functionName}",
+            {
+              "functionName": {
+                "Ref": "FunctionName"
               }
             }
-          },
-          {
-            "Effect": "Allow",
-            "Action": [
-              "secretsmanager:GetRandomPassword"
-            ],
-            "Resource": "*"
-          }
-        ]
+          ]
+        }
+      }
+    }
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "secretsmanager:GetRandomPassword"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## CloudFormationDescribeStacksPolicy<a name="cloud-formation-describe-stacks-policy"></a>
@@ -245,17 +244,17 @@ Gives permission to rotate a secret in AWS Secrets Manager\.
 Gives permission to describe AWS CloudFormation stacks\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "cloudformation:DescribeStacks"
-            ],
-            "Resource": {
-              "Fn::Sub": "arn:${AWS::Partition}:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/*"
-            }
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "cloudformation:DescribeStacks"
+    ],
+    "Resource": {
+      "Fn::Sub": "arn:${AWS::Partition}:cloudformation:${AWS::Region}:${AWS::AccountId}:stack/*"
+    }
+  }
+]
 ```
 
 ## CloudWatchDashboardPolicy<a name="cloudwatch-dashboard-policy"></a>
@@ -263,18 +262,18 @@ Gives permission to describe AWS CloudFormation stacks\.
 Gives permissions to put metrics to operate on CloudWatch dashboards\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "cloudwatch:GetDashboard",
-              "cloudwatch:ListDashboards",
-              "cloudwatch:PutDashboard",
-              "cloudwatch:ListMetrics"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "cloudwatch:GetDashboard",
+      "cloudwatch:ListDashboards",
+      "cloudwatch:PutDashboard",
+      "cloudwatch:ListMetrics"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## CloudWatchDescribeAlarmHistoryPolicy<a name="cloudwatch-describe-alarm-history-policy"></a>
@@ -282,15 +281,15 @@ Gives permissions to put metrics to operate on CloudWatch dashboards\.
 Gives permission to describe Amazon CloudWatch alarm history\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "cloudwatch:DescribeAlarmHistory"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "cloudwatch:DescribeAlarmHistory"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## CloudWatchPutMetricPolicy<a name="cloudwatch-put-metric-policy"></a>
@@ -298,15 +297,15 @@ Gives permission to describe Amazon CloudWatch alarm history\.
 Gives permission to send metrics to CloudWatch\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "cloudwatch:PutMetricData"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "cloudwatch:PutMetricData"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## CodePipelineLambdaExecutionPolicy<a name="code-pipeline-lambda-execution-policy"></a>
@@ -314,16 +313,16 @@ Gives permission to send metrics to CloudWatch\.
 Gives permission for a Lambda function invoked by AWS CodePipeline to report the status of the job\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "codepipeline:PutJobSuccessResult",
-              "codepipeline:PutJobFailureResult"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "codepipeline:PutJobSuccessResult",
+      "codepipeline:PutJobFailureResult"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## CodePipelineReadOnlyPolicy<a name="code-pipeline-readonly-policy"></a>
@@ -331,24 +330,24 @@ Gives permission for a Lambda function invoked by AWS CodePipeline to report the
 Gives read permission to get details about a CodePipeline pipeline\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "codepipeline:ListPipelineExecutions"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:codepipeline:${AWS::Region}:${AWS::AccountId}:${pipelinename}",
-                {
-                  "pipelinename": {
-                    "Ref": "PipelineName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "codepipeline:ListPipelineExecutions"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:codepipeline:${AWS::Region}:${AWS::AccountId}:${pipelinename}",
+        {
+          "pipelinename": {
+            "Ref": "PipelineName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## CodeCommitCrudPolicy<a name="codecommit-crud-policy"></a>
@@ -356,85 +355,85 @@ Gives read permission to get details about a CodePipeline pipeline\.
 Gives permissions to create, read, update, and delete objects within a specific CodeCommit repository\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "codecommit:GitPull",
-              "codecommit:GitPush",
-              "codecommit:CreateBranch",
-              "codecommit:DeleteBranch",
-              "codecommit:GetBranch",
-              "codecommit:ListBranches",
-              "codecommit:MergeBranchesByFastForward",
-              "codecommit:MergeBranchesBySquash",
-              "codecommit:MergeBranchesByThreeWay",
-              "codecommit:UpdateDefaultBranch",
-              "codecommit:BatchDescribeMergeConflicts",
-              "codecommit:CreateUnreferencedMergeCommit",
-              "codecommit:DescribeMergeConflicts",
-              "codecommit:GetMergeCommit",
-              "codecommit:GetMergeOptions",
-              "codecommit:BatchGetPullRequests",
-              "codecommit:CreatePullRequest",
-              "codecommit:DescribePullRequestEvents",
-              "codecommit:GetCommentsForPullRequest",
-              "codecommit:GetCommitsFromMergeBase",
-              "codecommit:GetMergeConflicts",
-              "codecommit:GetPullRequest",
-              "codecommit:ListPullRequests",
-              "codecommit:MergePullRequestByFastForward",
-              "codecommit:MergePullRequestBySquash",
-              "codecommit:MergePullRequestByThreeWay",
-              "codecommit:PostCommentForPullRequest",
-              "codecommit:UpdatePullRequestDescription",
-              "codecommit:UpdatePullRequestStatus",
-              "codecommit:UpdatePullRequestTitle",
-              "codecommit:DeleteFile",
-              "codecommit:GetBlob",
-              "codecommit:GetFile",
-              "codecommit:GetFolder",
-              "codecommit:PutFile",
-              "codecommit:DeleteCommentContent",
-              "codecommit:GetComment",
-              "codecommit:GetCommentsForComparedCommit",
-              "codecommit:PostCommentForComparedCommit",
-              "codecommit:PostCommentReply",
-              "codecommit:UpdateComment",
-              "codecommit:BatchGetCommits",
-              "codecommit:CreateCommit",
-              "codecommit:GetCommit",
-              "codecommit:GetCommitHistory",
-              "codecommit:GetDifferences",
-              "codecommit:GetObjectIdentifier",
-              "codecommit:GetReferences",
-              "codecommit:GetTree",
-              "codecommit:GetRepository",
-              "codecommit:UpdateRepositoryDescription",
-              "codecommit:ListTagsForResource",
-              "codecommit:TagResource",
-              "codecommit:UntagResource",
-              "codecommit:GetRepositoryTriggers",
-              "codecommit:PutRepositoryTriggers",
-              "codecommit:TestRepositoryTriggers",
-              "codecommit:GetBranch",
-              "codecommit:GetCommit",
-              "codecommit:UploadArchive",
-              "codecommit:GetUploadArchiveStatus",
-              "codecommit:CancelUploadArchive"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:codecommit:${AWS::Region}:${AWS::AccountId}:${repositoryName}",
-                {
-                  "repositoryName": {
-                    "Ref": "RepositoryName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "codecommit:GitPull",
+      "codecommit:GitPush",
+      "codecommit:CreateBranch",
+      "codecommit:DeleteBranch",
+      "codecommit:GetBranch",
+      "codecommit:ListBranches",
+      "codecommit:MergeBranchesByFastForward",
+      "codecommit:MergeBranchesBySquash",
+      "codecommit:MergeBranchesByThreeWay",
+      "codecommit:UpdateDefaultBranch",
+      "codecommit:BatchDescribeMergeConflicts",
+      "codecommit:CreateUnreferencedMergeCommit",
+      "codecommit:DescribeMergeConflicts",
+      "codecommit:GetMergeCommit",
+      "codecommit:GetMergeOptions",
+      "codecommit:BatchGetPullRequests",
+      "codecommit:CreatePullRequest",
+      "codecommit:DescribePullRequestEvents",
+      "codecommit:GetCommentsForPullRequest",
+      "codecommit:GetCommitsFromMergeBase",
+      "codecommit:GetMergeConflicts",
+      "codecommit:GetPullRequest",
+      "codecommit:ListPullRequests",
+      "codecommit:MergePullRequestByFastForward",
+      "codecommit:MergePullRequestBySquash",
+      "codecommit:MergePullRequestByThreeWay",
+      "codecommit:PostCommentForPullRequest",
+      "codecommit:UpdatePullRequestDescription",
+      "codecommit:UpdatePullRequestStatus",
+      "codecommit:UpdatePullRequestTitle",
+      "codecommit:DeleteFile",
+      "codecommit:GetBlob",
+      "codecommit:GetFile",
+      "codecommit:GetFolder",
+      "codecommit:PutFile",
+      "codecommit:DeleteCommentContent",
+      "codecommit:GetComment",
+      "codecommit:GetCommentsForComparedCommit",
+      "codecommit:PostCommentForComparedCommit",
+      "codecommit:PostCommentReply",
+      "codecommit:UpdateComment",
+      "codecommit:BatchGetCommits",
+      "codecommit:CreateCommit",
+      "codecommit:GetCommit",
+      "codecommit:GetCommitHistory",
+      "codecommit:GetDifferences",
+      "codecommit:GetObjectIdentifier",
+      "codecommit:GetReferences",
+      "codecommit:GetTree",
+      "codecommit:GetRepository",
+      "codecommit:UpdateRepositoryDescription",
+      "codecommit:ListTagsForResource",
+      "codecommit:TagResource",
+      "codecommit:UntagResource",
+      "codecommit:GetRepositoryTriggers",
+      "codecommit:PutRepositoryTriggers",
+      "codecommit:TestRepositoryTriggers",
+      "codecommit:GetBranch",
+      "codecommit:GetCommit",
+      "codecommit:UploadArchive",
+      "codecommit:GetUploadArchiveStatus",
+      "codecommit:CancelUploadArchive"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:codecommit:${AWS::Region}:${AWS::AccountId}:${repositoryName}",
+        {
+          "repositoryName": {
+            "Ref": "RepositoryName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## CodeCommitReadPolicy<a name="codecommit-read-policy"></a>
@@ -442,56 +441,56 @@ Gives permissions to create, read, update, and delete objects within a specific 
 Gives permissions to read objects within a specific CodeCommit repository\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "codecommit:GitPull",
-              "codecommit:GetBranch",
-              "codecommit:ListBranches",
-              "codecommit:BatchDescribeMergeConflicts",
-              "codecommit:DescribeMergeConflicts",
-              "codecommit:GetMergeCommit",
-              "codecommit:GetMergeOptions",
-              "codecommit:BatchGetPullRequests",
-              "codecommit:DescribePullRequestEvents",
-              "codecommit:GetCommentsForPullRequest",
-              "codecommit:GetCommitsFromMergeBase",
-              "codecommit:GetMergeConflicts",
-              "codecommit:GetPullRequest",
-              "codecommit:ListPullRequests",
-              "codecommit:GetBlob",
-              "codecommit:GetFile",
-              "codecommit:GetFolder",
-              "codecommit:GetComment",
-              "codecommit:GetCommentsForComparedCommit",
-              "codecommit:BatchGetCommits",
-              "codecommit:GetCommit",
-              "codecommit:GetCommitHistory",
-              "codecommit:GetDifferences",
-              "codecommit:GetObjectIdentifier",
-              "codecommit:GetReferences",
-              "codecommit:GetTree",
-              "codecommit:GetRepository",
-              "codecommit:ListTagsForResource",
-              "codecommit:GetRepositoryTriggers",
-              "codecommit:TestRepositoryTriggers",
-              "codecommit:GetBranch",
-              "codecommit:GetCommit",
-              "codecommit:GetUploadArchiveStatus"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:codecommit:${AWS::Region}:${AWS::AccountId}:${repositoryName}",
-                {
-                  "repositoryName": {
-                    "Ref": "RepositoryName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "codecommit:GitPull",
+      "codecommit:GetBranch",
+      "codecommit:ListBranches",
+      "codecommit:BatchDescribeMergeConflicts",
+      "codecommit:DescribeMergeConflicts",
+      "codecommit:GetMergeCommit",
+      "codecommit:GetMergeOptions",
+      "codecommit:BatchGetPullRequests",
+      "codecommit:DescribePullRequestEvents",
+      "codecommit:GetCommentsForPullRequest",
+      "codecommit:GetCommitsFromMergeBase",
+      "codecommit:GetMergeConflicts",
+      "codecommit:GetPullRequest",
+      "codecommit:ListPullRequests",
+      "codecommit:GetBlob",
+      "codecommit:GetFile",
+      "codecommit:GetFolder",
+      "codecommit:GetComment",
+      "codecommit:GetCommentsForComparedCommit",
+      "codecommit:BatchGetCommits",
+      "codecommit:GetCommit",
+      "codecommit:GetCommitHistory",
+      "codecommit:GetDifferences",
+      "codecommit:GetObjectIdentifier",
+      "codecommit:GetReferences",
+      "codecommit:GetTree",
+      "codecommit:GetRepository",
+      "codecommit:ListTagsForResource",
+      "codecommit:GetRepositoryTriggers",
+      "codecommit:TestRepositoryTriggers",
+      "codecommit:GetBranch",
+      "codecommit:GetCommit",
+      "codecommit:GetUploadArchiveStatus"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:codecommit:${AWS::Region}:${AWS::AccountId}:${repositoryName}",
+        {
+          "repositoryName": {
+            "Ref": "RepositoryName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## ComprehendBasicAccessPolicy<a name="comprehend-basic-access-policy"></a>
@@ -499,21 +498,22 @@ Gives permissions to read objects within a specific CodeCommit repository\.
 Gives permission for detecting entities, key phrases, languages, and sentiments\.
 
 ```
-        "Statement": [{
-          "Effect": "Allow",
-          "Action": [
-            "comprehend:BatchDetectKeyPhrases",
-            "comprehend:DetectDominantLanguage",
-            "comprehend:DetectEntities",
-            "comprehend:BatchDetectEntities",
-            "comprehend:DetectKeyPhrases",
-            "comprehend:DetectSentiment",
-            "comprehend:BatchDetectDominantLanguage",
-            "comprehend:BatchDetectSentiment"
-          ],
-          "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "comprehend:BatchDetectKeyPhrases",
+      "comprehend:DetectDominantLanguage",
+      "comprehend:DetectEntities",
+      "comprehend:BatchDetectEntities",
+      "comprehend:DetectKeyPhrases",
+      "comprehend:DetectSentiment",
+      "comprehend:BatchDetectDominantLanguage",
+      "comprehend:BatchDetectSentiment"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## CostExplorerReadOnlyPolicy<a name="cost-explorer-readonly-policy"></a>
@@ -521,18 +521,20 @@ Gives permission for detecting entities, key phrases, languages, and sentiments\
 Gives read\-only permission to the read\-only AWS Cost Explorer \(Cost Explorer\) APIs for billing history\.
 
 ```
-        "Statement": [{
-          "Effect": "Allow",
-          "Action": [
-            "ce:GetCostAndUsage",
-            "ce:GetDimensionValues",
-            "ce:GetReservationCoverage",
-            "ce:GetReservationPurchaseRecommendation",
-            "ce:GetReservationUtilization",
-            "ce:GetTags"
-          ],
-          "Resource": "*"
-        }]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ce:GetCostAndUsage",
+      "ce:GetDimensionValues",
+      "ce:GetReservationCoverage",
+      "ce:GetReservationPurchaseRecommendation",
+      "ce:GetReservationUtilization",
+      "ce:GetTags"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## DynamoDBBackupFullAccessPolicy<a name="ddb-back-full-policy"></a>
@@ -540,42 +542,43 @@ Gives read\-only permission to the read\-only AWS Cost Explorer \(Cost Explorer\
 Gives read and write permission to DynamoDB on\-demand backups for a table\.
 
 ```
-        "Statement": [{
-          "Effect": "Allow",
-          "Action": [
-            "dynamodb:CreateBackup",
-            "dynamodb:DescribeContinuousBackups"
-          ],
-          "Resource": {
-            "Fn::Sub": [
-              "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
-              {
-                "tableName": {
-                  "Ref": "TableName"
-                }
-              }
-            ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:CreateBackup",
+      "dynamodb:DescribeContinuousBackups"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+        {
+          "tableName": {
+            "Ref": "TableName"
           }
-        },
-          {
-            "Effect": "Allow",
-            "Action": [
-              "dynamodb:DeleteBackup",
-              "dynamodb:DescribeBackup",
-              "dynamodb:ListBackups"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/backup/*",
-                {
-                  "tableName": {
-                    "Ref": "TableName"
-                  }
-                }
-              ]
-            }
+        }
+      ]
+    }
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:DeleteBackup",
+      "dynamodb:DescribeBackup",
+      "dynamodb:ListBackups"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/backup/*",
+        {
+          "tableName": {
+            "Ref": "TableName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## DynamoDBCrudPolicy<a name="dynamo-db-crud-policy"></a>
@@ -583,45 +586,45 @@ Gives read and write permission to DynamoDB on\-demand backups for a table\.
 Gives create, read, update, and delete permissions to an Amazon DynamoDB table\.
 
 ```
-        "Statement": [
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:GetItem",
+      "dynamodb:DeleteItem",
+      "dynamodb:PutItem",
+      "dynamodb:Scan",
+      "dynamodb:Query",
+      "dynamodb:UpdateItem",
+      "dynamodb:BatchWriteItem",
+      "dynamodb:BatchGetItem",
+      "dynamodb:DescribeTable",
+      "dynamodb:ConditionCheckItem"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
           {
-            "Effect": "Allow",
-            "Action": [
-              "dynamodb:GetItem",
-              "dynamodb:DeleteItem",
-              "dynamodb:PutItem",
-              "dynamodb:Scan",
-              "dynamodb:Query",
-              "dynamodb:UpdateItem",
-              "dynamodb:BatchWriteItem",
-              "dynamodb:BatchGetItem",
-              "dynamodb:DescribeTable",
-              "dynamodb:ConditionCheckItem"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
-                  {
-                    "tableName": {
-                      "Ref": "TableName"
-                    }
-                  }
-                ]
-              },
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
-                  {
-                    "tableName": {
-                      "Ref": "TableName"
-                    }
-                  }
-                ]
-              }
-            ]
+            "tableName": {
+              "Ref": "TableName"
+            }
           }
         ]
+      },
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
+          {
+            "tableName": {
+              "Ref": "TableName"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
 ## DynamoDBReadPolicy<a name="dynamo-db-read-policy"></a>
@@ -629,40 +632,40 @@ Gives create, read, update, and delete permissions to an Amazon DynamoDB table\.
 Gives read\-only permission to a DynamoDB table\.
 
 ```
-        "Statement": [
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:GetItem",
+      "dynamodb:Scan",
+      "dynamodb:Query",
+      "dynamodb:BatchGetItem",
+      "dynamodb:DescribeTable"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
           {
-            "Effect": "Allow",
-            "Action": [
-              "dynamodb:GetItem",
-              "dynamodb:Scan",
-              "dynamodb:Query",
-              "dynamodb:BatchGetItem",
-              "dynamodb:DescribeTable"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
-                  {
-                    "tableName": {
-                      "Ref": "TableName"
-                    }
-                  }
-                ]
-              },
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
-                  {
-                    "tableName": {
-                      "Ref": "TableName"
-                    }
-                  }
-                ]
-              }
-            ]
+            "tableName": {
+              "Ref": "TableName"
+            }
           }
         ]
+      },
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
+          {
+            "tableName": {
+              "Ref": "TableName"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
 ## DynamoDBReconfigurePolicy<a name="dynamo-db-reconfigure-policy"></a>
@@ -670,24 +673,24 @@ Gives read\-only permission to a DynamoDB table\.
 Gives permission to reconfigure a DynamoDB table\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "dynamodb:UpdateTable"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
-                {
-                  "tableName": {
-                    "Ref": "TableName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:UpdateTable"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+        {
+          "tableName": {
+            "Ref": "TableName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## DynamoDBRestoreFromBackupPolicy<a name="ddb-restore-from-backup-policy"></a>
@@ -695,45 +698,46 @@ Gives permission to reconfigure a DynamoDB table\.
 Gives permission to restore a DynamoDB table from backup\.
 
 ```
-        "Statement": [{
-          "Effect": "Allow",
-          "Action": [
-            "dynamodb:RestoreTableFromBackup"
-          ],
-          "Resource": {
-            "Fn::Sub": [
-              "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/backup/*",
-              {
-                "tableName": {
-                  "Ref": "TableName"
-                }
-              }
-            ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:RestoreTableFromBackup"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/backup/*",
+        {
+          "tableName": {
+            "Ref": "TableName"
           }
-        },
-          {
-            "Effect": "Allow",
-            "Action": [
-              "dynamodb:PutItem",
-              "dynamodb:UpdateItem",
-              "dynamodb:DeleteItem",
-              "dynamodb:GetItem",
-              "dynamodb:Query",
-              "dynamodb:Scan",
-              "dynamodb:BatchWriteItem"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
-                {
-                  "tableName": {
-                    "Ref": "TableName"
-                  }
-                }
-              ]
-            }
+        }
+      ]
+    }
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:PutItem",
+      "dynamodb:UpdateItem",
+      "dynamodb:DeleteItem",
+      "dynamodb:GetItem",
+      "dynamodb:Query",
+      "dynamodb:Scan",
+      "dynamodb:BatchWriteItem"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+        {
+          "tableName": {
+            "Ref": "TableName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## DynamoDBStreamReadPolicy<a name="dynamo-db-stream-read-policy"></a>
@@ -741,45 +745,45 @@ Gives permission to restore a DynamoDB table from backup\.
 Gives permission to describe and read DynamoDB streams and records\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "dynamodb:DescribeStream",
-              "dynamodb:GetRecords",
-              "dynamodb:GetShardIterator"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/stream/${streamName}",
-                {
-                  "tableName": {
-                    "Ref": "TableName"
-                  },
-                  "streamName": {
-                    "Ref": "StreamName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:DescribeStream",
+      "dynamodb:GetRecords",
+      "dynamodb:GetShardIterator"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/stream/${streamName}",
+        {
+          "tableName": {
+            "Ref": "TableName"
           },
-         {
-            "Effect": "Allow",
-            "Action": [
-              "dynamodb:ListStreams"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/stream/*",
-                {
-                  "tableName": {
-                    "Ref": "TableName"
-                  }
-                }
-              ]
-            }
-          }          
-        ]
+          "streamName": {
+            "Ref": "StreamName"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:ListStreams"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/stream/*",
+        {
+          "tableName": {
+            "Ref": "TableName"
+          }
+        }
+      ]
+    }
+  }          
+]
 ```
 
 ## DynamoDBWritePolicy<a name="dynamo-db-write-policy"></a>
@@ -787,38 +791,38 @@ Gives permission to describe and read DynamoDB streams and records\.
 Gives write\-only permission to a DynamoDB table\.
 
 ```
-        "Statement": [
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "dynamodb:PutItem",
+      "dynamodb:UpdateItem",
+      "dynamodb:BatchWriteItem"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
           {
-            "Effect": "Allow",
-            "Action": [
-              "dynamodb:PutItem",
-              "dynamodb:UpdateItem",
-              "dynamodb:BatchWriteItem"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
-                  {
-                    "tableName": {
-                      "Ref": "TableName"
-                    }
-                  }
-                ]
-              },
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
-                  {
-                    "tableName": {
-                      "Ref": "TableName"
-                    }
-                  }
-                ]
-              }
-            ]
+            "tableName": {
+              "Ref": "TableName"
+            }
           }
         ]
+      },
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}/index/*",
+          {
+            "tableName": {
+              "Ref": "TableName"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
 ## EC2CopyImagePolicy<a name="ec2-copy-image-policy"></a>
@@ -826,24 +830,24 @@ Gives write\-only permission to a DynamoDB table\.
 Gives permission to copy Amazon EC2 images\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "ec2:CopyImage"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:ec2:${AWS::Region}:${AWS::AccountId}:image/${imageId}",
-                {
-                  "imageId": {
-                    "Ref": "ImageId"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ec2:CopyImage"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:ec2:${AWS::Region}:${AWS::AccountId}:image/${imageId}",
+        {
+          "imageId": {
+            "Ref": "ImageId"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## EC2DescribePolicy<a name="ec2-describe-policy"></a>
@@ -851,16 +855,16 @@ Gives permission to copy Amazon EC2 images\.
 Gives permission to describe Amazon Elastic Compute Cloud \(Amazon EC2\) instances\.
 
 ```
-         "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "ec2:DescribeRegions",
-              "ec2:DescribeInstances"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ec2:DescribeRegions",
+      "ec2:DescribeInstances"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## EcsRunTaskPolicy<a name="ecs-run-task-policy"></a>
@@ -868,24 +872,24 @@ Gives permission to describe Amazon Elastic Compute Cloud \(Amazon EC2\) instanc
 Gives permission to start a new task for a task definition\.
 
 ```
-        "Statement": [
-          {
-            "Action": [
-              "ecs:RunTask"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:ecs:${AWS::Region}:${AWS::AccountId}:task-definition/${taskDefinition}",
-                {
-                  "taskDefinition": {
-                    "Ref": "TaskDefinition"
-                  }
-                }
-              ]
-            },
-            "Effect": "Allow"
+"Statement": [
+  {
+    "Action": [
+      "ecs:RunTask"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:ecs:${AWS::Region}:${AWS::AccountId}:task-definition/${taskDefinition}",
+        {
+          "taskDefinition": {
+            "Ref": "TaskDefinition"
           }
-        ]
+        }
+      ]
+    },
+    "Effect": "Allow"
+  }
+]
 ```
 
 ## EFSWriteAccessPolicy<a name="efs-write-access-policy"></a>
@@ -893,39 +897,39 @@ Gives permission to start a new task for a task definition\.
 Gives permission to mount an Amazon EFS file system with write access\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "elasticfilesystem:ClientMount",
-              "elasticfilesystem:ClientWrite"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:elasticfilesystem:${AWS::Region}:${AWS::AccountId}:file-system/${FileSystem}",
-                {
-                  "FileSystem": {
-                    "Ref": "FileSystem"
-                  }
-                }
-              ]
-            },
-            "Condition": {
-              "StringEquals": {
-                "elasticfilesystem:AccessPointArn": {
-                  "Fn::Sub": [
-                    "arn:${AWS::Partition}:elasticfilesystem:${AWS::Region}:${AWS::AccountId}:access-point/${AccessPoint}",
-                    {
-                      "AccessPoint": {
-                        "Ref": "AccessPoint"
-                      }
-                    }
-                  ]
-                }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "elasticfilesystem:ClientMount",
+      "elasticfilesystem:ClientWrite"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:elasticfilesystem:${AWS::Region}:${AWS::AccountId}:file-system/${FileSystem}",
+        {
+          "FileSystem": {
+            "Ref": "FileSystem"
+          }
+        }
+      ]
+    },
+    "Condition": {
+      "StringEquals": {
+        "elasticfilesystem:AccessPointArn": {
+          "Fn::Sub": [
+            "arn:${AWS::Partition}:elasticfilesystem:${AWS::Region}:${AWS::AccountId}:access-point/${AccessPoint}",
+            {
+              "AccessPoint": {
+                "Ref": "AccessPoint"
               }
             }
-          }
-        ]
+          ]
+        }
+      }
+    }
+  }
+]
 ```
 
 ## EKSDescribePolicy<a name="eks-describe-policy"></a>
@@ -933,16 +937,16 @@ Gives permission to mount an Amazon EFS file system with write access\.
 Gives permission to describe or list Amazon Elastic Kubernetes Service \(Amazon EKS\) clusters\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "eks:DescribeCluster",
-              "eks:ListClusters"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "eks:DescribeCluster",
+      "eks:ListClusters"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## ElasticMapReduceAddJobFlowStepsPolicy<a name="elastic-map-reduce-add-job-flows-policy"></a>
@@ -950,22 +954,22 @@ Gives permission to describe or list Amazon Elastic Kubernetes Service \(Amazon 
 Gives permission to add new steps to a running cluster\.
 
 ```
-        "Statement": [
-          {
-            "Action": "elasticmapreduce:AddJobFlowSteps",
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
-                {
-                  "clusterId": {
-                    "Ref": "ClusterId"
-                  }
-                }
-              ]
-            },
-            "Effect": "Allow"
+"Statement": [
+  {
+    "Action": "elasticmapreduce:AddJobFlowSteps",
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+        {
+          "clusterId": {
+            "Ref": "ClusterId"
           }
-        ]
+        }
+      ]
+    },
+    "Effect": "Allow"
+  }
+]
 ```
 
 ## ElasticMapReduceCancelStepsPolicy<a name="elastic-map-reduce-cancel-steps-policy"></a>
@@ -973,22 +977,22 @@ Gives permission to add new steps to a running cluster\.
 Gives permission to cancel a pending step or steps in a running cluster\.
 
 ```
-        "Statement": [
-          {
-            "Action": "elasticmapreduce:CancelSteps",
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
-                {
-                  "clusterId": {
-                    "Ref": "ClusterId"
-                  }
-                }
-              ]
-            },
-            "Effect": "Allow"
+"Statement": [
+  {
+    "Action": "elasticmapreduce:CancelSteps",
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+        {
+          "clusterId": {
+            "Ref": "ClusterId"
           }
-        ]
+        }
+      ]
+    },
+    "Effect": "Allow"
+  }
+]
 ```
 
 ## ElasticMapReduceModifyInstanceFleetPolicy<a name="elastic-map-reduce-modify-instance-fleet-policy"></a>
@@ -996,25 +1000,25 @@ Gives permission to cancel a pending step or steps in a running cluster\.
 Gives permission to list details and modify capacities for instance fleets within a cluster\.
 
 ```
-        "Statement": [
-          {
-            "Action": [
-              "elasticmapreduce:ModifyInstanceFleet",
-              "elasticmapreduce:ListInstanceFleets"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
-                {
-                  "clusterId": {
-                    "Ref": "ClusterId"
-                  }
-                }
-              ]
-            },
-            "Effect": "Allow"
+"Statement": [
+  {
+    "Action": [
+      "elasticmapreduce:ModifyInstanceFleet",
+      "elasticmapreduce:ListInstanceFleets"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+        {
+          "clusterId": {
+            "Ref": "ClusterId"
           }
-        ]
+        }
+      ]
+    },
+    "Effect": "Allow"
+  }
+]
 ```
 
 ## ElasticMapReduceModifyInstanceGroupsPolicy<a name="elastic-map-reduce-modify-instance-groups-policy"></a>
@@ -1022,25 +1026,25 @@ Gives permission to list details and modify capacities for instance fleets withi
 Gives permission to list details and modify settings for instance groups within a cluster\.
 
 ```
-        "Statement": [
-          {
-            "Action": [
-              "elasticmapreduce:ModifyInstanceGroups",
-              "elasticmapreduce:ListInstanceGroups"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
-                {
-                  "clusterId": {
-                    "Ref": "ClusterId"
-                  }
-                }
-              ]
-            },
-            "Effect": "Allow"
+"Statement": [
+  {
+    "Action": [
+      "elasticmapreduce:ModifyInstanceGroups",
+      "elasticmapreduce:ListInstanceGroups"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+        {
+          "clusterId": {
+            "Ref": "ClusterId"
           }
-        ]
+        }
+      ]
+    },
+    "Effect": "Allow"
+  }
+]
 ```
 
 ## ElasticMapReduceSetTerminationProtectionPolicy<a name="elastic-map-reduce-set-termination-protection-policy"></a>
@@ -1048,22 +1052,22 @@ Gives permission to list details and modify settings for instance groups within 
 Gives permission to set termination protection for a cluster\.
 
 ```
-        "Statement": [
-          {
-            "Action": "elasticmapreduce:SetTerminationProtection",
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
-                {
-                  "clusterId": {
-                    "Ref": "ClusterId"
-                  }
-                }
-              ]
-            },
-            "Effect": "Allow"
+"Statement": [
+  {
+    "Action": "elasticmapreduce:SetTerminationProtection",
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+        {
+          "clusterId": {
+            "Ref": "ClusterId"
           }
-        ]
+        }
+      ]
+    },
+    "Effect": "Allow"
+  }
+]
 ```
 
 ## ElasticMapReduceTerminateJobFlowsPolicy<a name="elastic-map-reduce-terminate-job-flows-policy"></a>
@@ -1071,22 +1075,22 @@ Gives permission to set termination protection for a cluster\.
 Gives permission to shut down a cluster\.
 
 ```
-        "Statement": [
-          {
-            "Action": "elasticmapreduce:TerminateJobFlows",
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
-                {
-                  "clusterId": {
-                    "Ref": "ClusterId"
-                  }
-                }
-              ]
-            },
-            "Effect": "Allow"
+"Statement": [
+  {
+    "Action": "elasticmapreduce:TerminateJobFlows",
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:elasticmapreduce:${AWS::Region}:${AWS::AccountId}:cluster/${clusterId}",
+        {
+          "clusterId": {
+            "Ref": "ClusterId"
           }
-        ]
+        }
+      ]
+    },
+    "Effect": "Allow"
+  }
+]
 ```
 
 ## ElasticsearchHttpPostPolicy<a name="elastic-search-http-post-policy"></a>
@@ -1094,25 +1098,25 @@ Gives permission to shut down a cluster\.
 Gives POST and PUT permission to Amazon OpenSearch Service\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "es:ESHttpPost",
-              "es:ESHttpPut"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:es:${AWS::Region}:${AWS::AccountId}:domain/${domainName}/*",
-                {
-                  "domainName": {
-                    "Ref": "DomainName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "es:ESHttpPost",
+      "es:ESHttpPut"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:es:${AWS::Region}:${AWS::AccountId}:domain/${domainName}/*",
+        {
+          "domainName": {
+            "Ref": "DomainName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## EventBridgePutEventsPolicy<a name="eventbridge-put-events-policy"></a>
@@ -1120,22 +1124,22 @@ Gives POST and PUT permission to Amazon OpenSearch Service\.
 Gives permissions to send events to Amazon EventBridge\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": "events:PutEvents",
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:events:${AWS::Region}:${AWS::AccountId}:event-bus/${eventBusName}",
-                {
-                  "eventBusName": {
-                    "Ref": "EventBusName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": "events:PutEvents",
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:events:${AWS::Region}:${AWS::AccountId}:event-bus/${eventBusName}",
+        {
+          "eventBusName": {
+            "Ref": "EventBusName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## FilterLogEventsPolicy<a name="filter-log-events-policy"></a>
@@ -1143,24 +1147,24 @@ Gives permissions to send events to Amazon EventBridge\.
 Gives permission to filter CloudWatch Logs events from a specified log group\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "logs:FilterLogEvents"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:${logGroupName}:log-stream:*",
-                {
-                  "logGroupName": {
-                    "Ref": "LogGroupName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "logs:FilterLogEvents"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:${logGroupName}:log-stream:*",
+        {
+          "logGroupName": {
+            "Ref": "LogGroupName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## FirehoseCrudPolicy<a name="firehose-crud-policy"></a>
@@ -1168,29 +1172,29 @@ Gives permission to filter CloudWatch Logs events from a specified log group\.
 Gives permission to create, write, update, and delete a Kinesis Data Firehose delivery stream\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "firehose:CreateDeliveryStream",
-              "firehose:DeleteDeliveryStream",
-              "firehose:DescribeDeliveryStream",
-              "firehose:PutRecord",
-              "firehose:PutRecordBatch",
-              "firehose:UpdateDestination"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:firehose:${AWS::Region}:${AWS::AccountId}:deliverystream/${deliveryStreamName}",
-                {
-                  "deliveryStreamName": {
-                    "Ref": "DeliveryStreamName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "firehose:CreateDeliveryStream",
+      "firehose:DeleteDeliveryStream",
+      "firehose:DescribeDeliveryStream",
+      "firehose:PutRecord",
+      "firehose:PutRecordBatch",
+      "firehose:UpdateDestination"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:firehose:${AWS::Region}:${AWS::AccountId}:deliverystream/${deliveryStreamName}",
+        {
+          "deliveryStreamName": {
+            "Ref": "DeliveryStreamName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## FirehoseWritePolicy<a name="firehose-write-policy"></a>
@@ -1198,25 +1202,25 @@ Gives permission to create, write, update, and delete a Kinesis Data Firehose de
 Gives permission to write to a Kinesis Data Firehose delivery stream\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "firehose:PutRecord",
-              "firehose:PutRecordBatch"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:firehose:${AWS::Region}:${AWS::AccountId}:deliverystream/${deliveryStreamName}",
-                {
-                  "deliveryStreamName": {
-                    "Ref": "DeliveryStreamName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "firehose:PutRecord",
+      "firehose:PutRecordBatch"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:firehose:${AWS::Region}:${AWS::AccountId}:deliverystream/${deliveryStreamName}",
+        {
+          "deliveryStreamName": {
+            "Ref": "DeliveryStreamName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## KinesisCrudPolicy<a name="kinesis-crud-policy"></a>
@@ -1224,37 +1228,37 @@ Gives permission to write to a Kinesis Data Firehose delivery stream\.
 Gives permission to create, publish, and delete an Amazon Kinesis stream\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "kinesis:AddTagsToStream",
-              "kinesis:CreateStream",
-              "kinesis:DecreaseStreamRetentionPeriod",
-              "kinesis:DeleteStream",
-              "kinesis:DescribeStream",
-              "kinesis:DescribeStreamSummary",
-              "kinesis:GetShardIterator",
-              "kinesis:IncreaseStreamRetentionPeriod",
-              "kinesis:ListTagsForStream",
-              "kinesis:MergeShards",
-              "kinesis:PutRecord",
-              "kinesis:PutRecords",
-              "kinesis:SplitShard",
-              "kinesis:RemoveTagsFromStream"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:kinesis:${AWS::Region}:${AWS::AccountId}:stream/${streamName}",
-                {
-                  "streamName": {
-                    "Ref": "StreamName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "kinesis:AddTagsToStream",
+      "kinesis:CreateStream",
+      "kinesis:DecreaseStreamRetentionPeriod",
+      "kinesis:DeleteStream",
+      "kinesis:DescribeStream",
+      "kinesis:DescribeStreamSummary",
+      "kinesis:GetShardIterator",
+      "kinesis:IncreaseStreamRetentionPeriod",
+      "kinesis:ListTagsForStream",
+      "kinesis:MergeShards",
+      "kinesis:PutRecord",
+      "kinesis:PutRecords",
+      "kinesis:SplitShard",
+      "kinesis:RemoveTagsFromStream"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:kinesis:${AWS::Region}:${AWS::AccountId}:stream/${streamName}",
+        {
+          "streamName": {
+            "Ref": "StreamName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## KinesisStreamReadPolicy<a name="kinesis-stream-read-policy"></a>
@@ -1262,37 +1266,37 @@ Gives permission to create, publish, and delete an Amazon Kinesis stream\.
 Gives permission to list and read an Amazon Kinesis stream\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "kinesis:ListStreams",
-              "kinesis:DescribeLimits"
-            ],
-            "Resource": {
-              "Fn::Sub": "arn:${AWS::Partition}:kinesis:${AWS::Region}:${AWS::AccountId}:stream/*"
-            }
-          },
-          {
-            "Effect": "Allow",
-            "Action": [
-              "kinesis:DescribeStream",
-              "kinesis:DescribeStreamSummary",
-              "kinesis:GetRecords",
-              "kinesis:GetShardIterator"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:kinesis:${AWS::Region}:${AWS::AccountId}:stream/${streamName}",
-                {
-                  "streamName": {
-                    "Ref": "StreamName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "kinesis:ListStreams",
+      "kinesis:DescribeLimits"
+    ],
+    "Resource": {
+      "Fn::Sub": "arn:${AWS::Partition}:kinesis:${AWS::Region}:${AWS::AccountId}:stream/*"
+    }
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "kinesis:DescribeStream",
+      "kinesis:DescribeStreamSummary",
+      "kinesis:GetRecords",
+      "kinesis:GetShardIterator"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:kinesis:${AWS::Region}:${AWS::AccountId}:stream/${streamName}",
+        {
+          "streamName": {
+            "Ref": "StreamName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## KMSDecryptPolicy<a name="kms-decrypt-policy"></a>
@@ -1300,22 +1304,22 @@ Gives permission to list and read an Amazon Kinesis stream\.
 Gives permission to decrypt with an AWS Key Management Service \(AWS KMS\) key\. Note that `keyId` must be an AWS KMS key ID, and not a key alias\.
 
 ```
-        "Statement": [
-          {
-            "Action": "kms:Decrypt",
-            "Effect": "Allow",
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:kms:${AWS::Region}:${AWS::AccountId}:key/${keyId}",
-                {
-                  "keyId": {
-                    "Ref": "KeyId"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Action": "kms:Decrypt",
+    "Effect": "Allow",
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:kms:${AWS::Region}:${AWS::AccountId}:key/${keyId}",
+        {
+          "keyId": {
+            "Ref": "KeyId"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## KMSEncryptPolicy<a name="kms-encrypt-policy"></a>
@@ -1323,22 +1327,22 @@ Gives permission to decrypt with an AWS Key Management Service \(AWS KMS\) key\.
 Gives permission to encrypt with an AWS KMS key\. Note that keyId must be an AWS KMS key ID, and not a key alias\.
 
 ```
-        "Statement": [
-          {
-            "Action": "kms:Encrypt",
-            "Effect": "Allow",
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:kms:${AWS::Region}:${AWS::AccountId}:key/${keyId}",
-                {
-                  "keyId": {
-                    "Ref": "KeyId"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Action": "kms:Encrypt",
+    "Effect": "Allow",
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:kms:${AWS::Region}:${AWS::AccountId}:key/${keyId}",
+        {
+          "keyId": {
+            "Ref": "KeyId"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## LambdaInvokePolicy<a name="lambda-invoke-policy"></a>
@@ -1346,24 +1350,24 @@ Gives permission to encrypt with an AWS KMS key\. Note that keyId must be an AWS
 Gives permission to invoke an AWS Lambda function, alias, or version\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "lambda:InvokeFunction"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${functionName}*",
-                {
-                  "functionName": {
-                    "Ref": "FunctionName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "lambda:InvokeFunction"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${functionName}*",
+        {
+          "functionName": {
+            "Ref": "FunctionName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## MobileAnalyticsWriteOnlyAccessPolicy<a name="mobile-analytics-write-only-access-policy"></a>
@@ -1371,15 +1375,15 @@ Gives permission to invoke an AWS Lambda function, alias, or version\.
 Gives write\-only permission to put event data for all application resources\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "mobileanalytics:PutEvents"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "mobileanalytics:PutEvents"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## OrganizationsListAccountsPolicy<a name="organizations-list-accounts-policy"></a>
@@ -1387,13 +1391,15 @@ Gives write\-only permission to put event data for all application resources\.
 Gives read\-only permission to list child account names and IDs\.
 
 ```
-        "Statement": [{
-          "Effect": "Allow",
-          "Action": [
-            "organizations:ListAccounts"
-          ],
-          "Resource": "*"
-        }]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "organizations:ListAccounts"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## PinpointEndpointAccessPolicy<a name="pinpoint-endpoint-access-policy"></a>
@@ -1401,26 +1407,26 @@ Gives read\-only permission to list child account names and IDs\.
 Gives permission to get and update endpoints for an Amazon Pinpoint application\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "mobiletargeting:GetEndpoint",
-              "mobiletargeting:UpdateEndpoint",
-              "mobiletargeting:UpdateEndpointsBatch"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:mobiletargeting:${AWS::Region}:${AWS::AccountId}:apps/${pinpointApplicationId}/endpoints/*",
-                {
-                  "pinpointApplicationId": {
-                    "Ref": "PinpointApplicationId"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "mobiletargeting:GetEndpoint",
+      "mobiletargeting:UpdateEndpoint",
+      "mobiletargeting:UpdateEndpointsBatch"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:mobiletargeting:${AWS::Region}:${AWS::AccountId}:apps/${pinpointApplicationId}/endpoints/*",
+        {
+          "pinpointApplicationId": {
+            "Ref": "PinpointApplicationId"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## PollyFullAccessPolicy<a name="polly-full-access-policy"></a>
@@ -1428,41 +1434,41 @@ Gives permission to get and update endpoints for an Amazon Pinpoint application\
 Gives full access permission to Amazon Polly lexicon resources\.
 
 ```
-        "Statement": [
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "polly:GetLexicon",
+      "polly:DeleteLexicon"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:polly:${AWS::Region}:${AWS::AccountId}:lexicon/${lexiconName}",
           {
-            "Effect": "Allow",
-            "Action": [
-              "polly:GetLexicon",
-              "polly:DeleteLexicon"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:polly:${AWS::Region}:${AWS::AccountId}:lexicon/${lexiconName}",
-                  {
-                    "lexiconName": {
-                      "Ref": "LexiconName"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "Effect": "Allow",
-            "Action": [
-              "polly:DescribeVoices",
-              "polly:ListLexicons",
-              "polly:PutLexicon",
-              "polly:SynthesizeSpeech"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": "arn:${AWS::Partition}:polly:${AWS::Region}:${AWS::AccountId}:lexicon/*"
-              }
-            ]
+            "lexiconName": {
+              "Ref": "LexiconName"
+            }
           }
         ]
+      }
+    ]
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "polly:DescribeVoices",
+      "polly:ListLexicons",
+      "polly:PutLexicon",
+      "polly:SynthesizeSpeech"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": "arn:${AWS::Partition}:polly:${AWS::Region}:${AWS::AccountId}:lexicon/*"
+      }
+    ]
+  }
+]
 ```
 
 ## RekognitionDetectOnlyPolicy<a name="rekognition-detect-only-policy"></a>
@@ -1470,18 +1476,18 @@ Gives full access permission to Amazon Polly lexicon resources\.
 Gives permission to detect faces, labels, and text\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "rekognition:DetectFaces",
-              "rekognition:DetectLabels",
-              "rekognition:DetectModerationLabels",
-              "rekognition:DetectText"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "rekognition:DetectFaces",
+      "rekognition:DetectLabels",
+      "rekognition:DetectModerationLabels",
+      "rekognition:DetectText"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## RekognitionFacesManagementPolicy<a name="rekognition-face-management-policy"></a>
@@ -1489,26 +1495,28 @@ Gives permission to detect faces, labels, and text\.
 Gives permission to add, delete, and search faces in an Amazon Rekognition collection\.
 
 ```
-        "Statement": [{
-          "Effect": "Allow",
-          "Action": [
-            "rekognition:IndexFaces",
-            "rekognition:DeleteFaces",
-            "rekognition:SearchFaces",
-            "rekognition:SearchFacesByImage",
-            "rekognition:ListFaces"
-          ],
-          "Resource": {
-            "Fn::Sub": [
-              "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
-              {
-                "collectionId": {
-                  "Ref": "CollectionId"
-                }
-              }
-            ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "rekognition:IndexFaces",
+      "rekognition:DeleteFaces",
+      "rekognition:SearchFaces",
+      "rekognition:SearchFacesByImage",
+      "rekognition:ListFaces"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
+        {
+          "collectionId": {
+            "Ref": "CollectionId"
           }
-        }]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## RekognitionFacesPolicy<a name="rekognition-faces-policy"></a>
@@ -1516,15 +1524,16 @@ Gives permission to add, delete, and search faces in an Amazon Rekognition colle
 Gives permission to compare and detect faces and labels\.
 
 ```
-        "Statement": [{
-          "Effect": "Allow",
-          "Action": [
-            "rekognition:CompareFaces",
-            "rekognition:DetectFaces"
-          ],
-          "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "rekognition:CompareFaces",
+      "rekognition:DetectFaces"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## RekognitionLabelsPolicy<a name="rekognition-labels-policy"></a>
@@ -1532,15 +1541,16 @@ Gives permission to compare and detect faces and labels\.
 Gives permission to detect object and moderation labels\.
 
 ```
-        "Statement": [{
-          "Effect": "Allow",
-          "Action": [
-            "rekognition:DetectLabels",
-            "rekognition:DetectModerationLabels"
-          ],
-          "Resource": "*"
-         }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "rekognition:DetectLabels",
+      "rekognition:DetectModerationLabels"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## RekognitionNoDataAccessPolicy<a name="rekognition-no-data-access-policy"></a>
@@ -1548,27 +1558,27 @@ Gives permission to detect object and moderation labels\.
 Gives permission to compare and detect faces and labels\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "rekognition:CompareFaces",
-              "rekognition:DetectFaces",
-              "rekognition:DetectLabels",
-              "rekognition:DetectModerationLabels"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
-                {
-                  "collectionId": {
-                    "Ref": "CollectionId"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "rekognition:CompareFaces",
+      "rekognition:DetectFaces",
+      "rekognition:DetectLabels",
+      "rekognition:DetectModerationLabels"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
+        {
+          "collectionId": {
+            "Ref": "CollectionId"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## RekognitionReadPolicy<a name="rekognition-read-policy"></a>
@@ -1576,27 +1586,27 @@ Gives permission to compare and detect faces and labels\.
 Gives permission to list and search faces\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "rekognition:ListCollections",
-              "rekognition:ListFaces",
-              "rekognition:SearchFaces",
-              "rekognition:SearchFacesByImage"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
-                {
-                  "collectionId": {
-                    "Ref": "CollectionId"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "rekognition:ListCollections",
+      "rekognition:ListFaces",
+      "rekognition:SearchFaces",
+      "rekognition:SearchFacesByImage"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
+        {
+          "collectionId": {
+            "Ref": "CollectionId"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## RekognitionWriteOnlyAccessPolicy<a name="rekognition-write-only-access-policy"></a>
@@ -1604,25 +1614,25 @@ Gives permission to list and search faces\.
 Gives permission to create collection and index faces\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "rekognition:CreateCollection",
-              "rekognition:IndexFaces"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
-                {
-                  "collectionId": {
-                    "Ref": "CollectionId"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "rekognition:CreateCollection",
+      "rekognition:IndexFaces"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:rekognition:${AWS::Region}:${AWS::AccountId}:collection/${collectionId}",
+        {
+          "collectionId": {
+            "Ref": "CollectionId"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## Route53ChangeResourceRecordSetsPolicy<a name="route53-change-resource-record-sets-policy"></a>
@@ -1630,24 +1640,24 @@ Gives permission to create collection and index faces\.
 Gives permission to change resource record sets in Route 53\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "route53:ChangeResourceRecordSets"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:route53:::hostedzone/${HostedZoneId}",
-                {
-                  "HostedZoneId": {
-                    "Ref": "HostedZoneId"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "route53:ChangeResourceRecordSets"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:route53:::hostedzone/${HostedZoneId}",
+        {
+          "HostedZoneId": {
+            "Ref": "HostedZoneId"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## S3CrudPolicy<a name="s3-crud-policy"></a>
@@ -1655,44 +1665,44 @@ Gives permission to change resource record sets in Route 53\.
 Gives create, read, update, and delete permission to act on the objects in an Amazon S3 bucket\.
 
 ```
-        "Statement": [
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "s3:GetObject",
+      "s3:ListBucket",
+      "s3:GetBucketLocation",
+      "s3:GetObjectVersion",
+      "s3:PutObject",
+      "s3:PutObjectAcl",
+      "s3:GetLifecycleConfiguration",
+      "s3:PutLifecycleConfiguration",
+      "s3:DeleteObject"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:s3:::${bucketName}",
           {
-            "Effect": "Allow",
-            "Action": [
-              "s3:GetObject",
-              "s3:ListBucket",
-              "s3:GetBucketLocation",
-              "s3:GetObjectVersion",
-              "s3:PutObject",
-              "s3:PutObjectAcl",
-              "s3:GetLifecycleConfiguration",
-              "s3:PutLifecycleConfiguration",
-              "s3:DeleteObject"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:s3:::${bucketName}",
-                  {
-                    "bucketName": {
-                      "Ref": "BucketName"
-                    }
-                  }
-                ]
-              },
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:s3:::${bucketName}/*",
-                  {
-                    "bucketName": {
-                      "Ref": "BucketName"
-                    }
-                  }
-                ]
-              }
-            ]
+            "bucketName": {
+              "Ref": "BucketName"
+            }
           }
         ]
+      },
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:s3:::${bucketName}/*",
+          {
+            "bucketName": {
+              "Ref": "BucketName"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
 ## S3FullAccessPolicy<a name="s3-full-access-policy"></a>
@@ -1700,58 +1710,58 @@ Gives create, read, update, and delete permission to act on the objects in an Am
 Gives full access permission to act on the objects in an Amazon S3 bucket\.
 
 ```
-        "Statement": [
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "s3:GetObject",
+      "s3:GetObjectAcl",
+      "s3:GetObjectVersion",
+      "s3:PutObject",
+      "s3:PutObjectAcl",
+      "s3:DeleteObject",
+      "s3:DeleteObjectTagging",
+      "s3:DeleteObjectVersionTagging",
+      "s3:GetObjectTagging",
+      "s3:GetObjectVersionTagging",
+      "s3:PutObjectTagging",
+      "s3:PutObjectVersionTagging"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:s3:::${bucketName}/*",
           {
-            "Effect": "Allow",
-            "Action": [
-              "s3:GetObject",
-              "s3:GetObjectAcl",
-              "s3:GetObjectVersion",
-              "s3:PutObject",
-              "s3:PutObjectAcl",
-              "s3:DeleteObject",
-              "s3:DeleteObjectTagging",
-              "s3:DeleteObjectVersionTagging",
-              "s3:GetObjectTagging",
-              "s3:GetObjectVersionTagging",
-              "s3:PutObjectTagging",
-              "s3:PutObjectVersionTagging"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:s3:::${bucketName}/*",
-                  {
-                    "bucketName": {
-                      "Ref": "BucketName"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "Effect": "Allow",
-            "Action": [
-              "s3:ListBucket",
-              "s3:GetBucketLocation",
-              "s3:GetLifecycleConfiguration",
-              "s3:PutLifecycleConfiguration"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:s3:::${bucketName}",
-                  {
-                    "bucketName": {
-                      "Ref": "BucketName"
-                    }
-                  }
-                ]
-              }
-            ]
+            "bucketName": {
+              "Ref": "BucketName"
+            }
           }
         ]
+      }
+    ]
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "s3:ListBucket",
+      "s3:GetBucketLocation",
+      "s3:GetLifecycleConfiguration",
+      "s3:PutLifecycleConfiguration"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:s3:::${bucketName}",
+          {
+            "bucketName": {
+              "Ref": "BucketName"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
 ## S3ReadPolicy<a name="s3-read-policy"></a>
@@ -1759,40 +1769,40 @@ Gives full access permission to act on the objects in an Amazon S3 bucket\.
 Gives read\-only permission to read objects in an Amazon Simple Storage Service \(Amazon S3\) bucket\.
 
 ```
-        "Statement": [
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "s3:GetObject",
+      "s3:ListBucket",
+      "s3:GetBucketLocation",
+      "s3:GetObjectVersion",
+      "s3:GetLifecycleConfiguration"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:s3:::${bucketName}",
           {
-            "Effect": "Allow",
-            "Action": [
-              "s3:GetObject",
-              "s3:ListBucket",
-              "s3:GetBucketLocation",
-              "s3:GetObjectVersion",
-              "s3:GetLifecycleConfiguration"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:s3:::${bucketName}",
-                  {
-                    "bucketName": {
-                      "Ref": "BucketName"
-                    }
-                  }
-                ]
-              },
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:s3:::${bucketName}/*",
-                  {
-                    "bucketName": {
-                      "Ref": "BucketName"
-                    }
-                  }
-                ]
-              }
-            ]
+            "bucketName": {
+              "Ref": "BucketName"
+            }
           }
         ]
+      },
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:s3:::${bucketName}/*",
+          {
+            "bucketName": {
+              "Ref": "BucketName"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
 ## S3WritePolicy<a name="s3-write-policy"></a>
@@ -1800,38 +1810,38 @@ Gives read\-only permission to read objects in an Amazon Simple Storage Service 
 Gives write permission to write objects into an Amazon S3 bucket\.
 
 ```
-        "Statement": [
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "s3:PutObject",
+      "s3:PutObjectAcl",
+      "s3:PutLifecycleConfiguration"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:s3:::${bucketName}",
           {
-            "Effect": "Allow",
-            "Action": [
-              "s3:PutObject",
-              "s3:PutObjectAcl",
-              "s3:PutLifecycleConfiguration"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:s3:::${bucketName}",
-                  {
-                    "bucketName": {
-                      "Ref": "BucketName"
-                    }
-                  }
-                ]
-              },
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:s3:::${bucketName}/*",
-                  {
-                    "bucketName": {
-                      "Ref": "BucketName"
-                    }
-                  }
-                ]
-              }
-            ]
+            "bucketName": {
+              "Ref": "BucketName"
+            }
           }
         ]
+      },
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:s3:::${bucketName}/*",
+          {
+            "bucketName": {
+              "Ref": "BucketName"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
 ## SageMakerCreateEndpointConfigPolicy<a name="sagemaker-create-endpoint-config-policy"></a>
@@ -1839,24 +1849,24 @@ Gives write permission to write objects into an Amazon S3 bucket\.
 Gives permission to create an endpoint configuration in SageMaker\.
 
 ```
-        "Statement": [
-          {
-            "Action": [
-              "sagemaker:CreateEndpointConfig"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint-config/${endpointConfigName}",
-                {
-                  "endpointConfigName": {
-                    "Ref": "EndpointConfigName"
-                  }
-                }
-              ]
-            },
-            "Effect": "Allow"
+"Statement": [
+  {
+    "Action": [
+      "sagemaker:CreateEndpointConfig"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint-config/${endpointConfigName}",
+        {
+          "endpointConfigName": {
+            "Ref": "EndpointConfigName"
           }
-        ]
+        }
+      ]
+    },
+    "Effect": "Allow"
+  }
+]
 ```
 
 ## SageMakerCreateEndpointPolicy<a name="sagemaker-create-endpoint-policy"></a>
@@ -1864,24 +1874,24 @@ Gives permission to create an endpoint configuration in SageMaker\.
 Gives permission to create an endpoint in SageMaker\.
 
 ```
-        "Statement": [
-          {
-            "Action": [
-              "sagemaker:CreateEndpoint"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint/${endpointName}",
-                {
-                  "endpointName": {
-                    "Ref": "EndpointName"
-                  }
-                }
-              ]
-            },
-            "Effect": "Allow"
+"Statement": [
+  {
+    "Action": [
+      "sagemaker:CreateEndpoint"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:sagemaker:${AWS::Region}:${AWS::AccountId}:endpoint/${endpointName}",
+        {
+          "endpointName": {
+            "Ref": "EndpointName"
           }
-        ]
+        }
+      ]
+    },
+    "Effect": "Allow"
+  }
+]
 ```
 
 ## ServerlessRepoReadWriteAccessPolicy<a name="serverlessrepo-read-write-access-policy"></a>
@@ -1889,23 +1899,23 @@ Gives permission to create an endpoint in SageMaker\.
 Gives permission to create and list applications in the AWS Serverless Application Repository \(AWS SAM\) service\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "serverlessrepo:CreateApplication",
-              "serverlessrepo:CreateApplicationVersion",
-              "serverlessrepo:GetApplication",
-              "serverlessrepo:ListApplications",
-              "serverlessrepo:ListApplicationVersions"
-            ],
-            "Resource": [
-              {
-                "Fn::Sub": "arn:${AWS::Partition}:serverlessrepo:${AWS::Region}:${AWS::AccountId}:applications/*"
-              }
-            ]
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "serverlessrepo:CreateApplication",
+      "serverlessrepo:CreateApplicationVersion",
+      "serverlessrepo:GetApplication",
+      "serverlessrepo:ListApplications",
+      "serverlessrepo:ListApplicationVersions"
+    ],
+    "Resource": [
+      {
+        "Fn::Sub": "arn:${AWS::Partition}:serverlessrepo:${AWS::Region}:${AWS::AccountId}:applications/*"
+      }
+    ]
+  }
+]
 ```
 
 ## SESBulkTemplatedCrudPolicy<a name="ses-bulk-templated-crud-policy"></a>
@@ -1913,29 +1923,29 @@ Gives permission to create and list applications in the AWS Serverless Applicati
 Gives permission to send Amazon SES email, templated email, and templated bulk emails and to verify identity\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "ses:GetIdentityVerificationAttributes",
-              "ses:SendEmail",
-              "ses:SendRawEmail",
-              "ses:SendTemplatedEmail",
-              "ses:SendBulkTemplatedEmail",
-              "ses:VerifyEmailIdentity"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/${identityName}",
-                {
-                  "identityName": {
-                    "Ref": "IdentityName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ses:GetIdentityVerificationAttributes",
+      "ses:SendEmail",
+      "ses:SendRawEmail",
+      "ses:SendTemplatedEmail",
+      "ses:SendBulkTemplatedEmail",
+      "ses:VerifyEmailIdentity"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/${identityName}",
+        {
+          "identityName": {
+            "Ref": "IdentityName"
           }
-       ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## SESCrudPolicy<a name="ses-crud-policy"></a>
@@ -1943,27 +1953,27 @@ Gives permission to send Amazon SES email, templated email, and templated bulk e
 Gives permission to send email and verify identity\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "ses:GetIdentityVerificationAttributes",
-              "ses:SendEmail",
-              "ses:SendRawEmail",
-              "ses:VerifyEmailIdentity"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/${identityName}",
-                {
-                  "identityName": {
-                    "Ref": "IdentityName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ses:GetIdentityVerificationAttributes",
+      "ses:SendEmail",
+      "ses:SendRawEmail",
+      "ses:VerifyEmailIdentity"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/${identityName}",
+        {
+          "identityName": {
+            "Ref": "IdentityName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## SESEmailTemplateCrudPolicy<a name="ses-email-template-crud-policy"></a>
@@ -1971,18 +1981,20 @@ Gives permission to send email and verify identity\.
 Gives permission to create, get, list, update, and delete Amazon SES email templates\.
 
 ```
-        "Statement": [{
-          "Effect": "Allow",
-          "Action": [
-            "ses:CreateTemplate",
-            "ses:GetTemplate",
-            "ses:ListTemplates",
-            "ses:UpdateTemplate",
-            "ses:DeleteTemplate",
-            "ses:TestRenderTemplate"
-          ],
-          "Resource": "*"
-        }]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ses:CreateTemplate",
+      "ses:GetTemplate",
+      "ses:ListTemplates",
+      "ses:UpdateTemplate",
+      "ses:DeleteTemplate",
+      "ses:TestRenderTemplate"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## SESSendBouncePolicy<a name="ses-send-bounce-policy"></a>
@@ -1990,24 +2002,24 @@ Gives permission to create, get, list, update, and delete Amazon SES email templ
 Gives SendBounce permission to an Amazon Simple Email Service \(Amazon SES\) identity\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "ses:SendBounce"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/${identityName}",
-                {
-                  "identityName": {
-                    "Ref": "IdentityName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ses:SendBounce"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/${identityName}",
+        {
+          "identityName": {
+            "Ref": "IdentityName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## SNSCrudPolicy<a name="sns-crud-policy"></a>
@@ -2015,28 +2027,28 @@ Gives SendBounce permission to an Amazon Simple Email Service \(Amazon SES\) ide
 Gives permission to create, publish, and subscribe to Amazon SNS topics\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "sns:ListSubscriptionsByTopic",
-              "sns:CreateTopic",
-              "sns:SetTopicAttributes",
-              "sns:Subscribe",
-              "sns:Publish"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:sns:${AWS::Region}:${AWS::AccountId}:${topicName}*",
-                {
-                  "topicName": {
-                    "Ref": "TopicName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "sns:ListSubscriptionsByTopic",
+      "sns:CreateTopic",
+      "sns:SetTopicAttributes",
+      "sns:Subscribe",
+      "sns:Publish"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:sns:${AWS::Region}:${AWS::AccountId}:${topicName}*",
+        {
+          "topicName": {
+            "Ref": "TopicName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## SNSPublishMessagePolicy<a name="sqs-publish-message-policy"></a>
@@ -2044,24 +2056,24 @@ Gives permission to create, publish, and subscribe to Amazon SNS topics\.
 Gives permission to publish a message to an Amazon Simple Notification Service \(Amazon SNS\) topic\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "sns:Publish"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:sns:${AWS::Region}:${AWS::AccountId}:${topicName}",
-                {
-                  "topicName": {
-                    "Ref": "TopicName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "sns:Publish"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:sns:${AWS::Region}:${AWS::AccountId}:${topicName}",
+        {
+          "topicName": {
+            "Ref": "TopicName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## SQSPollerPolicy<a name="sqs-poller-policy"></a>
@@ -2069,29 +2081,29 @@ Gives permission to publish a message to an Amazon Simple Notification Service \
 Gives permission to poll an Amazon Simple Queue Service \(Amazon SQS\) queue\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "sqs:ChangeMessageVisibility",
-              "sqs:ChangeMessageVisibilityBatch",
-              "sqs:DeleteMessage",
-              "sqs:DeleteMessageBatch",
-              "sqs:GetQueueAttributes",
-              "sqs:ReceiveMessage"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:sqs:${AWS::Region}:${AWS::AccountId}:${queueName}",
-                {
-                  "queueName": {
-                    "Ref": "QueueName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "sqs:ChangeMessageVisibility",
+      "sqs:ChangeMessageVisibilityBatch",
+      "sqs:DeleteMessage",
+      "sqs:DeleteMessageBatch",
+      "sqs:GetQueueAttributes",
+      "sqs:ReceiveMessage"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:sqs:${AWS::Region}:${AWS::AccountId}:${queueName}",
+        {
+          "queueName": {
+            "Ref": "QueueName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## SQSSendMessagePolicy<a name="sqs-send-message-policy"></a>
@@ -2099,24 +2111,24 @@ Gives permission to poll an Amazon Simple Queue Service \(Amazon SQS\) queue\.
 Gives permission to send message to an Amazon SQS queue\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "sqs:SendMessage*"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:sqs:${AWS::Region}:${AWS::AccountId}:${queueName}",
-                {
-                  "queueName": {
-                    "Ref": "QueueName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "sqs:SendMessage*"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:sqs:${AWS::Region}:${AWS::AccountId}:${queueName}",
+        {
+          "queueName": {
+            "Ref": "QueueName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## SSMParameterReadPolicy<a name="ssm-parameter-read-policy"></a>
@@ -2127,33 +2139,70 @@ Gives permission to access a parameter from an Amazon EC2 Systems Manager \(SSM\
 If you are not using default key, you will also need the `KMSDecryptPolicy` policy\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "ssm:DescribeParameters"
-            ],
-            "Resource": "*"
-          },
-          {
-            "Effect": "Allow",
-            "Action": [
-              "ssm:GetParameters",
-              "ssm:GetParameter",
-              "ssm:GetParametersByPath"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${parameterName}",
-                {
-                  "parameterName": {
-                    "Ref": "ParameterName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ssm:DescribeParameters"
+    ],
+    "Resource": "*"
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ssm:GetParameters",
+      "ssm:GetParameter",
+      "ssm:GetParametersByPath"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter/${parameterName}",
+        {
+          "parameterName": {
+            "Ref": "ParameterName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
+```
+
+## SSMParameterWithSlashPrefixReadPolicy<a name="ssm-parameter-slash-read-policy"></a>
+
+Gives permission to access a parameter from an Amazon EC2 Systems Manager \(SSM\) parameter store to load secrets in this account\. Use when parameter name has slash prefix\.
+
+**Note**  
+If you are not using default key, you will also need the `KMSDecryptPolicy` policy\.
+
+```
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ssm:DescribeParameters"
+    ],
+    "Resource": "*"
+  },
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ssm:GetParameters",
+      "ssm:GetParameter",
+      "ssm:GetParametersByPath"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter${parameterName}",
+        {
+          "parameterName": {
+            "Ref": "ParameterName"
+          }
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## SSMParameterWithSlashPrefixReadPolicy<a name="ssm-parameter-with-slash-prefix-read-policy"></a>
@@ -2198,24 +2247,24 @@ If you are not using default key, you will also need the `KMSDecryptPolicy` poli
 Gives permission to start a Step Functions state machine execution\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "states:StartExecution"
-            ],
-            "Resource": {
-              "Fn::Sub": [
-                "arn:${AWS::Partition}:states:${AWS::Region}:${AWS::AccountId}:stateMachine:${stateMachineName}",
-                {
-                  "stateMachineName": {
-                    "Ref": "StateMachineName"
-                  }
-                }
-              ]
-            }
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "states:StartExecution"
+    ],
+    "Resource": {
+      "Fn::Sub": [
+        "arn:${AWS::Partition}:states:${AWS::Region}:${AWS::AccountId}:stateMachine:${stateMachineName}",
+        {
+          "stateMachineName": {
+            "Ref": "StateMachineName"
           }
-        ]
+        }
+      ]
+    }
+  }
+]
 ```
 
 ## TextractDetectAnalyzePolicy<a name="textract-detect-analyze-policy"></a>
@@ -2223,18 +2272,18 @@ Gives permission to start a Step Functions state machine execution\.
 Gives access to detect and analyze documents with Amazon Textract\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "textract:DetectDocumentText",
-              "textract:StartDocumentTextDetection",
-              "textract:StartDocumentAnalysis",
-              "textract:AnalyzeDocument"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "textract:DetectDocumentText",
+      "textract:StartDocumentTextDetection",
+      "textract:StartDocumentAnalysis",
+      "textract:AnalyzeDocument"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## TextractGetResultPolicy<a name="textract-get-result-policy"></a>
@@ -2242,16 +2291,16 @@ Gives access to detect and analyze documents with Amazon Textract\.
 Gives access to get detected and analyzed documents from Amazon Textract\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "textract:GetDocumentTextDetection",
-              "textract:GetDocumentAnalysis"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "textract:GetDocumentTextDetection",
+      "textract:GetDocumentAnalysis"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## TextractPolicy<a name="textract-policy"></a>
@@ -2259,15 +2308,15 @@ Gives access to get detected and analyzed documents from Amazon Textract\.
 Gives full access to Amazon Textract\.
 
 ```
-        "Statement": [
-         {
-            "Effect": "Allow",
-            "Action": [
-              "textract:*"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "textract:*"
+    ],
+    "Resource": "*"
+  }
+]
 ```
 
 ## VPCAccessPolicy<a name="vpc-access-policy"></a>
@@ -2275,16 +2324,16 @@ Gives full access to Amazon Textract\.
 Gives access to create, delete, describe, and detach elastic network interfaces\.
 
 ```
-        "Statement": [
-          {
-            "Effect": "Allow",
-            "Action": [
-              "ec2:CreateNetworkInterface",
-              "ec2:DeleteNetworkInterface",
-              "ec2:DescribeNetworkInterfaces",
-              "ec2:DetachNetworkInterface"
-            ],
-            "Resource": "*"
-          }
-        ]
+"Statement": [
+  {
+    "Effect": "Allow",
+    "Action": [
+      "ec2:CreateNetworkInterface",
+      "ec2:DeleteNetworkInterface",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DetachNetworkInterface"
+    ],
+    "Resource": "*"
+  }
+]
 ```

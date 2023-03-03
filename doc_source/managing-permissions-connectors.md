@@ -89,7 +89,7 @@ For a list of supported resource connections and their property requirements, se
 
 ## Using connectors<a name="connector-usage"></a>
 
-### Defining Read and Write permissions<a name="connector-usage-define"></a>
+### Define Read and Write permissions<a name="connector-usage-define"></a>
 
 `Read` and `Write` permissions can be provisioned within a single connector:
 
@@ -112,7 +112,7 @@ Resources:
     Type: AWS::DynamoDB::Table
 ```
 
-### Defining resources by using other supported properties<a name="connector-usage-other-properties"></a>
+### Define resources by using other supported properties<a name="connector-usage-other-properties"></a>
 
 For both source and destination resources, when defined within the same template, use the `Id` property\. Optionally, a `Qualifier` can be added to narrow the scope of your defined resource\. When the resource is not within the same template, use a combination of supported properties\.
 + For a list of supported property combinations for source and destination resources, see [Supported source and destination resource types for connectors](reference-sam-connector.md#supported-connector-resource-types)\.
@@ -179,7 +179,77 @@ Resources:
   ...
 ```
 
-### Defining resource attributes with connectors<a name="connector-usage-resource-attributes"></a>
+### Create multiple connectors from a single source<a name="connector-usage-single-source"></a>
+
+Within a source resource, you can define multiple connectors, each with a different destination resource\.
+
+```
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+...
+Resources:
+  MyFunction:
+    Type: AWS::Serverless::Function
+    Connectors:
+      BucketConn:
+        Properties:
+          Destination:
+            Id: MyBucket
+          Permissions:
+            - Read
+            - Write
+      SQSConn:
+        Properties:
+          Destination:
+            Id: MyQueue
+          Permissions:
+            - Read
+            - Write
+      TableConn:
+        Properties:
+          Destination:
+            Id: MyTable
+          Permissions:
+            - Read
+            - Write
+      TableConnWithTableArn:
+        Properties:
+          Destination:
+            Type: AWS::DynamoDB::Table
+            Arn: !GetAtt MyTable.Arn
+          Permissions:
+            - Read
+            - Write
+...
+```
+
+### Create multi\-destination connectors<a name="connector-usage-multi-destination"></a>
+
+Within a source resource, you can define a single connector with multiple destination resources\. Here's an example of a Lambda function source resource connecting to an Amazon Simple Storage Service \(Amazon S3\) bucket and DynamoDB table:
+
+```
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+...
+Resources:
+  MyFunction:
+    Type: AWS::Serverless::Function
+    Connectors:
+      WriteAccessConn:
+        Properties:
+          Destination:
+            - Id: OutputBucket
+            - Id: CredentialTable
+          Permissions:
+            - Write
+  ...
+  OutputBucket:
+    Type: AWS::S3::Bucket
+  CredentialTable:
+    Type: AWS::DynamoDB::Table
+```
+
+### Define resource attributes with connectors<a name="connector-usage-resource-attributes"></a>
 
 Resource attributes can be defined for resources to specify additional behaviors and relationships\. To learn more about resource attributes, see [Resource attribute reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-product-attribute-reference.html) in the *AWS CloudFormation User Guide*\.
 
@@ -205,13 +275,36 @@ Resources:
 **Note**  
 This section explains how connectors provision the necessary resources behind the scenes\. This happens for you automatically when using connectors\.
 
-First, the embedded `Connectors` resource attribute is transformed into an `AWS::Serverless::Connector` resource type\.
+First, the embedded `Connectors` resource attribute is transformed into an `AWS::Serverless::Connector` resource type\. Its logical ID is automatically created as *<source\-resource\-logical\-id><embedded\-connector\-logical\-id>*\.
+
+For example, here is an embedded connector:
+
+```
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+...
+Resources:
+  MyFunction:
+    Type: AWS::Lambda::Function
+    Connectors:
+      MyConn:
+        Properties:
+          Destination:
+            Id: MyTable
+          Permissions:
+            - Read
+            - Write
+      MyTable:
+        Type: AWS::DynamoDB::Table
+```
+
+This will generate the following `AWS::Serverless::Connector` resource:
 
 ```
 Transform: AWS::Serverless-2016-10-31
 Resources:
   ...
-  MyConnector:
+  MyFunctionMyConn:
     Type: AWS::Serverless::Connector
     Properties:
       Source:
@@ -219,8 +312,8 @@ Resources:
       Destination:
         Id: MyTable
       Permissions:
+        - Read
         - Write
-  ...
 ```
 
 **Note**  

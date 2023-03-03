@@ -90,15 +90,11 @@ If your operating system doesn't have the built\-in unzip command, use an equiva
 **Important**  
 You must have Homebrew installed on your Linux machine\. For install instructions, see [Installing Homebrew to use with the AWS SAM CLI](install-homebrew.md)\.
 
-To install the AWS SAM CLI using Homebrew, run the following commands:
+To install the AWS SAM CLI using Homebrew, run the following command:
 
 ```
-$ brew tap aws/tap
-$ brew install aws-sam-cli
+$ brew install aws/tap/aws-sam-cli
 ```
-
-**Note**  
-Starting with AWS SAM CLI v1\.70\.1, running aws/tap is no longer needed due to a change with the `homebrew-core` library\. To install AWS SAM CLI v1\.70\.1 or newer, we recommend running brew install aws/tap/aws\-sam\-cli instead\. 
 
 Verify the installation\.
 
@@ -380,12 +376,8 @@ You must have Homebrew installed on your machine\. For install instructions, see
 Follow these steps to install the AWS SAM CLI using Homebrew:
 
 ```
-$ brew tap aws/tap
-$ brew install aws-sam-cli
+$ brew install aws/tap/aws-sam-cli
 ```
-
-**Note**  
-Starting with AWS SAM CLI v1\.70\.1, running aws/tap is no longer needed due to a change with the `homebrew-core` library\. To install AWS SAM CLI v1\.70\.1 or newer, we recommend running brew install aws/tap/aws\-sam\-cli instead\. 
 
 Verify the installation:
 

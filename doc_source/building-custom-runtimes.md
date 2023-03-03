@@ -8,6 +8,9 @@ To build a custom runtime, declare the `Metadata` resource attribute with a `Bui
 
 ### Example 1: Custom runtime for a function written in Rust<a name="building-custom-runtimes-examples-rust"></a>
 
+**Note**  
+We recommend building Lambda functions with Cargo Lambda\. To learn more, see [Building Rust Lambda functions with Cargo Lambda](building-rust.md)\.
+
 The following AWS SAM template declares a function that uses a custom runtime for a Lambda function written in Rust, and instructs `sam build` to execute the commands for the `build-HelloRustFunction` build target\.
 
 ```
