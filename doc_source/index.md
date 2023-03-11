@@ -61,6 +61,7 @@ sponsored by Amazon.
             + [CloudWatchEvent](sam-property-function-cloudwatchevent.md)
             + [CloudWatchLogs](sam-property-function-cloudwatchlogs.md)
             + [Cognito](sam-property-function-cognito.md)
+            + [DocumentDB](sam-property-function-documentdb.md)
             + [DynamoDB](sam-property-function-dynamodb.md)
             + [EventBridgeRule](sam-property-function-eventbridgerule.md)
                + [DeadLetterConfig](sam-property-function-deadletterconfig.md)

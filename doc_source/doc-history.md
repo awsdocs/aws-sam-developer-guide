@@ -1,10 +1,11 @@
 # Document history for AWS SAM<a name="doc-history"></a>
 
 The following table describes the important changes in each release of the *AWS Serverless Application Model Developer Guide*\. For notifications about updates to this documentation, you can subscribe to an RSS feed\.
-+ **Latest documentation update:** February 23, 2023
++ **Latest documentation update:** March 10, 2023
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Add support for DocumentDB event source type](#doc-history) | The AWS SAM template specification now supports `DocumentDB` event source type for the `AWS::Serverless::Function` resource\. To learn more, see [ DocumentDB](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-documentdb.html)\. | March 10, 2023 | 
 | [Build Rust Lambda functions with Cargo Lambda](#doc-history) | Use the AWS SAM CLI to build your Rust Lambda functions using Cargo Lambda\. To learn more, see [ Building Rust Lambda functions with Cargo Lambda\. ](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/building-rust.html)  | February 23, 2023 | 
 | [Build function resources outside of AWS SAM](#doc-history) | Added guidance on skipping functions when using the sam build command\. To learn more, see [ Building functions outside of AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-using-build.html#building-applications-skip)\. | February 14, 2023 | 
 | [New embedded connectors syntax](#doc-history) | Use the new embedded connectors syntax to define your `AWS::Serverless::Connector` resources\. To learn more, see [ Managing resource permissions with AWS SAM connectors](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/managing-permissions-connectors.html)\. | February 8, 2023 | 
