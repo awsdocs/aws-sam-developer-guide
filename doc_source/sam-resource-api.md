@@ -62,7 +62,7 @@ Configures Access Log Setting for a stage\.
 *AWS CloudFormation compatibility*: This property is passed directly to the `[AccessLogSetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting)` property of an `AWS::ApiGateway::Stage` resource\.
 
  `AlwaysDeploy`   <a name="sam-api-alwaysdeploy"></a>
-Always deploy the API, even if the API hasn't visibly changed\.  
+Always deploy the API, even when no changes to the API have been detected\.  
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
