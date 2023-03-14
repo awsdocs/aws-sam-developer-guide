@@ -55,3 +55,9 @@ To fix this, you have the following options:
 If you want to deploy your AWS SAM application gradually rather than all at once, you can specify deployment configurations that AWS CodeDeploy provides\. For more information, see [Working with deployment configurations in CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html) in the *AWS CodeDeploy User Guide*\.
 
 For information about configuring your AWS SAM application to deploy gradually, see [Deploying serverless applications gradually](automating-updates-to-serverless-apps.md)\.
+
+## Learn more<a name="serverless-sam-cli-using-invoke-learn"></a>
+
+For hands\-on examples of deploying serverless applications, see the following from *The Complete AWS SAM Workshop*:
++ [Module 3 \- Deploy manually](https://s12d.com/sam-ws-en-manual-deploy) – Learn how to build, package, and deploy a serverless application using the AWS SAM CLI\.
++ [Module 4 \- CI/CD](https://s12d.com/sam-ws-en-cicd-deploy) – Learn how to automate the build, package, and deployment phases by creating a *continuous integration and delivery \(CI/CD\)* pipeline\.

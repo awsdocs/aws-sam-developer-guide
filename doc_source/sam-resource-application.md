@@ -2,6 +2,9 @@
 
 Embeds a serverless application from the [AWS Serverless Application Repository](https://serverlessrepo.aws.amazon.com/applications) or from an Amazon S3 bucket as a nested application\. Nested applications are deployed as nested [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stack.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stack.html) resources, which can contain multiple other resources including other [AWS::Serverless::Application](#sam-resource-application) resources\.
 
+**Note**  
+When you deploy to AWS CloudFormation, AWS SAM transforms your AWS SAM resources into AWS CloudFormation resources\. For more information, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.
+
 ## Syntax<a name="sam-resource-application-syntax"></a>
 
 To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.

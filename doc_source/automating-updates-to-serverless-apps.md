@@ -101,3 +101,7 @@ MyLambdaFunction:
         PreTraffic: !Ref PreTrafficLambdaFunction
         PostTraffic: !Ref PostTrafficLambdaFunction
 ```
+
+## Learn more<a name="automating-updates-to-serverless-apps-learn"></a>
+
+For a hands\-on example of configuring a gradual deployment, see [Module 5 \- Canary Deployments](https://s12d.com/sam-ws-en-canaries) in *The Complete AWS SAM Workshop*\.

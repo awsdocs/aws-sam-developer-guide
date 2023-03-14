@@ -8,6 +8,9 @@ For more information about using AWS CloudFormation hooks, see [Registering hook
 
 For more information about using IAM policies, see [Require that API routes have authorization](https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-require-authorization) in the *API Gateway Developer Guide*\.
 
+**Note**  
+When you deploy to AWS CloudFormation, AWS SAM transforms your AWS SAM resources into AWS CloudFormation resources\. For more information, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.
+
 ## Syntax<a name="sam-resource-httpapi-syntax"></a>
 
 To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.

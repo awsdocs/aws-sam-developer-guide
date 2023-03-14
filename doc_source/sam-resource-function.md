@@ -4,6 +4,9 @@ Creates an AWS Lambda function, an AWS Identity and Access Management \(IAM\) ex
 
 The [AWS::Serverless::Function](#sam-resource-function) resource also supports the `Metadata` resource attribute, so you can instruct AWS SAM to build custom runtimes that your application requires\. For more information about building custom runtimes, see [Building custom runtimes](building-custom-runtimes.md)\.
 
+**Note**  
+When you deploy to AWS CloudFormation, AWS SAM transforms your AWS SAM resources into AWS CloudFormation resources\. For more information, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.
+
 ## Syntax<a name="sam-resource-function-syntax"></a>
 
 To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
@@ -16,6 +19,7 @@ Properties:
   [Architectures](#sam-function-architectures): List
   [AssumeRolePolicyDocument](#sam-function-assumerolepolicydocument): JSON
   [AutoPublishAlias](#sam-function-autopublishalias): String
+  AutoPublishAliasAllProperties: Boolean
   [AutoPublishCodeSha256](#sam-function-autopublishcodesha256): String
   [CodeSigningConfigArn](#sam-function-codesigningconfigarn): String
   [CodeUri](#sam-function-codeuri): String | FunctionCode
@@ -75,6 +79,17 @@ The name of the Lambda alias\. For more information about Lambda aliases, see [L
 AWS SAM generates [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) and [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html) resources when this property is set\. For information about this scenario, see [AutoPublishAlias property is specified](sam-specification-generated-resources-function.md#sam-specification-generated-resources-function-autopublishalias)\. For general information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.  
 *Type*: String  
 *Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+ `AutoPublishAliasAllProperties`   <a name="sam-function-autopublishaliasallproperties"></a>
+Specifies when a new [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html) is created\. When `true`, a new Lambda version is created when any property in the Lambda function is modified\. When `false`, a new Lambda version is created only when any of the following properties are modified:  
++ `Environment`, `MemorySize`, or `SnapStart`\.
++ Any change that results in an update to the `Code` property, such as `CodeDict`, `ImageUri`, or `InlineCode`\.
+This property requires `AutoPublishAlias` to be defined\.  
+If `AutoPublishSha256` is also specified, its behavior takes precedence over `AutoPublishAliasAllProperties: true`\.  
+*Type*: Boolean  
+*Required*: No  
+*Default value*: `false`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `AutoPublishCodeSha256`   <a name="sam-function-autopublishcodesha256"></a>

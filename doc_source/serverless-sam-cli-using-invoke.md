@@ -82,3 +82,7 @@ sam local invoke --env-vars env.json
 ## Layers<a name="serverless-sam-cli-using-invoke-layers"></a>
 
 If your application includes layers, for information about how to debug issues with layers on your local host, see [Working with layers](serverless-sam-cli-layers.md)\.
+
+## Learn more<a name="serverless-sam-cli-using-invoke-learn"></a>
+
+For a hands\-on example of invoking functions locally, see [ Module 2 \- Run locally](https://s12d.com/sam-ws-en-local) in *The Complete AWS SAM Workshop*\.

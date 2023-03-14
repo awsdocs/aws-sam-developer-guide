@@ -6,6 +6,9 @@ For more information on generated AWS CloudFormation resources, see [AWS CloudFo
 
 To provide feedback on connectors, [submit a new issue](https://github.com/aws/serverless-application-model/issues/new?assignees=&labels=area%2Fconnectors,stage%2Fneeds-triage&template=other.md&title=%28Feature%20Request%29) at the *serverless\-application\-model AWS GitHub repository*\.
 
+**Note**  
+When you deploy to AWS CloudFormation, AWS SAM transforms your AWS SAM resources into AWS CloudFormation resources\. For more information, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.
+
 ## Syntax<a name="sam-resource-connector-syntax"></a>
 
 To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use any of the following syntaxes\.

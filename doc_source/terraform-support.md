@@ -1,4 +1,4 @@
-# AWS SAM CLI terraform support<a name="terraform-support"></a>
+# AWS SAM CLI Terraform support<a name="terraform-support"></a>
 
 
 |  | 
