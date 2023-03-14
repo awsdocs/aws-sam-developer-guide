@@ -25,6 +25,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 Type: AWS::Serverless::Api
 Properties:
   [AccessLogSetting](#sam-api-accesslogsetting): [AccessLogSetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting)
+  [AlwaysDeploy](#sam-api-alwaysdeploy): Boolean
   [ApiKeySourceType](#sam-api-apikeysourcetype): String
   [Auth](#sam-api-auth): ApiAuth
   [BinaryMediaTypes](#sam-api-binarymediatypes): List
@@ -59,6 +60,12 @@ Configures Access Log Setting for a stage\.
 *Type*: [AccessLogSetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[AccessLogSetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting)` property of an `AWS::ApiGateway::Stage` resource\.
+
+ `AlwaysDeploy`   <a name="sam-api-alwaysdeploy"></a>
+Always deploy the API, even when no changes to the API have been detected\.  
+*Type*: Boolean  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `ApiKeySourceType`   <a name="sam-api-apikeysourcetype"></a>
 The source of the API key for metering requests according to a usage plan\. Valid values are `HEADER` and `AUTHORIZER`\.  
