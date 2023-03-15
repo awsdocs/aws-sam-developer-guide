@@ -16,10 +16,10 @@ To learn more, see [Serverless concepts](what-is-concepts.md)\.
 ## What is the AWS SAM template specification?<a name="what-is-sam-template"></a>
 
 The AWS SAM template specification is an open\-source framework that you can use to define and manage your serverless application infrastructure code\. The AWS SAM template specification is:
-+ **An extension of AWS CloudFormation** – If you are familiar with AWS CloudFormation, you can use its syntax directly within AWS SAM templates\.
-+ **Built on AWS CloudFormation** – AWS SAM templates use the AWS CloudFormation service to provision your AWS resources\.
-+ **An abstract, short\-hand syntax** – Define your infrastructure quickly with fewer lines of code and a lower chance of errors\. Its syntax is especially curated to abstract away the complexity in defining your infrastructure\.
-+ **Transformational** – AWS SAM does the complex work of transforming your templates into the code necessary to provision your infrastructure through AWS CloudFormation\.
++ **Built on AWS CloudFormation** – Use the AWS CloudFormation syntax directly within your AWS SAM template, taking advantage of its extensive support of resource and property configurations\. If you are already familiar with AWS CloudFormation, you don't have to learn a new service to manage your application infrastructure code\.
++ **An extension of AWS CloudFormation** – AWS SAM offers its own unique syntax that focuses specifically on speeding up serverless development\. You can use both the AWS CloudFormation and AWS SAM syntax within the same template\.
++ **An abstract, short\-hand syntax** – Using the AWS SAM syntax, you can define your infrastructure quickly, in fewer lines of code, and with a lower chance of errors\. Its syntax is especially curated to abstract away the complexity in defining your serverless application infrastructure\.
++ **Transformational** – AWS SAM does the complex work of transforming your template into the code necessary to provision your infrastructure through AWS CloudFormation\.
 
 Here’s an example of a basic serverless application\. This application processes requests to get all items from a database through an HTTP request\. It consists of the following parts:
 
