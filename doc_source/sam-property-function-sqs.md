@@ -17,7 +17,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [FunctionResponseTypes](#sam-function-sqs-functionresponsetypes): List
   [MaximumBatchingWindowInSeconds](#sam-function-sqs-maximumbatchingwindowinseconds): Integer
   [Queue](#sam-function-sqs-queue): String
-  ScalingConfig: [ScalingConfig](https://docs.aws.amazon.com/https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html)
+  ScalingConfig: [ScalingConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html)
 ```
 
 ## Properties<a name="sam-property-function-sqs-properties"></a>
