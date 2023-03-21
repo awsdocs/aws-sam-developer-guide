@@ -41,6 +41,7 @@ Properties:
   [EndpointConfiguration](#sam-api-endpointconfiguration): EndpointConfiguration
   [FailOnWarnings](#sam-api-failonwarnings): Boolean
   [GatewayResponses](#sam-api-gatewayresponses): Map
+  MergeDefinitions: Boolean
   [MethodSettings](#sam-api-methodsettings): MethodSettings
   [MinimumCompressionSize](#sam-api-minimumcompressionsize): Integer
   [Mode](#sam-api-mode): String
@@ -158,6 +159,14 @@ Specifies whether to roll back the API creation \(`true`\) or not \(`false`\) wh
  `GatewayResponses`   <a name="sam-api-gatewayresponses"></a>
 Configures Gateway Responses for an API\. Gateway Responses are responses returned by API Gateway, either directly or through the use of Lambda Authorizers\. For more information, see the documentation for the [Api Gateway OpenApi extension for Gateway Responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.html)\.  
 *Type*: Map  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+ `MergeDefinitions`   <a name="sam-api-mergedefinitions"></a>
+AWS SAM generates an OpenAPI specification from your API event source\. Specify `true` to have AWS SAM merge this into the inline OpenAPI specification defined in your `AWS::Serverless::Api` resource\. Specify `false` to not merge\.  
+`MergeDefinitions` requires the `DefinitionBody` property for `AWS::Serverless::Api` to be defined\. `MergeDefinitions` is not compatible with the `DefinitionUri` property for `AWS::Serverless::Api`\.  
+*Default value*: `false`  
+*Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 

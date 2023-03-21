@@ -4,8 +4,13 @@ Install the latest release of the AWS Serverless Application Model Command Line 
 
 To learn how to manage a currently installed version of the AWS SAM CLI, including how to upgrade, uninstall, or manage nightly builds, see [Managing AWS SAM CLI versions](manage-sam-cli-versions.md)\.
 
-**Important**  
-Before you continue, complete all [prerequisites](prerequisites.md) in the previous section\.
+**Is this your first time installing the AWS SAM CLI?**  
+Complete all [prerequisites](prerequisites.md) in the previous section before moving forward\. This includes:  
+Signing up for an AWS account\.
+Creating an administrative IAM user\.
+Creating an access key ID and secret access key\.
+Installing the AWS CLI\.
+Configuring AWS credentials\.
 
 **Topics**
 + [Installing the AWS SAM CLI](#install-sam-cli-instructions)
@@ -136,8 +141,8 @@ You can install for all users or just your current user\. To install for all use
  If you previously installed the AWS SAM CLI through Homebrew or pip, you need to uninstall it first\. For instructions, see [Uninstalling the AWS SAM CLI](manage-sam-cli-versions.md#manage-sam-cli-versions-uninstall)\. 
 
 1.  To begin installation, download the macOS `pkg` to a directory of your choice: 
-   +  x86\_64 – [ aws\-sam\-cli\-macos\-x86\_64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-x86_64.pkg) 
-   +  arm64 – [ aws\-sam\-cli\-macos\-arm64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-arm64.pkg) 
+   +  x86\_64 \(Intel\) – [ aws\-sam\-cli\-macos\-x86\_64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-x86_64.pkg) 
+   +  arm64 \(Apple\) – [ aws\-sam\-cli\-macos\-arm64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-arm64.pkg) 
 
 1.  Verify the integrity and authenticity of the downloaded installer by generating a hash value using the following command: 
 
@@ -181,8 +186,8 @@ You can install for all users or just your current user\. To install for all use
  If you previously installed the AWS SAM CLI through Homebrew or pip, you need to uninstall it first\. For instructions, see [Uninstalling the AWS SAM CLI](manage-sam-cli-versions.md#manage-sam-cli-versions-uninstall)\. 
 
 1.  To begin installation, download the macOS `pkg` to a directory of your choice: 
-   +  x86\_64 – [ aws\-sam\-cli\-macos\-x86\_64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-x86_64.pkg) 
-   +  arm64 – [ aws\-sam\-cli\-macos\-arm64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-arm64.pkg) 
+   +  x86\_64 \(Intel\) – [ aws\-sam\-cli\-macos\-x86\_64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-x86_64.pkg) 
+   +  arm64 \(Apple\) – [ aws\-sam\-cli\-macos\-arm64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-arm64.pkg) 
 
 1.  Verify the integrity and authenticity of the downloaded installer by generating a hash value using the following command: 
 
@@ -240,8 +245,8 @@ You can install for all users or just your current user\. To install for all use
  If you previously installed the AWS SAM CLI through Homebrew or pip, you need to uninstall it first\. For instructions, see [Uninstalling the AWS SAM CLI](manage-sam-cli-versions.md#manage-sam-cli-versions-uninstall)\. 
 
 1.  To begin installation, download the macOS `pkg` to a directory of your choice: 
-   +  x86\_64 – [ aws\-sam\-cli\-macos\-x86\_64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-x86_64.pkg) 
-   +  arm64 – [ aws\-sam\-cli\-macos\-arm64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-arm64.pkg) 
+   +  x86\_64 \(Intel\) – [ aws\-sam\-cli\-macos\-x86\_64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-x86_64.pkg) 
+   +  arm64 \(Apple\) – [ aws\-sam\-cli\-macos\-arm64\.pkg](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-macos-arm64.pkg) 
 
 1.  Verify the integrity and authenticity of the downloaded installer by generating a hash value using the following command: 
 
@@ -429,7 +434,7 @@ The [AWS SAM CLI app templates repository](https://github.com/aws/aws-sam-cli-ap
 
 ## Troubleshooting<a name="install-sam-cli-troubleshooting"></a>
 
-If you come across issues while installing the AWS SAM CLI, see [Troubleshooting installation errors](sam-cli-troubleshooting.md#sam-cli-troubleshoot-install)\.
+If you come across issues while installing the AWS SAM CLI, see [Installation errors](sam-cli-troubleshooting.md#sam-cli-troubleshoot-install)\.
 
 ## Next steps<a name="install-sam-cli-next-steps"></a>
 
