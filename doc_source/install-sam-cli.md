@@ -71,6 +71,9 @@ If your operating system doesn't have the built\-in unzip command, use an equiva
 ------
 #### [ ARM \- command line installer ]
 
+**Note**  
+We recommend installing the AWS SAM CLI into a virtual environment to ensure a clean starting environment and an isolated environment when troubleshooting\. For more information, see [Installing the AWS SAM CLI into a virtual environment using pip](manage-sam-cli-versions.md#manage-sam-cli-versions-install-virtual)\.
+
 1. Use `pip` to install the AWS SAM CLI\.
 
    ```
@@ -117,7 +120,7 @@ SAM CLI, version 1.58.0
 
 ### macOS<a name="install-sam-cli-instructions-macos"></a>
 
-Install the AWS SAM CLI using its package installer or through Homebrew\.
+Install the AWS SAM CLI using its package installer or through Homebrew\. We recommend using the package installer\.
 
 #### Using the package installer<a name="install-sam-cli-instructions-macos-package"></a>
 

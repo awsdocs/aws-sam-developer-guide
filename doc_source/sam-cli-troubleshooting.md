@@ -58,6 +58,35 @@ Error: Failed to create managed resources: Unable to locate credentials
 
 This means that you have not set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. To fix this, you must set up AWS credentials\. For more information, see [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)\.
 
+### Error: pip's dependency resolver \.\.\.<a name="sam-cli-troubleshoot-messages-pip"></a>
+
+*Example error text*:
+
+```
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts. 
+aws-sam-cli 1.58.0 requires aws-sam-translator==1.51.0, but you have aws-sam-translator 1.58.0 which is incompatible. 
+aws-sam-cli 1.58.0 requires typing-extensions==3.10.0.0, but you have typing-extensions 4.4.0 which is incompatible.
+```
+
+**Possible cause: If you use pip to install packages, dependencies between packages may conflict\.**  
+Each version of the `aws-sam-cli` package depends on a version of the `aws-sam-translator` package\. For example, `aws-sam-cli` v1\.58\.0 may depend on `aws-sam-translator` v1\.51\.0\.  
+If you install the AWS SAM CLI using pip, then install another package which depends on a newer version of `aws-sam-translator`, the following will occur:  
++ The newer version of `aws-sam-translator` will install\.
++ The current version of `aws-sam-cli` and the newer version of `aws-sam-translator` may not be compatible\.
++ When you use the AWS SAM CLI, the dependency resolver error will occur\.
+
+**Solutions:**
+
+1. Use the AWS SAM CLI native package installer\.
+
+   1. Uninstall the AWS SAM CLI using pip\. For instructions, see [Uninstalling the AWS SAM CLI](manage-sam-cli-versions.md#manage-sam-cli-versions-uninstall)\.
+
+   1. Install the AWS SAM CLI using the native package installer\. For instructions, see [Installing the AWS SAM CLI](install-sam-cli.md)\.
+
+   1. When necessary, upgrade the AWS SAM CLI using the native package installer\. For instructions, see [Upgrading the AWS SAM CLI](manage-sam-cli-versions.md#manage-sam-cli-versions-upgrade)\.
+
+1. If you must use pip, we recommend that you install the AWS SAM CLI into a virtual environment\. This ensures a clean installation environment and an isolated environment if errors occur\. For instructions, see [Installing the AWS SAM CLI into a virtual environment using pip](manage-sam-cli-versions.md#manage-sam-cli-versions-install-virtual)\.
+
 ### Error: Running AWS SAM projects locally requires Docker\. Have you got it installed?<a name="sam-cli-troubleshoot-messages-docker"></a>
 
 When running the sam local start\-api command, you see the following error:
