@@ -65,7 +65,7 @@ If your operating system doesn't have the built\-in unzip command, use an equiva
    On successful installation, you should see output like the following:
 
    ```
-    SAM CLI, version 1.58.0
+    SAM CLI, version 1.78.0
    ```
 
 ------
@@ -89,7 +89,7 @@ We recommend installing the AWS SAM CLI into a virtual environment to ensure a c
    On successful installation, you should see output like the following:
 
    ```
-    SAM CLI, version 1.58.0
+    SAM CLI, version 1.78.0
    ```
 
 ------
@@ -113,7 +113,7 @@ $ sam --version
 On successful installation of the AWS SAM CLI, you should see output like the following:
 
 ```
-SAM CLI, version 1.58.0
+SAM CLI, version 1.78.0
 ```
 
 ------
@@ -178,7 +178,7 @@ You can install for all users or just your current user\. To install for all use
   $ which sam
   /usr/local/bin/sam
   $ sam --version
-  SAM CLI, version 1.66.0
+  SAM CLI, version 1.78.0
   ```
 
 ------
@@ -237,7 +237,7 @@ You can install for all users or just your current user\. To install for all use
   $ which sam
   /usr/local/bin/sam
   $ sam --version
-  SAM CLI, version 1.66.0
+  SAM CLI, version 1.78.0
   ```
 
 ------
@@ -282,7 +282,7 @@ You can install for all users or just your current user\. To install for all use
   $ which sam
   /usr/local/bin/sam
   $ sam --version
-  SAM CLI, version 1.66.0
+  SAM CLI, version 1.78.0
   ```
 
 ------
@@ -372,7 +372,7 @@ You can install for all users or just your current user\. To install for all use
   $ which sam
   /usr/local/bin/sam
   $ sam --version
-  SAM CLI, version 1.66.0
+  SAM CLI, version 1.78.0
   ```
 
 ------
@@ -396,7 +396,7 @@ $ sam --version
 After successful installation of the AWS SAM CLI, you should see output like the following:
 
 ```
-SAM CLI, version 1.58.0
+SAM CLI, version 1.78.0
 ```
 
 ------
@@ -422,7 +422,7 @@ If you use a 32\-bit version of Windows, see [Installing AWS SAM CLI on 32\-bit 
    After successful installation of the AWS SAM CLI, you should see output like the following:
 
    ```
-   SAM CLI, version 1.58.0
+   SAM CLI, version 1.78.0
    ```
 
 1. Enable long paths \(Windows 10 and newer only\)\.
