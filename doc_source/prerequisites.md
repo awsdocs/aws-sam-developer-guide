@@ -91,7 +91,7 @@ To install the AWS CLI, see [ Installing or updating the latest version of the A
    Default output format [None]: json
    ```
 
-The AWS CLI stores this information in a *profile* \(a collection of settings\) named `default` in the `credentials` file\. By default, the information in this profile is used when you run an AWS CLI command that doesn't explicitly specify a profile to use\. For more information on the `credentials` file, see [ Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) in the *AWS Command Line Interface User Guide*\.
+The AWS CLI stores this information in a *profile* \(a collection of settings\) named `default` in the `credentials` and `config` files\. These files are located in the `.aws` file in your home directory\. By default, the information in this profile is used when you run an AWS CLI command that doesn't explicitly specify a profile to use\. For more information on the `credentials` file, see [ Configuration and credential file settings](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) in the *AWS Command Line Interface User Guide*\.
 
 For more information on configuring credentials, such as using an existing configuration and credentials file, see [Quick setup](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html) in the *AWS Command Line Interface User Guide*\.
 

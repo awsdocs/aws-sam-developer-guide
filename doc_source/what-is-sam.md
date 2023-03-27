@@ -370,7 +370,7 @@ Use the AWS SAM CLI to manage your serverless application through the authoring,
 Use AWS SAM connectors in your AWS SAM templates to define permissions between your AWS resources\. AWS SAM transforms your code into the IAM permissions required to facilitate your intent\. For more information, see [Managing resource permissions with AWS SAM connectors](managing-permissions-connectors.md)\.
 
 **Continuously sync local changes to the cloud as you develop**  
-Use the AWS SAM CLI sam sync command to automatically sync local changes to the cloud, speeding up your development and cloud testing workflows\. For more information, see [Getting started with AWS SAM Accelerate](accelerate-getting-started.md)\.
+Use the AWS SAM CLI sam sync command to automatically sync local changes to the cloud, speeding up your development and cloud testing workflows\. For more information, see [Using the AWS SAM CLI sam sync command](using-sam-cli-sync.md)\.
 
 **Manage your Terraform serverless applications**  
 Use the AWS SAM CLI to perform local debugging and testing of your Lambda functions and layers\. For more information, see [AWS SAM CLI Terraform support](terraform-support.md)\.

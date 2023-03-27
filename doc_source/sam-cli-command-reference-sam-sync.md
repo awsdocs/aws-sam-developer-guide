@@ -1,14 +1,16 @@
 # sam sync<a name="sam-cli-command-reference-sam-sync"></a>
 
-The AWS SAM CLI sync command deploys your local changes to the AWS Cloud\. Use `sync` to build, package, and deploy changes to your development environment as you iterate on your application\.
+Use the AWS Serverless Application Model Command Line Interface \(AWS SAM CLI\) `sam sync` command to sync local application changes to the AWS Cloud\.
++ For an introduction to the AWS SAM CLI, see [What is the AWS SAM CLI?](what-is-sam.md#what-is-sam-cli)\.
++ For documentation on using the AWS SAM CLI, see [Using the AWS SAM CLI](using-sam-cli.md)\.
 
-**Usage:**
+## Usage<a name="sam-cli-command-reference-sam-sync-usage"></a>
 
 ```
-sam sync [OPTIONS]
+$ sam sync <command> <option> ...
 ```
 
-**Options:**
+## Options<a name="sam-cli-command-reference-sam-sync-options"></a>
 
 
 ****  
@@ -20,6 +22,7 @@ sam sync [OPTIONS]
 | \-\-watch | Starts a process that watches your local application for changes and automatically syncs them to the AWS Cloud\. By default, when you specify this option, AWS SAM syncs all resources in your application as you update them\. With this option, AWS SAM performs an initial AWS CloudFormation deployment\. Then, AWS SAM uses AWS service APIs to update code resources\. AWS SAM uses AWS CloudFormation to update infrastructure resources when you update your AWS SAM template\. | 
 | \-\-resource\-id TEXT | Specifies the resource ID to sync\. To sync multiple resources, you can specify this option multiple times\. This option is supported with the \-\-code option\. For example, \-\-resource\-id Function1 \-\-resource\-id Function2\. | 
 | \-\-resource TEXT | Specifies the resource type to sync\. To sync multiple resources, you can specify this option multiple times\. This option is supported with the \-\-code option\. The value must be one of the listed resources under \-\-code\. For example, \-\-resource AWS::Serverless::Function \-\-resouce AWS::Serverless::LayerVersion\. | 
+|  \-\-skip\-deploy\-sync \| \-\-no\-skip\-deploy\-sync  |  Specify `--skip-deploy-sync` to skip the initial infrastructure sync if its not required\. The AWS SAM CLI will compare your local AWS SAM template with the deployed AWS CloudFormation template and perform a deployment only if a change is detected\. Specify `--no-skip-deploy-sync` to perform an AWS CloudFormation deployment every time `sam sync` is run\. To learn more, see [Skip the initial AWS CloudFormation deployment](using-sam-cli-sync.md#using-sam-cli-sync-options-skip-deploy-sync)\. The default option is `--skip-deploy-sync`\.  | 
 | \-\-dependency\-layer \| \-\-no\-dependency\-layer |  Specifies whether to separate dependencies of individual functions into another layer to speed up the sync process\. The default setting is `--dependency-layer`\.  | 
 | \-u, \-\-use\-container |  If your functions depend on packages that have natively compiled dependencies, use this option to build your function inside an AWS Lambda\-like Docker container\. **Note:** Currently, this option is not compatible with `--dependency-layer`\. If you use `--use-container` with `--dependency-layer`, the AWS SAM CLI informs you and continues with `--no-dependency-layer`\.  | 
 | \-\-stack\-name TEXT | \(Required\) The name of the AWS CloudFormation stack for your application\. | 
@@ -34,34 +37,3 @@ sam sync [OPTIONS]
 | \-\-notification\-arns LIST | A list of Amazon Simple Notification Service \(Amazon SNS\) topic ARNs that AWS CloudFormation associates with the stack\. | 
 | \-\-tags LIST | A list of tags to associate with the stack that is created or updated\. AWS CloudFormation also propagates these tags to resources in the stack that support it\. | 
 | \-\-metadata | A map of metadata to attach to all artifacts that you reference in your template\. | 
-
-## Examples<a name="accelerate-sync-examples"></a>
-
-Run the following command to start a process that automatically deploys changes from your local environment to your development environment in the AWS Cloud\.
-
-```
-sam sync --stack-name sam-app --watch
-```
-
-Run the following command to deploy code changes to a specific Lambda function and Lambda layer\. AWS SAM uses Lambda APIs to update your code in the AWS Cloud\.
-
-```
-sam sync --stack-name sam-app --code --resource-id HelloWorldFunction --resource-id HelloWorldLayer
-```
-
-Run the following command to deploy your latest local changes to your application's AWS CloudFormation stack\.
-
-```
-sam sync --stack-name sam-app
-```
-
-## Nested stack example<a name="accelerate-nested-stack-example"></a>
-
-**Note**  
-We currently support referencing a stack using the following two methods: `!Ref LayerName` or `!GetAttr Stack.Output.LayerName`\.
-
-AWS SAM Accelerate now supports nested stacks\. To sync a resource from a child stack, continue providing the root stack for the `--stack-name` parameter\. For the `--resource-id` parameter, specify the child stack and resource in the following format `ChildStack/resourceId`\. You can define additional child stacks by subsequent delineation of the stack name with a `/`\. For more information about creating nested applications, see [Using nested applications](serverless-sam-template-nested-applications.md)\.
-
-```
-sam sync --code --stack-name sam-app --resource-id mystack/HelloWorldFunction
-```
