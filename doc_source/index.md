@@ -15,6 +15,7 @@ sponsored by Amazon.
 -----
 ## Contents
 + [What is the AWS Serverless Application Model (AWS SAM)?](what-is-sam.md)
+   + [Serverless concepts](what-is-concepts.md)
 + [Getting started with AWS SAM](serverless-getting-started.md)
    + [AWS SAM prerequisites](prerequisites.md)
    + [Installing the AWS SAM CLI](install-sam-cli.md)
@@ -173,7 +174,7 @@ sponsored by Amazon.
 + [Publishing serverless applications using the AWS SAM CLI](serverless-sam-template-publishing-applications.md)
    + [AWS SAM template Metadata section properties](serverless-sam-template-publishing-applications-metadata-properties.md)
 + [Working with third-party services](working-with-third-party.md)
-   + [AWS SAM CLI terraform support](terraform-support.md)
+   + [AWS SAM CLI Terraform support](terraform-support.md)
       + [What is AWS SAM CLI support for Terraform?](what-is-terraform-support.md)
       + [Getting started with Terraform support for AWS SAM CLI](gs-terraform-support.md)
       + [Using the AWS SAM CLI with Terraform for local debugging and testing](using-samcli-terraform.md)

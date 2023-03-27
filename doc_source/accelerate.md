@@ -10,7 +10,7 @@ The [sam sync](sam-cli-command-reference-sam-sync.md) command deploys your local
 
  You can use the [sam logs](sam-cli-command-reference-sam-logs.md) and [sam traces](sam-cli-command-reference-sam-traces.md) commands to monitor your serverless application\.
 
-For more information about Accelerate, see [Serverless land](https://serverlessland.com/video?services=AWS+SAM)\.
+For a hands\-on example of using AWS SAM Accelerate, see [Module 6 \- AWS SAM Accelerate](https://s12d.com/sam-ws-en-accelerate) in *The Complete AWS SAM Workshop*\.
 
 **Topics**
 + [Getting started with AWS SAM Accelerate](accelerate-getting-started.md)

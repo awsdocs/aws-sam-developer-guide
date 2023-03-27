@@ -65,3 +65,7 @@ sam pipeline init
 ## Step 5: Commit your pipeline configuration to Git repository<a name="generating-example-step-5"></a>
 
 This step is necessary to ensure your CI/CD system is aware of your pipeline configuration, and will run when changes are committed\.
+
+## Learn more<a name="serverless-generating-other-cicd-learn"></a>
+
+For a hands\-on example of setting up a CI/CD pipeline using GitHub Actions, see [CI/CD with GitHub](https://s12d.com/sam-ws-en-gh) in *The Complete AWS SAM Workshop*\.

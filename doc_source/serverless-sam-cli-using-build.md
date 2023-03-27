@@ -67,7 +67,7 @@ The following is an example `Metadata` resource attribute section:
       DockerTag: v1
 ```
 
-To download a sample application that's configured with the `Image` package type, see [Step 1: Download a sample AWS SAM application](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-initialize) in **Tutorial: Deploying a Hello World application**\. At the prompt asking which package type you want to install, choose `Image`\.
+To download a sample application that's configured with the `Image` package type, see [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md) in **Tutorial: Deploying a Hello World application**\. At the prompt asking which package type you want to install, choose `Image`\.
 
 **Note**  
 If you specify a multi\-architecture base image in your Dockerfile, AWS SAM builds your container image for your host machine's architecture\. To build for a different architecture, specify a base image that uses the specific target architecture\.

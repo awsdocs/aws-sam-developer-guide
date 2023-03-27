@@ -60,7 +60,7 @@ If you're using Amazon Linux 2, follow these steps to install Docker:
 **Note**  
 On Linux, to build and run Lambda functions with a different instruction set architecture than your host machine, there are additional steps to configure Docker\. For example, to run `arm64` functions on an `x86_64` machine, you can run the following command to configure the Docker daemon: `docker run --rm --privileged multiarch/qemu-user-static --reset -p yes`\.
 
-If you run into issues installing Docker, see [Troubleshooting installation errors](sam-cli-troubleshooting.md#sam-cli-troubleshoot-install)\. Or, see the [Troubleshooting](https://docs.docker.com/engine/install/linux-postinstall/#troubleshooting) section of **Post\-installation steps for Linux** on the Docker Docs website\.
+If you run into issues installing Docker, see [Installation errors](sam-cli-troubleshooting.md#sam-cli-troubleshoot-install)\. Or, see the [Troubleshooting](https://docs.docker.com/engine/install/linux-postinstall/#troubleshooting) section of **Post\-installation steps for Linux** on the Docker Docs website\.
 
 ### macOS<a name="install-docker-instructions-macos"></a>
 

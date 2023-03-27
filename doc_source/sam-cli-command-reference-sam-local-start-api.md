@@ -8,7 +8,7 @@ When it's accessed \(through a browser, CLI, and so on\), it starts a Docker con
 
 If you're using an interpreted language, local changes are available immediately in the Docker container on every invoke\. For more compiled languages or projects that require complex packing support, we recommend that you run your own building solution, and point AWS SAM to the directory or file that contains the build artifacts\.
 
-To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md)\. The `sam local start-api` command is part of [Step 4: \(Optional\) Test your application locally](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-test-locally)\.
+To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md)\. The `sam local start-api` command is part of [Step 6: \(Optional\) Test your application locally](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-test)\.
 
 **Usage:**
 

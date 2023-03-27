@@ -6,6 +6,8 @@ Manage your AWS Serverless Application Model Command Line Interface \(AWS SAM CL
 + [Upgrading the AWS SAM CLI](#manage-sam-cli-versions-upgrade)
 + [Uninstalling the AWS SAM CLI](#manage-sam-cli-versions-uninstall)
 + [Installing the AWS SAM CLI nightly build](#manage-sam-cli-versions-nightly-build)
++ [Installing the AWS SAM CLI into a virtual environment using pip](#manage-sam-cli-versions-install-virtual)
++ [Troubleshooting](#manage-sam-cli-versions-troubleshoot)
 
 ## Upgrading the AWS SAM CLI<a name="manage-sam-cli-versions-upgrade"></a>
 
@@ -206,3 +208,80 @@ To verify that you have installed the nightly build version, run the sam\-nightl
 ```
 SAM CLI, version 1.20.0.dev202103151200
 ```
+
+## Installing the AWS SAM CLI into a virtual environment using pip<a name="manage-sam-cli-versions-install-virtual"></a>
+
+We recommend using the native package installer to install the AWS SAM CLI\. If you must use pip, we recommend that you install the AWS SAM CLI into a virtual environment\. This ensures a clean installation environment and an isolated environment if errors occur\.
+
+**To install the AWS SAM CLI into a virtual environment**
+
+1. From a starting directory of your choice, create a virtual environment and name it\.
+
+------
+#### [ Linux / macOS ]
+
+   ```
+   $ mkdir project
+   $ cd project
+   $ python3 -m venv venv
+   ```
+
+------
+#### [ Windows ]
+
+   ```
+   > mkdir project
+   > cd project
+   > py -3 -m venv venv
+   ```
+
+------
+
+1. Activate the virtual environment
+
+------
+#### [ Linux / macOS ]
+
+   ```
+   $ . venv/bin/activate
+   ```
+
+   The prompt changes to show you that your virtual environment is active\.
+
+   ```
+   (venv) $ 
+   ```
+
+------
+#### [ Windows ]
+
+   ```
+   > venv\Scripts\activate
+   ```
+
+   The prompt changes to show you that your virtual environment is active\.
+
+   ```
+   (venv) > 
+   ```
+
+------
+
+1. Install the AWS SAM CLI into your virtual environment\.
+
+   ```
+   (venv) $ pip install --upgrade aws-sam-cli
+   ```
+
+1. Verify that the AWS SAM CLI is installed correctly\.
+
+   ```
+   (venv) $ sam --version
+   SAM CLI, version 1.76.0
+   ```
+
+1. You can use the `deactivate` command to exit the virtual environment\. Whenever you start a new session, you must reactivate the environment\.
+
+## Troubleshooting<a name="manage-sam-cli-versions-troubleshoot"></a>
+
+If you come across errors when installing or using the AWS SAM CLI, see [AWS SAM CLI troubleshooting](sam-cli-troubleshooting.md)\.

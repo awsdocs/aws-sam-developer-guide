@@ -5,7 +5,7 @@ Creates an AWS Step Functions state machine, which you can use to orchestrate AW
 For more information about Step Functions, see the [AWS Step Functions Developer Guide](https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html)\.
 
 **Note**  
-To manage AWS SAM templates that contain Step Functions state machines, you must use version 0\.52\.0 or later of the AWS SAM CLI\. To check which version you have, run the command `sam --version`\.
+When you deploy to AWS CloudFormation, AWS SAM transforms your AWS SAM resources into AWS CloudFormation resources\. For more information, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.
 
 ## Syntax<a name="sam-resource-statemachine-syntax"></a>
 

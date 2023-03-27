@@ -3,9 +3,10 @@
 Troubleshoot error messages when using, installing, and managing the AWS Serverless Application Model Command Line Interface \(AWS SAM CLI\)\.
 
 **Topics**
-+ [Troubleshooting installation errors](#sam-cli-troubleshoot-install)
++ [Installation errors](#sam-cli-troubleshoot-install)
++ [Error messages](#sam-cli-troubleshoot-messages)
 
-## Troubleshooting installation errors<a name="sam-cli-troubleshoot-install"></a>
+## Installation errors<a name="sam-cli-troubleshoot-install"></a>
 
 ### Linux<a name="sam-cli-troubleshoot-install-linux"></a>
 
@@ -34,3 +35,88 @@ If you receive this error, you're using an unsupported version of Linux, and the
 1.  Select a different installation directory that you have write permissions for\. 
 
 1.  Delete the installer\. Then, download and run it again\. 
+
+## Error messages<a name="sam-cli-troubleshoot-messages"></a>
+
+### Curl error: "curl: \(6\) Could not resolve: \.\.\."<a name="sam-cli-troubleshoot-messages-curl"></a>
+
+When trying to invoke the API Gateway endpoint, you see the following error:
+
+```
+curl: (6) Could not resolve: endpointdomain (Domain name not found)
+```
+
+This means that you've attempted to send a request to a domain that's not valid\. This can happen if your serverless application failed to deploy successfully, or if you have a typo in your curl command\. Verify that the application deployed successfully by using the AWS CloudFormation console or the AWS CLI, and verify that your curl command is correct\.
+
+### Error: Failed to create managed resources: Unable to locate credentials<a name="sam-cli-troubleshoot-messages-credentials"></a>
+
+When running the sam deploy command, you see the following error:
+
+```
+Error: Failed to create managed resources: Unable to locate credentials
+```
+
+This means that you have not set up AWS credentials to enable the AWS SAM CLI to make AWS service calls\. To fix this, you must set up AWS credentials\. For more information, see [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)\.
+
+### Error: pip's dependency resolver \.\.\.<a name="sam-cli-troubleshoot-messages-pip"></a>
+
+*Example error text*:
+
+```
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts. 
+aws-sam-cli 1.58.0 requires aws-sam-translator==1.51.0, but you have aws-sam-translator 1.58.0 which is incompatible. 
+aws-sam-cli 1.58.0 requires typing-extensions==3.10.0.0, but you have typing-extensions 4.4.0 which is incompatible.
+```
+
+**Possible cause: If you use pip to install packages, dependencies between packages may conflict\.**  
+Each version of the `aws-sam-cli` package depends on a version of the `aws-sam-translator` package\. For example, `aws-sam-cli` v1\.58\.0 may depend on `aws-sam-translator` v1\.51\.0\.  
+If you install the AWS SAM CLI using pip, then install another package which depends on a newer version of `aws-sam-translator`, the following will occur:  
++ The newer version of `aws-sam-translator` will install\.
++ The current version of `aws-sam-cli` and the newer version of `aws-sam-translator` may not be compatible\.
++ When you use the AWS SAM CLI, the dependency resolver error will occur\.
+
+**Solutions:**
+
+1. Use the AWS SAM CLI native package installer\.
+
+   1. Uninstall the AWS SAM CLI using pip\. For instructions, see [Uninstalling the AWS SAM CLI](manage-sam-cli-versions.md#manage-sam-cli-versions-uninstall)\.
+
+   1. Install the AWS SAM CLI using the native package installer\. For instructions, see [Installing the AWS SAM CLI](install-sam-cli.md)\.
+
+   1. When necessary, upgrade the AWS SAM CLI using the native package installer\. For instructions, see [Upgrading the AWS SAM CLI](manage-sam-cli-versions.md#manage-sam-cli-versions-upgrade)\.
+
+1. If you must use pip, we recommend that you install the AWS SAM CLI into a virtual environment\. This ensures a clean installation environment and an isolated environment if errors occur\. For instructions, see [Installing the AWS SAM CLI into a virtual environment using pip](manage-sam-cli-versions.md#manage-sam-cli-versions-install-virtual)\.
+
+### Error: Running AWS SAM projects locally requires Docker\. Have you got it installed?<a name="sam-cli-troubleshoot-messages-docker"></a>
+
+When running the sam local start\-api command, you see the following error:
+
+```
+Error: Running AWS SAM projects locally requires Docker. Have you got it installed?
+```
+
+This means that you do not have Docker properly installed\. Docker is required to test your application locally\. To fix this, follow the instructions for installing Docker for your development host\. For more information, see [Installing Docker](install-docker.md)\.
+
+### Error: Security Constraints Not Satisfied<a name="sam-cli-troubleshoot-messages-security-constraints"></a>
+
+When running sam deploy \-\-guided, you're prompted with the question `Function may not have authorization defined, Is this okay? [y/N]`\. If you respond to this prompt with **N** \(the default response\), you see the following error:
+
+```
+Error: Security Constraints Not Satisfied
+```
+
+The prompt is informing you that the application you're about to deploy might have a publicly accessible Amazon API Gateway API configured without authorization\. By responding **N** to this prompt, you're saying that this is not OK\.
+
+To fix this, you have the following options:
++ Configure your application with authorization\. For information about configuring authorization, see [Controlling access to API Gateway APIs](serverless-controlling-access-to-apis.md)\.
++ If your intention is to have a publicly accessible API endpoint without authorization, restart your deployment and respond to this question with **Y** to indicate that you're OK with deploying\.
+
+### message: Missing Authentication Token<a name="sam-cli-troubleshoot-messages-auth-token"></a>
+
+When trying to invoke the API Gateway endpoint, you see the following error:
+
+```
+{"message":"Missing Authentication Token"}
+```
+
+This means that you've attempted to send a request to the correct domain, but the URI isn't recognizable\. To fix this, verify the full URL, and update the curl command with the correct URL\.

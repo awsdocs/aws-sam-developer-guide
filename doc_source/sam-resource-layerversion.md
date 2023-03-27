@@ -8,6 +8,9 @@ The [AWS::Serverless::LayerVersion](#sam-resource-layerversion) resource also su
 
 When a Serverless LayerVersion is transformed, SAM also transforms the logical id of the resource so that old LayerVersions are not automatically deleted by CloudFormation when the resource is updated\.
 
+**Note**  
+When you deploy to AWS CloudFormation, AWS SAM transforms your AWS SAM resources into AWS CloudFormation resources\. For more information, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.
+
 ## Syntax<a name="sam-resource-layerversion-syntax"></a>
 
 To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.

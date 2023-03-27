@@ -12,6 +12,9 @@ For more information about using AWS CloudFormation hooks, see [Registering hook
 
 For more information about using IAM policies, see [Require that API routes have authorization](https://docs.aws.amazon.com/apigateway/latest/developerguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-require-authorization) in the *API Gateway Developer Guide*\.
 
+**Note**  
+When you deploy to AWS CloudFormation, AWS SAM transforms your AWS SAM resources into AWS CloudFormation resources\. For more information, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.
+
 ## Syntax<a name="sam-resource-api-syntax"></a>
 
 To declare this entity in your AWS Serverless Application Model \(AWS SAM\) template, use the following syntax\.
@@ -22,6 +25,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 Type: AWS::Serverless::Api
 Properties:
   [AccessLogSetting](#sam-api-accesslogsetting): [AccessLogSetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting)
+  AlwaysDeploy: Boolean
   [ApiKeySourceType](#sam-api-apikeysourcetype): String
   [Auth](#sam-api-auth): ApiAuth
   [BinaryMediaTypes](#sam-api-binarymediatypes): List
@@ -37,6 +41,7 @@ Properties:
   [EndpointConfiguration](#sam-api-endpointconfiguration): EndpointConfiguration
   [FailOnWarnings](#sam-api-failonwarnings): Boolean
   [GatewayResponses](#sam-api-gatewayresponses): Map
+  MergeDefinitions: Boolean
   [MethodSettings](#sam-api-methodsettings): MethodSettings
   [MinimumCompressionSize](#sam-api-minimumcompressionsize): Integer
   [Mode](#sam-api-mode): String
@@ -56,6 +61,12 @@ Configures Access Log Setting for a stage\.
 *Type*: [AccessLogSetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[AccessLogSetting](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting)` property of an `AWS::ApiGateway::Stage` resource\.
+
+ `AlwaysDeploy`   <a name="sam-api-alwaysdeploy"></a>
+Always deploys the API, even when no changes to the API have been detected\.  
+*Type*: Boolean  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `ApiKeySourceType`   <a name="sam-api-apikeysourcetype"></a>
 The source of the API key for metering requests according to a usage plan\. Valid values are `HEADER` and `AUTHORIZER`\.  
@@ -148,6 +159,14 @@ Specifies whether to roll back the API creation \(`true`\) or not \(`false`\) wh
  `GatewayResponses`   <a name="sam-api-gatewayresponses"></a>
 Configures Gateway Responses for an API\. Gateway Responses are responses returned by API Gateway, either directly or through the use of Lambda Authorizers\. For more information, see the documentation for the [Api Gateway OpenApi extension for Gateway Responses](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.html)\.  
 *Type*: Map  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+ `MergeDefinitions`   <a name="sam-api-mergedefinitions"></a>
+AWS SAM generates an OpenAPI specification from your API event source\. Specify `true` to have AWS SAM merge this into the inline OpenAPI specification defined in your `AWS::Serverless::Api` resource\. Specify `false` to not merge\.  
+`MergeDefinitions` requires the `DefinitionBody` property for `AWS::Serverless::Api` to be defined\. `MergeDefinitions` is not compatible with the `DefinitionUri` property for `AWS::Serverless::Api`\.  
+*Default value*: `false`  
+*Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 

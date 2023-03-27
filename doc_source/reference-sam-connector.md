@@ -29,6 +29,7 @@ For both source and destination resources, when defined within the same template
 | `AWS::Lambda::Function` | `AWS::DynamoDB::Table` | `Read`, `Write` | `Id` or `RoleName` and `Type` | `Id` or `Arn` and `Type` | 
 | `AWS::Lambda::Function` | `AWS::Events::EventBus` | `Write` | `Id` or `RoleName` and `Type` | `Id` or `Arn` and `Type` | 
 | `AWS::Lambda::Function` | `AWS::Lambda::Function` | `Write` | `Id` or `RoleName` and `Type` | `Id` or `Arn` and `Type` | 
+| `AWS::Lambda::Function` | `AWS::Location::PlaceIndex` | `Read` | `Id` or `RoleName` and `Type` | `Id` or `Arn` and `Type` | 
 | `AWS::Lambda::Function` | `AWS::S3::Bucket` | `Read`, `Write` | `Id` or `RoleName` and `Type` | `Id` or `Arn` and `Type` | 
 | `AWS::Lambda::Function` | `AWS::Serverless::Function` | `Write` | `Id` or `RoleName` and `Type` | `Id` or `Arn` and `Type` | 
 | `AWS::Lambda::Function` | `AWS::Serverless::SimpleTable` | `Read`, `Write` | `Id` or `RoleName` and `Type` | `Id` or `Arn` and `Type` | 

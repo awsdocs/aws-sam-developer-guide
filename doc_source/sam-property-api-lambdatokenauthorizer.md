@@ -11,11 +11,12 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 ### YAML<a name="sam-property-api-lambdatokenauthorizer-syntax.yaml"></a>
 
 ```
-  [AuthorizationScopes](#sam-api-lambdatokenauthorizer-authorizationscopes): List
-  [FunctionArn](#sam-api-lambdatokenauthorizer-functionarn): String
-  [FunctionInvokeRole](#sam-api-lambdatokenauthorizer-functioninvokerole): String
-  [FunctionPayloadType](#sam-api-lambdatokenauthorizer-functionpayloadtype): String
-  [Identity](#sam-api-lambdatokenauthorizer-identity): LambdaTokenAuthorizationIdentity
+[AuthorizationScopes](#sam-api-lambdatokenauthorizer-authorizationscopes): List
+DisableFunctionDefaultPermissions: Boolean
+[FunctionArn](#sam-api-lambdatokenauthorizer-functionarn): String
+[FunctionInvokeRole](#sam-api-lambdatokenauthorizer-functioninvokerole): String
+[FunctionPayloadType](#sam-api-lambdatokenauthorizer-functionpayloadtype): String
+[Identity](#sam-api-lambdatokenauthorizer-identity): LambdaTokenAuthorizationIdentity
 ```
 
 ## Properties<a name="sam-property-api-lambdatokenauthorizer-properties"></a>
@@ -26,8 +27,16 @@ List of authorization scopes for this authorizer\.
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
+ `DisableFunctionDefaultPermissions`   <a name="sam-api-lambdatokenauthorizer-disablefunctiondefaultpermissions"></a>
+Specify `true` to prevent AWS SAM from automatically creating an `AWS::Lambda::Permissions` resource to provision permissions between your `AWS::Serverless::Api` resource and authorizer Lambda function\.  
+*Default value*: `false`  
+*Type*: Boolean  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
  `FunctionArn`   <a name="sam-api-lambdatokenauthorizer-functionarn"></a>
-Specify the function arn of the Lambda function which provides authorization for the API\.  
+Specify the function ARN of the Lambda function which provides authorization for the API\.  
+AWS SAM will automatically create an `AWS::Lambda::Permissions` resource when `FunctionArn` is specified for `AWS::Serverless::Api`\. The `AWS::Lambda::Permissions` resource provisions permissions between your API and authorizer Lambda function\.
 *Type*: String  
 *Required*: Yes  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.

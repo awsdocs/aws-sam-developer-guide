@@ -59,3 +59,7 @@ sam deploy -t codepipeline.yaml --stack-name <feature-pipeline-stack-name> --cap
 # For AWS CodeCommit
 sam deploy -t codepipeline.yaml --stack-name <feature-pipeline-stack-name> --capabilities=CAPABILITY_IAM --parameter-overrides="FeatureGitBranch=<branch-name>"
 ```
+
+## Learn more<a name="serverless-generating-cicd-learn"></a>
+
+For a hands\-on example of setting up a CI/CD pipeline, see [ CI/CD with AWS CodePipeline](https://s12d.com/sam-ws-en-codepipeline) in *The Complete AWS SAM Workshop*\.
