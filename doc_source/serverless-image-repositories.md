@@ -13,39 +13,43 @@ Prior to version 1\.22\.0 of the AWS SAM CLI, DockerHub was the default reposito
 
 The following table lists the URIs of [Amazon ECR Public](https://docs.aws.amazon.com/AmazonECR/latest/public/what-is-ecr.html) build container images that you can use to build and package serverless applications with AWS SAM\.
 
+**Note**  
+Amazon ECR Public replaced DockerHub starting with the AWS SAM CLI version 1\.22\.0\. If you are using an earlier version of the AWS SAM CLI, we recommend that you upgrade\.
 
-| Runtime |  Amazon ECR Public \(default starting with version 1\.22\.0\)  | DockerHub\(default prior to version 1\.22\.0\)  | 
-| --- | --- | --- | 
-| \.NET 7 | [public\.ecr\.aws/sam/build\-dotnet7](https://gallery.ecr.aws/sam/build-dotnet7) | Not supported | 
-| \.NET 6 | [public\.ecr\.aws/sam/build\-dotnet6](https://gallery.ecr.aws/sam/build-dotnet6) | Not supported | 
-| \.NET Core 3\.1 | [public\.ecr\.aws/sam/build\-dotnetcore3\.1](https://gallery.ecr.aws/sam/build-dotnetcore3.1) | Not supported | 
-| Node\.js 18 | [public\.ecr\.aws/sam/build\-nodejs18\.x](https://gallery.ecr.aws/sam/build-nodejs18.x) | Not supported | 
-| Node\.js 16 | [public\.ecr\.aws/sam/build\-nodejs16\.x](https://gallery.ecr.aws/sam/build-nodejs16.x) | Not supported | 
-| Node\.js 14 | [public\.ecr\.aws/sam/build\-nodejs14\.x](https://gallery.ecr.aws/sam/build-nodejs14.x) | [amazon/aws\-sam\-cli\-build\-image\-nodejs14\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-nodejs14.x) | 
-| Node\.js 12 | [public\.ecr\.aws/sam/build\-nodejs12\.x](https://gallery.ecr.aws/sam/build-nodejs12.x) | [amazon/aws\-sam\-cli\-build\-image\-nodejs12\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-nodejs12.x) | 
-| Node\.js 10 | [public\.ecr\.aws/sam/build\-nodejs10\.x](https://gallery.ecr.aws/sam/build-nodejs10.x) | [amazon/aws\-sam\-cli\-build\-image\-nodejs10\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-nodejs10.x) | 
-| Python 3\.9 | [public\.ecr\.aws/sam/build\-python3\.9](https://gallery.ecr.aws/sam/build-python3.9) | Not supported | 
-| Python 3\.8 | [public\.ecr\.aws/sam/build\-python3\.8](https://gallery.ecr.aws/sam/build-python3.8) | [amazon/aws\-sam\-cli\-build\-image\-python3\.8](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-python3.8) | 
-| Python 3\.7 | [public\.ecr\.aws/sam/build\-python3\.7](https://gallery.ecr.aws/sam/build-python3.7) | [amazon/aws\-sam\-cli\-build\-image\-python3\.7](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-python3.7) | 
-| Python 3\.6 | [public\.ecr\.aws/sam/build\-python3\.6](https://gallery.ecr.aws/sam/build-python3.6) | [amazon/aws\-sam\-cli\-build\-image\-python3\.6](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-python3.6) | 
-| Python 2\.7 | [public\.ecr\.aws/sam/build\-python2\.7](https://gallery.ecr.aws/sam/build-python2.7) | [amazon/aws\-sam\-cli\-build\-image\-python2\.7](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-python2.7) | 
-| Ruby 2\.7 | [public\.ecr\.aws/sam/build\-ruby2\.7](https://gallery.ecr.aws/sam/build-ruby2.7) | [amazon/aws\-sam\-cli\-build\-image\-ruby2\.7](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-ruby2.7) | 
-| Ruby 2\.5 | [public\.ecr\.aws/sam/build\-ruby2\.5](https://gallery.ecr.aws/sam/build-ruby2.5) | [amazon/aws\-sam\-cli\-build\-image\-ruby2\.5](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-ruby2.5) | 
-| Java 11 | [public\.ecr\.aws/sam/build\-java11](https://gallery.ecr.aws/sam/build-java11) | [amazon/aws\-sam\-cli\-build\-image\-java11](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-java11) | 
-| Java 8 \(AL2\) | [public\.ecr\.aws/sam/build\-java8\.al2](https://gallery.ecr.aws/sam/build-java8.al2) | [amazon/aws\-sam\-cli\-build\-image\-java8\.al2](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-java8.al2) | 
-| Java 8 | [public\.ecr\.aws/sam/build\-java8](https://gallery.ecr.aws/sam/build-java8) | [amazon/aws\-sam\-cli\-build\-image\-java8](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-java8) | 
-| Go 1\.x | [public\.ecr\.aws/sam/build\-go1\.x](https://gallery.ecr.aws/sam/build-go1.x) | [amazon/aws\-sam\-cli\-build\-image\-go1\.x](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-go1.x) | 
-| Custom runtime \(AL2\) | [public\.ecr\.aws/sam/build\-provided\.al2](https://gallery.ecr.aws/sam/build-provided.al2) | [amazon/aws\-sam\-cli\-build\-image\-provided\.al2](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-provided.al2) | 
-| Custom runtime | [public\.ecr\.aws/sam/build\-provided](https://gallery.ecr.aws/sam/build-provided) | [amazon/aws\-sam\-cli\-build\-image\-provided](https://hub.docker.com/r/amazon/aws-sam-cli-build-image-provided) | 
+
+| Runtime |  Amazon ECR Public | 
+| --- | --- | 
+| \.NET 7 | [public\.ecr\.aws/sam/build\-dotnet7](https://gallery.ecr.aws/sam/build-dotnet7) | 
+| \.NET 6 | [public\.ecr\.aws/sam/build\-dotnet6](https://gallery.ecr.aws/sam/build-dotnet6) | 
+| \.NET Core 3\.1 | [public\.ecr\.aws/sam/build\-dotnetcore3\.1](https://gallery.ecr.aws/sam/build-dotnetcore3.1) | 
+| Node\.js 18 | [public\.ecr\.aws/sam/build\-nodejs18\.x](https://gallery.ecr.aws/sam/build-nodejs18.x) | 
+| Node\.js 16 | [public\.ecr\.aws/sam/build\-nodejs16\.x](https://gallery.ecr.aws/sam/build-nodejs16.x) | 
+| Node\.js 14 | [public\.ecr\.aws/sam/build\-nodejs14\.x](https://gallery.ecr.aws/sam/build-nodejs14.x) | 
+| Node\.js 12 | [public\.ecr\.aws/sam/build\-nodejs12\.x](https://gallery.ecr.aws/sam/build-nodejs12.x) | 
+| Python 3\.10 | [public\.ecr\.aws/sam/build\-python3\.10](https://gallery.ecr.aws/sam/build-python3.10) | 
+| Python 3\.9 | [public\.ecr\.aws/sam/build\-python3\.9](https://gallery.ecr.aws/sam/build-python3.9) | 
+| Python 3\.8 | [public\.ecr\.aws/sam/build\-python3\.8](https://gallery.ecr.aws/sam/build-python3.8) | 
+| Python 3\.7 | [public\.ecr\.aws/sam/build\-python3\.7](https://gallery.ecr.aws/sam/build-python3.7) | 
+| Ruby 2\.7 | [public\.ecr\.aws/sam/build\-ruby2\.7](https://gallery.ecr.aws/sam/build-ruby2.7) | 
+| Java 11 | [public\.ecr\.aws/sam/build\-java11](https://gallery.ecr.aws/sam/build-java11) | 
+| Java 8 \(AL2\) | [public\.ecr\.aws/sam/build\-java8\.al2](https://gallery.ecr.aws/sam/build-java8.al2) | 
+| Java 8 | [public\.ecr\.aws/sam/build\-java8](https://gallery.ecr.aws/sam/build-java8) | 
+| Go 1\.x | [public\.ecr\.aws/sam/build\-go1\.x](https://gallery.ecr.aws/sam/build-go1.x) | 
+| Custom runtime \(AL2\) | [public\.ecr\.aws/sam/build\-provided\.al2](https://gallery.ecr.aws/sam/build-provided.al2) | 
+| Custom runtime | [public\.ecr\.aws/sam/build\-provided](https://gallery.ecr.aws/sam/build-provided) | 
 
 ## Examples<a name="serverless-image-repository-example-commands"></a>
 
 The following two example commands build applications using container images from the DockerHub repository:
 
-```
-# Build a Node.js 12 application using a container image pulled from DockerHub
-sam build --use-container --build-image amazon/aws-sam-cli-build-image-nodejs12.x
+**Build a Node\.js 12 application using a container image pulled from DockerHub**:
 
-# Build a function resource using the Python 3.8 container image pulled from DockerHub
-sam build --use-container --build-image Function1=amazon/aws-sam-cli-build-image-python3.8
+```
+$ sam build --use-container --build-image amazon/aws-sam-cli-build-image-nodejs12.x
+```
+
+**Build a function resource using the Python 3\.8 container image pulled from DockerHub**:
+
+```
+$ sam build --use-container --build-image Function1=amazon/aws-sam-cli-build-image-python3.8
 ```

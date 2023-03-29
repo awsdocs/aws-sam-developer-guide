@@ -46,6 +46,13 @@ Alternatively, when `NODE_OPTIONS: --enable-source-maps` is included in the func
 When conflicting, `Sourcemap: false` takes precedence over `NODE_OPTIONS: --enable-source-maps`\.  
 By default, Lambda encrypts all environment variables at rest with AWS Key Management Service \(AWS KMS\)\. When using source maps, for the deployment to succeed, your function's execution role must have permission to perform the `kms:Encrypt` action\.
 
+**SourcesContent**  
+Specifies whether to include your source code in your source map file\. Configure this property when `Sourcemap` is set to `true`\.  
++ Specify `SourcesContent: true` to include all source code\.
++ Specify `SourcesContent: false` to exclude all source code\. This results in smaller source maps file sizes, which is useful in production by reducing start\-up times\. However, source code won't be available in the debugger\.
+The default value is `SourcesContent: true`\.  
+For more information, see [Sources content](https://esbuild.github.io/api/#sources-content) in the *esbuild website*\.
+
 **Target**  
 Specifies the target ECMAScript version\. The default value is `es2020`\.
 
