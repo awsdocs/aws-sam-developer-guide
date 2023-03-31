@@ -1,4 +1,4 @@
-# Using the AWS SAM CLI sam sync command<a name="using-sam-cli-sync"></a>
+# Using sam sync<a name="using-sam-cli-sync"></a>
 
 The AWS Serverless Application Model Command Line Interface \(AWS SAM CLI\) `sam sync` command provides options to quickly sync local application changes to the AWS Cloud\. Use `sam sync` when developing your applications to:
 

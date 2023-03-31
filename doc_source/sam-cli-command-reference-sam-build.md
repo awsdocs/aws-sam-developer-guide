@@ -1,76 +1,16 @@
 # sam build<a name="sam-cli-command-reference-sam-build"></a>
 
-Builds a serverless application and prepares it for subsequent steps in your workflow, like locally testing the application or deploying it to the AWS Cloud\. If you provide a `RESOURCE_LOGICAL_ID`, then AWS SAM builds only that resource\. To build a resource of a nested application or stack, you can provide the application or stack logical ID along with the resource logical ID using the format `StackLogicalId/ResourceLogicalId`\.
+Options for the AWS Serverless Application Model Command Line Interface \(AWS SAM CLI\) `sam build` command\.
++ For an introduction to the AWS SAM CLI, see [What is the AWS SAM CLI?](what-is-sam.md#what-is-sam-cli)\.
++ For documentation on using the AWS SAM CLI `sam build` command, see [Using sam build](using-sam-cli-build.md)\.
 
-The `sam build` command processes your AWS SAM template file, application code, and any applicable language\-specific files and dependencies\. The command also copies build artifacts in the format and location expected for subsequent steps in your workflow\. You specify dependencies in a manifest file that you include in your application, such as `requirements.txt` for Python functions, or `package.json` for Node\.js functions\.
-
-The format of your application's build artifacts depends on its package type\. You specify your AWS Lambda function's package type with the `PackageType` property\. The options are:
-+ **`Zip`** – A \.zip file archive, which contains your application code and its dependencies\. If you package your code as a \.zip file archive, you must specify a Lambda runtime for your function\.
-+ **`Image`** – A container image, which includes the base operating system, runtime, and extensions, in addition to your application code and its dependencies\.
-
-For more information about Lambda package types, see [Lambda deployment packages](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html) in the *AWS Lambda Developer Guide*\.
-
-If a resource includes a `Metadata` resource attribute with a `BuildMethod` entry, `sam build` builds that resource according to the value of the `BuildMethod` entry\. Valid values for `BuildMethod` are:
-
-1. **Lambda runtime identifier** – Build the resource against a Lambda runtime\. For the list of supported runtime identifiers, see [Lambda runtimes](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html) in the *AWS Lambda Developer Guide*\.
-
-1. **`makefile`** identifier – Run the commands of the build target for the resource\. In this case, your makefile must be named `Makefile` and include a build target named `build-resource-logical-id`\.
-
-1. **esbuild** – Build Node\.js functions with esbuild\. To learn more, see [Building Node\.js Lambda functions with esbuild](serverless-sam-cli-using-build-typescript.md)\.
-
-1. **\.NET 7** – Build \.NET 7 functions with or without Native AOT compilation\. To learn more, see [Building \.NET 7 Lambda functions with Native AOT compilation](build-dotnet7.md)\.
-
-To build layers and custom runtimes, you can also use the `Metadata` resource attribute with a `BuildMethod` entry\. For information about building layers, see [Building layers](building-layers.md)\. For information about building custom runtimes, see [Building custom runtimes](building-custom-runtimes.md)\.
-
-For serverless function resources that have the `Image` package type, use the `Metadata` resource attribute to configure Docker image settings that are required to build a container image\. For more information about building container images, see [Building a container image](serverless-sam-cli-using-build.md#build-container-image)\.
-
-For a complete example that uses this command, including locally testing and deploying to the AWS Cloud, see [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md)\. The `sam build` command is part of [Step 2: Build your application](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-build)\.
-
-**Usage:**
+## Usage<a name="ref-sam-cli-build-usage"></a>
 
 ```
-sam build [OPTIONS] [RESOURCE_LOGICAL_ID]
+$ sam build <arguments> <options>
 ```
 
-**Examples:**
-
-```
-To use these commands, update your SAM template to specify the path
-to your function's source code in the resource's Code or CodeUri property.
-
-To build on your workstation, run this command in the directory containing your
-SAM template. Built artifacts are written to the .aws-sam/build directory.
-$ sam build
- 
-To build inside a Lambda-like Docker container
-$ sam build --use-container
-
-To build with environment variables passed to the build container from the command line
-$ sam build --use-container --container-env-var Function1.GITHUB_TOKEN=<token1> --container-env-var GLOBAL_ENV_VAR=<global-token>
-
-To build with environment variables passed to the build container from a file
-$ sam build --use-container --container-env-var-file <env-file.json>
-
-Build a Node.js 12 application using a container image pulled from DockerHub
-$ sam build --use-container --build-image amazon/aws-sam-cli-build-image-nodejs12.x
-
-Build a function resource using the Python 3.8 container image pulled from DockerHub
-$ sam build --use-container --build-image Function1=amazon/aws-sam-cli-build-image-python3.8 
-  
-To build and run your functions locally
-$ sam build && sam local invoke
-  
-To build and package for deployment
-$ sam build && sam package --s3-bucket <bucketname>
-
-To build the 'MyFunction' resource
-$ sam build MyFunction
-
-To build the 'MyFunction' resource of the 'MyNestedStack' nested stack
-$ sam build MyNestedStack/MyFunction
-```
-
-**Arguments:**
+## Arguments<a name="ref-sam-cli-build-args"></a>
 
 
 ****  
@@ -79,7 +19,7 @@ $ sam build MyNestedStack/MyFunction
 | --- | --- | 
 | RESOURCE\_LOGICAL\_ID | Optional\. Instructs AWS SAM to build a single resource declared in the AWS SAM template\. The build artifacts for the specified resource will be the only ones available for subsequent commands in the workflow, i\.e\. sam package and sam deploy\. | 
 
-**Options:**
+## Options<a name="ref-sam-cli-build-options"></a>
 
 
 ****  
@@ -110,83 +50,3 @@ $ sam build MyNestedStack/MyFunction
 | \-\-config\-env TEXT | The environment name specifying the default parameter values in the configuration file to use\. The default value is "default"\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
 | \-\-debug | Turns on debug logging to print debug messages that the AWS SAM CLI generates, and to display timestamps\. | 
 | \-\-help | Shows this message and exits\. | 
-
-## Examples<a name="examples"></a>
-
-### Building a resource using a Lambda runtime identifier<a name="examples-runtime-identifier"></a>
-
-Here's an example AWS SAM template showing how to build a resource using a Lambda runtime identifier:
-
-```
-Resources:
-  MyLayer:
-    Type: AWS::Serverless::LayerVersion
-    Properties:
-      ContentUri: my_layer
-      CompatibleRuntimes:
-        - python3.9
-    Metadata:
-      BuildMethod: python3.9
-```
-
-With this template, the following command will build the `MyLayer` resource against the Python 3\.6 runtime environment:
-
-```
-sam build MyLayer
-```
-
-### Building a resource using the `makefile` identifier<a name="examples-makefile-identifier"></a>
-
-Here's an example AWS SAM showing how to build a resource using the `makefile` identifier:
-
-```
-Resources:
-  MyLayer:
-    Type: AWS::Serverless::LayerVersion
-    Properties:
-      ContentUri: my_layer
-      CompatibleRuntimes:
-        - python3.8
-    Metadata:
-      BuildMethod: makefile
-```
-
-This is an example of an associated makefile\. The file must be named `Makefile`, and include a build target with the commands you want to run:
-
-```
-build-MyLayer:
-    mkdir -p "$(ARTIFACTS_DIR)/python"
-    cp *.py "$(ARTIFACTS_DIR)/python"
-    python -m pip install -r requirements.txt -t "$(ARTIFACTS_DIR)/python"
-```
-
-With this template and makefile, the following command will execute the commands for the `build-MyLayer` target:
-
-```
-sam build MyLayer
-```
-
-### Passing environment variables to a build container<a name="examples-parameters"></a>
-
-Here's an example showing how to pass environment variables to a build container using a file\.
-
-First, create a file named `env.json` with the following contents:
-
-```
-{
-  "MyFunction1": {
-    "GITHUB_TOKEN": "TOKEN1"
-  },
-  "MyFunction2": {
-    "GITHUB_TOKEN": "TOKEN2"
-  }
-}
-```
-
-Then, run the following command:
-
-```
-sam build --use-container --container-env-var-file env.json
-```
-
-For more information about container environment variable files, see [Container environment variable file](serverless-sam-cli-using-build.md#serverless-sam-cli-using-container-environment-file)\.
