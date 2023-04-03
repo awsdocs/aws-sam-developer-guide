@@ -66,7 +66,7 @@ The following are the available policy templates, along with the permissions tha
 + [SageMakerCreateEndpointPolicy](#sagemaker-create-endpoint-policy)
 + [ServerlessRepoReadWriteAccessPolicy](#serverlessrepo-read-write-access-policy)
 + [SESBulkTemplatedCrudPolicy](#ses-bulk-templated-crud-policy)
-+ [SESBulkTemplatedCrudPolicy_v2](#ses-bulk-templated-crud-policy-v2)
++ [SESBulkTemplatedCrudPolicy\_v2](#ses-bulk-templated-crud-policy-v2)
 + [SESCrudPolicy](#ses-crud-policy)
 + [SESEmailTemplateCrudPolicy](#ses-email-template-crud-policy)
 + [SESSendBouncePolicy](#ses-send-bounce-policy)
@@ -1924,6 +1924,9 @@ Gives permission to create and list applications in the AWS Serverless Applicati
 
 Gives permission to send Amazon SES email, templated email, and templated bulk emails and to verify identity\.
 
+**Note**  
+ The `ses:SendTemplatedEmail` action requires a template ARN\. Use `SESBulkTemplatedCrudPolicy_v2` instead\.
+
 ```
 "Statement": [
   {
@@ -1950,52 +1953,52 @@ Gives permission to send Amazon SES email, templated email, and templated bulk e
 ]
 ```
 
-## SESBulkTemplatedCrudPolicy_v2<a name="ses-bulk-templated-crud-policy-v2"></a>
+## SESBulkTemplatedCrudPolicy\_v2<a name="ses-bulk-templated-crud-policy-v2"></a>
 
 Gives permission to send Amazon SES email, templated email, and templated bulk emails and to verify identity\.
 
 ```
-        "Statement": [
+"Statement": [
+  {
+    "Action": [
+      "ses:SendEmail",
+      "ses:SendRawEmail",
+      "ses:SendTemplatedEmail",
+      "ses:SendBulkTemplatedEmail"
+    ],
+    "Effect": "Allow",
+    "Resource": [
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/${identityName}",
           {
-            "Action": [
-              "ses:SendEmail",
-              "ses:SendRawEmail",
-              "ses:SendTemplatedEmail",
-              "ses:SendBulkTemplatedEmail"
-            ],
-            "Effect": "Allow",
-            "Resource": [
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:identity/${identityName}",
-                  {
-                    "identityName": {
-                      "Ref": "IdentityName"
-                    }
-                  }
-                ]
-              },
-              {
-                "Fn::Sub": [
-                  "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:template/${templateName}",
-                  {
-                    "templateName": {
-                      "Ref": "TemplateName"
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "Action": [
-              "ses:GetIdentityVerificationAttributes",
-              "ses:VerifyEmailIdentity"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
+            "identityName": {
+              "Ref": "IdentityName"
+            }
           }
         ]
+      },
+      {
+        "Fn::Sub": [
+          "arn:${AWS::Partition}:ses:${AWS::Region}:${AWS::AccountId}:template/${templateName}",
+          {
+            "templateName": {
+              "Ref": "TemplateName"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Action": [
+      "ses:GetIdentityVerificationAttributes",
+      "ses:VerifyEmailIdentity"
+    ],
+    "Effect": "Allow",
+    "Resource": "*"
+  }
+]
 ```
 
 ## SESCrudPolicy<a name="ses-crud-policy"></a>

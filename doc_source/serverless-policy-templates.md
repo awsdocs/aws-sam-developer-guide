@@ -135,6 +135,7 @@ The following is a table of the available policy templates\.
 | [SageMakerCreateEndpointPolicy](serverless-policy-template-list.md#sagemaker-create-endpoint-policy) | Gives permission to create an endpoint in SageMaker\. | 
 | [ServerlessRepoReadWriteAccessPolicy](serverless-policy-template-list.md#serverlessrepo-read-write-access-policy) | Gives permission to create and list applications in the AWS Serverless Application Repository service\. | 
 | [SESBulkTemplatedCrudPolicy](serverless-policy-template-list.md#ses-bulk-templated-crud-policy) | Gives permission to send email, templated email, templated bulk emails and verify identity\. | 
+| [SESBulkTemplatedCrudPolicy\_v2](serverless-policy-template-list.md#ses-bulk-templated-crud-policy-v2) | Gives permission to send Amazon SES email, templated email, and templated bulk emails and to verify identity\. | 
 | [SESCrudPolicy](serverless-policy-template-list.md#ses-crud-policy) | Gives permission to send email and verify identity\. | 
 | [SESEmailTemplateCrudPolicy](serverless-policy-template-list.md#ses-email-template-crud-policy) | Gives permission to create, get, list, update and delete Amazon SES email templates\. | 
 | [SESSendBouncePolicy](serverless-policy-template-list.md#ses-send-bounce-policy) | Gives SendBounce permission to an Amazon Simple Email Service \(Amazon SES\) identity\. | 
