@@ -364,7 +364,7 @@ Here are some examples of what you can accomplish with AWS SAM:
 Author AWS SAM templates to define your serverless application infrastructure code\. Deploy your templates directly to AWS CloudFormation to provision your resources\.
 
 **Manage your serverless applications through their entire development lifecycle**  
-Use the AWS SAM CLI to manage your serverless application through the authoring, building, deploying, testing, and monitoring phases of your development lifecycle\.
+Use the AWS SAM CLI to manage your serverless application through the authoring, building, deploying, testing, and monitoring phases of your development lifecycle\. For more information, see [Using the AWS SAM CLI](using-sam-cli.md)\.
 
 **Quickly provision permissions between resources with AWS SAM connectors**  
 Use AWS SAM connectors in your AWS SAM templates to define permissions between your AWS resources\. AWS SAM transforms your code into the IAM permissions required to facilitate your intent\. For more information, see [Managing resource permissions with AWS SAM connectors](managing-permissions-connectors.md)\.

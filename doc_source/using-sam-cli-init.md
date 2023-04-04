@@ -12,6 +12,7 @@ For a list of AWS SAM CLI `sam init` command options, see [sam init](sam-cli-com
 **Topics**
 + [Initialize a new serverless application](#using-sam-cli-init-new)
 + [Options for sam init](#using-sam-cli-init-options)
++ [Troubleshooting](#using-sam-cli-init-troubleshooting)
 + [Examples](#using-sam-cli-init-examples)
 + [Learn more](#using-sam-cli-init-learn)
 
@@ -264,6 +265,10 @@ Use the `--no-interactive` option and provide your configuration choices at the 
 ```
 $ sam init --no-interactive --runtime go1.x --name go-demo --dependency-manager mod --app-template hello-world
 ```
+
+## Troubleshooting<a name="using-sam-cli-init-troubleshooting"></a>
+
+To troubleshoot the AWS SAM CLI, see [AWS SAM CLI troubleshooting](sam-cli-troubleshooting.md)\.
 
 ## Examples<a name="using-sam-cli-init-examples"></a>
 

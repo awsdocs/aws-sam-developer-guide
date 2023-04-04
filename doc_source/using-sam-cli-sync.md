@@ -20,6 +20,7 @@ The `sam sync` command is a part of AWS SAM Accelerate\. *AWS SAM Accelerate* pr
 + [Customize what local changes are synced to the AWS Cloud](#using-sam-cli-sync-customize)
 + [Prepare your application in the cloud for testing and validation](#using-sam-cli-sync-test)
 + [Options for the sam sync command](#using-sam-cli-sync-options)
++ [Troubleshooting](#using-sam-cli-sync-troubleshooting)
 + [Examples](#using-sam-cli-sync-examples)
 + [Learn more](#using-sam-cli-sync-learn)
 
@@ -141,6 +142,10 @@ To specify a specific AWS CloudFormation stack to update, provide the `--stack-n
 ```
 $ sam sync --stack-name dev-sam-app
 ```
+
+## Troubleshooting<a name="using-sam-cli-sync-troubleshooting"></a>
+
+To troubleshoot the AWS SAM CLI, see [AWS SAM CLI troubleshooting](sam-cli-troubleshooting.md)\.
 
 ## Examples<a name="using-sam-cli-sync-examples"></a>
 

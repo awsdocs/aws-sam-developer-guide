@@ -24,6 +24,7 @@ sponsored by Amazon.
    + [Using the AWS SAM CLI](using-sam-cli.md)
       + [Configuring the AWS SAM CLI](using-sam-cli-configure.md)
       + [Using sam build](using-sam-cli-build.md)
+      + [Using sam deploy](using-sam-cli-deploy.md)
       + [Using sam init](using-sam-cli-init.md)
       + [Using sam sync](using-sam-cli-sync.md)
 + [AWS Serverless Application Model (AWS SAM) specification](sam-specification.md)

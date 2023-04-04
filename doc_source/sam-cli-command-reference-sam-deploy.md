@@ -1,30 +1,25 @@
 # sam deploy<a name="sam-cli-command-reference-sam-deploy"></a>
 
-Deploys an AWS SAM application\.
+Options for the AWS Serverless Application Model Command Line Interface \(AWS SAM CLI\) `sam deploy` command\.
++ For an introduction to the AWS SAM CLI, see [What is the AWS SAM CLI?](what-is-sam.md#what-is-sam-cli)\.
++ For documentation on using the AWS SAM CLI `sam deploy` command, see [Using sam deploy](using-sam-cli-deploy.md)\.
 
-By default when you use this command, the AWS SAM CLI assumes that your current working directory is your project's root directory\. The AWS SAM CLI first tries to locate a template file built using the [sam build](sam-cli-command-reference-sam-build.md) command, located in the `.aws-sam` subfolder, and named `template.yaml`\. Next, the AWS SAM CLI tries to locate a template file named `template.yaml` or `template.yml` in the current working directory\.
-
-To override the AWS SAM CLI's default behavior, specify the `--template` option\. When you specify this option, the AWS SAM CLI deploys only that AWS SAM template and the local resources that it points to\.
-
-To turn on the guided interactive mode, specify the `--guided` option\. This mode shows you the parameters required for deployment, provides default options, and optionally saves these options in a configuration file in your project directory\. When you perform subsequent deployments of your application using sam deploy, the AWS SAM CLI retrieves the required parameters from the configuration file\.
-
-Objects declared in the `Parameters` section of the AWS SAM template file appear as additional interactive mode prompts\. The AWS SAM CLI prompts you to provide values for each parameter\. For examples of these objects and the corresponding prompts, see the [Examples](#examples) section later in this topic\.
-
-Serverless applications that you configure with code signing generate more interactive mode prompts\. The AWS SAM CLI asks whether you want your code to be signed, and if so, prompts you to enter signing profile names and owners\. For examples of these prompts, see the [Examples](#examples) section later in this topic\.
-
-For more information about settings that the AWS SAM CLI optionally stores when you specify the `--guided` option, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\.
-
-To deploy AWS Lambda functions through AWS CloudFormation, you must have an Amazon Simple Storage Service \(Amazon S3\) bucket for the Lambda deployment package\. The AWS SAM CLI creates and manages this Amazon S3 bucket for you\. AWS SAM enables encryption for all files stored in Amazon S3\.
-
-If your application includes any function or layer resources declared with `PackageType: Image`, then you can instruct the AWS SAM CLI to automatically create the required Amazon Elastic Container Registry \(Amazon ECR\) repositories for you\. To have the AWS SAM CLI create these repositories, use either the `--resolve-image-repos` option or the `--guided` option, and then respond to the subsequent prompt with **Y**\.
-
-**Usage:**
+## Usage<a name="ref-sam-cli-deploy-usage"></a>
 
 ```
-sam deploy [OPTIONS] [ARGS]...
+$ sam deploy <options>
 ```
 
-**Options:**
+## Environment variables<a name="ref-sam-cli-deploy-env"></a>
+
+
+****  
+
+| Environment variable | Description | 
+| --- | --- | 
+| SAM\_CLI\_POLL\_DELAY |  Specify a delay, in seconds, between `DescribeStack` API calls\. The following is an example: <pre>$ SAM_CLI_POLL_DELAY=5 sam deploy</pre>  | 
+
+## Options<a name="ref-sam-cli-deploy-options"></a>
 
 
 ****  
@@ -61,72 +56,3 @@ sam deploy [OPTIONS] [ARGS]...
 | \-\-no\-progressbar | Do not display a progress bar when uploading artifacts to Amazon S3\. | 
 | \-\-debug | Turn on debug logging to print the debug message that the AWS SAM CLI generates and to display timestamps\. | 
 | \-\-help | Show this message and exit\. | 
-
-**Environment variables:**
-
-
-****  
-
-| Environment variable | Description | 
-| --- | --- | 
-| SAM\_CLI\_POLL\_DELAY |  Specify a delay, in seconds, between `DescribeStack` API calls\.  | 
-
-## Examples<a name="examples"></a>
-
-### Parameters<a name="examples-parameters"></a>
-
-Here is an example object declared in the `Parameters` section, and the corresponding prompt that appears when using sam deploy \-\-guided\.
-
-**AWS SAM template:**
-
-```
-Parameters:
-  MyPar:
-    Type: String
-    Default: MyParVal
-```
-
-**Corresponding `sam deploy --guided` prompt:**
-
-```
-Parameter MyPar [MyParVal]:
-```
-
-### Code signing<a name="examples-code-signing"></a>
-
-Here is an example function configured with code signing\.
-
-**AWS SAM template:**
-
-```
-Resources:
-  HelloWorld:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: hello_world/
-      Handler: app.lambda_handler
-      Runtime: python3.7
-      CodeSigningConfigArn: arn:aws:lambda:us-east-1:111122223333:code-signing-config:csc-12e12345db1234567
-```
-
-**Corresponding `sam deploy --guided` prompts:**
-
-```
-#Found code signing configurations in your function definitions
-Do you want to sign your code? [Y/n]: 
-#Please provide signing profile details for the following functions & layers
-#Signing profile details for function 'HelloWorld'
-Signing Profile Name: 
-Signing Profile Owner Account ID (optional):
-#Signing profile details for layer 'MyLayer', which is used by functions {'HelloWorld'}
-Signing Profile Name: 
-Signing Profile Owner Account ID (optional):
-```
-
-### SAM\_CLI\_POLL\_DELAY<a name="examples-delay"></a>
-
-Here is an example sam deploy call using the `SAM_CLI_POLL_DELAY` variable to set a 5\-second delay between `DescribeStack` API calls\.
-
-```
-SAM_CLI_POLL_DELAY=5 sam deploy
-```

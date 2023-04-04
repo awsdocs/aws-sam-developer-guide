@@ -13,6 +13,7 @@ Using `sam build` requires that you start with the basic components of a serverl
 + [Local testing and deployment](#using-sam-cli-build-test-deploy)
 + [Best practices](#using-sam-cli-build-best)
 + [Options for sam build](#using-sam-cli-build-options)
++ [Troubleshooting](#using-sam-cli-build-troubleshooting)
 + [Examples](#using-sam-cli-build-examples)
 + [Learn more](#using-sam-cli-build-learn)
 
@@ -203,6 +204,10 @@ The following is an example of this command:
 ```
 $ sam build —-parallel
 ```
+
+## Troubleshooting<a name="using-sam-cli-build-troubleshooting"></a>
+
+To troubleshoot the AWS SAM CLI, see [AWS SAM CLI troubleshooting](sam-cli-troubleshooting.md)\.
 
 ## Examples<a name="using-sam-cli-build-examples"></a>
 
