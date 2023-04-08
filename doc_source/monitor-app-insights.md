@@ -51,13 +51,8 @@ Resources:
   ApplicationInsightsMonitoring:
     Type: AWS::ApplicationInsights::Application
       Properties:
-        ResourceGroupName:
-          Fn::Join:
-          - ''
-          - - ApplicationInsights-SAM-
-          - Ref: AWS::StackName
+        ResourceGroupName: !Ref ApplicationResourceGroup
         AutoConfigurationEnabled: 'true'
-    DependsOn: ApplicationResourceGroup
 ```
 +  `AWS::ResourceGroups::Group` – Creates a group to organize your AWS resources in order to manage and automate tasks on a large number of resources at one time\. Here, you create a resource group to use with CloudWatch Application Insights\. For more information on this resource type, see [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html) in the *AWS CloudFormation User Guide*\. 
 +  `AWS::ApplicationInsights::Application` – Configures CloudWatch Application Insights for the resource group\. For more information on this resource type, see [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html) in the *AWS CloudFormation User Guide*\. 
