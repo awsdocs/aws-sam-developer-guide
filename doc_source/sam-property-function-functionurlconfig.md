@@ -1,10 +1,10 @@
 # FunctionUrlConfig<a name="sam-property-function-functionurlconfig"></a>
 
-Creates a function URL with the specified configuration parameters\. A function URL is an HTTPS endpoint that you can use to invoke your function\.
+Creates an AWS Lambda function URL with the specified configuration parameters\. A Lambda function URL is an HTTPS endpoint that you can use to invoke your function\.
 
-By default, the function URL uses the `$LATEST` version of your Lambda function\. If you specify an `AutoPublishAlias` for your Lambda function, the endpoint connects to the specified function alias\.
+By default, the function URL that you create uses the `$LATEST` version of your Lambda function\. If you specify an `AutoPublishAlias` for your Lambda function, the endpoint connects to the specified function alias\.
 
-For more information, see [Function URLs](https://docs.aws.amazon.com/lambda/latest/dg/lambda-urls.html) in the *AWS Lambda Developer Guide*\.
+For more information, see [Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/lambda-urls.html) in the *AWS Lambda Developer Guide*\.
 
 ## Syntax<a name="sam-property-function-functionurlconfig-syntax"></a>
 
@@ -13,30 +13,37 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 ### YAML<a name="sam-property-function-functionurlconfig-syntax.yaml"></a>
 
 ```
-  [AuthType](#sam-function-functionurlconfig-authtype): String
-  [Cors](#sam-function-functionurlconfig-cors): [Cors](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html)
+[AuthType](#sam-function-functionurlconfig-authtype): String
+[Cors](#sam-function-functionurlconfig-cors): [Cors](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html)
+[InvokeMode](#sam-function-functionurlconfig-invokemode): String
 ```
 
 ## Properties<a name="sam-property-function-functionurlconfig-properties"></a>
 
  `AuthType`   <a name="sam-function-functionurlconfig-authtype"></a>
-The type of authorization for your function URL\. Set to `AWS_IAM` to use IAM to authorize requests\. Set to `NONE` for open access\.  
-For more information, see [Function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html) in the *AWS Lambda Developer Guide*  
+The type of authorization for your function URL\. To use AWS Identity and Access Management \(IAM\) to authorize requests, set to `AWS_IAM`\. For open access, set to `NONE`\.  
 *Type*: String  
 *Required*: Yes  
-*AWS CloudFormation compatibility*: This property is passed directly to the `[AuthType](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-authorizationtype)` property of an `AWS::Lambda::Url` resource\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[AuthType](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-authtype)` property of an `AWS::Lambda::Url` resource\.
 
  `Cors`   <a name="sam-function-functionurlconfig-cors"></a>
-The Cross\-Origin Resource Sharing \(CORS\) settings for your function URL\.  
+The cross\-origin resource sharing \(CORS\) settings for your function URL\.  
 *Type*: [Cors](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Cors](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html)` property of an `AWS::Lambda::Url` resource\.
+
+ `InvokeMode`  <a name="sam-function-functionurlconfig-invokemode"></a>
+The mode that your function URL will be invoked\. To have your function return the response after invocation completes, set to `BUFFERED`\. To have your function stream the response, set to `RESPONSE_STREAM`\. The default value is `BUFFERED`\.  
+*Valid values*: `BUFFERED` or `RESPONSE_STREAM`  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-invokemode](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-invokemode) property of an `AWS::Lambda::Url` resource\.
 
 ## Examples<a name="sam-property-function-functionurlconfig--examples"></a>
 
 ### Function URL<a name="sam-property-function-functionurlconfig--examples--function-url"></a>
 
-The following example create a Lambda function with a function URL\. The function URL uses IAM authorization\.
+The following example creates a Lambda function with a function URL\. The function URL uses IAM authorization\.
 
 #### YAML<a name="sam-property-function-functionurlconfig--examples--function-url--yaml"></a>
 
@@ -49,6 +56,7 @@ HelloWorldFunction:
     Runtime: nodejs14.x
     FunctionUrlConfig:
       AuthType: AWS_IAM
+      InvokeMode: RESPONSE_STREAM
 
 Outputs:
   MyFunctionUrlEndpoint:
