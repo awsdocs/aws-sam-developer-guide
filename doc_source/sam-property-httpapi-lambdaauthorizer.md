@@ -12,6 +12,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
 ```
   [AuthorizerPayloadFormatVersion](#sam-httpapi-lambdaauthorizer-authorizerpayloadformatversion): String
+  EnableFunctionDefaultPermissions: Boolean
   [EnableSimpleResponses](#sam-httpapi-lambdaauthorizer-enablesimpleresponses): Boolean
   [FunctionArn](#sam-httpapi-lambdaauthorizer-functionarn): String
   [FunctionInvokeRole](#sam-httpapi-lambdaauthorizer-functioninvokerole): String
@@ -26,6 +27,13 @@ This is passed through to the `authorizerPayloadFormatVersion` section of an `x-
 *Valid values*: `1.0` or `2.0`  
 *Type*: String  
 *Required*: Yes  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+ `EnableFunctionDefaultPermissions`   <a name="sam-httpapi-lambdaauthorizer-enablefunctiondefaultpermissions"></a>
+By default, the HTTP API resource is not granted permission to invoke the Lambda authorizer\. Specify this property as `true` to automatically create permissions between your HTTP API resource and your Lambda authorizer\.  
+*Type*: Boolean  
+*Required*: No  
+*Default value*: `false`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `EnableSimpleResponses`   <a name="sam-httpapi-lambdaauthorizer-enablesimpleresponses"></a>

@@ -66,7 +66,7 @@ The ARN of the queue\.
 Scaling configuration of SQS pollers to control the invoke rate and set maximum concurrent invokes\.  
 *Type*: `[ScalingConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html)`  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is passed directly to the `[ScalingConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html)` property of an `AWS::Lambda::EventSourceMapping` resource\.
+*AWS CloudFormation compatibility*: This property is passed directly to the `[ ScalingConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html)` property of an `AWS::Lambda::EventSourceMapping` resource\.
 
 ## Examples<a name="sam-property-function-sqs--examples"></a>
 

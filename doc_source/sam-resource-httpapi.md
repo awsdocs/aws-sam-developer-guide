@@ -29,7 +29,6 @@ Properties:
   [Description](#sam-httpapi-description): String
   [DisableExecuteApiEndpoint](#sam-httpapi-disableexecuteapiendpoint): Boolean
   [Domain](#sam-httpapi-domain): HttpApiDomainConfiguration
-  EnableFunctionDefaultPermissions: Boolean
   [FailOnWarnings](#sam-httpapi-failonwarnings): Boolean
   Name: String
   [RouteSettings](#sam-httpapi-routesettings): [RouteSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings)
@@ -100,13 +99,6 @@ Specifies whether clients can invoke your HTTP API by using the default `execute
 Configures a custom domain for this API Gateway HTTP API\.  
 *Type*: [HttpApiDomainConfiguration](sam-property-httpapi-httpapidomainconfiguration.md)  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
-
- `EnableFunctionDefaultPermissions`   <a name="sam-httpapi-enablefunctiondefaultpermissions"></a>
-By default, the HTTP API resource is not granted permission to invoke the Lambda authorizer\. Specify this property as `true` to automatically create permissions between your HTTP API resource and your Lambda authorizer\.  
-*Type*: Boolean  
-*Required*: No  
-*Default value*: `false`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `FailOnWarnings`   <a name="sam-httpapi-failonwarnings"></a>

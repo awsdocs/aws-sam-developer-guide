@@ -41,7 +41,7 @@ Specify either `HostedZoneName` or `HostedZoneId`, but not both\. If you have mu
 *AWS CloudFormation compatibility*: This property is passed directly to the `[HostedZoneId](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-1.html#cfn-route53-recordset-hostedzoneid)` property of an `AWS::Route53::RecordSetGroup RecordSet` resource\.
 
  `HostedZoneName`   <a name="sam-httpapi-route53configuration-hostedzonename"></a>
-The name of the hosted zone that you want to create records in\.  
+The name of the hosted zone that you want to create records in\. You must include a trailing dot \(for example, `www.example.com.`\) as part of the `HostedZoneName`\.  
 Specify either `HostedZoneName` or `HostedZoneId`, but not both\. If you have multiple hosted zones with the same domain name, you must specify the hosted zone using `HostedZoneId`\.  
 *Type*: String  
 *Required*: No  
