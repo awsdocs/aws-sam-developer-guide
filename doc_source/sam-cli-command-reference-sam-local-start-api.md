@@ -1,22 +1,16 @@
 # sam local start\-api<a name="sam-cli-command-reference-sam-local-start-api"></a>
 
-Allows you to run your serverless application locally for quick development and testing\. When you run this command in a directory that contains your serverless functions and your AWS SAM template, it creates a local HTTP server that hosts all of your functions\.
+Options for the AWS Serverless Application Model Command Line Interface \(AWS SAM CLI\) `sam local start-api` subcommand\.
++ For an introduction to the AWS SAM CLI, see [What is the AWS SAM CLI?](what-is-sam.md#what-is-sam-cli)\.
++ For documentation on using the AWS SAM CLI `sam local start-api` subcommand, see [Using sam local start\-api](using-sam-cli-local-start-api.md)\.
 
-By default when you use this command, the AWS SAM CLI assumes that your current working directory is your project's root directory\. The AWS SAM CLI first tries to locate a template file built using the [sam build](sam-cli-command-reference-sam-build.md) command, located in the `.aws-sam` subfolder, and named `template.yaml` or `template.yml`\. Next, the AWS SAM CLI tries to locate a template file named `template.yaml` or `template.yml` in the current working directory\. If you specify the `--template` option, AWS SAM CLI's default behavior is overridden, and will load just that AWS SAM template and the local resources it points to\.
-
-When it's accessed \(through a browser, CLI, and so on\), it starts a Docker container locally to invoke the function\. It reads the CodeUri property of the `AWS::Serverless::Function` resource to find the path in your file system that contains the Lambda function code\. This could be the project's root directory for interpreted languages like Node\.js and Python, or a build directory that stores your compiled artifacts or a Java Archive \(JAR\) file\. 
-
-If you're using an interpreted language, local changes are available immediately in the Docker container on every invoke\. For more compiled languages or projects that require complex packing support, we recommend that you run your own building solution, and point AWS SAM to the directory or file that contains the build artifacts\.
-
-To see an end\-to\-end example that uses this command, see [Tutorial: Deploying a Hello World application](serverless-getting-started-hello-world.md)\. The `sam local start-api` command is part of [Step 6: \(Optional\) Test your application locally](serverless-getting-started-hello-world.md#serverless-getting-started-hello-world-test)\.
-
-**Usage:**
+## Usage<a name="ref-sam-cli-local-start-api-usage"></a>
 
 ```
-sam local start-api [OPTIONS]
+$ sam local start-api <options>
 ```
 
-**Options:**
+## Options<a name="ref-sam-cli-local-start-api-options"></a>
 
 
 ****  

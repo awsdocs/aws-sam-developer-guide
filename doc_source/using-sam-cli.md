@@ -10,6 +10,7 @@ For an introduction to AWS SAM, see [What is AWS SAM?](what-is-sam.md)
 + [Using sam build](using-sam-cli-build.md)
 + [Using sam deploy](using-sam-cli-deploy.md)
 + [Using sam init](using-sam-cli-init.md)
++ [Using sam local](using-sam-cli-local.md)
 + [Using sam sync](using-sam-cli-sync.md)
 
 ## How AWS SAM CLI commands are documented<a name="using-sam-cli-documentation"></a>

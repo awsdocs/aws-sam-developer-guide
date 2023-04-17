@@ -1,33 +1,16 @@
 # sam local generate\-event<a name="sam-cli-command-reference-sam-local-generate-event"></a>
 
-Generates sample payloads from different event sources, such as Amazon S3, Amazon API Gateway, and Amazon SNS\. These payloads contain the information that the event sources send to your Lambda functions\.
+Options for the AWS Serverless Application Model Command Line Interface \(AWS SAM CLI\) `sam local generate-event` subcommand\.
++ For an introduction to the AWS SAM CLI, see [What is the AWS SAM CLI?](what-is-sam.md#what-is-sam-cli)\.
++ For documentation on using the AWS SAM CLI `sam local generate-event` subcommand, see [Using sam local generate\-event](using-sam-cli-local-generate-event.md)\.
 
-**Usage:**
-
-```
-sam local generate-event [OPTIONS] COMMAND [ARGS]...
-```
-
-**Examples:**
+## Usage<a name="ref-sam-cli-local-generate-event-usage"></a>
 
 ```
-Generate the event that S3 sends to your Lambda function when a new object is uploaded
-sam local generate-event s3 [put/delete]
-
-# You can even customize the event by adding parameter flags. To find which flags apply to your command,
-run:
-
-sam local generate-event s3 [put/delete] --help
-
-# Then you can add in those flags that you wish to customize using
-
-sam local generate-event s3 [put/delete] --bucket <bucket> --key <key>
-
-# After you generate a sample event, you can use it to test your Lambda function locally
-sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam local invoke -e - <function logical id>
+$ sam local generate-event <options> <service> <event> <event-options>
 ```
 
-**Options:**
+## Options<a name="ref-sam-cli-local-generate-event-options"></a>
 
 
 ****  
@@ -38,27 +21,26 @@ sam local generate-event s3 [put/delete] --bucket <bucket> --key <key> | sam loc
 | \-\-config\-env TEXT | The environment name specifying the default parameter values in the configuration file to use\. The default value is "default"\. For more information about configuration files, see [AWS SAM CLI configuration file](serverless-sam-cli-config.md)\. | 
 | \-\-help | Shows this message and exits\. | 
 
-**Commands:**
-+ `alb`
-+ `alexa-skills-kit`
-+ `alexa-smart-home`
-+ `apigateway`
-+ `batch`
-+ `cloudformation`
-+ `cloudfront`
-+ `cloudwatch`
-+ `codecommit`
-+ `codepipeline`
-+ `cognito`
-+ `config`
-+ `dynamodb`
-+ `kinesis`
-+ `lex`
-+ `lex-v2`
-+ `rekognition`
-+ `s3`
-+ `ses`
-+ `sns`
-+ `sqs`
-+ `stepfunctions`
-+ `workmail`
+## Service<a name="ref-sam-cli-local-generate-event-service"></a>
+
+To see a list of supported services, run the following:
+
+```
+$ sam local generate-event
+```
+
+## Event<a name="ref-sam-cli-local-generate-event-event"></a>
+
+To see a list of supported events that can be generated for each service, run the following:
+
+```
+$ sam local generate-event <service>
+```
+
+## Event options<a name="ref-sam-cli-local-generate-event-event-options"></a>
+
+To see a list of supported event options that you can modify, run the following:
+
+```
+$ sam local generate-event <service> <event> --help
+```

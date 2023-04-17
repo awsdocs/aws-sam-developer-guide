@@ -1,48 +1,16 @@
 # sam local start\-lambda<a name="sam-cli-command-reference-sam-local-start-lambda"></a>
 
-Enables you to programmatically invoke your Lambda function locally by using the AWS CLI or SDKs\. This command starts a local endpoint that emulates AWS Lambda\.
+Options for the AWS Serverless Application Model Command Line Interface \(AWS SAM CLI\) `sam local start-lambda` subcommand\.
++ For an introduction to the AWS SAM CLI, see [What is the AWS SAM CLI?](what-is-sam.md#what-is-sam-cli)\.
++ For documentation on using the AWS SAM CLI `sam local start-lambda` subcommand, see [Using sam local start\-lambda](using-sam-cli-local-start-lambda.md)\.
 
-By default when you use this command, the AWS SAM CLI assumes that your current working directory is your project's root directory\. The AWS SAM CLI first tries to locate a template file built using the [sam build](sam-cli-command-reference-sam-build.md) command, located in the `.aws-sam` subfolder, and named `template.yaml` or `template.yml`\. Next, the AWS SAM CLI tries to locate a template file named `template.yaml` or `template.yml` in the current working directory\. If you specify the `--template` option, AWS SAM CLI's default behavior is overridden, and will load just that AWS SAM template and the local resources it points to\.
-
-You can run your automated tests against this local Lambda endpoint\. When you send an invoke to this endpoint using the AWS CLI or SDK, it locally executes the Lambda function that's specified in the request\.
-
-**Usage:**
+## Usage<a name="ref-sam-cli-local-start-lambda-usage"></a>
 
 ```
-sam local start-lambda [OPTIONS]
+$ sam local start-lambda <options>
 ```
 
-**Examples:**
-
-```
-# SETUP
-# ------
-# Start the local Lambda endpoint by running this command in the directory that contains your AWS SAM template.
-
-sam local start-lambda
-
-# USING AWS CLI
-# -------------
-# Then, you can invoke your Lambda function locally using the AWS CLI
-
-aws lambda invoke --function-name "HelloWorldFunction" --endpoint-url "http://127.0.0.1:3001" --no-verify-ssl out.txt
-
-# USING AWS SDK
-# -------------
-# You can also use the AWS SDK in your automated tests to invoke your functions programatically.
-# Here is a Python example:
-#
-#     self.lambda_client = boto3.client('lambda',
-#                                  endpoint_url="http://127.0.0.1:3001",
-#                                  use_ssl=False,
-#                                  verify=False,
-#                                  config=Config(signature_version=UNSIGNED,
-#                                                read_timeout=0,
-#                                                retries={'max_attempts': 0}))
-#    self.lambda_client.invoke(FunctionName="HelloWorldFunction")
-```
-
-**Options:**
+## Options<a name="ref-sam-cli-local-start-lambda-options"></a>
 
 
 ****  

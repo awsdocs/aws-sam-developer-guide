@@ -1,27 +1,19 @@
 # sam local invoke<a name="sam-cli-command-reference-sam-local-invoke"></a>
 
-Invokes a local AWS Lambda function once and quits after invocation completes\.
+Options for the AWS Serverless Application Model Command Line Interface \(AWS SAM CLI\) `sam local invoke` subcommand\.
++ For an introduction to the AWS SAM CLI, see [What is the AWS SAM CLI?](what-is-sam.md#what-is-sam-cli)\.
++ For documentation on using the AWS SAM CLI `sam local invoke` subcommand, see [Using sam local invoke](using-sam-cli-local-invoke.md)\.
 
-By default when you use this command, the AWS SAM CLI assumes that your current working directory is your project's root directory\. The AWS SAM CLI first tries to locate a template file built using the [sam build](sam-cli-command-reference-sam-build.md) command, located in the `.aws-sam` subfolder, and named `template.yaml` or `template.yml`\. Next, the AWS SAM CLI tries to locate a template file named `template.yaml` or `template.yml` in the current working directory\. If you specify the `--template` option, AWS SAM CLI's default behavior is overridden, and will load just that AWS SAM template and the local resources it points to\.
+## Usage<a name="ref-sam-cli-local-invoke-usage"></a>
 
-
-
-To invoke a function of a nested application or stack, you can provide the application or stack logical ID along with the function logical ID using the format `StackLogicalId/FunctionLogicalId`\.
-
-The `sam local invoke` command is useful for developing serverless functions that handle asynchronous events, such as Amazon Simple Storage Service \(Amazon S3\) or Amazon Kinesis events\. It can also be useful if you want to compose a script of test cases\. You can pass in the event body using the `--event` parameter\. For more information about events, see [Event](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-concepts.html#gettingstarted-concepts-event) in the *AWS Lambda Developer Guide*\. For details about event message formats from different AWS services, see [Working with other services](https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html) in the *AWS Lambda Developer Guide*\.
-
-The runtime output \(for example, logs\) is output to `stderr`, and the Lambda function result is output to `stdout`\.
+```
+$ sam local invoke <options> <functionLogicalId>
+```
 
 **Note**  
-If there is more than one function defined in your AWS SAM template, you must provide the `FUNCTION_LOGICAL_ID` of the function you want to invoke\.
+If you have more than one function defined in your AWS SAM template, provide the function logical ID that you want to invoke\.
 
-**Usage:**
-
-```
-sam local invoke [OPTIONS] [FUNCTION_LOGICAL_ID]
-```
-
-**Options:**
+## Options<a name="ref-sam-cli-local-invoke-options"></a>
 
 
 ****  
@@ -29,7 +21,7 @@ sam local invoke [OPTIONS] [FUNCTION_LOGICAL_ID]
 | Option | Description | 
 | --- | --- | 
 | \-\-hook\-name TEXT |  The name of the hook that is used to extend AWS SAM CLI functionality\. Accepted values: `terraform`\.  | 
-| \-\-skip\-prepare\-infra | Skips the preparation stage if no infrastructure changes have been made\. use with the \-\-hook\-name option\. | 
+| \-\-skip\-prepare\-infra | Skips the preparation stage if no infrastructure changes have been made\. Use with the \-\-hook\-name option\. | 
 | \-e, \-\-event PATH | The JSON file that contains event data that's passed to the Lambda function when it's invoked\. If you don't specify this option, no event is assumed\. To input JSON from stdin, you must pass in the value '\-'\. For details about event message formats from different AWS services, see [Working with other services](https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html) in the AWS Lambda Developer Guide\. | 
 | \-\-no\-event | Invokes the function with an empty event\. | 
 | \-t, \-\-template PATH | The AWS SAM template file\.**Note:** If you specify this option, AWS SAM loads only the template and the local resources that it points to\. This option is not compatible with `--hook-name`\. | 
