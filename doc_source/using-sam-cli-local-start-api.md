@@ -58,6 +58,57 @@ When you run `sam local start-api`, the AWS SAM CLI assumes that your current wo
    + If your application does have a `.aws-sam` directory, you need to run `sam build` to update your function\. Then run `sam local start-api` again to host the function\.
    + If your function uses a compiled language or if your project requires complex packaging support, run your own build solution to update your function\. Then run `sam local start-api` again to host the function\.
 
+### Lambda functions that use Lambda authorizers<a name="using-sam-cli-local-start-api-authorizers"></a>
+
+**Note**  
+This feature is new in AWS SAM CLI version 1\.80\.0\. To upgrade, see [Upgrading the AWS SAM CLI](manage-sam-cli-versions.md#manage-sam-cli-versions-upgrade)\.
+
+For Lambda functions that use Lambda authorizers, the AWS SAM CLI will automatically invoke your Lambda authorizer before invoking your Lambda function endpoint\.
+
+The following is an example of starting a local HTTP server for a function that uses a Lambda authorizer:
+
+```
+$ sam local start-api
+2023-04-17 15:02:13 Attaching import module proxy for analyzing dynamic imports
+
+AWS SAM CLI does not guarantee 100% fidelity between authorizers locally
+and authorizers deployed on AWS. Any application critical behavior should
+be validated thoroughly before deploying to production.
+
+Testing application behaviour against authorizers deployed on AWS can be done using the sam sync command.
+
+Mounting HelloWorldFunction at http://127.0.0.1:3000/authorized-request [GET]
+You can now browse to the above endpoints to invoke your functions. You do not need to restart/reload SAM CLI while working on your functions, changes will be reflected instantly/automatically. If you used sam build before running local commands, you will need to re-run sam build for the changes to be picked up. You only need to restart SAM CLI if you update your AWS SAM template
+2023-04-17 15:02:13 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:3000
+2023-04-17 15:02:13 Press CTRL+C to quit
+```
+
+When you invoke your Lambda function endpoint through the local HTTP server, the AWS SAM CLI first invokes your Lambda authorizer\. If authorization is successful, the AWS SAM CLI will invoke your Lambda function endpoint\. The following is an example:
+
+```
+$ curl http://127.0.0.1:3000/authorized-request --header "header:my_token"
+{"message": "from authorizer"}%
+
+Invoking app.authorizer_handler (python3.8)
+Local image is up-to-date
+Using local image: public.ecr.aws/lambda/python:3.8-rapid-x86_64.
+
+Mounting /Users/.../sam-app/... as /var/task:ro,delegated, inside runtime container
+START RequestId: 38d3b472-a2c8-4ea6-9a77-9b386989bef0 Version: $LATEST
+END RequestId: 38d3b472-a2c8-4ea6-9a77-9b386989bef0
+REPORT RequestId: 38d3b472-a2c8-4ea6-9a77-9b386989bef0    Init Duration: 1.08 ms    Duration: 628.26 msBilled Duration: 629 ms    Memory Size: 128 MB    Max Memory Used: 128 MB
+Invoking app.request_handler (python3.8)
+Using local image: public.ecr.aws/lambda/python:3.8-rapid-x86_64.
+
+Mounting /Users/.../sam-app/... as /var/task:ro,delegated, inside runtime container
+START RequestId: fdc12255-79a3-4365-97e9-9459d06446ff Version: $LATEST
+END RequestId: fdc12255-79a3-4365-97e9-9459d06446ff
+REPORT RequestId: fdc12255-79a3-4365-97e9-9459d06446ff    Init Duration: 0.95 ms    Duration: 659.13 msBilled Duration: 660 ms    Memory Size: 128 MB    Max Memory Used: 128 MB
+No Content-Type given. Defaulting to 'application/json'.
+2023-04-17 15:03:03 127.0.0.1 - - [17/Apr/2023 15:03:03] "GET /authorized-request HTTP/1.1" 200 -
+```
+
 ## Options<a name="using-sam-cli-local-start-api-options"></a>
 
 ### Continuously reuse containers to speed up local function invokes<a name="using-sam-cli-local-start-api-options-warm"></a>
