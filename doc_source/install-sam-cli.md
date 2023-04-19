@@ -42,7 +42,7 @@ Configuring AWS credentials\.
 
    Compare the 64\-character SHA\-256 hash value with the one for your desired AWS SAM CLI version in the [AWS SAM CLI release notes](https://github.com/aws/aws-sam-cli/releases/latest) on GitHub\.
 
-1. Unzip the installation files into the `sam-installation/` subdirectory\.
+1. Unzip the installation files into a directory of your choice\. The following is an example, using the `sam-installation` subdirectory\.
 **Note**  
 If your operating system doesn't have the built\-in unzip command, use an equivalent\.
 
@@ -50,7 +50,7 @@ If your operating system doesn't have the built\-in unzip command, use an equiva
    $ unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
    ```
 
-1. Install the AWS SAM CLI\.
+1. Install the AWS SAM CLI by running the `install` executable\. This executable is located in the directory used in the previous step\. The following is an example, using the `sam-installation` subdirectory:
 
    ```
    $ sudo ./sam-installation/install

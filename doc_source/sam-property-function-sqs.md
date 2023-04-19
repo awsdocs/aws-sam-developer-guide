@@ -70,11 +70,7 @@ Scaling configuration of SQS pollers to control the invoke rate and set maximum 
 
 ## Examples<a name="sam-property-function-sqs--examples"></a>
 
-### SQS event<a name="sam-property-function-sqs--examples--sqs-event"></a>
-
-SQS Event
-
-#### YAML<a name="sam-property-function-sqs--examples--sqs-event--yaml"></a>
+### Basic SQS event<a name="sam-property-function-sqs--examples--sqs-event"></a>
 
 ```
 Events:
@@ -89,6 +85,20 @@ Events:
           - Pattern: '{"key": ["val1", "val2"]}'
 ```
 
+### Configure partial batch reporting for your SQS queue<a name="sam-property-function-sqs--examples--sqs-partial-batch"></a>
+
+```
+Events:
+  SQSEvent:
+    Type: SQS
+    Properties:
+      Enabled: true
+      FunctionResponseTypes:
+        - ReportBatchItemFailures
+      Queue: !GetAtt MySqsQueue.Arn
+      BatchSize: 10
+```
+
 ### Lambda function with an SQS event that has scaling configured<a name="sam-property-function-sqs--examples--sqs-event-scaling"></a>
 
 ```
@@ -99,8 +109,8 @@ MyFunction:
     Events:
       MySQSEvent:
         Type: SQS
-          Properties:
-            ...
-            ScalingConfig:
-              MaximumConcurrency: 10
+        Properties:
+          ...
+          ScalingConfig:
+            MaximumConcurrency: 10
 ```

@@ -40,19 +40,19 @@ Transform: AWS::Serverless-2016-10-31
 Resources:
   ApplicationResourceGroup:
     Type: AWS::ResourceGroups::Group
-      Properties:
-        Name:
-          Fn::Join:
-          - ''
-          - - ApplicationInsights-SAM-
-          - Ref: AWS::StackName
-        ResourceQuery:
-          Type: CLOUDFORMATION_STACK_1_0
+    Properties:
+      Name:
+        Fn::Join:
+        - ''
+        - - ApplicationInsights-SAM-
+        - Ref: AWS::StackName
+      ResourceQuery:
+        Type: CLOUDFORMATION_STACK_1_0
   ApplicationInsightsMonitoring:
     Type: AWS::ApplicationInsights::Application
-      Properties:
-        ResourceGroupName:
-          Fn::Join:
+    Properties:
+      ResourceGroupName:
+        Fn::Join:
           - ''
           - - ApplicationInsights-SAM-
           - Ref: AWS::StackName

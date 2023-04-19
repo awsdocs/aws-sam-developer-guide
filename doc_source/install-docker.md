@@ -73,7 +73,7 @@ Docker Desktop is officially supported, but starting with AWS SAM CLI version 1\
 
 1. Configure your shared drives
 
-   The AWS SAM CLI requires that the project directory, or any parent directory, is listed in a shared drive\. For how to share drives on macOS, see [File sharing](https://docs.docker.com/desktop/troubleshoot/topics/#volume-mounting-requires-file-sharing-for-any-project-directories-outside-of-home) on the Docker Docs website\.
+   The AWS SAM CLI requires that the project directory, or any parent directory, is listed in a shared drive\. This may require file sharing\. For more information, see the [ Volume mounting requires file sharing](https://docs.docker.com/desktop/troubleshoot/topics/#volume-mounting-requires-file-sharing-for-any-project-directories-outside-of-home) troubleshooting topic at *Docker docs*\.
 
 1. Verify the installation
 
