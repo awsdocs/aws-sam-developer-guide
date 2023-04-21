@@ -24,7 +24,7 @@ For more information about these options, see the following topics:
 
 After you develop and test your serverless application locally, you can deploy your application using the [sam deploy](sam-cli-command-reference-sam-deploy.md) command\.
 
-To have AWS SAM guide you through the deployment with prompts, specify the \-\-guided flag\. When you specify this flag, the sam deploy command zips your application artifacts, uploads them either to Amazon Simple Storage Service \(Amazon S3\) \(for \.zip file archives\) or to Amazon Elastic Container Registry \(Amazon ECR\) \(for contain images\)\. The command then deploys your application to the AWS Cloud\.
+To have AWS SAM guide you through the deployment with prompts, specify the \-\-guided flag\. When you specify this flag, the sam deploy command zips your application artifacts, uploads them either to Amazon Simple Storage Service \(Amazon S3\) \(for \.zip file archives\) or to Amazon Elastic Container Registry \(Amazon ECR\) \(for container images\)\. The command then deploys your application to the AWS Cloud\.
 
 **Example:**
 
