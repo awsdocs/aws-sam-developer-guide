@@ -232,7 +232,7 @@ The size of the memory in MB allocated per invocation of the function\.
 The deployment package type of the Lambda function\. For more information, see [Lambda deployment packages](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html) in the *AWS Lambda Developer Guide*\.  
 **Notes**:  
 1\. If this property is set to `Zip` \(default\), then either `CodeUri` or `InlineCode` applies, and `ImageUri` is ignored\.  
-2\. If this property is set to `Image`, then only `ImageUri` applies, and both `CodeUri` and `InlineCode` are ignored\. The Amazon ECR repository required to store the functionsl container image can be auto created by the AWS SAM CLI\. For more information, see [sam deploy](sam-cli-command-reference-sam-deploy.md)\.  
+2\. If this property is set to `Image`, then only `ImageUri` applies, and both `CodeUri` and `InlineCode` are ignored\. The Amazon ECR repository required to store the function's container image can be auto created by the AWS SAM CLI\. For more information, see [sam deploy](sam-cli-command-reference-sam-deploy.md)\.  
 *Valid values*: `Zip` or `Image`  
 *Type*: String  
 *Required*: No  
