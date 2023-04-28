@@ -12,6 +12,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 
 ```
   [FilterPolicy](#sam-function-sns-filterpolicy): [SnsFilterPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy)
+  FilterPolicyScope: String
   RedrivePolicy: Json
   [Region](#sam-function-sns-region): String
   [SqsSubscription](#sam-function-sns-sqssubscription): Boolean | SqsSubscriptionObject
@@ -25,6 +26,15 @@ The filter policy JSON assigned to the subscription\. For more information, see 
 *Type*: [SnsFilterPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[FilterPolicy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy)` property of an `AWS::SNS::Subscription` resource\.
+
+ `FilterPolicyScope`   <a name="sam-function-sns-filterpolicyscope"></a>
+This attribute lets you choose the filtering scope by using one of the following string value types:  
++ `MessageAttributes` – The filter is applied on the message attributes\.
++ `MessageBody` – The filter is applied on the message body\.
+*Type*: String  
+*Required*: No  
+*Default*: `MessageAttributes`  
+*AWS CloudFormation compatibility*: This property is passed directly to the ` [ FilterPolicyScope](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicyscope)` property of an `AWS::SNS::Subscription` resource\.
 
  `RedrivePolicy`   <a name="sam-function-sns-redrivepolicy"></a>
 When specified, sends undeliverable messages to the specified Amazon SQS dead\-letter queue\. Messages that can't be delivered due to client errors \(for example, when the subscribed endpoint is unreachable\) or server errors \(for example, when the service that powers the subscribed endpoint becomes unavailable\) are held in the dead\-letter queue for further analysis or reprocessing\.  

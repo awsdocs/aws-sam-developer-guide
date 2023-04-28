@@ -14,6 +14,8 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [HostedZoneId](#sam-api-route53configuration-hostedzoneid): String
   [HostedZoneName](#sam-api-route53configuration-hostedzonename): String
   [IpV6](#sam-api-route53configuration-ipv6): Boolean
+  Region: String
+  SetIdentifier: String
 ```
 
 ## Properties<a name="sam-property-api-route53configuration-properties"></a>
@@ -52,6 +54,25 @@ When this property is set, AWS SAM creates a `AWS::Route53::RecordSet` resource 
 *Type*: Boolean  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+`Region`  <a name="sam-api-route53configuration-region"></a>
+*Latency\-based resource record sets only:* The Amazon EC2 Region where you created the resource that this resource record set refers to\. The resource typically is an AWS resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type\.  
+When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region\. Route 53 then returns the value that is associated with the selected resource record set\.  
+Note the following:  
++ You can only specify one `ResourceRecord` per latency resource record set\.
++ You can only create one latency resource record set for each Amazon EC2 Region\.
++ You aren't required to create latency resource record sets for all Amazon EC2 Regions\. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for\.
++ You can't create non\-latency resource record sets that have the same values for the `Name` and `Type` elements as latency resource record sets\.
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[ Region](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-1.html#cfn-route53-recordset-region)` property of an `AWS::Route53::RecordSetGroup` `RecordSet` data type\.
+
+`SetIdentifier`  <a name="sam-api-route53configuration-setidentifier"></a>
+*Resource record sets that have a routing policy other than simple:* An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme\.example\.com that have a type of A\. In a group of resource record sets that have the same name and type, the value of `SetIdentifier` must be unique for each resource record set\.  
+For information about routing policies, see [Choosing a routing policy](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html) in the *Amazon Route 53 Developer Guide*\.  
+*Type*: String  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[ SetIdentifier](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-1.html#cfn-route53-recordset-setidentifier)` property of an `AWS::Route53::RecordSetGroup` `RecordSet` data type\.
 
 ## Examples<a name="sam-property-api-route53configuration--examples"></a>
 

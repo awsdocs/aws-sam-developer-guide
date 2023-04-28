@@ -71,25 +71,44 @@ If your operating system doesn't have the built\-in unzip command, use an equiva
 ------
 #### [ ARM \- command line installer ]
 
-**Note**  
-We recommend installing the AWS SAM CLI into a virtual environment to ensure a clean starting environment and an isolated environment when troubleshooting\. For more information, see [Installing the AWS SAM CLI into a virtual environment using pip](manage-sam-cli-versions.md#manage-sam-cli-versions-install-virtual)\.
+**To install the AWS SAM CLI**
 
-1. Use `pip` to install the AWS SAM CLI\.
+We recommend installing the AWS SAM CLI into a virtual environment\. This ensures a clean starting environment and an isolated environment when troubleshooting\.
++ To install the AWS SAM CLI into a virtual environment, see [Installing the AWS SAM CLI into a virtual environment using pip](manage-sam-cli-versions.md#manage-sam-cli-versions-install-virtual)\.
+
+After installing the AWS SAM CLI, you can create an alias for the AWS SAM CLI\. This lets you use the AWS SAM CLI outside of your virtual environment\.
+
+**To configure an alias for the AWS SAM CLI**
+
+1. Get the full path to the virtual environment that you installed the AWS SAM CLI into\. The following is an example:
 
    ```
-   $ pip install aws-sam-cli
+   (venv)$ pwd
+   /home/ec2-user/sam-cli
    ```
 
-1. Verify the installation\.
+1. Create your alias\.
+
+   ```
+   $ echo 'alias sam="virtual-environment-directory/venv/bin/sam"' >> ~/.bashrc
+   $ source ~/.bashrc
+   ```
+
+   The following is an example:
+
+   ```
+   $ echo 'alias sam="/home/ec2-user/sam-cli/venv/bin/sam"' >> ~/.bashrc
+   $ source ~/.bashrc
+   ```
+
+1. Verify your alias\.
 
    ```
    $ sam --version
-   ```
-
-   On successful installation, you should see output like the following:
-
-   ```
-    SAM CLI, version 1.58.0
+   SAM CLI, version 1.81.0
+   $ which sam
+   alias sam='/home/ec2-user/sam-cli/venv/bin/sam'
+           ~/sam-cli/venv/bin/sam
    ```
 
 ------
