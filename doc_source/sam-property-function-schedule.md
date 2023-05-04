@@ -1,8 +1,12 @@
 # Schedule<a name="sam-property-function-schedule"></a>
 
-The object describing a `Schedule` event source type, which sets your serverless function as the target of an EventBridge rule that triggers on a schedule\. For more information, see [What Is Amazon EventBridge?](https://docs.aws.amazon.com/eventbridge/latest/userguide/what-is-amazon-eventbridge.html) in the *Amazon EventBridge User Guide*\.
+The object describing a `Schedule` event source type, which sets your serverless function as the target of an Amazon EventBridge rule that triggers on a schedule\. For more information, see [What Is Amazon EventBridge?](https://docs.aws.amazon.com/eventbridge/latest/userguide/what-is-amazon-eventbridge.html) in the *Amazon EventBridge User Guide*\.
 
 AWS Serverless Application Model \(AWS SAM\) generates an [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html) resource when this event type is set\.
+
+**Note**  
+EventBridge now offers a new scheduling capability, [Amazon EventBridge Scheduler](https://docs.aws.amazon.com/scheduler/latest/UserGuide/what-is-scheduler.html)\. Amazon EventBridge Scheduler is a serverless scheduler that allows you to create, run, and manage tasks from one central, managed service\. EventBridge Scheduler is highly customizable, and offers improved scalability over EventBridge scheduled rules, with a wider set of target API operations and AWS services\.  
+We recommend that you use EventBridge Scheduler to invoke targets on a schedule\. To define this event source type in your AWS SAM templates, see [ScheduleV2](sam-property-function-schedulev2.md)\.
 
 ## Syntax<a name="sam-property-function-schedule-syntax"></a>
 
