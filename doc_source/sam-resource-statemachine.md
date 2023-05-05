@@ -81,7 +81,7 @@ The ARN of a permissions boundary to use for this state machine's execution role
 
  `Policies`   <a name="sam-statemachine-policies"></a>
 One or more policies that this state machine's execution role needs\.  
-This property accepts the name of [AWS SAM policy templates](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html), ARN of AWS managed policies, name of AWS managed policies from [this list](https://github.com/aws/serverless-application-model/blob/develop/samtranslator/internal/data/aws_managed_policies.json), or inline IAM policy documents formatted in YAML\.  
+This property accepts a single value or a list of values, and can be the name of [AWS SAM policy templates](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html), ARN of AWS managed policies, name of AWS managed policies from [this list](https://github.com/aws/serverless-application-model/blob/develop/samtranslator/internal/data/aws_managed_policies.json), or inline IAM policy documents formatted in YAML\.  
 If the `Role` property is set, this property is ignored\.  
 *Type*: String \| List \| Map  
 *Required*: Conditional  
