@@ -246,13 +246,16 @@ The ARN of a permissions boundary to use for this function's execution role\. Th
 *AWS CloudFormation compatibility*: This property is passed directly to the `[PermissionsBoundary](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-permissionsboundary)` property of an `AWS::IAM::Role` resource\.
 
  `Policies`   <a name="sam-function-policies"></a>
-One or more policies that this function needs\. They will be appended to the default role for this function\.  
-This property accepts a single value or a list of values, and can be the name of [AWS SAM policy templates](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html), ARN of AWS managed policies, name of AWS managed policies from [this list](https://github.com/aws/serverless-application-model/blob/develop/samtranslator/internal/data/aws_managed_policies.json), or inline IAM policy documents formatted in YAML\.  
-For more information about AWS managed policies, see [AWS managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the IAM User Guide\. For more information about AWS SAM policy templates, see [AWS SAM policy templates](serverless-policy-templates.md) in the AWS Serverless Application Model Developer Guide\. For more information about inline policies, see [Inline policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#inline-policies) in the IAM User Guide\.  
-If the `Role` property is set, this property is ignored\.
+Permission policies for this function\. Policies will be appended to the function's default AWS Identity and Access Management \(IAM\) execution role\.  
+This property accepts a single value or list of values\. Allowed values include:  
++ [AWS SAM policy templates](serverless-policy-templates.md)\.
++ The ARN of an [AWS managed policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)\.
++ The name of an AWS managed policy from the following [ list](https://github.com/aws/serverless-application-model/blob/develop/samtranslator/internal/data/aws_managed_policies.json)\.
++ An [ inline IAM policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#inline-policies) formatted in YAML as a map\.
+If you set the `Role` property, this property is ignored\.
 *Type*: String \| List \| Map  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is similar to the `[Policies](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-policies)` property of an `AWS::IAM::Role` resource\. AWS SAM supports AWS managed policy names and AWS SAM policy templates, in addition to JSON policy documents\. AWS CloudFormation accepts only JSON policy documents\.
+*AWS CloudFormation compatibility*: This property is similar to the `[Policies](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-policies)` property of an `AWS::IAM::Role` resource\.
 
  `ProvisionedConcurrencyConfig`   <a name="sam-function-provisionedconcurrencyconfig"></a>
 The provisioned concurrency configuration of a function's alias\.  

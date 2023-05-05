@@ -80,11 +80,15 @@ The ARN of a permissions boundary to use for this state machine's execution role
 *AWS CloudFormation compatibility*: This property is passed directly to the `[PermissionsBoundary](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-permissionsboundary)` property of an `AWS::IAM::Role` resource\.
 
  `Policies`   <a name="sam-statemachine-policies"></a>
-One or more policies that this state machine's execution role needs\.  
-This property accepts a single value or a list of values, and can be the name of [AWS SAM policy templates](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html), ARN of AWS managed policies, name of AWS managed policies from [this list](https://github.com/aws/serverless-application-model/blob/develop/samtranslator/internal/data/aws_managed_policies.json), or inline IAM policy documents formatted in YAML\.  
-If the `Role` property is set, this property is ignored\.  
+Permission policies for this state machine\. Policies will be appended to the state machine's default AWS Identity and Access Management \(IAM\) execution role\.  
+This property accepts a single value or list of values\. Allowed values include:  
++ [AWS SAM policy templates](serverless-policy-templates.md)\.
++ The ARN of an [AWS managed policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)\.
++ The name of an AWS managed policy from the following [ list](https://github.com/aws/serverless-application-model/blob/develop/samtranslator/internal/data/aws_managed_policies.json)\.
++ An [ inline IAM policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#inline-policies) formatted in YAML as a map\.
+If you set the `Role` property, this property is ignored\.
 *Type*: String \| List \| Map  
-*Required*: Conditional  
+*Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Role`   <a name="sam-statemachine-role"></a>
