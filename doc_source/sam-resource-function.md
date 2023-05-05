@@ -247,7 +247,7 @@ The ARN of a permissions boundary to use for this function's execution role\. Th
 
  `Policies`   <a name="sam-function-policies"></a>
 One or more policies that this function needs\. They will be appended to the default role for this function\.  
-This property accepts a single string or a list of strings, and can be the name of AWS managed policies or AWS SAM policy templates, or inline IAM policy documents formatted in YAML\.  
+This property accepts a single value or a list of values, and can be the name of [AWS SAM policy templates](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html), ARN of AWS managed policies, name of AWS managed policies from [this list](https://github.com/aws/serverless-application-model/blob/develop/samtranslator/internal/data/aws_managed_policies.json), or inline IAM policy documents formatted in YAML\.  
 For more information about AWS managed policies, see [AWS managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the IAM User Guide\. For more information about AWS SAM policy templates, see [AWS SAM policy templates](serverless-policy-templates.md) in the AWS Serverless Application Model Developer Guide\. For more information about inline policies, see [Inline policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#inline-policies) in the IAM User Guide\.  
 If the `Role` property is set, this property is ignored\.
 *Type*: String \| List \| Map  
