@@ -19,6 +19,7 @@ DeadLetterConfig: DeadLetterConfig
 [Input](#sam-statemachine-statemachineschedulev2-input): String
 [KmsKeyArn](#sam-statemachine-statemachineschedulev2-kmskeyarn): String
 [Name](#sam-statemachine-statemachineschedulev2-name): String
+[OmitName](#sam-statemachine-statemachineschedulev2-omitname): Boolean
 [PermissionsBoundary](#sam-statemachine-statemachineschedulev2-permissionsboundary): String
 [RetryPolicy](#sam-statemachine-statemachineschedulev2-retrypolicy): RetryPolicy
 [RoleArn](#sam-statemachine-statemachineschedulev2-rolearn): String
@@ -77,6 +78,14 @@ The name of the schedule\. If you don't specify a name, AWS SAM generates a name
 *Type*: String  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Name](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-name)` property of an `AWS::Scheduler::Schedule` resource\.
+
+ `OmitName`   <a name="sam-statemachine-statemachineschedulev2-omitname"></a>
+By default, AWS SAM generates a name in the format `StateMachine-Logical-IDEvent-Source-Name` and uses that ID for the schedule name\. If this property is set to `true`, AWS CloudFormation generates a unique physical ID and uses that ID for the schedule name\.  
+*Type*: Boolean  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+
 
  `PermissionsBoundary`   <a name="sam-statemachine-statemachineschedulev2-permissionsboundary"></a>
 The ARN of the policy used to set the permissions boundary for the role\.  
