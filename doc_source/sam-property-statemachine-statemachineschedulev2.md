@@ -85,8 +85,6 @@ By default, AWS SAM generates a name in the format `StateMachine-Logical-IDEvent
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
-
-
  `PermissionsBoundary`   <a name="sam-statemachine-statemachineschedulev2-permissionsboundary"></a>
 The ARN of the policy used to set the permissions boundary for the role\.  
 If `PermissionsBoundary` is defined, AWS SAM will apply the same boundaries to the scheduler schedule's target IAM role\.
