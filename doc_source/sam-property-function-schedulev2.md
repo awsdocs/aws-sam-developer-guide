@@ -19,7 +19,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 [Input](#sam-function-schedulev2-input): String
 [KmsKeyArn](#sam-function-schedulev2-kmskeyarn): String
 [Name](#sam-function-schedulev2-name): String
-[OmitName](#sam-function-schedulev2-omitname): Boolean
+OmitName: Boolean
 [PermissionsBoundary](#sam-function-schedulev2-permissionsboundary): String
 [RetryPolicy](#sam-function-schedulev2-retrypolicy): RetryPolicy
 [RoleArn](#sam-function-schedulev2-rolearn): String
@@ -80,10 +80,11 @@ The name of the schedule\. If you don't specify a name, AWS SAM generates a name
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[Name](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-name)` property of an `AWS::Scheduler::Schedule` resource\.
 
- `OmitName`   <a name="sam-function-schedulev2-omitname"></a>
-By default, AWS SAM generates a name in the format `Function-Logical-IDEvent-Source-Name` and uses that ID for the schedule name\. If this property is set to `true`, AWS CloudFormation generates a unique physical ID and uses that ID for the schedule name\.  
+`OmitName`  <a name="sam-function-schedulev2-omitname"></a>
+By default, AWS SAM generates and uses a schedule name in the format of *<Function\-logical\-ID><event\-source\-name>*\. Set this property to `true` to have AWS CloudFormation generate a unique physical ID and use that for the schedule name instead\.  
 *Type*: Boolean  
 *Required*: No  
+*Default*: `false`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `PermissionsBoundary`   <a name="sam-function-schedulev2-permissionsboundary"></a>

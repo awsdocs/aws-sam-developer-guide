@@ -17,7 +17,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [Method](#sam-function-api-method): String
   [Path](#sam-function-api-path): String
   [RequestModel](#sam-function-api-requestmodel): RequestModel
-  [RequestParameters](#sam-function-api-requestparameters): List
+  [RequestParameters](#sam-function-api-requestparameters): List of [ String | RequestParameter ]
   [RestApiId](#sam-function-api-restapiid): String
 ```
 
@@ -50,8 +50,8 @@ Request model to use for this specific Api\+Path\+Method\. This should reference
 
  `RequestParameters`   <a name="sam-function-api-requestparameters"></a>
 Request parameters configuration for this specific Api\+Path\+Method\. All parameter names must start with `method.request` and must be limited to `method.request.header`, `method.request.querystring`, or `method.request.path`\.  
-If a parameter is a string and not a Function Request Parameter Object, then `Required` and `Caching` will default to false\.  
-*Type*: List of (String \| [RequestParameter](sam-property-function-requestparameter.md))
+A list can contain both parameter name strings and [RequestParameter](sam-property-function-requestparameter.md) objects\. For strings, the `Required` and `Caching` properties will default to `false`\.  
+*Type*: List of \[ String \| [RequestParameter](sam-property-function-requestparameter.md) \]  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
@@ -65,9 +65,7 @@ This cannot reference an [AWS::Serverless::Api](sam-resource-api.md) resource de
 
 ## Examples<a name="sam-property-function-api--examples"></a>
 
-### ApiEvent<a name="sam-property-function-api--examples--apievent"></a>
-
-An example of Api Event
+### Basic example<a name="sam-property-function-api--examples--apievent"></a>
 
 #### YAML<a name="sam-property-function-api--examples--apievent--yaml"></a>
 
