@@ -17,7 +17,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
   [Method](#sam-function-api-method): String
   [Path](#sam-function-api-path): String
   [RequestModel](#sam-function-api-requestmodel): RequestModel
-  [RequestParameters](#sam-function-api-requestparameters): String | RequestParameter
+  [RequestParameters](#sam-function-api-requestparameters): List
   [RestApiId](#sam-function-api-restapiid): String
 ```
 
@@ -51,7 +51,7 @@ Request model to use for this specific Api\+Path\+Method\. This should reference
  `RequestParameters`   <a name="sam-function-api-requestparameters"></a>
 Request parameters configuration for this specific Api\+Path\+Method\. All parameter names must start with `method.request` and must be limited to `method.request.header`, `method.request.querystring`, or `method.request.path`\.  
 If a parameter is a string and not a Function Request Parameter Object, then `Required` and `Caching` will default to false\.  
-*Type*: String \| [RequestParameter](sam-property-function-requestparameter.md)  
+*Type*: List of (String \| [RequestParameter](sam-property-function-requestparameter.md))
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
@@ -80,4 +80,7 @@ Events:
       Method: get
       RequestParameters:
         - method.request.header.Authorization
+        - method.request.querystring.keyword:
+            Required: true
+            Caching: false
 ```
