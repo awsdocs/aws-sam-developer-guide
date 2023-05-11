@@ -83,7 +83,7 @@ The ARN of a permissions boundary to use for this state machine's execution role
 Permission policies for this state machine\. Policies will be appended to the state machine's default AWS Identity and Access Management \(IAM\) execution role\.  
 This property accepts a single value or list of values\. Allowed values include:  
 + [AWS SAM policy templates](serverless-policy-templates.md)\.
-+ The ARN of an [AWS managed policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies)\.
++ The ARN of an [AWS managed policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) or [customer managed policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#customer-managed-policies)\.
 + The name of an AWS managed policy from the following [ list](https://github.com/aws/serverless-application-model/blob/develop/samtranslator/internal/data/aws_managed_policies.json)\.
 + An [ inline IAM policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#inline-policies) formatted in YAML as a map\.
 If you set the `Role` property, this property is ignored\.
