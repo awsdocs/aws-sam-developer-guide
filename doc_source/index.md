@@ -180,6 +180,7 @@ sponsored by Amazon.
       + [Generating starter pipelines for Jenkins, GitLab CI/CD, GitHub Actions, or Bitbucket Pipelines](serverless-generating-example-ci-cd-others.md)
    + [Customizing starter pipelines](serverless-customizing-starter-pipelines.md)
    + [Using OIDC authentication with AWS SAM pipeline](deploying-with-oidc.md)
+   + [Using the AWS SAM CLI to upload local files at deployment](deploy-upload-local-files.md)
 + [Monitoring serverless applications](serverless-monitoring.md)
    + [Monitor your serverless applications with CloudWatch Application Insights](monitor-app-insights.md)
    + [Working with logs](serverless-sam-cli-logging.md)
