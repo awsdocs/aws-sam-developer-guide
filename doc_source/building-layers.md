@@ -28,7 +28,7 @@ When you include the `Metadata` resource attribute section, you can use the `sam
 
 ## Examples<a name="building-applications-examples"></a>
 
-### Template example 1: Build a layer against the Python 3\.6 runtime environment<a name="building-applications-examples-python"></a>
+### Template example 1: Build a layer against the Python 3\.9 runtime environment<a name="building-applications-examples-python"></a>
 
 The following example AWS SAM template builds a layer against the Python 3\.6 runtime environment\.
 
