@@ -41,7 +41,7 @@ Resources:
       CompatibleRuntimes:
         - python3.9
     Metadata:
-      BuildMethod: python3.9              # Required to have AWS SAM build this layer
+      BuildMethod: python3.9   # Required to have AWS SAM build this layer
 ```
 
 ### Template example 2: Build a layer using a custom makefile<a name="building-applications-examples-makefile"></a>
@@ -64,9 +64,9 @@ The following `makefile` contains the build target and commands that will be exe
 
 ```
 build-MyLayer:
-    mkdir -p "$(ARTIFACTS_DIR)/python"
-    cp *.py "$(ARTIFACTS_DIR)/python"
-    python -m pip install -r requirements.txt -t "$(ARTIFACTS_DIR)/python"
+  mkdir -p "$(ARTIFACTS_DIR)/python"
+  cp *.py "$(ARTIFACTS_DIR)/python"
+  python -m pip install -r requirements.txt -t "$(ARTIFACTS_DIR)/python"
 ```
 
 ### Example sam build commands<a name="building-applications-examples-commands"></a>

@@ -114,6 +114,7 @@ For more information about CORS, see [Enable CORS for an API Gateway REST API Re
 
  `DefinitionBody`   <a name="sam-api-definitionbody"></a>
 OpenAPI specification that describes your API\. If neither `DefinitionUri` nor `DefinitionBody` are specified, SAM will generate a `DefinitionBody` for you based on your template configuration\.  
+To reference a local OpenAPI file that defines your API, use the `AWS::Include` transform\. To learn more, see [Upload local files at deployment](deploy-upload-local-files.md)\.  
 *Type*: JSON  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[Body](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body)` property of an `AWS::ApiGateway::RestApi` resource\. If certain properties are provided, content may be inserted or modified into the DefinitionBody before being passed to CloudFormation\. Properties include `Auth`, `BinaryMediaTypes`, `Cors`, `GatewayResponses`, `Models`, and an `EventSource` of type Api for a corresponding `AWS::Serverless::Function`\.

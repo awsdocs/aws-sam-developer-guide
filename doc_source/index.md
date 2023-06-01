@@ -227,6 +227,7 @@ sponsored by Amazon.
          + [sam validate](sam-cli-command-reference-sam-validate.md)
       + [AWS SAM CLI configuration file](serverless-sam-cli-config.md)
       + [Managing AWS SAM CLI versions](manage-sam-cli-versions.md)
+      + [Verify the integrity of the AWS SAM CLI installer](reference-sam-cli-install-verify.md)
       + [Setting up AWS credentials](serverless-getting-started-set-up-credentials.md)
       + [AWS SAM CLI troubleshooting](sam-cli-troubleshooting.md)
    + [AWS SAM connector reference](reference-sam-connector.md)

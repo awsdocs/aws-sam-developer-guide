@@ -1,10 +1,11 @@
 # Document history for AWS SAM<a name="doc-history"></a>
 
 The following table describes the important changes in each release of the *AWS Serverless Application Model Developer Guide*\. For notifications about updates to this documentation, you can subscribe to an RSS feed\.
-+ **Latest documentation update:** March 23, 2023
++ **Latest documentation update:** May 31, 2023
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Add optional steps for integrity verification of the AWS SAM CLI package installer](#doc-history) | Update [Installing the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html) page to reflect optional step\. Create [Verify the integrity of the AWS SAM CLI installer](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/reference-sam-cli-install-verify.html) page to document steps\. | May 31, 2023 | 
 | [Add sam sync option to skip infrastructure sync](#doc-history) | Customize whether an AWS CloudFormation deployment is required each time `sam sync` is run\. To learn more, see [ Skip the initial AWS CloudFormation deployment](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/using-sam-cli-sync.html#using-sam-cli-sync-options-skip-deploy-sync)\. | March 23, 2023 | 
 | [Add support for DocumentDB event source type](#doc-history) | The AWS SAM template specification now supports `DocumentDB` event source type for the `AWS::Serverless::Function` resource\. To learn more, see [ DocumentDB](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-documentdb.html)\. | March 10, 2023 | 
 | [Build Rust Lambda functions with Cargo Lambda](#doc-history) | Use the AWS SAM CLI to build your Rust Lambda functions using Cargo Lambda\. To learn more, see [ Building Rust Lambda functions with Cargo Lambda\. ](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/building-rust.html)  | February 23, 2023 | 
