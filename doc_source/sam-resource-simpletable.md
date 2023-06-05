@@ -34,8 +34,7 @@ The value of this property cannot be modified after this resource is created\.
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `PointInTimeRecoverySpecification`   <a name="sam-simpletable-pointintimerecoveryspecification"></a>
-Read and write throughput provisioning information\.  
-If `ProvisionedThroughput` is not specified `BillingMode` will be specified as `PAY_PER_REQUEST`\.  
+Point-in-time recovery (PITR) settings\.  
 *Type*: [PointInTimeRecoverySpecification](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-pointintimerecoveryspecification.html)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is passed directly to the `[PointInTimeRecoverySpecification](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-pointintimerecoveryspecification.html)` property of an `AWS::DynamoDB::Table` resource\.
