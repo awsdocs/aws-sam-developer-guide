@@ -50,6 +50,7 @@ Properties:
   [OpenApiVersion](#sam-api-openapiversion): String
   [StageName](#sam-api-stagename): String
   [Tags](#sam-api-tags): Map
+  [PropagateTags](#sam-api-propagatetags): Boolean
   [TracingEnabled](#sam-api-tracingenabled): Boolean
   [Variables](#sam-api-variables): Map
 ```
@@ -222,6 +223,13 @@ A map \(string to string\) that specifies the tags to be added to this API Gatew
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tags)` property of an `AWS::ApiGateway::Stage` resource\. The Tags property in SAM consists of Key:Value pairs; in CloudFormation it consists of a list of Tag objects\.
+
+ `PropagateTags`   <a name="sam-api-propagatetags"></a>
+A boolean value that indicates whether or not to pass down the tags defined in `[Tags]` property to the generated resources, see [AWS::Serverless::Api generated resources](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources-api.html). When set to `True`, tags will propagate to generated resources.
+*Type*: Boolean  
+*Required*: No  
+*Default*: False
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `TracingEnabled`   <a name="sam-api-tracingenabled"></a>
 Indicates whether active tracing with X\-Ray is enabled for the stage\. For more information about X\-Ray, see [Tracing user requests to REST APIs using X\-Ray](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-xray.html) in the *API Gateway Developer Guide*\.  

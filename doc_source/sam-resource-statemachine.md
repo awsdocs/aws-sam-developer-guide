@@ -27,6 +27,7 @@ Properties:
   [RolePath](#sam-statemachine-rolepath): String
   [Role](#sam-statemachine-role): String
   [Tags](#sam-statemachine-tags): Map
+  [PropagateTags](#sam-statemachine-propagatetags): Boolean
   [Tracing](#sam-statemachine-tracing): [TracingConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tracingconfiguration)
   [Type](#sam-statemachine-type): String
 ```
@@ -109,6 +110,13 @@ A string\-to\-string map that specifies the tags added to the state machine and 
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tags)` property of an `AWS::StepFunctions::StateMachine` resource\. AWS SAM automatically adds a `stateMachine:createdBy:SAM` tag to this resource, and to the default role that is generated for it\.
+
+ `PropagateTags`   <a name="sam-statemachine-propagatetags"></a>
+A boolean value that indicates whether or not to pass down the tags defined in `[Tags]` property to the generated resources, see [AWS::Serverless::StateMachine generated resources](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources-statemachine.html). When set to `True`, tags will propagate to generated resources.
+*Type*: Boolean  
+*Required*: No  
+*Default*: False
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Tracing`   <a name="sam-statemachine-tracing"></a>
 Selects whether or not AWS X\-Ray is enabled for the state machine\. For more information about using X\-Ray with Step Functions, see [AWS X\-Ray and Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-xray-tracing.html) in the *AWS Step Functions Developer Guide*\.  
