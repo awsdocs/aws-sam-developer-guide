@@ -17,6 +17,7 @@ To declare this entity in your AWS Serverless Application Model \(AWS SAM\) temp
 Type: AWS::Serverless::SimpleTable
 Properties:
   [PrimaryKey](#sam-simpletable-primarykey): PrimaryKeyObject
+  [PointInTimeRecoverySpecification](#sam-simpletable-pointintimerecoveryspecification): [PointInTimeRecoverySpecification](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-pointintimerecoveryspecification.html)
   [ProvisionedThroughput](#sam-simpletable-provisionedthroughput): [ProvisionedThroughput](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-provisionedthroughput.html)
   [SSESpecification](#sam-simpletable-ssespecification): [SSESpecification](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html)
   [TableName](#sam-simpletable-tablename): String
@@ -31,6 +32,12 @@ The value of this property cannot be modified after this resource is created\.
 *Type*: [PrimaryKeyObject](sam-property-simpletable-primarykeyobject.md)  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
+ `PointInTimeRecoverySpecification`   <a name="sam-simpletable-pointintimerecoveryspecification"></a>
+Point-in-time recovery (PITR) settings\.  
+*Type*: [PointInTimeRecoverySpecification](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-pointintimerecoveryspecification.html)  
+*Required*: No  
+*AWS CloudFormation compatibility*: This property is passed directly to the `[PointInTimeRecoverySpecification](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-pointintimerecoveryspecification.html)` property of an `AWS::DynamoDB::Table` resource\.
 
  `ProvisionedThroughput`   <a name="sam-simpletable-provisionedthroughput"></a>
 Read and write throughput provisioning information\.  
