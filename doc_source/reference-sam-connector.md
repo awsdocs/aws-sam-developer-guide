@@ -17,6 +17,12 @@ For both source and destination resources, when defined within the same template
 | `AWS::ApiGateway::RestApi` | `AWS::Serverless::Function` | `Write` | `Id` or `Qualifier`, `ResourceId`, and `Type` | `Id` or `Arn` and `Type` | 
 | `AWS::ApiGatewayV2::Api` | `AWS::Lambda::Function` | `Write` | `Id` or `Qualifier`, `ResourceId`, and `Type` | `Id` or `Arn` and `Type` | 
 | `AWS::ApiGatewayV2::Api` | `AWS::Serverless::Function` | `Write` | `Id` or `Qualifier`, `ResourceId`, and `Type` | `Id` or `Arn` and `Type` | 
+| `AWS::AppSync::DataSource`|`AWS::DynamoDB::Table`|`Read`, `Write`|`Id` or `RoleName` and `Type`|`Id` or `Arn` and `Type`|
+| `AWS::AppSync::DataSource`|`AWS::Lambda::Function`|`Write`|`Id` or `RoleName` and `Type`|`Id` or `Arn` and `Type`|
+| `AWS::AppSync::DataSource`|`AWS::Serverless::Function`|`Write`|`Id` or `RoleName` and `Type`|`Id` or `Arn` and `Type`|
+| `AWS::AppSync::DataSource`|`AWS::Serverless::SimpleTable`|`Read`, `Write`|`Id` or `RoleName` and `Type`|`Id` or `Arn` and `Type`|
+| `AWS::AppSync::GraphQLApi`|`AWS::Lambda::Function`|`Write`|`Id` or `ResourceId` and `Type`|`Id` or `Arn` and `Type`|
+| `AWS::AppSync::GraphQLApi`|`AWS::Serverless::Function`|`Write`|`Id` or `ResourceId` and `Type`|`Id` or `Arn` and `Type`|
 | `AWS::DynamoDB::Table` | `AWS::Lambda::Function` | `Read` | `Id` or `Arn` and `Type` | `Id` or `RoleName` and `Type` | 
 | `AWS::DynamoDB::Table` | `AWS::Serverless::Function` | `Read` | `Id` or `Arn` and `Type` | `Id` or `RoleName` and `Type` | 
 | `AWS::Events::Rule` | `AWS::Events::EventBus` | `Write` | `Id` or `RoleName` and `Type` | `Id` or `Arn` and `Type` | 
