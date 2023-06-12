@@ -31,7 +31,6 @@ Properties:
   [Domain](#sam-httpapi-domain): HttpApiDomainConfiguration
   [FailOnWarnings](#sam-httpapi-failonwarnings): Boolean
   Name: String
-  PropagateTags: Boolean
   [RouteSettings](#sam-httpapi-routesettings): [RouteSettings](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings)
   [StageName](#sam-httpapi-stagename): String
   [StageVariables](#sam-httpapi-stagevariables): [Json](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-stagevariables)
@@ -115,13 +114,6 @@ When you specify `Name`, AWS SAM will modify the HTTP API resource's OpenAPI def
 + The `DefinitionUri` property is specified – AWS SAM won't modify an Open API definition that is retrieved from Amazon S3\.
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
-
-`PropagateTags`  <a name="sam-httpapi-propagatetags"></a>
-Indicate whether or not to pass tags from the `Tags` property to your [AWS::Serverless::HttpApi](sam-specification-generated-resources-httpapi.md) generated resources\. Specify `True` to propagate tags in your generated resources\.  
-*Type*: Boolean  
-*Required*: No  
-*Default*: `False`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `RouteSettings`   <a name="sam-httpapi-routesettings"></a>

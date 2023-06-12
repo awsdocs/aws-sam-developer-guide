@@ -24,7 +24,6 @@ Properties:
   [Name](#sam-statemachine-name): String
   [PermissionsBoundary](#sam-statemachine-permissionsboundary): String
   [Policies](#sam-statemachine-policies): String | List | Map
-  PropagateTags: Boolean
   [RolePath](#sam-statemachine-rolepath): String
   [Role](#sam-statemachine-role): String
   [Tags](#sam-statemachine-tags): Map
@@ -90,13 +89,6 @@ This property accepts a single value or list of values\. Allowed values include:
 If you set the `Role` property, this property is ignored\.
 *Type*: String \| List \| Map  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
-
-`PropagateTags`  <a name="sam-statemachine-propagatetags"></a>
-Indicate whether or not to pass tags from the `Tags` property to your [AWS::Serverless::StateMachine](sam-specification-generated-resources-statemachine.md) generated resources\. Specify `True` to propagate tags in your generated resources\.  
-*Type*: Boolean  
-*Required*: No  
-*Default*: `False`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Role`   <a name="sam-statemachine-role"></a>

@@ -48,7 +48,6 @@ Properties:
   [Models](#sam-api-models): Map
   [Name](#sam-api-name): String
   [OpenApiVersion](#sam-api-openapiversion): String
-  PropagateTags: Boolean
   [StageName](#sam-api-stagename): String
   [Tags](#sam-api-tags): Map
   [TracingEnabled](#sam-api-tracingenabled): Boolean
@@ -208,13 +207,6 @@ Version of OpenApi to use\. This can either be `2.0` for the Swagger specificati
  AWS SAM creates a stage called `Stage` by default\. Setting this property to any valid value will prevent the creation of the stage `Stage`\. 
 *Type*: String  
 *Required*: No  
-*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
-
-`PropagateTags`  <a name="sam-api-propagatetags"></a>
-Indicate whether or not to pass tags from the `Tags` property to your [AWS::Serverless::Api](sam-specification-generated-resources-api.md) generated resources\. Specify `True` to propagate tags in your generated resources\.  
-*Type*: Boolean  
-*Required*: No  
-*Default*: `False`  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `StageName`   <a name="sam-api-stagename"></a>

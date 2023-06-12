@@ -30,7 +30,6 @@ Amazon ECR Public replaced DockerHub starting with the AWS SAM CLI version 1\.22
 | Python 3\.9 | [public\.ecr\.aws/sam/build\-python3\.9](https://gallery.ecr.aws/sam/build-python3.9) | 
 | Python 3\.8 | [public\.ecr\.aws/sam/build\-python3\.8](https://gallery.ecr.aws/sam/build-python3.8) | 
 | Python 3\.7 | [public\.ecr\.aws/sam/build\-python3\.7](https://gallery.ecr.aws/sam/build-python3.7) | 
-| Ruby 3\.2 | [public\.ecr\.aws/sam/build\-ruby3\.2](https://gallery.ecr.aws/sam/build-ruby3.2) | 
 | Ruby 2\.7 | [public\.ecr\.aws/sam/build\-ruby2\.7](https://gallery.ecr.aws/sam/build-ruby2.7) | 
 | Java 17 | [public\.ecr\.aws/sam/build\-java17](https://gallery.ecr.aws/sam/build-java17) | 
 | Java 11 | [public\.ecr\.aws/sam/build\-java11](https://gallery.ecr.aws/sam/build-java11) | 

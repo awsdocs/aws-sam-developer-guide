@@ -43,63 +43,57 @@ AWS SAM supports the following resources and properties\.
 
 ```
 Globals:
-  Api:
-    AccessLogSetting:
-    Auth:
-    BinaryMediaTypes:
-    CacheClusterEnabled:
-    CacheClusterSize:
-    CanarySetting:
-    Cors:
-    DefinitionUri:
-    Domain:
-    EndpointConfiguration:
-    GatewayResponses:
-    MethodSettings:
-    MinimumCompressionSize:
-    Name:
-    OpenApiVersion:
-    PropagateTags:
-    TracingEnabled:
-    Variables:
-
   Function:
-    Architectures:
-    AssumeRolePolicyDocument:
-    AutoPublishAlias:
+    Handler:
+    Runtime:
     CodeUri:
     DeadLetterQueue:
-    DeploymentPreference:
     Description:
+    MemorySize:
+    Timeout:
+    VpcConfig:
     Environment:
-    EphemeralStorage:
-    EventInvokeConfig:
-    Handler:
+    Tags:
+    Tracing:
     KmsKeyArn:
     Layers:
-    MemorySize:
+    AutoPublishAlias:
+    DeploymentPreference:
     PermissionsBoundary:
-    PropagateTags:
-    ProvisionedConcurrencyConfig:
     ReservedConcurrentExecutions:
-    Runtime:
-    Tags:
-    Timeout:
-    Tracing:
-    VpcConfig:
+    ProvisionedConcurrencyConfig:
+    AssumeRolePolicyDocument:
+    EventInvokeConfig:
+    Architectures:
+    EphemeralStorage:
+
+  Api:
+    Auth:
+    Name:
+    DefinitionUri:
+    CacheClusterEnabled:
+    CacheClusterSize:
+    Variables:
+    EndpointConfiguration:
+    MethodSettings:
+    BinaryMediaTypes:
+    MinimumCompressionSize:
+    Cors:
+    GatewayResponses:
+    AccessLogSetting:
+    CanarySetting:
+    TracingEnabled:
+    OpenApiVersion:
+    Domain:
 
   HttpApi:
-    AccessLogSettings:
     Auth:
-    PropagateTags:
+    AccessLogSettings:
     StageVariables:
     Tags:
 
   SimpleTable:
     SSESpecification:
-
-  StateMachine:
-    PropagateTags:
 ```
 
 **Note**  
@@ -127,7 +121,6 @@ Example:
 
 ```
 Globals:
-  
   Function:
     Runtime: nodejs12.x
 
