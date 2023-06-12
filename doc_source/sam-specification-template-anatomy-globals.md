@@ -43,57 +43,57 @@ AWS SAM supports the following resources and properties\.
 
 ```
 Globals:
-  Function:
-    Handler:
-    Runtime:
-    CodeUri:
-    DeadLetterQueue:
-    Description:
-    MemorySize:
-    Timeout:
-    VpcConfig:
-    Environment:
-    Tags:
-    PropagateTags:
-    Tracing:
-    KmsKeyArn:
-    Layers:
-    AutoPublishAlias:
-    DeploymentPreference:
-    PermissionsBoundary:
-    ReservedConcurrentExecutions:
-    ProvisionedConcurrencyConfig:
-    AssumeRolePolicyDocument:
-    EventInvokeConfig:
-    Architectures:
-    EphemeralStorage:
-
   Api:
+    AccessLogSetting:
     Auth:
-    Name:
-    DefinitionUri:
+    BinaryMediaTypes:
     CacheClusterEnabled:
     CacheClusterSize:
-    Variables:
-    EndpointConfiguration:
-    MethodSettings:
-    BinaryMediaTypes:
-    MinimumCompressionSize:
-    Cors:
-    GatewayResponses:
-    AccessLogSetting:
     CanarySetting:
-    TracingEnabled:
-    OpenApiVersion:
+    Cors:
+    DefinitionUri:
     Domain:
+    EndpointConfiguration:
+    GatewayResponses:
+    MethodSettings:
+    MinimumCompressionSize:
+    Name:
+    OpenApiVersion:
     PropagateTags:
+    TracingEnabled:
+    Variables:
+
+  Function:
+    Architectures:
+    AssumeRolePolicyDocument:
+    AutoPublishAlias:
+    CodeUri:
+    DeadLetterQueue:
+    DeploymentPreference:
+    Description:
+    Environment:
+    EphemeralStorage:
+    EventInvokeConfig:
+    Handler:
+    KmsKeyArn:
+    Layers:
+    MemorySize:
+    PermissionsBoundary:
+    PropagateTags:
+    ProvisionedConcurrencyConfig:
+    ReservedConcurrentExecutions:
+    Runtime:
+    Tags:
+    Timeout:
+    Tracing:
+    VpcConfig:
 
   HttpApi:
-    Auth:
     AccessLogSettings:
+    Auth:
+    PropagateTags:
     StageVariables:
     Tags:
-    PropagateTags:
 
   SimpleTable:
     SSESpecification:
@@ -127,6 +127,7 @@ Example:
 
 ```
 Globals:
+  
   Function:
     Runtime: nodejs12.x
 

@@ -43,6 +43,7 @@ Properties:
   [PackageType](#sam-function-packagetype): String
   [PermissionsBoundary](#sam-function-permissionsboundary): String
   [Policies](#sam-function-policies): String | List | Map
+  PropagateTags: Boolean
   [ProvisionedConcurrencyConfig](#sam-function-provisionedconcurrencyconfig): [ProvisionedConcurrencyConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-provisionedconcurrencyconfig)
   [ReservedConcurrentExecutions](#sam-function-reservedconcurrentexecutions): Integer
   [Role](#sam-function-role): String
@@ -51,7 +52,6 @@ Properties:
   RuntimeManagementConfig: [RuntimeManagementConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimemanagementconfig.html)
   SnapStart: [SnapStart](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstart.html)
   [Tags](#sam-function-tags): Map
-  [PropagateTags](#sam-function-propagatetags): Boolean
   [Timeout](#sam-function-timeout): Integer
   [Tracing](#sam-function-tracing): String
   [VersionDescription](#sam-function-versiondescription): String
@@ -258,6 +258,13 @@ If you set the `Role` property, this property is ignored\.
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[Policies](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-policies)` property of an `AWS::IAM::Role` resource\.
 
+`PropagateTags`  <a name="sam-function-propagatetags"></a>
+Indicate whether or not to pass tags from the `Tags` property to your [AWS::Serverless::Function](sam-specification-generated-resources-function.md) generated resources\. Specify `True` to propagate tags in your generated resources\.  
+*Type*: Boolean  
+*Required*: No  
+*Default*: `False`  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
  `ProvisionedConcurrencyConfig`   <a name="sam-function-provisionedconcurrencyconfig"></a>
 The provisioned concurrency configuration of a function's alias\.  
 `ProvisionedConcurrencyConfig` can be specified only if the `AutoPublishAlias` is set\. Otherwise, an error results\.
@@ -311,13 +318,6 @@ When the stack is created, AWS SAM automatically adds a `lambda:createdBy:SAM` t
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags)` property of an `AWS::Lambda::Function` resource\. The `Tags` property in AWS SAM consists of key\-value pairs \(whereas in AWS CloudFormation this property consists of a list of `Tag` objects\)\. Also, AWS SAM automatically adds a `lambda:createdBy:SAM` tag to this Lambda function, and to the default roles that are generated for this function\.
-
- `PropagateTags`   <a name="sam-function-propagatetags"></a>
-A boolean value that indicates whether or not to pass down the tags defined in `[Tags]` property to the generated resources, see [AWS::Serverless::Function generated resources](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources-function.html)
-*Type*: Boolean  
-*Required*: No  
-*Default*: False
-*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Timeout`   <a name="sam-function-timeout"></a>
 The maximum time in seconds that the function can run before it is stopped\.  

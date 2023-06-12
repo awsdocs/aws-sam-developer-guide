@@ -48,9 +48,9 @@ Properties:
   [Models](#sam-api-models): Map
   [Name](#sam-api-name): String
   [OpenApiVersion](#sam-api-openapiversion): String
+  PropagateTags: Boolean
   [StageName](#sam-api-stagename): String
   [Tags](#sam-api-tags): Map
-  [PropagateTags](#sam-api-propagatetags): Boolean
   [TracingEnabled](#sam-api-tracingenabled): Boolean
   [Variables](#sam-api-variables): Map
 ```
@@ -210,6 +210,13 @@ Version of OpenApi to use\. This can either be `2.0` for the Swagger specificati
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
+`PropagateTags`  <a name="sam-api-propagatetags"></a>
+Indicate whether or not to pass tags from the `Tags` property to your [AWS::Serverless::Api](sam-specification-generated-resources-api.md) generated resources\. Specify `True` to propagate tags in your generated resources\.  
+*Type*: Boolean  
+*Required*: No  
+*Default*: `False`  
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
+
  `StageName`   <a name="sam-api-stagename"></a>
 The name of the stage, which API Gateway uses as the first path segment in the invoke Uniform Resource Identifier \(URI\)\.  
 To reference the stage resource, use `<api-logical-id>.Stage`\. For more information about referencing resources generated when an [AWS::Serverless::Api](#sam-resource-api) resource is specified, see [AWS CloudFormation resources generated when AWS::Serverless::Api is specified](sam-specification-generated-resources-api.md)\. For general information about generated AWS CloudFormation resources, see [Generated AWS CloudFormation resources](sam-specification-generated-resources.md)\.  
@@ -223,13 +230,6 @@ A map \(string to string\) that specifies the tags to be added to this API Gatew
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-tags)` property of an `AWS::ApiGateway::Stage` resource\. The Tags property in SAM consists of Key:Value pairs; in CloudFormation it consists of a list of Tag objects\.
-
- `PropagateTags`   <a name="sam-api-propagatetags"></a>
-A boolean value that indicates whether or not to pass down the tags defined in `[Tags]` property to the generated resources, see [AWS::Serverless::Api generated resources](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources-api.html). When set to `True`, tags will propagate to generated resources.
-*Type*: Boolean  
-*Required*: No  
-*Default*: False
-*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `TracingEnabled`   <a name="sam-api-tracingenabled"></a>
 Indicates whether active tracing with X\-Ray is enabled for the stage\. For more information about X\-Ray, see [Tracing user requests to REST APIs using X\-Ray](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-xray.html) in the *API Gateway Developer Guide*\.  
