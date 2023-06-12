@@ -54,6 +54,7 @@ Globals:
     VpcConfig:
     Environment:
     Tags:
+    PropagateTags:
     Tracing:
     KmsKeyArn:
     Layers:
@@ -85,15 +86,20 @@ Globals:
     TracingEnabled:
     OpenApiVersion:
     Domain:
+    PropagateTags:
 
   HttpApi:
     Auth:
     AccessLogSettings:
     StageVariables:
     Tags:
+    PropagateTags:
 
   SimpleTable:
     SSESpecification:
+
+  StateMachine:
+    PropagateTags:
 ```
 
 **Note**  

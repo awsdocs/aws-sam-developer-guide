@@ -51,6 +51,7 @@ Properties:
   RuntimeManagementConfig: [RuntimeManagementConfig](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimemanagementconfig.html)
   SnapStart: [SnapStart](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstart.html)
   [Tags](#sam-function-tags): Map
+  [PropagateTags](#sam-function-propagatetags): Boolean
   [Timeout](#sam-function-timeout): Integer
   [Tracing](#sam-function-tracing): String
   [VersionDescription](#sam-function-versiondescription): String
@@ -310,6 +311,13 @@ When the stack is created, AWS SAM automatically adds a `lambda:createdBy:SAM` t
 *Type*: Map  
 *Required*: No  
 *AWS CloudFormation compatibility*: This property is similar to the `[Tags](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags)` property of an `AWS::Lambda::Function` resource\. The `Tags` property in AWS SAM consists of key\-value pairs \(whereas in AWS CloudFormation this property consists of a list of `Tag` objects\)\. Also, AWS SAM automatically adds a `lambda:createdBy:SAM` tag to this Lambda function, and to the default roles that are generated for this function\.
+
+ `PropagateTags`   <a name="sam-function-propagatetags"></a>
+A boolean value that indicates whether or not to pass down the tags defined in `[Tags]` property to the generated resources, see [AWS::Serverless::Function generated resources](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources-function.html)
+*Type*: Boolean  
+*Required*: No  
+*Default*: False
+*AWS CloudFormation compatibility*: This property is unique to AWS SAM and doesn't have an AWS CloudFormation equivalent\.
 
  `Timeout`   <a name="sam-function-timeout"></a>
 The maximum time in seconds that the function can run before it is stopped\.  
